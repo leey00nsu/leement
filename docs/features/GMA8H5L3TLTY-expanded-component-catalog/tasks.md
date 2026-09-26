@@ -147,13 +147,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-06 Resolve additional source-project UI
+- [DONE][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-06 Resolve additional source-project UI
   - Date: 2026-09-27
   - Acceptance:
     - CopySinger-only ten modules and Leesfield shared UI wrappers are classified; every reusable item has a functioning registry item or composition example.
   - Checklist:
-    - [ ] Document application-specific and legacy boundaries in coverage matrix.
-    - [ ] Implement reusable gaps with dependencies, basic interaction checks and source-backed docs.
+    - [x] Document application-specific and legacy boundaries in coverage matrix.
+    - [x] Implement reusable gaps with dependencies, basic interaction checks and source-backed docs.
+  - Verification: `pnpm --filter @leement/docs build` (50 static pages including `/adoption`), `pnpm typecheck`, `pnpm lint`, `pnpm test` (22 tests) passed on 2026-09-27. [Source-project candidate resolution](./artifacts/reference-coverage.md#task-06-source-project-migration-checkpoint). Dedicated calendar/choicebox/code-block/typography cases remain assigned to Tasks 07–11.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -294,4 +295,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:4ba880b097b4a315b035871a8221b0c2120639433920fc4a7ac939bd7d45a8e5 -->
+<!-- lee-spec-kit:workflow-sync sha256:c441619cd4bef4aa8d610e5f3cec3a4379d51b952a65a5a7ea1886c9d81c0e3e -->

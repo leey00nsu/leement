@@ -91,6 +91,28 @@ The CopySinger-only paths above are `src/shared/ui/{item}/{item}.tsx` unless the
 | voice-orb | voice visualization | `src/_pages/login/ui/login-screen.tsx` |
 | voice-signal-core | audio signal visualization logic | `src/widgets/creation-funnel/ui/process-hero.tsx` |
 
+### Task 06 source-project migration checkpoint
+
+The five reusable CopySinger-only candidates now have registry routes: `collapsible`, `page-skeleton`, `progress`, `slider`, `toast`. The five application-specific paths stay in CopySinger as classified above. Leement also added `alert-dialog` and `avatar` for Leesfield candidates, plus `filter-toolbar` for its filter wrappers. `slider` now defaults to one thumb; a two-element `value`/`defaultValue` gives the original range behavior. `toast` keeps a Sonner-compatible `toast` export and accepts an explicit theme prop instead of requiring `next-themes`.
+
+Leesfield's candidate rows resolve as follows. The `/adoption` page is a working composition of registry source while dedicated Kibo items are built in Tasks 07–11; it is not a claim that advanced app behavior has already been replaced.
+
+| Leesfield source candidate | Current registry route or live composition | Dedicated follow-up |
+| --- | --- | --- |
+| `alert-dialog.tsx`, `app-confirm-dialog.tsx` | `alert-dialog` | App confirmation copy and locale remain app-owned |
+| `app-avatar.tsx`, `avatar.tsx` | `avatar` | `avatar-stack` in Task 07 |
+| `app-calendar.tsx`, `calendar.tsx` | `/adoption` date `Input` | Calendar in Task 07 |
+| `app-choice-select.tsx` | `/adoption` labeled `Select` | Choicebox in Task 08 |
+| `app-code-block.tsx` | `/adoption` Card + `pre` + copy action | Code Block in Task 08 |
+| `app-expandable-text.tsx` | `/adoption` `Collapsible` disclosure | Text-specific truncation stays in app if needed; this is distinct from motion-based RevealContent |
+| `app-filter-toolbar.tsx`, `dashboard-filter-bar.tsx` | `filter-toolbar` + `search-field`/`select` composition | App filter data logic stays in app |
+| `app-form-control.tsx`, `app-form.tsx`, `form.tsx` | `/adoption` `Label` + `Input` + description; `form-section` for grouping | App validation/form-state integration stays in app |
+| `app-range-slider.tsx` | `slider` | Range values by two-element array |
+| `app-toast.tsx` | `toast` | App provider placement and localization stay in app |
+| `app-typography.tsx` | `product-page-intro` heading + foundation typography | Typography case in Task 10 |
+
+The remaining Leesfield rows in the inventory are `compose` wrappers or `application` modules. For `compose`, keep the app wrapper when it carries route, locale or domain behavior and replace its underlying generic UI source with the mapped registry item. For `application`, no registry export is planned. This document still does not claim either product was modified; Task 14 performs real integration.
+
 ## Leesfield root modules and app wrappers
 
 The table below is the complete top-level production `.tsx` inventory in `src/shared/ui` at the snapshot: 35 `app-*` wrappers and 44 other files. Stories and tests are excluded. `compose` means keep the app-specific wrapper while swapping its underlying common source; `candidate` means implement a reusable item or concrete composition in this Feature; `application` means keep product/brand logic in Leesfield. The common 22 above remain mandatory even when a root re-export or wrapper has no direct screen import. Candidate classification assigns follow-up implementation to Tasks 03–11; it does not claim that the item is already installable.

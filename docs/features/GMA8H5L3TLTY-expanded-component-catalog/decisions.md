@@ -139,3 +139,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 레지스트리 소스가 일반 React 앱에서도 설치되고 제품 카피/라우팅/이미지를 앱이 소유한다. Chart의 시리즈 색은 semantic CSS 변수로 설정하며 사용자 지정 chart id/key/color가 style markup에 주입되지 않도록 위험 문자를 제거했다. Bento article은 제목과 연결해 landmark 이름을 제공한다.
 - **Trace (실행 확인)**: 8개 item에 source-backed docs 예제를 추가했다. `pnpm --filter @leement/docs build`에서 41개 정적 페이지와 19 component/8 pattern/2 block route가 생성되었다. `pnpm typecheck`, `pnpm lint`, `pnpm registry:build`, composition Vitest 3건이 통과했다. 실제 제품 import 교체는 Task 14 범위다.
 - **Evidence**: [Reference coverage](./artifacts/reference-coverage.md), [Composition tests](../../../registry/patterns/composition.test.tsx), [Registry metadata](../../../registry.json), [Design rules](../../designs/design-system.md)
+
+## D010: 제품 전용 UI와 재사용 후보를 실제 소비 기준으로 분류한다 (2026-09-27)
+
+- **Context/Constraints**: Task 06은 CopySinger-only 10개와 Leesfield의 79개 root UI 및 wrapper 분류를 완성해야 한다. 일부 후보는 후속 Kibo 41개 task와 겹치며, 제품 도메인 UI를 이름만 바꿔 registry에 추가할 수 없다.
+- **Trace (초기 가설)**: domain/brand module은 application 경계에 남기고, 범용 disclosure/progress/slider/toast/loading 및 실제 화면 wrapper 조합은 registry source 또는 실행 가능한 예제로 충족한다. Kibo 작업과 겹치는 candidate는 현재 task에서 최소 동작을 제공하거나 해당 future item의 구체적인 합성 계약을 고정한다.
+- **Options**: ① 참조 프로젝트의 root UI를 모두 registry에 복제한다 ② 사용 사례 기준으로 application/compose/candidate를 나누고 실제 후보만 승격한다.
+- **Decision**: ②를 선택했다. CopySinger-only 10개 중 5개 범용 후보를 `collapsible`, `page-skeleton`, `progress`, `slider`, `toast`로 제공하고 5개 도메인/장식 항목은 앱에 남긴다. Leesfield의 `alert-dialog`, `avatar`, `filter-toolbar` 후보를 registry에 추가했다. 달력·선택 카드·코드 표시·폼·확장 텍스트는 현재 레지스트리 소스를 조합한 `/adoption` 페이지에서 동작 예제로 제공하고, 전용 Kibo 사례는 후속 Task 07–11에서 구현한다.
+- **Rationale**: 각 제품의 generation/voice/Gradio/brand 구현을 공용 API에 강제로 넣지 않으면서 필요한 UI 기능을 공급한다. `slider`는 단일 값을 기본으로 수정하고 두 값 배열로 range를 표현한다. `toast`는 `next-themes` 결합을 제거하고 앱이 mode를 넘긴다. Leesfield form provider·validation과 locale wrapper는 앱 소유다.
+- **Trace (실행 확인)**: 79개 Leesfield root 모듈의 기존 분류를 유지하며 17개 candidate row를 현재 registry 또는 작동하는 조합 및 후속 dedicated item에 매핑했다. `pnpm --filter @leement/docs build`에서 `/adoption` 포함 50개 정적 페이지 생성, `pnpm typecheck`, `pnpm lint`, `pnpm test` 22건 통과. Collapsible 키보드, Progress/Slider 값, AlertDialog 취소·초점 반환, Avatar fallback, PageSkeleton status, FilterToggle 상태를 확인했다. 실제 제품 import 교체는 Task 14다.
+- **Evidence**: [Reference coverage](./artifacts/reference-coverage.md), [Source extension tests](../../../registry/ui/source-extension.test.tsx), [Live adoption composition](../../../apps/docs/components/adoption-compositions.tsx), [Registry metadata](../../../registry.json)
