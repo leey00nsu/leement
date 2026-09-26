@@ -48,6 +48,13 @@ import ComboboxExample from "../examples/combobox";
 import DropzoneExample from "../examples/dropzone";
 import MiniCalendarExample from "../examples/mini-calendar";
 import TagsExample from "../examples/tags";
+import ImageCropExample from "../examples/image-crop";
+import ImageZoomExample from "../examples/image-zoom";
+import CreditCardExample from "../examples/credit-card";
+import TickerExample from "../examples/ticker";
+import StoriesExample from "../examples/stories";
+import ReelExample from "../examples/reel";
+import VideoPlayerExample from "../examples/video-player";
 import PageHeaderExample from "../examples/page-header";
 import EmptyStateExample from "../examples/empty-state";
 import FormSectionExample from "../examples/form-section";
@@ -104,6 +111,13 @@ const examples: Record<keyof typeof items, ComponentType> = {
   dropzone: DropzoneExample,
   "mini-calendar": MiniCalendarExample,
   tags: TagsExample,
+  "image-crop": ImageCropExample,
+  "image-zoom": ImageZoomExample,
+  "credit-card": CreditCardExample,
+  ticker: TickerExample,
+  stories: StoriesExample,
+  reel: ReelExample,
+  "video-player": VideoPlayerExample,
   "page-header": PageHeaderExample,
   "empty-state": EmptyStateExample,
   "form-section": FormSectionExample,
