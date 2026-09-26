@@ -241,13 +241,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-GMA8H5L3TLTY-expanded-component-catalog-12 Complete docs gallery and all item previews
+- [DONE][PRD-FR-008] T-GMA8H5L3TLTY-expanded-component-catalog-12 Complete docs gallery and all item previews
   - Date: 2026-09-27
   - Acceptance:
     - All UI, Pattern and Block items appear in docs with live source-backed previews, usage rules, states, accessibility, API, install and Kibo mapping; six foundations reflect actual tokens.
   - Checklist:
-    - [ ] Update docs metadata, examples and navigation from registry items without duplicate implementations.
-    - [ ] Check every details route, source view and light/dark preview in the production docs build.
+    - [x] Update docs metadata, examples and navigation from registry items without duplicate implementations.
+    - [x] Check every details route, source view and light/dark preview in the production docs build.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: `pnpm --filter @leement/docs build` (92 pages including six foundation routes), `pnpm typecheck` (5 tasks), `pnpm lint` (3 tasks) passed on 2026-09-27. Playwright checked all 78 item routes and hydrated previews (0 page errors), source tab, 41-case reference mapping, color foundation, computed dark control color, and mobile Button detail. [Documentation gallery checkpoint](./artifacts/reference-coverage.md#task-12-documentation-gallery-checkpoint). Public CLI installation remains Task 13.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -310,4 +313,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:a07f29879309a7269b9f0302026258ceea1303c8f5632007000851083e0136eb -->
+<!-- lee-spec-kit:workflow-sync sha256:b3b4af0faa5d0585b57cb0a77a911f299a529f234b66bc0f7bb869e9870ceb51 -->

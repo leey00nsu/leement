@@ -199,3 +199,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: Kibo 사용 사례 수를 실제 사용 의미와 조작으로 충족한다. QR encoder 외의 무거운 공통 런타임을 추가하지 않고 제품 데이터와 상태 저장은 소비자에게 남긴다.
 - **Trace (실행 확인)**: 8개 registry item과 source-backed docs route를 연결했다. Pill 제거, QR SVG/복사, Rating 방향키, RelativeTime의 절대/상대 의미, Spinner 이름, ThemeSwitcher document 전환, Tree 확장/선택을 focused Vitest 7건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(91 pages), `pnpm typecheck`, `pnpm lint`가 통과했다.
 - **Evidence**: [Task contract](./tasks.md), [Interaction tests](../../../registry/ui/remaining-utility.test.tsx), [Registry metadata](../../../registry.json), [Case mapping](./artifacts/reference-coverage.md#task-11-kibo-remaining-utility-checkpoint)
+
+## D016: 문서 갤러리는 registry source와 실제 토큰에서 생성한다 (2026-09-27)
+
+- **Context/Constraints**: Task 12는 모든 78개 item의 작동 예시와 source, 41개 Kibo 대응, 여섯 foundation의 실제 값을 웹에 노출해야 한다. `coverage` 경로는 저장소 `.gitignore`의 산출물 이름과 충돌한다.
+- **Trace (초기 가설)**: 기존 source-backed preview와 registry item metadata를 재사용하고 공통 상세 템플릿에 states와 직접 실행 가능한 설치 명령을 보강한다. Foundation은 토큰 패키지 값을 직접 읽고, 별도의 `/reference-coverage`에서 41개 사례를 연결한다.
+- **Options**: ① 설명과 수치를 문서에 복사한다 ② registry source와 token package를 문서의 데이터로 사용한다.
+- **Decision**: ②를 선택했다. 상세 페이지는 실제 registry 파일과 예제를 읽고, foundation은 primitive 및 light/dark semantic 값을 읽는다. `/reference-coverage`는 41개 항목을 실제 상세 경로에 연결한다. 사용자에게 공개 CLI 설치는 배포 후에 가능함을 명시한다.
+- **Rationale**: 문서 복사본이 구현과 어긋나는 일을 줄이고, light/dark와 설치 경험을 같은 설계 계약으로 보여 준다. `coverage` 무시 규칙은 산출물용이므로 문서 경로만 변경했다.
+- **Trace (실행 확인)**: Docs production build의 92개 정적 페이지와 78개 상세 HTTP/source/install 내용을 확인했다. Playwright로 78개 페이지를 모두 열어 hydration pageerror 0건을 확인하고, source tab, light/dark의 계산된 색상, Color foundation 두 모드, 41개 사례 경로, 모바일 Button 페이지를 확인했다. 상세 내용은 [Task 12 checkpoint](./artifacts/reference-coverage.md#task-12-documentation-gallery-checkpoint)에 기록한다. 실제 CLI 설치 검증은 Task 13이다.
+- **Evidence**: [Task contract](./tasks.md), [Case mapping](./artifacts/reference-coverage.md#task-12-documentation-gallery-checkpoint), [Docs detail](../../../apps/docs/components/item-page.tsx), [Foundation route](../../../apps/docs/app/foundations/[slug]/page.tsx), [Registry metadata](../../../registry.json)
