@@ -21,10 +21,12 @@
 | 미리보기 | 기존 `Preview`와 `registry/*` 소스 | 문서용 컴포넌트 복제를 피함 |
 | 테마 | `data-lm-theme`와 `@leement/theme` | 기존 semantic light/dark 변수 재사용 |
 | Registry | 기존 shadcn build | 별도 서버나 CLI 없이 JSON 생성 |
+| 코드 뷰 | 기존 Next 서버 빌드와 registry 소스 파일 | 화면과 같은 예제 및 실제 배포 파일을 표시 |
+| 탭 | Radix Tabs | 키보드·ARIA 상호작용을 검증된 primitive에 위임 |
 
 ## 아키텍처
 
-`apps/docs/lib/items.ts`의 항목 metadata를 레이어별로 그룹화한다. `/showcase` 서버 페이지는 클라이언트 갤러리를 렌더링한다. 갤러리 카드는 기존 `Preview`에 항목 이름을 전달하고 상세 문서 링크와 shadcn 설치 명령을 표시한다. 모바일에서는 문서 내비게이션을 접어 갤러리가 화면 상단에 보이도록 한다. theme 토글은 갤러리 조상에 `data-lm-theme`만 설정한다. 문서 앱 build는 root `registry:build`를 실행해 `public/r`을 채우고 Next build를 이어서 실행한다. 기존 root `pnpm build` 경로도 동작해야 한다.
+`apps/docs/lib/items.ts`의 항목 metadata를 레이어별로 그룹화한다. `/showcase`는 이름·설명 검색과 유형 필터를 제공하고 같은 registry source 기반 Preview를 렌더링한다. 각 상세 페이지는 서버에서 example/source 텍스트를 준비하고 클라이언트 workbench에 Preview·Example·Source 탭을 전달한다. 예제는 항목별 실행 가능한 TSX 파일로 두고 같은 파일을 실제 preview와 코드 뷰에 사용한다. Source는 `registry.json`에 선언된 파일을 읽어 보여준다. 테마 상태는 사이트 루트 `data-lm-theme`에 적용하며 기존 semantic CSS를 재사용한다. 기존 Next 앱과 shadcn registry 빌드 경로를 유지한다.
 
 ## 파일 구조
 
@@ -36,6 +38,11 @@ apps/docs/lib/docs.ts                       # 내비게이션
 apps/docs/app/page.tsx                      # 홈 진입점
 apps/docs/app/layout.tsx                    # 모바일 접이식 내비게이션
 apps/docs/package.json                      # 단독 문서 build의 registry 생성
+apps/docs/examples/*.tsx                    # 항목별 실행 가능한 예제와 표시 코드
+apps/docs/components/item-workbench.tsx     # Preview·Example·Source 탭과 명령 복사
+apps/docs/components/theme-toggle.tsx       # 문서 전체 light/dark 전환
+apps/docs/lib/registry-source.ts            # registry.json 기반 배포 소스 읽기
+licenses/kibo-license.md                    # 이식 코드가 있을 때 MIT 고지
 ```
 
 ## Curated Documentation Impact
@@ -68,9 +75,9 @@ apps/docs/package.json                      # 단독 문서 build의 registry �
 
 ### 관찰 가능한 계약
 
-- **지원해야 하는 동작**: `/showcase`에서 registry의 UI 8개, Pattern 5개, Block 1개를 보고, 키보드로 상세 링크·테마 버튼·실제 예시를 사용할 수 있다. 문서 빌드 뒤 `/r/button.json`이 제공된다.
+- **지원해야 하는 동작**: `/showcase`에서 14개 항목을 검색·필터하고 상세 페이지에서 Preview·Example·Source를 키보드로 전환하며 설치 명령을 복사한다. 사이트 전체 테마 전환과 기존 `/r/{name}.json`이 동작한다.
 - **전제조건**: pnpm workspace install 완료; Node 22.
-- **성공 후 보장**: light/dark 미리보기가 semantic CSS 변수를 사용하고 모든 registry 항목으로 연결된다.
+- **성공 후 보장**: 화면 예시와 Example 코드가 같은 파일을 사용하고 Source는 `registry.json`의 파일을 표시한다. light/dark가 사이트 전체에 같은 semantic 변수를 적용한다.
 - **중요한 실패 후 보장**: 빌드 오류 시 기존 원본 registry 소스와 토큰은 수정되지 않는다.
 - **의도적으로 지원하지 않는 사례**: 공개 호스팅, npm 게시, 커스텀 token editor.
 
@@ -81,6 +88,7 @@ apps/docs/package.json                      # 단독 문서 build의 registry �
 | US-1, FR-1~3 | NONE | 빌드 산출물 + production HTTP smoke | 일부 항목 누락·깨진 링크 | `registry.json` 14개 항목과 route 응답 비교 |
 | US-2, FR-4 | NONE | 수동 UI/키보드 확인 | 동작하지 않는 토글·예시 | Spec AC와 실제 브라우저 동작 |
 | US-3, FR-5 | NONE | 문서 단독 build + HTTP smoke | 공개 빌드에 registry JSON 누락 | shadcn registry item JSON 응답 |
+| US-4, FR-6~8 | NONE | build 산출물 + 수동 브라우저 검증 | 검색 누락, 코드/실행 불일치, 탭/복사/테마 실패 | 14개 example 파일과 `registry.json` 선언, 사용자 AC, 실제 브라우저 동작 |
 
 ### 의도적으로 제외하는 테스트
 
@@ -91,7 +99,7 @@ apps/docs/package.json                      # 단독 문서 build의 registry �
 - **구현 중**: `pnpm --filter @leement/docs typecheck`, `pnpm --filter @leement/docs lint`.
 - **태스크 완료 전**: `pnpm --filter @leement/docs build`, production server에서 `/showcase`, 모든 상세 route 및 `/r/button.json` 조회.
 - **Feature 완료 전**: configured feature checks인 `pnpm typecheck`, `pnpm lint`, `pnpm test`, `pnpm build`.
-- **수동/UI 검증**: light/dark 버튼, Button focus, Input, Dialog 열고 닫기, Tooltip focus 및 좁은 화면 레이아웃.
+- **수동/UI 검증**: 검색/필터와 결과 없음, 탭 화살표/Tab 키 이동, 소스 코드 표시, 명령 복사, 사이트 전체 light/dark 버튼, Dialog/Escape 및 좁은 화면 레이아웃.
 - **전체 테스트 필요 여부**: Yes — 문서 빌드와 registry item 생성 경로가 바뀌므로 기존 전체 check를 실행한다.
 
 ## 관련 문서

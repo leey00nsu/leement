@@ -38,3 +38,34 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **Commit**: 태스크 커밋 후 해시를 기록한다.
   - **Test/Log**: `pnpm check` PASS (build/typecheck/lint/3 tests), production HTTP 14/14, Chromium 390px overflow 없음, Aside Dialog/Escape·Tooltip/focus 확인.
 - **Consequences**: 갤러리와 상세 문서가 같은 예시를 공유한다.
+
+## D002: 기존 Feature에서 Kibo식 문서 경험을 확장한다 (2026-09-26)
+
+- **Context**: 사용자는 컴포넌트 갤러리가 Kibo처럼 웹에서 탐색·시연·코드 확인까지 가능하기를 원하고, 새 Feature가 아닌 현재 Feature의 방향 변경이라고 명시했다.
+- **Constraints**: Leement token·registry가 SSOT다. 기존 Next docs 앱과 14개 항목을 유지한다. Kibo 브랜드와 외부 이미지는 가져오지 않는다.
+- **Options**: ① Kibo docs 앱 전체를 포크 ② 기존 docs 앱에 탐색·Preview/Example/Source 흐름만 이식.
+- **Decision**: ②를 선택한다. `A33E7A5BTN8G`에 새 T02를 추가해 구현하고 이미 DONE인 T01은 다시 쓰지 않는다. Kibo의 Preview 탭 구조와 예제 파일 기반 코드 표시를 Leement에 맞춰 적용한다. 실질적인 Kibo 코드 이식에는 MIT 고지를 포함한다.
+- **Rationale**: Fumadocs 및 Kibo의 내부 패키지를 도입하지 않고도 원하는 사용 경험을 제공할 수 있다. 배포 소스와 문서 예제가 갈라지지 않는다.
+- **Trace**:
+  - **DOING 시작 시점**: 기존 Feature는 이미 main에 통합되고 workflow-stage가 done을 반환했다. 방향 변경 요청에 따라 새 태스크를 추가하고 완료 체크를 다시 열었다.
+  - **DONE 전 확정 시점**: 구현과 검증 후 갱신한다.
+  - **머지 후 확인**: 실제 통합 결과를 기록한다.
+- **Evidence**:
+  - **Source**: https://github.com/shadcnblocks/kibo/blob/main/apps/docs/components/preview/index.tsx
+  - **License**: https://github.com/shadcnblocks/kibo/blob/main/license.md
+  - **Test/Log**: T02 검증 결과를 기록한다.
+
+## D003: 잘못 생성한 중복 Feature 등록을 사용하지 않는다 (2026-09-26)
+
+- **Context**: 기존 A33 Feature를 확인하기 전에 XC5H2H9CV5H4 Feature를 생성·커밋했다. 사용자는 새 Feature를 만들라는 의도가 아니었다.
+- **Constraints**: `commit-audit --enforce`가 canonical Feature 문서 삭제를 `CANONICAL_FEATURE_DOC_DELETION`으로 차단한다.
+- **Options**: ① 차단을 우회해 파일 삭제 ② 중복 등록을 보존하되 취소/대체 기록을 남기고 A33만 진행.
+- **Decision**: ②를 선택한다. XC5는 구현하지 않고 A33 작업만 수행한다. 잘못된 등록은 감사 가능하게 남긴다.
+- **Rationale**: 도구의 문서 삭제 보호를 우회하지 않으면서 실제 변경 범위를 기존 Feature에 모은다.
+- **Trace**:
+  - **DOING 시작 시점**: 새 worktree/branch는 정리했고 XC5의 코드 구현은 없었다. git revert의 문서 삭제가 commit-audit에서 차단되어 revert를 중단했다.
+  - **DONE 전 확정 시점**: A33 통합 후 XC5가 비활성 기록으로 남았음을 확인한다.
+  - **머지 후 확인**: 실제 통합 결과를 기록한다.
+- **Evidence**:
+  - **Commit**: e4d73d4 (잘못된 Feature 등록)
+  - **Test/Log**: `commit-audit --json --enforce` → `CANONICAL_FEATURE_DOC_DELETION`.

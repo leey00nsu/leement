@@ -101,6 +101,32 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-005] T-A33E7A5BTN8G-component-showcase-02 Kibo식 탐색과 Preview·Example·Source 문서 경험 확장
+  - Date: 2026-09-26
+  - Acceptance:
+    - 14개 항목을 검색하고 유형별로 찾으며 모바일에서도 상세 문서로 이동할 수 있다
+    - 모든 상세 페이지에서 registry 원본 기반 Preview, Example, Source 탭을 키보드로 탐색할 수 있다
+    - 문서 전체 light/dark 전환과 설치 명령 복사가 동작한다
+  - Checklist:
+    - [ ] Spec·Plan·Decisions를 변경 방향에 맞게 동기화한다
+    - [ ] Kibo의 문서 UI 패턴을 Leement token과 기존 Next 앱에 적용하고 브랜드 자산은 사용하지 않는다
+    - [ ] 검색, 탭, 코드/소스 표시, 명령 복사, 테마 전환을 구현한다
+    - [ ] 문서 빌드·타입 검사·린트·테스트 및 브라우저 동작을 검증한다
+  - Docs:
+    - project:apps/docs/components/showcase-gallery.tsx
+    - project:apps/docs/components/item-page.tsx
+    - project:apps/docs/app/layout.tsx
+    - project:apps/docs/components/item-workbench.tsx
+    - project:apps/docs/components/theme-toggle.tsx
+    - project:apps/docs/lib/registry-source.ts
+    - project:apps/docs/examples/
+    - project:licenses/kibo-license.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 <!-- lee-spec-kit:workflow-sync sha256:c1071304f7647ee155e35b64df2ebe688c956b90d6b1d5a781a0ebf4a8e73f8f -->
 
 ## Repository Knowledge (완료 비차단)
@@ -115,9 +141,9 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
 
