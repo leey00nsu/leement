@@ -248,6 +248,46 @@
       "files": [{ "path": "registry/blocks/bento-grid.tsx", "type": "registry:component", "target": "components/blocks/bento-grid.tsx" }]
     },
     {
+      "name": "collapsible", "type": "registry:ui", "title": "Collapsible", "description": "Accessible disclosure content.",
+      "dependencies": ["@base-ui/react"], "registryDependencies": [],
+      "files": [{ "path": "registry/ui/collapsible.tsx", "type": "registry:ui", "target": "components/ui/collapsible.tsx" }]
+    },
+    {
+      "name": "progress", "type": "registry:ui", "title": "Progress", "description": "Accessible task completion progress.",
+      "dependencies": ["@base-ui/react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/progress.tsx", "type": "registry:ui", "target": "components/ui/progress.tsx" }]
+    },
+    {
+      "name": "slider", "type": "registry:ui", "title": "Slider", "description": "Accessible single or range value control.",
+      "dependencies": ["@base-ui/react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/slider.tsx", "type": "registry:ui", "target": "components/ui/slider.tsx" }]
+    },
+    {
+      "name": "toast", "type": "registry:ui", "title": "Toast", "description": "Sonner notification surface with Leement theme.",
+      "dependencies": ["sonner", "lucide-react"], "registryDependencies": [],
+      "files": [{ "path": "registry/ui/toast.tsx", "type": "registry:ui", "target": "components/ui/toast.tsx" }]
+    },
+    {
+      "name": "avatar", "type": "registry:ui", "title": "Avatar", "description": "Image or initials for a person or entity.",
+      "dependencies": ["@radix-ui/react-avatar"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/avatar.tsx", "type": "registry:ui", "target": "components/ui/avatar.tsx" }]
+    },
+    {
+      "name": "alert-dialog", "type": "registry:ui", "title": "Alert Dialog", "description": "Confirmation that requires an explicit choice.",
+      "dependencies": ["@radix-ui/react-alert-dialog"], "registryDependencies": ["@leement/utils", "@leement/button"],
+      "files": [{ "path": "registry/ui/alert-dialog.tsx", "type": "registry:ui", "target": "components/ui/alert-dialog.tsx" }]
+    },
+    {
+      "name": "page-skeleton", "type": "registry:component", "title": "Page Skeleton", "description": "Loading page structure with accessible status.",
+      "dependencies": [], "registryDependencies": ["@leement/utils", "@leement/skeleton"],
+      "files": [{ "path": "registry/patterns/page-skeleton.tsx", "type": "registry:component", "target": "components/patterns/page-skeleton.tsx" }]
+    },
+    {
+      "name": "filter-toolbar", "type": "registry:component", "title": "Filter Toolbar", "description": "Search, sorting and pressed filters in one responsive region.",
+      "dependencies": [], "registryDependencies": ["@leement/utils", "@leement/button"],
+      "files": [{ "path": "registry/patterns/filter-toolbar.tsx", "type": "registry:component", "target": "components/patterns/filter-toolbar.tsx" }]
+    },
+    {
       "name": "page-header",
       "type": "registry:component",
       "title": "PageHeader",
