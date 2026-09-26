@@ -1,98 +1,91 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import { SearchField } from "../../../registry/patterns/search-field";
 import { Preview } from "./previews";
 import { registryCommand } from "../lib/docs";
 import { items } from "../lib/items";
 
 type ItemName = keyof typeof items;
-type Theme = "light" | "dark";
+type Category = "All" | "Component" | "Pattern" | "Block";
+const names = Object.keys(items) as ItemName[];
+const categories: Category[] = ["All", "Component", "Pattern", "Block"];
 
 const sections = [
-  { type: "Component", title: "Components", route: "components" },
-  { type: "Pattern", title: "Patterns", route: "patterns" },
-  { type: "Block", title: "Blocks", route: "blocks" },
+  { type: "Component", title: "Components", id: "components", description: "The small, dependable pieces of an interface." },
+  { type: "Pattern", title: "Patterns", id: "patterns", description: "Product structures assembled from those pieces." },
+  { type: "Block", title: "Blocks", id: "blocks", description: "Larger compositions ready to shape a screen." },
 ] as const;
 
 function displayName(name: string) {
-  return name
-    .split("-")
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
+  return name.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
 }
 
 export function ShowcaseGallery() {
-  const [theme, setTheme] = useState<Theme>("light");
-  const names = Object.keys(items) as ItemName[];
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState<Category>("All");
+  const normalizedQuery = query.trim().toLowerCase();
+  const filtered = names.filter((name) => {
+    const item = items[name];
+    return (category === "All" || item.type === category) &&
+      (!normalizedQuery || `${displayName(name)} ${item.overview}`.toLowerCase().includes(normalizedQuery));
+  });
 
-  return (
-    <div data-lm-theme={theme} className="rounded-2xl border border-border bg-background p-4 text-foreground sm:p-6">
-      <div className="flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-sm font-semibold">Preview theme</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Compare the same semantic roles on light and dark surfaces.
-          </p>
+  return <div>
+    <div className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div className="w-full lg:max-w-sm">
+          <label htmlFor="item-search" className="mb-2 block text-sm font-medium">Find an item</label>
+          <SearchField id="item-search" aria-label="Search components, patterns, and blocks" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search components and patterns..." />
         </div>
-        <div role="group" aria-label="Preview theme" className="inline-flex self-start rounded-lg border border-border bg-muted p-1">
-          {(["light", "dark"] as const).map((mode) => (
-            <button
-              key={mode}
-              type="button"
-              aria-pressed={theme === mode}
-              onClick={() => setTheme(mode)}
-              className={`rounded-md px-3 py-1.5 text-sm font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${theme === mode ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
-            >
-              {mode}
-            </button>
-          ))}
+        <div role="group" aria-label="Filter by type" className="flex flex-wrap gap-1.5">
+          {categories.map((option) => <button key={option} type="button" aria-pressed={category === option} onClick={() => setCategory(option)} className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-pressed:bg-primary aria-pressed:text-primary-foreground">
+            {option === "All" ? "All" : `${option}s`}
+          </button>)}
         </div>
       </div>
-
-      {sections.map((section) => {
-        const sectionNames = names.filter((name) => items[name].type === section.type);
-        return (
-          <section key={section.type} aria-labelledby={`showcase-${section.route}`} className="pt-9">
-            <div className="mb-5 flex items-baseline justify-between gap-4">
-              <h2 id={`showcase-${section.route}`} className="text-2xl font-semibold tracking-tight">
-                {section.title}
-              </h2>
-              <span className="text-sm text-muted-foreground">{sectionNames.length} items</span>
-            </div>
-            <div className="grid gap-5 lg:grid-cols-2">
-              {sectionNames.map((name) => {
-                const item = items[name];
-                return (
-                  <article key={name} className="flex min-w-0 flex-col overflow-hidden rounded-xl border border-border bg-card">
-                    <div className="flex flex-wrap items-start justify-between gap-3 px-5 pt-5">
-                      <div>
-                        <h3 className="text-lg font-semibold">{displayName(name)}</h3>
-                        <p className="mt-1 max-w-lg text-sm leading-6 text-muted-foreground">{item.overview}</p>
-                      </div>
-                      <span className="rounded-full border border-border px-2 py-0.5 text-xs text-muted-foreground">
-                        {item.maturity}
-                      </span>
-                    </div>
-                    <div className="m-5 min-h-44 rounded-lg border border-border bg-background [&>div]:border-0">
-                      <Preview name={name} />
-                    </div>
-                    <div className="mt-auto flex min-w-0 flex-col gap-3 border-t border-border px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-                      <code className="min-w-0 overflow-x-auto text-xs text-muted-foreground">{registryCommand(name)}</code>
-                      <Link
-                        href={`/${section.route}/${name}`}
-                        className="shrink-0 rounded-sm text-sm font-medium underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                      >
-                        View guidelines
-                      </Link>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </section>
-        );
-      })}
+      <p role="status" className="mt-4 text-xs text-muted-foreground">Showing {filtered.length} of {names.length} items</p>
     </div>
-  );
+
+    {filtered.length === 0 ? <div className="mt-7 rounded-2xl border border-dashed border-border bg-muted/30 px-6 py-14 text-center">
+      <h2 className="text-lg font-semibold">No matching items</h2>
+      <p className="mt-2 text-sm text-muted-foreground">Try another name or clear the type filter.</p>
+      <button type="button" onClick={() => { setQuery(""); setCategory("All"); }} className="mt-5 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Clear filters</button>
+    </div> : sections.map((section) => {
+      const sectionNames = filtered.filter((name) => items[name].type === section.type);
+      if (!sectionNames.length) return null;
+      return <section key={section.id} id={section.id} aria-labelledby={`showcase-${section.id}`} className="scroll-mt-24 pt-11">
+        <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 id={`showcase-${section.id}`} className="text-2xl font-semibold tracking-tight sm:text-3xl">{section.title}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{section.description}</p>
+          </div>
+          <span className="text-xs text-muted-foreground">{sectionNames.length} items</span>
+        </div>
+        <div className="grid gap-5 xl:grid-cols-2">
+          {sectionNames.map((name) => {
+            const item = items[name];
+            return <article key={name} className="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <div className="flex flex-wrap items-start justify-between gap-3 px-5 py-5">
+                <div className="min-w-0">
+                  <h3 className="text-lg font-semibold tracking-tight">{displayName(name)}</h3>
+                  <p className="mt-1 max-w-lg text-sm leading-6 text-muted-foreground">{item.overview}</p>
+                </div>
+                <span className="shrink-0 rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">{item.maturity}</span>
+              </div>
+              <div className="mx-5 mb-5 flex min-h-48 items-center rounded-xl border border-border bg-background [&>div]:border-0"><Preview name={name} /></div>
+              <div className="mt-auto flex min-w-0 flex-col gap-3 border-t border-border bg-muted/20 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+                <code className="min-w-0 overflow-x-auto text-xs text-muted-foreground">{registryCommand(name)}</code>
+                <Link href={`/${section.id}/${name}`} className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  Explore <ArrowUpRight aria-hidden="true" size={15} />
+                </Link>
+              </div>
+            </article>;
+          })}
+        </div>
+      </section>;
+    })}
+  </div>;
 }
