@@ -1,15 +1,15 @@
-# Leement PRD v0.1
+# Leement PRD
 
 ## 목적
 
-CopySinger의 밝은 표면과 Leesfield의 어두운 표면에서 반복된 시각 규칙을 제품 간에 재사용한다. 디자인 의사결정은 token과 rule에 기록하고, React 앱에는 shadcn registry로 수정 가능한 소스를 전달한다.
+CopySinger의 밝은 UI를 바탕으로 Leesfield를 그 다크 모드처럼 만들려 했던 의도를 하나의 공통 디자인 언어로 정리한다. 두 제품의 실제 수치가 정확히 일치할 필요는 없으며, Leement가 반복된 사용 사례·가독성·접근성·일관성을 근거로 light/dark의 공통 규칙을 선택한다. 디자인 의사결정은 token과 rule에 기록하고, React 앱에는 shadcn registry로 수정 가능한 소스를 전달한다.
 
 ## 사용자
 
 - 새 React 프로젝트에서 같은 제품 언어를 적용하려는 개발자.
 - 토큰과 디자인 규칙의 근거를 확인하려는 디자이너와 기여자.
 
-## 요구사항
+## v0.1 요구사항
 
 - PRD-FR-001: `@leement/tokens`가 프레임워크에 독립적인 primitive 및 semantic token을 제공한다.
 - PRD-FR-002: `@leement/theme`이 Leement CSS 변수와 하위 호환 shadcn alias를 제공한다.
@@ -24,3 +24,20 @@ CopySinger의 밝은 표면과 Leesfield의 어두운 표면에서 반복된 시
 ## 수용 기준
 
 토큰과 theme 빌드, docs 빌드, registry JSON 생성, 핵심 컴포넌트 테스트, 소비자 앱에서 namespace 설치 및 빌드가 통과한다. 공개 npm 패키지와 registry 호스트 게시 여부는 별도 릴리스 결정이다.
+
+## 카탈로그 확장 목표
+
+v0.1의 8 UI·5 pattern·1 block은 초기 출시 범위이며, 최종 제공 범위의 상한이 아니다. Leement는 Kibo UI에 견줄 만한 복합 컴포넌트 카탈로그를 제공한다. 2026-09-26에 확인한 Kibo 공개 카탈로그의 41개 컴포넌트를 규모·사용 사례의 비교 기준으로 삼고, 기존 기본 UI 8개 외에 최소 41개 복합 registry item을 목표로 한다. Leement의 디자인 토큰·규칙을 시각적 정본으로 유지하며, Kibo의 이름이나 내부 구현을 그대로 따르는 것보다 설치 가능한 기능과 사용 사례의 완성도를 우선한다. 항목 수만 채우는 중복이나 placeholder는 목표 달성으로 인정하지 않는다.
+
+카탈로그 확장의 최종 목표는 **CopySinger와 Leesfield가 같은 Leement 공용 UI source와 light/dark theme을 사용할 수 있는 수준**이다. Kibo 항목 수와 문서 데모는 이 기준을 대체하지 않는다. 두 제품에 동일한 이름으로 존재하는 공용 UI 22개를 우선 대응하고, 추가 UI는 재사용 가능성에 따라 Leement 또는 앱에 둔다. 두 원본의 픽셀·수치 일치보다 공유할 수 있는 하나의 규칙과 검증된 마이그레이션 경로를 우선한다. 제품 도메인 로직을 공용 UI로 강제 이전하지 않는다. 여기서 공용 UI 라이브러리는 설치 후 소스를 소유하는 registry 방식이며 별도 React 컴포넌트 npm 패키지를 뜻하지 않는다.
+
+- PRD-FR-007: registry가 기본 UI 외에 협업, 데이터·프로젝트 관리, 코드 표시, 복합 입력, 이미지, 금융·소셜, 안내, 타이포그래피, 범용 유틸리티 영역의 복합 컴포넌트를 제공한다. Kibo 비교 기준 41개 각각의 핵심 UI 사용 사례에 동작하는 대응 항목을 두고, 서비스 연동 등 의도적 제외 범위와 실제 기능 차이를 카탈로그 기준표에 기록한다.
+- PRD-FR-008: 추가된 각 항목을 docs에서 실제 동작하는 예제, 주요 상태·변형, 사용 규칙, 접근성, API, 설치 명령 및 배포 source와 함께 탐색할 수 있다.
+- PRD-FR-009: 추가된 항목은 shadcn registry dependency를 통해 필요한 소스를 함께 설치하고, 독립적인 소비자 프로젝트에서 타입 검사·빌드·핵심 키보드 동작이 통과한다.
+- PRD-FR-010: CopySinger와 Leesfield의 공통 공용 UI 22개와 각 프로젝트의 추가 UI를 전수 조사해 기존 API·동작·시각 규칙·사용처를 Leement 항목 또는 앱 유지 결정에 매핑한다. 공통 22개는 모두 동작하는 registry 대응 항목과 검증된 교체 경로를 갖는다.
+- PRD-FR-011: light/dark theme과 공용 컴포넌트가 CopySinger에서 Leesfield로 이어진 디자인 의도를 하나의 규칙으로 표현한다. 원본별 서로 다른 표면·글자·간격·반경·상태·서체 수치는 사용 맥락·가독성·접근성을 근거로 결정하고 차이를 명시한다. token/rule·theme·registry source·docs 미리보기가 같은 규칙을 표현한다.
+- PRD-FR-012: 두 제품의 격리된 통합 환경에서 공통 UI 전수 설치·import·render와 대표 실제 사용처 교체를 검증한다. 양쪽 앱의 타입 검사·빌드·핵심 상호작용에 신규 회귀가 없음을 확인하며, 모든 제공 UI/Pattern/Block은 웹 문서에서 실제 source로 미리 볼 수 있다.
+- PRD-NFR-004: 복합 UI에서도 Leement semantic token과 source ownership을 유지한다. 외부 라이브러리·MIT 코드의 사용 근거와 라이선스를 추적하고, 동작·접근성 검증 없이 카탈로그 수만 늘리지 않는다.
+- PRD-NFR-005: 교체 검증은 독립 데모만으로 대신하지 않는다. 기존 앱의 사전 오류와 Leement 도입 회귀를 구분하고, 제품별 wrapper/도메인 로직은 적합성 근거 없이 공용 API로 흡수하지 않는다.
+
+블록 카탈로그의 목표 규모는 컴포넌트와 별도로 결정한다. 현재 단일 SettingsSection block은 대표 사용 사례를 늘리기 위한 출발점이다.

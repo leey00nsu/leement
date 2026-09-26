@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/GMA8H5L3TLTY-expanded-component-catalog`
 - **대기 중 변경 요청**: -
@@ -74,6 +74,192 @@
 > 수동 편집이 필요하면 현재 태스크 근처가 아니라 `태스크 목록`의 마지막 기존 태스크 block 아래에만 append 하세요.
 
 ---
+
+- [DONE][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-01 Reference coverage and migration inventory
+  - Date: 2026-09-27
+  - Acceptance:
+    - Common 22 items and all CopySinger/Leesfield shared UI wrappers have source, API, behavior, design intent, classification, migration and evidence rows.
+  - Checklist:
+    - [x] Inventory source exports and representative imports without modifying reference repositories.
+    - [x] Record reusable, application-specific and legacy decisions in [Feature coverage artifact](./artifacts/reference-coverage.md).
+  - Docs:
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-011] T-GMA8H5L3TLTY-expanded-component-catalog-02 Unify light and dark tokens and component rules
+  - Date: 2026-09-27
+  - Acceptance:
+    - One semantic light/dark theme supports both products with documented choices for surfaces, state colors, typography, spacing, radius and focus.
+  - Checklist:
+    - [ ] Update tokens, theme generation and design-system rules together.
+    - [ ] Check generated CSS aliases, reduced motion and representative light/dark visuals.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-03 Complete common controls and core surfaces
+  - Date: 2026-09-27
+  - Acceptance:
+    - Button, Input, Card, Select, Switch, Tabs, Label, Badge and Separator have shared source, mapped APIs, docs examples and meaningful behavior checks.
+  - Checklist:
+    - [ ] Align Button/Input/Card first with agreed control rules and migration notes.
+    - [ ] Implement remaining controls with registry metadata and keyboard, disabled and focus verification.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-04 Complete common overlays and disclosure
+  - Date: 2026-09-27
+  - Acceptance:
+    - Dialog, Dropdown Menu, Popover, Sheet and Tooltip install and preserve composition, focus and keyboard behavior in both themes.
+  - Checklist:
+    - [ ] Use verified headless behavior and declare item dependencies.
+    - [ ] Add source-backed examples and validate Escape, focus return, labels and disabled cases.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-05 Complete common feedback and composition
+  - Date: 2026-09-27
+  - Acceptance:
+    - Chart, Skeleton, State Panel, Status Notice, Bento Grid, Product Page Intro, Resource Row Link and Reveal Content have shared registry counterparts and migration guidance.
+  - Checklist:
+    - [ ] Separate reusable product structures into UI, Pattern or Block by responsibility.
+    - [ ] Verify loading, empty, data and responsive states with docs examples.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-06 Resolve additional source-project UI
+  - Date: 2026-09-27
+  - Acceptance:
+    - CopySinger-only ten modules and Leesfield shared UI wrappers are classified; every reusable item has a functioning registry item or composition example.
+  - Checklist:
+    - [ ] Document application-specific and legacy boundaries in coverage matrix.
+    - [ ] Implement reusable gaps with dependencies, basic interaction checks and source-backed docs.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-07 Add Kibo collaboration and project management cases
+  - Date: 2026-09-27
+  - Acceptance:
+    - Avatar Stack, Cursor, Calendar, Gantt, Kanban, List and Table each have a working Leement registry use case.
+  - Checklist:
+    - [ ] Reuse common UI and scope external data as props.
+    - [ ] Verify core navigation or manipulation, installation and accessible labels for each item.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-08 Add Kibo code and form cases
+  - Date: 2026-09-27
+  - Acceptance:
+    - Code Block, Contribution Graph, Sandbox, Snippet, Choicebox, Combobox, Dropzone, Mini Calendar and Tags each have a working registry use case.
+  - Checklist:
+    - [ ] Keep code execution and file persistence outside registry UI.
+    - [ ] Verify keyboard, input, selection, clipboard or drop behavior as relevant.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-09 Add Kibo image, finance and social cases
+  - Date: 2026-09-27
+  - Acceptance:
+    - Image Crop, Image Zoom, Credit Card, Ticker, Stories, Reel and Video Player each have a working registry use case.
+  - Checklist:
+    - [ ] Keep payment and media encoding outside UI source.
+    - [ ] Verify controls, labels, reduced motion and item-scoped dependencies.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-10 Add Kibo callout and complex utility cases
+  - Date: 2026-09-27
+  - Acceptance:
+    - Announcement, Banner, Typography, Color Picker, Comparison, Deck, Dialog Stack, Editor, Glimpse and Marquee each have a working registry use case.
+  - Checklist:
+    - [ ] Keep each item behavior distinct and token driven.
+    - [ ] Verify interaction and accessibility plus registry metadata and docs example.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-11 Add remaining Kibo utility cases
+  - Date: 2026-09-27
+  - Acceptance:
+    - Pill, QR Code, Rating, Relative Time, Spinner, Status, Theme Switcher and Tree each have a working registry use case.
+  - Checklist:
+    - [ ] Provide independent behavior and useful API for every item.
+    - [ ] Verify state, keyboard or accessible name and install dependencies where relevant.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-008] T-GMA8H5L3TLTY-expanded-component-catalog-12 Complete docs gallery and all item previews
+  - Date: 2026-09-27
+  - Acceptance:
+    - All UI, Pattern and Block items appear in docs with live source-backed previews, usage rules, states, accessibility, API, install and Kibo mapping; six foundations reflect actual tokens.
+  - Checklist:
+    - [ ] Update docs metadata, examples and navigation from registry items without duplicate implementations.
+    - [ ] Check every details route, source view and light/dark preview in the production docs build.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-009] T-GMA8H5L3TLTY-expanded-component-catalog-13 Verify registry installation and source ownership
+  - Date: 2026-09-27
+  - Acceptance:
+    - Every item JSON installs through shadcn alias with transitive dependencies; independent Tailwind v4 consumer typecheck and build pass and installed files remain editable.
+  - Checklist:
+    - [ ] Build registry and run representative plus complete item install matrix in an isolated consumer.
+    - [ ] Fix missing npm, registry or multi-file metadata and record results.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-012] T-GMA8H5L3TLTY-expanded-component-catalog-14 Verify adoption in CopySinger and Leesfield
+  - Date: 2026-09-27
+  - Acceptance:
+    - Common 22 items import/render in both isolated app environments; representative real use sites adopt Leement source and pass typecheck, build and key interactions without new regressions.
+  - Checklist:
+    - [ ] Capture baseline app checks, use isolated copies and preserve original worktrees.
+    - [ ] Review light/dark desktop/mobile states against chosen shared rules and record remaining intentional differences.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
 
 ## Repository Knowledge (완료 비차단)
 

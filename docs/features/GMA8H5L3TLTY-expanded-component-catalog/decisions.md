@@ -23,19 +23,73 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 ---
 
-## D001: expanded-component-catalog 결정 (2026-09-26)
+## D001: Kibo 수준의 카탈로그를 Leement 계약으로 확장한다 (2026-09-26)
 
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: 사용자가 Leement도 Kibo와 동일한 수준의 컴포넌트를 제공하길 원한다고 명시했다. 현재 Leement는 기본 UI 8개, pattern 5개, block 1개이며 Kibo 공개 메뉴에는 복합 컴포넌트 41개가 있다.
+- **Constraints**: Leement token/rule이 시각적 정본이고 shadcn registry로 소스를 전달한다. 기존 A33 Feature는 docs showcase 작업으로 완료됐다. v0.1 카탈로그 수는 더 이상 장기 상한이 아니다.
+- **Options**: ① Kibo 패키지와 API를 통째로 포크한다 ② Kibo의 사용 사례·규모를 기준으로 Leement 고유 컴포넌트를 제공하며 필요할 때 MIT 코드를 선택적으로 이식한다.
+- **Decision**: ②를 선택한다. 기존 기본 UI 8개 외에 최소 41개 실사용 가능한 복합 item과 전 영역 대응표를 목표로 한다. 블록 수의 목표는 컴포넌트 범위와 분리해 결정한다.
+- **Rationale**: 원본 프로젝트의 디자인 언어와 source ownership을 유지하면서 사용자가 요구한 제공 수준을 측정할 수 있다. 동일한 이름만 붙인 placeholder는 제외한다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+  - **범위 확정 전**: 2026-09-26 Kibo 공개 메뉴의 41개 컴포넌트와 Leement registry의 8/5/1 구조를 대조했다. Spec 승인 전까지 구현 코드는 변경하지 않는다.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - **Kibo catalog**: https://www.kibo-ui.com/components/avatar-stack
+  - **Leement registry**: ../../../registry.json
+
+## D002: 카탈로그 확장에 두 참조 제품의 공용 UI 교체 검증을 포함한다 (2026-09-27)
+
+- **Context**: 사용자는 현재 Leement가 CopySinger/Leesfield의 기존 컴포넌트를 대체할 수 있는지, 현재 Feature 완료 시 그 수준에 도달하는지 물었다. 기존 Spec은 Kibo 41개 항목과 독립 소비자 빌드만 요구해 두 제품에서의 교체를 보장하지 않았다. 사용자는 `B`로 Spec 수정을 요청하고 자신의 요구사항을 모두 충족하도록 지시했다.
+- **Constraints**: 기존 Feature ID를 유지한다. Design Tokens + Design Rules가 정본이고 registry는 source 배포 수단이다. 제품 도메인 로직과 무분별한 API 복제는 공용 UI의 목표가 아니다. 현재 stage는 `spec_approve`, `implementationAllowed=false`다.
+- **Options**: ① Kibo 항목 수만 늘리고 두 제품 교체는 별도 작업으로 미룬다 ② 이 Feature의 완료 조건에 두 제품의 공용 UI coverage, light/dark 규칙, 실제 통합 검증을 추가한다.
+- **Decision**: ②를 선택한다. 동일 이름의 공용 UI 22개는 모두 대응 항목과 교체 경로를 제공한다. CopySinger 전용 UI와 Leesfield 일반 UI/`app-*` 래퍼를 전수 분류하고, reusable 항목만 registry에 승격한다. 공통 22개의 양쪽 설치·import·render와 대표 사용처 교체를 통합 검증한다. Kibo 41개 비교 목표 및 웹 미리보기는 그대로 유지한다.
+- **Rationale**: Kibo 수준의 규모와 실제 제품 교체 가능성은 서로 다른 요구사항이다. 두 목표를 같은 Feature에서 독립적으로 검증해야 사용자가 기대한 결과를 과장하지 않는다. 기존 두 제품과 다른 API는 문서화된 migration으로 허용해 source ownership과 단순한 Leement API를 유지한다.
+- **Design impact**: `docs/designs/design-system.md`의 light/dark 규칙, Card radius/spacing/shadow, 상태색, 폰트 로딩 설명을 실제 token/theme 및 source와 대조해야 한다. 예외가 필요하면 적용 범위·이유·제거 조건을 Plan/태스크에서 기록한다. 이 Spec 단계에서는 디자인 문서나 구현 코드를 선행 변경하지 않는다.
+- **Trace**:
+  - **범위 변경**: 2026-09-27 공통 22개 디렉터리와 CopySinger 전용 10개를 조사했다. Leement는 현재 registry UI 8개이며, 기존 Button/Input/Card도 두 제품과 API·focus·spacing·shadow 규칙이 다르다. Spec을 Review로 유지해 새 범위의 승인을 받는다.
+- **Evidence**:
+  - **Revised Feature Spec**: [spec.md](./spec.md)
+  - **Leement registry**: [registry.json](../../../registry.json)
+  - **Leement Button/Card**: [button.tsx](../../../registry/ui/button.tsx), [card.tsx](../../../registry/ui/card.tsx)
+  - **Reference repositories**: `/Volumes/sn850x/programming-2/copy-singer-3/src/shared/ui`, `/Volumes/sn850x/programming-2/leesfield/leesfield-fe/src/shared/ui/brand`
+
+## D003: 두 제품의 수치 복제 대신 하나의 light/dark 공통 규칙을 선택한다 (2026-09-27)
+
+- **Context**: 사용자가 CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 다크 모드 같은 느낌으로 만들려 했다고 설명했다. 두 제품의 수치가 정확히 같지 않을 수 있으며, Leement가 타협점을 찾아 공통 UI로 두 제품에 쓰이길 원한다. Kibo 수준의 신규 컴포넌트 확장 요구도 유지했다.
+- **Constraints**: Design Tokens + Design Rules가 정본이고 하나의 수정 가능한 registry source를 두 프로젝트가 사용한다. 두 제품의 원본 CSS 값이나 component API를 픽셀·숫자 단위로 모두 재현하면 분기와 variant가 과도해질 수 있다.
+- **Options**: ① CopySinger와 Leesfield의 수치를 각각 별도 theme/컴포넌트로 복제한다 ② 두 수치를 평균 내 공통값으로 삼는다 ③ 원본의 시각 의도와 실제 사용 맥락, 가독성·접근성, 상태 일관성에 따라 공용 규칙과 light/dark semantic 값을 결정한다.
+- **Decision**: ③을 선택한다. CopySinger light와 Leesfield dark를 같은 디자인 언어의 두 모드로 다루고, 동일한 Leement component source/API를 설치해 두 앱에서 사용할 수 있게 한다. 의도적 스타일 차이는 문서화하되 원본과 수치·픽셀 불일치 자체를 실패 조건으로 삼지 않는다. 제품 고유 브랜드·도메인 표현은 앱 계층에 둔다.
+- **Rationale**: 이 결정이 사용자의 제품 계보와 최종 공용화 목표를 동시에 충족한다. 교체 가능성은 시각적 복제보다 두 앱의 실제 사용처에서 기능·접근성·통합이 성립하는지로 판단한다.
+- **Design impact**: `docs/designs/design-system.md`에는 공통 light/dark 의도와 선택 근거를 반영해야 한다. token/theme 값, registry component 규칙, docs 미리보기 및 두 앱 통합 증거를 같은 태스크에서 동기화한다. 임시 앱별 override가 필요하면 범위·이유·제거 조건을 기록한다.
+- **Trace**:
+  - **Spec 재검토**: 2026-09-27 US-4/US-5와 PRD를 공용 UI 사용 가능성 및 단일 light/dark 디자인 언어 기준으로 수정했다. Kibo 41개 목표는 유지했다. Spec 승인은 아직 받지 않았다.
+- **Evidence**:
+  - **Updated Feature Spec**: [spec.md](./spec.md)
+  - **Product requirements**: [leement-prd.md](../../prd/leement-prd.md)
+  - **Current design rules**: [design-system.md](../../designs/design-system.md)
+
+## D004: 기존 README의 v0.1 카탈로그 설명은 이번 Feature에서 편집하지 않는다 (2026-09-27)
+
+- **Context**: 루트 `README.md` 11–13행은 현재 UI 8개·Pattern 5개·Block 1개로 소개하며 69행은 현재 v0.1 로컬 검증 상태를 설명한다. 이 Feature가 완료되면 카탈로그 수와 제공 상태의 설명이 오래될 수 있다.
+- **Constraints**: AGENTS.md의 README 보호 규칙은 사용자가 README 수정을 명시적으로 요청했을 때만 기존 README 편집을 허용한다. 현재 요청은 Feature 구현과 Spec 승인이지 README 편집 요청이 아니다.
+- **Options**: ① README를 선제 갱신한다 ② 이번 Feature에서는 README를 보존하고 사용자-facing 설치/카탈로그 정보는 docs 사이트에서 갱신한다.
+- **Decision**: ②를 선택한다. Plan의 Onboarding entrypoint `NONE`은 불일치가 없다는 뜻이 아니라 이 보호 규칙 때문에 이번 변경에서 README를 편집하지 않는다는 뜻이다.
+- **Rationale**: 사용자 요청 범위를 지키면서 Feature의 실제 제품 설명은 docs 사이트와 PRD/디자인 문서에 동기화한다.
+- **Trace**:
+  - **계획 시점**: 2026-09-27 README의 기존 수량·게시 상태 문장을 확인했다. 구현 후에도 README는 갱신하지 않으며 이 기록을 잔여 설명으로 유지한다.
+- **Evidence**:
+  - **README**: [README.md](../../../README.md)
+  - **Plan impact**: [plan.md](./plan.md)
+
+## D005: 참조 UI의 원본 경계와 분류를 고정한다 (2026-09-27)
+
+- **Context**: Task 01에서 두 제품의 공용 UI와 추가 wrapper를 구현 전에 고정해야 누락·중복·무분별한 공용화를 막을 수 있다.
+- **Constraints**: 두 원본 checkout은 clean이며 구현을 위해 수정하지 않는다. 제품 고유 generation/voice 로직은 Leement API가 아니다. 단독 사용만으로 stable로 승격하지 않는다.
+- **Options**: ① 현재 registry item 수만 기준으로 확장한다 ② 두 제품의 실제 source·사용처·API와 Leement 대응 관계를 Feature artifact에 기록한다.
+- **Decision**: ②를 선택했다. 공통 22개, CopySinger 전용 10개, Leesfield top-level production TSX 79개(그중 `app-*` 35개), legacy 14개를 고정 snapshot으로 조사한다. `compose`는 현재 앱 wrapper를 유지하고 공용 구현을 교체하며, `candidate`는 후속 task에서 기능 구현/조합을 검증하고, `application`은 제품에 남긴다.
+- **Rationale**: 19/22 공통 파일은 import 문장을 제외한 주 구현이 동일해 공용 source 가능성이 높다. Dialog/Select/Sheet의 실제 차이와 두 앱의 CSS 값 차이는 별도 migration 및 theme 결정으로 다룬다. 사용하지 않는 파일도 발견 결과를 기록하되 실제 사용을 꾸며내지 않는다.
+- **Trace**:
+  - **초기 가설**: CopySinger light와 Leesfield dark에서 공통 구현의 상당 부분을 재사용할 수 있을 것으로 보았다.
+  - **조사 결과**: 원본 commit을 기록하고 공통 파일의 non-import diff, production import 예시, 추가 모듈 분류를 coverage matrix에 남겼다. 새 registry 구현과 설치 검증은 아직 시작하지 않았다.
+- **Evidence**:
+  - **Coverage and migration inventory**: [reference-coverage.md](./artifacts/reference-coverage.md)
+  - **Approved Spec**: [spec.md](./spec.md)
