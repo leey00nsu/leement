@@ -1,0 +1,78 @@
+{
+  "projectName": "Leement",
+  "projectType": "single",
+  "lang": "ko",
+  "createdAt": "2026-09-26",
+  "docsRepo": "embedded",
+  "experimental": {
+    "openwiki": false
+  },
+  "workflow": {
+    "mode": "local",
+    "requireWorktree": false,
+    "codeDirtyScope": "auto",
+    "taskCommitGate": "warn",
+    "baseBranch": "main",
+    "completionStrategy": "none",
+    "deleteFeatureBranchAfterMerge": true,
+    "featureChecks": [],
+    "postMergeChecks": [],
+    "agentAutomationConfigured": true,
+    "agentExecution": {
+      "task": {
+        "enabled": false,
+        "type": "subagent",
+        "model": "inherit",
+        "reasoningEffort": "high",
+        "onUnavailable": "inherit"
+      }
+    },
+    "agentReview": {
+      "maxRounds": 1,
+      "plan": {
+        "enabled": false,
+        "evidenceMode": "path_required",
+        "reviewer": {
+          "type": "subagent",
+          "model": "inherit",
+          "reasoningEffort": "high",
+          "onUnavailable": "inherit"
+        }
+      },
+      "task": {
+        "enabled": false,
+        "evidenceMode": "path_required",
+        "reviewer": {
+          "type": "subagent",
+          "model": "inherit",
+          "reasoningEffort": "high",
+          "onUnavailable": "inherit"
+        }
+      },
+      "feature": {
+        "enabled": false,
+        "evidenceMode": "path_required",
+        "reviewer": {
+          "type": "subagent",
+          "model": "inherit",
+          "reasoningEffort": "high",
+          "onUnavailable": "inherit"
+        }
+      }
+    }
+  },
+  "pr": {
+    "screenshots": {
+      "upload": false
+    }
+  },
+  "approval": {
+    "mode": "category",
+    "default": "skip",
+    "requireCheckCategories": [
+      "spec_approve",
+      "implementation_approve",
+      "local_merge"
+    ]
+  }
+}

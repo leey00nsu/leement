@@ -1,0 +1,11 @@
+node_modules
+.next
+.turbo
+coverage
+dist
+apps/docs/public/r
+*.tsbuildinfo
+
+# lee-spec-kit managed paths
+
+.worktrees/

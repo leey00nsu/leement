@@ -1,0 +1,165 @@
+# Features 가이드
+
+기능별 스펙, 계획, 태스크를 관리하는 폴더입니다.
+
+---
+
+## 폴더 구조
+
+```text
+features/
+├── README.md           # 이 파일
+├── feature-base/       # 공용 템플릿 (수정 시 한 곳만 수정)
+│   ├── spec.md
+│   ├── plan.md
+│   ├── tasks.md
+│   ├── issue.md
+│   ├── pr.md
+│   └── decisions.md
+├── (single) F00X-{name}/
+└── (multi)  {component}/F00X-{name}/
+```
+
+---
+
+## 새 기능 생성
+
+```bash
+# Single 프로젝트
+npx lee-spec-kit feature user-auth
+
+# Multi 프로젝트
+npx lee-spec-kit feature --component app user-profile
+```
+
+> 💡 CLI는 `feature-base/`에서 템플릿을 복사하고 ID를 자동 채번합니다.
+
+Feature는 PRD → idea → feature 흐름에서 실제 구현을 진행하는 실행 단위입니다.
+여기까지 오기 전에는 요구사항이 `docs/prd/`에 정의되어 있고, 사전 탐색이 필요했다면 `docs/ideas/`에 정리되어 있는 상태를 권장합니다.
+
+---
+
+## 기능 ID 규칙
+
+- `F{번호}-{기능명}` (예: F001-user-auth)
+- 번호는 **최소 3자리 패딩** (001, 002, ...)
+- 999를 초과하면 **4자리 이상으로 확장** (F1000, F1001, ...)
+- 기능명은 kebab-case
+- **Feature 식별자는 workflow에 따라 결정**: GitHub workflow에서는 각 Feature가 하나의 GitHub Issue에 대응합니다. local workflow에서는 Issue 없이 `F027` 같은 안정적인 Feature ID를 canonical 식별자로 사용합니다.
+
+---
+
+## Workflow 단계 확인
+
+```bash
+npx lee-spec-kit workflow-stage <feature-ref> --json
+```
+
+반환되는 `stage`, `nextAction`, `implementationAllowed` 값을 현재 워크플로우 상태로 사용하세요.
+
+Plan 검수 또는 승인 전에 Schema 2 `Curated Documentation Impact`를 완료합니다. 네 기본 영역을 모두 판정하고, 프로젝트별 추가 영역이 적용될 때만 typed `Additional Curated Impacts`를 사용합니다. 추가 영역의 명시적인 `NONE`은 해당 범주가 없음을 검토했다는 증거입니다. 모든 `UPDATE` 또는 `ADD` 대상은 하나 이상의 task `Docs`와 커밋된 Feature diff에 함께 있어야 합니다. 기존 프로젝트는 Feature별 검사를 신뢰하기 전에 한 번의 수동 baseline reconciliation을 수행합니다.
+
+`experimental.openwiki=true`여도 Feature 리뷰에는 Plan이 선언한 curated target을 전달하고 코드·제품 의도와 대조합니다. 생성 Wiki와 OpenWiki 실행 metadata는 필수 입력이 아니며 Knowledge 최신성은 Feature 완료를 막지 않습니다. `knowledge ci`로 준비한 예약/수동 CI가 통합된 프로젝트 revision에서 저장소 단위 Knowledge를 갱신합니다. 생성 실패 시 코드 머지와 마지막 정상 게시본을 유지하고 draft Knowledge PR에 부분 진행을 체크포인트로 남깁니다.
+
+Plan 검수가 활성화되면 계획 단계는 `plan Review → fresh 읽기 전용 Plan 검수 → plan 승인` 순서로 진행됩니다. 검수는 반환된 `specHash`와 `planHash`에 묶이며 두 문서 중 하나의 내용이 바뀌면 기존 evidence가 무효입니다. reviewer는 문서를 수정하지 않고 Verification Contract와 테스트 결정을 점검합니다.
+
+`tasks.md`의 최종 완료 체크박스 3개에는 `lee-spec-kit:completion:*` HTML marker가 있습니다. 사용자에게 보이는 문구는 바꿔도 되지만 각 체크박스 라인의 marker는 유지하세요. `workflow-stage`는 marker를 machine-readable identity로 우선 사용하고, 기존 프로젝트 호환을 위해 marker가 없으면 이전 canonical 문구를 fallback으로 인식합니다.
+
+Feature agent review가 활성화된 local workflow의 완료 흐름은 `feature review → implementation_approve → feature_verify → local_merge → local_cleanup → done`입니다. 태스크 리뷰가 활성화되면 각 태스크는 `DOING → REVIEW → task review → DONE`을 거칩니다. 검사 실패 시 구현이 허용된 `feature_remediation`으로 이동합니다. `local-ff`는 검증된 Feature SHA만 옮기고, `local-squash`는 통합 tree가 검증된 Feature tree와 같아야 합니다. 둘 다 cleanup 후에만 `done`입니다. cleanup이 끝난 Feature는 기록된 통합 커밋이 현재 base의 조상으로 남아 있는 한 후속 Feature가 base를 전진시켜도 `done`을 유지합니다.
+
+`workflow.agentExecution.task.enabled=true`이면 각 `task_execute`가 설정된 서브에이전트 모델·추론도·안정적인 태스크 ID·구현 작업 경로·machine-readable `workerContract`와 versioned `delegationContext`를 반환합니다. 이 컨텍스트에는 정확한 태스크 블록, Acceptance, Verification Contract, 필수 Feature 문서와 조건부 참조가 들어 있으며 worker에게 변경 없이 전달합니다. worker는 `workflow-stage`를 재호출하거나 다시 위임하지 않고 직접 실행합니다. 계획되지 않은 영구 테스트를 추가하지 않으며 프로젝트 코드와 태스크 범위 검사만 담당합니다. 메인 에이전트가 문서 동기화, 태스크 전환, 커밋, 승인, 원격 작업을 소유하고 공식 hook은 메인 에이전트가 workflow를 `task_commit`으로 전진시키기 전까지 커밋을 차단합니다.
+
+remediation 커밋이 추가되면 기존 검증과 local merge 승인은 무효입니다. Pre-PR review가 활성화되어 있다면 변경된 diff의 review evidence를 갱신하고 새 tip을 검증한 뒤 local merge 승인을 다시 받습니다.
+
+---
+
+## PRD 요구사항 추적 (권장)
+
+- PRD 문서(`docs/prd/*.md`)에 `PRD-FR-001` 또는 `PRD-SCOPE-V1-DESKTOP-EDITOR` 같은 `PRD-*` 요구사항 ID를 부여하세요.
+- `tasks.md`의 각 태스크 라인에 `[PRD-FR-001]` 또는 `[PRD-SCOPE-V1-DESKTOP-EDITOR]` 태그로 연결하세요. PRD와 무관한 태스크는 `[NON-PRD]`를 사용하세요.
+- `[NON-PRD]`는 refactor, 테스트 전용 작업, tooling, rename, cleanup 같은 내부 구현 작업에만 사용하세요.
+- 변경이 사용자 동작, acceptance criteria, 범위를 바꾸면 PRD를 먼저 갱신하고 태스크도 `[PRD-...]`로 다시 연결하세요.
+- 단, 태스크 문서에서 PRD ID를 임의 생성하지 않습니다. 먼저 PRD 원문에 정의하고, 레거시 문서는 원문 ID backfill 후 연결하세요.
+- 추적성은 `spec.md`의 `PRD Refs`와 각 태스크 라인의 PRD 태그를 유지해 검토 가능하게 만드세요.
+
+---
+
+## 변경 프로토콜 (기능 진행 중 요구사항/범위 변경)
+
+중간 변경이 생기면, “어디를 고쳤는지”와 “무엇을 업데이트했는지”가 문서로 남아야 합니다.
+
+- 변경은 **새 태스크로 추가**합니다. (`[DONE]` 태스크를 고치지 말고 새 태스크를 만드세요)
+- 이 동기화 중 `tasks.md`에는 내부 marker로 `대기 중 변경 요청` 필드가 잠시 들어갈 수 있습니다. 새 태스크와 관련 문서에 반영이 끝나면 값을 비우세요.
+- 변경 태스크에는 `[PRD-...]` 또는 `[NON-PRD]` 태그를 반드시 붙입니다. (권장: `[CHANGE]` 태그 추가)
+- 내부 검토로 시작했더라도, 최종적으로 사용자 요구/동작 변경이 되면 `[NON-PRD]`로 남기지 않습니다.
+  - `docs/prd/*.md`를 backfill/수정
+  - `spec.md`의 `PRD Refs` 갱신
+  - 태스크를 `[PRD-...]`로 재태깅하거나 대체 태스크 추가
+- 변경이 PRD/스펙/설계에 영향을 주면 아래도 함께 갱신합니다:
+  - `docs/prd/*.md` (요구사항 ID 추가/수정/Deprecated)
+  - `spec.md` (`PRD Refs`, 스코프/AC)
+  - `plan.md` (아키텍처/테스트 전략)
+  - `decisions.md` (왜 바뀌었는지 + Evidence)
+
+---
+
+## Unmanaged Docs 산출물
+
+외부 에이전트 워크플로우는 canonical lee-spec-kit docs surface 밖에 문서를 만들 수 있습니다.
+대표 예시는 아래와 같습니다.
+
+- `docs/plans/*.md`
+- `docs/superpowers/*`
+- 다른 스킬이 만든 별도 top-level docs 폴더
+
+Feature가 이미 진행 중이라면, 이 파일들은 활성 워크플로우 SSOT가 아니라 staging/reference 산출물로 취급합니다.
+
+- 의도된 추가 엔트리라면 `.lee-spec-kit.json`의 `allowedDocsEntries`에 등록합니다
+- 계획/참고 산출물이라면 active feature 실행 전에 먼저 정규화합니다
+- `commit-audit`는 staged된 unmanaged docs 또는 비정규 feature 문서가 정규화/allowlist되기 전까지 커밋을 막습니다
+
+- 사용자 요구/범위/Acceptance Criteria는 `spec.md`로 옮깁니다
+- 아키텍처/파일 구조/테스트 전략은 `plan.md`로 옮깁니다
+- 실제 실행할 작업 항목은 `tasks.md`로 옮깁니다
+- 대안 비교, 선택 이유, 트레이드오프는 `decisions.md`로 옮깁니다
+
+공용 산출물을 기록용으로 남겨두는 것은 괜찮지만, feature-local 문서와 충돌하면 Feature 폴더 문서를 기준으로 봅니다.
+
+---
+
+## 상태 용어 정리
+
+| 구분                        | 필드                                                   | 값                                                              |
+| --------------------------- | ------------------------------------------------------ | --------------------------------------------------------------- | ----------------- | ------------ |
+| 문서 상태                   | `spec.md`/`plan.md`의 `상태`, `tasks.md`의 `문서 상태` | `Draft` \| `Review` \| `Approved`                               |
+| Plan 검수 상태              | `plan.md`의 `Plan 검수`                                | `Pending` \| `Running` \| `Done`                                |
+| Plan 검수 Evidence/Decision | `Plan 검수 Evidence` / `Plan 검수 Decision`            | evidence 경로와 `결정: approve\|changes_requested\|blocked ...` |
+| Plan 검수 target            | `Plan 검수 Spec Hash` / `Plan 검수 Plan Hash`          | `workflow-stage`가 반환한 현재 내용 hash                        |
+| 이슈 문서 상태              | `issue.md`의 `상태`                                    | `Draft` \| `Ready`                                              |
+| PR 문서 상태                | `pr.md`의 `상태`                                       | `Draft` \| `Ready`                                              |
+| PR 리뷰 상태                | `tasks.md`의 `PR 상태`                                 | `Review` \| `Approved`                                          |
+| Pre-PR 리뷰 상태            | `tasks.md`의 `PR 전 리뷰`                              | `Pending` \| `Done`                                             |
+| Pre-PR 리뷰 Evidence        | `tasks.md`의 `PR 전 리뷰 Evidence`                     | 근거 링크/로그/문서 경로                                        |
+| Pre-PR 리뷰 Decision        | `tasks.md`의 `PR 전 리뷰 Decision`                     | `결정: approve                                                  | changes_requested | blocked ...` |
+| Pre-PR 리뷰 target          | `PR 전 리뷰 Head` / `PR 전 리뷰 Tree`                  | `workflow-stage`가 반환한 현재 SHA/tree                         |
+| PR 리뷰 Evidence            | `tasks.md`의 `PR 리뷰 Evidence`                        | 근거 링크/로그/문서 경로                                        |
+| PR 리뷰 Decision            | `tasks.md`의 `PR 리뷰 Decision`                        | `결정: ...` (또는 `decision: ...`)                              |
+
+---
+
+## Agent review 체크리스트
+
+Plan/task/Feature 리뷰는 `workflow-stage --json`이 반환한 모델·추론도·정확한 target 설정으로 fresh context의 읽기 전용 서브에이전트에게 맡깁니다. Plan은 현재 spec/plan 내용 hash를, 태스크는 해당 checkpoint 범위를, Feature는 base부터 Feature tip까지를 검토합니다. 서브에이전트는 코드나 문서를 수정하지 않고 결함 중심 finding만 반환하며, 메인 에이전트가 finding 반영과 evidence 기록을 담당합니다. 특정 이름의 리뷰 스킬은 요구하지 않습니다.
+
+---
+
+## 각 파일 역할
+
+| 파일           | 역할                                          | 작성 시점                                         |
+| -------------- | --------------------------------------------- | ------------------------------------------------- |
+| `spec.md`      | **무엇을, 왜** 만드는지                       | 기능 정의 시                                      |
+| `plan.md`      | **어떻게** + Verification Contract            | 스펙 승인 후                                      |
+| `tasks.md`     | 구체적인 작업 목록                            | 계획 승인 후                                      |
+| `issue.md`     | 이슈 초안 + 이슈 상태(`Draft/Ready`)          | 이슈 생성 전/생성 시                              |
+| `pr.md`        | PR 초안 + PR 상태(`Draft/Ready`)              | PR 생성 전/생성 시                                |
+| `decisions.md` | 기술 결정 + 판단 근거(Trace) + 증거 링크(ADR) | 개발 중 수시로 (DOING 시작 / DONE 직전 / 머지 후) |
