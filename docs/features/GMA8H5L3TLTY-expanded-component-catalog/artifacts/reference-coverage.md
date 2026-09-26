@@ -35,6 +35,22 @@ Source prefixes for the next table: CopySinger `src/shared/ui/{item}/{item}.tsx`
 
 Current direct overlap is seven items: badge, button, card, dialog, input, separator, tooltip. Shared behavior/API migration is still required for these seven. The other fifteen common items need registry counterparts. The original Base UI implementations may be retained where that is the simplest way to preserve behavior; Radix replacements require equivalent interaction evidence.
 
+### Task 03 migration checkpoint
+
+The nine core items now have registry source and docs examples: `button`, `input`, `card`, `select`, `switch`, `tabs`, `label`, `badge`, `separator`. This checkpoint does not claim the rest of the 22 common items or either app integration is complete.
+
+| Source usage | Leement migration |
+| --- | --- |
+| Button `variant="default"` | `variant="primary"` (or omit variant) |
+| Button `variant="link"` | Native link for navigation; `ghost` action button for state changes |
+| Button `xs` / `sm` / `default` / `lg` / `icon` / `icon-sm` | Same size names; app-specific icon-xs/icon-lg can be class overrides in owned source |
+| Card `size="sm"`, CardAction | Same composition; default 20px and small 16px inset |
+| Select trigger `default` / `sm` | Same names; now 40px / 36px; use `items` on Root for human-readable `SelectValue` labels |
+| Switch `default` / `sm` and Tabs `default` / `line` | Same composition and variants; Base UI keyboard model preserved |
+| Label, Input, Badge, Separator | Native/primitive prop paths; preserve accessible field pairing and state text |
+
+CopySinger and Leesfield retain their own app wrappers where these add product-specific behavior. The representative product imports in the inventory are integration targets for Task 14.
+
 ## CopySinger-only directories
 
 Each path is `src/shared/ui/{item}/`. Promotion below follows the product rule: a single-project domain expression stays in the app; a generic control/pattern needed by the shared system is a candidate, not automatically stable.

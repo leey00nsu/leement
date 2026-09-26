@@ -109,3 +109,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **Current tokens**: [tokens.json](../../../packages/tokens/src/tokens.json)
   - **Theme builder and contract test**: [build.mjs](../../../packages/theme/build.mjs), [theme.test.mjs](../../../packages/theme/theme.test.mjs)
   - **Durable design rules**: [design-system.md](../../designs/design-system.md)
+
+## D007: 공통 컨트롤의 상호작용과 크기를 한 소스로 정리한다 (2026-09-27)
+
+- **Context/Constraints**: Task 03은 Button/Input/Card와 Select/Switch/Tabs/Label/Badge/Separator의 교체 경로를 만들어야 한다. 두 참조 앱의 Select/Switch/Tabs는 Base UI 기반이고, Leement의 기존 Button/Input/Card는 크기와 focus 규칙이 일부 다르다. Leement semantic token이 시각 정본이어야 한다.
+- **Trace (초기 가설)**: 참조 제품의 Base UI composition과 키보드 동작을 유지하되 UI 값은 공통 token과 컨트롤 규칙으로 치환한다. Button/Input/Card는 원본 API 전체를 복제하지 않고 실제 교체에 필요한 size, CardAction 및 migration 설명을 우선한다.
+- **Options**: ① 모든 컨트롤을 Radix로 재작성한다 ② 두 참조 앱의 Base UI composition을 보존하고 Leement 규칙만 이식한다.
+- **Decision**: ②를 선택했다. Select/Switch/Tabs는 Base UI 1.7.0의 동작을 유지하며 40/36px Select, semantic state, token 기반 focus ring을 적용했다. Button은 `primary`를 기본 action으로, 위험 action을 연한 destructive surface로 정리했다. Card에 `size`와 `CardAction`을 추가했다. Label은 native semantics를 유지한다.
+- **Rationale**: 두 제품에서 사용된 API와 키보드 모델을 가능한 한 유지하면서 소유 가능한 단일 source를 만들 수 있다. Select의 Base UI `SelectValue`는 값 문자열을 기본으로 표시하므로 사람이 읽는 라벨이 다를 때 `items` mapping을 전달하도록 docs에 명시했다. 제품의 `link` variant와 특수 아이콘 크기는 앱의 native link 또는 소스 수정으로 옮긴다.
+- **Trace (실행 확인)**: 9개 control/surface에 registry item과 source-backed docs preview를 연결했다. `pnpm --filter @leement/docs build`에서 12개 component route 포함 30개 정적 페이지 생성, `pnpm typecheck`, `pnpm lint`, Vitest focused 7건이 통과했다. Switch Space/disabled, Tabs 화살표·Enter, Select 키보드 열기·선택·focus return을 확인했다. 두 제품의 실제 import 교체는 Task 14 범위다.
+- **Evidence**: [Reference coverage](./artifacts/reference-coverage.md), [Task contract](./tasks.md), [Control tests](../../../registry/ui/controls.test.tsx), [Registry metadata](../../../registry.json), [Design rules](../../designs/design-system.md)

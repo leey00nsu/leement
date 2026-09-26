@@ -105,13 +105,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-03 Complete common controls and core surfaces
+- [DONE][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-03 Complete common controls and core surfaces
   - Date: 2026-09-27
   - Acceptance:
     - Button, Input, Card, Select, Switch, Tabs, Label, Badge and Separator have shared source, mapped APIs, docs examples and meaningful behavior checks.
   - Checklist:
-    - [ ] Align Button/Input/Card first with agreed control rules and migration notes.
-    - [ ] Implement remaining controls with registry metadata and keyboard, disabled and focus verification.
+    - [x] Align Button/Input/Card first with agreed control rules and migration notes.
+    - [x] Implement remaining controls with registry metadata and keyboard, disabled and focus verification.
+  - Verification: `pnpm --filter @leement/docs build` (30 static pages, including 12 component routes), `pnpm typecheck`, `pnpm lint`, and focused Vitest (7 tests) passed on 2026-09-27. [Migration checkpoint](./artifacts/reference-coverage.md#task-03-migration-checkpoint).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -291,4 +292,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:0ff583e27daeff8840046d8a0400464a2a1d7879a92e63f0ca016ad362899700 -->
+<!-- lee-spec-kit:workflow-sync sha256:692ed6ca052df9b377dfb58a0678ad0869cfda92c1516c7ff1a6dfcc37830cd5 -->
