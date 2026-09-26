@@ -65,6 +65,14 @@ import DialogStackExample from "../examples/dialog-stack";
 import EditorExample from "../examples/editor";
 import GlimpseExample from "../examples/glimpse";
 import MarqueeExample from "../examples/marquee";
+import PillExample from "../examples/pill";
+import QRCodeExample from "../examples/qr-code";
+import RatingExample from "../examples/rating";
+import RelativeTimeExample from "../examples/relative-time";
+import SpinnerExample from "../examples/spinner";
+import StatusExample from "../examples/status";
+import ThemeSwitcherExample from "../examples/theme-switcher";
+import TreeExample from "../examples/tree";
 import PageHeaderExample from "../examples/page-header";
 import EmptyStateExample from "../examples/empty-state";
 import FormSectionExample from "../examples/form-section";
@@ -138,6 +146,14 @@ const examples: Record<keyof typeof items, ComponentType> = {
   editor: EditorExample,
   glimpse: GlimpseExample,
   marquee: MarqueeExample,
+  pill: PillExample,
+  "qr-code": QRCodeExample,
+  rating: RatingExample,
+  "relative-time": RelativeTimeExample,
+  spinner: SpinnerExample,
+  status: StatusExample,
+  "theme-switcher": ThemeSwitcherExample,
+  tree: TreeExample,
   "page-header": PageHeaderExample,
   "empty-state": EmptyStateExample,
   "form-section": FormSectionExample,

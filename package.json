@@ -39,6 +39,7 @@
     "jsdom": "^27.0.0",
     "lucide-react": "^0.562.0",
     "motion": "13.1.0",
+    "qrcode.react": "^4.2.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-image-crop": "^11.1.2",
