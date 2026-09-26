@@ -130,7 +130,6 @@
     - project:apps/docs/package.json
     - project:pnpm-lock.yaml
     - project:licenses/kibo-license.md
-    - docs:features/XC5H2H9CV5H4-kibo-inspired-docs-experience/spec.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

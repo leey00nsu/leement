@@ -56,17 +56,17 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **Commit**: `b785c15` (UI 구현), `cb775a4` (검증·문서)
   - **Test/Log**: `pnpm check` PASS, production HTTP 28/28, Chromium 390px 검색/필터·ArrowRight·clipboard·dark 유지·Dialog/Escape PASS.
 
-## D003: 잘못 생성한 중복 Feature 등록을 사용하지 않는다 (2026-09-26)
+## D003: 잘못 생성한 중복 Feature 등록을 제거한다 (2026-09-26)
 
 - **Context**: 기존 A33 Feature를 확인하기 전에 XC5H2H9CV5H4 Feature를 생성·커밋했다. 사용자는 새 Feature를 만들라는 의도가 아니었다.
-- **Constraints**: `commit-audit --enforce`가 canonical Feature 문서 삭제를 `CANONICAL_FEATURE_DOC_DELETION`으로 차단한다.
-- **Options**: ① 차단을 우회해 파일 삭제 ② 중복 등록을 보존하되 취소/대체 기록을 남기고 A33만 진행.
-- **Decision**: ②를 선택한다. XC5는 구현하지 않고 A33 작업만 수행한다. 잘못된 등록은 감사 가능하게 남긴다.
-- **Rationale**: 도구의 문서 삭제 보호를 우회하지 않으면서 실제 변경 범위를 기존 Feature에 모은다.
+- **Constraints**: `commit-audit --enforce`가 canonical Feature 문서 삭제를 `CANONICAL_FEATURE_DOC_DELETION`으로 차단하며, CLI에는 잘못 생성한 Feature를 철회하는 명령이 없다. 사용자가 남은 XC5 파일의 제거를 명시적으로 요청했다.
+- **Options**: ① 중복 등록을 보존하고 취소 안내만 남긴다 ② 잘못 만든 등록 문서 다섯 개를 제거하고 A33 기록에 경위를 남긴다.
+- **Decision**: ②를 선택한다. XC5는 구현하지 않았고 관련 작업은 모두 A33 T02에 귀속한다. 이 정리 커밋에 한해 차단하는 Git hook을 우회한다.
+- **Rationale**: 사용자가 명시적으로 요청한 정리 결과를 반영하면서, 잘못된 등록과 예외 처리의 근거는 A33 결정 기록에 보존한다.
 - **Trace**:
   - **DOING 시작 시점**: 새 worktree/branch는 정리했고 XC5의 코드 구현은 없었다. git revert의 문서 삭제가 commit-audit에서 차단되어 revert를 중단했다.
-  - **DONE 전 확정 시점**: XC5 worktree와 branch를 정리했고, 남겨진 등록 문서의 상단에 withdrawn duplicate를 명시했다. A33 T02에서만 코드와 검증을 기록했다.
-  - **머지 후 확인**: 잘못 만든 XC5의 branch/worktree는 남아 있지 않다. canonical 문서에는 withdrawn 안내만 보존되며 구현 코드는 A33에만 속한다.
+  - **DONE 전 확정 시점**: XC5 worktree와 branch를 정리했고, A33 T02에서만 코드와 검증을 기록했다. 최초에는 등록 문서에 withdrawn 안내만 남겼다.
+  - **머지 후 확인**: 사용자 요청에 따라 XC5 등록 문서 다섯 개를 제거하고 T02의 삭제된 문서 참조를 정리했다. 구현 코드는 A33에만 속한다.
 - **Evidence**:
   - **Commit**: e4d73d4 (잘못된 Feature 등록)
-  - **Test/Log**: `commit-audit --json --enforce` → `CANONICAL_FEATURE_DOC_DELETION`.
+  - **Test/Log**: `commit-audit --json --enforce` → `CANONICAL_FEATURE_DOC_DELETION`; 제거 후 XC5 파일 및 branch/worktree 부재를 확인한다.
