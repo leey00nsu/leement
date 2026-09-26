@@ -119,3 +119,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 두 제품에서 사용된 API와 키보드 모델을 가능한 한 유지하면서 소유 가능한 단일 source를 만들 수 있다. Select의 Base UI `SelectValue`는 값 문자열을 기본으로 표시하므로 사람이 읽는 라벨이 다를 때 `items` mapping을 전달하도록 docs에 명시했다. 제품의 `link` variant와 특수 아이콘 크기는 앱의 native link 또는 소스 수정으로 옮긴다.
 - **Trace (실행 확인)**: 9개 control/surface에 registry item과 source-backed docs preview를 연결했다. `pnpm --filter @leement/docs build`에서 12개 component route 포함 30개 정적 페이지 생성, `pnpm typecheck`, `pnpm lint`, Vitest focused 7건이 통과했다. Switch Space/disabled, Tabs 화살표·Enter, Select 키보드 열기·선택·focus return을 확인했다. 두 제품의 실제 import 교체는 Task 14 범위다.
 - **Evidence**: [Reference coverage](./artifacts/reference-coverage.md), [Task contract](./tasks.md), [Control tests](../../../registry/ui/controls.test.tsx), [Registry metadata](../../../registry.json), [Design rules](../../designs/design-system.md)
+
+## D008: 공통 overlay의 composition과 초점 계약을 보존한다 (2026-09-27)
+
+- **Context/Constraints**: Task 04는 두 제품의 Dialog, Dropdown Menu, Popover, Sheet, Tooltip을 교체 가능하게 만든다. Leement의 Dialog/Tooltip은 이미 Radix source이며 나머지 참조 구현은 Base UI를 사용한다. Focus trap, Escape, 닫기 라벨을 시각 이식으로 깨뜨릴 수 없다.
+- **Trace (초기 가설)**: 기존 Radix 항목은 유지하고, 누락 항목은 참조 Base UI composition을 가져와 Leement token과 공통 overlay surface 규칙으로 정리한다. Sheet의 닫기 label은 영문 기본값을 두되 앱의 현지화된 close control 조합이 가능하게 한다.
+- **Options**: ① 다섯 item을 Base UI로 모두 통일한다 ② 기존 Radix Dialog/Tooltip은 유지하고 빠진 세 item만 참조 Base UI composition을 이식한다.
+- **Decision**: ②를 선택했다. Dropdown Menu/Popover/Sheet는 Base UI 1.7.0, Dialog/Tooltip은 기존 Radix를 사용한다. 공통 `bg-popover` surface와 semantic 상태색을 사용하고 Sheet는 registry dependency로 Button을 함께 설치한다.
+- **Rationale**: 이미 동작하는 Leement source와 shadcn식 `asChild` 모델을 보존하면서 두 제품의 누락 기능을 채울 수 있다. Base UI `render`와 Radix `asChild`, TooltipProvider `delay`/`delayDuration` 차이는 migration에 명시했다. Sheet의 기본 close text는 영어이며 현지화가 필요한 앱은 기본 close를 숨기고 자신의 닫기 제어를 조합한다.
+- **Trace (실행 확인)**: Source-backed docs preview 및 정적 component route 15개를 생성했다. `pnpm --filter @leement/docs build`(33 pages), `pnpm typecheck`, `pnpm lint`, focused Vitest 12건이 통과했다. Dialog/Sheet의 제목·Escape·focus return, Menu의 keyboard/disabled, Popover의 Escape/focus return, Tooltip의 keyboard focus를 확인했다. 제품 import 교체는 Task 14다.
+- **Evidence**: [Reference coverage](./artifacts/reference-coverage.md), [Overlay tests](../../../registry/ui/overlays.test.tsx), [Registry metadata](../../../registry.json), [Design rules](../../designs/design-system.md)

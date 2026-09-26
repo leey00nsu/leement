@@ -119,13 +119,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-04 Complete common overlays and disclosure
+- [DONE][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-04 Complete common overlays and disclosure
   - Date: 2026-09-27
   - Acceptance:
     - Dialog, Dropdown Menu, Popover, Sheet and Tooltip install and preserve composition, focus and keyboard behavior in both themes.
   - Checklist:
-    - [ ] Use verified headless behavior and declare item dependencies.
-    - [ ] Add source-backed examples and validate Escape, focus return, labels and disabled cases.
+    - [x] Use verified headless behavior and declare item dependencies.
+    - [x] Add source-backed examples and validate Escape, focus return, labels and disabled cases.
+  - Verification: `pnpm --filter @leement/docs build` (33 static pages, 15 component routes), `pnpm typecheck`, `pnpm lint`, focused Vitest (12 tests including 5 overlay interactions) passed on 2026-09-27. [Overlay migration checkpoint](./artifacts/reference-coverage.md#task-04-overlay-migration-checkpoint).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -292,4 +293,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:692ed6ca052df9b377dfb58a0678ad0869cfda92c1516c7ff1a6dfcc37830cd5 -->
+<!-- lee-spec-kit:workflow-sync sha256:4c3ec8496e4db61038ecd79c89e24e4e975759ed65c748ae1dc6766353782ac8 -->

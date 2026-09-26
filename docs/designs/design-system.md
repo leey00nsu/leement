@@ -29,6 +29,8 @@ Button의 action variant는 primary, secondary, outline, ghost, destructive만 �
 
 CopySinger/Leesfield의 Button `default`는 Leement `primary`에 대응한다. 기존 `link` variant는 의미상 navigation이면 native anchor로, action이면 ghost Button으로 옮긴다. Select의 기존 32/28px 트리거는 기본 40/36px 공통 컨트롤 높이에 맞춘다. Switch는 역할상 좁은 36×20px 또는 28×16px 트랙을 쓴다. 두 제품의 컴포넌트 소스가 제공한 API와 다른 부분은 설치 후 소비자 소스에서 수정할 수 있으며, 앱 고유 스타일은 앱에서 유지한다.
 
+Overlay는 `bg-popover`와 `text-popover-foreground`를 공통 표면으로 사용하고 border 및 필요한 shadow로 떠 있는 계층을 표시한다. Dropdown Menu의 destructive item은 연한 danger 강조를 쓰며 keyboard highlight와 disabled 상태를 구분한다. Popover는 짧은 맥락, Sheet는 가장자리에 붙는 상세 작업, Dialog는 집중된 modal 작업에 쓴다. 각 Trigger는 접근 가능한 이름, Dialog/Sheet는 Title, Tooltip은 보조 정보와 독립된 제어 이름을 갖는다. Dialog/Tooltip은 Radix, Dropdown Menu/Popover/Sheet는 Base UI의 focus·Escape 동작을 유지한다. 제품의 현지화된 close 이름은 소비자 소스에서 기본 close를 숨기고 조합한다.
+
 EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담는다. PageHeader는 페이지 제목, 설명, action을 결합한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
 
 ## 접근성과 반응형

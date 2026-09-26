@@ -51,6 +51,10 @@ The nine core items now have registry source and docs examples: `button`, `input
 
 CopySinger and Leesfield retain their own app wrappers where these add product-specific behavior. The representative product imports in the inventory are integration targets for Task 14.
 
+### Task 04 overlay migration checkpoint
+
+`dialog`, `dropdown-menu`, `popover`, `sheet`, and `tooltip` now have registry source and live docs examples. Product Dialog/Tooltip used Base UI; Leement keeps its existing Radix implementation for those two. Use `asChild` on their triggers instead of Base UI's `render` prop, and use Radix `delayDuration` on TooltipProvider instead of Base UI `delay`. Dropdown Menu, Popover and Sheet retain Base UI composition. Sheet depends on Leement Button and installs it through registry metadata. For a localized close label, hide the built-in close button and compose an explicitly labeled close control in the owned source. These are API migration instructions, not a claim of product import replacement before Task 14.
+
 ## CopySinger-only directories
 
 Each path is `src/shared/ui/{item}/`. Promotion below follows the product rule: a single-project domain expression stays in the app; a generic control/pattern needed by the shared system is a candidate, not automatically stable.
