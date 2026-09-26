@@ -26,7 +26,7 @@
 
 ## 아키텍처
 
-`apps/docs/lib/items.ts`의 항목 metadata를 레이어별로 그룹화한다. `/showcase`는 이름·설명 검색과 유형 필터를 제공하고 같은 registry source 기반 Preview를 렌더링한다. 각 상세 페이지는 서버에서 example/source 텍스트를 준비하고 클라이언트 workbench에 Preview·Example·Source 탭을 전달한다. 예제는 항목별 실행 가능한 TSX 파일로 두고 같은 파일을 실제 preview와 코드 뷰에 사용한다. Source는 `registry.json`에 선언된 파일을 읽어 보여준다. 테마 상태는 사이트 루트 `data-lm-theme`에 적용하며 기존 semantic CSS를 재사용한다. 기존 Next 앱과 shadcn registry 빌드 경로를 유지한다.
+`apps/docs/lib/items.ts`의 항목 metadata를 레이어별로 그룹화한다. `/showcase`는 이름·설명 검색과 유형 필터를 제공하고 같은 registry source 기반 Preview를 렌더링한다. 각 상세 페이지는 서버에서 example/source 텍스트를 준비하고 클라이언트 workbench에 Preview·Example·Source 탭을 전달한다. 예제는 항목별 실행 가능한 TSX 파일로 두고 같은 파일을 실제 preview와 코드 뷰에 사용한다. 복사 가능한 예제에서는 import 경로만 consumer의 `@/components/*` 위치로 바꾼다. Source는 docs 빌드가 생성한 `/public/r/{name}.json`의 `files[].content`를 읽어 실제 배포 소스를 보여준다. 테마 상태는 사이트 루트 `data-lm-theme`에 적용하며 기존 semantic CSS를 재사용한다. 기존 Next 앱과 shadcn registry 빌드 경로를 유지한다. dev 명령도 registry JSON을 먼저 생성한다.
 
 ## 파일 구조
 
@@ -41,7 +41,7 @@ apps/docs/package.json                      # 단독 문서 build의 registry �
 apps/docs/examples/*.tsx                    # 항목별 실행 가능한 예제와 표시 코드
 apps/docs/components/item-workbench.tsx     # Preview·Example·Source 탭과 명령 복사
 apps/docs/components/theme-toggle.tsx       # 문서 전체 light/dark 전환
-apps/docs/lib/registry-source.ts            # registry.json 기반 배포 소스 읽기
+apps/docs/lib/registry-source.ts            # 생성된 registry JSON 기반 배포 소스 읽기
 licenses/kibo-license.md                    # 이식 코드가 있을 때 MIT 고지
 ```
 

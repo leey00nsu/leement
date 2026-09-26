@@ -48,12 +48,12 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: Fumadocs 및 Kibo의 내부 패키지를 도입하지 않고도 원하는 사용 경험을 제공할 수 있다. 배포 소스와 문서 예제가 갈라지지 않는다.
 - **Trace**:
   - **DOING 시작 시점**: 기존 Feature는 이미 main에 통합되고 workflow-stage가 done을 반환했다. 방향 변경 요청에 따라 새 태스크를 추가하고 완료 체크를 다시 열었다.
-  - **DONE 전 확정 시점**: 구현과 검증 후 갱신한다.
+  - **DONE 전 확정 시점**: 14개 예제를 실행 파일로 분리하고 같은 파일을 코드 뷰에 사용했다. Source는 생성된 registry JSON의 실제 배포 내용을 사용한다. Next 빌드의 광범위한 파일 추적 경고를 없애기 위해 원본 디렉터리 직접 읽기 대신 `public/r`만 읽는다. `pnpm check`, 28/28 HTTP, Chromium 상호작용 검증이 통과했다.
   - **머지 후 확인**: 실제 통합 결과를 기록한다.
 - **Evidence**:
   - **Source**: https://github.com/shadcnblocks/kibo/blob/main/apps/docs/components/preview/index.tsx
   - **License**: https://github.com/shadcnblocks/kibo/blob/main/license.md
-  - **Test/Log**: T02 검증 결과를 기록한다.
+  - **Test/Log**: `pnpm check` PASS, production HTTP 28/28, Chromium 390px 검색/필터·ArrowRight·clipboard·dark 유지·Dialog/Escape PASS.
 
 ## D003: 잘못 생성한 중복 Feature 등록을 사용하지 않는다 (2026-09-26)
 

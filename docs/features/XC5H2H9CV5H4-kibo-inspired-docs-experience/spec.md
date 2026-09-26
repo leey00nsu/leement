@@ -1,5 +1,7 @@
 # Feature Spec: kibo-inspired-docs-experience
 
+> **Withdrawn duplicate registration (2026-09-26).** This Feature was opened in error. Its requested work is being completed in `A33E7A5BTN8G-component-showcase`, task `T-A33E7A5BTN8G-component-showcase-02`. No implementation should be attached to this Feature. The registration remains only because `commit-audit` blocks deletion of canonical Feature documents.
+
 > 기술 스택은 plan.md에서 다룹니다.
 
 ---

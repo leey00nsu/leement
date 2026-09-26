@@ -101,33 +101,43 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-A33E7A5BTN8G-component-showcase-02 Kibo식 탐색과 Preview·Example·Source 문서 경험 확장
+- [DONE][PRD-FR-005] T-A33E7A5BTN8G-component-showcase-02 Kibo식 탐색과 Preview·Example·Source 문서 경험 확장
   - Date: 2026-09-26
   - Acceptance:
-    - 14개 항목을 검색하고 유형별로 찾으며 모바일에서도 상세 문서로 이동할 수 있다
-    - 모든 상세 페이지에서 registry 원본 기반 Preview, Example, Source 탭을 키보드로 탐색할 수 있다
-    - 문서 전체 light/dark 전환과 설치 명령 복사가 동작한다
+    - [x] 14개 항목을 검색하고 유형별로 찾으며 모바일에서도 상세 문서로 이동할 수 있다 (390px, 가로 넘침 없음)
+    - [x] 모든 상세 페이지에서 registry 원본 기반 Preview, Example, Source 탭을 키보드로 탐색할 수 있다 (14개 route, ArrowRight)
+    - [x] 문서 전체 light/dark 전환과 설치 명령 복사가 동작한다 (테마 유지·clipboard 내용 확인)
   - Checklist:
-    - [ ] Spec·Plan·Decisions를 변경 방향에 맞게 동기화한다
-    - [ ] Kibo의 문서 UI 패턴을 Leement token과 기존 Next 앱에 적용하고 브랜드 자산은 사용하지 않는다
-    - [ ] 검색, 탭, 코드/소스 표시, 명령 복사, 테마 전환을 구현한다
-    - [ ] 문서 빌드·타입 검사·린트·테스트 및 브라우저 동작을 검증한다
+    - [x] Spec·Plan·Decisions를 변경 방향에 맞게 동기화한다
+    - [x] Kibo의 문서 UI 패턴을 Leement token과 기존 Next 앱에 적용하고 브랜드 자산은 사용하지 않는다 (MIT 고지 포함)
+    - [x] 검색, 탭, 코드/소스 표시, 명령 복사, 테마 전환을 구현한다
+    - [x] token/theme와 registry 소스는 변경하지 않고 실제 배포 JSON을 소스 뷰에 사용한다
+    - [x] 문서 빌드·타입 검사·린트·테스트 및 브라우저 동작을 검증한다 (`pnpm check`, 28/28 HTTP, Chromium)
   - Docs:
     - project:apps/docs/components/showcase-gallery.tsx
     - project:apps/docs/components/item-page.tsx
     - project:apps/docs/app/layout.tsx
+    - project:apps/docs/app/showcase/page.tsx
+    - project:apps/docs/app/components/[slug]/page.tsx
+    - project:apps/docs/app/patterns/[slug]/page.tsx
+    - project:apps/docs/app/blocks/[slug]/page.tsx
+    - project:apps/docs/components/previews.tsx
+    - project:apps/docs/components/docs-navigation.tsx
     - project:apps/docs/components/item-workbench.tsx
     - project:apps/docs/components/theme-toggle.tsx
     - project:apps/docs/lib/registry-source.ts
     - project:apps/docs/examples/
+    - project:apps/docs/package.json
+    - project:pnpm-lock.yaml
     - project:licenses/kibo-license.md
+    - docs:features/XC5H2H9CV5H4-kibo-inspired-docs-experience/spec.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
 
-<!-- lee-spec-kit:workflow-sync sha256:c1071304f7647ee155e35b64df2ebe688c956b90d6b1d5a781a0ebf4a8e73f8f -->
+<!-- lee-spec-kit:workflow-sync sha256:45d25e6ac24502c931ecc52449f111d30153370db389c889f2c4cd7971fe9f6e -->
 
 ## Repository Knowledge (완료 비차단)
 
@@ -152,9 +162,9 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `pnpm --filter @leement/docs build` | `2026-09-26` | PASS: `/showcase` + registry JSON 생성 |
+| `pnpm --filter @leement/docs build` | `2026-09-26` | PASS: 26 static pages + registry JSON 생성 |
 | `pnpm check` | `2026-09-26` | PASS: build/typecheck/lint/3 tests |
-| production HTTP smoke | `2026-09-26` | PASS: 14 detail routes, 14 registry items, showcase |
-| Chromium 390px smoke | `2026-09-26` | PASS: semantic theme 색상 변경, 가로 넘침 0 |
+| production HTTP smoke | `2026-09-26` | PASS: 14 detail routes + 14 registry items = 28/28 |
+| Chromium 390px smoke | `2026-09-26` | PASS: 검색/필터, ArrowRight 탭, 명령 복사, dark 유지, Dialog/Escape, 가로 넘침 0 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
