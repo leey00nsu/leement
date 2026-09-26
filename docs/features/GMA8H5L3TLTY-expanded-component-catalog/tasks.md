@@ -257,13 +257,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-009] T-GMA8H5L3TLTY-expanded-component-catalog-13 Verify registry installation and source ownership
+- [DONE][PRD-FR-009] T-GMA8H5L3TLTY-expanded-component-catalog-13 Verify registry installation and source ownership
   - Date: 2026-09-27
   - Acceptance:
     - Every item JSON installs through shadcn alias with transitive dependencies; independent Tailwind v4 consumer typecheck and build pass and installed files remain editable.
   - Checklist:
-    - [ ] Build registry and run representative plus complete item install matrix in an isolated consumer.
-    - [ ] Fix missing npm, registry or multi-file metadata and record results.
+    - [x] Build registry and run representative plus complete item install matrix in an isolated consumer.
+    - [x] Fix missing npm, registry or multi-file metadata and record results.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: `npx shadcn@latest add` installed all 78 aliases in an isolated Tailwind v4 consumer; initial EmptyState pulled Utils/Card. All 80 installed files exactly matched registry JSON and 228 direct imports had zero dependency declaration gaps. Consumer `tsc --noEmit` and Vite build with all items imported passed; edited Button source rebuilt and was restored. Kibo notice survived CLI reinstall after source fix. Repo docs build (92 pages), `pnpm typecheck` (5 tasks), `pnpm lint` (3 tasks) passed on 2026-09-27. [Registry installation checkpoint](./artifacts/reference-coverage.md#task-13-registry-installation-checkpoint). Public npm/host publication remains a release action.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -313,4 +316,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:b3b4af0faa5d0585b57cb0a77a911f299a529f234b66bc0f7bb869e9870ceb51 -->
+<!-- lee-spec-kit:workflow-sync sha256:9c7a1e9dc9746f114cd7aefe23a2ab0a2f337191a988504bd72b39ae20419267 -->

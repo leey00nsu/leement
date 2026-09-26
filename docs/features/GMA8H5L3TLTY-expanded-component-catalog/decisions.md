@@ -209,3 +209,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 문서 복사본이 구현과 어긋나는 일을 줄이고, light/dark와 설치 경험을 같은 설계 계약으로 보여 준다. `coverage` 무시 규칙은 산출물용이므로 문서 경로만 변경했다.
 - **Trace (실행 확인)**: Docs production build의 92개 정적 페이지와 78개 상세 HTTP/source/install 내용을 확인했다. Playwright로 78개 페이지를 모두 열어 hydration pageerror 0건을 확인하고, source tab, light/dark의 계산된 색상, Color foundation 두 모드, 41개 사례 경로, 모바일 Button 페이지를 확인했다. 상세 내용은 [Task 12 checkpoint](./artifacts/reference-coverage.md#task-12-documentation-gallery-checkpoint)에 기록한다. 실제 CLI 설치 검증은 Task 13이다.
 - **Evidence**: [Task contract](./tasks.md), [Case mapping](./artifacts/reference-coverage.md#task-12-documentation-gallery-checkpoint), [Docs detail](../../../apps/docs/components/item-page.tsx), [Foundation route](../../../apps/docs/app/foundations/[slug]/page.tsx), [Registry metadata](../../../registry.json)
+
+## D017: 소비자 설치를 전체 item alias와 실제 편집 소스로 검증한다 (2026-09-27)
+
+- **Context/Constraints**: Task 13은 registry JSON 생성만으로 끝나지 않고 shadcn CLI의 alias 해석, 중첩 registry/npm dependency, 독립 소비자 빌드와 source ownership을 확인해야 한다. `@leement/theme`과 docs host는 아직 공개 배포 전이다.
+- **Trace (초기 가설)**: 로컬 production docs server와 빌드한 theme 패키지를 독립 Tailwind v4 소비자에 연결한다. 모든 78개 alias를 CLI로 설치하고 source/import를 검증한다.
+- **Options**: ① JSON의 존재만 검사한다 ② 별도 소비자에서 실제 CLI 설치, 모든 module import build, source 편집까지 수행한다.
+- **Decision**: ②를 선택했다. 일곱 번의 CLI 배치로 78개 alias를 모두 설치했으며, 설치 파일 80개와 JSON을 비교하고 228개 import의 의존성 선언을 확인했다. Avatar Stack/Cursor의 Kibo MIT 고지는 CLI가 선행 주석을 제거하므로 import 뒤의 전체 license comment로 옮겼다.
+- **Rationale**: registry build가 통과해도 소비자 alias와 라이선스 고지 전달이 실패할 수 있다. 실제 설치 source가 프로젝트 소유로 남고 수정 후에도 빌드되는지 확인해야 한다.
+- **Trace (실행 확인)**: Button+EmptyState 단독 설치가 Utils/Card를 함께 설치했다. 전체 alias 설치 후 소비자 `tsc --noEmit`와 Vite build(모든 module eager import), 수정된 Button의 재빌드가 통과했다. 80개 설치 파일이 생성 JSON과 완전히 일치했고, 두 Kibo 출처 파일에는 전체 MIT 고지가 보존됐다. Docs production build 92 pages, repo typecheck/lint도 통과했다. 공개 npm/호스트 설치와 두 제품 채택은 각각 게시 이후/Task 14의 별도 범위다.
+- **Evidence**: [Task contract](./tasks.md), [Installation checkpoint](./artifacts/reference-coverage.md#task-13-registry-installation-checkpoint), [Registry metadata](../../../registry.json), [Avatar Stack source](../../../registry/ui/avatar-stack.tsx), [Cursor source](../../../registry/ui/cursor.tsx), [Third-party notice](../../../THIRD_PARTY_NOTICES.md)
