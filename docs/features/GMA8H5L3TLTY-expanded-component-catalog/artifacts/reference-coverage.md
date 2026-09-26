@@ -251,4 +251,21 @@ All nine are independent registry items and docs preview routes. `sandbox` alone
 
 All seven have registry items and source-backed preview routes. `image-crop` alone adds `react-image-crop`; `image-zoom` declares Radix Dialog. Docs includes a local original SVG scene and four-second generated MP4 for interaction, not a remote runtime dependency. Focused interaction tests (7), docs build (73 pages), typecheck and lint passed. Clean-consumer CLI installation remains Task 13.
 
+### Task 10 Kibo callout and complex utility checkpoint
+
+| Kibo case | Leement item | Working scope | Boundary |
+| --- | --- | --- | --- |
+| Announcement | `announcement` | compact update, optional link and dismissal | host chooses placement and persistence |
+| Banner | `banner` | title, explanation, composed action and dismissal | app owns campaign content |
+| Typography | `typography` | semantic HTML element with token-aligned type roles | no global prose replacement |
+| Color Picker | `color-picker` | native well, hex validation and preset selection | user content colors; no token editing |
+| Comparison | `comparison` | keyboard range revealing two images | app supplies comparable assets |
+| Deck | `deck` | slide sequence with button/arrow navigation | app supplies slide content |
+| Dialog Stack | `dialog-stack` | multi-step Radix modal preserving mounted step inputs | app owns validation and submission |
+| Editor | `editor` | TipTap rich text with formatting toolbar and HTML callback | app sanitizes/stores trusted content |
+| Glimpse | `glimpse` | hover/focus link destination preview | link works without preview |
+| Marquee | `marquee` | looping item stream, pause and reduced-motion handling | optional supporting content only |
+
+All ten have independent registry items and source-backed docs routes. `editor` alone declares TipTap, `glimpse` alone declares Radix Hover Card, and `dialog-stack` declares Radix Dialog. The other items use native controls and token classes. Focused interaction tests (10), docs build (83 pages), typecheck and lint passed. Browser visual review and clean-consumer CLI installation remain Tasks 12/13.
+
 The matrix records source and migration intent. Tasks 02–11 must replace planned/candidate entries with actual registry paths and working source. Task 13 records item-by-item CLI install evidence. Task 14 records both-app import/render, representative real-use replacement, baseline/new-error separation and light/dark visual evidence. These checks are pending; no completed or stable status is implied here.

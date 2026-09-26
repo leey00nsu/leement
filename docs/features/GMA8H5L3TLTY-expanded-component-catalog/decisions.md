@@ -179,3 +179,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: Kibo의 각 화면 문제를 해결하면서 민감한 결제 데이터와 무거운 미디어 처리를 Leement가 소유하지 않는다. Docs의 데모 자산은 저장소 로컬이어서 미리보기가 외부 URL에 의존하지 않는다.
 - **Trace (실행 확인)**: 7개 registry item과 source-backed docs 예제를 연결했다. crop 범위 callback, 확대 dialog의 Escape, 마스킹·flip, 시세 상세, story 이동·pause, reel 키보드 이동·mute, player seek/mute를 focused Vitest 7건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(73 pages), `pnpm typecheck`, `pnpm lint`가 통과했다. 실제 브라우저 미디어 재생과 소비자 CLI 설치는 각각 Task 12/13에서 재확인한다.
 - **Evidence**: [Task contract](./tasks.md), [Media interaction tests](../../../registry/ui/media-finance.test.tsx), [Registry metadata](../../../registry.json), [Case mapping](./artifacts/reference-coverage.md#task-09-kibo-image-finance-and-social-checkpoint)
+
+## D014: 공지·편집·비교 UI의 고유 역할을 유지한다 (2026-09-27)
+
+- **Context/Constraints**: Task 10은 Announcement, Banner, Typography, Color Picker, Comparison, Deck, Dialog Stack, Editor, Glimpse, Marquee를 요구한다. 기존 StatusNotice/Dialog/Popover와 겹쳐 보이는 항목이라도 반복 가능한 별도의 화면 문제가 있어야 한다.
+- **Trace (초기 가설)**: 공지와 Banner는 범위·밀도를 다르게, Comparison은 양쪽 이미지 노출 조절, Deck은 순서형 화면 탐색, DialogStack은 한 모달 안의 단계 이동, Editor는 검증된 편집 엔진을 item별 dependency로 제공한다. Glimpse는 링크 미리보기, Marquee는 reduced-motion에 대응하는 자동 행진으로 분리한다.
+- **Options**: ① 기존 StatusNotice/Dialog/Popover를 이름만 바꿔 재사용한다 ② 각 사례의 별도 사용자 문제를 정의해 작은 source로 구현하고 필요한 검증된 편집/overlay primitive만 item별로 설치한다.
+- **Decision**: ②를 선택했다. Announcement/Banner는 정보량과 action의 무게로 구분하고 Typography는 semantic HTML을 유지한다. ColorPicker·Comparison은 native 입력을 사용한다. Deck은 슬라이드, DialogStack은 Radix 모달 단계 이동과 입력 보존을 제공한다. Editor는 TipTap, Glimpse는 Radix Hover Card를 item-scoped dependency로 사용한다. Marquee에는 pause와 reduced-motion 정지를 둔다.
+- **Rationale**: 중복 이름으로 카탈로그 수를 채우지 않고 각 항목의 핵심 조작과 사용 기준을 드러낸다. 거대한 편집 엔진이나 포지셔닝 로직을 자체 구현하지 않으면서 다른 항목의 소비자에게 의존성을 강제하지 않는다.
+- **Trace (실행 확인)**: 10개 item과 source-backed docs route를 연결했다. Dismiss, hex/preset 선택, image range, Deck 이동, DialogStack 입력 보존·Escape, TipTap HTML 변경, Hover Card preview, Marquee pause를 focused Vitest 10건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(83 pages), `pnpm typecheck`, `pnpm lint`가 통과했다.
+- **Evidence**: [Task contract](./tasks.md), [Interaction tests](../../../registry/ui/complex-utility.test.tsx), [Registry metadata](../../../registry.json), [Case mapping](./artifacts/reference-coverage.md#task-10-kibo-callout-and-complex-utility-checkpoint)

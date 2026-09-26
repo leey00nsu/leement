@@ -41,6 +41,8 @@ Progress와 Slider는 Base UI의 값·키보드 의미를 보존하고 `primary`
 
 이미지와 미디어 UI는 앱이 제공한 자산만 표시한다. ImageCrop은 퍼센트 범위를 앱에 반환하며 저장·업로드는 하지 않는다. ImageZoom은 Radix Dialog의 초점, Escape, 닫기 동작을 보존한다. CreditCard는 마지막 네 자리만 렌더링하고 보안 코드나 결제 기능을 다루지 않는다. Ticker는 가격과 증감 방향을 텍스트로도 표시하며 데이터의 신선도는 앱이 설명한다. Stories, Reel, VideoPlayer는 각각 짧은 순서형 업데이트, 세로 영상 탐색, 단일 영상 재생에 쓴다. 자동 이동/재생은 reduced motion을 고려하고 탐색·일시정지·음소거·탐색 위치에는 이름이 있는 제어를 제공한다. 음성이 있는 영상은 앱이 자막 파일을 전달한다.
 
+Announcement는 짧은 제품 소식과 링크, Banner는 설명과 주요 action이 필요한 넓은 메시지에 사용한다. StatusNotice는 작업 결과를 전달하므로 이 둘과 책임이 다르다. Typography는 시각적 역할과 HTML heading level을 분리한다. ColorPicker는 사용자가 콘텐츠 색상을 고르는 제어이며 시스템 token 자체를 편집하지 않는다. Comparison은 before/after의 노출량을 native range와 키보드로 조절한다. Deck은 짧은 슬라이드 시퀀스, DialogStack은 모달 안의 몇 단계 작업이다. DialogStack은 이전 단계의 입력을 유지하고 Radix의 Escape·초점 복귀를 보존한다. Editor의 입력 엔진은 TipTap이며 toolbar action에 이름을 붙인다. Glimpse의 링크는 미리보기 없이도 목적지가 드러나야 한다. Marquee는 중복 콘텐츠를 보조기술에서 숨기고 pause 제어 및 reduced motion 정지를 제공한다.
+
 EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담는다. PageHeader는 페이지 제목, 설명, action을 결합한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
 
 ## 접근성과 반응형

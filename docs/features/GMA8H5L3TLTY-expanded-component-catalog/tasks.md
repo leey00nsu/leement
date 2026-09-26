@@ -209,13 +209,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-10 Add Kibo callout and complex utility cases
+- [DONE][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-10 Add Kibo callout and complex utility cases
   - Date: 2026-09-27
   - Acceptance:
     - Announcement, Banner, Typography, Color Picker, Comparison, Deck, Dialog Stack, Editor, Glimpse and Marquee each have a working registry use case.
   - Checklist:
-    - [ ] Keep each item behavior distinct and token driven.
-    - [ ] Verify interaction and accessibility plus registry metadata and docs example.
+    - [x] Keep each item behavior distinct and token driven.
+    - [x] Verify interaction and accessibility plus registry metadata and docs example.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: `pnpm exec vitest run registry/ui/complex-utility.test.tsx` (10 tests), `pnpm registry:build` through docs build, `pnpm --filter @leement/docs build` (83 pages), `pnpm typecheck`, `pnpm lint` passed on 2026-09-27. [Kibo callout/utility checkpoint](./artifacts/reference-coverage.md#task-10-kibo-callout-and-complex-utility-checkpoint). Browser visual review remains Task 12 and clean-consumer CLI installation Task 13.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -304,4 +307,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:6ea8bb5883e1d7531750f52269ec1394a6cb7f8c35eef64942a7c87f791c5559 -->
+<!-- lee-spec-kit:workflow-sync sha256:a529a124f35fa158321f84ad9d4f46542dd7b042c437a8a3e93eec66c6fa648d -->
