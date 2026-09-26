@@ -171,6 +171,21 @@
       ]
     },
     {
+      "name": "dropdown-menu", "type": "registry:ui", "title": "Dropdown Menu", "description": "Accessible action menu.",
+      "dependencies": ["@base-ui/react", "lucide-react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/dropdown-menu.tsx", "type": "registry:ui", "target": "components/ui/dropdown-menu.tsx" }]
+    },
+    {
+      "name": "popover", "type": "registry:ui", "title": "Popover", "description": "Contextual floating content.",
+      "dependencies": ["@base-ui/react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/popover.tsx", "type": "registry:ui", "target": "components/ui/popover.tsx" }]
+    },
+    {
+      "name": "sheet", "type": "registry:ui", "title": "Sheet", "description": "Accessible edge panel.",
+      "dependencies": ["@base-ui/react", "lucide-react"], "registryDependencies": ["@leement/utils", "@leement/button"],
+      "files": [{ "path": "registry/ui/sheet.tsx", "type": "registry:ui", "target": "components/ui/sheet.tsx" }]
+    },
+    {
       "name": "tooltip",
       "type": "registry:ui",
       "title": "Tooltip",

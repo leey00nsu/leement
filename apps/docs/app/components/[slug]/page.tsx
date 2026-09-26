@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ItemPage } from "../../../components/item-page";
 import { items } from "../../../lib/items";
 
-const names = ["button", "input", "select", "switch", "tabs", "label", "textarea", "badge", "card", "separator", "dialog", "tooltip"] as const;
+const names = ["button", "input", "select", "switch", "tabs", "label", "textarea", "badge", "card", "separator", "dialog", "dropdown-menu", "popover", "sheet", "tooltip"] as const;
 type PageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {

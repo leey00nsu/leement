@@ -12,6 +12,9 @@ import BadgeExample from "../examples/badge";
 import CardExample from "../examples/card";
 import SeparatorExample from "../examples/separator";
 import DialogExample from "../examples/dialog";
+import DropdownMenuExample from "../examples/dropdown-menu";
+import PopoverExample from "../examples/popover";
+import SheetExample from "../examples/sheet";
 import TooltipExample from "../examples/tooltip";
 import PageHeaderExample from "../examples/page-header";
 import EmptyStateExample from "../examples/empty-state";
@@ -33,6 +36,9 @@ const examples: Record<keyof typeof items, ComponentType> = {
   card: CardExample,
   separator: SeparatorExample,
   dialog: DialogExample,
+  "dropdown-menu": DropdownMenuExample,
+  popover: PopoverExample,
+  sheet: SheetExample,
   tooltip: TooltipExample,
   "page-header": PageHeaderExample,
   "empty-state": EmptyStateExample,
