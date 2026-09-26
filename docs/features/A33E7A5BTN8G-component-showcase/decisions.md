@@ -53,6 +53,7 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Evidence**:
   - **Source**: https://github.com/shadcnblocks/kibo/blob/main/apps/docs/components/preview/index.tsx
   - **License**: https://github.com/shadcnblocks/kibo/blob/main/license.md
+  - **Commit**: `b785c15` (UI 구현), `cb775a4` (검증·문서)
   - **Test/Log**: `pnpm check` PASS, production HTTP 28/28, Chromium 390px 검색/필터·ArrowRight·clipboard·dark 유지·Dialog/Escape PASS.
 
 ## D003: 잘못 생성한 중복 Feature 등록을 사용하지 않는다 (2026-09-26)
@@ -64,7 +65,7 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 도구의 문서 삭제 보호를 우회하지 않으면서 실제 변경 범위를 기존 Feature에 모은다.
 - **Trace**:
   - **DOING 시작 시점**: 새 worktree/branch는 정리했고 XC5의 코드 구현은 없었다. git revert의 문서 삭제가 commit-audit에서 차단되어 revert를 중단했다.
-  - **DONE 전 확정 시점**: A33 통합 후 XC5가 비활성 기록으로 남았음을 확인한다.
+  - **DONE 전 확정 시점**: XC5 worktree와 branch를 정리했고, 남겨진 등록 문서의 상단에 withdrawn duplicate를 명시했다. A33 T02에서만 코드와 검증을 기록했다.
   - **머지 후 확인**: 실제 통합 결과를 기록한다.
 - **Evidence**:
   - **Commit**: e4d73d4 (잘못된 Feature 등록)
