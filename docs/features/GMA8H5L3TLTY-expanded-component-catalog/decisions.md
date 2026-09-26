@@ -189,3 +189,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 중복 이름으로 카탈로그 수를 채우지 않고 각 항목의 핵심 조작과 사용 기준을 드러낸다. 거대한 편집 엔진이나 포지셔닝 로직을 자체 구현하지 않으면서 다른 항목의 소비자에게 의존성을 강제하지 않는다.
 - **Trace (실행 확인)**: 10개 item과 source-backed docs route를 연결했다. Dismiss, hex/preset 선택, image range, Deck 이동, DialogStack 입력 보존·Escape, TipTap HTML 변경, Hover Card preview, Marquee pause를 focused Vitest 10건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(83 pages), `pnpm typecheck`, `pnpm lint`가 통과했다.
 - **Evidence**: [Task contract](./tasks.md), [Interaction tests](../../../registry/ui/complex-utility.test.tsx), [Registry metadata](../../../registry.json), [Case mapping](./artifacts/reference-coverage.md#task-10-kibo-callout-and-complex-utility-checkpoint)
+
+## D015: 남은 유틸리티를 의미·상태 중심으로 구현한다 (2026-09-27)
+
+- **Context/Constraints**: Task 11의 Pill, QR Code, Rating, Relative Time, Spinner, Status, Theme Switcher, Tree는 서로 다른 값·동작 계약을 가진다. Badge·StatusNotice 등 기존 UI와 이름만 다른 중복은 피하고 QR은 실제 스캔 가능한 결과여야 한다.
+- **Trace (초기 가설)**: Pill은 제거 가능한 값, Status는 지속 상태, Spinner는 진행 중 상태로 구분한다. QR은 검증된 SVG encoder를 item별로 사용한다. Rating/Tree는 키보드 탐색, Theme Switcher는 공통 light/dark data attribute, RelativeTime은 `time` semantics와 주기적 갱신을 제공한다.
+- **Options**: ① 기존 Badge/StatusNotice로 모든 사례를 이름만 바꿔 내보낸다 ② 별도 의미와 사용 동작을 가진 항목만 소스로 제공하고 필요한 QR encoder만 item별로 선언한다.
+- **Decision**: ②를 선택했다. Pill은 제거 가능한 값, Status는 지속 상태, Spinner는 진행 중 상태다. QRCode는 `qrcode.react` SVG와 값 복사를 제공한다. Rating은 radio-style keyboard selection, RelativeTime은 native time과 절대 시각, ThemeSwitcher는 공통 light/dark document attribute, Tree는 계층 탐색·확장·선택을 제공한다. Docs 헤더도 새 ThemeSwitcher를 사용한다.
+- **Rationale**: Kibo 사용 사례 수를 실제 사용 의미와 조작으로 충족한다. QR encoder 외의 무거운 공통 런타임을 추가하지 않고 제품 데이터와 상태 저장은 소비자에게 남긴다.
+- **Trace (실행 확인)**: 8개 registry item과 source-backed docs route를 연결했다. Pill 제거, QR SVG/복사, Rating 방향키, RelativeTime의 절대/상대 의미, Spinner 이름, ThemeSwitcher document 전환, Tree 확장/선택을 focused Vitest 7건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(91 pages), `pnpm typecheck`, `pnpm lint`가 통과했다.
+- **Evidence**: [Task contract](./tasks.md), [Interaction tests](../../../registry/ui/remaining-utility.test.tsx), [Registry metadata](../../../registry.json), [Case mapping](./artifacts/reference-coverage.md#task-11-kibo-remaining-utility-checkpoint)

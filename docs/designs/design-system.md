@@ -43,6 +43,8 @@ Progress와 Slider는 Base UI의 값·키보드 의미를 보존하고 `primary`
 
 Announcement는 짧은 제품 소식과 링크, Banner는 설명과 주요 action이 필요한 넓은 메시지에 사용한다. StatusNotice는 작업 결과를 전달하므로 이 둘과 책임이 다르다. Typography는 시각적 역할과 HTML heading level을 분리한다. ColorPicker는 사용자가 콘텐츠 색상을 고르는 제어이며 시스템 token 자체를 편집하지 않는다. Comparison은 before/after의 노출량을 native range와 키보드로 조절한다. Deck은 짧은 슬라이드 시퀀스, DialogStack은 모달 안의 몇 단계 작업이다. DialogStack은 이전 단계의 입력을 유지하고 Radix의 Escape·초점 복귀를 보존한다. Editor의 입력 엔진은 TipTap이며 toolbar action에 이름을 붙인다. Glimpse의 링크는 미리보기 없이도 목적지가 드러나야 한다. Marquee는 중복 콘텐츠를 보조기술에서 숨기고 pause 제어 및 reduced motion 정지를 제공한다.
 
+Pill은 사용자가 제거할 수 있는 값, Status는 객체의 지속 상태, Spinner는 잠시 진행 중인 일을 뜻한다. 각각 Badge, StatusNotice, Progress와 쓰임을 섞지 않는다. QRCode는 실제 SVG 행렬과 같은 값을 복사할 수 있는 제어를 제공하며 짧은 비밀값을 노출하지 않는다. Rating은 radio 의미와 방향키 선택을 유지한다. RelativeTime은 상대 문구와 절대 시각을 함께 제공하고 필요할 때 분 단위로 갱신한다. ThemeSwitcher는 `data-lm-theme`의 light/dark 두 모드만 전환하며 앱이 이미 모드를 관리하면 controlled prop으로 연결한다. Tree는 계층·확장·선택 상태를 보조기술에 전달하고 방향키/Home/End로 이동한다.
+
 EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담는다. PageHeader는 페이지 제목, 설명, action을 결합한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
 
 ## 접근성과 반응형

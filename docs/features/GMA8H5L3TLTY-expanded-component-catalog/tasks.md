@@ -225,13 +225,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-11 Add remaining Kibo utility cases
+- [DONE][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-11 Add remaining Kibo utility cases
   - Date: 2026-09-27
   - Acceptance:
     - Pill, QR Code, Rating, Relative Time, Spinner, Status, Theme Switcher and Tree each have a working registry use case.
   - Checklist:
-    - [ ] Provide independent behavior and useful API for every item.
-    - [ ] Verify state, keyboard or accessible name and install dependencies where relevant.
+    - [x] Provide independent behavior and useful API for every item.
+    - [x] Verify state, keyboard or accessible name and item-scoped install dependencies where relevant.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: `pnpm exec vitest run registry/ui/remaining-utility.test.tsx` (7 tests), `pnpm registry:build` through docs build, `pnpm --filter @leement/docs build` (91 pages), `pnpm typecheck`, `pnpm lint` passed on 2026-09-27. [Kibo remaining utility checkpoint](./artifacts/reference-coverage.md#task-11-kibo-remaining-utility-checkpoint). Clean-consumer CLI installation remains Task 13.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -307,4 +310,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:a529a124f35fa158321f84ad9d4f46542dd7b042c437a8a3e93eec66c6fa648d -->
+<!-- lee-spec-kit:workflow-sync sha256:a07f29879309a7269b9f0302026258ceea1303c8f5632007000851083e0136eb -->

@@ -268,4 +268,19 @@ All seven have registry items and source-backed preview routes. `image-crop` alo
 
 All ten have independent registry items and source-backed docs routes. `editor` alone declares TipTap, `glimpse` alone declares Radix Hover Card, and `dialog-stack` declares Radix Dialog. The other items use native controls and token classes. Focused interaction tests (10), docs build (83 pages), typecheck and lint passed. Browser visual review and clean-consumer CLI installation remain Tasks 12/13.
 
+### Task 11 Kibo remaining utility checkpoint
+
+| Kibo case | Leement item | Working scope | Boundary |
+| --- | --- | --- | --- |
+| Pill | `pill` | compact removable value with named action | app owns collection state |
+| QR Code | `qr-code` | scannable SVG and exact value copy | app chooses public content, not secrets |
+| Rating | `rating` | radio-style star selection with arrows/Home/End | app persists rating |
+| Relative Time | `relative-time` | localized relative text, absolute timestamp and minute refresh | app supplies timestamp |
+| Spinner | `spinner` | labeled indeterminate wait with reduced-motion behavior | no progress percentage |
+| Status | `status` | persistent text+dot semantic state | use StatusNotice for detailed feedback |
+| Theme Switcher | `theme-switcher` | controlled/default light/dark button, document attribute | app may own persistence |
+| Tree | `tree` | expand/collapse, selection, hierarchical keyboard navigation | app supplies nodes and data actions |
+
+All eight have registry items and source-backed docs routes. `qr-code` alone declares `qrcode.react`. The docs header now composes the same `theme-switcher` registry source. Focused interaction tests (7), docs build (91 pages), typecheck and lint passed. Browser visual review and clean-consumer CLI installation remain Tasks 12/13.
+
 The matrix records source and migration intent. Tasks 02–11 must replace planned/candidate entries with actual registry paths and working source. Task 13 records item-by-item CLI install evidence. Task 14 records both-app import/render, representative real-use replacement, baseline/new-error separation and light/dark visual evidence. These checks are pending; no completed or stable status is implied here.
