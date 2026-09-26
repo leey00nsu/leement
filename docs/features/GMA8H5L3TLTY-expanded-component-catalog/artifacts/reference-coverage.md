@@ -205,4 +205,20 @@ The 14 TSX files in `src/shared/ui/legacy/` are older parallel implementations: 
 
 ## Verification handoff
 
+### Task 07 Kibo collaboration checkpoint
+
+The seven collaboration/project management cases now have registry items and live docs examples. Their delivered contracts are intentionally smaller than Kibo's full implementations; they are usable, independently installed source components and blocks.
+
+| Kibo case | Leement item | Working scope | Boundary |
+| --- | --- | --- | --- |
+| Avatar Stack | `avatar-stack` | named grouped avatars, overflow | avatar data supplied by app |
+| Cursor | `cursor` | composable decorative remote pointer | presence transport supplied by app |
+| Calendar | `calendar` | date selection, month/keyboard navigation, dated agenda | recurrence and remote calendar sync supplied by app |
+| Gantt | `gantt` | dated bars, keyboard move/resize, drag move | persistence and dependencies supplied by app |
+| Kanban | `kanban` | ordered cards, drag and accessible move buttons, live announcement | persistence and workflow rules supplied by app |
+| List | `list` | reorder by button or drag | persistence supplied by app |
+| Table | `table` | native table with caption and typed sortable columns | server query, filtering and paging supplied by app |
+
+`avatar-stack` and `cursor` incorporate selected Kibo MIT source with the notice in `THIRD_PARTY_NOTICES.md`. Other five cases are Leement implementations. Installation metadata declares `@leement/avatar` for Avatar Stack and `@leement/utils` for styling where needed. The build emitted all seven JSON items. Focused interaction tests (6), docs build (57 pages), typecheck and lint passed. CLI installation in clean consumers is a separate Task 13 gate.
+
 The matrix records source and migration intent. Tasks 02–11 must replace planned/candidate entries with actual registry paths and working source. Task 13 records item-by-item CLI install evidence. Task 14 records both-app import/render, representative real-use replacement, baseline/new-error separation and light/dark visual evidence. These checks are pending; no completed or stable status is implied here.

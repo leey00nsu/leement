@@ -161,13 +161,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-07 Add Kibo collaboration and project management cases
+- [DONE][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-07 Add Kibo collaboration and project management cases
   - Date: 2026-09-27
   - Acceptance:
     - Avatar Stack, Cursor, Calendar, Gantt, Kanban, List and Table each have a working Leement registry use case.
   - Checklist:
-    - [ ] Reuse common UI and scope external data as props.
-    - [ ] Verify core navigation or manipulation, installation and accessible labels for each item.
+    - [x] Reuse common UI and scope external data as props.
+    - [x] Verify core navigation or manipulation, registry build and accessible labels for each item; clean-consumer CLI installation is tracked in Task 13.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: `pnpm exec vitest run registry/blocks/collaboration.test.tsx` (6 tests), `pnpm registry:build`, `pnpm --filter @leement/docs build` (57 pages), `pnpm typecheck`, and `pnpm lint` passed on 2026-09-27. [Kibo collaboration checkpoint](./artifacts/reference-coverage.md#task-07-kibo-collaboration-checkpoint).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -295,4 +298,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:c441619cd4bef4aa8d610e5f3cec3a4379d51b952a65a5a7ea1886c9d81c0e3e -->
+<!-- lee-spec-kit:workflow-sync sha256:b66cccb22b6cff898f70dd6475c095d86e24c338397d69503097f0708238bb06 -->

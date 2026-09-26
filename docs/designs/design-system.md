@@ -35,6 +35,8 @@ Overlay는 `bg-popover`와 `text-popover-foreground`를 공통 표면으로 사�
 
 Progress와 Slider는 Base UI의 값·키보드 의미를 보존하고 `primary`/`muted` 의미색을 사용한다. Slider의 thumb는 16px이지만 제어 가능 영역을 넓히며, 한 값이 기본이다. Range는 명시적인 두 값 배열을 전달한다. PageSkeleton은 Skeleton을 조합하고 로딩 이름과 `aria-busy`를 같이 제공한다. AlertDialog는 명시적 취소·확인 버튼을 제공하고 위험 action을 부드러운 danger surface로 나타낸다. Toast는 `popover` 표면 토큰을 사용하며 앱의 dark 모드 선택은 `theme` prop으로 전달한다. FilterToolbar는 검색·정렬·선택 필터를 묶고 토글은 `aria-pressed` 상태를 노출한다.
 
+협업 UI에서는 참여자 묶음(AvatarStack)에 그룹 이름을 부여하고 Cursor는 장식으로 처리한다. Calendar는 날짜 선택과 일정 표시를 분리하며 방향키로 날짜 사이를 이동한다. List, Kanban, Gantt는 데이터를 앱이 소유하고 변경을 callback으로 반환한다. 마우스 드래그만으로 조작을 제한하지 않는다. List/Kanban은 명시적인 이동 버튼을, Gantt는 방향키 이동과 Shift+방향키 크기 변경을 제공한다. 이동 결과는 live status로 알린다. DataTable은 native table, caption, 열 제목과 `aria-sort`를 유지한다. 이 항목들은 제품 데이터 조회·동기화나 전역 상태를 포함하지 않는다.
+
 EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담는다. PageHeader는 페이지 제목, 설명, action을 결합한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
 
 ## 접근성과 반응형

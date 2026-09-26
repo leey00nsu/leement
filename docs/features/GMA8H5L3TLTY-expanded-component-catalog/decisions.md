@@ -149,3 +149,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 각 제품의 generation/voice/Gradio/brand 구현을 공용 API에 강제로 넣지 않으면서 필요한 UI 기능을 공급한다. `slider`는 단일 값을 기본으로 수정하고 두 값 배열로 range를 표현한다. `toast`는 `next-themes` 결합을 제거하고 앱이 mode를 넘긴다. Leesfield form provider·validation과 locale wrapper는 앱 소유다.
 - **Trace (실행 확인)**: 79개 Leesfield root 모듈의 기존 분류를 유지하며 17개 candidate row를 현재 registry 또는 작동하는 조합 및 후속 dedicated item에 매핑했다. `pnpm --filter @leement/docs build`에서 `/adoption` 포함 50개 정적 페이지 생성, `pnpm typecheck`, `pnpm lint`, `pnpm test` 22건 통과. Collapsible 키보드, Progress/Slider 값, AlertDialog 취소·초점 반환, Avatar fallback, PageSkeleton status, FilterToggle 상태를 확인했다. 실제 제품 import 교체는 Task 14다.
 - **Evidence**: [Reference coverage](./artifacts/reference-coverage.md), [Source extension tests](../../../registry/ui/source-extension.test.tsx), [Live adoption composition](../../../apps/docs/components/adoption-compositions.tsx), [Registry metadata](../../../registry.json)
+
+## D011: Kibo 협업·프로젝트 관리 사례를 소유 가능한 Leement 소스로 구성한다 (2026-09-27)
+
+- **Context/Constraints**: Task 07은 Avatar Stack, Cursor, Calendar, Gantt, Kanban, List, Table의 작동하는 사용 사례를 요구한다. Kibo MIT 소스는 Calendar 496행, Gantt 1469행 등으로 여러 전역 atom 및 shadcn wrapper에 의존한다. Leement는 작은 registry source, item별 dependency, semantic token과 소스 소유를 우선한다.
+- **Trace (초기 가설)**: Kibo의 화면 문제와 composition 경계를 참고하되 전역 상태·대형 feature 구현을 그대로 복제하지 않는다. 실제 날짜 이동, 항목 이동, 정렬 등 사용자가 조작할 수 있는 최소 핵심 기능을 각 source에 구현한다. 참고한 원본 commit과 라이선스를 기록한다.
+- **Options**: ① Kibo 패키지의 전역 atom과 모든 내부 의존성을 함께 이식한다 ② 작은 독립 소스로 핵심 사용 사례를 구현하고 단순한 시각적 원형만 출처를 밝혀 이식한다.
+- **Decision**: ②를 선택했다. AvatarStack과 Cursor는 Kibo MIT 소스를 선택적으로 이식하고 출처·원문 라이선스를 저장했다. Calendar, List, DataTable, Gantt, Kanban은 Leement source로 구현했다. 날짜/보드/목록 변경은 소비자 상태 callback으로 넘기며 외부 데이터 동기화는 포함하지 않는다.
+- **Rationale**: 복합 item의 핵심 탐색·조작과 소스 소유 경험을 유지하면서 docs 앱과 소비자 앱에 전역 atom을 강제하지 않는다. Kibo의 완전한 기능/API 동일성을 주장하지 않으며, 현재 제공 범위는 [coverage artifact](./artifacts/reference-coverage.md#task-07-kibo-collaboration-checkpoint)에 기록한다.
+- **Trace (실행 확인)**: 7개 item의 registry metadata와 source-backed docs preview를 연결했다. Calendar 방향키와 일정 표시, List 순서 변경, Table 숫자 정렬, Gantt 키보드 이동, Kanban 열 변경·상태 안내, AvatarStack/Cursor 의미를 focused Vitest 6건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(57 pages), `pnpm typecheck`, `pnpm lint`가 통과했다.
+- **Evidence**: [Kibo reference](https://github.com/shadcnblocks/kibo), [MIT notice](../../../THIRD_PARTY_NOTICES.md), [Interaction tests](../../../registry/blocks/collaboration.test.tsx), [Registry metadata](../../../registry.json), [Task contract](./tasks.md)
