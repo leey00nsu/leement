@@ -1,0 +1,33 @@
+{
+  "extends": "../../tooling/typescript/next.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/components/ui/*": [
+        "../../registry/ui/*"
+      ],
+      "@/components/patterns/*": [
+        "../../registry/patterns/*"
+      ],
+      "@/components/blocks/*": [
+        "../../registry/blocks/*"
+      ],
+      "@/lib/utils": [
+        "../../registry/lib/utils"
+      ]
+    },
+    "allowJs": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

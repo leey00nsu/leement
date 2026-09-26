@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@leement/theme";
+@source "../../../registry";
+:root { scroll-behavior: smooth; }
+body { background: var(--lm-color-background-default); color: var(--lm-color-foreground-default); }
+.docs-shell { min-height: 100vh; }
+.docs-sidebar { scrollbar-width: thin; }
+.prose-leement code { border-radius: var(--lm-radius-sm); background: var(--lm-color-background-subtle); padding: .15rem .35rem; font-size: .9em; }
+.prose-leement pre { overflow: auto; border: 1px solid var(--lm-color-border-default); border-radius: var(--lm-radius-lg); background: var(--lm-color-background-subtle); padding: 1rem; }
+.prose-leement pre code { background: transparent; padding: 0; }

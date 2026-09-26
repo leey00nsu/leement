@@ -1,0 +1,9 @@
+{
+  "extends": "../../tooling/typescript/base.json",
+  "compilerOptions": {
+    "composite": false
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}

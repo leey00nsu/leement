@@ -1,0 +1,23 @@
+{
+  "name": "@leement/theme",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "CSS variables and Tailwind compatibility for Leement",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "style": "./dist/index.css",
+  "exports": {
+    ".": "./dist/index.css",
+    "./css": "./dist/index.css"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "node --check build.mjs",
+    "lint": "eslint build.mjs"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@leement/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Framework independent Leement design decisions",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.json": "./src/tokens.json"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src"
+  }
+}

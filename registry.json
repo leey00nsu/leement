@@ -1,0 +1,280 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "leement",
+  "homepage": "https://github.com/leey00nsu/leement",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Class utilities",
+      "description": "Class composition for Leement source files.",
+      "files": [
+        {
+          "path": "registry/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        }
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Leement button component.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Leement input component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Leement card component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Leement textarea component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Leement badge component.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Leement separator component.",
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Leement dialog component.",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Leement tooltip component.",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:component",
+      "title": "PageHeader",
+      "description": "Leement page-header pattern.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/page-header.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/page-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:component",
+      "title": "EmptyState",
+      "description": "Leement empty-state pattern.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/card"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/empty-state.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/empty-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-section",
+      "type": "registry:component",
+      "title": "FormSection",
+      "description": "Leement form-section pattern.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/form-section.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/form-section.tsx"
+        }
+      ]
+    },
+    {
+      "name": "search-field",
+      "type": "registry:component",
+      "title": "SearchField",
+      "description": "Leement search-field pattern.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/input"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/search-field.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/search-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:component",
+      "title": "StatCard",
+      "description": "Leement stat-card pattern.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/card"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/stat-card.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/stat-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-section",
+      "type": "registry:block",
+      "title": "Settings Section",
+      "description": "Settings form section block.",
+      "registryDependencies": [
+        "@leement/form-section",
+        "@leement/card"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/settings-section.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/settings-section.tsx"
+        }
+      ]
+    }
+  ]
+}

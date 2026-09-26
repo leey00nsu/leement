@@ -1,0 +1,12 @@
+import { notFound } from "next/navigation";
+import { tokens } from "@leement/tokens";
+const content = {
+  color: { rule: "Use semantic roles such as background, foreground, border, action and focus. Do not put palette names into product components.", detail: "Light surfaces follow CopySinger’s white and soft neutral palette. Dark surfaces follow Leesfield’s near black palette. Both share the same semantic names." },
+  typography: { rule: "Use one readable sans family, a small type scale, and weight for hierarchy before introducing display styles.", detail: "Body text starts at 14–16px; headings grow through 18, 20 and 24px. Line height is tighter for titles and relaxed for descriptions." },
+  spacing: { rule: "Use a 4px base rhythm. Keep control heights consistent: 36, 40 and 44px.", detail: "Spacing tokens range from 4px through 48px. Use the smallest value that keeps relationships clear." },
+  radius: { rule: "Use 8px for controls, 12px for cards, and fully rounded shapes for badges.", detail: "Radius expresses containment, not decoration. Avoid mixing unrelated radii within one component." },
+  shadow: { rule: "Prefer borders for static surfaces. Add shadow when elevation helps explain layering.", detail: "Three shadow levels cover subtle cards, floating menus, and dialogs." },
+  motion: { rule: "Use quick, calm state transitions. Motion should communicate response, not compete with content.", detail: "Fast, normal and slow durations are 120, 180 and 260ms. Reduced motion maps them to zero." },
+} as const;
+export function generateStaticParams() { return Object.keys(content).map(slug => ({ slug })); }
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; if (!(slug in content)) notFound(); const item = content[slug as keyof typeof content]; const source = tokens.primitive[slug as keyof typeof tokens.primitive]; return <article className="max-w-4xl"><p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Foundations</p><h1 className="mt-2 text-4xl font-semibold capitalize">{slug}</h1><p className="mt-6 text-lg leading-8">{item.rule}</p><p className="mt-3 text-muted-foreground">{item.detail}</p><div className="mt-10 rounded-xl border border-border bg-card p-6"><h2 className="text-lg font-semibold">Token source</h2><pre className="mt-4 overflow-auto rounded-md bg-muted p-4 text-xs"><code>{JSON.stringify(source,null,2)}</code></pre></div></article>; }

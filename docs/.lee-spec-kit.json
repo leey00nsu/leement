@@ -15,7 +15,36 @@
     "baseBranch": "main",
     "completionStrategy": "none",
     "deleteFeatureBranchAfterMerge": true,
-    "featureChecks": [],
+    "featureChecks": [
+      {
+        "command": "pnpm",
+        "args": [
+          "run",
+          "typecheck"
+        ]
+      },
+      {
+        "command": "pnpm",
+        "args": [
+          "run",
+          "lint"
+        ]
+      },
+      {
+        "command": "pnpm",
+        "args": [
+          "run",
+          "test"
+        ]
+      },
+      {
+        "command": "pnpm",
+        "args": [
+          "run",
+          "build"
+        ]
+      }
+    ],
     "postMergeChecks": [],
     "agentAutomationConfigured": true,
     "agentExecution": {
