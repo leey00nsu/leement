@@ -55,6 +55,16 @@ import TickerExample from "../examples/ticker";
 import StoriesExample from "../examples/stories";
 import ReelExample from "../examples/reel";
 import VideoPlayerExample from "../examples/video-player";
+import AnnouncementExample from "../examples/announcement";
+import BannerExample from "../examples/banner";
+import TypographyExample from "../examples/typography";
+import ColorPickerExample from "../examples/color-picker";
+import ComparisonExample from "../examples/comparison";
+import DeckExample from "../examples/deck";
+import DialogStackExample from "../examples/dialog-stack";
+import EditorExample from "../examples/editor";
+import GlimpseExample from "../examples/glimpse";
+import MarqueeExample from "../examples/marquee";
 import PageHeaderExample from "../examples/page-header";
 import EmptyStateExample from "../examples/empty-state";
 import FormSectionExample from "../examples/form-section";
@@ -118,6 +128,16 @@ const examples: Record<keyof typeof items, ComponentType> = {
   stories: StoriesExample,
   reel: ReelExample,
   "video-player": VideoPlayerExample,
+  announcement: AnnouncementExample,
+  banner: BannerExample,
+  typography: TypographyExample,
+  "color-picker": ColorPickerExample,
+  comparison: ComparisonExample,
+  deck: DeckExample,
+  "dialog-stack": DialogStackExample,
+  editor: EditorExample,
+  glimpse: GlimpseExample,
+  marquee: MarqueeExample,
   "page-header": PageHeaderExample,
   "empty-state": EmptyStateExample,
   "form-section": FormSectionExample,

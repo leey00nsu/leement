@@ -1,0 +1,3 @@
+"use client";
+import { DialogStack } from "../../../registry/blocks/dialog-stack";
+export default function DialogStackExample() { return <DialogStack triggerLabel="Create a workspace" pages={[{ id: "name", title: "Name your workspace", description: "Choose a name your team will recognize.", content: <input aria-label="Workspace name" placeholder="Studio" className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm" /> }, { id: "review", title: "Review details", description: "You can update your workspace later.", content: <p className="text-sm">Ready to create your space.</p> }]} />; }
