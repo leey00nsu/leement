@@ -301,9 +301,11 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+
+구현 완료 공유: 78개 item과 41개 Kibo 사례, 92개 docs 정적 페이지, 78개 CLI alias 설치, CopySinger/Leesfield의 격리된 공통 22개 채택 및 desktop/mobile light/dark 검증을 2026-09-27 사용자 진행 메시지로 전달했다. 사용자의 `A 자동진행` 지시에 따라 `implementation_approve`의 A(구현 승인 및 다음 단계 진행)를 적용한다. 실제 npm 게시·웹 호스팅과 원본 두 앱의 전면 교체는 이 Feature의 검증 결과와 구분한다.
 
 ### 테스트 실행 기록
 
@@ -316,6 +318,8 @@
 | `pnpm typecheck` | 2026-09-27 | PASS: 5 tasks |
 | `pnpm lint` | 2026-09-27 | PASS: 3 tasks |
 | `pnpm build` | 2026-09-27 | PASS: tokens, theme, registry, docs static routes |
+| `pnpm test` | 2026-09-27 | PASS: 11 files, 60 tests |
+| `pnpm check` | 2026-09-27 | PASS: build (92 docs pages), typecheck (5 tasks), lint (3 tasks), test (60 tests) |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
