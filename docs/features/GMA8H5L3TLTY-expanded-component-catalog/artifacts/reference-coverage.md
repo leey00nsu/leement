@@ -237,4 +237,18 @@ The seven collaboration/project management cases now have registry items and liv
 
 All nine are independent registry items and docs preview routes. `sandbox` alone declares `@codesandbox/sandpack-react`. The other eight rely only on React, semantic CSS and item-scoped icon/util dependencies. Focused interactions (8), registry build and docs build (66 pages), typecheck and lint passed. Clean consumer CLI installation remains Task 13.
 
+### Task 09 Kibo image, finance and social checkpoint
+
+| Kibo case | Leement item | Working scope | Boundary |
+| --- | --- | --- | --- |
+| Image Crop | `image-crop` | movable crop rectangle, reset and percentage bounds apply | app encodes, uploads and saves |
+| Image Zoom | `image-zoom` | Radix modal enlargement, Escape and focus return | app provides image URL and optional caption |
+| Credit Card | `credit-card` | masked last four digits, accessible front/back flip | no payment processing or security code |
+| Ticker | `ticker` | formatted price/change and expandable high/low | app supplies timely market data |
+| Stories | `stories` | image/video sequence, previous/next, pause, optional auto advance | app supplies media and authors |
+| Reel | `reel` | keyboard/button feed navigation, mute and pause | app supplies video URLs and metadata |
+| Video Player | `video-player` | play, pause, seek, mute and optional caption track | app hosts video and captions |
+
+All seven have registry items and source-backed preview routes. `image-crop` alone adds `react-image-crop`; `image-zoom` declares Radix Dialog. Docs includes a local original SVG scene and four-second generated MP4 for interaction, not a remote runtime dependency. Focused interaction tests (7), docs build (73 pages), typecheck and lint passed. Clean-consumer CLI installation remains Task 13.
+
 The matrix records source and migration intent. Tasks 02–11 must replace planned/candidate entries with actual registry paths and working source. Task 13 records item-by-item CLI install evidence. Task 14 records both-app import/render, representative real-use replacement, baseline/new-error separation and light/dark visual evidence. These checks are pending; no completed or stable status is implied here.

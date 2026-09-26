@@ -169,3 +169,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 실제 UI 상호작용을 제공하면서 전역 런타임이나 자체 코드 실행 서비스를 만들지 않는다. CopySinger/Leesfield에서 필요한 코드 표시와 선택기 역할을 공통 theme으로 제공한다. 문법 강조 같은 Kibo 고급 기능 차이는 [coverage artifact](./artifacts/reference-coverage.md#task-08-kibo-code-and-form-checkpoint)에 명시한다.
 - **Trace (실행 확인)**: 9개 item의 registry JSON과 source-backed docs route를 연결했다. CodeBlock/Snippet 복사, ContributionGraph 날짜 선택, Choicebox radio, Combobox keyboard 선택, Dropzone 브라우저 파일 선택, MiniCalendar 주 이동·날짜 선택, Tags 추가·삭제를 focused Vitest 8건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(66 pages), `pnpm typecheck`, `pnpm lint`가 통과했다. Sandbox는 Sandpack dependency와 정적 docs route 빌드를 확인했다.
 - **Evidence**: [Task contract](./tasks.md), [Kibo reference](https://github.com/shadcnblocks/kibo), [UI interaction tests](../../../registry/ui/code-form.test.tsx), [Sandbox source](../../../registry/blocks/sandbox.tsx), [Registry metadata](../../../registry.json)
+
+## D013: 이미지·금융·소셜 미디어 UI를 안전한 앱 경계로 제공한다 (2026-09-27)
+
+- **Context/Constraints**: Task 09의 일곱 항목은 crop/zoom, 카드 프리뷰, 시장 가격 표시, 스토리·릴·비디오 조작을 요구한다. 결제 인증·실시간 시세·미디어 인코딩/호스팅은 Leement UI 범위가 아니다.
+- **Trace (초기 가설)**: 이미지 crop은 브라우저 편집과 결과 callback, zoom은 접근 가능한 확대, 카드·시세는 주입받은 데이터와 가림/상세 제어, 소셜 미디어는 소비자 소스 URL과 직접 조작 가능한 이동·재생으로 구현한다. 비디오가 없는 문서 예제는 로컬 데모 asset을 마련한다.
+- **Options**: ① Kibo media/finance source와 관련 제품 로직을 그대로 이식한다 ② 핵심 UI 조작을 item별 source로 제공하고 데이터·결제·인코딩·호스팅은 소비자 앱에 둔다.
+- **Decision**: ②를 선택했다. ImageCrop은 퍼센트 crop callback만 제공하고 `react-image-crop`을 해당 item dependency로 선언했다. ImageZoom은 Radix modal 동작을 재사용한다. CreditCard는 마지막 네 자리만 렌더링한다. Ticker는 앱 제공 시세를 확장해 표시한다. Stories/Reel/VideoPlayer는 앱 제공 미디어 URL을 탐색·재생한다.
+- **Rationale**: Kibo의 각 화면 문제를 해결하면서 민감한 결제 데이터와 무거운 미디어 처리를 Leement가 소유하지 않는다. Docs의 데모 자산은 저장소 로컬이어서 미리보기가 외부 URL에 의존하지 않는다.
+- **Trace (실행 확인)**: 7개 registry item과 source-backed docs 예제를 연결했다. crop 범위 callback, 확대 dialog의 Escape, 마스킹·flip, 시세 상세, story 이동·pause, reel 키보드 이동·mute, player seek/mute를 focused Vitest 7건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(73 pages), `pnpm typecheck`, `pnpm lint`가 통과했다. 실제 브라우저 미디어 재생과 소비자 CLI 설치는 각각 Task 12/13에서 재확인한다.
+- **Evidence**: [Task contract](./tasks.md), [Media interaction tests](../../../registry/ui/media-finance.test.tsx), [Registry metadata](../../../registry.json), [Case mapping](./artifacts/reference-coverage.md#task-09-kibo-image-finance-and-social-checkpoint)

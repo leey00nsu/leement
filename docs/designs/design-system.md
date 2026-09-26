@@ -39,6 +39,8 @@ Progress와 Slider는 Base UI의 값·키보드 의미를 보존하고 `primary`
 
 코드 표시에는 읽기 전용 CodeBlock, 여러 명령을 고르는 Snippet, 직접 편집·실행할 수 있는 Sandbox를 구분한다. 복사 버튼은 결과를 텍스트와 이름으로 알려준다. Sandbox 실행은 해당 item의 Sandpack 격리 환경에 맡기고 Leement 서비스나 비밀값을 전달하지 않는다. ContributionGraph는 색상 강도만으로 정확한 수치를 전달하지 않고 각 날짜의 이름·수와 선택 상태 텍스트를 제공한다. Choicebox는 native fieldset/radio를, Combobox는 이름 붙은 검색 입력과 keyboard listbox를 쓴다. Dropzone은 파일 선택만 처리하며 업로드/저장은 앱 책임이다. MiniCalendar는 전체 월력 대신 가까운 일주일을 선택하고, Tags는 각 값의 삭제 버튼에 그 값을 명시한다.
 
+이미지와 미디어 UI는 앱이 제공한 자산만 표시한다. ImageCrop은 퍼센트 범위를 앱에 반환하며 저장·업로드는 하지 않는다. ImageZoom은 Radix Dialog의 초점, Escape, 닫기 동작을 보존한다. CreditCard는 마지막 네 자리만 렌더링하고 보안 코드나 결제 기능을 다루지 않는다. Ticker는 가격과 증감 방향을 텍스트로도 표시하며 데이터의 신선도는 앱이 설명한다. Stories, Reel, VideoPlayer는 각각 짧은 순서형 업데이트, 세로 영상 탐색, 단일 영상 재생에 쓴다. 자동 이동/재생은 reduced motion을 고려하고 탐색·일시정지·음소거·탐색 위치에는 이름이 있는 제어를 제공한다. 음성이 있는 영상은 앱이 자막 파일을 전달한다.
+
 EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담는다. PageHeader는 페이지 제목, 설명, action을 결합한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
 
 ## 접근성과 반응형
