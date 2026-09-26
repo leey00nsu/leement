@@ -273,13 +273,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-012] T-GMA8H5L3TLTY-expanded-component-catalog-14 Verify adoption in CopySinger and Leesfield
+- [DONE][PRD-FR-012] T-GMA8H5L3TLTY-expanded-component-catalog-14 Verify adoption in CopySinger and Leesfield
   - Date: 2026-09-27
   - Acceptance:
     - Common 22 items import/render in both isolated app environments; representative real use sites adopt Leement source and pass typecheck, build and key interactions without new regressions.
   - Checklist:
-    - [ ] Capture baseline app checks, use isolated copies and preserve original worktrees.
-    - [ ] Review light/dark desktop/mobile states against chosen shared rules and record remaining intentional differences.
+    - [x] Capture baseline app checks, use isolated copies and preserve original worktrees.
+    - [x] Review light/dark desktop/mobile states against chosen shared rules and record remaining intentional differences.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: Isolated CopySinger/Leesfield baselines passed typecheck/build after generated code preparation and verification-only environment values. The same 22 registry aliases installed in each; source-backed examples rendered/hydrated with zero page errors, and Switch/Tabs/Dialog/Select/Tooltip interactions passed. Representative CopySinger mixing-library imports and Leesfield Button/Card/Input/Badge wrappers were replaced with installed source. Both post-change typechecks/builds passed, with CopySinger UI tests 8/8 and Leesfield wrapper tests 2/2. Desktop/mobile light/dark screenshots and import/alias migration caveats: [two-app checkpoint](./artifacts/reference-coverage.md#task-14-copysinger-and-leesfield-adoption-checkpoint). Original app worktrees remained clean.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -316,4 +319,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:9c7a1e9dc9746f114cd7aefe23a2ab0a2f337191a988504bd72b39ae20419267 -->
+<!-- lee-spec-kit:workflow-sync sha256:a952b70a160f9b338ae8cd5716f2fdc08e4a5ee95a76c90ec4da731a78c63ed8 -->

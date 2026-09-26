@@ -219,3 +219,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: registry build가 통과해도 소비자 alias와 라이선스 고지 전달이 실패할 수 있다. 실제 설치 source가 프로젝트 소유로 남고 수정 후에도 빌드되는지 확인해야 한다.
 - **Trace (실행 확인)**: Button+EmptyState 단독 설치가 Utils/Card를 함께 설치했다. 전체 alias 설치 후 소비자 `tsc --noEmit`와 Vite build(모든 module eager import), 수정된 Button의 재빌드가 통과했다. 80개 설치 파일이 생성 JSON과 완전히 일치했고, 두 Kibo 출처 파일에는 전체 MIT 고지가 보존됐다. Docs production build 92 pages, repo typecheck/lint도 통과했다. 공개 npm/호스트 설치와 두 제품 채택은 각각 게시 이후/Task 14의 별도 범위다.
 - **Evidence**: [Task contract](./tasks.md), [Installation checkpoint](./artifacts/reference-coverage.md#task-13-registry-installation-checkpoint), [Registry metadata](../../../registry.json), [Avatar Stack source](../../../registry/ui/avatar-stack.tsx), [Cursor source](../../../registry/ui/cursor.tsx), [Third-party notice](../../../THIRD_PARTY_NOTICES.md)
+
+## D018: 두 제품에는 공통 source를 설치하고 제품 API는 앱 wrapper에서 연결한다 (2026-09-27)
+
+- **Context/Constraints**: Task 14는 CopySinger/Leesfield의 실제 환경에서 공통 22개 전수 import/render, 대표 사용처 교체, light/dark 시각·상호작용·빌드를 확인해야 한다. 원본 앱에는 변경을 남기지 않아야 한다. 기존 CSS alias와 제품별 API는 Leement source와 일부 다르다.
+- **Trace (초기 가설)**: Git archive 격리본에 같은 registry item을 설치하고 theme을 연결한다. 원본 제품 파일을 덮어쓰기보다 대표 import 및 앱 wrapper 내부 소스 참조만 바꾼다. 차이는 wrapper에서 매핑한다.
+- **Options**: ① 두 앱 UI 전체를 즉시 교체하고 제품별 variant를 Leement에 추가한다 ② 22개 전수 smoke와 실제 대표 사용처를 검증하고 제품 고유 variant/도메인 로직은 기존 앱 wrapper에 둔다.
+- **Decision**: ②를 선택했다. CopySinger의 믹싱 라이브러리 UI 7종을 설치된 Leement source로 바꾸고, Leesfield의 Button/Card/Input/Badge wrapper를 Leement source에 연결했다. 두 앱의 22개 예시 route를 만들고 light/dark desktop/mobile 및 키보드 동작을 검사했다. CopySinger의 테마 import를 기존 shadcn CSS 앞에 두어 토큰이 실제 빌드에 포함되게 했다. 일반 카드의 Bento 숫자는 `data-accent-foreground` 대신 `foreground`를 쓴다.
+- **Rationale**: 한 공통 소스가 두 제품에서 빌드·렌더링되는지 직접 증명하면서, 인증·도메인 데이터·현지화·제품별 시각 결정을 디자인 시스템에 흡수하지 않는다. 기존 앱의 전체 배포 전환은 별도 제품 작업이다.
+- **Trace (실행 확인)**: 생성 코드 준비 후 양 앱 baseline typecheck/build가 검증용 환경값에서 통과했다. 교체 후에도 양 앱 typecheck/build가 통과하고 CopySinger UI 8건, Leesfield wrapper 2건의 테스트가 통과했다. 22개씩 browser 렌더와 Switch/Tabs/Dialog/Select/Tooltip 동작에서 pageerror 0건. Docs example의 Dialog/Tooltip client 경계를 바로잡고, CSS import 순서와 alias 충돌 위험을 문서에 추가했다. 원본 앱 checkout은 clean 상태로 유지했다.
+- **Evidence**: [Task contract](./tasks.md), [Two-app adoption checkpoint and screenshots](./artifacts/reference-coverage.md#task-14-copysinger-and-leesfield-adoption-checkpoint), [Design rules](../../designs/design-system.md), [Adoption guide](../../../apps/docs/app/adoption/page.tsx), [Theme import guide](../../../apps/docs/app/getting-started/page.tsx)
