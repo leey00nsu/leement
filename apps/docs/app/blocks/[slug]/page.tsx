@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ItemPage } from "../../../components/item-page";
 import { items } from "../../../lib/items";
 
-const names = ["settings-section"] as const;
+const names = ["settings-section", "bento-grid"] as const;
 type PageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {

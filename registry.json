@@ -205,6 +205,49 @@
       ]
     },
     {
+      "name": "chart", "type": "registry:ui", "title": "Chart", "description": "Semantic Recharts composition and tooltip.",
+      "dependencies": ["recharts"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/chart.tsx", "type": "registry:ui", "target": "components/ui/chart.tsx" }]
+    },
+    {
+      "name": "skeleton", "type": "registry:ui", "title": "Skeleton", "description": "Reduced-motion-aware loading placeholder.",
+      "dependencies": [], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/skeleton.tsx", "type": "registry:ui", "target": "components/ui/skeleton.tsx" }]
+    },
+    {
+      "name": "status-notice", "type": "registry:ui", "title": "Status Notice", "description": "Inline semantic status feedback.",
+      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/status-notice.tsx", "type": "registry:ui", "target": "components/ui/status-notice.tsx" }]
+    },
+    {
+      "name": "reveal-content", "type": "registry:ui", "title": "Reveal Content", "description": "Reduced-motion-aware one-shot content reveal.",
+      "dependencies": ["motion"], "registryDependencies": ["@leement/utils"],
+      "files": [
+        { "path": "registry/ui/reveal-content.tsx", "type": "registry:ui", "target": "components/ui/reveal-content.tsx" },
+        { "path": "registry/ui/reveal-content.module.css", "type": "registry:file", "target": "components/ui/reveal-content.module.css" }
+      ]
+    },
+    {
+      "name": "state-panel", "type": "registry:component", "title": "State Panel", "description": "Empty, success, warning or error state with next action.",
+      "dependencies": ["class-variance-authority"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/patterns/state-panel.tsx", "type": "registry:component", "target": "components/patterns/state-panel.tsx" }]
+    },
+    {
+      "name": "product-page-intro", "type": "registry:component", "title": "Product Page Intro", "description": "Product page heading, context and action layout.",
+      "dependencies": ["class-variance-authority"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/patterns/product-page-intro.tsx", "type": "registry:component", "target": "components/patterns/product-page-intro.tsx" }]
+    },
+    {
+      "name": "resource-row-link", "type": "registry:component", "title": "Resource Row Link", "description": "Accessible row-wide navigation or action.",
+      "dependencies": [], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/patterns/resource-row-link.tsx", "type": "registry:component", "target": "components/patterns/resource-row-link.tsx" }]
+    },
+    {
+      "name": "bento-grid", "type": "registry:block", "title": "Bento Grid", "description": "Responsive product feature grid.",
+      "dependencies": [], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/blocks/bento-grid.tsx", "type": "registry:component", "target": "components/blocks/bento-grid.tsx" }]
+    },
+    {
       "name": "page-header",
       "type": "registry:component",
       "title": "PageHeader",

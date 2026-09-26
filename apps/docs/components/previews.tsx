@@ -16,6 +16,14 @@ import DropdownMenuExample from "../examples/dropdown-menu";
 import PopoverExample from "../examples/popover";
 import SheetExample from "../examples/sheet";
 import TooltipExample from "../examples/tooltip";
+import ChartExample from "../examples/chart";
+import SkeletonExample from "../examples/skeleton";
+import StatusNoticeExample from "../examples/status-notice";
+import RevealContentExample from "../examples/reveal-content";
+import StatePanelExample from "../examples/state-panel";
+import ProductPageIntroExample from "../examples/product-page-intro";
+import ResourceRowLinkExample from "../examples/resource-row-link";
+import BentoGridExample from "../examples/bento-grid";
 import PageHeaderExample from "../examples/page-header";
 import EmptyStateExample from "../examples/empty-state";
 import FormSectionExample from "../examples/form-section";
@@ -40,6 +48,14 @@ const examples: Record<keyof typeof items, ComponentType> = {
   popover: PopoverExample,
   sheet: SheetExample,
   tooltip: TooltipExample,
+  chart: ChartExample,
+  skeleton: SkeletonExample,
+  "status-notice": StatusNoticeExample,
+  "reveal-content": RevealContentExample,
+  "state-panel": StatePanelExample,
+  "product-page-intro": ProductPageIntroExample,
+  "resource-row-link": ResourceRowLinkExample,
+  "bento-grid": BentoGridExample,
   "page-header": PageHeaderExample,
   "empty-state": EmptyStateExample,
   "form-section": FormSectionExample,
