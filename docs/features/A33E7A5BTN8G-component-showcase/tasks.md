@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/A33E7A5BTN8G-component-showcase`
 - **대기 중 변경 요청**: -
@@ -75,6 +75,34 @@
 
 ---
 
+- [DONE][PRD-FR-005] T-A33E7A5BTN8G-component-showcase-01 전체 컴포넌트 갤러리와 문서 배포 빌드 구현
+  - Date: 2026-09-26
+  - Acceptance:
+    - [x] 14개 registry 항목이 /showcase에 표시되고 상세 문서 및 설치 명령으로 연결된다 (production HTTP: 14/14)
+    - [x] light/dark 전환과 interactive Preview가 키보드로 동작한다 (browser: Input, Dialog/Escape, Tooltip/focus)
+    - [x] 문서 단독 빌드와 root 빌드에서 registry JSON이 생성되고 production HTTP 응답이 정상이다 (14/14)
+  - Checklist:
+    - [x] 기존 Preview와 registry source를 사용해 3개 레이어 갤러리 구현
+    - [x] 내비게이션과 홈 진입점 및 light/dark 전환 구현
+    - [x] 모바일 메뉴를 접이식으로 바꾸고 선택 테마 상태를 명확히 표시 (390px, overflow 없음)
+    - [x] 문서 앱 단독 배포 빌드에 registry JSON 생성 포함
+    - [x] docs typecheck/lint/build, production HTTP 및 수동 UI 확인
+    - [x] pnpm typecheck/lint/test/build, workflow audit 완료
+  - Docs:
+    - project:apps/docs/app/showcase/page.tsx
+    - project:apps/docs/components/showcase-gallery.tsx
+    - project:apps/docs/lib/docs.ts
+    - project:apps/docs/app/page.tsx
+    - project:apps/docs/app/layout.tsx
+    - project:apps/docs/package.json
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+<!-- lee-spec-kit:workflow-sync sha256:c1071304f7647ee155e35b64df2ebe688c956b90d6b1d5a781a0ebf4a8e73f8f -->
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -88,7 +116,7 @@
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
 - [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -98,6 +126,9 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm --filter @leement/docs build` | `2026-09-26` | PASS: `/showcase` + registry JSON 생성 |
+| `pnpm check` | `2026-09-26` | PASS: build/typecheck/lint/3 tests |
+| production HTTP smoke | `2026-09-26` | PASS: 14 detail routes, 14 registry items, showcase |
+| Chromium 390px smoke | `2026-09-26` | PASS: semantic theme 색상 변경, 가로 넘침 0 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.

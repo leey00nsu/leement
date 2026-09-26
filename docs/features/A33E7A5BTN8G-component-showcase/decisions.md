@@ -23,19 +23,18 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 ---
 
-## D001: component-showcase 결정 (2026-09-26)
+## D001: 갤러리는 registry 원본을 재사용한다 (2026-09-26)
 
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: 상세 문서에는 이미 registry 파일을 import하는 `Preview`가 있으나 모든 항목을 한 화면에서 찾을 수 없다.
+- **Constraints**: Source ownership 원칙, 작은 v0.1 인프라, 기존 접근성 동작을 유지한다.
+- **Options**: ① 갤러리 전용 컴포넌트 복사본 작성 ② 기존 `Preview`와 metadata 재사용.
+- **Decision**: 기존 `Preview`와 `items` metadata를 재사용하고, 테마는 갤러리의 `data-lm-theme`로 한정한다.
+- **Rationale**: 문서 예시와 배포 소스가 갈라지지 않는다. 테마 토글도 별도 상태 엔진이 필요 없다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+  - **DOING 시작 시점**: 기존 상세 문서가 `Preview`와 registry 원본을 사용하고 있음을 확인했다.
+  - **DONE 전 확정 시점**: 갤러리 14개, 모바일 접이식 메뉴, 선택 상태를 구현했고 standalone docs build와 production HTTP·브라우저 검증이 통과했다.
+  - **머지 후 확인**: 로컬 통합 후 결과를 기록한다.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - **Commit**: 태스크 커밋 후 해시를 기록한다.
+  - **Test/Log**: `pnpm check` PASS (build/typecheck/lint/3 tests), production HTTP 14/14, Chromium 390px overflow 없음, Aside Dialog/Escape·Tooltip/focus 확인.
+- **Consequences**: 갤러리와 상세 문서가 같은 예시를 공유한다.
