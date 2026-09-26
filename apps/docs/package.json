@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm --dir ../.. build:tokens && pnpm --dir ../.. build:theme && pnpm --dir ../.. registry:build && next build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint ."
   },
