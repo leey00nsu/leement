@@ -33,7 +33,7 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Trace**:
   - **DOING 시작 시점**: 기존 상세 문서가 `Preview`와 registry 원본을 사용하고 있음을 확인했다.
   - **DONE 전 확정 시점**: 갤러리 14개, 모바일 접이식 메뉴, 선택 상태를 구현했고 standalone docs build와 production HTTP·브라우저 검증이 통과했다.
-  - **머지 후 확인**: 로컬 통합 후 결과를 기록한다.
+  - **머지 후 확인**: T01과 T02가 `main`에 fast-forward 통합되었고, `main`에서 lockfile 기준 설치와 docs 타입 검사가 통과했다.
 - **Evidence**:
   - **Commit**: 태스크 커밋 후 해시를 기록한다.
   - **Test/Log**: `pnpm check` PASS (build/typecheck/lint/3 tests), production HTTP 14/14, Chromium 390px overflow 없음, Aside Dialog/Escape·Tooltip/focus 확인.
@@ -49,7 +49,7 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Trace**:
   - **DOING 시작 시점**: 기존 Feature는 이미 main에 통합되고 workflow-stage가 done을 반환했다. 방향 변경 요청에 따라 새 태스크를 추가하고 완료 체크를 다시 열었다.
   - **DONE 전 확정 시점**: 14개 예제를 실행 파일로 분리하고 같은 파일을 코드 뷰에 사용했다. Source는 생성된 registry JSON의 실제 배포 내용을 사용한다. Next 빌드의 광범위한 파일 추적 경고를 없애기 위해 원본 디렉터리 직접 읽기 대신 `public/r`만 읽는다. `pnpm check`, 28/28 HTTP, Chromium 상호작용 검증이 통과했다.
-  - **머지 후 확인**: 실제 통합 결과를 기록한다.
+  - **머지 후 확인**: `main`을 `85b4042`까지 fast-forward 통합했다. `pnpm install --frozen-lockfile` 및 `pnpm --filter @leement/docs typecheck`가 통합 checkout에서 통과했다.
 - **Evidence**:
   - **Source**: https://github.com/shadcnblocks/kibo/blob/main/apps/docs/components/preview/index.tsx
   - **License**: https://github.com/shadcnblocks/kibo/blob/main/license.md
@@ -66,7 +66,7 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Trace**:
   - **DOING 시작 시점**: 새 worktree/branch는 정리했고 XC5의 코드 구현은 없었다. git revert의 문서 삭제가 commit-audit에서 차단되어 revert를 중단했다.
   - **DONE 전 확정 시점**: XC5 worktree와 branch를 정리했고, 남겨진 등록 문서의 상단에 withdrawn duplicate를 명시했다. A33 T02에서만 코드와 검증을 기록했다.
-  - **머지 후 확인**: 실제 통합 결과를 기록한다.
+  - **머지 후 확인**: 잘못 만든 XC5의 branch/worktree는 남아 있지 않다. canonical 문서에는 withdrawn 안내만 보존되며 구현 코드는 A33에만 속한다.
 - **Evidence**:
   - **Commit**: e4d73d4 (잘못된 Feature 등록)
   - **Test/Log**: `commit-audit --json --enforce` → `CANONICAL_FEATURE_DOC_DELETION`.
