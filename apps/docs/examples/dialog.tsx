@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "../../../registry/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../../../registry/ui/dialog";
 import { Input } from "../../../registry/ui/input";

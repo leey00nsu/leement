@@ -14,6 +14,8 @@ lee-spec-kit:
 
 CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 다크 모드처럼 만들려 한 의도가 출발점이다. Leement는 두 제품의 숫자를 복제하거나 평균 내지 않고 하나의 semantic 역할 집합에 light/dark 값을 배정한다. 두 앱에서 공통 source/API를 쓸 수 있는지, 본문 가독성·상태 대비·사용 맥락이 일관적인지를 우선한다. 제품별 브랜드·도메인 표현은 앱에 남긴다. light는 밝은 중립 표면과 진한 본문, dark는 `#111113` 배경 위에 `#1a1a1d` 기본 표면과 `#242427` 떠 있는 표면을 쓴다. dark는 `[data-lm-theme="dark"]` 또는 기존 앱의 `.dark`로 선택한다. 숫자·픽셀 단위의 원본 일치 여부는 성공 기준이 아니며 두 앱의 실제 적용 검증은 Feature GMA8H5L3TLTY에서 진행 중이다.
 
+기존 Tailwind 앱에 도입할 때 CSS에서는 `@leement/theme`을 Tailwind 다음, `shadcn/tailwind.css`보다 앞에 import한다. 기존 앱이 같은 `--background`, `--primary` 등의 alias를 다시 정의한다면 뒤의 값이 Leement 호환 alias를 덮을 수 있다. 작은 영역에 `data-lm-theme="light"` 또는 `"dark"`를 부여해 공통 source와 의미 토큰을 먼저 확인하고, 전면 도입할 때 중복 alias를 정리한다. 제품 전용 wrapper는 도메인 동작·현지화와 이전 API 매핑을 맡되 Leement component source를 복제하거나 제품별로 fork하지 않는다. 예를 들어 기존 Button `default`를 Leement `primary`로, 앱의 `isLoading`/`loadingText`를 Leement `loading` 및 자식 텍스트로 연결할 수 있다. `data-accent-foreground`는 채워진 데이터 강조 표면 위의 전경색이므로 일반 카드 위 텍스트로 사용하지 않는다.
+
 ## 토큰 규칙
 
 - Color: background, surface, foreground, border, action, focus, status(success/warning), data accent 역할로 사용한다. `neutral`, `blue` 등 palette 이름은 primitive에서만 사용한다. dark data accent는 파란색, light는 보라 계열을 사용하되 앱의 임의 브랜드색을 전역 primary로 흡수하지 않는다. 상태에는 색상과 텍스트를 함께 사용한다.
