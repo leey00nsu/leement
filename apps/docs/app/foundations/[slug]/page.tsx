@@ -1,12 +1,43 @@
 import { notFound } from "next/navigation";
 import { tokens } from "@leement/tokens";
+
 const content = {
-  color: { rule: "Use semantic roles for background, surface, foreground, border, action, focus, status and data accent. Palette names stay in primitive tokens.", detail: "CopySinger light and Leesfield dark inform one shared language. The modes express the same roles with values chosen for legibility and consistent states, rather than matching either product pixel by pixel." },
-  typography: { rule: "Use one readable sans family, a small type scale, and weight for hierarchy before introducing display styles.", detail: "Body text starts at 14–16px; headings grow through 18, 20 and 24px. The theme declares a Pretendard-first stack; consumer apps load the actual font file or CDN stylesheet." },
-  spacing: { rule: "Use a 4px base rhythm. Keep control heights consistent: 36, 40 and 44px.", detail: "Spacing tokens range from 4px through 48px. Use the smallest value that keeps relationships clear." },
-  radius: { rule: "Use 8px for controls, 12px for cards, and fully rounded shapes for badges.", detail: "Radius expresses containment, not decoration. Avoid mixing unrelated radii within one component." },
-  shadow: { rule: "Prefer borders for static cards and inputs. Add shadow when elevation helps explain layering.", detail: "The shadow tokens are available for floating menus, dialogs and other raised surfaces; the default Card has no shadow." },
-  motion: { rule: "Use quick, calm state transitions. Motion should communicate response, not compete with content.", detail: "Fast, normal and slow durations are 120, 180 and 260ms. Reduced motion maps them to zero." },
+  color: { rule: "Use semantic roles for background, surface, foreground, border, action, focus, status and data accent. Palette names stay in primitive tokens.", detail: "CopySinger light and Leesfield dark inform one shared language. Choose the same role for the same purpose in both modes." },
+  typography: { rule: "Use one readable sans family, a small type scale and weight for hierarchy before introducing display styles.", detail: "The theme declares a Pretendard-first stack. Consumer apps load the font file or CDN stylesheet; fallback remains available." },
+  spacing: { rule: "Use a 4px base rhythm and keep control heights consistent at 36, 40 and 44px.", detail: "Choose spacing based on content relationship. Tighter within one control, wider between independent sections." },
+  radius: { rule: "Use 8px for controls, 12px for cards and fully rounded shapes for badges and pills.", detail: "Radius expresses containment. Keep surface hierarchy consistent across light and dark." },
+  shadow: { rule: "Prefer borders for static cards and inputs. Add shadow when elevation helps explain layering.", detail: "Use the shadow scale for floating menus and dialogs. A basic Card has no shadow." },
+  motion: { rule: "Use quick, calm state transitions. Motion should communicate response.", detail: "Fast, normal and slow durations are 120, 180 and 260ms. Reduced motion maps them to zero." },
 } as const;
-export function generateStaticParams() { return Object.keys(content).map(slug => ({ slug })); }
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; if (!(slug in content)) notFound(); const item = content[slug as keyof typeof content]; const source = tokens.primitive[slug as keyof typeof tokens.primitive]; return <article className="max-w-4xl"><p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Foundations</p><h1 className="mt-2 text-4xl font-semibold capitalize">{slug}</h1><p className="mt-6 text-lg leading-8">{item.rule}</p><p className="mt-3 text-muted-foreground">{item.detail}</p><div className="mt-10 rounded-xl border border-border bg-card p-6"><h2 className="text-lg font-semibold">Token source</h2><pre className="mt-4 overflow-auto rounded-md bg-muted p-4 text-xs"><code>{JSON.stringify(source,null,2)}</code></pre></div></article>; }
+
+function flatten(value: unknown, prefix: string[] = []): Array<[string, string]> {
+  if (typeof value !== "object" || value === null) return [[prefix.join("."), String(value)]];
+  return Object.entries(value).flatMap(([key, child]) => flatten(child, [...prefix, key]));
+}
+function resolve(value: string) {
+  if (!value.startsWith("{") || !value.endsWith("}")) return value;
+  const path = value.slice(1, -1).split(".");
+  let current: unknown = tokens.primitive;
+  for (const key of path) current = (current as Record<string, unknown>)[key];
+  return String(current);
+}
+
+export function generateStaticParams() { return Object.keys(content).map((slug) => ({ slug })); }
+
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  if (!(slug in content)) notFound();
+  const item = content[slug as keyof typeof content];
+  const source = tokens.primitive[slug as keyof typeof tokens.primitive];
+  const primitive = flatten(source);
+  const semantic = slug === "color" ? ["light", "dark"].map((mode) => ({ mode, entries: flatten(tokens.semantic[mode as keyof typeof tokens.semantic].color).map(([name, value]) => [name, resolve(value)] as const) })) : [];
+  return <article className="max-w-5xl pb-16">
+    <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Foundations</p>
+    <h1 className="mt-2 text-4xl font-semibold capitalize">{slug}</h1>
+    <p className="mt-6 text-lg leading-8">{item.rule}</p>
+    <p className="mt-3 text-muted-foreground">{item.detail}</p>
+    {semantic.map(({ mode, entries }) => <section key={mode} aria-label={`${mode} semantic colors`} className="mt-10"><h2 className="mb-4 text-xl font-semibold capitalize">{mode} semantic roles</h2><div className="grid gap-2 sm:grid-cols-2">{entries.map(([name, value]) => <div key={name} className="flex items-center gap-3 rounded-lg border border-border bg-card p-3"><span aria-hidden="true" className="size-9 shrink-0 rounded-md border border-border" style={{ backgroundColor: value }} /><div className="min-w-0"><code className="block break-all text-xs">--lm-color-{name.replace(/([a-z])([A-Z])/g, "$1-$2").replaceAll(".", "-").toLowerCase()}</code><span className="text-xs text-muted-foreground">{value}</span></div></div>)}</div></section>)}
+    <section className="mt-10"><h2 className="mb-4 text-xl font-semibold">Primitive tokens</h2><div className="overflow-x-auto rounded-xl border border-border"><table className="w-full text-left text-sm"><caption className="sr-only">{slug} primitive token values</caption><thead className="bg-muted/50"><tr><th scope="col" className="px-4 py-3">Token</th><th scope="col" className="px-4 py-3">Value</th></tr></thead><tbody>{primitive.map(([name, value]) => <tr key={name} className="border-t border-border"><th scope="row" className="px-4 py-3 font-mono text-xs font-normal">{slug}.{name}</th><td className="px-4 py-3 font-mono text-xs">{value}</td></tr>)}</tbody></table></div></section>
+    {slug === "motion" && <p className="mt-4 text-sm text-muted-foreground">Under <code>prefers-reduced-motion: reduce</code>, all three duration variables resolve to <code>0ms</code>.</p>}
+  </article>;
+}

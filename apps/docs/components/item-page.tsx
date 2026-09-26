@@ -18,6 +18,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
     { title: "Anatomy", body: item.anatomy },
     { title: "Variants", body: item.variants },
     { title: "Sizes", body: item.sizes },
+    { title: "States", body: item.variants + ". Check default, keyboard focus, disabled and loading where relevant in the live example and source. The host application owns data and asynchronous transitions." },
     { title: "Accessibility", body: item.accessibility },
     { title: "API", body: item.api },
   ];
@@ -57,7 +58,8 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
       <div className="flex flex-col justify-between gap-5 bg-muted/40 p-6 sm:p-7">
         <div>
           <h2 className="text-sm font-semibold">Install and own the source</h2>
-          <p className="mt-3 text-sm leading-7 text-muted-foreground">The registry adds editable files to your project. Add the theme first, then install this item.</p>
+          <p className="mt-3 text-sm leading-7 text-muted-foreground">The registry adds editable files to your project. Add the theme first, then install this item. Public installation requires a published theme package and deployed registry.</p>
+          <pre className="mt-4 overflow-x-auto rounded-md border border-border bg-background p-3 text-xs"><code>{`pnpm add @leement/theme\nnpx shadcn@latest add @leement/${name}`}</code></pre>
         </div>
         <Link href="/getting-started" className="inline-flex items-center gap-2 self-start text-sm font-medium underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           Installation guide <ArrowUpRight aria-hidden="true" size={15} />
