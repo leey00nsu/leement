@@ -12,7 +12,7 @@ test("button variants preserve native behavior and visible focus rule", async ()
   render(<Button variant="outline" onClick={onClick}>Save</Button>);
   const button = screen.getByRole("button", { name: "Save" });
   expect(button.className).toContain("border-border");
-  expect(button.className).toContain("focus-visible:ring-2");
+  expect(button.className).toContain("focus-visible:ring-3");
   await user.tab();
   expect(document.activeElement).toBe(button);
   await user.keyboard("{Enter}");

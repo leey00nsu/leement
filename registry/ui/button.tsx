@@ -5,16 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md border text-sm font-medium transition-colors duration-(--lm-motion-duration-normal) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md border text-sm font-medium transition-colors duration-(--lm-motion-duration-normal) focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   { variants: {
     variant: {
       primary: "border-transparent bg-primary text-primary-foreground hover:bg-(--lm-color-action-primary-hover)",
       secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-(--lm-color-action-secondary-hover)",
       outline: "border-border bg-background text-foreground hover:bg-muted",
       ghost: "border-transparent bg-transparent text-foreground hover:bg-muted",
-      destructive: "border-transparent bg-destructive text-white hover:bg-(--lm-color-action-danger-hover)",
+      destructive: "border-transparent bg-destructive/10 text-destructive hover:bg-destructive/20",
     },
-    size: { sm: "h-9 px-3", default: "h-10 px-4", lg: "h-11 px-5", icon: "size-10 px-0" },
+    size: { xs: "h-8 px-2.5 text-xs", sm: "h-9 px-3", default: "h-10 px-4", lg: "h-11 px-5", icon: "size-10 px-0", "icon-sm": "size-9 px-0" },
   }, defaultVariants: { variant: "primary", size: "default" } }
 );
 

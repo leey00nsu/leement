@@ -3,6 +3,10 @@
 import type { ComponentType } from "react";
 import ButtonExample from "../examples/button";
 import InputExample from "../examples/input";
+import SelectExample from "../examples/select";
+import SwitchExample from "../examples/switch";
+import TabsExample from "../examples/tabs";
+import LabelExample from "../examples/label";
 import TextareaExample from "../examples/textarea";
 import BadgeExample from "../examples/badge";
 import CardExample from "../examples/card";
@@ -20,6 +24,10 @@ import { items } from "../lib/items";
 const examples: Record<keyof typeof items, ComponentType> = {
   button: ButtonExample,
   input: InputExample,
+  select: SelectExample,
+  switch: SwitchExample,
+  tabs: TabsExample,
+  label: LabelExample,
   textarea: TextareaExample,
   badge: BadgeExample,
   card: CardExample,
