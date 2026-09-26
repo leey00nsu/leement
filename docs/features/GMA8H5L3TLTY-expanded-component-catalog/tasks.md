@@ -177,13 +177,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-08 Add Kibo code and form cases
+- [DONE][PRD-FR-007] T-GMA8H5L3TLTY-expanded-component-catalog-08 Add Kibo code and form cases
   - Date: 2026-09-27
   - Acceptance:
     - Code Block, Contribution Graph, Sandbox, Snippet, Choicebox, Combobox, Dropzone, Mini Calendar and Tags each have a working registry use case.
   - Checklist:
-    - [ ] Keep code execution and file persistence outside registry UI.
-    - [ ] Verify keyboard, input, selection, clipboard or drop behavior as relevant.
+    - [x] Keep code execution in item-scoped Sandpack and file persistence outside registry UI.
+    - [x] Verify keyboard, input, selection and clipboard behavior; file browse is tested and native drop uses the same collector.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: `pnpm exec vitest run registry/ui/code-form.test.tsx` (8 tests), `pnpm registry:build` through docs build, `pnpm --filter @leement/docs build` (66 pages), `pnpm typecheck`, `pnpm lint` passed on 2026-09-27. [Kibo code/form checkpoint](./artifacts/reference-coverage.md#task-08-kibo-code-and-form-checkpoint). Clean-consumer CLI installation remains Task 13.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -298,4 +301,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:b66cccb22b6cff898f70dd6475c095d86e24c338397d69503097f0708238bb06 -->
+<!-- lee-spec-kit:workflow-sync sha256:deb0715290178d81147efcb16cdff268f1f34dacdc875e75f0165cee1fa97cfd -->

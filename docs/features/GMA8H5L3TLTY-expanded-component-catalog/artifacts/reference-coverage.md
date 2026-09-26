@@ -221,4 +221,20 @@ The seven collaboration/project management cases now have registry items and liv
 
 `avatar-stack` and `cursor` incorporate selected Kibo MIT source with the notice in `THIRD_PARTY_NOTICES.md`. Other five cases are Leement implementations. Installation metadata declares `@leement/avatar` for Avatar Stack and `@leement/utils` for styling where needed. The build emitted all seven JSON items. Focused interaction tests (6), docs build (57 pages), typecheck and lint passed. CLI installation in clean consumers is a separate Task 13 gate.
 
+### Task 08 Kibo code and form checkpoint
+
+| Kibo case | Leement item | Working scope | Boundary |
+| --- | --- | --- | --- |
+| Code Block | `code-block` | preserve source whitespace, optional line numbers, exact copy | syntax highlighting not yet provided |
+| Contribution Graph | `contribution-graph` | bounded daily intensity, named date/count buttons and total | aggregation supplied by app |
+| Sandbox | `sandbox` | Sandpack editor, isolated preview, optional console | execution delegated to item-scoped Sandpack; no Leement backend |
+| Snippet | `snippet` | command tabs, arrow-key selection, active command copy | commands supplied by app |
+| Choicebox | `choicebox` | descriptive native radio selection | app validates and persists choice |
+| Combobox | `combobox` | filtered single selection, arrows/Enter/Escape, outside close | options supplied by app |
+| Dropzone | `dropzone` | browse/drop collection with type filter and status | no network upload or persistence |
+| Mini Calendar | `mini-calendar` | seven-day selection, week and arrow navigation | no event agenda; use Calendar for that |
+| Tags | `tags` | add, suggest and remove multiple labels | app owns validation and persistence |
+
+All nine are independent registry items and docs preview routes. `sandbox` alone declares `@codesandbox/sandpack-react`. The other eight rely only on React, semantic CSS and item-scoped icon/util dependencies. Focused interactions (8), registry build and docs build (66 pages), typecheck and lint passed. Clean consumer CLI installation remains Task 13.
+
 The matrix records source and migration intent. Tasks 02–11 must replace planned/candidate entries with actual registry paths and working source. Task 13 records item-by-item CLI install evidence. Task 14 records both-app import/render, representative real-use replacement, baseline/new-error separation and light/dark visual evidence. These checks are pending; no completed or stable status is implied here.

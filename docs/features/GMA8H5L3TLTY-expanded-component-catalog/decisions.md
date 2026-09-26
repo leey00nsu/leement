@@ -159,3 +159,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 복합 item의 핵심 탐색·조작과 소스 소유 경험을 유지하면서 docs 앱과 소비자 앱에 전역 atom을 강제하지 않는다. Kibo의 완전한 기능/API 동일성을 주장하지 않으며, 현재 제공 범위는 [coverage artifact](./artifacts/reference-coverage.md#task-07-kibo-collaboration-checkpoint)에 기록한다.
 - **Trace (실행 확인)**: 7개 item의 registry metadata와 source-backed docs preview를 연결했다. Calendar 방향키와 일정 표시, List 순서 변경, Table 숫자 정렬, Gantt 키보드 이동, Kanban 열 변경·상태 안내, AvatarStack/Cursor 의미를 focused Vitest 6건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(57 pages), `pnpm typecheck`, `pnpm lint`가 통과했다.
 - **Evidence**: [Kibo reference](https://github.com/shadcnblocks/kibo), [MIT notice](../../../THIRD_PARTY_NOTICES.md), [Interaction tests](../../../registry/blocks/collaboration.test.tsx), [Registry metadata](../../../registry.json), [Task contract](./tasks.md)
+
+## D012: 코드·폼 사례의 조작 범위를 소비자 소스로 분리한다 (2026-09-27)
+
+- **Context/Constraints**: Task 08은 Code Block, Contribution Graph, Sandbox, Snippet, Choicebox, Combobox, Dropzone, Mini Calendar, Tags의 핵심 조작을 요구한다. Kibo의 Code Block은 Shiki, Sandbox는 Sandpack 등 큰 선택적 의존성이 있고, Leement는 item별 설치와 프레임워크 비종속 token을 유지한다.
+- **Trace (초기 가설)**: 코드 실행이나 업로드 저장을 Leement 서버 기능으로 만들지 않는다. 시각화/선택/복사/파일 수집은 작은 registry source에서 처리하며 실행 미리보기는 검증된 Sandpack을 해당 item의 선택적 dependency로 격리한다. 키보드 조작과 명시적 label을 우선한다.
+- **Options**: ① Kibo의 큰 source와 모든 하위 패키지를 복제한다 ② 핵심 사례를 단순한 Leement 소스로 구성하고 Sandpack만 item별 선택 의존성으로 둔다.
+- **Decision**: ②를 선택했다. 여덟 사례는 Leement의 작고 수정 가능한 source로 제공한다. Sandbox는 Sandpack 편집기·격리 preview를 사용하며 해당 registry item만 Sandpack을 설치한다. 복사·날짜/태그/단일 선택·파일 수집은 UI에서 처리하지만 서버 실행/저장은 앱 책임이다.
+- **Rationale**: 실제 UI 상호작용을 제공하면서 전역 런타임이나 자체 코드 실행 서비스를 만들지 않는다. CopySinger/Leesfield에서 필요한 코드 표시와 선택기 역할을 공통 theme으로 제공한다. 문법 강조 같은 Kibo 고급 기능 차이는 [coverage artifact](./artifacts/reference-coverage.md#task-08-kibo-code-and-form-checkpoint)에 명시한다.
+- **Trace (실행 확인)**: 9개 item의 registry JSON과 source-backed docs route를 연결했다. CodeBlock/Snippet 복사, ContributionGraph 날짜 선택, Choicebox radio, Combobox keyboard 선택, Dropzone 브라우저 파일 선택, MiniCalendar 주 이동·날짜 선택, Tags 추가·삭제를 focused Vitest 8건으로 확인했다. `pnpm registry:build`, `pnpm --filter @leement/docs build`(66 pages), `pnpm typecheck`, `pnpm lint`가 통과했다. Sandbox는 Sandpack dependency와 정적 docs route 빌드를 확인했다.
+- **Evidence**: [Task contract](./tasks.md), [Kibo reference](https://github.com/shadcnblocks/kibo), [UI interaction tests](../../../registry/ui/code-form.test.tsx), [Sandbox source](../../../registry/blocks/sandbox.tsx), [Registry metadata](../../../registry.json)
