@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import { tokens } from "@leement/tokens";
 const content = {
-  color: { rule: "Use semantic roles such as background, foreground, border, action and focus. Do not put palette names into product components.", detail: "Light surfaces follow CopySinger’s white and soft neutral palette. Dark surfaces follow Leesfield’s near black palette. Both share the same semantic names." },
-  typography: { rule: "Use one readable sans family, a small type scale, and weight for hierarchy before introducing display styles.", detail: "Body text starts at 14–16px; headings grow through 18, 20 and 24px. Line height is tighter for titles and relaxed for descriptions." },
+  color: { rule: "Use semantic roles for background, surface, foreground, border, action, focus, status and data accent. Palette names stay in primitive tokens.", detail: "CopySinger light and Leesfield dark inform one shared language. The modes express the same roles with values chosen for legibility and consistent states, rather than matching either product pixel by pixel." },
+  typography: { rule: "Use one readable sans family, a small type scale, and weight for hierarchy before introducing display styles.", detail: "Body text starts at 14–16px; headings grow through 18, 20 and 24px. The theme declares a Pretendard-first stack; consumer apps load the actual font file or CDN stylesheet." },
   spacing: { rule: "Use a 4px base rhythm. Keep control heights consistent: 36, 40 and 44px.", detail: "Spacing tokens range from 4px through 48px. Use the smallest value that keeps relationships clear." },
   radius: { rule: "Use 8px for controls, 12px for cards, and fully rounded shapes for badges.", detail: "Radius expresses containment, not decoration. Avoid mixing unrelated radii within one component." },
-  shadow: { rule: "Prefer borders for static surfaces. Add shadow when elevation helps explain layering.", detail: "Three shadow levels cover subtle cards, floating menus, and dialogs." },
+  shadow: { rule: "Prefer borders for static cards and inputs. Add shadow when elevation helps explain layering.", detail: "The shadow tokens are available for floating menus, dialogs and other raised surfaces; the default Card has no shadow." },
   motion: { rule: "Use quick, calm state transitions. Motion should communicate response, not compete with content.", detail: "Fast, normal and slow durations are 120, 180 and 260ms. Reduced motion maps them to zero." },
 } as const;
 export function generateStaticParams() { return Object.keys(content).map(slug => ({ slug })); }

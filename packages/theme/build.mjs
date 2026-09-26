@@ -23,13 +23,19 @@ const compatibility = `  /* shadcn compatibility: aliases only */
   --accent: var(--lm-color-action-secondary);
   --accent-foreground: var(--lm-color-foreground-default);
   --destructive: var(--lm-color-action-danger);
+  --success: var(--lm-color-status-success);
+  --success-foreground: var(--lm-color-status-success-foreground);
+  --warning: var(--lm-color-status-warning);
+  --warning-foreground: var(--lm-color-status-warning-foreground);
+  --data-accent: var(--lm-color-data-accent);
+  --data-accent-foreground: var(--lm-color-data-accent-foreground);
   --border: var(--lm-color-border-default);
   --input: var(--lm-color-border-default);
   --ring: var(--lm-color-focus-ring);
   --radius: var(--lm-radius-md);`;
 const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/tokens.json. */
 :root, [data-lm-theme="light"] {\n${lines([...common, ...colors("light")], "lm")}\n${compatibility}\n  color-scheme: light;\n}
-[data-lm-theme="dark"] {\n${lines(colors("dark"), "lm")}\n${compatibility}\n  color-scheme: dark;\n}
+.dark, [data-lm-theme="dark"] {\n${lines(colors("dark"), "lm")}\n${compatibility}\n  color-scheme: dark;\n}
 @media (prefers-reduced-motion: reduce) {\n  :root { --lm-motion-duration-fast: 0ms; --lm-motion-duration-normal: 0ms; --lm-motion-duration-slow: 0ms; }\n}
 @theme inline {
   --color-background: var(--background); --color-foreground: var(--foreground);
@@ -40,6 +46,9 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive); --color-border: var(--border);
+  --color-success: var(--success); --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning); --color-warning-foreground: var(--warning-foreground);
+  --color-data-accent: var(--data-accent); --color-data-accent-foreground: var(--data-accent-foreground);
   --color-input: var(--input); --color-ring: var(--ring);
   --radius-sm: var(--lm-radius-sm); --radius-md: var(--lm-radius-md);
   --radius-lg: var(--lm-radius-lg); --radius-xl: var(--lm-radius-xl);
