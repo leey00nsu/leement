@@ -12,15 +12,15 @@ lee-spec-kit:
 
 ## 출처와 테마
 
-CopySinger의 밝은 배경, 부드러운 중립 표면, 진한 본문 및 40px 컨트롤을 light 기준으로 사용한다. Leesfield의 거의 검은 배경과 밝은 본문을 dark 기준으로 사용한다. 두 모드는 같은 semantic 역할을 공유한다. dark는 `[data-lm-theme="dark"]`로 선택한다. 현재 dark 시각 검수는 초기 수준이다.
+CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 다크 모드처럼 만들려 한 의도가 출발점이다. Leement는 두 제품의 숫자를 복제하거나 평균 내지 않고 하나의 semantic 역할 집합에 light/dark 값을 배정한다. 두 앱에서 공통 source/API를 쓸 수 있는지, 본문 가독성·상태 대비·사용 맥락이 일관적인지를 우선한다. 제품별 브랜드·도메인 표현은 앱에 남긴다. light는 밝은 중립 표면과 진한 본문, dark는 `#111113` 배경 위에 `#1a1a1d` 기본 표면과 `#242427` 떠 있는 표면을 쓴다. dark는 `[data-lm-theme="dark"]` 또는 기존 앱의 `.dark`로 선택한다. 숫자·픽셀 단위의 원본 일치 여부는 성공 기준이 아니며 두 앱의 실제 적용 검증은 Feature GMA8H5L3TLTY에서 진행 중이다.
 
 ## 토큰 규칙
 
-- Color: background, surface, foreground, border, action, focus 역할로 사용한다. `neutral`, `blue` 등 palette 이름은 primitive에서만 사용한다.
-- Typography: Pretendard 우선의 sans, 읽기 쉬운 14–16px 본문, 18–24px 제목을 기본으로 한다. 의미 없는 display type은 추가하지 않는다.
+- Color: background, surface, foreground, border, action, focus, status(success/warning), data accent 역할로 사용한다. `neutral`, `blue` 등 palette 이름은 primitive에서만 사용한다. dark data accent는 파란색, light는 보라 계열을 사용하되 앱의 임의 브랜드색을 전역 primary로 흡수하지 않는다. 상태에는 색상과 텍스트를 함께 사용한다.
+- Typography: Pretendard 우선의 sans, 읽기 쉬운 14–16px 본문, 18–24px 제목을 기본으로 한다. 의미 없는 display type은 추가하지 않는다. theme은 font stack만 정의하므로 소비자 앱은 Pretendard 파일 또는 신뢰하는 CDN을 직접 로드하고 폴백 동작을 확인한다.
 - Spacing: 4px 리듬. 기본 control은 40px, 작은 것은 36px, 큰 것은 44px이다.
-- Radius: 컨트롤 8px, Card 12px, Badge는 full. 표면의 계층을 반경만으로 나타내지 않는다.
-- Shadow: 기본 구획에는 border, 떠 있는 계층에는 shadow를 사용한다.
+- Radius: 컨트롤 8px, Card 12px, Badge는 full. 두 원본의 Card는 약 10px이고 이전 Leement 값은 16px이었다. 12px은 공통 표면의 선택값이며 원본 수치 복제 기준이 아니다. 표면의 계층을 반경만으로 나타내지 않는다.
+- Shadow: 기본 Card와 Input에는 border를 쓰고 기본 shadow를 넣지 않는다. Popover/Dialog 같은 떠 있는 계층에서만 필요한 경우 shadow를 사용한다.
 - Motion: 120/180/260ms 단계. reduced motion 환경에서는 duration을 0ms로 한다.
 
 ## 컴포넌트와 상태

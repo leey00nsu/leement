@@ -90,13 +90,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-011] T-GMA8H5L3TLTY-expanded-component-catalog-02 Unify light and dark tokens and component rules
+- [DONE][PRD-FR-011] T-GMA8H5L3TLTY-expanded-component-catalog-02 Unify light and dark tokens and component rules
   - Date: 2026-09-27
   - Acceptance:
     - One semantic light/dark theme supports both products with documented choices for surfaces, state colors, typography, spacing, radius and focus.
   - Checklist:
-    - [ ] Update tokens, theme generation and design-system rules together.
-    - [ ] Check generated CSS aliases, reduced motion and representative light/dark visuals.
+    - [x] Update tokens, theme generation and design-system rules together.
+    - [x] Check generated CSS aliases, reduced motion and representative light/dark visuals.
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -
@@ -284,6 +284,11 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm exec vitest run packages/theme/theme.test.mjs` | 2026-09-27 | PASS: theme contract 2 tests |
+| `pnpm typecheck` | 2026-09-27 | PASS: 5 tasks |
+| `pnpm lint` | 2026-09-27 | PASS: 3 tasks |
+| `pnpm build` | 2026-09-27 | PASS: tokens, theme, registry, docs static routes |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+<!-- lee-spec-kit:workflow-sync sha256:0ff583e27daeff8840046d8a0400464a2a1d7879a92e63f0ca016ad362899700 -->

@@ -93,3 +93,19 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Evidence**:
   - **Coverage and migration inventory**: [reference-coverage.md](./artifacts/reference-coverage.md)
   - **Approved Spec**: [spec.md](./spec.md)
+
+## D006: 공통 light/dark 의미 토큰을 기준으로 상태와 표면을 정한다 (2026-09-27)
+
+- **Context**: Task 02에서 기존 Leement theme이 success/warning/data-accent 상태 역할과 실제 서체 로딩 안내를 충분히 제공하지 못하며, Card radius/spacing/shadow 설명과 현재 class가 어긋난 것을 확인했다.
+- **Constraints**: tokens는 framework independent여야 하고 `--lm-*`가 정본이다. CopySinger와 Leesfield의 수치를 평균 내지 않는다. 이 Task는 token/theme/디자인 규칙에 집중하며 Button/Input/Card source 정비는 Task 03이다.
+- **Options**: ① 현재 Leement의 neutral/surface 값을 유지하고 상태색을 각 컴포넌트에 추가한다 ② CopySinger/Leesfield 값을 각각 별도 제품 preset으로 복제한다 ③ 공통 semantic 역할을 확대하고 하나의 light/dark 규칙을 정한다.
+- **Decision**: ③을 선택했다. neutral 800/900을 dark raised/default surface 단계에 맞춰 `#242427`/`#1a1a1d`로 정하고 Card radius를 12px로 통일한다. success/warning/data accent를 primitive → semantic → `--lm-*` → shadcn alias 순서로 추가했다. 기존 `.dark` 앱도 같은 dark token을 사용한다. 기본 Card와 Input은 border만 사용한다.
+- **Rationale**: 두 제품의 의미상 관계를 유지하면서 분기 없는 공통 source와 충분히 대비되는 상태 표현을 제공한다. Card 12px은 원본 약 10px과 이전 Leement 16px 사이에서 문서의 의도와 표면 계층을 택한 값이며 수치 평균으로 자동 산출하지 않았다. Pretendard 파일 로드는 앱이 담당한다.
+- **Trace**:
+  - **초기 가설**: dark surface를 Leesfield와 가까운 단계로, Card는 현재 Leement 16px 대신 문서의 12px 공통 규칙으로, 상태색은 의미 기반 primitive/semantic 층으로 정리한다.
+  - **실행 확인**: `pnpm build:tokens`, `pnpm build:theme`, theme contract Vitest 2건, `pnpm typecheck`, `pnpm lint`, `pnpm build`가 통과했다. 토큰의 배경/전경, success, warning, data accent 조합의 계산상 대비율은 light 17.36/7.43/7.27/6.57, dark 18.07/8.25/8.62/4.93이다. docs `/showcase`를 브라우저에서 light/dark 전환하여 대표 표면과 컨트롤을 확인했다. 개발 오버레이의 hydration 경고는 Aside 브라우저 확장이 `<html>`에 `data-locator-client-url` 속성을 주입한 경우로 로그에 나타났으며 앱 코드의 테마 오류 증거로 취급하지 않는다.
+- **Evidence**:
+  - **Reference coverage**: [reference-coverage.md](./artifacts/reference-coverage.md)
+  - **Current tokens**: [tokens.json](../../../packages/tokens/src/tokens.json)
+  - **Theme builder and contract test**: [build.mjs](../../../packages/theme/build.mjs), [theme.test.mjs](../../../packages/theme/theme.test.mjs)
+  - **Durable design rules**: [design-system.md](../../designs/design-system.md)
