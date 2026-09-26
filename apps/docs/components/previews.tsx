@@ -39,6 +39,15 @@ import ListExample from "../examples/list";
 import TableExample from "../examples/table";
 import GanttExample from "../examples/gantt";
 import KanbanExample from "../examples/kanban";
+import CodeBlockExample from "../examples/code-block";
+import ContributionGraphExample from "../examples/contribution-graph";
+import SandboxExample from "../examples/sandbox";
+import SnippetExample from "../examples/snippet";
+import ChoiceboxExample from "../examples/choicebox";
+import ComboboxExample from "../examples/combobox";
+import DropzoneExample from "../examples/dropzone";
+import MiniCalendarExample from "../examples/mini-calendar";
+import TagsExample from "../examples/tags";
 import PageHeaderExample from "../examples/page-header";
 import EmptyStateExample from "../examples/empty-state";
 import FormSectionExample from "../examples/form-section";
@@ -86,6 +95,15 @@ const examples: Record<keyof typeof items, ComponentType> = {
   table: TableExample,
   gantt: GanttExample,
   kanban: KanbanExample,
+  "code-block": CodeBlockExample,
+  "contribution-graph": ContributionGraphExample,
+  sandbox: SandboxExample,
+  snippet: SnippetExample,
+  choicebox: ChoiceboxExample,
+  combobox: ComboboxExample,
+  dropzone: DropzoneExample,
+  "mini-calendar": MiniCalendarExample,
+  tags: TagsExample,
   "page-header": PageHeaderExample,
   "empty-state": EmptyStateExample,
   "form-section": FormSectionExample,
