@@ -32,6 +32,13 @@ import AvatarExample from "../examples/avatar";
 import AlertDialogExample from "../examples/alert-dialog";
 import PageSkeletonExample from "../examples/page-skeleton";
 import FilterToolbarExample from "../examples/filter-toolbar";
+import AvatarStackExample from "../examples/avatar-stack";
+import CursorExample from "../examples/cursor";
+import CalendarExample from "../examples/calendar";
+import ListExample from "../examples/list";
+import TableExample from "../examples/table";
+import GanttExample from "../examples/gantt";
+import KanbanExample from "../examples/kanban";
 import PageHeaderExample from "../examples/page-header";
 import EmptyStateExample from "../examples/empty-state";
 import FormSectionExample from "../examples/form-section";
@@ -72,6 +79,13 @@ const examples: Record<keyof typeof items, ComponentType> = {
   "alert-dialog": AlertDialogExample,
   "page-skeleton": PageSkeletonExample,
   "filter-toolbar": FilterToolbarExample,
+  "avatar-stack": AvatarStackExample,
+  cursor: CursorExample,
+  calendar: CalendarExample,
+  list: ListExample,
+  table: TableExample,
+  gantt: GanttExample,
+  kanban: KanbanExample,
   "page-header": PageHeaderExample,
   "empty-state": EmptyStateExample,
   "form-section": FormSectionExample,

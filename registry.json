@@ -288,6 +288,41 @@
       "files": [{ "path": "registry/patterns/filter-toolbar.tsx", "type": "registry:component", "target": "components/patterns/filter-toolbar.tsx" }]
     },
     {
+      "name": "avatar-stack", "type": "registry:ui", "title": "Avatar Stack", "description": "Compact overlapping avatar group.",
+      "dependencies": [], "registryDependencies": ["@leement/utils", "@leement/avatar"],
+      "files": [{ "path": "registry/ui/avatar-stack.tsx", "type": "registry:ui", "target": "components/ui/avatar-stack.tsx" }]
+    },
+    {
+      "name": "cursor", "type": "registry:ui", "title": "Cursor", "description": "Decorative collaborator pointer and label.",
+      "dependencies": [], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/cursor.tsx", "type": "registry:ui", "target": "components/ui/cursor.tsx" }]
+    },
+    {
+      "name": "calendar", "type": "registry:ui", "title": "Calendar", "description": "Keyboard navigable date and event calendar.",
+      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/calendar.tsx", "type": "registry:ui", "target": "components/ui/calendar.tsx" }]
+    },
+    {
+      "name": "list", "type": "registry:ui", "title": "List", "description": "Accessible reorderable product list.",
+      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/list.tsx", "type": "registry:ui", "target": "components/ui/list.tsx" }]
+    },
+    {
+      "name": "table", "type": "registry:ui", "title": "Table", "description": "Sortable data table with native semantics.",
+      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/table.tsx", "type": "registry:ui", "target": "components/ui/table.tsx" }]
+    },
+    {
+      "name": "gantt", "type": "registry:block", "title": "Gantt", "description": "Task timeline with keyboard date movement and resizing.",
+      "dependencies": [], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/blocks/gantt.tsx", "type": "registry:component", "target": "components/blocks/gantt.tsx" }]
+    },
+    {
+      "name": "kanban", "type": "registry:block", "title": "Kanban", "description": "Accessible movable task board.",
+      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/blocks/kanban.tsx", "type": "registry:component", "target": "components/blocks/kanban.tsx" }]
+    },
+    {
       "name": "page-header",
       "type": "registry:component",
       "title": "PageHeader",
