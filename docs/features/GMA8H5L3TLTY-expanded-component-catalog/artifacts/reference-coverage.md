@@ -55,6 +55,10 @@ CopySinger and Leesfield retain their own app wrappers where these add product-s
 
 `dialog`, `dropdown-menu`, `popover`, `sheet`, and `tooltip` now have registry source and live docs examples. Product Dialog/Tooltip used Base UI; Leement keeps its existing Radix implementation for those two. Use `asChild` on their triggers instead of Base UI's `render` prop, and use Radix `delayDuration` on TooltipProvider instead of Base UI `delay`. Dropdown Menu, Popover and Sheet retain Base UI composition. Sheet depends on Leement Button and installs it through registry metadata. For a localized close label, hide the built-in close button and compose an explicitly labeled close control in the owned source. These are API migration instructions, not a claim of product import replacement before Task 14.
 
+### Task 05 feedback and composition checkpoint
+
+`chart`, `skeleton`, `status-notice`, `reveal-content`, `state-panel`, `product-page-intro`, `resource-row-link`, and `bento-grid` now have source-backed registry items and docs previews. Chart retains Recharts composition and config labels; pass semantic CSS variables for series color. RevealContent retains the product variants and ships its CSS module as a registry file. ResourceRowLink is a native anchor; Next.js consumers can wrap or replace it with `next/link` in their owned source. StatusNotice and StatePanel use the shared status tokens. This checkpoint covers the item counterpart, not the final two-app import swap.
+
 ## CopySinger-only directories
 
 Each path is `src/shared/ui/{item}/`. Promotion below follows the product rule: a single-project domain expression stays in the app; a generic control/pattern needed by the shared system is a candidate, not automatically stable.

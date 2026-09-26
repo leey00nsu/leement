@@ -31,6 +31,8 @@ CopySinger/Leesfield의 Button `default`는 Leement `primary`에 대응한다. �
 
 Overlay는 `bg-popover`와 `text-popover-foreground`를 공통 표면으로 사용하고 border 및 필요한 shadow로 떠 있는 계층을 표시한다. Dropdown Menu의 destructive item은 연한 danger 강조를 쓰며 keyboard highlight와 disabled 상태를 구분한다. Popover는 짧은 맥락, Sheet는 가장자리에 붙는 상세 작업, Dialog는 집중된 modal 작업에 쓴다. 각 Trigger는 접근 가능한 이름, Dialog/Sheet는 Title, Tooltip은 보조 정보와 독립된 제어 이름을 갖는다. Dialog/Tooltip은 Radix, Dropdown Menu/Popover/Sheet는 Base UI의 focus·Escape 동작을 유지한다. 제품의 현지화된 close 이름은 소비자 소스에서 기본 close를 숨기고 조합한다.
 
+로딩은 Skeleton과 영역의 `aria-busy`/상태 텍스트를 함께 제공한다. 짧은 피드백은 StatusNotice, 페이지·영역의 결과와 다음 행동은 StatePanel로 표현한다. success/warning/danger는 semantic token과 의미를 전달하는 텍스트를 함께 쓴다. Chart의 시리즈색은 `--lm-color-data-accent` 같은 semantic 변수로 지정하며 정확한 수치는 텍스트·표로도 제공한다. BentoGrid와 ProductPageIntro는 제품 구조를 표현하며 제품별 카피·이미지는 소비자 코드가 넣는다. ResourceRowLink는 native anchor를 기본으로 하여 React 라우터에 묶이지 않는다. RevealContent는 기존 두 제품의 진입 모션 변형을 보존하되 핵심 조작을 지연시키지 않고 reduced motion/no-script에서 바로 보이게 한다.
+
 EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담는다. PageHeader는 페이지 제목, 설명, action을 결합한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
 
 ## 접근성과 반응형

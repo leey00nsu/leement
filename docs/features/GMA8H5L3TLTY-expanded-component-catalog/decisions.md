@@ -129,3 +129,13 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 이미 동작하는 Leement source와 shadcn식 `asChild` 모델을 보존하면서 두 제품의 누락 기능을 채울 수 있다. Base UI `render`와 Radix `asChild`, TooltipProvider `delay`/`delayDuration` 차이는 migration에 명시했다. Sheet의 기본 close text는 영어이며 현지화가 필요한 앱은 기본 close를 숨기고 자신의 닫기 제어를 조합한다.
 - **Trace (실행 확인)**: Source-backed docs preview 및 정적 component route 15개를 생성했다. `pnpm --filter @leement/docs build`(33 pages), `pnpm typecheck`, `pnpm lint`, focused Vitest 12건이 통과했다. Dialog/Sheet의 제목·Escape·focus return, Menu의 keyboard/disabled, Popover의 Escape/focus return, Tooltip의 keyboard focus를 확인했다. 제품 import 교체는 Task 14다.
 - **Evidence**: [Reference coverage](./artifacts/reference-coverage.md), [Overlay tests](../../../registry/ui/overlays.test.tsx), [Registry metadata](../../../registry.json), [Design rules](../../designs/design-system.md)
+
+## D009: 피드백과 제품 구조를 책임에 따라 분리한다 (2026-09-27)
+
+- **Context/Constraints**: Task 05는 Chart, Skeleton, State Panel, Status Notice, Bento Grid, Product Page Intro, Resource Row Link, Reveal Content를 공용화한다. 기존 소스에는 Next Link, motion 및 제품 전용 장식이 섞여 있어 registry 설치성과 framework-neutral source ownership을 다시 판단해야 한다.
+- **Trace (초기 가설)**: Chart/Skeleton/Status Notice/Reveal Content는 UI, State Panel/Product Page Intro/Resource Row Link는 Pattern, Bento Grid는 Block 또는 Pattern으로 배치한다. 공통 상태색과 reduced motion을 유지하고 기존 CopySinger 애니메이션 설정 전체는 공용 UI로 복제하지 않는다.
+- **Options**: ① 원본 파일을 경계 없이 복사한다 ② 재사용 책임에 맞춰 UI/Pattern/Block을 나누고 프레임워크 의존성·시각값을 정리한다.
+- **Decision**: ②를 선택했다. Chart/Skeleton/Status Notice/Reveal Content는 UI, State Panel/Product Page Intro/Resource Row Link는 Pattern, Bento Grid는 Block이다. Recharts와 Motion은 해당 item의 명시적 dependency로만 둔다. Resource Row는 Next Link 대신 native anchor를 제공한다. 두 제품이 실제 사용 중인 RevealContent의 variant 및 no-script/reduced-motion 동작은 유지한다.
+- **Rationale**: 레지스트리 소스가 일반 React 앱에서도 설치되고 제품 카피/라우팅/이미지를 앱이 소유한다. Chart의 시리즈 색은 semantic CSS 변수로 설정하며 사용자 지정 chart id/key/color가 style markup에 주입되지 않도록 위험 문자를 제거했다. Bento article은 제목과 연결해 landmark 이름을 제공한다.
+- **Trace (실행 확인)**: 8개 item에 source-backed docs 예제를 추가했다. `pnpm --filter @leement/docs build`에서 41개 정적 페이지와 19 component/8 pattern/2 block route가 생성되었다. `pnpm typecheck`, `pnpm lint`, `pnpm registry:build`, composition Vitest 3건이 통과했다. 실제 제품 import 교체는 Task 14 범위다.
+- **Evidence**: [Reference coverage](./artifacts/reference-coverage.md), [Composition tests](../../../registry/patterns/composition.test.tsx), [Registry metadata](../../../registry.json), [Design rules](../../designs/design-system.md)

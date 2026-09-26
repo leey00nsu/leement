@@ -133,13 +133,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-05 Complete common feedback and composition
+- [DONE][PRD-FR-010] T-GMA8H5L3TLTY-expanded-component-catalog-05 Complete common feedback and composition
   - Date: 2026-09-27
   - Acceptance:
     - Chart, Skeleton, State Panel, Status Notice, Bento Grid, Product Page Intro, Resource Row Link and Reveal Content have shared registry counterparts and migration guidance.
   - Checklist:
-    - [ ] Separate reusable product structures into UI, Pattern or Block by responsibility.
-    - [ ] Verify loading, empty, data and responsive states with docs examples.
+    - [x] Separate reusable product structures into UI, Pattern or Block by responsibility.
+    - [x] Verify loading, empty, data and responsive states with docs examples.
+  - Verification: `pnpm --filter @leement/docs build` (41 static pages), `pnpm typecheck`, `pnpm lint`, `pnpm registry:build` and `pnpm test` (17 tests) passed on 2026-09-27. [Feedback/composition checkpoint](./artifacts/reference-coverage.md#task-05-feedback-and-composition-checkpoint).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -293,4 +294,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:4c3ec8496e4db61038ecd79c89e24e4e975759ed65c748ae1dc6766353782ac8 -->
+<!-- lee-spec-kit:workflow-sync sha256:4ba880b097b4a315b035871a8221b0c2120639433920fc4a7ac939bd7d45a8e5 -->
