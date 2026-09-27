@@ -215,6 +215,11 @@
       "files": [{ "path": "registry/ui/skeleton.tsx", "type": "registry:ui", "target": "components/ui/skeleton.tsx" }]
     },
     {
+      "name": "brand-gradient-text", "type": "registry:ui", "title": "Brand Gradient Text", "description": "Optional animated brand gradient for short emphasis.",
+      "dependencies": [], "registryDependencies": ["@leement/utils"],
+      "files": [{ "path": "registry/ui/brand-gradient-text.tsx", "type": "registry:ui", "target": "components/ui/brand-gradient-text.tsx" }]
+    },
+    {
       "name": "status-notice", "type": "registry:ui", "title": "Status Notice", "description": "Inline semantic status feedback.",
       "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
       "files": [{ "path": "registry/ui/status-notice.tsx", "type": "registry:ui", "target": "components/ui/status-notice.tsx" }]

@@ -1,12 +1,20 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { URL } from "node:url";
 const { primitive, semantic } = JSON.parse(await readFile(new URL("../tokens/src/tokens.json", import.meta.url), "utf8"));
-const get = (path) => path.split(".").reduce((value, key) => value[key], primitive);
-const resolve = (value) => typeof value === "string" && value.startsWith("{") ? get(value.slice(1, -1)) : value;
-const flatten = (object, prefix = []) => Object.entries(object).flatMap(([key, value]) => typeof value === "object" ? flatten(value, [...prefix, key]) : [[[...prefix, key].join("-").replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(), resolve(value)]]);
+const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
+const cssName = (path) => path.replaceAll(".", "-").replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+const resolve = (value, mode) => {
+  if (typeof value !== "string" || !value.startsWith("{") || !value.endsWith("}")) return value;
+  const path = value.slice(1, -1);
+  const primitiveValue = get(primitive, path);
+  if (typeof primitiveValue === "string") return primitiveValue;
+  if (mode && typeof get(semantic[mode], path) === "string") return `var(--lm-${cssName(path)})`;
+  throw new Error(`Unknown token reference: ${value}`);
+};
+const flatten = (object, prefix = [], mode) => Object.entries(object).flatMap(([key, value]) => typeof value === "object" ? flatten(value, [...prefix, key], mode) : [[cssName([...prefix, key].join(".")), resolve(value, mode)]]);
 const lines = (entries, prefix) => entries.map(([key, value]) => `  --${prefix}-${key}: ${value};`).join("\n");
 const common = Object.entries(primitive).filter(([key]) => key !== "color").flatMap(([key, value]) => flatten(value, [key]));
-const colors = (mode) => flatten(semantic[mode].color, ["color"]);
+const colors = (mode) => flatten(semantic[mode].color, ["color"], mode);
 const compatibility = `  /* shadcn compatibility: aliases only */
   --background: var(--lm-color-background-default);
   --foreground: var(--lm-color-foreground-default);
@@ -49,6 +57,7 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   --color-success: var(--success); --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning); --color-warning-foreground: var(--warning-foreground);
   --color-data-accent: var(--data-accent); --color-data-accent-foreground: var(--data-accent-foreground);
+  --color-brand-accent: var(--lm-color-brand-accent);
   --color-input: var(--input); --color-ring: var(--ring);
   --radius-sm: var(--lm-radius-sm); --radius-md: var(--lm-radius-md);
   --radius-lg: var(--lm-radius-lg); --radius-xl: var(--lm-radius-xl);
@@ -59,6 +68,27 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   *, ::before, ::after { box-sizing: border-box; }
   body { margin: 0; background: var(--lm-color-background-default); color: var(--lm-color-foreground-default); font-family: var(--lm-typography-family-sans); }
   :focus-visible { outline-color: var(--lm-color-focus-ring); }
+}
+@layer components {
+  .lm-brand-skeleton {
+    background-image: linear-gradient(90deg, color-mix(in srgb, var(--lm-color-brand-gradient-start) 16%, var(--lm-color-background-subtle)), color-mix(in srgb, var(--lm-color-brand-gradient-middle) 32%, var(--lm-color-background-subtle)), color-mix(in srgb, var(--lm-color-brand-gradient-end) 16%, var(--lm-color-background-subtle)));
+    background-size: 220% 100%;
+    animation: lm-brand-sweep 3.5s ease-in-out infinite alternate;
+  }
+  .lm-brand-gradient-text {
+    background-image: linear-gradient(90deg, var(--lm-color-brand-gradient-start), var(--lm-color-brand-gradient-middle), var(--lm-color-brand-gradient-end));
+    background-size: 200% 100%;
+    background-clip: text;
+    color: transparent;
+  }
+  .lm-brand-gradient-text[data-animated="true"] { animation: lm-brand-sweep 3s linear infinite alternate; }
+  @keyframes lm-brand-sweep { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+  @media (prefers-reduced-motion: reduce) {
+    .lm-brand-skeleton, .lm-brand-gradient-text[data-animated="true"] { animation: none; background-position: 50% 50%; }
+  }
+  @media (forced-colors: active) {
+    .lm-brand-gradient-text { background-image: none; color: CanvasText; }
+  }
 }
 `;
 await mkdir(new URL("./dist/", import.meta.url), { recursive: true });

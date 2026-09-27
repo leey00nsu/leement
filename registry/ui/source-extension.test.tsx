@@ -7,9 +7,18 @@ import { Slider } from "./slider";
 import { Avatar, AvatarFallback } from "./avatar";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from "./alert-dialog";
 import { PageSkeleton } from "../patterns/page-skeleton";
+import { Skeleton } from "./skeleton";
+import { BrandGradientText } from "./brand-gradient-text";
 import { FilterGroup, FilterToggle, FilterToolbar } from "../patterns/filter-toolbar";
 
 afterEach(cleanup);
+
+test("brand motion remains optional while native loading and text content stay available", () => {
+  const { container } = render(<div aria-busy="true"><Skeleton aria-label="Loading" /><Skeleton variant="brand" aria-label="Featured loading" /><BrandGradientText animated={false}>Make your own colors</BrandGradientText></div>);
+  expect(container.querySelector('[aria-label="Loading"]')?.getAttribute("data-variant")).toBe("neutral");
+  expect(container.querySelector('[aria-label="Featured loading"]')?.getAttribute("data-variant")).toBe("brand");
+  expect(screen.getByText("Make your own colors").getAttribute("data-animated")).toBe("false");
+});
 
 test("collapsible opens from keyboard and exposes state", async () => {
   const user = userEvent.setup();

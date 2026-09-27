@@ -29,4 +29,19 @@ describe("Leement web theme contract", () => {
     expect(css).toContain('.dark, [data-lm-theme="dark"]');
     expect(css).toContain("--radius-xl: var(--lm-radius-xl)");
   });
+
+  it("keeps brand overrides connected to focus, data and reduced-motion examples", () => {
+    const light = css.split(':root, [data-lm-theme="light"] {')[1].split('color-scheme: light;')[0];
+    const dark = css.split('.dark, [data-lm-theme="dark"] {')[1].split('color-scheme: dark;')[0];
+    for (const mode of [light, dark]) {
+      expect(mode).toContain("--lm-color-focus-ring: var(--lm-color-brand-focus)");
+      expect(mode).toContain("--lm-color-data-accent: var(--lm-color-brand-accent)");
+      expect(mode).toContain("--lm-color-data-accent-foreground: var(--lm-color-brand-accent-foreground)");
+      expect(mode).toContain("--lm-color-brand-gradient-middle:");
+    }
+    expect(css).toContain(".lm-brand-skeleton");
+    expect(css).toContain(".lm-brand-gradient-text");
+    expect(css).toContain("@media (prefers-reduced-motion: reduce)");
+    expect(css).toContain("@media (forced-colors: active)");
+  });
 });

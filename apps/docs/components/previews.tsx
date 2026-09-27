@@ -18,6 +18,7 @@ import SheetExample from "../examples/sheet";
 import TooltipExample from "../examples/tooltip";
 import ChartExample from "../examples/chart";
 import SkeletonExample from "../examples/skeleton";
+import BrandGradientTextExample from "../examples/brand-gradient-text";
 import StatusNoticeExample from "../examples/status-notice";
 import RevealContentExample from "../examples/reveal-content";
 import StatePanelExample from "../examples/state-panel";
@@ -99,6 +100,7 @@ const examples: Record<keyof typeof items, ComponentType> = {
   tooltip: TooltipExample,
   chart: ChartExample,
   skeleton: SkeletonExample,
+  "brand-gradient-text": BrandGradientTextExample,
   "status-notice": StatusNoticeExample,
   "reveal-content": RevealContentExample,
   "state-panel": StatePanelExample,
