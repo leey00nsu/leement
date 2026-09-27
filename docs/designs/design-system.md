@@ -18,7 +18,13 @@ CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 �
 
 ## 토큰 규칙
 
-- Color: background, surface, foreground, border, action, focus, status(success/warning), data accent 역할로 사용한다. `neutral`, `blue` 등 palette 이름은 primitive에서만 사용한다. dark data accent는 파란색, light는 보라 계열을 사용하되 앱의 임의 브랜드색을 전역 primary로 흡수하지 않는다. 상태에는 색상과 텍스트를 함께 사용한다.
+- Color: background, surface, foreground, border, action, brand, focus, status(success/warning), data accent 역할로 사용한다. `neutral`, `blue` 등 palette 이름은 primitive에서만 사용한다. 기본 light의 보라 계열과 dark의 파랑 계열은 CopySinger/Leesfield의 브랜드 참고값이며 Leement의 필수 정체성이 아니다. 앱의 브랜드색을 전역 primary로 흡수하지 않고 모드별 브랜드 역할로 재정의한다. 상태에는 색상과 텍스트를 함께 사용한다.
+
+### 브랜드 역할
+
+`--lm-color-brand-accent`와 `--lm-color-brand-accent-foreground`는 데이터 강조 표면과 전경, `--lm-color-brand-focus`는 키보드 포커스 링을 정한다. `--lm-color-brand-gradient-start/middle/end`는 강조 텍스트와 선택적 브랜드 Skeleton이 공유한다. `--lm-color-data-accent`와 `--lm-color-focus-ring`은 각각 브랜드 역할을 참조하므로 앱이 `@leement/theme` import 뒤에 브랜드 변수만 덮어쓰면 관련 컴포넌트가 함께 바뀐다. light와 dark를 별도로 지정한다. 사용 예제는 docs의 Foundations → Color에 두며, 각 앱에서 focus 가시성·텍스트 대비를 확인한다.
+
+CopySinger의 gradient text·음성 파형·오디오 로딩은 violet/blue/pink 조합을 사용한다. Leesfield는 blue/highlight 조합을 gradient text·앱 Skeleton·선택 상태에 사용한다. 양쪽 기본 Skeleton은 중립 `bg-muted`이므로 Leement도 기본 `Skeleton`은 중립이고 `variant="brand"`는 제품 정체성이 도움이 되는 로딩 구간에만 쓴다. `BrandGradientText`는 짧은 제품 문구에만 사용한다. 반복 움직임은 `prefers-reduced-motion: reduce`에서 멈춘다.
 - Typography: Pretendard 우선의 sans, 읽기 쉬운 14–16px 본문, 18–24px 제목을 기본으로 한다. 의미 없는 display type은 추가하지 않는다. theme은 font stack만 정의하므로 소비자 앱은 Pretendard 파일 또는 신뢰하는 CDN을 직접 로드하고 폴백 동작을 확인한다.
 - Spacing: 4px 리듬. 기본 control은 40px, 작은 것은 36px, 큰 것은 44px이다.
 - Radius: 컨트롤 8px, Card 12px, Badge는 full. 두 원본의 Card는 약 10px이고 이전 Leement 값은 16px이었다. 12px은 공통 표면의 선택값이며 원본 수치 복제 기준이 아니다. 표면의 계층을 반경만으로 나타내지 않는다.

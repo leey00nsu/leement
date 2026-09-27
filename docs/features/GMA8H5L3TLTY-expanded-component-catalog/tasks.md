@@ -289,17 +289,18 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-011] T-GMA8H5L3TLTY-expanded-component-catalog-15 Add configurable brand roles and branded motion examples
+- [DONE][PRD-FR-011] T-GMA8H5L3TLTY-expanded-component-catalog-15 Add configurable brand roles and branded motion examples
   - Date: 2026-09-27
   - Acceptance:
     - Brand focus, data accent, gradient and optional skeleton can be customized per light/dark mode without editing Leement source, while default skeleton remains neutral.
   - Checklist:
-    - [ ] Inventory both products brand color use and document common roles and exceptions.
-    - [ ] Add semantic brand roles, CSS aliases and accessible reduced-motion behavior.
-    - [ ] Expose branded skeleton and gradient text as registry source with docs examples.
+    - [x] Inventory both products brand color use and document common roles and exceptions.
+    - [x] Add semantic brand roles, CSS aliases and accessible reduced-motion behavior.
+    - [x] Expose branded skeleton and gradient text as registry source with docs examples.
   - Docs:
     - docs:designs/design-system.md
     - docs:prd/leement-prd.md
+  - Verification: `pnpm build:tokens`, `pnpm build:theme`, `pnpm registry:build`, docs typecheck and production build (92 pages), `pnpm lint`, and focused Vitest (2 files, 9 tests) passed on 2026-09-27. Brand use inventory and configuration: [Task 15 checkpoint](./artifacts/reference-coverage.md#task-15-brand-color-inventory-and-configuration). Browser-computed override behavior is Task 17.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -373,4 +374,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:a952b70a160f9b338ae8cd5716f2fdc08e4a5ee95a76c90ec4da731a78c63ed8 -->
+<!-- lee-spec-kit:workflow-sync sha256:28e612aa15dd02419383be1e3e596be44f510ee2386848c1feba895c2feefe0c -->

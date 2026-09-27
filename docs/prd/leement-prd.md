@@ -15,7 +15,7 @@ CopySinger의 밝은 UI를 바탕으로 Leesfield를 그 다크 모드처럼 만
 - PRD-FR-002: `@leement/theme`이 Leement CSS 변수와 하위 호환 shadcn alias를 제공한다.
 - PRD-FR-003: registry가 UI 8개, pattern 5개, block 1개의 소스를 소비자 프로젝트에 설치한다.
 - PRD-FR-004: pattern과 block이 사용하는 내부 컴포넌트는 registry dependency로 함께 설치된다.
-- PRD-FR-005: docs가 토큰, 사용 규칙, 예시, 접근성, API, 설치법을 설명하고 registry 원본을 예시에 사용한다.
+- PRD-FR-005: docs가 토큰, 사용 규칙, 예시, 접근성, API, 설치법을 설명하고 registry 원본을 예시에 사용한다. 상단 탐색·범주별 메뉴·상세 목차와 실제 미리보기를 제공하며 중복 비교 페이지를 메뉴에 두지 않는다.
 - PRD-FR-006: 설치된 소스가 Tailwind v4 기반 소비자 앱에서 타입 검사 및 빌드된다.
 - PRD-NFR-001: 키보드 탐색, focus-visible, disabled, aria와 Radix 접근성 동작을 유지한다.
 - PRD-NFR-002: light와 dark의 semantic 이름을 공유하고 light를 우선 제공한다.
@@ -35,7 +35,7 @@ v0.1의 8 UI·5 pattern·1 block은 초기 출시 범위이며, 최종 제공 �
 - PRD-FR-008: 추가된 각 항목을 docs에서 실제 동작하는 예제, 주요 상태·변형, 사용 규칙, 접근성, API, 설치 명령 및 배포 source와 함께 탐색할 수 있다.
 - PRD-FR-009: 추가된 항목은 shadcn registry dependency를 통해 필요한 소스를 함께 설치하고, 독립적인 소비자 프로젝트에서 타입 검사·빌드·핵심 키보드 동작이 통과한다.
 - PRD-FR-010: CopySinger와 Leesfield의 공통 공용 UI 22개와 각 프로젝트의 추가 UI를 전수 조사해 기존 API·동작·시각 규칙·사용처를 Leement 항목 또는 앱 유지 결정에 매핑한다. 공통 22개는 모두 동작하는 registry 대응 항목과 검증된 교체 경로를 갖는다.
-- PRD-FR-011: light/dark theme과 공용 컴포넌트가 CopySinger에서 Leesfield로 이어진 디자인 의도를 하나의 규칙으로 표현한다. 원본별 서로 다른 표면·글자·간격·반경·상태·서체 수치는 사용 맥락·가독성·접근성을 근거로 결정하고 차이를 명시한다. token/rule·theme·registry source·docs 미리보기가 같은 규칙을 표현한다.
+- PRD-FR-011: light/dark theme과 공용 컴포넌트가 CopySinger에서 Leesfield로 이어진 디자인 의도를 하나의 규칙으로 표현한다. 원본별 서로 다른 표면·글자·간격·반경·상태·서체 수치는 사용 맥락·가독성·접근성을 근거로 결정하고 차이를 명시한다. 두 제품의 브랜드 색은 고정된 Leement 색이 아니라 소비자 앱이 모드별로 설정하는 semantic 브랜드 역할이며 focus, data accent, 선택적 로딩 효과와 gradient에 반영된다. 일반 Skeleton은 중립이다. token/rule·theme·registry source·docs 미리보기가 같은 규칙을 표현한다.
 - PRD-FR-012: 두 제품의 격리된 통합 환경에서 공통 UI 전수 설치·import·render와 대표 실제 사용처 교체를 검증한다. 양쪽 앱의 타입 검사·빌드·핵심 상호작용에 신규 회귀가 없음을 확인하며, 모든 제공 UI/Pattern/Block은 웹 문서에서 실제 source로 미리 볼 수 있다.
 - PRD-NFR-004: 복합 UI에서도 Leement semantic token과 source ownership을 유지한다. 외부 라이브러리·MIT 코드의 사용 근거와 라이선스를 추적하고, 동작·접근성 검증 없이 카탈로그 수만 늘리지 않는다.
 - PRD-NFR-005: 교체 검증은 독립 데모만으로 대신하지 않는다. 기존 앱의 사전 오류와 Leement 도입 회귀를 구분하고, 제품별 wrapper/도메인 로직은 적합성 근거 없이 공용 API로 흡수하지 않는다.
