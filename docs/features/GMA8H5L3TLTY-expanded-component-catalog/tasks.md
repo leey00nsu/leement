@@ -353,13 +353,13 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 구현 완료 공유: 78개 item과 41개 Kibo 사례, 92개 docs 정적 페이지, 78개 CLI alias 설치, CopySinger/Leesfield의 격리된 공통 22개 채택 및 desktop/mobile light/dark 검증을 2026-09-27 사용자 진행 메시지로 전달했다. 사용자의 `A 자동진행` 지시에 따라 `implementation_approve`의 A(구현 승인 및 다음 단계 진행)를 적용한다. 실제 npm 게시·웹 호스팅과 원본 두 앱의 전면 교체는 이 Feature의 검증 결과와 구분한다.
 
-추가 요청으로 T15–T17을 열었다. 위 완료 공유와 테스트 기록은 T01–T14의 이력이며 추가 범위의 완료 증거가 아니다.
+추가 요청으로 T15–T17을 열어 브랜드 역할·문서 UI·독립 소비자 설치와 light/dark 브라우저 검증을 완료했다. 2026-09-27 사용자에게 구현 결과(`pnpm check` 62개 테스트, docs 92개 경로, 브랜드 override 및 shadcn CLI 설치)와 공개 배포 전 상태를 공유했고, `implementation_approve`의 A를 명시적으로 받았다. 이 승인은 완료된 구현을 승인하고 다음 Feature workflow 단계로 진행한다는 뜻이며, 별도 원격 게시나 두 원본 앱의 전면 전환을 승인한 것으로 확장하지 않는다.
 
 ### 테스트 실행 기록
 
