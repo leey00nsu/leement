@@ -9,9 +9,9 @@ const buttonVariants = cva(
   { variants: {
     variant: {
       primary: "border-transparent bg-primary text-primary-foreground hover:bg-(--lm-color-action-primary-hover)",
-      secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-(--lm-color-action-secondary-hover)",
-      outline: "border-border bg-background text-foreground hover:bg-muted",
-      ghost: "border-transparent bg-transparent text-foreground hover:bg-muted",
+      secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-(--lm-color-action-secondary-hover) aria-expanded:bg-(--lm-color-action-secondary-hover)",
+      outline: "border-border bg-background text-foreground hover:bg-muted aria-expanded:bg-muted",
+      ghost: "border-transparent bg-transparent text-foreground hover:bg-muted aria-expanded:bg-muted",
       destructive: "border-transparent bg-destructive/10 text-destructive hover:bg-destructive/20",
     },
     size: { xs: "h-8 px-2.5 text-xs", sm: "h-9 px-3", default: "h-10 px-4", lg: "h-11 px-5", icon: "size-10 px-0", "icon-sm": "size-9 px-0" },
