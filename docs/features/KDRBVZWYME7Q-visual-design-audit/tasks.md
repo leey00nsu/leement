@@ -91,17 +91,18 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-011] T-KDRBVZWYME7Q-visual-design-audit-02 Correct foundation tokens and core controls
+- [DONE][PRD-FR-011] T-KDRBVZWYME7Q-visual-design-audit-02 Correct foundation tokens and core controls
   - Date: 2026-09-27
   - Acceptance:
     - Light/dark semantic rules and core controls follow one measured hierarchy of surface, type, spacing, radius and focus.
     - Button, Input, Card, Textarea, Label, Badge, Separator, Select, Switch and Tabs pass the audit table recheck.
   - Checklist:
-    - [ ] Compare CopySinger and Leesfield control rules; update token/theme only for evidence-backed shared roles.
-    - [ ] Update core registry source, examples and relevant interaction tests.
-    - [ ] Update design-system.md with durable rules and record all ten audit verdicts.
+    - [x] Compare CopySinger and Leesfield control rules; update token/theme only for evidence-backed shared roles. The existing semantic values cover the shared roles, so no token value changed.
+    - [x] Update core registry source, examples and relevant interaction tests. Existing Button test and real-browser keyboard/state checks cover the changed behavior; no implementation-mirroring test was added.
+    - [x] Update design-system.md with durable rules and record all ten audit verdicts.
   - Docs:
     - docs:designs/design-system.md
+  - Verification: [Task 02 audit recheck](./artifacts/catalog-visual-audit.md#task-02-core-control-recheck) covers 10 source-backed previews at 1440/390px in light/dark, focus, image clipping and relevant keyboard states. `pnpm registry:build`, `pnpm typecheck`, `pnpm lint`, `pnpm exec vitest run registry/ui/button.test.tsx` and `git diff --check` passed. Installed consumer verification remains Task 10.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

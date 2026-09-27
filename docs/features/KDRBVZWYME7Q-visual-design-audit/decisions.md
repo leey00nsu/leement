@@ -41,10 +41,12 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 - **Context**: Button, Input, Card 등 기본 UI는 두 앱에 거의 같은 source가 있지만 Leement의 단순화 과정에서 상태와 표면 규칙 일부가 달라졌다.
 - **Constraints**: 수치 복제가 목표는 아니다. Leement의 semantic token과 현재 public API를 우선하며 source ownership과 접근성을 유지한다.
-- **Options**: 구현 조사 후 확정한다.
-- **Decision**: 조사 중.
-- **Rationale**: 조사 중.
+- **Options**: ① 두 앱의 `dark:bg-input/30`, 개별 카드 padding 등의 class를 그대로 옮긴다. ② 공통 semantic `surface.default`와 20/16px 간격 규칙으로 표현하고 실제 DOM에서 확인되는 결함만 교정한다.
+- **Decision**: ②를 선택했다. Card의 이미지/간격/Footer, Input의 file/어두운 표면, Textarea의 그림자/모바일 글자, Button의 열린 메뉴 상태, Badge/Separator/Switch/Tabs의 상태와 방향을 registry 원본에서 수정했다. 공통 docs preview의 이중 프레임도 제거했다.
+- **Rationale**: dark utility class는 `.dark`에만 의존할 수 있지만 Leement는 `[data-lm-theme="dark"]`도 지원한다. semantic surface 변수는 두 선택 방식에서 같은 결과를 낸다. Card의 원본 두 제품은 사실상 같은 정보 구조이므로 Leement spacing으로 재표현했다. Tabs는 원본과 같은 class가 실제 Base UI의 `data-orientation`과 불일치했으므로 DOM을 기준으로 고쳤다.
 - **Trace**:
   - **DOING 시작 시점**: 두 앱의 실제 core source와 Leement registry, 문서 규칙을 대조한다. Card의 image clipping/footer, Input의 file 상태, Textarea shadow가 우선 확인 후보이다.
-- **Evidence**: [두 제품 대응표](../GMA8H5L3TLTY-expanded-component-catalog/artifacts/reference-coverage.md), [이번 감사표](./artifacts/catalog-visual-audit.md)
-- **Consequences**: 확정 전에는 token 값을 임의로 평균 내거나 앱의 브랜드색을 기본 control 색으로 전파하지 않는다.
+  - **DONE 전 확정 시점**: 10개 공개 preview를 두 테마×두 화면에서 재촬영해 stage overflow가 없음을 확인했다. 실제 DOM에서 Tabs가 가로로 늘어지던 문제를 찾아 column/40px로 교정했다. Button/Input/Select의 포커스 링, Card의 이미지 clipping, Switch의 Space 토글, Select 옵션 열기, Tabs의 방향키+Enter 선택을 브라우저에서 확인했다. `pnpm registry:build`, `pnpm typecheck`, `pnpm lint`, `pnpm exec vitest run registry/ui/button.test.tsx`가 통과했다. 토큰 값 변경은 필요하지 않았다. 모든 항목의 최종 소비자 설치는 Task 10에서 확인한다.
+  - **머지 후 확인**: 통합 후 결과를 기록한다.
+- **Evidence**: [두 제품 대응표](../GMA8H5L3TLTY-expanded-component-catalog/artifacts/reference-coverage.md), [이번 감사표와 Task 02 브라우저 재검증](./artifacts/catalog-visual-audit.md#task-02-core-control-recheck), [Card after](./artifacts/previews/card-dark-after.png), [Tabs after](./artifacts/previews/tabs-dark-after.png)
+- **Consequences**: 디자인 규칙 변경은 `docs/designs/design-system.md`, registry source, docs examples/metadata에서 함께 반영했다. 제품별 수치를 평균 내지 않고 브랜드색도 기본 neutral action에 전파하지 않는다. 별도 예외는 없다.
