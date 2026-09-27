@@ -289,6 +289,54 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-011] T-GMA8H5L3TLTY-expanded-component-catalog-15 Add configurable brand roles and branded motion examples
+  - Date: 2026-09-27
+  - Acceptance:
+    - Brand focus, data accent, gradient and optional skeleton can be customized per light/dark mode without editing Leement source, while default skeleton remains neutral.
+  - Checklist:
+    - [ ] Inventory both products brand color use and document common roles and exceptions.
+    - [ ] Add semantic brand roles, CSS aliases and accessible reduced-motion behavior.
+    - [ ] Expose branded skeleton and gradient text as registry source with docs examples.
+  - Docs:
+    - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005] T-GMA8H5L3TLTY-expanded-component-catalog-16 Align docs navigation and component pages with Kibo layout
+  - Date: 2026-09-27
+  - Acceptance:
+    - Docs use a Kibo-like header, grouped sidebar, right-side page navigation and preview-first detail layout while retaining Leement identity and content; redundant Kibo coverage navigation and page are removed.
+  - Checklist:
+    - [ ] Remove Kibo coverage UI route and links while keeping feature comparison evidence.
+    - [ ] Rework desktop and mobile documentation shell and item workbench.
+    - [ ] Check navigation, keyboard access and light/dark contrast.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-012] T-GMA8H5L3TLTY-expanded-component-catalog-17 Verify brand customization and docs experience
+  - Date: 2026-09-27
+  - Acceptance:
+    - Theme overrides affect focus, data accent, branded skeleton and gradient in both modes; docs build and interactive desktop/mobile pages pass.
+  - Checklist:
+    - [ ] Run targeted theme and component checks plus registry build and docs build.
+    - [ ] Verify representative pages in browser at desktop and mobile widths and record remaining visual differences.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -301,11 +349,13 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 구현 완료 공유: 78개 item과 41개 Kibo 사례, 92개 docs 정적 페이지, 78개 CLI alias 설치, CopySinger/Leesfield의 격리된 공통 22개 채택 및 desktop/mobile light/dark 검증을 2026-09-27 사용자 진행 메시지로 전달했다. 사용자의 `A 자동진행` 지시에 따라 `implementation_approve`의 A(구현 승인 및 다음 단계 진행)를 적용한다. 실제 npm 게시·웹 호스팅과 원본 두 앱의 전면 교체는 이 Feature의 검증 결과와 구분한다.
+
+추가 요청으로 T15–T17을 열었다. 위 완료 공유와 테스트 기록은 T01–T14의 이력이며 추가 범위의 완료 증거가 아니다.
 
 ### 테스트 실행 기록
 

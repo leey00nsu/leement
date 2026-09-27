@@ -48,6 +48,8 @@
 4. Kibo 41개 사용 사례를 고정 매핑으로 구현한다. 먼저 사용 가능한 기존 Leement·공통 UI를 재사용하고, 남은 기능은 도메인별 작은 registry item으로 추가한다. 동작이 복잡한 항목은 Kibo MIT 소스를 선택적으로 검토·이식하되 라이선스 고지와 Leement token/API/source ownership을 유지한다. 서버·결제·미디어 인코딩 등은 주입 가능한 UI API만 제공한다. 이름만 다른 중복 item은 만들지 않는다.
 5. 각 item을 `registry.json`에 파일·npm dependency·registry dependency와 함께 등록한다. 다중 파일 item은 필요한 파일을 모두 명시한다. shadcn CLI 생성 JSON을 `apps/docs/public/r`에 출력하고 독립 소비자 설치로 검증한다. docs metadata, gallery, 상세 페이지와 예제는 실제 registry source를 import한다.
 6. 마지막으로 CopySinger/Leesfield의 격리된 체크아웃에서 기존 파일을 덮어쓰지 않는 경로로 registry source를 설치한다. 공통 22개 모두 import/render, 대표 사용처는 실제 교체·typecheck/build/keyboard smoke로 검증한다. 결과와 한계를 coverage matrix 및 Feature 기록에 연결한다. 기존 앱의 baseline 실패와 새 회귀를 분리한다.
+7. 두 제품의 브랜드 색 사용처를 focus, data accent, 그라디언트, 선택적 로딩 효과로 분류한다. `tokens.json`의 light/dark semantic brand 역할을 theme CSS 변수로 출력하고 focus/data 역할은 brand 변수 참조로 만든다. 소비자 앱이 import 뒤에 모드별 `--lm-color-brand-*`를 재정의하면 관련 UI가 따라 바뀌도록 한다. 일반 Skeleton은 중립으로 유지하고 브랜드 Skeleton과 gradient text는 작은 registry source로 제공하며 reduced motion을 존중한다.
+8. Kibo 문서의 상단 탐색·좌측 범주 메뉴·우측 목차·미리보기/코드 탭을 Leement docs 구조에 맞춰 적용한다. 기존 Preview/Example/Source와 디자인 사용 규칙은 유지하고 Leement 브랜드·문구·토큰을 사용한다. Kibo coverage 메뉴와 중복 route는 제거하며 비교 매핑은 Feature artifact에 남긴다. 데스크톱/모바일 및 light/dark에서 직접 확인한다.
 
 ### 실행 순서와 중단 기준
 
@@ -135,6 +137,7 @@ Feature 완료 전 검사는 실제 `workflow.featureChecks`(컴포넌트 overri
 ### 관찰 가능한 계약
 
 - **지원해야 하는 동작**: 공통 22개와 Kibo 41개 사용 사례의 조작 가능한 UI, light/dark theme, registry 종속 설치, 전체 docs 미리보기, 두 앱의 공통 source 채택.
+- **추가 브랜드·문서 동작**: 소비자 모드별 브랜드 변수 재정의가 focus/data/gradient/선택적 Skeleton에 반영된다. 문서의 삼단 탐색은 키보드·모바일에서 동작하며 전용 Kibo coverage 메뉴와 route는 없다.
 - **전제조건**: React/TypeScript/Tailwind v4 소비자, `@leement/theme` import, `components.json` registry alias, 필요한 item별 npm dependency 설치.
 - **성공 후 보장**: 설치된 source가 소비자 앱에 남아 수정 가능하며 주요 variant/keyboard/aria 상태가 동작한다. 두 참조 앱에서 공통 22개 import/render와 대표 교체 흐름이 새 회귀 없이 통과한다.
 - **중요한 실패 후 보장**: 누락된 item/dependency, 실패한 빌드·접근성, 불일치한 docs/registry 또는 두 앱 통합 회귀가 있으면 해당 Task와 Feature를 완료로 표시하지 않는다. 원본 두 앱에는 검증용 수정을 남기지 않는다.
@@ -149,6 +152,8 @@ Feature 완료 전 검사는 실제 `workflow.featureChecks`(컴포넌트 overri
 | US-1 / FR-2,3 | ADD | 신규 item의 의미 있는 단위/상호작용 | 정적 placeholder 또는 핵심 interaction 미지원 | Kibo 고정 사용 사례와 각 item의 문서화한 동작 계약 |
 | US-2 / FR-5,11 | ADD | registry 설치 통합 | 파일·npm/registry dependency 누락으로 소비자 빌드 실패 | shadcn CLI 결과, item별 선언과 독립 소비자 타입 검사 |
 | US-3 / FR-6,12 | ADD | docs 경로·원본 연결 통합·수동 UI | docs preview/source와 실제 배포 item이 다름 | registry JSON/source 파일과 docs 상세 페이지 |
+| US-5 / FR-13 | UPDATE | theme 계약·컴포넌트 단위·브라우저 | 브랜드 재정의가 focus/data/gradient/선택적 Skeleton 중 일부에 전달되지 않거나 reduced motion이 무시됨 | 원본 제품의 사용처와 계산된 CSS 변수·애니메이션 상태 |
+| US-3 / FR-14 | UPDATE | docs 경로·키보드·반응형 브라우저 | 중복 Kibo coverage가 남거나 삼단 탐색에서 내용/링크가 닿지 않음 | 실제 Kibo 정보 구조, Leement navigation 및 상세 경로 |
 
 ### 의도적으로 제외하는 테스트
 

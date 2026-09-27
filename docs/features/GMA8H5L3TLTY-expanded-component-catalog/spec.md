@@ -19,6 +19,8 @@ Design Tokens + Design Rules가 시각·상태 규칙의 정본이다. `@leement
 
 Leement는 두 제품의 수치를 평균 내거나 프로젝트별 복사본을 유지하지 않는다. 공통된 시각 의도, 실제 사용 맥락, 가독성·접근성, 일관된 상태 표현을 근거로 **하나의 공용 규칙과 light/dark semantic theme**을 선택한다. 원본과 다른 수치·스타일은 그 결정이 두 프로젝트에서 모두 사용 가능한지 검증하고 이유를 기록한다. 앱 고유 브랜드·도메인 표현만 앱 계층에 남긴다.
 
+2026-09-27 추가 범위: CopySinger의 보라·파랑·분홍과 Leesfield의 파랑은 제품 브랜드 값이다. Leement는 이를 고정된 제품 정체성으로 강제하지 않고, light/dark별로 교체 가능한 semantic brand 역할과 설정 가이드를 제공한다. 일반 Skeleton은 중립으로 유지하고, 브랜드 강조 로딩·텍스트·애니메이션은 선택적으로 제공한다. 문서 UI는 Kibo의 탐색·미리보기 구조에 가깝게 정리하되 Leement 이름·콘텐츠·토큰을 사용한다. 별도 Kibo coverage 메뉴와 페이지는 제거하고 비교 근거는 Feature artifact에 유지한다.
+
 ## 두 참조 프로젝트의 교체 기준 (2026-09-27)
 
 CopySinger `src/shared/ui/*`와 Leesfield `src/shared/ui/brand/*`에 같은 이름으로 존재하는 다음 **22개 디렉터리**는 모두 공통 구현·교체 가능성의 검증 대상이다. 이름이 같아도 API·동작·수치가 동일하다고 가정하지 않는다. 필요한 경우 마이그레이션 안내를 제공하되 두 앱이 서로 다른 Leement 컴포넌트 복사본을 유지하지 않도록 한다.
@@ -65,7 +67,7 @@ Kibo 공개 컴포넌트 탐색 메뉴의 41개 항목을 기준으로 한다.
 
 - [ ] Kibo 기준 41개 각각의 핵심 UI 사용 사례에 동작하는 Leement 대응 항목과 설명이 있다. 서버·서비스 연동 같은 제품별 기능은 범위를 명시할 수 있으나 핵심 UI 상호작용이 비어 있으면 완료로 계산하지 않는다.
 - [ ] 기본 UI 8개 외에 최소 41개 복합 registry item이 있으며, 같은 기능의 이름만 바꾼 중복 항목은 수에 포함하지 않는다.
-- [ ] Kibo 기준 항목별 대응 관계, 실제 기능 차이 및 의도적 제외 범위를 공개 문서에서 확인할 수 있다.
+- [ ] Kibo 기준 항목별 대응 관계, 실제 기능 차이 및 의도적 제외 범위를 Feature 비교 기록에서 확인할 수 있고, 제공 항목은 각 Leement 상세 문서에서 탐색할 수 있다.
 - [ ] 실제 제공 항목은 동작하는 component source를 가지며 placeholder나 정적 스크린샷으로 수를 채우지 않는다.
 - [ ] 공통 22개 중 복합 항목은 별도 사용 사례와 동작을 제공할 때만 41개 목표 수에 포함한다. Kibo의 전체 블록 개수 복제는 이 목표에 포함하지 않는다.
 
@@ -96,6 +98,8 @@ Kibo 공개 컴포넌트 탐색 메뉴의 41개 항목을 기준으로 한다.
 - [ ] 예제는 registry source를 직접 사용하고 Source 뷰는 배포되는 실제 파일과 일치한다.
 - [ ] 신규 항목뿐 아니라 제공하는 **모든** UI/Pattern/Block에 조작 가능한 미리보기, 주요 상태, 설치 명령이 있다. docs의 빌드 결과에서 모든 상세 경로에 접근할 수 있다.
 - [ ] Foundations의 Color, Typography, Spacing, Radius, Shadow, Motion도 light/dark 실제 토큰 값과 사용 규칙을 설명한다. component/pattern 문서는 가능할 때 anatomy, variants, sizes, states, examples, accessibility, API를 포함한다.
+- [ ] Color foundation에서 light/dark 브랜드 역할을 앱이 CSS 변수로 재정의하는 방법과 focus·data accent·브랜드 gradient·선택적 Skeleton 예제를 보여 준다. 기본 Skeleton은 중립색이다.
+- [ ] 문서는 Kibo에 가까운 상단 탐색, 범주별 좌측 메뉴, 상세 페이지의 우측 목차, 미리보기 중심 본문을 갖는다. 모바일 메뉴와 키보드 탐색을 유지하고 Kibo 로고·명칭·문구·이미지를 복제하지 않는다. Kibo coverage 메뉴와 중복 페이지는 없다.
 
 ### US-4: CopySinger와 Leesfield의 공용 UI 교체
 
@@ -121,6 +125,7 @@ Kibo 공개 컴포넌트 탐색 메뉴의 41개 항목을 기준으로 한다.
 
 - [ ] 두 제품의 실제 CSS와 공용 UI에서 색상, typography/font loading, spacing, radius, border, shadow, hover, focus, disabled, loading, error, success, warning, data accent의 **공통 의도와 다른 수치**를 구분해 기록한다. 채택한 단일 규칙은 반복된 사용 사례, 가독성·접근성, 상태 일관성, 두 앱 적용 가능성으로 설명한다. 기계적인 수치 평균이나 원본별 픽셀 일치를 기준으로 삼지 않는다.
 - [ ] `@leement/tokens`의 공통 semantic 역할과 `@leement/theme`의 light/dark 값이 하나의 디자인 언어를 표현한다. Leesfield dark는 CopySinger light의 의미상 대응 모드로 읽혀야 한다. registry source에 제품별 임의 색상이나 Tailwind palette 클래스를 흩어 놓지 않는다.
+- [ ] 포커스 링과 data accent가 브랜드 역할에서 파생되고, 소비자 앱이 모드별 브랜드 색을 재정의하면 gradient text 및 브랜드 Skeleton까지 함께 바뀐다. 브랜드 색을 바꿀 때 focus와 텍스트 대비를 확인하며 reduced motion 설정에서는 반복 애니메이션을 중지한다.
 - [ ] 공통 22개와 Button/Input/Card를 포함한 대표 화면을 두 원본과 나란히 light/dark, desktop/mobile, 주요 variant 및 default/hover/focus/disabled/loading 상태에서 시각 검토한다. 원본과 숫자나 픽셀이 다르다는 이유만으로 실패 처리하지 않고, 선택된 공통 규칙의 일관성·가독성·동작·앱 적용 가능성을 평가한다. 의도적 차이는 디자인 규칙·마이그레이션 안내에 명시한다.
 - [ ] 디자인 문서, 실제 token/theme 값, registry class, docs 미리보기가 같은 규칙을 설명한다. Card의 radius/spacing/shadow처럼 현재 불일치한 규칙을 해소한다. Pretendard 등 서체 로딩 방법과 폴백도 소비자 설치 문서에 포함한다.
 - [ ] 해당하는 interactive 항목의 키보드, focus-visible, aria/label, disabled, loading, contrast를 확인한다. Dialog/Tooltip 등 headless primitive의 focus/composition 동작을 시각 변경으로 깨뜨리지 않는다.
@@ -139,6 +144,8 @@ Kibo 공개 컴포넌트 탐색 메뉴의 41개 항목을 기준으로 한다.
 - FR-10: CopySinger light에서 Leesfield dark로 이어진 디자인 의도를 공통 token/rule과 light/dark semantic theme으로 정리한다. 두 제품의 수치가 다를 때 하나의 근거 있는 규칙을 선택하고 의도적 차이를 문서화한다. shadcn compatibility 변수는 항상 Leement semantic token에서 파생한다.
 - FR-11: 실제 두 프로젝트의 격리된 통합 검증과 독립 소비자 설치 검증을 모두 수행한다. 공통 항목 전수 smoke와 대표 사용처 교체 증거를 남긴다.
 - FR-12: 모든 제공 UI/Pattern/Block을 docs에서 registry source로 미리 보고 설치할 수 있게 한다. 신규 항목만 docs를 완성하는 것으로 처리하지 않는다.
+- FR-13: 브랜드 역할은 토큰이 의미를 정의하고 theme이 CSS 변수로 제공한다. 제품별 색은 설치 앱에서 재정의하며 일반 Skeleton과 브랜드 Skeleton을 구분한다.
+- FR-14: 문서 화면은 Kibo식 탐색 구조와 preview-first 사용 경험을 참고한다. Leement 고유 표시와 원본 문서를 유지하고 중복 Kibo coverage 항목을 제거한다.
 
 ## 비기능 요구사항
 

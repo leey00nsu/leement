@@ -229,3 +229,19 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 한 공통 소스가 두 제품에서 빌드·렌더링되는지 직접 증명하면서, 인증·도메인 데이터·현지화·제품별 시각 결정을 디자인 시스템에 흡수하지 않는다. 기존 앱의 전체 배포 전환은 별도 제품 작업이다.
 - **Trace (실행 확인)**: 생성 코드 준비 후 양 앱 baseline typecheck/build가 검증용 환경값에서 통과했다. 교체 후에도 양 앱 typecheck/build가 통과하고 CopySinger UI 8건, Leesfield wrapper 2건의 테스트가 통과했다. 22개씩 browser 렌더와 Switch/Tabs/Dialog/Select/Tooltip 동작에서 pageerror 0건. Docs example의 Dialog/Tooltip client 경계를 바로잡고, CSS import 순서와 alias 충돌 위험을 문서에 추가했다. 원본 앱 checkout은 clean 상태로 유지했다.
 - **Evidence**: [Task contract](./tasks.md), [Two-app adoption checkpoint and screenshots](./artifacts/reference-coverage.md#task-14-copysinger-and-leesfield-adoption-checkpoint), [Design rules](../../designs/design-system.md), [Adoption guide](../../../apps/docs/app/adoption/page.tsx), [Theme import guide](../../../apps/docs/app/getting-started/page.tsx)
+
+## D019: 제품 브랜드 값은 재정의 가능한 의미 역할로 분리한다 (2026-09-27)
+
+- **Context/Constraints**: CopySinger의 `--brand-violet/blue/pink`는 gradient text·파형·로딩에 쓰이고 Leesfield의 `--data-accent`와 `--brand-gradient-start/highlight`는 선택 상태·gradient text·앱 전용 Skeleton에 쓰인다. 기본 Skeleton은 두 앱 모두 중립색이다. 현재 Leement의 focus/data 값은 이 제품 색을 고정 값처럼 담고 있다.
+- **Options**: ① 현재 제품 색을 보편적 Leement 정체성으로 고정한다 ② light/dark 기본값은 참조 사례로 유지하고 소비자가 의미별 브랜드 변수를 재정의하게 한다.
+- **Decision**: ②를 채택한다. focus, data accent, gradient와 선택적 Skeleton을 브랜드 역할에 연결하며 기본 Skeleton은 중립으로 둔다. 브랜드 색 변경 시 focus·텍스트 대비는 소비자가 확인할 수 있도록 Foundations에 규칙과 실제 예제를 둔다.
+- **Rationale**: 두 제품의 브랜드 선택은 공통 UI의 구조·상태 규칙과 분리된다. 포커스 가시성과 색 대비를 확보하며 같은 컴포넌트 소스를 다른 제품에서도 쓸 수 있다.
+- **Evidence**: CopySinger `src/_app/styles/globals.css`와 Leesfield `src/app/globals.css`의 브랜드 변수 및 Skeleton/gradient 사용처, [reference coverage](./artifacts/reference-coverage.md), [Task contract](./tasks.md).
+
+## D020: Kibo의 문서 정보 구조를 Leement 콘텐츠로 구현한다 (2026-09-27)
+
+- **Context/Constraints**: 현재 docs는 상단에 소수의 링크와 이단 레이아웃을 쓰고, `Kibo coverage`를 별도 탐색 항목으로 노출한다. Kibo 화면은 상단 섹션 탐색, 좌측 범주 탐색, 중앙 preview-first 본문, 우측 목차를 사용한다. Kibo MIT 코드는 사용할 수 있지만 브랜드·문구·이미지까지 복제할 필요는 없다.
+- **Options**: ① 현재 shell과 중복 coverage 경로를 유지한다 ② Kibo의 정보 구조와 밀도를 적용하되 Leement 고유 브랜드·실제 source·문서 내용을 유지한다.
+- **Decision**: ②를 채택한다. 중복 `Kibo coverage` 메뉴·route는 제거하고 비교 근거는 Feature artifact에 유지한다. 기존 출처 코드의 MIT 고지는 계속 보존한다.
+- **Rationale**: 사용자가 원한 탐색 경험을 제공하면서 제품 정체성과 문서 계약은 Leement에 맞춘다. 직접 사용한 코드의 라이선스 의무도 지킨다.
+- **Evidence**: [Kibo component docs](https://www.kibo-ui.com/components/color-picker), [Kibo source](https://github.com/shadcnblocks/kibo), [Task contract](./tasks.md).
