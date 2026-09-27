@@ -127,15 +127,18 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-04 Reconstruct data and collaboration components
+- [DONE][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-04 Reconstruct data and collaboration components
   - Date: 2026-09-27
   - Acceptance:
     - Avatar, AvatarStack, Cursor, Calendar, List, Table, Gantt, Kanban, Chart and ContributionGraph meet their documented core scenarios and visual hierarchy.
     - Dense data layouts remain readable and controllable at 390px.
   - Checklist:
-    - [ ] Compare Kibo cases and both app contexts for each relevant item.
-    - [ ] Correct item source/examples with meaningful keyboard and responsive checks.
-    - [ ] Record ten item-level verdicts and visual evidence.
+    - [x] Compare Kibo cases and both app contexts for each relevant item.
+    - [x] Correct item source/examples with meaningful keyboard and responsive checks.
+    - [x] Record ten item-level verdicts and visual evidence.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: [Task 04 audit recheck](./artifacts/catalog-visual-audit.md#task-04-data-and-collaboration-recheck) covers ten source-backed previews in four modes, mobile internal scroll, Calendar arrow/date selection, List/Kanban/Gantt move announcements, Table sorting, annual ContributionGraph selection and a fresh mobile Chart load. `pnpm registry:build`, `pnpm typecheck`, `pnpm lint` and `git diff --check` passed. Installed consumer verification remains Task 10.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

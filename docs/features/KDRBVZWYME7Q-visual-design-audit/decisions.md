@@ -69,10 +69,11 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 - **Context**: 10개 데이터·협업 항목 중 Calendar, List, Table, Gantt, Kanban, ContributionGraph는 Kibo 대응 사례보다 화면의 정보 계층이 줄어든 것으로 초기 감사에서 판정됐다.
 - **Constraints**: 앱 데이터와 업무 로직은 소비자가 소유한다. Leement source는 접근 가능한 표시·선택·이동 구조와 callback만 제공하고, 390px에서도 읽을 수 있어야 한다.
-- **Options**: 조사 후 확정한다.
-- **Decision**: 조사 중.
-- **Rationale**: 조사 중.
+- **Options**: ① 기존 간단한 예제만 확장, ② source anatomy가 빠진 Calendar·ContributionGraph·Gantt를 고치고 나머지는 업무 데이터가 보이는 예제와 조합 API로 확장, ③ Kibo의 제품 기능 전체를 복사.
+- **Decision**: ②를 선택했다. Calendar는 일정 월력과 Leesfield형 작은 날짜 선택을 두 variant로 제공한다. ContributionGraph는 주간 7행과 월 축을 가진 연간 그리드로 바꾼다. Gantt는 월 헤더·업무 그룹·기간 정보로 계층을 보강한다. Kanban은 앱 데이터용 `renderCard`를, List는 이동 결과 알림을 추가했다. Avatar, Chart, Table, Cursor 등의 source가 이미 갖춘 구조는 실제 정보를 가진 예제로 검증했다.
+- **Rationale**: Kibo 데모와의 가장 큰 차이는 단일 행·짧은 기간·빈 화면이었고, 일부는 source에서 일정과 월 축 자체가 빠져 있었다. 두 제품은 공통 ChartContainer를 쓰고 Leesfield는 별도의 작은 AppDatePicker를 쓴다. Kibo의 도메인 모델·원격 데이터까지 이식하지 않아도 같은 시각적 문제를 해결하는 source를 소비자가 소유할 수 있다.
 - **Trace**:
   - **DOING 시작 시점**: Kibo 고정 source/데모와 두 제품의 관련 UI를 대조해 예제만 얕은 항목과 source anatomy가 빠진 항목을 분리한다. 밀집 화면은 390px에서 실제 가로 스크롤·키보드 이동을 확인한다.
-- **Evidence**: [79개 초기 감사표](./artifacts/catalog-visual-audit.md)
-- **Consequences**: source 코드 길이나 항목 개수만으로 통과하지 않는다.
+  - **DONE 전 확정 시점**: 10개 item × 4모드의 preview가 렌더링됐고 body/stage overflow 및 browser exception이 없었다. Calendar와 ContributionGraph의 그래프/월력은 내부 스크롤로 전체 정보에 접근했다. List/Table/Gantt/Kanban의 정렬·이동·알림을 브라우저에서 조작했다. Chart의 빠른 viewport 전환 capture는 ResizeObserver 갱신 전 폭이 남을 수 있으므로 390px fresh load로 6개 막대를 재검증했다.
+- **Evidence**: [10개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-04-data-and-collaboration-recheck), [Calendar after](./artifacts/previews/calendar-light-after.png), [ContributionGraph after](./artifacts/previews/contribution-graph-light-after.png), [Gantt mobile after](./artifacts/previews/gantt-dark-390-after.png), Leesfield `src/shared/ui/app-calendar.tsx`
+- **Consequences**: Calendar 기본 schedule view는 더 큰 공간을 요구하므로 date picker 소비자는 `variant="date"`를 명시한다. Board/timeline 데이터 동기화와 앱 도메인 필드, Table pagination은 소비자에 남는다. 설치된 source의 독립 빌드는 Task 10에서 확인한다.
