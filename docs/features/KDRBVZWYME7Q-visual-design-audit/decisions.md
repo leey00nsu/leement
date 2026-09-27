@@ -64,3 +64,15 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **머지 후 확인**: 통합 후 결과를 기록한다.
 - **Evidence**: [13개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-03-overlays-feedback-and-loading-recheck), [Kibo Spinner source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/spinner/index.tsx), [Kibo Status source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/status/index.tsx), [Skeleton after](./artifacts/previews/skeleton-dark-390-after.png), [Spinner after](./artifacts/previews/spinner-dark-after.png)
 - **Consequences**: `surface.muted`와 컴포넌트 사용 규칙을 `docs/designs/design-system.md`, token/theme, registry, docs example/metadata에 동기화했다. Spinner 형태 선택은 제공하지만 모드별 실제 브랜드·상태 색상은 consumer가 정한다. Status pulse는 실시간 변화에만 선택한다. 선택지 확장 자체를 stable 승격 근거로 삼지 않는다. 추가된 public API는 item 문서에 반영했고 통합 changelog는 Task 09에서 전체 변경과 함께 갱신한다.
+
+## D004: 데이터와 협업 UI는 예제 밀도와 실제 조작을 함께 판정한다 (2026-09-27)
+
+- **Context**: 10개 데이터·협업 항목 중 Calendar, List, Table, Gantt, Kanban, ContributionGraph는 Kibo 대응 사례보다 화면의 정보 계층이 줄어든 것으로 초기 감사에서 판정됐다.
+- **Constraints**: 앱 데이터와 업무 로직은 소비자가 소유한다. Leement source는 접근 가능한 표시·선택·이동 구조와 callback만 제공하고, 390px에서도 읽을 수 있어야 한다.
+- **Options**: 조사 후 확정한다.
+- **Decision**: 조사 중.
+- **Rationale**: 조사 중.
+- **Trace**:
+  - **DOING 시작 시점**: Kibo 고정 source/데모와 두 제품의 관련 UI를 대조해 예제만 얕은 항목과 source anatomy가 빠진 항목을 분리한다. 밀집 화면은 390px에서 실제 가로 스크롤·키보드 이동을 확인한다.
+- **Evidence**: [79개 초기 감사표](./artifacts/catalog-visual-audit.md)
+- **Consequences**: source 코드 길이나 항목 개수만으로 통과하지 않는다.
