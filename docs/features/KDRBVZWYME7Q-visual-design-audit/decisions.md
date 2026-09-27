@@ -77,3 +77,15 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **DONE 전 확정 시점**: 10개 item × 4모드의 preview가 렌더링됐고 body/stage overflow 및 browser exception이 없었다. Calendar와 ContributionGraph의 그래프/월력은 내부 스크롤로 전체 정보에 접근했다. List/Table/Gantt/Kanban의 정렬·이동·알림을 브라우저에서 조작했다. Chart의 빠른 viewport 전환 capture는 ResizeObserver 갱신 전 폭이 남을 수 있으므로 390px fresh load로 6개 막대를 재검증했다.
 - **Evidence**: [10개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-04-data-and-collaboration-recheck), [Calendar after](./artifacts/previews/calendar-light-after.png), [ContributionGraph after](./artifacts/previews/contribution-graph-light-after.png), [Gantt mobile after](./artifacts/previews/gantt-dark-390-after.png), Leesfield `src/shared/ui/app-calendar.tsx`
 - **Consequences**: Calendar 기본 schedule view는 더 큰 공간을 요구하므로 date picker 소비자는 `variant="date"`를 명시한다. Board/timeline 데이터 동기화와 앱 도메인 필드, Table pagination은 소비자에 남는다. 설치된 source의 독립 빌드는 Task 10에서 확인한다.
+
+## D005: 색상 선택은 완전한 조작 표면과 명시적 값 계약으로 재구성한다 (2026-09-27)
+
+- **Context**: 현재 ColorPicker는 native 색상 입력, 6자리 HEX, preset만 제공한다. 고정 Kibo 데모는 선택 평면, hue, alpha, 형식 출력이 함께 보이는 도구다. MiniCalendar도 날짜 선택은 되지만 Kibo의 짧은 수평 스트립과 다른 정보 계층을 보여 준다.
+- **Constraints**: Leement brand/token 편집기가 아니다. 소비자는 색상 값을 소유하고, 키보드와 작은 화면에서도 선택 가능해야 한다. 신규 대형 라이브러리나 Kibo의 검증되지 않은 상태 로직을 그대로 가져오지 않는다.
+- **Options**: 조사 후 확정한다.
+- **Decision**: 조사 중.
+- **Rationale**: 조사 중.
+- **Trace**:
+  - **DOING 시작 시점**: Kibo source/preview와 Leement의 8개 실제 데모를 대조한다. ColorPicker의 pointer/keyboard/alpha/출력 계약을 먼저 정하고 나머지 선택 컨트롤의 열린·비활성·선택 상태를 확인한다.
+- **Evidence**: [초기 감사표](./artifacts/catalog-visual-audit.md), [Kibo ColorPicker source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/color-picker/index.tsx)
+- **Consequences**: 변경되는 공개 값 형식과 이전 사용 경로는 docs metadata 및 변경 기록에 적는다.
