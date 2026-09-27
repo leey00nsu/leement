@@ -20,6 +20,8 @@ CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 �
 
 - Color: background, surface, foreground, border, action, brand, focus, status(success/warning), data accent 역할로 사용한다. `neutral`, `blue` 등 palette 이름은 primitive에서만 사용한다. 기본 light의 보라 계열과 dark의 파랑 계열은 CopySinger/Leesfield의 브랜드 참고값이며 Leement의 필수 정체성이 아니다. 앱의 브랜드색을 전역 primary로 흡수하지 않고 모드별 브랜드 역할로 재정의한다. 상태에는 색상과 텍스트를 함께 사용한다.
 
+`background.subtle`은 페이지 배경의 낮은 단계이고 `surface.muted`는 컨트롤 hover, Tabs list, Skeleton, Progress track처럼 표면과 분리되어 보여야 하는 영역이다. CopySinger의 밝은 `--muted`와 Leesfield의 어두운 `--muted`를 참고해 light는 `#f5f5f5`, dark는 `#303033`으로 둔다. shadcn 호환 `--muted`는 `surface.muted`에서만 파생하며, 이 값을 page background로 대신 사용하지 않는다.
+
 ### 브랜드 역할
 
 `--lm-color-brand-accent`와 `--lm-color-brand-accent-foreground`는 데이터 강조 표면과 전경, `--lm-color-brand-focus`는 키보드 포커스 링을 정한다. `--lm-color-brand-gradient-start/middle/end`는 강조 텍스트와 선택적 브랜드 Skeleton이 공유한다. `--lm-color-data-accent`와 `--lm-color-focus-ring`은 각각 브랜드 역할을 참조하므로 앱이 `@leement/theme` import 뒤에 브랜드 변수만 덮어쓰면 관련 컴포넌트가 함께 바뀐다. light와 dark를 별도로 지정한다. 사용 예제는 docs의 Foundations → Color에 두며, 각 앱에서 focus 가시성·텍스트 대비를 확인한다.
@@ -39,7 +41,9 @@ CopySinger/Leesfield의 Button `default`는 Leement `primary`에 대응한다. �
 
 Overlay는 `bg-popover`와 `text-popover-foreground`를 공통 표면으로 사용하고 border 및 필요한 shadow로 떠 있는 계층을 표시한다. Dropdown Menu의 destructive item은 연한 danger 강조를 쓰며 keyboard highlight와 disabled 상태를 구분한다. Popover는 짧은 맥락, Sheet는 가장자리에 붙는 상세 작업, Dialog는 집중된 modal 작업에 쓴다. 각 Trigger는 접근 가능한 이름, Dialog/Sheet는 Title, Tooltip은 보조 정보와 독립된 제어 이름을 갖는다. Dialog/Tooltip은 Radix, Dropdown Menu/Popover/Sheet는 Base UI의 focus·Escape 동작을 유지한다. 제품의 현지화된 close 이름은 소비자 소스에서 기본 close를 숨기고 조합한다.
 
-로딩은 Skeleton과 영역의 `aria-busy`/상태 텍스트를 함께 제공한다. 짧은 피드백은 StatusNotice, 페이지·영역의 결과와 다음 행동은 StatePanel로 표현한다. success/warning/danger는 semantic token과 의미를 전달하는 텍스트를 함께 쓴다. Chart의 시리즈색은 `--lm-color-data-accent` 같은 semantic 변수로 지정하며 정확한 수치는 텍스트·표로도 제공한다. BentoGrid와 ProductPageIntro는 제품 구조를 표현하며 제품별 카피·이미지는 소비자 코드가 넣는다. ResourceRowLink는 native anchor를 기본으로 하여 React 라우터에 묶이지 않는다. RevealContent는 기존 두 제품의 진입 모션 변형을 보존하되 핵심 조작을 지연시키지 않고 reduced motion/no-script에서 바로 보이게 한다.
+로딩은 Skeleton과 영역의 `aria-busy`/상태 텍스트를 함께 제공한다. 기본 Skeleton은 `surface.muted`로 빈 구조를 읽을 수 있게 하고 브랜드 gradient는 제품 정체성이 필요한 로딩 구간에만 쓴다. PageSkeleton의 행 구분선은 기본 border를 쓴다. 짧은 피드백은 StatusNotice, 페이지·영역의 결과와 다음 행동은 StatePanel로 표현한다. success/warning/danger는 semantic token과 의미를 전달하는 텍스트를 함께 쓴다. Status의 성공·경고 점에는 연한 배경색이 아니라 각 상태의 전경색을 쓰고 라벨을 반드시 보인다. Chart의 시리즈색은 `--lm-color-data-accent` 같은 semantic 변수로 지정하며 정확한 수치는 텍스트·표로도 제공한다. BentoGrid와 ProductPageIntro는 제품 구조를 표현하며 제품별 카피·이미지는 소비자 코드가 넣는다. ResourceRowLink는 native anchor를 기본으로 하여 React 라우터에 묶이지 않는다. RevealContent는 기존 두 제품의 진입 모션 변형을 보존하되 핵심 조작을 지연시키지 않고 reduced motion/no-script에서 바로 보이게 한다.
+
+Spinner는 기본 회전형을 우선한다. Kibo의 여러 로딩 형태에 대응하는 throbber, pinwheel, circle-filled, ellipsis, ring, bars, infinite를 추가 선택지로 제공하되, 한 화면에서는 로딩의 의미보다 모양이 앞서지 않게 한두 형태로 통일한다. 크기(`sm`/`md`/`lg`)와 접근 가능한 `label`은 모양과 독립적이다. Status는 기본 `label`/`tone` API를 유지하고, 객체의 현재 상태를 더 세밀하게 보여야 할 때 `StatusIndicator`와 `StatusLabel`을 조합한다. `pulse`는 실시간 연결 상태처럼 실제 갱신을 암시할 때만 사용한다. 상태 이름은 Kibo의 서비스 가동률 용어에 고정하지 않고 제품이 소유하며 neutral/success/warning/danger semantic 역할을 사용한다. 모든 반복 애니메이션은 reduced motion에서 멈춘다.
 
 Progress와 Slider는 Base UI의 값·키보드 의미를 보존하고 `primary`/`muted` 의미색을 사용한다. Slider의 thumb는 16px이지만 제어 가능 영역을 넓히며, 한 값이 기본이다. Range는 명시적인 두 값 배열을 전달한다. PageSkeleton은 Skeleton을 조합하고 로딩 이름과 `aria-busy`를 같이 제공한다. AlertDialog는 명시적 취소·확인 버튼을 제공하고 위험 action을 부드러운 danger surface로 나타낸다. Toast는 `popover` 표면 토큰을 사용하며 앱의 dark 모드 선택은 `theme` prop으로 전달한다. FilterToolbar는 검색·정렬·선택 필터를 묶고 토글은 `aria-pressed` 상태를 노출한다.
 

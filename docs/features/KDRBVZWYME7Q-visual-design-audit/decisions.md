@@ -55,10 +55,12 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 - **Context**: 13개 오버레이·피드백·로딩 항목 중 닫힌 trigger만 보이는 미리보기가 있어 기본 캡처만으로 surface, 상태 및 키보드 동작을 판정할 수 없다.
 - **Constraints**: Radix/Base UI의 focus·Escape·aria 계약과 Leement semantic surface를 유지한다. 불필요한 새 variant보다 실제 상태 예제를 우선한다.
-- **Options**: 조사 후 확정한다.
-- **Decision**: 조사 중.
-- **Rationale**: 조사 중.
+- **Options**: ① 처음 보이는 trigger/정적 상태만 승인한다. ② 실제 열린 상태·조작·reduced-motion을 검증하고 공통 token 및 필요한 API를 함께 재구성한다.
+- **Decision**: ②를 선택했다. CopySinger/Leesfield의 `--muted` 근거로 `surface.muted`를 추가하고 shadcn `--muted` alias를 그 역할에 연결했다. Dialog/Sheet와 예제를 완성하고 오버레이의 상태별 reduced-motion 규칙을 고쳤다. Kibo 대응 Spinner에는 8개 형태를, Status에는 Indicator/Label 조합을 추가하되 기존 API를 유지했다.
+- **Rationale**: 이전 `--muted`는 page background에 연결되어 Skeleton·Progress와 탭 표면이 특히 어두운 모드에서 묻혔다. 상태 선택자의 우선순위 때문에 일반 reduced-motion class만으로는 애니메이션이 멈추지 않았다. Kibo 두 항목의 핵심 선택지와 조합성은 작은 Leement source로 전달할 수 있고, product-specific 서비스 상태명은 semantic tone과 라벨로 표현하는 편이 재사용에 맞다.
 - **Trace**:
   - **DOING 시작 시점**: Dialog, Dropdown Menu, Popover, Sheet, Tooltip, Alert Dialog의 열린 상태와 Skeleton/PageSkeleton/StatusNotice/Progress/Toast/Spinner/Status의 의미·대비·motion을 먼저 본다.
-- **Evidence**: [이번 감사표](./artifacts/catalog-visual-audit.md)
-- **Consequences**: 항목별 결함과 의도된 차이를 분리해 기록한다.
+  - **DONE 전 확정 시점**: 13개 항목×4모드의 실제 상태 52개에서 stage overflow·팝업 화면 이탈·Escape 닫힘·초점 복귀 실패가 없었다. Dialog 저장, Popover Switch, Dropdown destructive, AlertDialog 확인, Progress `aria-valuenow=64`, StatusNotice role, PageSkeleton busy를 확인했다. 여덟 Spinner glyph와 Status 조합은 양 테마·두 폭에서 렌더링됐다. reduced-motion에서 Dialog/AlertDialog/Dropdown/Popover/Sheet/Skeleton/Spinner/Status pulse 및 Select의 계산 애니메이션이 `none`이었다. `pnpm registry:build`, `pnpm typecheck`, `pnpm lint`, `pnpm exec vitest run packages/theme/theme.test.mjs`가 통과했다. 소비자 설치는 Task 10에서 확인한다.
+  - **머지 후 확인**: 통합 후 결과를 기록한다.
+- **Evidence**: [13개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-03-overlays-feedback-and-loading-recheck), [Kibo Spinner source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/spinner/index.tsx), [Kibo Status source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/status/index.tsx), [Skeleton after](./artifacts/previews/skeleton-dark-390-after.png), [Spinner after](./artifacts/previews/spinner-dark-after.png)
+- **Consequences**: `surface.muted`와 컴포넌트 사용 규칙을 `docs/designs/design-system.md`, token/theme, registry, docs example/metadata에 동기화했다. Spinner 형태 선택은 제공하지만 모드별 실제 브랜드·상태 색상은 consumer가 정한다. Status pulse는 실시간 변화에만 선택한다. 선택지 확장 자체를 stable 승격 근거로 삼지 않는다. 추가된 public API는 item 문서에 반영했고 통합 changelog는 Task 09에서 전체 변경과 함께 갱신한다.

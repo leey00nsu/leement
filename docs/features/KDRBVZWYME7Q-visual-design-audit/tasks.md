@@ -109,15 +109,18 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-011] T-KDRBVZWYME7Q-visual-design-audit-03 Reconstruct overlays, feedback and loading states
+- [DONE][PRD-FR-011] T-KDRBVZWYME7Q-visual-design-audit-03 Reconstruct overlays, feedback and loading states
   - Date: 2026-09-27
   - Acceptance:
     - Dialog, Dropdown Menu, Popover, Sheet, Tooltip, Alert Dialog, Skeleton, PageSkeleton, StatusNotice, Progress, Toast, Spinner and Status have correct anatomy and visual states.
     - Keyboard focus, Escape/disabled/announcements and reduced-motion remain usable.
   - Checklist:
-    - [ ] Compare reference anatomy and rendered states in light/dark/mobile.
-    - [ ] Correct registry source/examples and existing relevant tests.
-    - [ ] Record item-level verdicts and before/after evidence for defects.
+    - [x] Compare reference anatomy and rendered states in light/dark/mobile, including pinned Kibo Spinner and Status structures.
+    - [x] Correct registry source/examples and existing relevant tests; the theme alias test now guards the added muted surface role.
+    - [x] Record item-level verdicts and before/after evidence for defects.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: [Task 03 audit recheck](./artifacts/catalog-visual-audit.md#task-03-overlays-feedback-and-loading-recheck) covers 13 items × four modes, opened overlays, keyboard/Escape/focus, disabled activation and reduced motion. `pnpm registry:build`, `pnpm typecheck`, `pnpm lint`, `pnpm exec vitest run packages/theme/theme.test.mjs`, and `git diff --check` passed. Installed consumer verification remains Task 10.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
