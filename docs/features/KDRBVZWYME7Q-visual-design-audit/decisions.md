@@ -23,19 +23,16 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 ---
 
-## D001: visual-design-audit 결정 (2026-09-27)
+## D001: 항목 수보다 실제 렌더링과 사용 사례로 디자인 품질을 판정한다 (2026-09-27)
 
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: 이전 Feature는 41개 Kibo 대응 항목을 빠르게 제공했고 일부를 의도적으로 작은 source로 단순화했다. 사용자는 카탈로그 존재 여부보다 디자인적으로 잘못 구현된 항목을 전수 확인하고 재구성하기를 요청했다.
+- **Constraints**: Leement token/rule이 정본이고 CopySinger light 및 Leesfield dark 의도가 우선한다. Kibo 원본은 MIT 사용 사례와 anatomy의 참조이지만 브랜드나 픽셀 동일성 목표는 아니다. 공개 79개 item의 source ownership과 shadcn registry 설치 방식은 유지한다.
+- **Options**: ① 이름·수·테스트 통과만 확인한다. ② source 비교와 실제 문서 미리보기의 light/dark, desktop/mobile, 핵심 상태를 항목별로 확인한다.
+- **Decision**: ②를 선택한다. 79개 항목별 감사표를 Feature artifact로 유지하고 열린 P1/P2 디자인 결함을 모두 이 Feature에서 수정한다.
+- **Rationale**: 기존 테스트는 레이아웃, 대비, 정보 밀도와 시각 상태를 증명하지 못한다. 실제 사용자 화면과 소비자 source를 함께 확인해야 한다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
-- **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - **DOING 시작 시점**: `registry.json`은 80개 항목이며 비공개 성격의 `utils`를 제외하면 79개다. 고정 Kibo commit의 동명 패키지 41개와 대응한다. ColorPicker, Gantt, Table의 source는 현재 Leement에서 훨씬 단순한 구성이라 실제 화면/사용 사례 확인이 우선이다.
+  - **DONE 전 확정 시점**: 79개 source와 docs route가 모두 존재하고 4모드의 실제 preview가 HTTP 200으로 렌더링됐다. Kibo의 41개 동명 공개 데모도 열어 source와 사용 사례를 매핑했다. 공통 이중 preview 프레임(X01), ColorPicker의 anatomy 차이, ImageCrop의 0×0 이미지, Calendar/Gantt/Table의 정보 밀도 부족을 감사표의 P1/P2 후보로 기록했다. 20개 대표 조작을 시도했고 9개는 열린 semantic overlay/listbox를 확인했다. 조작 미확인 항목은 최종 통과로 처리하지 않았다.
+  - **머지 후 확인**: 통합 후 결과를 기록한다.
+- **Evidence**: [기존 대응표](../GMA8H5L3TLTY-expanded-component-catalog/artifacts/reference-coverage.md), [Kibo source 기준](https://github.com/shadcnblocks/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263), [이번 감사표](./artifacts/catalog-visual-audit.md)
+- **Consequences**: source 코드가 짧다는 이유만으로 결함을 확정하지 않으며 `intentional` 판정에도 명시적인 디자인 근거가 필요하다.

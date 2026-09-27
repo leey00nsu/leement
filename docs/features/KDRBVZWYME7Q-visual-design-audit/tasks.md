@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/KDRBVZWYME7Q-visual-design-audit`
 - **대기 중 변경 요청**: -
@@ -74,6 +74,161 @@
 > 수동 편집이 필요하면 현재 태스크 근처가 아니라 `태스크 목록`의 마지막 기존 태스크 block 아래에만 append 하세요.
 
 ---
+
+- [DONE][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-01 Freeze catalog inventory and audit every preview against its design reference
+  - Date: 2026-09-27
+  - Acceptance:
+    - 79 public items each have a source/reference, desktop/mobile light/dark observation, severity and initial verdict in the Feature audit artifact.
+    - 41 Kibo cases have the pinned upstream source and demo scenario mapped; the remaining 38 have Leement or product references.
+  - Checklist:
+    - [x] Generate the 79-item inventory from registry.json and check docs route/source parity.
+    - [x] Inspect every preview at desktop/mobile in light/dark and record applicable interactions and defects.
+    - [x] Save representative before evidence under Feature artifacts and link it from the audit table.
+  - Verification: [79-item audit table](./artifacts/catalog-visual-audit.md) and 16 four-mode contact sheets cover every public item. Registry source existence, 79 Leement routes/captures and 41 Kibo routes returned no missing item; 20 representative controls were probed without uncaught errors. Initial findings and incomplete interaction checks remain explicitly open for Tasks 02–09.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-011] T-KDRBVZWYME7Q-visual-design-audit-02 Correct foundation tokens and core controls
+  - Date: 2026-09-27
+  - Acceptance:
+    - Light/dark semantic rules and core controls follow one measured hierarchy of surface, type, spacing, radius and focus.
+    - Button, Input, Card, Textarea, Label, Badge, Separator, Select, Switch and Tabs pass the audit table recheck.
+  - Checklist:
+    - [ ] Compare CopySinger and Leesfield control rules; update token/theme only for evidence-backed shared roles.
+    - [ ] Update core registry source, examples and relevant interaction tests.
+    - [ ] Update design-system.md with durable rules and record all ten audit verdicts.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-011] T-KDRBVZWYME7Q-visual-design-audit-03 Reconstruct overlays, feedback and loading states
+  - Date: 2026-09-27
+  - Acceptance:
+    - Dialog, Dropdown Menu, Popover, Sheet, Tooltip, Alert Dialog, Skeleton, PageSkeleton, StatusNotice, Progress, Toast, Spinner and Status have correct anatomy and visual states.
+    - Keyboard focus, Escape/disabled/announcements and reduced-motion remain usable.
+  - Checklist:
+    - [ ] Compare reference anatomy and rendered states in light/dark/mobile.
+    - [ ] Correct registry source/examples and existing relevant tests.
+    - [ ] Record item-level verdicts and before/after evidence for defects.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-04 Reconstruct data and collaboration components
+  - Date: 2026-09-27
+  - Acceptance:
+    - Avatar, AvatarStack, Cursor, Calendar, List, Table, Gantt, Kanban, Chart and ContributionGraph meet their documented core scenarios and visual hierarchy.
+    - Dense data layouts remain readable and controllable at 390px.
+  - Checklist:
+    - [ ] Compare Kibo cases and both app contexts for each relevant item.
+    - [ ] Correct item source/examples with meaningful keyboard and responsive checks.
+    - [ ] Record ten item-level verdicts and visual evidence.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-05 Reconstruct form and choice components
+  - Date: 2026-09-27
+  - Acceptance:
+    - Slider, Choicebox, Combobox, Dropzone, MiniCalendar, Tags, ColorPicker and Rating expose their meaningful visual states and interaction anatomy.
+    - The ColorPicker no longer silently substitutes a materially different control for the documented Kibo-like use case unless the design rule explicitly justifies it.
+  - Checklist:
+    - [ ] Inspect Kibo source/demo and Leement light/dark/mobile behavior.
+    - [ ] Correct source/examples and interaction tests for altered contracts.
+    - [ ] Record eight item-level verdicts and visual evidence.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-06 Reconstruct image, media, finance and social items
+  - Date: 2026-09-27
+  - Acceptance:
+    - ImageCrop, ImageZoom, CreditCard, Ticker, Stories, Reel and VideoPlayer present complete, responsive visual states and useful controls.
+    - Media controls preserve named keyboard actions and reduced-motion behavior.
+  - Checklist:
+    - [ ] Inspect live preview with supplied media and compare the corresponding Kibo anatomy.
+    - [ ] Correct source/examples and relevant tests.
+    - [ ] Record seven item-level verdicts and visual evidence.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-07 Reconstruct content and utility components
+  - Date: 2026-09-27
+  - Acceptance:
+    - CodeBlock, Snippet, Sandbox, Announcement, Banner, Typography, Comparison, Deck, DialogStack, Editor, Glimpse, Marquee, Pill, QRCode, RelativeTime, ThemeSwitcher and Tree meet their documented anatomy and light/dark/mobile states.
+    - Leement-only BrandGradientText, RevealContent and Collapsible maintain the shared token and motion rules.
+  - Checklist:
+    - [ ] Inspect Kibo cases where mapped and product/design references for Leement-only items.
+    - [ ] Correct source/examples and relevant tests without cloning upstream branding.
+    - [ ] Record all item-level verdicts and visual evidence.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-008] T-KDRBVZWYME7Q-visual-design-audit-08 Reconstruct patterns and remaining blocks
+  - Date: 2026-09-27
+  - Acceptance:
+    - PageHeader, EmptyState, FormSection, SearchField, StatCard, StatePanel, ProductPageIntro, ResourceRowLink, FilterToolbar, SettingsSection and BentoGrid use corrected primitives and preserve product hierarchy.
+    - All pattern/block dependency metadata installs required source automatically.
+  - Checklist:
+    - [ ] Inspect desktop/mobile and light/dark compositions plus states.
+    - [ ] Correct source/examples, registry dependency metadata and relevant tests.
+    - [ ] Record all item-level verdicts and visual evidence.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005] T-KDRBVZWYME7Q-visual-design-audit-09 Align docs examples, state guidance and final 79-item visual audit
+  - Date: 2026-09-27
+  - Acceptance:
+    - Every public item page demonstrates the actual registry source, relevant states, API and install path; generic or false state claims are removed.
+    - Every audit row has a final evidence-backed verdict and no unresolved P1/P2 issue.
+  - Checklist:
+    - [ ] Review 79 docs routes, preview/source parity and applicable states.
+    - [ ] Update item guidance/changelog and durable design rules for changed APIs or rules.
+    - [ ] Recheck all four light/dark and desktop/mobile combinations, audit table and representative after images.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-012] T-KDRBVZWYME7Q-visual-design-audit-10 Verify registry installation and two-product adoption boundaries
+  - Date: 2026-09-27
+  - Acceptance:
+    - Changed source and transitive dependencies install into an isolated Tailwind v4 consumer and pass typecheck/build.
+    - CopySinger and Leesfield shared UI usage remains compatible through demonstrated migration or updated guidance; four feature checks pass.
+  - Checklist:
+    - [ ] Run registry build, representative or full changed-item CLI install and consumer typecheck/build.
+    - [ ] Verify representative actual app usages or isolated adoption fixtures with documented pre-existing errors separated.
+    - [ ] Run pnpm typecheck, lint, test and build; close audit rows and record residual risks.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
 
 ## Repository Knowledge (완료 비차단)
 
