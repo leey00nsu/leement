@@ -16,7 +16,7 @@ describe("Leement web theme contract", () => {
   it("provides the same semantic roles in light and dark", () => {
     const light = css.split(':root, [data-lm-theme="light"] {')[1].split('color-scheme: light;')[0];
     const dark = css.split('.dark, [data-lm-theme="dark"] {')[1].split('color-scheme: dark;')[0];
-    for (const role of ["surface-default", "surface-raised", "status-success", "status-warning", "data-accent", "focus-ring"]) {
+    for (const role of ["surface-default", "surface-raised", "surface-muted", "status-success", "status-warning", "data-accent", "focus-ring"]) {
       expect(light).toContain(`--lm-color-${role}:`);
       expect(dark).toContain(`--lm-color-${role}:`);
     }
@@ -25,6 +25,7 @@ describe("Leement web theme contract", () => {
   it("derives shadcn names from Leement roles and supports existing dark-class apps", () => {
     expect(css).toContain("--background: var(--lm-color-background-default)");
     expect(css).toContain("--success: var(--lm-color-status-success)");
+    expect(css).toContain("--muted: var(--lm-color-surface-muted)");
     expect(css).toContain("--data-accent: var(--lm-color-data-accent)");
     expect(css).toContain('.dark, [data-lm-theme="dark"]');
     expect(css).toContain("--radius-xl: var(--lm-radius-xl)");

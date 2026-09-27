@@ -1,3 +1,12 @@
-"use client";
-import { Spinner } from "../../../registry/ui/spinner";
-export default function SpinnerExample() { return <div className="flex items-center gap-4"><Spinner label="Loading small item" size="sm" /><Spinner label="Loading results" /><Spinner label="Loading large panel" size="lg" /></div>; }
+import { Spinner, type SpinnerVariant } from "../../../registry/ui/spinner";
+
+const variants: SpinnerVariant[] = ["default", "throbber", "pinwheel", "circle-filled", "ellipsis", "ring", "bars", "infinite"];
+
+export default function SpinnerExample() {
+  return <div className="grid w-full max-w-md grid-cols-2 gap-4 sm:grid-cols-4">
+    {variants.map((variant) => <div key={variant} className="flex min-h-20 flex-col items-center justify-center gap-2 rounded-md border border-border bg-card p-2 text-center">
+      <Spinner variant={variant} size="lg" label={`Loading with ${variant} spinner`} />
+      <span className="text-xs text-muted-foreground">{variant}</span>
+    </div>)}
+  </div>;
+}

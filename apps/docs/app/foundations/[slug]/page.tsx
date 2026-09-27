@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { tokens } from "@leement/tokens";
 
 const content = {
-  color: { rule: "Use semantic roles for background, surface, foreground, border, action, brand, focus, status and data accent. Palette names stay in primitive tokens.", detail: "CopySinger light and Leesfield dark provide example brand defaults. Your product sets its own brand values without editing component source." },
+  color: { rule: "Use semantic roles for background, surface, foreground, border, action, brand, focus, status and data accent. Palette names stay in primitive tokens.", detail: "Surface.muted is the visible control and loading placeholder surface in both modes; background.subtle is a quieter page background. CopySinger light and Leesfield dark provide example brand defaults. Your product sets its own brand values without editing component source." },
   typography: { rule: "Use one readable sans family, a small type scale and weight for hierarchy before introducing display styles.", detail: "The theme declares a Pretendard-first stack. Consumer apps load the font file or CDN stylesheet; fallback remains available." },
   spacing: { rule: "Use a 4px base rhythm and keep control heights consistent at 36, 40 and 44px.", detail: "Choose spacing based on content relationship. Tighter within one control, wider between independent sections." },
   radius: { rule: "Use 8px for controls, 12px for cards and fully rounded shapes for badges and pills.", detail: "Radius expresses containment. Keep surface hierarchy consistent across light and dark." },

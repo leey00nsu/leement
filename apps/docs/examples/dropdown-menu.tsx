@@ -13,6 +13,7 @@ export default function DropdownMenuExample() {
       <DropdownMenuItem onClick={() => setView("Activity")}>Activity</DropdownMenuItem>
       <DropdownMenuSeparator />
       <DropdownMenuItem disabled>Export unavailable</DropdownMenuItem>
+      <DropdownMenuItem variant="destructive" onClick={() => setView("No view selected")}>Clear selection</DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu><span role="status" className="text-sm text-muted-foreground">{view}</span></div>;
 }

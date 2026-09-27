@@ -22,7 +22,7 @@ function PageSkeleton({ className, label = "Loading page", rows = 3, ...props }:
         <Skeleton className="h-9 w-full max-w-md" />
         <Skeleton className="h-4 w-full max-w-xl" />
       </div>
-      <div className="divide-y">
+      <div className="divide-y divide-border">
         {Array.from({ length: rows }, (_, index) => (
           <div className="flex items-center gap-4 py-5" key={index}>
             <Skeleton className="size-10 shrink-0 rounded-lg" />

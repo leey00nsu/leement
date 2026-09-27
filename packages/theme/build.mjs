@@ -26,7 +26,7 @@ const compatibility = `  /* shadcn compatibility: aliases only */
   --primary-foreground: var(--lm-color-foreground-inverse);
   --secondary: var(--lm-color-action-secondary);
   --secondary-foreground: var(--lm-color-foreground-default);
-  --muted: var(--lm-color-background-subtle);
+  --muted: var(--lm-color-surface-muted);
   --muted-foreground: var(--lm-color-foreground-muted);
   --accent: var(--lm-color-action-secondary);
   --accent-foreground: var(--lm-color-foreground-default);

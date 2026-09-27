@@ -1,18 +1,26 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "../../../registry/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../../../registry/ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../../../registry/ui/dialog";
 import { Input } from "../../../registry/ui/input";
+import { Label } from "../../../registry/ui/label";
 
 export default function DialogExample() {
-  return <Dialog>
+  const [name, setName] = useState("Studio");
+  const [savedName, setSavedName] = useState("Studio");
+  return <div className="flex flex-wrap items-center gap-3"><Dialog>
     <DialogTrigger asChild><Button>Open dialog</Button></DialogTrigger>
     <DialogContent>
       <DialogHeader>
         <DialogTitle>Edit workspace</DialogTitle>
         <DialogDescription>Update details for your team.</DialogDescription>
       </DialogHeader>
-      <Input aria-label="Workspace name" defaultValue="Studio" />
+      <div className="space-y-2"><Label htmlFor="dialog-workspace-name">Workspace name</Label><Input id="dialog-workspace-name" value={name} onChange={(event) => setName(event.target.value)} /></div>
+      <DialogFooter>
+        <DialogClose asChild><Button variant="outline" onClick={() => setName(savedName)}>Cancel</Button></DialogClose>
+        <DialogClose asChild><Button onClick={() => setSavedName(name)}>Save changes</Button></DialogClose>
+      </DialogFooter>
     </DialogContent>
-  </Dialog>;
+  </Dialog><span role="status" className="text-sm text-muted-foreground">Current: {savedName}</span></div>;
 }
