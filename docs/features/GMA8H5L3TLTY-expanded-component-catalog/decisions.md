@@ -246,3 +246,12 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 사용자가 원한 탐색 경험을 제공하면서 제품 정체성과 문서 계약은 Leement에 맞춘다. 직접 사용한 코드의 라이선스 의무도 지킨다.
 - **Trace (실행 확인)**: 상단 범주, 범주별 좌측 탐색, 중앙 Preview·Code·Source, 설치와 우측 목차를 구성했다. 홈은 큰 제목과 실제 registry 소스로 만든 미리보기를 사용한다. `/reference-coverage`와 Kibo coverage 링크를 제거했다. 문서 91개 정적 경로가 빌드됐고, 데스크톱·모바일의 탐색·검색·light/dark 화면에서 오류와 가로 넘침이 없었다. Kibo의 상표·문구·예시를 복제하지 않아 화면 픽셀 동일성은 목표로 하지 않는다.
 - **Evidence**: [Kibo component docs](https://www.kibo-ui.com/components/color-picker), [Kibo source](https://github.com/shadcnblocks/kibo), [docs screenshot and browser checkpoint](./artifacts/reference-coverage.md#task-16-docs-layout-checkpoint), [Task contract](./tasks.md).
+
+## D021: 완료된 로컬 Feature를 검증 후 fast-forward 통합한다 (2026-09-27)
+
+- **Context/Constraints**: 프로젝트 초기 설정의 `workflow.completionStrategy: none` 때문에 구현 승인 후 workflow가 `done`으로 끝났고, 이번 GMA Feature는 `main`에 통합되지 않았다. 이전 A33 Feature는 수동 통합됐지만 worktree가 남았다. `main`의 기존 `apps/docs/next-env.d.ts` 변경과 GMA worktree의 보존 stash를 잃지 않아야 한다.
+- **Options**: ① `none`을 유지하고 수동 통합한다 ② `local-ff`로 바꾸고 lee-spec-kit의 검증·통합·정리 단계를 따른다.
+- **Decision**: 사용자의 명시적 요청에 따라 ②를 선택한다. 이번 Feature branch에서 설정을 변경해 `main`에 함께 통합한다. 사용자가 이번 통합을 요청했지만 기존 변경은 보존하고, workflow가 반환하는 단계·검증 결과를 확인한 뒤 진행한다.
+- **Rationale**: 구현 승인과 코드 통합을 별개의 단계로 처리하며, 완료된 브랜치와 worktree를 남기지 않는다.
+- **Trace (초기 확인)**: `main`은 GMA branch보다 37개 커밋 뒤에 있고 fast-forward 가능하다. A33 branch는 이미 `main`의 조상이다. 이전 설정은 초기 커밋부터 `none`이었다.
+- **Evidence**: [Workflow configuration](../../.lee-spec-kit.json), [Task contract](./tasks.md), [lee-spec-kit local workflow](https://github.com/leey00nsu/lee-spec-kit/blob/main/templates/en/common/README.md).

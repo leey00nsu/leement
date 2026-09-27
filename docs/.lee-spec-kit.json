@@ -13,7 +13,7 @@
     "codeDirtyScope": "auto",
     "taskCommitGate": "warn",
     "baseBranch": "main",
-    "completionStrategy": "none",
+    "completionStrategy": "local-ff",
     "deleteFeatureBranchAfterMerge": true,
     "featureChecks": [
       {
