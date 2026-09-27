@@ -325,15 +325,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-012] T-GMA8H5L3TLTY-expanded-component-catalog-17 Verify brand customization and docs experience
+- [DONE][PRD-FR-012] T-GMA8H5L3TLTY-expanded-component-catalog-17 Verify brand customization and docs experience
   - Date: 2026-09-27
   - Acceptance:
     - Theme overrides affect focus, data accent, branded skeleton and gradient in both modes; docs build and interactive desktop/mobile pages pass.
   - Checklist:
-    - [ ] Run targeted theme and component checks plus registry build and docs build.
-    - [ ] Verify representative pages in browser at desktop and mobile widths and record remaining visual differences.
+    - [x] Run targeted theme and component checks plus registry build and docs build.
+    - [x] Verify representative pages in browser at desktop and mobile widths and record remaining visual differences.
   - Docs:
     - docs:designs/design-system.md
+  - Verification: `pnpm check` passed (92 docs routes, 5 typecheck tasks, 3 lint tasks, 62 tests); local shadcn CLI installed `brand-gradient-text` into an independent consumer and its strict TypeScript/Vite build passed. Browser computed light/dark overrides affected focus, data accent/foreground, gradient text and brand Skeleton; reduced motion stopped both effects. Four representative routes passed at desktop/mobile widths in both modes without page errors or overflow. Missing BrandGradientText docs route was fixed. [Task 17 checkpoint](./artifacts/reference-coverage.md#task-17-brand-and-docs-verification-checkpoint).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -371,9 +372,9 @@
 | `pnpm typecheck` | 2026-09-27 | PASS: 5 tasks |
 | `pnpm lint` | 2026-09-27 | PASS: 3 tasks |
 | `pnpm build` | 2026-09-27 | PASS: tokens, theme, registry, docs static routes |
-| `pnpm test` | 2026-09-27 | PASS: 11 files, 60 tests |
-| `pnpm check` | 2026-09-27 | PASS: build (92 docs pages), typecheck (5 tasks), lint (3 tasks), test (60 tests) |
+| `pnpm test` | 2026-09-27 | PASS: 11 files, 62 tests (via `pnpm check`) |
+| `pnpm check` | 2026-09-27 | PASS: build (92 docs pages), typecheck (5 tasks), lint (3 tasks), test (62 tests) |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:ef6328c6e1eacd920cd833c3413548821bb026d0b5fd67b0f2320aab60d5d746 -->
+<!-- lee-spec-kit:workflow-sync sha256:a7ffa5698e44d908b66ac8c21105e9a1bf9467751c817e7ead29dfa45e4ced21 -->
