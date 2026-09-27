@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { ItemWorkbench } from "./item-workbench";
+import { CopyButton, ItemWorkbench } from "./item-workbench";
 import { Preview } from "./previews";
 import { items } from "../lib/items";
 import { getItemCode } from "../lib/registry-source";
@@ -12,59 +11,58 @@ function displayName(name: string) {
 export async function ItemPage({ name }: { name: keyof typeof items }) {
   const item = items[name];
   const { exampleCode, sourceCode, sourceFile } = await getItemCode(name);
+  const command = `npx shadcn@latest add @leement/${name}`;
   const sections = [
-    { title: "When to use", body: item.use },
-    { title: "When not to use", body: item.avoid },
-    { title: "Anatomy", body: item.anatomy },
-    { title: "Variants", body: item.variants },
-    { title: "Sizes", body: item.sizes },
-    { title: "States", body: item.variants + ". Check default, keyboard focus, disabled and loading where relevant in the live example and source. The host application owns data and asynchronous transitions." },
-    { title: "Accessibility", body: item.accessibility },
-    { title: "API", body: item.api },
+    { title: "When to use", id: "when-to-use", body: item.use },
+    { title: "When not to use", id: "when-not-to-use", body: item.avoid },
+    { title: "Anatomy", id: "anatomy", body: item.anatomy },
+    { title: "Variants", id: "variants", body: item.variants },
+    { title: "Sizes", id: "sizes", body: item.sizes },
+    { title: "States", id: "states", body: item.variants + ". Check default, keyboard focus, disabled and loading where relevant in the live example and source. The host application owns data and asynchronous transitions." },
+    { title: "Accessibility", id: "accessibility", body: item.accessibility },
+    { title: "API", id: "api", body: item.api },
   ];
+  const outline = [{ title: "Preview", id: "preview" }, { title: "Installation", id: "installation" }, ...sections.map(({ title, id }) => ({ title, id }))];
 
-  return <article className="space-y-10 pb-16">
-    <header className="max-w-3xl">
-      <Link href="/showcase" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-        <ArrowLeft aria-hidden="true" size={14} /> All items
-      </Link>
-      <div className="mt-7 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[.14em] text-muted-foreground">
-        <span>{item.type}</span>
-        <span aria-hidden="true" className="size-1 rounded-full bg-border" />
-        <span className="rounded-full border border-border px-2.5 py-1 normal-case tracking-normal">{item.maturity}</span>
-      </div>
-      <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{displayName(name)}</h1>
-      <p className="mt-4 text-lg leading-8 text-muted-foreground">{item.overview}</p>
-    </header>
+  return <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_190px] xl:gap-12">
+    <article className="min-w-0 pb-16">
+      <header>
+        <div className="flex flex-wrap items-baseline gap-3"><h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{displayName(name)}</h1><span className="text-xs text-muted-foreground" title={`${item.type} maturity`}>{item.maturity}</span></div>
+        <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">{item.overview}</p>
+      </header>
 
-    <section aria-labelledby="workbench-heading">
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Try it out</p>
-          <h2 id="workbench-heading" className="mt-1 text-2xl font-semibold tracking-tight">Live example</h2>
+      <section id="preview" aria-label={`${displayName(name)} preview`} className="mt-10 scroll-mt-24">
+        <ItemWorkbench name={name} exampleCode={exampleCode} sourceCode={sourceCode} sourceFile={sourceFile}>
+          <Preview name={name} />
+        </ItemWorkbench>
+      </section>
+
+      <section id="installation" className="mt-12 scroll-mt-24">
+        <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
+        <p className="mt-3 text-sm leading-7 text-muted-foreground">Install the theme once, then add this editable registry source to your project. Public commands work after the theme package and registry are published.</p>
+        <div className="mt-5 overflow-hidden rounded-xl border border-border bg-muted/30">
+          <div className="border-b border-border px-4 py-2 text-xs font-medium">shadcn CLI</div>
+          <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3"><code className="min-w-0 overflow-x-auto text-xs">{command}</code><CopyButton value={command} label={`Copy install command for ${name}`} /></div>
         </div>
-        <span className="text-xs text-muted-foreground">Preview · Example · Source</span>
-      </div>
-      <ItemWorkbench name={name} exampleCode={exampleCode} sourceCode={sourceCode} sourceFile={sourceFile}>
-        <Preview name={name} />
-      </ItemWorkbench>
-    </section>
+        <Link href="/getting-started" className="mt-3 inline-block text-sm text-[var(--lm-color-brand-focus)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Theme setup and installation guide</Link>
+      </section>
 
-    <section aria-label="Design guidance" className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
-      {sections.map((section) => <div key={section.title} className="bg-background p-6 sm:p-7">
-        <h2 className="text-sm font-semibold">{section.title}</h2>
-        <p className="mt-3 text-sm leading-7 text-muted-foreground">{section.body}</p>
-      </div>)}
-      <div className="flex flex-col justify-between gap-5 bg-muted/40 p-6 sm:p-7">
-        <div>
-          <h2 className="text-sm font-semibold">Install and own the source</h2>
-          <p className="mt-3 text-sm leading-7 text-muted-foreground">The registry adds editable files to your project. Add the theme first, then install this item. Public installation requires a published theme package and deployed registry.</p>
-          <pre className="mt-4 overflow-x-auto rounded-md border border-border bg-background p-3 text-xs"><code>{`pnpm add @leement/theme\nnpx shadcn@latest add @leement/${name}`}</code></pre>
-        </div>
-        <Link href="/getting-started" className="inline-flex items-center gap-2 self-start text-sm font-medium underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-          Installation guide <ArrowUpRight aria-hidden="true" size={15} />
-        </Link>
+      <div className="mt-12 space-y-9 border-t border-border pt-10">
+        {sections.map(section => <section key={section.id} id={section.id} className="scroll-mt-24">
+          <h2 className="text-xl font-semibold tracking-tight">{section.title}</h2>
+          <p className="mt-3 text-sm leading-7 text-muted-foreground">{section.body}</p>
+        </section>)}
       </div>
-    </section>
-  </article>;
+    </article>
+
+    <aside aria-label="On this page" className="hidden xl:block">
+      <div className="sticky top-24 border-l border-border pl-4">
+        <h2 className="text-sm font-medium text-foreground">On this page</h2>
+        <nav aria-label="Page sections" className="mt-4 space-y-2">
+          {outline.map(section => <a key={section.id} href={`#${section.id}`} className="block text-sm text-muted-foreground hover:text-[var(--lm-color-brand-focus)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{section.title}</a>)}
+        </nav>
+        <div className="mt-8 border-t border-border pt-5 text-xs leading-6 text-muted-foreground">Built from Leement tokens and editable registry source.</div>
+      </div>
+    </aside>
+  </div>;
 }

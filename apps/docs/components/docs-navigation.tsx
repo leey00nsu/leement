@@ -2,21 +2,36 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { navigation } from "../lib/docs";
 
 export function DocsNavigation({ label }: { label: string }) {
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
+  const activeGroup = pathname.startsWith("/components/") ? "Components" : pathname.startsWith("/patterns/") ? "Patterns" : pathname.startsWith("/blocks/") ? "Blocks" : null;
+  const groups = activeGroup ? navigation.filter(group => group.title === activeGroup) : navigation.filter(group => ["Getting Started", "Foundations", "Project"].includes(group.title));
+  useEffect(() => {
+    navRef.current?.closest("details")?.removeAttribute("open");
+    if (window.innerWidth < 768) return;
+    const sidebar = navRef.current?.closest<HTMLElement>(".docs-sidebar");
+    const active = navRef.current?.querySelector<HTMLElement>('[aria-current="page"]');
+    if (!sidebar || !active) return;
+    sidebar.scrollTop += active.getBoundingClientRect().top - sidebar.getBoundingClientRect().top - sidebar.clientHeight / 2;
+  }, [pathname]);
 
-  return <nav aria-label={label} className="space-y-7">
-    {navigation.map((group) => <div key={group.title}>
-      <h2 className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[.14em] text-muted-foreground">{group.title}</h2>
-      <ul className="space-y-0.5">
-        {group.items.map((item) => <li key={item.href}>
-          <Link href={item.href} aria-current={pathname === item.href ? "page" : undefined} className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-muted aria-[current=page]:font-medium aria-[current=page]:text-foreground">
-            {item.label}
-          </Link>
-        </li>)}
-      </ul>
+  return <nav ref={navRef} aria-label={label} className="space-y-7">
+    {groups.map((group) => <div key={group.title}>
+      {activeGroup ? <h2 className="sr-only">{group.title}</h2> : <h2 className="mb-3 px-3 text-xs font-medium text-foreground">{group.title}</h2>}
+      {group.sections.map((section, index) => <div key={section.title ?? index} className={index ? "mt-6" : ""}>
+        {section.title && <h3 className="mb-2 px-3 text-xs font-medium text-foreground">{section.title}</h3>}
+        <ul className="space-y-0.5">
+          {section.items.map((item) => <li key={item.href}>
+            <Link href={item.href} aria-current={pathname === item.href ? "page" : undefined} className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-brand-accent/10 aria-[current=page]:font-medium aria-[current=page]:text-[var(--lm-color-brand-focus)]">
+              {item.label}
+            </Link>
+          </li>)}
+        </ul>
+      </div>)}
     </div>)}
   </nav>;
 }

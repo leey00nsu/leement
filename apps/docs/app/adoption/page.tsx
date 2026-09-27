@@ -17,7 +17,7 @@ export default function AdoptionPage() {
         <li>Check existing <code>:root</code> and <code>.dark</code> aliases. They may override Leement&apos;s shadcn compatibility variables. Use <code>data-lm-theme</code> on a pilot area, then migrate global aliases deliberately.</li>
         <li>Install only the registry items the screen needs. Keep application wrappers for domain logic, localization and existing API mappings such as <code>default → primary</code> or <code>isLoading → loading</code>.</li>
       </ol>
-      <p className="text-muted-foreground">The <Link href="/reference-coverage" className="font-medium text-foreground underline underline-offset-4">Kibo coverage</Link> page lists 41 advanced cases and their boundaries.</p>
+      <p className="text-muted-foreground">Browse the <Link href="/showcase" className="font-medium text-foreground underline underline-offset-4">component catalog</Link> for each item&apos;s live preview, source and installation command.</p>
     </section>
     <AdoptionCompositions />
   </main>;

@@ -6,7 +6,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { Check, Clipboard, Code2, Eye, Files } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
-function CopyButton({ value, label }: { value: string; label: string }) {
+export function CopyButton({ value, label }: { value: string; label: string }) {
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
 
   async function copy() {
@@ -44,25 +44,23 @@ export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, child
   sourceFile: string;
   children: ReactNode;
 }) {
-  const command = `npx shadcn@latest add @leement/${name}`;
   const tabs = [
+    { value: "example", label: "Code", Icon: Code2 },
     { value: "preview", label: "Preview", Icon: Eye },
-    { value: "example", label: "Example", Icon: Code2 },
     { value: "source", label: "Source", Icon: Files },
   ];
 
-  return <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+  return <div className="overflow-hidden rounded-xl border border-border bg-card">
     <Tabs.Root defaultValue="preview">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-3 py-2 sm:px-5">
-        <Tabs.List aria-label={`${name} workbench`} className="flex gap-1">
-          {tabs.map(({ value, label, Icon }) => <Tabs.Trigger key={value} value={value} className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=active]:bg-muted data-[state=active]:text-foreground">
+      <div className="border-b border-border bg-muted/40 p-1">
+        <Tabs.List aria-label={`${name} workbench`} className="grid grid-cols-3 gap-1">
+          {tabs.map(({ value, label, Icon }) => <Tabs.Trigger key={value} value={value} className="inline-flex h-10 items-center justify-center gap-2 rounded-lg text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm">
             <Icon aria-hidden="true" size={15} />{label}
           </Tabs.Trigger>)}
         </Tabs.List>
-        <span className="px-2 text-xs text-muted-foreground">Editable source, installed in your app</span>
       </div>
       <Tabs.Content value="preview" className="outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
-        <div className="flex min-h-64 items-center justify-center bg-background p-4 sm:p-8 [&>div]:border-0">{children}</div>
+        <div className="docs-preview-stage flex min-h-[360px] items-center justify-center bg-background p-5 sm:p-10">{children}</div>
       </Tabs.Content>
       <Tabs.Content value="example" className="outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
         <CodePane code={exampleCode} filename={`examples/${name}.tsx`} />
@@ -71,9 +69,5 @@ export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, child
         <CodePane code={sourceCode} filename={sourceFile} />
       </Tabs.Content>
     </Tabs.Root>
-    <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border bg-muted/30 px-4 py-3 sm:px-5">
-      <code className="min-w-0 overflow-x-auto text-xs text-foreground">{command}</code>
-      <CopyButton value={command} label={`Copy install command for ${name}`} />
-    </div>
   </div>;
 }

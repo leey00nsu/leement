@@ -6,6 +6,14 @@
 body { background: var(--lm-color-background-default); color: var(--lm-color-foreground-default); }
 .docs-shell { min-height: 100vh; }
 .docs-sidebar { scrollbar-width: thin; }
+.docs-preview-stage { position: relative; isolation: isolate; }
+.docs-preview-stage::before { content: ""; position: absolute; inset: 0 5%; border-inline: 1px dashed var(--lm-color-border-default); opacity: .55; pointer-events: none; }
+.docs-preview-stage > * { position: relative; z-index: 1; }
+body:has(#leement-home) .docs-shell { display: block; }
+body:has(#leement-home) .docs-sidebar { display: none; }
+body:has(#leement-home) .docs-shell > main { padding: 0; }
+body:has(#leement-home) .docs-shell > main > div { max-width: none; }
+.home-preview-glow { background: radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--lm-color-brand-accent) 18%, transparent), transparent 68%); }
 .prose-leement code { border-radius: var(--lm-radius-sm); background: var(--lm-color-background-subtle); padding: .15rem .35rem; font-size: .9em; }
 .prose-leement pre { overflow: auto; border: 1px solid var(--lm-color-border-default); border-radius: var(--lm-radius-lg); background: var(--lm-color-background-subtle); padding: 1rem; }
 .prose-leement pre code { background: transparent; padding: 0; }

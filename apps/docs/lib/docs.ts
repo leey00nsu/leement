@@ -1,9 +1,37 @@
-export const navigation = [
-  { title: "Getting Started", items: [{ label: "Overview", href: "/" }, { label: "Showcase", href: "/showcase" }, { label: "Kibo coverage", href: "/reference-coverage" }, { label: "Installation", href: "/getting-started" }, { label: "Adoption", href: "/adoption" }] },
-  { title: "Foundations", items: ["Color", "Typography", "Spacing", "Radius", "Shadow", "Motion"].map(label => ({ label, href: `/foundations/${label.toLowerCase()}` })) },
-  { title: "Components", items: ["Button", "Input", "Select", "Switch", "Tabs", "Label", "Textarea", "Badge", "Card", "Separator", "Dialog", "Dropdown Menu", "Popover", "Sheet", "Tooltip", "Chart", "Skeleton", "Brand Gradient Text", "Status Notice", "Reveal Content", "Collapsible", "Progress", "Slider", "Toast", "Avatar", "Alert Dialog", "Avatar Stack", "Cursor", "Calendar", "List", "Table", "Code Block", "Contribution Graph", "Snippet", "Choicebox", "Combobox", "Dropzone", "Mini Calendar", "Tags", "Image Crop", "Image Zoom", "Credit Card", "Ticker", "Stories", "Video Player", "Announcement", "Banner", "Typography", "Color Picker", "Comparison", "Editor", "Glimpse", "Marquee", "Pill", "QR Code", "Rating", "Relative Time", "Spinner", "Status", "Theme Switcher", "Tree"].map(label => ({ label, href: `/components/${label.toLowerCase().replaceAll(" ", "-")}` })) },
-  { title: "Patterns", items: ["PageHeader", "EmptyState", "FormSection", "SearchField", "StatCard", "StatePanel", "ProductPageIntro", "ResourceRowLink", "PageSkeleton", "FilterToolbar"].map(label => ({ label, href: `/patterns/${label.replace(/[A-Z]/g, (match, offset) => `${offset ? "-" : ""}${match.toLowerCase()}`)}` })) },
-  { title: "Blocks", items: [{ label: "SettingsSection", href: "/blocks/settings-section" }, { label: "BentoGrid", href: "/blocks/bento-grid" }, { label: "Gantt", href: "/blocks/gantt" }, { label: "Kanban", href: "/blocks/kanban" }, { label: "Sandbox", href: "/blocks/sandbox" }, { label: "Reel", href: "/blocks/reel" }, { label: "Deck", href: "/blocks/deck" }, { label: "Dialog Stack", href: "/blocks/dialog-stack" }] },
-  { title: "Project", items: [{ label: "Changelog", href: "/changelog" }] },
-] as const;
+type NavItem = { label: string; href: string };
+type NavSection = { title?: string; items: NavItem[] };
+export type NavGroup = { title: string; sections: NavSection[] };
+
+const componentSections = [
+  { title: "Core", names: ["Button", "Input", "Select", "Switch", "Tabs", "Label", "Textarea", "Badge", "Card", "Separator"] },
+  { title: "Overlays", names: ["Dialog", "Dropdown Menu", "Popover", "Sheet", "Tooltip", "Alert Dialog"] },
+  { title: "Feedback", names: ["Skeleton", "Status Notice", "Progress", "Toast", "Spinner", "Status"] },
+  { title: "Data", names: ["Chart", "Calendar", "List", "Table", "Contribution Graph"] },
+  { title: "Collaboration", names: ["Avatar", "Avatar Stack", "Cursor"] },
+  { title: "Forms", names: ["Slider", "Choicebox", "Combobox", "Dropzone", "Mini Calendar", "Tags", "Color Picker", "Rating"] },
+  { title: "Images", names: ["Image Crop", "Image Zoom"] },
+  { title: "Finance", names: ["Credit Card", "Ticker"] },
+  { title: "Social", names: ["Stories", "Video Player"] },
+  { title: "Callouts", names: ["Announcement", "Banner"] },
+  { title: "Styling", names: ["Typography", "Brand Gradient Text"] },
+  { title: "Other", names: ["Reveal Content", "Collapsible", "Code Block", "Snippet", "Editor", "Glimpse", "Marquee", "Pill", "QR Code", "Relative Time", "Theme Switcher", "Tree", "Comparison"] },
+];
+
+const componentItem = (label: string): NavItem => ({ label, href: `/components/${label.toLowerCase().replaceAll(" ", "-")}` });
+const patternItem = (label: string): NavItem => ({ label, href: `/patterns/${label.replace(/[A-Z]/g, (letter, index) => `${index ? "-" : ""}${letter.toLowerCase()}`)}` });
+
+export const navigation: NavGroup[] = [
+  { title: "Getting Started", sections: [{ items: [
+    { label: "Overview", href: "/" },
+    { label: "Showcase", href: "/showcase" },
+    { label: "Installation", href: "/getting-started" },
+    { label: "Adoption", href: "/adoption" },
+  ] }] },
+  { title: "Foundations", sections: [{ items: ["Color", "Typography", "Spacing", "Radius", "Shadow", "Motion"].map(label => ({ label, href: `/foundations/${label.toLowerCase()}` })) }] },
+  { title: "Components", sections: componentSections.map(({ title, names }) => ({ title, items: names.map(componentItem) })) },
+  { title: "Patterns", sections: [{ items: ["PageHeader", "EmptyState", "FormSection", "SearchField", "StatCard", "StatePanel", "ProductPageIntro", "ResourceRowLink", "PageSkeleton", "FilterToolbar"].map(patternItem) }] },
+  { title: "Blocks", sections: [{ items: ["Settings Section", "Bento Grid", "Gantt", "Kanban", "Sandbox", "Reel", "Deck", "Dialog Stack"].map(label => ({ label, href: `/blocks/${label.toLowerCase().replaceAll(" ", "-")}` })) }] },
+  { title: "Project", sections: [{ items: [{ label: "Changelog", href: "/changelog" }] }] },
+];
+
 export const registryCommand = (name: string) => `npx shadcn@latest add @leement/${name}`;
