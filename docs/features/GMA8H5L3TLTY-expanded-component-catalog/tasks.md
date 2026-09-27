@@ -307,16 +307,18 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-GMA8H5L3TLTY-expanded-component-catalog-16 Align docs navigation and component pages with Kibo layout
+- [DONE][PRD-FR-005] T-GMA8H5L3TLTY-expanded-component-catalog-16 Align docs navigation and component pages with Kibo layout
   - Date: 2026-09-27
   - Acceptance:
     - Docs use a Kibo-like header, grouped sidebar, right-side page navigation and preview-first detail layout while retaining Leement identity and content; redundant Kibo coverage navigation and page are removed.
   - Checklist:
-    - [ ] Remove Kibo coverage UI route and links while keeping feature comparison evidence.
-    - [ ] Rework desktop and mobile documentation shell and item workbench.
-    - [ ] Check navigation, keyboard access and light/dark contrast.
+    - [x] Remove Kibo coverage UI route and links while keeping feature comparison evidence.
+    - [x] Rework desktop and mobile documentation shell and item workbench.
+    - [x] Give the docs home a large Leement hero and live registry preview with the same landing-page rhythm.
+    - [x] Check navigation, keyboard access and light/dark contrast.
   - Docs:
     - docs:designs/design-system.md
+  - Verification: Docs production build generated 91 static routes; docs ESLint passed. Playwright checked desktop/mobile home, detail navigation, keyboard search, dark toggle, no horizontal overflow or page errors, and removed route 404. [Visual checkpoint](./artifacts/reference-coverage.md#task-16-docs-layout-checkpoint).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -374,4 +376,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:28e612aa15dd02419383be1e3e596be44f510ee2386848c1feba895c2feefe0c -->
+<!-- lee-spec-kit:workflow-sync sha256:ef6328c6e1eacd920cd833c3413548821bb026d0b5fd67b0f2320aab60d5d746 -->

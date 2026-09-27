@@ -244,4 +244,5 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Options**: ① 현재 shell과 중복 coverage 경로를 유지한다 ② Kibo의 정보 구조와 밀도를 적용하되 Leement 고유 브랜드·실제 source·문서 내용을 유지한다.
 - **Decision**: ②를 채택한다. 중복 `Kibo coverage` 메뉴·route는 제거하고 비교 근거는 Feature artifact에 유지한다. 기존 출처 코드의 MIT 고지는 계속 보존한다.
 - **Rationale**: 사용자가 원한 탐색 경험을 제공하면서 제품 정체성과 문서 계약은 Leement에 맞춘다. 직접 사용한 코드의 라이선스 의무도 지킨다.
-- **Evidence**: [Kibo component docs](https://www.kibo-ui.com/components/color-picker), [Kibo source](https://github.com/shadcnblocks/kibo), [Task contract](./tasks.md).
+- **Trace (실행 확인)**: 상단 범주, 범주별 좌측 탐색, 중앙 Preview·Code·Source, 설치와 우측 목차를 구성했다. 홈은 큰 제목과 실제 registry 소스로 만든 미리보기를 사용한다. `/reference-coverage`와 Kibo coverage 링크를 제거했다. 문서 91개 정적 경로가 빌드됐고, 데스크톱·모바일의 탐색·검색·light/dark 화면에서 오류와 가로 넘침이 없었다. Kibo의 상표·문구·예시를 복제하지 않아 화면 픽셀 동일성은 목표로 하지 않는다.
+- **Evidence**: [Kibo component docs](https://www.kibo-ui.com/components/color-picker), [Kibo source](https://github.com/shadcnblocks/kibo), [docs screenshot and browser checkpoint](./artifacts/reference-coverage.md#task-16-docs-layout-checkpoint), [Task contract](./tasks.md).

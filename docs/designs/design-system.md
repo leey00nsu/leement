@@ -59,6 +59,10 @@ EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담는다. PageH
 
 텍스트 대비와 focus ring을 light/dark에서 확인한다. 색상만으로 상태를 전달하지 않는다. 모든 입력은 label 또는 `aria-label`이 필요하다. 모바일에서는 PageHeader action과 FormSection이 세로로 쌓인다. HTML semantics를 감추지 않고 키보드로 모든 interactive control에 접근할 수 있어야 한다.
 
+## 문서 사이트
+
+홈은 큰 제목, 짧은 설명, 주요 탐색 동작과 실제 registry 컴포넌트로 만든 화면 예제를 먼저 보여 준다. 상단은 Docs, Components, Blocks, Patterns의 큰 범주를 보여 준다. 좌측은 현재 범주의 항목을 작은 사용 분야별로 묶고 현재 항목이 보이도록 스크롤한다. 상세 문서는 제목과 소개 다음에 조작 가능한 Preview·Code·Source를 먼저 제시하고, 설치와 사용 규칙·접근성·API를 이어서 설명한다. 넓은 화면에서는 우측 목차가 본문 위치로 이동하고, 모바일에서는 같은 범주에 접근 가능한 접이식 메뉴를 쓴다. 검색은 키보드로 열고 닫을 수 있어야 한다. Kibo 비교 기록은 Feature artifact에 보존하며 사용자 탐색에 중복 coverage 메뉴를 추가하지 않는다. 화면은 Leement 이름·토큰·실제 registry source를 사용한다.
+
 ## 성숙도와 변경
 
 `experimental`: 한 프로젝트에서 출발했거나 API가 불안정하다. `candidate`: 두 사용 사례에서 같은 문제를 해결했다. `stable`: 여러 프로젝트에서 API, 접근성, 시각 규칙을 검증했다. 한 번 사용한 UI는 application에 두고, 두 번째 반복에서 candidate를, 세 번째 반복에서 design system 승격을 검토한다. 신규 variant는 유스케이스와 문서 규칙을 먼저 제시한다. 기존 variant 제거 시 changelog와 migration 메모를 작성한다.

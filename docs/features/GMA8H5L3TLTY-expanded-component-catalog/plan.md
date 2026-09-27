@@ -50,6 +50,7 @@
 6. 마지막으로 CopySinger/Leesfield의 격리된 체크아웃에서 기존 파일을 덮어쓰지 않는 경로로 registry source를 설치한다. 공통 22개 모두 import/render, 대표 사용처는 실제 교체·typecheck/build/keyboard smoke로 검증한다. 결과와 한계를 coverage matrix 및 Feature 기록에 연결한다. 기존 앱의 baseline 실패와 새 회귀를 분리한다.
 7. 두 제품의 브랜드 색 사용처를 focus, data accent, 그라디언트, 선택적 로딩 효과로 분류한다. `tokens.json`의 light/dark semantic brand 역할을 theme CSS 변수로 출력하고 focus/data 역할은 brand 변수 참조로 만든다. 소비자 앱이 import 뒤에 모드별 `--lm-color-brand-*`를 재정의하면 관련 UI가 따라 바뀌도록 한다. 일반 Skeleton은 중립으로 유지하고 브랜드 Skeleton과 gradient text는 작은 registry source로 제공하며 reduced motion을 존중한다.
 8. Kibo 문서의 상단 탐색·좌측 범주 메뉴·우측 목차·미리보기/코드 탭을 Leement docs 구조에 맞춰 적용한다. 기존 Preview/Example/Source와 디자인 사용 규칙은 유지하고 Leement 브랜드·문구·토큰을 사용한다. Kibo coverage 메뉴와 중복 route는 제거하며 비교 매핑은 Feature artifact에 남긴다. 데스크톱/모바일 및 light/dark에서 직접 확인한다.
+9. 문서 홈은 Kibo 랜딩의 큰 중앙 소개와 미리보기 흐름을 참고하되 Leement의 문구와 실제 registry 컴포넌트로 구성한다. 홈에서는 좌측 상세 메뉴를 감추고 상단 탐색을 유지한다.
 
 ### 실행 순서와 중단 기준
 

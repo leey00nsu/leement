@@ -100,6 +100,7 @@ Kibo 공개 컴포넌트 탐색 메뉴의 41개 항목을 기준으로 한다.
 - [ ] Foundations의 Color, Typography, Spacing, Radius, Shadow, Motion도 light/dark 실제 토큰 값과 사용 규칙을 설명한다. component/pattern 문서는 가능할 때 anatomy, variants, sizes, states, examples, accessibility, API를 포함한다.
 - [ ] Color foundation에서 light/dark 브랜드 역할을 앱이 CSS 변수로 재정의하는 방법과 focus·data accent·브랜드 gradient·선택적 Skeleton 예제를 보여 준다. 기본 Skeleton은 중립색이다.
 - [ ] 문서는 Kibo에 가까운 상단 탐색, 범주별 좌측 메뉴, 상세 페이지의 우측 목차, 미리보기 중심 본문을 갖는다. 모바일 메뉴와 키보드 탐색을 유지하고 Kibo 로고·명칭·문구·이미지를 복제하지 않는다. Kibo coverage 메뉴와 중복 페이지는 없다.
+- [ ] 문서 홈은 큰 소개 문구와 실제 registry 컴포넌트로 만든 미리보기·탐색 CTA를 보여 주며, 상세 문서와 같은 Leement 테마를 사용한다.
 
 ### US-4: CopySinger와 Leesfield의 공용 UI 교체
 
