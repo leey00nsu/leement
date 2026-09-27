@@ -50,3 +50,15 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **머지 후 확인**: 통합 후 결과를 기록한다.
 - **Evidence**: [두 제품 대응표](../GMA8H5L3TLTY-expanded-component-catalog/artifacts/reference-coverage.md), [이번 감사표와 Task 02 브라우저 재검증](./artifacts/catalog-visual-audit.md#task-02-core-control-recheck), [Card after](./artifacts/previews/card-dark-after.png), [Tabs after](./artifacts/previews/tabs-dark-after.png)
 - **Consequences**: 디자인 규칙 변경은 `docs/designs/design-system.md`, registry source, docs examples/metadata에서 함께 반영했다. 제품별 수치를 평균 내지 않고 브랜드색도 기본 neutral action에 전파하지 않는다. 별도 예외는 없다.
+
+## D003: 오버레이와 피드백의 실제 열린 상태를 기준으로 판정한다 (2026-09-27)
+
+- **Context**: 13개 오버레이·피드백·로딩 항목 중 닫힌 trigger만 보이는 미리보기가 있어 기본 캡처만으로 surface, 상태 및 키보드 동작을 판정할 수 없다.
+- **Constraints**: Radix/Base UI의 focus·Escape·aria 계약과 Leement semantic surface를 유지한다. 불필요한 새 variant보다 실제 상태 예제를 우선한다.
+- **Options**: 조사 후 확정한다.
+- **Decision**: 조사 중.
+- **Rationale**: 조사 중.
+- **Trace**:
+  - **DOING 시작 시점**: Dialog, Dropdown Menu, Popover, Sheet, Tooltip, Alert Dialog의 열린 상태와 Skeleton/PageSkeleton/StatusNotice/Progress/Toast/Spinner/Status의 의미·대비·motion을 먼저 본다.
+- **Evidence**: [이번 감사표](./artifacts/catalog-visual-audit.md)
+- **Consequences**: 항목별 결함과 의도된 차이를 분리해 기록한다.
