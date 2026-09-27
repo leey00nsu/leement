@@ -12,6 +12,7 @@ type CalendarProps = Omit<React.ComponentProps<"div">, "defaultValue" | "onSelec
   max?: Date;
   locale?: string;
   startDay?: 0 | 1;
+  variant?: "schedule" | "date";
   events?: Array<{ id: string; title: string; startAt: Date; endAt?: Date }>;
 };
 
@@ -19,7 +20,7 @@ function dateNumber(date: Date) { return date.getFullYear() * 10000 + (date.getM
 function sameDay(a: Date | undefined, b: Date) { return a ? dateNumber(a) === dateNumber(b) : false; }
 function shift(date: Date, days: number) { return new Date(date.getFullYear(), date.getMonth(), date.getDate() + days, 12); }
 
-function Calendar({ className, value, defaultValue, onValueChange, min, max, locale = "en-US", startDay = 0, events = [], ...props }: CalendarProps) {
+function Calendar({ className, value, defaultValue, onValueChange, min, max, locale = "en-US", startDay = 0, variant = "schedule", events = [], ...props }: CalendarProps) {
   const today = React.useMemo(() => new Date(), []);
   const [internalValue, setInternalValue] = React.useState<Date | undefined>(defaultValue);
   const selected = value ?? internalValue;
@@ -61,29 +62,34 @@ function Calendar({ className, value, defaultValue, onValueChange, min, max, loc
     pendingFocus.current = true;
   }
 
-  return <div data-slot="calendar" className={cn("w-fit rounded-xl border border-border bg-card p-4 text-card-foreground", className)} {...props}>
-    <div className="mb-3 flex items-center justify-between gap-3">
+  const dateOnly = variant === "date";
+  return <div data-slot="calendar" data-variant={variant} className={cn("rounded-xl border border-border bg-card text-card-foreground", dateOnly ? "w-fit p-3" : "w-full", className)} {...props}>
+    <div className={cn("flex items-center justify-between gap-3", !dateOnly && "border-b border-border px-3 py-2")}>
       <button type="button" aria-label="Previous month" onClick={() => changeMonth(-1)} className="rounded-md p-2 hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"><ChevronLeft className="size-4" /></button>
       <div aria-live="polite" className="text-sm font-semibold">{monthLabel}</div>
       <button type="button" aria-label="Next month" onClick={() => changeMonth(1)} className="rounded-md p-2 hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"><ChevronRight className="size-4" /></button>
     </div>
-    <div role="grid" aria-label={`Choose date, ${monthLabel}`} className="space-y-1">
-      <div role="row" className="grid grid-cols-7 gap-1">{Array.from({ length: 7 }, (_, index) => <div key={`weekday-${index}`} role="columnheader" className="flex size-8 items-center justify-center text-xs text-muted-foreground">{new Intl.DateTimeFormat(locale, { weekday: "short" }).format(new Date(2024, 0, 7 + ((index + startDay) % 7)))}</div>)}</div>
-      {Array.from({ length: cells.length / 7 }, (_, weekIndex) => <div key={weekIndex} role="row" className="grid grid-cols-7 gap-1">{cells.slice(weekIndex * 7, weekIndex * 7 + 7).map((day, index) => {
-        if (day < 1 || day > daysInMonth) return <div key={`blank-${index}`} role="gridcell" />;
+    <div className={cn(!dateOnly && "overflow-x-auto")}>
+    <div role="grid" aria-label={`Choose date, ${monthLabel}`} className={cn(!dateOnly && "min-w-[560px]")}>
+      <div role="row" className={cn("grid grid-cols-7", dateOnly && "gap-1")}>{Array.from({ length: 7 }, (_, index) => <div key={`weekday-${index}`} role="columnheader" className={cn("text-xs text-muted-foreground", dateOnly ? "flex size-9 items-center justify-center" : "border-b border-r border-border px-2 py-2 last:border-r-0")}>{new Intl.DateTimeFormat(locale, { weekday: "short" }).format(new Date(2024, 0, 7 + ((index + startDay) % 7)))}</div>)}</div>
+      {Array.from({ length: cells.length / 7 }, (_, weekIndex) => <div key={weekIndex} role="row" className={cn("grid grid-cols-7", dateOnly && "gap-1")}>{cells.slice(weekIndex * 7, weekIndex * 7 + 7).map((day, index) => {
+        if (day < 1 || day > daysInMonth) return <div key={`blank-${index}`} role="gridcell" className={cn(!dateOnly && "min-h-24 border-b border-r border-border bg-muted/30 last:border-r-0")} />;
         const current = new Date(view.getFullYear(), view.getMonth(), day, 12);
         const disabled = !inRange(current);
         const active = sameDay(selected, current);
-        const count = eventsOn(current).length;
-        return <div key={day} role="gridcell" aria-selected={active}>
+        const dayEvents = eventsOn(current);
+        const count = dayEvents.length;
+        return <div key={day} role="gridcell" aria-selected={active} className={cn("min-w-0", dateOnly ? "size-9" : "min-h-24 border-b border-r border-border p-1.5 last:border-r-0", active && !dateOnly && "bg-accent/50")}>
           <button ref={(node) => { if (node) dayRefs.current.set(dateNumber(current), node); }} type="button" aria-label={`${dateLabel.format(current)}${count ? `, ${count} events` : ""}`} aria-current={sameDay(today, current) ? "date" : undefined} disabled={disabled} tabIndex={sameDay(focused, current) ? 0 : -1} onClick={() => select(current)} onKeyDown={(event) => {
             const delta = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[event.key as "ArrowLeft" | "ArrowRight" | "ArrowUp" | "ArrowDown"];
             if (delta !== undefined) { event.preventDefault(); moveFocus(shift(current, delta)); }
-          }} className={cn("relative flex size-8 items-center justify-center rounded-md text-sm hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-40", active && "bg-primary text-primary-foreground hover:bg-primary")}>{day}{count > 0 && <span aria-hidden="true" className={cn("absolute bottom-0.5 size-1 rounded-full bg-data-accent", active && "bg-primary-foreground")} />}</button>
+          }} className={cn("flex items-center justify-center rounded-md text-sm hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-40", dateOnly ? "size-9" : "size-8", active && "bg-primary text-primary-foreground hover:bg-primary")}>{day}</button>
+          {!dateOnly && <div aria-hidden="true" className="mt-1 space-y-0.5">{dayEvents.slice(0, 2).map((event) => <p key={event.id} className="truncate rounded-sm bg-data-accent/15 px-1 py-0.5 text-[11px] leading-tight text-foreground">{event.title}</p>)}{count > 2 && <p className="px-1 text-[11px] text-muted-foreground">+{count - 2} more</p>}</div>}
         </div>;
       })}</div>)}
     </div>
-    {selected && events.length > 0 && <div className="mt-4 border-t border-border pt-3 text-sm"><p className="font-medium">{dateLabel.format(selected)}</p><ul className="mt-2 space-y-1 text-muted-foreground">{eventsOn(selected).map((event) => <li key={event.id}>{event.title}</li>)}{eventsOn(selected).length === 0 && <li>No events</li>}</ul></div>}
+    </div>
+    {!dateOnly && selected && events.length > 0 && <div className="px-4 py-3 text-sm"><p className="font-medium">{dateLabel.format(selected)}</p><ul className="mt-2 space-y-1 text-muted-foreground">{eventsOn(selected).map((event) => <li key={event.id}>{event.title}</li>)}{eventsOn(selected).length === 0 && <li>No events</li>}</ul></div>}
   </div>;
 }
 

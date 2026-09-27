@@ -44,6 +44,7 @@ export const AvatarStack = ({
 
       return (
         <div
+          key={index}
           className={cn(
             "size-full shrink-0 overflow-hidden rounded-full border-2 border-background",
             '[&_[data-slot="avatar"]]:size-full',

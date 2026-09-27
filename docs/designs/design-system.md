@@ -47,7 +47,7 @@ Spinner는 기본 회전형을 우선한다. Kibo의 여러 로딩 형태에 대
 
 Progress와 Slider는 Base UI의 값·키보드 의미를 보존하고 `primary`/`muted` 의미색을 사용한다. Slider의 thumb는 16px이지만 제어 가능 영역을 넓히며, 한 값이 기본이다. Range는 명시적인 두 값 배열을 전달한다. PageSkeleton은 Skeleton을 조합하고 로딩 이름과 `aria-busy`를 같이 제공한다. AlertDialog는 명시적 취소·확인 버튼을 제공하고 위험 action을 부드러운 danger surface로 나타낸다. Toast는 `popover` 표면 토큰을 사용하며 앱의 dark 모드 선택은 `theme` prop으로 전달한다. FilterToolbar는 검색·정렬·선택 필터를 묶고 토글은 `aria-pressed` 상태를 노출한다.
 
-협업 UI에서는 참여자 묶음(AvatarStack)에 그룹 이름을 부여하고 Cursor는 장식으로 처리한다. Calendar는 날짜 선택과 일정 표시를 분리하며 방향키로 날짜 사이를 이동한다. List, Kanban, Gantt는 데이터를 앱이 소유하고 변경을 callback으로 반환한다. 마우스 드래그만으로 조작을 제한하지 않는다. List/Kanban은 명시적인 이동 버튼을, Gantt는 방향키 이동과 Shift+방향키 크기 변경을 제공한다. 이동 결과는 live status로 알린다. DataTable은 native table, caption, 열 제목과 `aria-sort`를 유지한다. 이 항목들은 제품 데이터 조회·동기화나 전역 상태를 포함하지 않는다.
+협업 UI에서는 참여자 묶음(AvatarStack)에 그룹 이름을 부여하고 Cursor는 장식으로 처리한다. Calendar는 일정이 보이는 월간 `schedule` 뷰와 팝오버용 작은 `date` 뷰를 구분하며 두 뷰 모두 방향키로 날짜 사이를 이동한다. 작은 화면의 일정 뷰와 데이터 테이블은 내부에서 가로 스크롤한다. List, Kanban, Gantt는 데이터를 앱이 소유하고 변경을 callback으로 반환한다. 마우스 드래그만으로 조작을 제한하지 않는다. List/Kanban은 명시적인 이동 버튼을, Gantt는 방향키 이동과 Shift+방향키 크기 변경을 제공한다. 이동 결과는 live status로 알린다. DataTable은 native table, caption, 열 제목과 `aria-sort`를 유지한다. ContributionGraph는 7행 주간 그리드와 월 이름을 유지하고 긴 기간에는 그래프 내부만 스크롤한다. 이 항목들은 제품 데이터 조회·동기화나 전역 상태를 포함하지 않는다.
 
 코드 표시에는 읽기 전용 CodeBlock, 여러 명령을 고르는 Snippet, 직접 편집·실행할 수 있는 Sandbox를 구분한다. 복사 버튼은 결과를 텍스트와 이름으로 알려준다. Sandbox 실행은 해당 item의 Sandpack 격리 환경에 맡기고 Leement 서비스나 비밀값을 전달하지 않는다. ContributionGraph는 색상 강도만으로 정확한 수치를 전달하지 않고 각 날짜의 이름·수와 선택 상태 텍스트를 제공한다. Choicebox는 native fieldset/radio를, Combobox는 이름 붙은 검색 입력과 keyboard listbox를 쓴다. Dropzone은 파일 선택만 처리하며 업로드/저장은 앱 책임이다. MiniCalendar는 전체 월력 대신 가까운 일주일을 선택하고, Tags는 각 값의 삭제 버튼에 그 값을 명시한다.
 
