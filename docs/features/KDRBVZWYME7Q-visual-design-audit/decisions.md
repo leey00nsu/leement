@@ -36,3 +36,15 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **머지 후 확인**: 통합 후 결과를 기록한다.
 - **Evidence**: [기존 대응표](../GMA8H5L3TLTY-expanded-component-catalog/artifacts/reference-coverage.md), [Kibo source 기준](https://github.com/shadcnblocks/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263), [이번 감사표](./artifacts/catalog-visual-audit.md)
 - **Consequences**: source 코드가 짧다는 이유만으로 결함을 확정하지 않으며 `intentional` 판정에도 명시적인 디자인 근거가 필요하다.
+
+## D002: 공통 컨트롤의 원본 규칙을 역할별로 재검증한다 (2026-09-27)
+
+- **Context**: Button, Input, Card 등 기본 UI는 두 앱에 거의 같은 source가 있지만 Leement의 단순화 과정에서 상태와 표면 규칙 일부가 달라졌다.
+- **Constraints**: 수치 복제가 목표는 아니다. Leement의 semantic token과 현재 public API를 우선하며 source ownership과 접근성을 유지한다.
+- **Options**: 구현 조사 후 확정한다.
+- **Decision**: 조사 중.
+- **Rationale**: 조사 중.
+- **Trace**:
+  - **DOING 시작 시점**: 두 앱의 실제 core source와 Leement registry, 문서 규칙을 대조한다. Card의 image clipping/footer, Input의 file 상태, Textarea shadow가 우선 확인 후보이다.
+- **Evidence**: [두 제품 대응표](../GMA8H5L3TLTY-expanded-component-catalog/artifacts/reference-coverage.md), [이번 감사표](./artifacts/catalog-visual-audit.md)
+- **Consequences**: 확정 전에는 token 값을 임의로 평균 내거나 앱의 브랜드색을 기본 control 색으로 전파하지 않는다.
