@@ -94,7 +94,7 @@ function RevealContent({
       className={cn(styles.root, styles[variant], className)}
       data-slot="reveal-content"
       data-reveal-variant={variant}
-      initial={usesChildSequence || shouldReduceMotion ? false : { opacity: resolvedOpacity, y: resolvedDistance }}
+      initial={usesChildSequence ? false : { opacity: resolvedOpacity, y: resolvedDistance }}
       ref={scope}
       style={
         {

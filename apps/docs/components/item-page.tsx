@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CopyButton, ItemWorkbench } from "./item-workbench";
 import { Preview } from "./previews";
 import { items } from "../lib/items";
+import { itemStates } from "../lib/item-states";
 import { getItemCode } from "../lib/registry-source";
 
 function displayName(name: string) {
@@ -18,7 +19,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
     { title: "Anatomy", id: "anatomy", body: item.anatomy },
     { title: "Variants", id: "variants", body: item.variants },
     { title: "Sizes", id: "sizes", body: item.sizes },
-    { title: "States", id: "states", body: item.variants + ". Check default, keyboard focus, disabled and loading where relevant in the live example and source. The host application owns data and asynchronous transitions." },
+    { title: "States", id: "states", body: itemStates[name] + " The live preview shows a useful subset; open controls or adjust props to inspect other supported states." },
     { title: "Accessibility", id: "accessibility", body: item.accessibility },
     { title: "API", id: "api", body: item.api },
   ];
@@ -44,7 +45,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           <div className="border-b border-border px-4 py-2 text-xs font-medium">shadcn CLI</div>
           <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3"><code className="min-w-0 overflow-x-auto text-xs">{command}</code><CopyButton value={command} label={`Copy install command for ${name}`} /></div>
         </div>
-        <Link href="/getting-started" className="mt-3 inline-block text-sm text-[var(--lm-color-brand-focus)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Theme setup and installation guide</Link>
+        <Link href="/getting-started" className="mt-3 inline-block text-sm text-[var(--lm-color-brand-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Theme setup and installation guide</Link>
       </section>
 
       <div className="mt-12 space-y-9 border-t border-border pt-10">
@@ -59,7 +60,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
       <div className="sticky top-24 border-l border-border pl-4">
         <h2 className="text-sm font-medium text-foreground">On this page</h2>
         <nav aria-label="Page sections" className="mt-4 space-y-2">
-          {outline.map(section => <a key={section.id} href={`#${section.id}`} className="block text-sm text-muted-foreground hover:text-[var(--lm-color-brand-focus)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{section.title}</a>)}
+          {outline.map(section => <a key={section.id} href={`#${section.id}`} className="block text-sm text-muted-foreground hover:text-[var(--lm-color-brand-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{section.title}</a>)}
         </nav>
         <div className="mt-8 border-t border-border pt-5 text-xs leading-6 text-muted-foreground">Built from Leement tokens and editable registry source.</div>
       </div>

@@ -26,7 +26,7 @@ export function DocsNavigation({ label }: { label: string }) {
         {section.title && <h3 className="mb-2 px-3 text-xs font-medium text-foreground">{section.title}</h3>}
         <ul className="space-y-0.5">
           {section.items.map((item) => <li key={item.href}>
-            <Link href={item.href} aria-current={pathname === item.href ? "page" : undefined} className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-brand-accent/10 aria-[current=page]:font-medium aria-[current=page]:text-[var(--lm-color-brand-focus)]">
+            <Link href={item.href} aria-current={pathname === item.href ? "page" : undefined} className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-brand-accent/10 aria-[current=page]:font-medium aria-[current=page]:text-[var(--lm-color-brand-text)]">
               {item.label}
             </Link>
           </li>)}
