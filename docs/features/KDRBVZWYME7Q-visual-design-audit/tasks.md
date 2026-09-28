@@ -145,15 +145,18 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-05 Reconstruct form and choice components
+- [DONE][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-05 Reconstruct form and choice components
   - Date: 2026-09-27
   - Acceptance:
     - Slider, Choicebox, Combobox, Dropzone, MiniCalendar, Tags, ColorPicker and Rating expose their meaningful visual states and interaction anatomy.
     - The ColorPicker no longer silently substitutes a materially different control for the documented Kibo-like use case unless the design rule explicitly justifies it.
   - Checklist:
-    - [ ] Inspect Kibo source/demo and Leement light/dark/mobile behavior.
-    - [ ] Correct source/examples and interaction tests for altered contracts.
-    - [ ] Record eight item-level verdicts and visual evidence.
+    - [x] Inspect Kibo source/demo and Leement light/dark/mobile behavior.
+    - [x] Correct source/examples and interaction tests for altered contracts.
+    - [x] Record eight item-level verdicts and visual evidence.
+  - Docs:
+    - docs:designs/design-system.md
+  - Verification: [Task 05 audit recheck](./artifacts/catalog-visual-audit.md#task-05-form-and-choice-recheck) covers eight items × four modes, Slider keyboard, Choicebox/Combobox/Tags/Rating selection, Dropzone accept/reject, MiniCalendar mobile/week navigation, and ColorPicker plane/hue/alpha/format. `pnpm registry:build`, `pnpm typecheck`, `pnpm lint`, `pnpm exec vitest run registry/ui/complex-utility.test.tsx registry/ui/code-form.test.tsx` (19 tests), and `git diff --check` passed. Installed consumer verification remains Task 10.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

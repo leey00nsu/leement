@@ -82,10 +82,11 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 - **Context**: 현재 ColorPicker는 native 색상 입력, 6자리 HEX, preset만 제공한다. 고정 Kibo 데모는 선택 평면, hue, alpha, 형식 출력이 함께 보이는 도구다. MiniCalendar도 날짜 선택은 되지만 Kibo의 짧은 수평 스트립과 다른 정보 계층을 보여 준다.
 - **Constraints**: Leement brand/token 편집기가 아니다. 소비자는 색상 값을 소유하고, 키보드와 작은 화면에서도 선택 가능해야 한다. 신규 대형 라이브러리나 Kibo의 검증되지 않은 상태 로직을 그대로 가져오지 않는다.
-- **Options**: 조사 후 확정한다.
-- **Decision**: 조사 중.
-- **Rationale**: 조사 중.
+- **Options**: ① 기존 native well·HEX UI를 문서에서 좁은 사용 사례로 정당화, ② 작은 독립 source에 평면·hue·alpha·출력과 키보드 대안을 추가, ③ Kibo ColorPicker source와 의존성 `color`/Radix 묶음을 그대로 이식.
+- **Decision**: ②를 선택했다. 기존 `label`/`value`/`defaultValue`/`onValueChange`/swatches API를 유지하고, 불투명 값은 `#RRGGBB`, alpha가 있는 값은 `#RRGGBBAA`로 반환한다. RGB/HSL은 읽기 전용 출력 형식이다. 평면은 포인터로, 동등한 saturation/brightness는 숫자 입력으로, hue/opacity는 native range로 조작한다. MiniCalendar는 일주일 가로 스트립으로 수정했다.
+- **Rationale**: 기존 native well 하나만으로는 실제 Kibo형 색상 도구의 사용 사례를 제공할 수 없었다. Kibo 원본은 큰 composable 구조지만 상태 동기화와 alpha 초기값에 취약한 코드가 보여 그대로 옮길 이유가 없다. 일관된 HEX callback은 사용자 프로젝트에서 저장·수정이 쉬우며 8자리 값은 alpha를 손실 없이 전한다. CSS token이 브라우저에서 `lab(...)`으로 계산되므로 canvas 1px 변환으로 현재 Leement 데이터 accent를 초기값으로 읽는다.
 - **Trace**:
   - **DOING 시작 시점**: Kibo source/preview와 Leement의 8개 실제 데모를 대조한다. ColorPicker의 pointer/keyboard/alpha/출력 계약을 먼저 정하고 나머지 선택 컨트롤의 열린·비활성·선택 상태를 확인한다.
-- **Evidence**: [초기 감사표](./artifacts/catalog-visual-audit.md), [Kibo ColorPicker source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/color-picker/index.tsx)
-- **Consequences**: 변경되는 공개 값 형식과 이전 사용 경로는 docs metadata 및 변경 기록에 적는다.
+  - **DONE 전 확정 시점**: 8개 item × 4모드가 모두 열렸고 stage/document overflow 및 browser exception이 없었다. ColorPicker plane pointer와 hue ArrowRight, alpha 50%의 8자리 HEX 및 RGB 표시, 나머지 form의 키보드/선택/파일 거부 상태를 브라우저에서 검증했다. ColorPicker 값 계약은 기존 테스트에 alpha 검증을 추가했다.
+- **Evidence**: [8개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-05-form-and-choice-recheck), [ColorPicker after](./artifacts/previews/color-picker-light-after.png), [MiniCalendar mobile after](./artifacts/previews/mini-calendar-dark-390-after.png), [Kibo ColorPicker source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/color-picker/index.tsx)
+- **Consequences**: 이전 6자리 HEX 소비자는 alpha를 사용하지 않는 한 값 형식이 그대로다. alpha를 사용하는 소비자는 8자리 HEX를 처리한다. docs metadata에 새 계약을 적었고 Changelog은 Task 09에서 함께 업데이트한다. 실제 설치 source의 독립 빌드는 Task 10에서 확인한다.
