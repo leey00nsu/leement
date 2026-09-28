@@ -28,12 +28,12 @@
 
 ### US-2: 컴포넌트를 탐색하는 사용자
 
-**As a** 문서 이용자, **I want** Stories와 Reel의 다른 목적을 곧바로 알고 관련 항목을 왼쪽 메뉴에서 찾기를 원한다, **so that** 영상 스토리 팝업을 Reel과 혼동하지 않는다.
+**As a** 문서 이용자, **I want** Stories와 Reel의 다른 목적을 곧바로 알고 각 항목을 실제 분류의 왼쪽 메뉴에서 찾고 문서 본문에서 관련 항목으로 이동하기를 원한다, **so that** 영상 스토리 팝업을 Reel과 혼동하지 않는다.
 
 **Acceptance Criteria:**
 
 - [ ] Stories는 thumbnail에서 여는 이미지·영상 sequence, Reel은 세로 short-video feed라는 차이가 문서와 예제에 명확하다.
-- [ ] Reel이 Stories와 관련된 왼쪽 Social 탐색 맥락에서 실제 `/blocks/reel` 문서로 연결된다. Block이라는 registry 분류와 설치 명령은 정확히 표시한다.
+- [ ] Reel은 왼쪽 Blocks 메뉴에만 나타나고 Components Social에는 중복하지 않는다. Stories 본문의 관련 링크는 실제 `/blocks/reel` 문서로 연결되며 Block 분류와 설치 명령을 정확히 표시한다.
 
 ## 기능 요구사항
 
@@ -43,7 +43,7 @@ Base UI Slider의 현재 DOM/data attribute를 기준으로 horizontal·vertical
 
 ### FR-2: Stories/Reel 의미와 탐색 경로 정리
 
-Stories 팝업은 Reel을 여는 기능이 아니라 Stories viewer임을 명시한다. Reel은 기존 독립 block과 `/blocks/reel` registry item으로 유지하되, Social 메뉴의 Stories 옆에서 찾을 수 있도록 관련 링크를 제공한다. 잘못된 `/components/reel` 경로와 중복 registry item은 만들지 않는다. 예제와 docs item guidance도 구별한다.
+Stories 팝업은 Reel을 여는 기능이 아니라 Stories viewer임을 명시한다. Reel은 기존 독립 block과 `/blocks/reel` registry item으로 유지하되, 왼쪽 Blocks 메뉴에만 표시하고 Stories 문서 본문에 `/blocks/reel` 관련 링크를 제공한다. 잘못된 `/components/reel` 경로와 중복 registry item은 만들지 않는다. 예제와 docs item guidance도 구별한다.
 
 ### FR-3: Marquee fade와 원형 예제
 
@@ -59,7 +59,7 @@ Stories 팝업은 Reel을 여는 기능이 아니라 Stories viewer임을 명시
 
 1. 네 영역의 원인, 적용한 source 및 docs 변경, 전후 확인 결과가 기록된다.
 2. Slider 단일값/범위값의 horizontal 실제 렌더와 입력, 필요한 vertical 사례, light/dark·모바일을 확인한다.
-3. Social 탐색에서 Reel 링크를 찾고 Stories와 Reel의 다른 동작을 실제로 확인한다.
+3. 왼쪽 Blocks에서만 Reel을 찾고 Stories 본문 링크를 통해 이동하며 두 UI의 다른 동작을 실제로 확인한다.
 4. Marquee 양쪽 fade와 원형 예제, Tabs segmented 변형과 문서 workbench가 두 테마에서 확인된다. 키보드·focus·reduced motion이 유지된다.
 5. 변경된 registry item의 빌드, 격리 소비자 설치·typecheck/build 및 설정된 `pnpm typecheck`, `pnpm lint`, `pnpm test`, `pnpm build`가 통과한다.
 

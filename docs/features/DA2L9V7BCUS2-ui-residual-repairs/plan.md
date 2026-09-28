@@ -25,7 +25,7 @@
 ## 구현 접근
 
 1. **Slider**: Base UI 현행 source의 `data-orientation`을 확인했다. Leement의 `data-horizontal`/`data-vertical` 선택자는 이 DOM에 맞지 않아 control/track 크기 규칙이 빠진다. root/control/track에 실제 orientation 선택자를 사용하고 indicator/track의 측정 폭을 확인한다. 단일·범위값, horizontal·vertical, disabled를 docs 예제 또는 임시 검증 화면에서 재현한다. 입력 로직은 Base UI에 둔다.
-2. **Stories/Reel**: `Stories`는 Radix dialog 안의 이미지·영상 sequence이고 `Reel`은 독립 `registry:block` 영상 피드다. `apps/docs/lib/docs.ts` Social 섹션에서 Reel을 `/blocks/reel`로 직접 가리키고, `DocsNavigation`의 관련 항목이 활성 경로에서도 보이게 한다. registry type과 URL은 변경하지 않는다. item별 설명·교차 링크를 보강한다.
+2. **Stories/Reel**: `Stories`는 Radix dialog 안의 이미지·영상 sequence이고 `Reel`은 독립 `registry:block` 영상 피드다. `apps/docs/lib/docs.ts`의 Social 목록에서 Reel을 제거하고 기존 Blocks 목록에만 둔다. Stories/Reel 문서 본문은 서로 교차 링크하되 실제 `/blocks/reel` 경로와 `registry:block` 분류를 유지한다. 사용자 피드백으로 변경된 이 탐색 규칙은 D006과 T06에서 검증한다.
 3. **Marquee**: 기존 `items: ReactNode[]`와 pause API를 유지한다. outer region을 투명하게 가리는 대신 이동 트랙에 양쪽 `mask-image`/gradient fade를 적용해 임의 배경에서도 작동하게 한다. 별도 pause 버튼은 fade 대상 밖에 둔다. docs에는 로컬 코드 생성 원형 아이템을 사용하고 조작·모션 축소를 확인한다. Kibo의 [고정 source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/marquee/index.tsx)는 별도 `MarqueeFade` overlay를 제공하며, 이번 구현은 배경 의존성을 줄이는 Leement 해석이다.
 4. **Tabs와 workbench**: 공개 `TabsList`에 폭을 채우는 `segmented` 변형을 추가하고 active 트리거에 semantic 전경/경계색을 사용한다. 기존 default·line은 유지한다. `ItemWorkbench`를 registry Tabs 조합으로 바꾸고 docs 예제에 Code/Preview 또는 동등한 실제 사용 예를 보여 준다. `#fff`↔`#f5f5f5` 1.09:1, workbench `bg-muted/40`↔`#fff` 약 1.03:1은 선택 표면으로는 약하므로 선택 경계/표시는 인접 표면 대비 최소 3:1을 목표로 실제 계산한다. 텍스트의 muted `#737373`↔흰색 약 4.74:1은 별도로 확인한다.
 5. Docs metadata와 `docs/designs/design-system.md`의 규칙을 source·예제에 맞춘다. 4개 항목과 docs workbench를 두 테마, desktop/mobile, 조작 상태로 확인한다. 변경 항목의 CLI 설치·consumer build까지 확인한다.
@@ -66,7 +66,7 @@ docs/features/DA2L9V7BCUS2-ui-residual-repairs/artifacts/
 
 ### 변경 분류
 
-- **유형**: BUG_FIX 및 작은 NEW_BEHAVIOR (Tabs 변형, Social 교차 탐색)
+- **유형**: BUG_FIX 및 작은 NEW_BEHAVIOR (Tabs 변형, 문서 본문 교차 탐색)
 - **위험도**: MEDIUM — 공개 source와 docs workbench를 같이 바꾼다.
 
 ### 관찰 가능한 계약
@@ -83,7 +83,7 @@ docs/features/DA2L9V7BCUS2-ui-residual-repairs/artifacts/
 | --- | --- | --- | --- | --- |
 | Slider 값·키보드·range·disabled | UPDATE | 기존 Testing Library | 잘못된 thumb 개수·값·disabled 동작 | Base UI DOM/접근성 및 Feature FR-1 |
 | Slider·Marquee·Tabs 기하와 대비 | NONE | 실제 브라우저·계산 | 0px 트랙, fade 부재, 약한 선택 표시 | 참조 이미지, CSS 계산, Feature 완료 기준 |
-| Stories/Reel 탐색 | NONE | 브라우저 nav/link 확인 | Reel 경로 누락·잘못된 type | registry manifest 및 Feature FR-2 |
+| Stories/Reel 탐색 | NONE | 브라우저 nav/link 확인 | Reel 중복 메뉴·경로 누락·잘못된 type | registry manifest 및 Feature FR-2 |
 | Marquee pause·복제 접근성 | UPDATE | 기존 Testing Library | pause가 듣지 않거나 중복 내용 노출 | existing public API 및 Feature FR-3 |
 | Tabs 키보드·패널 관계 | UPDATE | 기존 Testing Library | workbench 전환 후 방향키/tabpanel 회귀 | Base UI 의미 및 Feature FR-4 |
 | registry 전달 | NONE | 격리 CLI 설치·typecheck/build | source·dependency 누락 | registry JSON과 독립 소비자 |

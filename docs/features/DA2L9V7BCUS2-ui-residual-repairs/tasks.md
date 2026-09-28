@@ -151,6 +151,20 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-008] T-DA2L9V7BCUS2-ui-residual-repairs-06 Keep Reel only in Blocks navigation
+  - Date: 2026-09-28
+  - Acceptance:
+    - Reel appears once in the left navigation under Blocks, not in Components Social; Stories documentation links to the existing /blocks/reel page and identifies it as a Block.
+  - Checklist:
+    - [ ] Remove the Social sidebar Reel entry while preserving the Blocks entry and Stories/Reel document cross-links.
+    - [ ] Verify Components Social has only Stories and Video Player, Blocks has Reel, and Stories-to-Reel navigation and install metadata work.
+    - [ ] Synchronize Feature scope, superseding decision, verification evidence and workflow marker.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -163,8 +177,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록

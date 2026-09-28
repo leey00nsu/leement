@@ -101,3 +101,19 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Evidence**:
   - **Test/Log**: `tasks.md`의 테스트 실행 기록; `npx shadcn@latest add @leement/slider @leement/marquee @leement/tabs --yes`; `/tmp/leement-residual-consumer`의 `pnpm build`.
 - **Consequences**: 공개 도메인과 npm 배포 경로의 실제 네트워크 사용은 이 검증 범위에 포함되지 않는다. Vite는 일부 dependency의 `use client` 무시 경고를 출력했지만 빌드 성공과 런타임 번들 생성에는 영향을 주지 않았다.
+
+## D006: Reel 왼쪽 메뉴 단일 분류 (2026-09-28)
+
+- **Context**: D002의 Social 교차 항목은 Reel이 Components와 Blocks 양쪽 왼쪽 메뉴에 나타나게 했다. 사용자는 클릭 시 Blocks로 이동하는 항목이 Components 목록에도 있는 것이 혼란스럽다고 지적했다.
+- **Constraints**: Reel의 `registry:block`, `/blocks/reel`, 설치 명령과 Stories/Reel의 의미 구별은 유지한다.
+- **Options**: 왼쪽 메뉴에 Social/Blocks 중복 표시, Blocks 단일 표시와 Stories 본문 관련 링크, Reel을 Component로 재분류.
+- **Decision**: D002의 왼쪽 메뉴 중복 부분을 대체한다. Reel은 Blocks 왼쪽 메뉴에만 표시하고 Stories 본문에서만 관련 링크를 제공한다.
+- **Rationale**: 탐색 메뉴는 항목의 정식 분류를 보여 주고, 다른 레이어와의 관계는 문서 내용으로 설명하는 것이 예측 가능하다.
+- **Trace**:
+  - **DOING 시작 시점**: 사용자 수정 요청에 따라 T06을 추가하고 Spec/Plan의 Social 메뉴 요구를 Blocks 단일 표시로 바꿨다.
+  - **DONE 전 확정 시점**: 검증 후 기록 예정.
+  - **머지 후 확인**: 별도 병합 승인 후 확인 예정.
+- **Evidence**:
+  - **Source**: `apps/docs/lib/docs.ts`, `apps/docs/components/item-page.tsx`, `registry.json` 확인 예정.
+  - **Test/Log**: 브라우저 탐색 검증 후 기록 예정.
+- **Consequences**: 기존 D002는 당시 결정의 이력으로 보존하지만 왼쪽 메뉴 위치에 관한 최종 규칙은 D006을 따른다.
