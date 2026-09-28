@@ -42,6 +42,20 @@ test("progress and slider expose numeric state and keyboard changes", async () =
   expect(Number(slider.getAttribute("aria-valuenow"))).toBeGreaterThan(35);
 });
 
+test("slider keeps range values and blocks keyboard changes while disabled", async () => {
+  const user = userEvent.setup();
+  const { container } = render(<><Slider aria-label="Preferred range" defaultValue={[20, 75]} /><Slider aria-label="Unavailable volume" defaultValue={[35]} disabled /></>);
+  const inputs = Array.from(container.querySelectorAll('input[type="range"]')) as HTMLInputElement[];
+  expect(inputs.map((input) => input.getAttribute("aria-valuenow"))).toEqual(["20", "75", "35"]);
+  inputs[0].focus();
+  await user.keyboard("{ArrowRight}");
+  expect(Number(inputs[0].getAttribute("aria-valuenow"))).toBeGreaterThan(20);
+  expect(inputs[1].getAttribute("aria-valuenow")).toBe("75");
+  inputs[2].focus();
+  await user.keyboard("{ArrowRight}");
+  expect(inputs[2].getAttribute("aria-valuenow")).toBe("35");
+});
+
 test("alert dialog labels the choice and returns focus on Escape or cancel", async () => {
   const user = userEvent.setup();
   render(<AlertDialog><AlertDialogTrigger>Delete</AlertDialogTrigger><AlertDialogContent><AlertDialogTitle>Delete item?</AlertDialogTitle><AlertDialogDescription>Cannot be undone.</AlertDialogDescription><AlertDialogCancel>Cancel</AlertDialogCancel><AlertDialogAction>Confirm delete</AlertDialogAction></AlertDialogContent></AlertDialog>);
