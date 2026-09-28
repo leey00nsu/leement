@@ -1,5 +1,5 @@
 import { afterEach, expect, test } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useState } from "react";
 import { Avatar, AvatarFallback } from "../ui/avatar";
@@ -28,7 +28,7 @@ test("calendar navigates dates and announces scheduled events", async () => {
   const next = screen.getByRole("button", { name: /Tuesday, September 15, 2026, 1 events/ });
   expect(document.activeElement).toBe(next);
   await user.keyboard("{Enter}");
-  expect(screen.getByText("Design review")).toBeTruthy();
+  expect(within(screen.getByRole("list")).getByText("Design review")).toBeTruthy();
   await user.click(screen.getByRole("button", { name: "Next month" }));
   expect(screen.getByRole("grid", { name: /October 2026/ })).toBeTruthy();
 });
