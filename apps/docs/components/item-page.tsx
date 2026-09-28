@@ -30,6 +30,8 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
       <header>
         <div className="flex flex-wrap items-baseline gap-3"><h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{displayName(name)}</h1><span className="text-xs text-muted-foreground" title={`${item.type} maturity`}>{item.maturity}</span></div>
         <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">{item.overview}</p>
+        {name === "stories" && <p className="mt-3 text-sm text-muted-foreground">Looking for a continuous short-video feed? <Link href="/blocks/reel" className="font-medium text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">See Reel (Block)</Link>.</p>}
+        {name === "reel" && <p className="mt-3 text-sm text-muted-foreground">Looking for thumbnail-triggered image and video updates? <Link href="/components/stories" className="font-medium text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">See Stories (Component)</Link>.</p>}
       </header>
 
       <section id="preview" aria-label={`${displayName(name)} preview`} className="mt-10 scroll-mt-24">
