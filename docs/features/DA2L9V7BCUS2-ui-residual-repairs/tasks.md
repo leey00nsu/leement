@@ -137,14 +137,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-009] T-DA2L9V7BCUS2-ui-residual-repairs-05 Verify registry delivery and full feature checks
+- [DONE][PRD-FR-009] T-DA2L9V7BCUS2-ui-residual-repairs-05 Verify registry delivery and full feature checks
   - Date: 2026-09-28
   - Acceptance:
     - Updated Slider, Marquee and Tabs install through shadcn CLI into a Tailwind v4 consumer, typecheck/build, and all configured feature checks pass.
   - Checklist:
-    - [ ] Build registry and install changed aliases in a clean consumer; compare delivered source and compile representative usage.
-    - [ ] Run pnpm typecheck, lint, test and build; inspect docs preview and record the real residual risks.
-    - [ ] Synchronize feature evidence and final workflow marker before the implementation approval boundary.
+    - [x] Build registry and install changed aliases in a clean consumer; compare delivered source and compile representative usage.
+    - [x] Run pnpm typecheck, lint, test and build; inspect docs preview and record the real residual risks.
+    - [x] Synchronize feature evidence and final workflow marker before the implementation approval boundary.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -163,8 +163,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -174,6 +174,13 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm typecheck` | 2026-09-28 | PASS — 5 packages |
+| `pnpm lint` | 2026-09-28 | PASS — docs and registry |
+| `pnpm test` | 2026-09-28 | PASS — 11 files, 66 tests |
+| `pnpm build` | 2026-09-28 | PASS — theme, registry, 92 static docs pages |
+| `npx shadcn@latest add @leement/slider @leement/marquee @leement/tabs --yes` | 2026-09-28 | PASS — clean Vite consumer, four files including utils |
+| `pnpm build` (isolated consumer) | 2026-09-28 | PASS — strict TypeScript and Vite production build |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+<!-- lee-spec-kit:workflow-sync sha256:c32da984b57ba4e02d2a5fe46ebb9b52a7e4dea5d4b07649942e5b19ad1a04ac -->

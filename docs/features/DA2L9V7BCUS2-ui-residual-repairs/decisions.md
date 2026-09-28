@@ -86,3 +86,18 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **Screenshots**: [light](./artifacts/tabs-light-after.png), [dark](./artifacts/tabs-dark-after.png)
   - **Test/Log**: `pnpm exec vitest run registry/ui/controls.test.tsx` — 5 tests passed; `pnpm typecheck` — 5 packages passed; 브라우저 computed style/색 대비 및 키보드 확인.
 - **Consequences**: token/theme 수치 변경 없이 이미 있는 semantic `muted-foreground`를 상태 표시 경계에 사용한다. docs의 세 탭과 공개 두 탭 예제는 같은 source를 공유한다.
+
+## D005: 공개 registry를 격리 소비자에서 검증 (2026-09-28)
+
+- **Context**: docs에서 보이는 코드를 registry가 실제로 전달하고 소비자 빌드에서 동작하는지 확인해야 한다.
+- **Constraints**: 아직 공개 npm/registry 배포가 아니므로 로컬 생성 registry JSON과 `@leement/theme` 로컬 패키지 경로를 사용한다.
+- **Options**: docs 자체 빌드만 신뢰하거나, 별도 소비자 프로젝트에서 shadcn CLI로 설치한다.
+- **Decision**: `/tmp/leement-residual-consumer`의 새 Vite/Tailwind v4/React 19 소비자에서 실제 CLI 설치 후 strict TypeScript와 Vite 빌드를 수행한다.
+- **Rationale**: registry item metadata, util dependency, 전달 source, theme import를 설치 경험에서 한 번에 확인할 수 있다.
+- **Trace**:
+  - **DOING 시작 시점**: 기존 소비자와 분리한 임시 프로젝트를 만들고 로컬 `/r/{name}.json`만 HTTP로 제공했다.
+  - **DONE 전 확정 시점**: Slider/Marquee/Tabs와 utils 네 파일이 생성됐고 세 공개 UI source가 registry 원본과 byte-for-byte 같았다. 소비자 `pnpm build`와 저장소 `pnpm typecheck`, `pnpm lint`, `pnpm test`(66개), `pnpm build`가 모두 통과했다. docs 브라우저 확인은 D001–D004에 기록했다.
+  - **머지 후 확인**: 별도 병합 승인 후 진행 예정.
+- **Evidence**:
+  - **Test/Log**: `tasks.md`의 테스트 실행 기록; `npx shadcn@latest add @leement/slider @leement/marquee @leement/tabs --yes`; `/tmp/leement-residual-consumer`의 `pnpm build`.
+- **Consequences**: 공개 도메인과 npm 배포 경로의 실제 네트워크 사용은 이 검증 범위에 포함되지 않는다. Vite는 일부 dependency의 `use client` 무시 경고를 출력했지만 빌드 성공과 런타임 번들 생성에는 영향을 주지 않았다.
