@@ -111,9 +111,9 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 - **Rationale**: 탐색 메뉴는 항목의 정식 분류를 보여 주고, 다른 레이어와의 관계는 문서 내용으로 설명하는 것이 예측 가능하다.
 - **Trace**:
   - **DOING 시작 시점**: 사용자 수정 요청에 따라 T06을 추가하고 Spec/Plan의 Social 메뉴 요구를 Blocks 단일 표시로 바꿨다.
-  - **DONE 전 확정 시점**: 검증 후 기록 예정.
+  - **DONE 전 확정 시점**: `apps/docs/lib/docs.ts`의 Components Social에서 Reel과 특수 경로 처리를 제거했다. 데스크톱 문서 내비게이션에서 Stories 페이지의 `/blocks/reel` 메뉴 링크 0개, Stories 본문 관련 링크 1개, Reel 페이지 Blocks 메뉴 링크 1개와 `aria-current=page` 1개를 확인했다. Reel 미리보기와 `@leement/reel` 설치 명령도 각각 표시됐다. `pnpm typecheck`, `pnpm lint`, `pnpm build`가 통과했다.
   - **머지 후 확인**: 별도 병합 승인 후 확인 예정.
 - **Evidence**:
-  - **Source**: `apps/docs/lib/docs.ts`, `apps/docs/components/item-page.tsx`, `registry.json` 확인 예정.
-  - **Test/Log**: 브라우저 탐색 검증 후 기록 예정.
+  - **Source**: `apps/docs/lib/docs.ts`의 Social/Blocks 목록, `apps/docs/components/item-page.tsx`의 본문 링크, `registry.json`의 `registry:block` Reel 항목.
+  - **Test/Log**: Playwright로 Stories → Reel 본문 링크 이동과 양쪽 데스크톱 sidebar 항목 수를 확인했다. `pnpm typecheck`, `pnpm lint`, `pnpm build` 통과.
 - **Consequences**: 기존 D002는 당시 결정의 이력으로 보존하지만 왼쪽 메뉴 위치에 관한 최종 규칙은 D006을 따른다.
