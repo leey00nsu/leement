@@ -50,6 +50,20 @@ test("color picker commits a valid hex value and rejects invalid text", async ()
   expect((screen.getByRole("textbox", { name: "Accent" }) as HTMLInputElement).value).toBe("#ABCDEF");
 });
 
+test("color picker emits eight-digit hex for opacity and keeps alternate output read-only", async () => {
+  const user = userEvent.setup();
+  const onValueChange = vi.fn();
+  render(<ColorPicker label="Illustration" defaultValue="#123456" onValueChange={onValueChange} />);
+  const opacity = screen.getByRole("spinbutton", { name: "Opacity percentage" });
+  await user.clear(opacity);
+  await user.type(opacity, "50");
+  expect(onValueChange).toHaveBeenLastCalledWith("#12345680");
+  await user.selectOptions(screen.getByRole("combobox", { name: "Color format" }), "rgb");
+  const output = screen.getByRole("textbox", { name: "Illustration" }) as HTMLInputElement;
+  expect(output.readOnly).toBe(true);
+  expect(output.value).toBe("rgba(18, 52, 86, 0.5)");
+});
+
 test("comparison exposes a keyboard-operable range with percent text", async () => {
   const user = userEvent.setup();
   render(<Comparison beforeSrc="/a.svg" afterSrc="/b.svg" beforeAlt="Day" afterAlt="Night" />);
