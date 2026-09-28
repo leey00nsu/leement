@@ -103,3 +103,15 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **DONE 전 확정 시점**: 7개 item × light/dark × 1440/390px 28개 preview가 모두 HTTP 200이고 stage/body overflow 또는 browser exception이 없었다. ImageCrop 이미지 478×358.5px, Stories 영상 readyState 4/540px와 Escape 초점 복귀, Reel 영상 540×960px 재생·방향키 이동·음소거, VideoPlayer 4초 메타데이터·탐색·음소거를 브라우저에서 확인했다. Reduced motion에서 Reel은 0초에 멈췄고 수동 재생만 허용했다. 모바일 어두운 Story/ImageZoom 열린 상태도 화면 안에 들어갔다. 테스트, registry build, typecheck, lint를 통과했다.
 - **Evidence**: [7개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-06-image-media-finance-and-social-recheck), [Kibo Reel source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/reel/index.tsx), [Stories mobile](./artifacts/previews/stories-dark-390-open-after.png), [Reel mobile](./artifacts/previews/reel-dark-390-after.png)
 - **Consequences**: `Stories` 기본 presentation은 trigger gallery가 되며 이전 임베디드 viewer를 원하면 `presentation="viewer"`를 명시한다. `StoryItem.poster`, CreditCard `network`, Ticker `layout`은 선택적 API다. 새 토큰은 `packages/tokens`→`@leement/theme` CSS→registry source 및 디자인 규칙으로 동기화했다. 문서 metadata를 수정했고 통합 changelog은 Task 09에서 갱신한다. 실제 소비자 설치는 Task 10에서 확인한다. Kibo 원격 자산은 포함하지 않으며 docs 영상은 Leement용 code-native 시안의 로컬 화면 녹화로 제작했다.
+
+## D007: 콘텐츠·유틸리티 항목은 실제 문맥과 조작 상태로 판정한다 (2026-09-28)
+
+- **Context**: 초기 감사에서 일부 콘텐츠 항목은 단일 placeholder나 짧은 예제로 Kibo 대응 구조와 CopySinger/Leesfield의 제품 사용성을 확인하기 어렵다. 특히 Deck, DialogStack, Editor, Glimpse, Marquee, Tree는 열린·실행 상태가 초기 캡처에 드러나지 않는다.
+- **Constraints**: Leement source는 제품별 문구·콘텐츠를 소유하지 않고 token·키보드·reduced-motion 규칙을 따른다. upstream의 브랜딩과 도메인 데이터를 그대로 복사하지 않는다.
+- **Options**: 고정 Kibo source, 공개 데모 및 두 제품의 사용 사례를 확인한 뒤 확정한다.
+- **Decision**: 조사 중.
+- **Rationale**: 조사 중.
+- **Trace**:
+  - **DOING 시작 시점**: 20개 항목의 실제 docs preview를 네 모드로 재촬영하고, 동적 항목의 열린·실행 상태를 분리해 검사한다. 원본에 있는 anatomy를 예제만 보강해서 표현할 수 있는지와 source 결함인지 구분한다.
+- **Evidence**: [초기 감사표](./artifacts/catalog-visual-audit.md), [Kibo source 기준](https://github.com/shadcnblocks/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263)
+- **Consequences**: 바뀐 public API와 사용 규칙은 docs metadata 및 Task 09 changelog에 반영한다.

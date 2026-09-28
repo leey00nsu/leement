@@ -217,6 +217,7 @@
     - Every audit row has a final evidence-backed verdict and no unresolved P1/P2 issue.
   - Checklist:
     - [ ] Review 79 docs routes, preview/source parity and applicable states.
+    - [ ] Resolve the ImageCrop `react-image-crop` server/client ID hydration mismatch observed during Task 06 preview logging; recheck its visible crop controls after hydration.
     - [ ] Update item guidance/changelog and durable design rules for changed APIs or rules.
     - [ ] Recheck all four light/dark and desktop/mobile combinations, audit table and representative after images.
   - Docs:
