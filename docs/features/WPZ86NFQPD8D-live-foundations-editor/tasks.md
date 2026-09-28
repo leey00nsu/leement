@@ -124,6 +124,23 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-04 Make color swatches open a picker and tailor Foundation previews
+  - Date: 2026-09-29
+  - Acceptance:
+    - Clicking each color swatch opens a keyboard-accessible picker whose edits update the current theme and the text value; non-hex and alpha defaults display accurately.
+    - Each Foundation page uses a distinct preview relevant to its edited values, with actual registry source; the repeated Workspace settings card is removed.
+  - Checklist:
+    - [ ] Implement a popover picker using the registry ColorPicker and safely convert CSS color defaults to editable HEX without changing canonical tokens.
+    - [ ] Replace the repeated generic card with category-specific actual component previews and update the design rule.
+    - [ ] Verify picker interaction, mode separation, accessibility, responsive previews and configured checks; sync Feature docs.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -136,8 +153,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록

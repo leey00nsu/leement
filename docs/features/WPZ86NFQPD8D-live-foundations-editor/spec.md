@@ -23,6 +23,8 @@
 **Acceptance Criteria:**
 
 - [ ] Color, Typography, Spacing, Radius, Shadow, Motion의 각 페이지에서 실제 UI에 연결된 값을 수정할 수 있다. 수정 가능한 필드마다 현재 페이지의 실제 registry component 또는 문서 UI에서 눈으로 확인할 수 있는 효과가 있다.
+- [ ] Color의 색상 스와치를 누르면 접근 가능한 color picker가 열리고 현재 모드의 값이 즉시 반영된다. HEX 이외의 기본 색상과 투명도도 초기 선택색에 정확히 나타나며 텍스트 입력은 계속 사용할 수 있다.
+- [ ] 여섯 Foundations 페이지의 미리보기는 각 범주의 규칙을 보여 주는 서로 다른 실제 registry 컴포넌트 조합이다. 동일한 Workspace settings 예제가 모든 페이지에 반복되지 않는다.
 - [ ] 수정 결과는 현재 페이지의 실제 registry component 미리보기뿐 아니라 다른 문서 페이지의 해당 UI에도 적용되고, 페이지 이동과 새로고침 후에도 유지된다.
 - [ ] Light와 Dark 색상은 모드별로 따로 수정하고 전환해 확인할 수 있다. 비색상 값은 두 모드에서 공유한다.
 - [ ] 전체 초기화로 기본 Leement 테마에 돌아갈 수 있다.
@@ -42,6 +44,8 @@
 ### FR-1: Foundations 편집 UI와 실제 미리보기
 
 각 Foundations 페이지는 관련 값을 조정하는 명확한 입력과 즉시 반응하는 미리보기 영역을 제공한다. 데스크톱에서는 편집과 미리보기를 나란히, 작은 화면에서는 읽기 쉬운 순서로 배치한다. 미리보기는 문서용 복제 컴포넌트가 아니라 실제 registry source를 사용한다. 기존 토큰 설명과 primitive/semantic 관계를 찾을 수 있어야 한다.
+
+Color 스와치는 색상 선택 제어이며 키보드로 열고 닫을 수 있어야 한다. picker에서 선택한 값과 텍스트 입력은 같은 preview 상태를 수정한다. picker의 sRGB HEX 출력과 원래 토큰에 적힌 OKLCH 등의 표현 차이는 사용자가 이해할 수 있게 설명한다. 각 미리보기는 현재 범주가 바꾸는 규칙을 직접 보여 주며 관련 없는 반복 예제는 두지 않는다.
 
 수정 가능한 항목은 실제 문서 UI에서 연결되는 값으로 한정한다. Color는 semantic 역할과 브랜드 역할의 light/dark 값, Typography는 글꼴·크기 등 실제 사용되는 타입 값, Spacing은 공통 간격 척도, Radius는 모서리 척도, Shadow는 입체감 척도, Motion은 전환 시간 척도를 포함한다. UI 전체를 바꾸기 위해 Leement 토큰과 Tailwind/shadcn compatibility 값을 같은 관계로 갱신한다.
 

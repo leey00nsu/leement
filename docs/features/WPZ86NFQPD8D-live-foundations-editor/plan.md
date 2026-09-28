@@ -30,6 +30,7 @@
 3. **모드·접근성**: light/dark color selector는 서로 간섭하지 않는다. 문서의 기존 ThemeToggle 전환을 따른다. reduced motion은 편집된 duration보다 우선해 실제 CSS와 복사 CSS 모두 0ms로 처리한다. color 입력은 브라우저가 지원하는 안전한 색상 값만 허용하고, 주요 foreground/background 대비가 부족하면 경고한다.
 4. **Foundations UI**: 여섯 route에서 category별 편집 panel과 실제 registry Button/Input/Card 등의 샘플을 보이는 preview panel을 제공한다. 기존 설명·primitive/semantic 표는 참고 자료로 남기되 현재 미리보기 값과 기본값을 분명히 구별한다. 데스크톱은 나란히, 모바일은 세로 배치한다. Reset all, Copy CSS, 복사 상태·입력 오류는 이름 있는 키보드 접근 가능한 제어로 둔다.
 5. **CSS 출력**: 현재 기본값과 다른 변수만 출력한다. `@import "@leement/theme";` 다음에 넣을 light/dark selector와 shared override를 생성한다. Leement 변수를 원본으로 두고 Tailwind/shadcn 연결은 `var(--lm-...)`로 둔다. style element 미리보기와 복사 결과는 동일한 순수 변환 함수를 공유한다.
+6. **사용자 피드백 반영**: Color의 보기 전용 스와치를 registry Popover 안의 실제 ColorPicker 진입점으로 바꾼다. 브라우저 Canvas에서 비 HEX 기본색을 sRGB HEX/alpha로 표시하고, 원래 표현은 텍스트 입력에 남긴다. picker 값은 기존 validator와 preview state를 그대로 통과한다. 반복 Workspace settings 카드는 제거하고 Color/Type/Spacing/Radius/Shadow/Motion마다 조절값이 눈에 보이는 실제 registry 조합을 둔다.
 
 ## 주요 파일
 
@@ -99,7 +100,7 @@ docs/designs/design-system.md
 - **구현 중**: CSS 연결과 저장값 validator의 focused Vitest, desktop 브라우저의 각 값→computed style.
 - **태스크 완료 전**: 수정 파일의 typecheck/lint와 라이트·다크 대표 UI 확인.
 - **Feature 완료 전**: `pnpm typecheck`, `pnpm lint`, `pnpm test`, `pnpm build`; 독립 소비자 CSS 적용 확인.
-- **수동/UI 검증**: desktop/mobile × light/dark, keyboard/focus, route 이동·reload, reset, 복사 성공/실패, low contrast 경고, reduced motion. 보존할 증거만 Feature `artifacts/`에 둔다.
+- **수동/UI 검증**: desktop/mobile × light/dark, keyboard/focus, route 이동·reload, reset, 복사 성공/실패, low contrast 경고, reduced motion. 스와치 클릭·키보드 열기/Escape·picker 선택·투명도/OKLCH 초기색·모드 분리, 여섯 범주별 미리보기 차이도 실제 브라우저에서 확인한다. 보존할 증거만 Feature `artifacts/`에 둔다.
 - **전체 테스트 필요 여부**: Yes — root layout과 문서 전체 CSS를 건드린다.
 
 ## 관련 문서

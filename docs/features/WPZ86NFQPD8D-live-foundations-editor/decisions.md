@@ -64,3 +64,14 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **DONE 전 확정 시점**: Chromium에서 light 배경 `#202020` 변경 후 dark 배경 `#111113` 유지, 저대비 1.0:1 경고, route 이동과 reload 후 spacing Button 108px 유지, reset 후 기본 배경 `#ffffff`·localStorage 제거를 확인했다. Georgia 글꼴, radius 48px, shadow 0 12px 36px, motion 1s, reduced motion 0s, 390px 모바일 가로 overflow 없음, range 방향키·focus outline, 잘못된 색상 거부와 복사 실패 피드백을 확인했다. 별도 Tailwind/PostCSS 소비자에 복사 CSS를 넣자 height 60px, font 20px/500/40px, radius 16px, shadow 12px 36px, primary `rgb(18,52,86)`, body `rgb(250,245,240)`, duration 0.3s 및 dark primary `rgb(171,205,239)`가 재현됐다. `pnpm check`는 build/typecheck/lint 및 12개 파일의 69개 테스트를 통과했다.
 - **Evidence**: `pnpm check` 성공, [Feature 태스크 검증 기록](./tasks.md), 위 Chromium computed style 및 독립 소비자 결과.
 - **Residual risks**: 테마 편집값은 브라우저 localStorage에 저장되므로 첫 HTML 페인트 뒤 클라이언트 복원 시 짧은 기본 테마 표시가 가능하다. 다만 편집 제어는 복원 완료 뒤 활성화되어 첫 조작은 유실되지 않는다. 복사 CSS 적용은 소비자 CSS import 순서를 따라야 한다.
+
+## D004: 사용자 피드백으로 색상 선택과 범주별 미리보기 수정 (2026-09-29)
+
+- **Context**: 현재 Color 스와치는 장식이라 클릭할 수 없고, 여섯 Foundations 페이지에 같은 Workspace settings 카드가 반복되어 각 토큰의 효과가 덜 분명하다.
+- **Constraints**: 현재 Feature를 계속하며 토큰 정본과 복사 CSS 계약을 유지한다. picker와 preview는 기존 registry source를 사용하고 키보드 접근성을 보존한다.
+- **Trace**:
+  - **DOING 준비 시점**: registry에 `ColorPicker`와 Base UI `Popover`가 이미 있으므로 이를 조합한다. OKLCH와 8자리 HEX 기본값을 picker에 정확히 전달하려면 브라우저에서 sRGB/alpha로 변환해야 한다.
+- **Options**: 구현 중 확정.
+- **Decision**: 구현 중 확정.
+- **Rationale**: 구현 중 확정.
+- **Evidence**: `registry/ui/color-picker.tsx`, `registry/ui/popover.tsx`, `apps/docs/components/foundation-editor.tsx` 현재 구조 및 사용자 변경 요청.
