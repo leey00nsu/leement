@@ -1,5 +1,6 @@
 node_modules
 .next
+apps/docs/next-env.d.ts
 .turbo
 coverage
 dist

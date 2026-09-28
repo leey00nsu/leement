@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpm --dir ../.. build:tokens && pnpm --dir ../.. build:theme && pnpm --dir ../.. registry:build && next dev",
     "build": "pnpm --dir ../.. build:tokens && pnpm --dir ../.. build:theme && pnpm --dir ../.. registry:build && next build",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "lint": "eslint ."
   },
   "dependencies": {
