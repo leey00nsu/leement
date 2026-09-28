@@ -54,10 +54,16 @@ test("ticker expands supplied high and low data", async () => {
 test("stories navigate and expose pause control", async () => {
   const user = userEvent.setup();
   render(<Stories items={[{ id: "a", src: "/a.svg", alt: "First", author: "Alex" }, { id: "b", src: "/b.svg", alt: "Second", author: "Robin" }]} />);
+  const trigger = screen.getByRole("button", { name: "Open story from Alex" });
+  await user.click(trigger);
+  expect(screen.getByRole("dialog", { name: "Alex story" })).toBeTruthy();
   await user.click(screen.getByRole("button", { name: "Next story" }));
   expect(screen.getByRole("img", { name: "Second" })).toBeTruthy();
   await user.click(screen.getByRole("button", { name: "Pause stories" }));
   expect(screen.getByRole("button", { name: "Play stories" })).toBeTruthy();
+  await user.keyboard("{Escape}");
+  expect(screen.queryByRole("dialog")).toBeNull();
+  expect(document.activeElement).toBe(trigger);
 });
 
 test("reel changes active media with keyboard and toggles mute", async () => {
