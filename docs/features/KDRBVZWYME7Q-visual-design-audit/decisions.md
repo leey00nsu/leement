@@ -90,3 +90,15 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **DONE 전 확정 시점**: 8개 item × 4모드가 모두 열렸고 stage/document overflow 및 browser exception이 없었다. ColorPicker plane pointer와 hue ArrowRight, alpha 50%의 8자리 HEX 및 RGB 표시, 나머지 form의 키보드/선택/파일 거부 상태를 브라우저에서 검증했다. ColorPicker 값 계약은 기존 테스트에 alpha 검증을 추가했다.
 - **Evidence**: [8개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-05-form-and-choice-recheck), [ColorPicker after](./artifacts/previews/color-picker-light-after.png), [MiniCalendar mobile after](./artifacts/previews/mini-calendar-dark-390-after.png), [Kibo ColorPicker source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/color-picker/index.tsx)
 - **Consequences**: 이전 6자리 HEX 소비자는 alpha를 사용하지 않는 한 값 형식이 그대로다. alpha를 사용하는 소비자는 8자리 HEX를 처리한다. docs metadata에 새 계약을 적었고 Changelog은 Task 09에서 함께 업데이트한다. 실제 설치 source의 독립 빌드는 Task 10에서 확인한다.
+
+## D006: 미디어 컴포넌트는 실제 자산의 렌더링과 제어 상태로 판정한다 (2026-09-28)
+
+- **Context**: 초기 감사에서 ImageCrop은 이미지가 0×0으로 표시되는 P1, Reel은 정적인 추상 poster가 중심인 P2였다. Kibo Stories는 trigger 집합에서 viewer로 진입하지만 Leement는 곧바로 열린 viewer만 보여 준다. CreditCard의 칩/브랜드 구조와 Ticker의 밀도도 다르다.
+- **Constraints**: 영상/이미지 URL과 콘텐츠는 소비자 또는 docs 예제가 제공한다. Leement source는 결제·시세 fetch·업로드를 하지 않고, 키보드 명령과 reduced motion을 보존한다.
+- **Options**: 조사 후 확정한다.
+- **Decision**: 조사 중.
+- **Rationale**: 조사 중.
+- **Trace**:
+  - **DOING 시작 시점**: Kibo 공개 화면과 고정 source를 대조하고, docs 로컬 SVG/MP4의 실제 크기·재생 상태를 브라우저에서 측정한다. Story trigger/viewer, Reel 영상, ImageCrop 이미지 영역을 우선한다.
+- **Evidence**: [초기 감사표](./artifacts/catalog-visual-audit.md), [Kibo Reel source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/reel/index.tsx)
+- **Consequences**: 바뀌는 공개 사용 경로는 docs metadata와 변경 기록에 반영한다.
