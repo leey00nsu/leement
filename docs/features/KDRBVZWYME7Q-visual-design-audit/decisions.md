@@ -129,3 +129,16 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **DONE 전 확정 시점**: 11개 item × 4모드 44개 preview가 HTTP 200이고 stage/body overflow가 없었다. 개별 새 브라우저 페이지에서 검색 `jam`→1명, 필터 2개→1명/검색→0명, SettingsSection 스위치·저장 상태, ResourceRowLink의 3px focus ring을 확인했고 console/page error는 없었다. ProductPageIntro의 eyebrow는 dark에서 `rgb(139, 193, 246)`으로 계산됐다. 원본 source의 모든 Leement import가 registry dependency에 선언됐다. 페이지 재사용형 전체 캡처의 수동 테마 변경 직후 나타난 hydration 경고는 독립 route 검사에서는 재현되지 않아 Task 09 전체 route 검증에서 재확인한다.
 - **Evidence**: [11개 항목 재검증표](./artifacts/catalog-visual-audit.md#task-08-patterns-and-remaining-blocks-recheck), [ProductPageIntro after](./artifacts/previews/product-page-intro-dark-390-after.png), [FilterToolbar selected after](./artifacts/previews/filter-toolbar-dark-390-active-after.png), [BentoGrid after](./artifacts/previews/bento-grid-light-1440-after.png)
 - **Consequences**: `brand.text`를 Foundations → Color와 디자인 규칙에 추가했다. 기존 `brand.accentForeground`는 채워진 accent 표면 전용이다. 변경된 패턴 source/metadata와 docs 예제를 동기화했다. consumer 설치 검증은 Task 10에서 수행한다.
+
+## D009: 전체 문서 상태 설명과 SSR 초기 화면을 실제 source에 맞춘다 (2026-09-28)
+
+- **Context**: 79개 item 문서의 공통 States 문장은 모든 미리보기에 disabled/loading이 있는 것처럼 읽혔다. ImageCrop은 `react-image-crop` 내부 ID, RevealContent는 client-only reduced-motion hook 때문에 서버/첫 client DOM이 달라졌다. docs의 링크 글자도 focus 전용 색상을 일반 표면에 사용했다.
+- **Constraints**: source-backed preview와 소스 소유 경험을 유지한다. SSR에서 이미지는 보여야 하고 reduced-motion/no-script에서는 RevealContent가 숨겨지면 안 된다. 전 항목별 상태를 설명하되 미리보기가 모든 상태를 보여 준다고 주장하지 않는다.
+- **Options**: ① hydration 경고와 범용 문구를 그대로 둔다. ② 컴포넌트 첫 렌더를 안정화하고 항목별 상태 설명을 제공하며 전체 카탈로그를 독립 페이지로 검증한다. ③ docs를 client-only 렌더링으로 전환한다.
+- **Decision**: ②를 선택했다. ImageCrop은 SSR과 첫 client 렌더에 정적 이미지를 보여 주고 mount 후 crop 조절기를 붙인다. RevealContent는 `initial`을 motion 선호와 독립적으로 계산하고 CSS reduced-motion 규칙으로 즉시 보이게 한다. item별 지원 상태를 79개 명시하고 공통 과장 문구를 제거했다. docs-only 링크는 `brand.text`를 사용하며 focus ring은 `brand.focus`에 남긴다. Changelog에 기본값/API 이전 경로를 기록했다.
+- **Rationale**: ReactCrop이 생성하는 ID는 서버와 client의 렌더 순서에 따라 달라질 수 있다. 이미지를 먼저 보여 주면 hydration 전에도 의미 있는 화면이 남는다. reduced-motion은 서버가 모르는 사용자 설정이므로 초기 inline style 분기 근거로 사용하면 안 된다. 상태 설명을 실제 source에 묶어야 일괄 문구보다 정확하다.
+- **Trace**:
+  - **DOING 시작 시점**: ImageCrop의 `hole-rc-*`와 RevealContent의 Motion style 차이를 dev log에서 재현한다. 모든 docs example의 registry 원본 직접 import와 공통 설치/Source 보기 경로를 확인한다.
+  - **검증 시점**: 79개 source와 docs example이 모두 존재하고 직접 연결됐다. 79개 route × 4모드 316개 미리보기가 HTTP 200이고 stage/document overflow가 없었다. 전체 자동화에서 두 hydration 경고는 초기 hydration 전 `<html>`에 dark class를 주입한 검사 코드에서만 발생했다. 이를 재현하고 두 route의 독립적인 정상 hydration에서 오류가 0임을 확인했다. ImageCrop과 RevealContent를 ordinary/reduced-motion fresh page로 별도 검사한 결과 오류 0, crop handle 8개와 reduced opacity 1이었다. 항목별 최종 판정은 감사표에 62개 수정 후 통과, 17개 의도된 차이로 통과로 기록했다.
+- **Evidence**: [전체 브라우저 재검증표](./artifacts/catalog-visual-audit.md#task-09-complete-documentation-and-final-browser-sweep), [ImageCrop after](./artifacts/previews/image-crop-dark-390-hydration-after.png), [RevealContent after](./artifacts/previews/reveal-content-dark-390-hydration-after.png)
+- **Consequences**: 두 컴포넌트의 첫 프레임 동작을 디자인 규칙과 source에 동기화했다. `apps/docs/lib/item-states.ts`가 item별 상태 설명을 소유한다. Changelog은 아직 공개되지 않은 변경을 Unreleased로 표시한다. Task 10은 consumer CLI 설치와 두 제품 도입 경계를 확인한다.

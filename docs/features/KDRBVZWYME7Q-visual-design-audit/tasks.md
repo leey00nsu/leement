@@ -214,19 +214,19 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-KDRBVZWYME7Q-visual-design-audit-09 Align docs examples, state guidance and final 79-item visual audit
+- [DONE][PRD-FR-005] T-KDRBVZWYME7Q-visual-design-audit-09 Align docs examples, state guidance and final 79-item visual audit
   - Date: 2026-09-27
   - Acceptance:
     - Every public item page demonstrates the actual registry source, relevant states, API and install path; generic or false state claims are removed.
     - Every audit row has a final evidence-backed verdict and no unresolved P1/P2 issue.
   - Checklist:
-    - [ ] Review 79 docs routes, preview/source parity and applicable states.
-    - [ ] Resolve the ImageCrop `react-image-crop` server/client ID hydration mismatch observed during Task 06 preview logging; recheck its visible crop controls after hydration.
-    - [ ] Resolve the RevealContent server/client motion style mismatch observed with reduced motion during Task 07 preview logging; recheck its visible text and animation state after hydration.
-    - [ ] Replace docs-only link text uses of `brand.focus` with the contrast-safe `brand.text` role where appropriate; keep focus rings on `brand.focus`.
-    - [ ] Recheck the full catalog with an isolated fresh page for each route so manual theme switching cannot contaminate hydration evidence between routes.
-    - [ ] Update item guidance/changelog and durable design rules for changed APIs or rules.
-    - [ ] Recheck all four light/dark and desktop/mobile combinations, audit table and representative after images.
+    - [x] Review 79 docs routes, preview/source parity and applicable states.
+    - [x] Resolve the ImageCrop `react-image-crop` server/client ID hydration mismatch observed during Task 06 preview logging; recheck its visible crop controls after hydration.
+    - [x] Resolve the RevealContent server/client motion style mismatch observed with reduced motion during Task 07 preview logging; recheck its visible text and animation state after hydration.
+    - [x] Replace docs-only link text uses of `brand.focus` with the contrast-safe `brand.text` role where appropriate; keep focus rings on `brand.focus`.
+    - [x] Recheck the full catalog with an isolated fresh page for each route so manual theme switching cannot contaminate hydration evidence between routes.
+    - [x] Update item guidance/changelog and durable design rules for changed APIs or rules.
+    - [x] Recheck all four light/dark and desktop/mobile combinations, audit table and representative after images.
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -
