@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/WPZ86NFQPD8D-live-foundations-editor`
 - **대기 중 변경 요청**: -
@@ -75,6 +75,55 @@
 
 ---
 
+- [DONE][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-01 Build validated site-wide preview state and token bridges
+  - Date: 2026-09-28
+  - Acceptance:
+    - Valid light/dark color and shared foundation overrides persist across routes and reload; invalid values are ignored; reset removes overrides.
+    - Editable typography, spacing, radius, shadow and motion values update CSS properties consumed by the docs and installed registry source; reduced motion wins.
+  - Checklist:
+    - [x] Finalize PRD-FR-013; map editable variables to canonical token defaults and their Tailwind/shadcn compatibility properties.
+    - [x] Add a small validated storage/CSS export model and focused tests for mode isolation, malformed data, changed-only output and reset.
+    - [x] Mount one root preview provider, connect necessary theme aliases and verify representative computed styles without altering token JSON defaults.
+  - Docs:
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-02 Build six Foundations editors and actual component previews
+  - Date: 2026-09-28
+  - Acceptance:
+    - Each of six Foundations routes has labeled controls whose changes are visible in real registry component previews and elsewhere in docs; layout works on desktop/mobile and in both modes.
+    - Copy CSS returns applicable changed-only Leement overrides, reports copy status, and reset returns the site to default styling; low foreground/background contrast is called out.
+  - Checklist:
+    - [ ] Compose editors, mode-specific colors, numeric controls, actual registry previews, copy/reset and accessible feedback without duplicating component source.
+    - [ ] Preserve existing explanations and token reference; clarify canonical defaults versus temporary preview; verify mobile/keyboard/light/dark.
+    - [ ] Update design-system rules; assess actual token/theme, registry component and docs preview impact together.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-03 Verify site-wide behavior and copied CSS in a consumer
+  - Date: 2026-09-28
+  - Acceptance:
+    - Browser evidence covers all six categories, route/reload persistence, reset, both modes, mobile, focus and reduced motion; copied CSS reproduces representative values outside docs.
+    - Configured repository typecheck, lint, tests and build all pass with current code and documentation.
+  - Checklist:
+    - [ ] Check computed styles and usable controls in desktop/mobile browser; compare before/after and retained values after route/reload.
+    - [ ] Apply copied CSS after `@leement/theme` in an isolated consumer and compare representative roles/sizes/shadows/motion.
+    - [ ] Run configured checks, record real residual risks, synchronize Feature docs and workflow marker.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -98,6 +147,10 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm exec vitest run apps/docs/lib/foundation-preview.test.ts` | 2026-09-28 | PASS — 3 tests |
+| `pnpm typecheck` | 2026-09-28 | PASS — 5 packages |
+| `pnpm lint` | 2026-09-28 | PASS — docs and registry |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+<!-- lee-spec-kit:workflow-sync sha256:7c109396eca677999dca851e967ed165bf3798f2463f63005bc2b7102437bb2c -->
