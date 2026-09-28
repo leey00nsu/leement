@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../..
 import { Input } from "../../../registry/ui/input";
 import { Skeleton } from "../../../registry/ui/skeleton";
 import { BrandGradientText } from "../../../registry/ui/brand-gradient-text";
+import { ColorPicker } from "../../../registry/ui/color-picker";
+import { Popover, PopoverContent, PopoverTitle, PopoverTrigger } from "../../../registry/ui/popover";
 import { useFoundationPreview } from "./foundation-preview-provider";
 import {
   colorFields,
@@ -26,6 +28,14 @@ const familyOptions = [
   "Georgia, Cambria, serif",
   "ui-monospace, monospace",
 ];
+const previewTitles: Record<FoundationCategory, string> = {
+  color: "Color in context",
+  typography: "Type hierarchy",
+  spacing: "Control spacing",
+  radius: "Corner scale",
+  shadow: "Surface elevation",
+  motion: "Transition timing",
+};
 
 function useCurrentMode(): FoundationMode {
   const [mode, setMode] = useState<FoundationMode>("light");
@@ -45,16 +55,45 @@ function setDocsMode(mode: FoundationMode) {
   try { window.localStorage.setItem("leement-docs-theme", mode); } catch { /* Preview still works without storage. */ }
 }
 
+function pickerHex(value: string): string {
+  const canvas = document.createElement("canvas");
+  canvas.width = canvas.height = 1;
+  const context = canvas.getContext("2d", { willReadFrequently: true });
+  if (!context) return "#000000";
+  context.clearRect(0, 0, 1, 1);
+  context.fillStyle = value;
+  context.fillRect(0, 0, 1, 1);
+  const channels = context.getImageData(0, 0, 1, 1).data;
+  const hex = (channel: number) => channel.toString(16).padStart(2, "0").toUpperCase();
+  const rgb = hex(channels[0] ?? 0) + hex(channels[1] ?? 0) + hex(channels[2] ?? 0);
+  const alpha = channels[3] ?? 255;
+  return `#${rgb}${alpha < 255 ? hex(alpha) : ""}`;
+}
+
 function ColorControl({ field, mode }: { field: ColorField; mode: FoundationMode }) {
   const { preview, setValue } = useFoundationPreview();
   const id = useId();
   const value = preview[mode][field.key] ?? field[mode];
   const [draft, setDraft] = useState(value);
   const [touched, setTouched] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
   useEffect(() => { setDraft(value); setTouched(false); }, [value, mode]);
   const valid = validPreviewValue(mode, field.key, draft);
   return <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-1 rounded-lg border border-border bg-background p-3">
-    <span aria-hidden="true" className="row-span-2 size-10 rounded-md border border-border" style={{ backgroundColor: valid ? draft : value }} />
+    <Popover open={pickerOpen} onOpenChange={setPickerOpen}>
+      <PopoverTrigger aria-label={`Pick ${mode} ${field.label} color`} className="relative row-span-2 size-10 overflow-hidden rounded-md border border-border bg-[repeating-conic-gradient(var(--lm-color-border-default)_0%_25%,var(--lm-color-surface-default)_0%_50%)] bg-size-[12px_12px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+        <span aria-hidden="true" className="absolute inset-0" style={{ backgroundColor: valid ? draft : value }} />
+      </PopoverTrigger>
+      {pickerOpen && <PopoverContent align="start" className="w-[min(21rem,calc(100vw-2rem))] p-2 max-sm:max-h-[19rem] max-sm:overflow-y-auto">
+        <PopoverTitle className="sr-only">{mode} {field.label} color picker</PopoverTitle>
+        <ColorPicker label={`${mode} ${field.label}`} value={pickerHex(value)} onValueChange={(next) => {
+          setDraft(next);
+          setTouched(false);
+          setValue(mode, field.key, next);
+        }} className="max-w-none border-0 p-0 shadow-none" />
+        <p className="mt-2 text-xs leading-5 text-muted-foreground">The picker uses sRGB HEX. Edit the value field to keep an OKLCH color.</p>
+      </PopoverContent>}
+    </Popover>
     <label htmlFor={id} className="truncate text-xs font-medium capitalize text-foreground">{field.label}</label>
     <input id={id} value={draft} onChange={(event) => {
       const next = event.target.value;
@@ -159,25 +198,31 @@ function ContrastWarning({ mode, values }: { mode: FoundationMode; values: Recor
 
 function ActualPreview({ category }: { category: FoundationCategory }) {
   const [moved, setMoved] = useState(false);
-  return <div className="space-y-5" data-testid="foundation-actual-preview">
-    {category === "typography" && <div className="space-y-2 border-b border-border pb-4">
-      <p className="font-mono text-xs text-muted-foreground">Sans and type scale</p>
-      <p className="text-2xl font-bold leading-tight">Design that feels familiar.</p>
-      <p className="text-lg font-semibold leading-normal">A clear hierarchy for every screen.</p>
-      <p className="text-base font-normal leading-relaxed">The quick brown fox jumps over the lazy dog.</p>
-      <p className="text-sm text-muted-foreground">Small supporting text stays readable.</p>
-      <code className="font-mono text-xs">const leement = true;</code>
-    </div>}
-    {category === "spacing" && <div className="flex flex-wrap gap-4 border-b border-border pb-4"><span className="rounded-md bg-muted p-3 text-xs">gap-4</span><span className="rounded-md bg-muted p-3 text-xs">padding-3</span><span className="rounded-md bg-muted p-3 text-xs">rhythm</span></div>}
-    {category === "radius" && <div className="grid grid-cols-4 gap-2 border-b border-border pb-4">{(["sm", "md", "lg", "xl"] as const).map((size) => <div key={size} className={`flex h-14 items-center justify-center border border-border bg-muted text-xs ${({ sm: "rounded-sm", md: "rounded-md", lg: "rounded-lg", xl: "rounded-xl" })[size]}`}>{size}</div>)}</div>}
-    {category === "shadow" && <div className="grid gap-3 border-b border-border pb-5 sm:grid-cols-3">{(["sm", "md", "lg"] as const).map((size) => <Card key={size} className={({ sm: "shadow-sm", md: "shadow-md", lg: "shadow-lg" })[size]}><CardContent className="text-center text-xs font-medium">{size} shadow</CardContent></Card>)}</div>}
-    {category === "motion" && <div className="space-y-4 border-b border-border pb-4">
-      <Button variant="outline" size="sm" onClick={() => setMoved((value) => !value)} aria-pressed={moved}>Move preview</Button>
-      <div className="space-y-2">{(["fast", "normal", "slow"] as const).map((speed) => <div key={speed} className="flex items-center gap-3 text-xs"><span className="w-12 shrink-0 capitalize">{speed}</span><div className="h-7 flex-1 overflow-hidden rounded-md bg-muted p-1"><div className="size-5 rounded-sm bg-primary transition-[margin-left]" style={{ marginLeft: moved ? "calc(100% - 1.25rem)" : "0", transitionDuration: `var(--lm-motion-duration-${speed})` }} /></div></div>)}</div>
-      <p className="text-xs text-muted-foreground">Reduced motion disables transition timing.</p>
-    </div>}
-    {category === "color" && <div className="space-y-3 border-b border-border pb-4"><p><BrandGradientText className="text-xl font-semibold">Make something your own.</BrandGradientText></p><Skeleton variant="brand" className="h-4 w-3/4" /><p className="text-xs text-muted-foreground">Brand gradient and loading surface use the current palette.</p></div>}
-    <Card className="shadow-sm"><CardHeader><CardTitle>Workspace settings</CardTitle><CardDescription>Manage the details people see.</CardDescription></CardHeader><CardContent className="space-y-4"><label className="block space-y-2 text-sm font-medium">Workspace name<Input placeholder="Acme Studio" /></label><div className="flex flex-wrap gap-2"><Button size="sm">Save changes</Button><Button size="sm" variant="outline">Cancel</Button></div></CardContent></Card>
+  if (category === "color") return <div className="space-y-4" data-testid="foundation-actual-preview">
+    <Card><CardHeader><CardTitle>Semantic color roles</CardTitle><CardDescription>Surface, text, border, and actions respond together.</CardDescription></CardHeader><CardContent className="flex flex-wrap gap-2"><Button size="sm">Primary action</Button><Button size="sm" variant="secondary">Secondary</Button><Button size="sm" variant="outline">Outline</Button></CardContent></Card>
+    <div className="rounded-lg border border-border bg-muted p-4"><p className="text-sm font-medium text-foreground">Muted surface</p><p className="mt-1 text-xs text-muted-foreground">Brand accents remain a separate role.</p><p className="mt-4"><BrandGradientText className="text-lg font-semibold">A flexible brand voice.</BrandGradientText></p><Skeleton variant="brand" className="mt-3 h-3 w-3/4" /></div>
+  </div>;
+  if (category === "typography") return <div className="space-y-4" data-testid="foundation-actual-preview">
+    <div className="space-y-2"><p className="font-mono text-xs text-muted-foreground">Type scale and hierarchy</p><p className="text-2xl font-bold leading-tight">Design that feels familiar.</p><p className="text-lg font-semibold leading-normal">A clear heading for every screen.</p><p className="text-base font-normal leading-relaxed">Readable body copy keeps the details easy to follow.</p></div>
+    <Card><CardHeader><CardTitle>Information hierarchy</CardTitle><CardDescription>Card titles and descriptions use the same type rules.</CardDescription></CardHeader><CardContent><p className="text-sm text-muted-foreground">Supporting text stays legible at smaller sizes.</p><code className="mt-3 block font-mono text-xs">const type = "consistent";</code></CardContent></Card>
+  </div>;
+  if (category === "spacing") return <div className="space-y-4" data-testid="foundation-actual-preview">
+    <Card><CardHeader><CardTitle>Control rhythm</CardTitle><CardDescription>One spacing step shapes control heights and inset.</CardDescription></CardHeader><CardContent className="space-y-4"><div className="flex flex-wrap items-center gap-3"><Button size="xs">Extra small</Button><Button size="sm">Small</Button><Button>Default</Button><Button size="lg">Large</Button></div><Input aria-label="Spacing preview input" placeholder="Input uses the same spacing scale" /></CardContent></Card>
+    <div className="flex flex-wrap gap-4 rounded-lg border border-dashed border-border p-4"><span className="rounded-md bg-muted p-3 text-xs">gap-4</span><span className="rounded-md bg-muted p-3 text-xs">padding-3</span><span className="rounded-md bg-muted p-3 text-xs">rhythm</span></div>
+  </div>;
+  if (category === "radius") return <div className="space-y-4" data-testid="foundation-actual-preview">
+    <div className="grid grid-cols-4 gap-2">{(["sm", "md", "lg", "xl"] as const).map((size) => <div key={size} className={`flex h-16 items-center justify-center border border-border bg-muted text-xs ${({ sm: "rounded-sm", md: "rounded-md", lg: "rounded-lg", xl: "rounded-xl" })[size]}`}>{size}</div>)}</div>
+    <Card><CardHeader><CardTitle>Contained surfaces</CardTitle><CardDescription>Cards, controls, and inputs share a measured radius scale.</CardDescription></CardHeader><CardContent className="space-y-3"><Input aria-label="Radius preview input" placeholder="Input corner" /><Button size="sm">Button corner</Button></CardContent></Card>
+  </div>;
+  if (category === "shadow") return <div className="space-y-4" data-testid="foundation-actual-preview">
+    <p className="text-sm text-muted-foreground">Choose elevation only where a surface needs separation.</p>
+    {(["sm", "md", "lg"] as const).map((size) => <Card key={size} className={({ sm: "shadow-sm", md: "shadow-md", lg: "shadow-lg" })[size]}><CardContent className="flex items-center justify-between gap-3"><span className="text-sm font-medium capitalize">{size} elevation</span><span className="text-xs text-muted-foreground">shadow-{size}</span></CardContent></Card>)}
+  </div>;
+  return <div className="space-y-4" data-testid="foundation-actual-preview">
+    <p className="text-sm text-muted-foreground">Compare the three timing steps by moving the markers.</p>
+    <Button variant="outline" size="sm" onClick={() => setMoved((value) => !value)} aria-pressed={moved}>Move preview</Button>
+    <div className="space-y-3">{(["fast", "normal", "slow"] as const).map((speed) => <div key={speed} className="flex items-center gap-3 text-xs"><span className="w-12 shrink-0 capitalize">{speed}</span><div className="h-7 flex-1 overflow-hidden rounded-md bg-muted p-1"><div className="size-5 rounded-sm bg-primary transition-[margin-left]" style={{ marginLeft: moved ? "calc(100% - 1.25rem)" : "0", transitionDuration: `var(--lm-motion-duration-${speed})` }} /></div></div>)}</div>
+    <p className="text-xs text-muted-foreground">Reduced motion disables transition timing.</p>
   </div>;
 }
 
@@ -221,7 +266,7 @@ export function FoundationEditor({ category }: { category: FoundationCategory })
         </> : <><h3 className="text-base font-semibold capitalize">{category} values</h3><div className="grid gap-3">{fields.map((field) => <SharedControl key={field.key} field={field} />)}</div></>}
       </div>
       <div className="min-w-0 space-y-4 lg:sticky lg:top-24">
-        <div className="rounded-xl border border-border bg-background p-4 sm:p-5"><div className="mb-4 flex items-center justify-between gap-2"><h3 className="text-base font-semibold">Actual components</h3><span className="text-xs capitalize text-muted-foreground">{mode} mode</span></div><ActualPreview category={category} /></div>
+        <div className="rounded-xl border border-border bg-background p-4 sm:p-5"><div className="mb-4 flex items-center justify-between gap-2"><h3 className="text-base font-semibold">{previewTitles[category]}</h3><span className="text-xs capitalize text-muted-foreground">{mode} mode</span></div><ActualPreview category={category} /></div>
         {category === "color" && <ContrastWarning mode={mode} values={preview[mode]} />}
         <div className="rounded-xl border border-border bg-card p-4"><div className="flex flex-wrap gap-2"><Button type="button" variant="outline" size="sm" onClick={copyCss} disabled={!count}>Copy CSS</Button><Button type="button" variant="ghost" size="sm" onClick={() => { reset(); setCopyStatus("All preview changes were reset."); }} disabled={!count}>Reset all</Button></div><p className="mt-3 text-xs leading-5 text-muted-foreground">Paste copied overrides after <code>@import "@leement/theme";</code> in your app CSS. Only changed values are included.</p><p role="status" aria-live="polite" className="mt-2 min-h-5 text-xs text-foreground">{copyStatus}</p></div>
       </div>
