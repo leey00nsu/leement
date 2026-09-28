@@ -48,7 +48,7 @@ function ProductPageIntro({
   return (
     <header className={cn(introVariants({ variant }), className)} data-page-intro={variant} {...props}>
       <div className="min-w-0 max-w-3xl">
-        <p className="text-[11px] font-semibold tracking-[0.18em] text-data-accent-foreground uppercase">{eyebrow}</p>
+        <p className="text-[11px] font-semibold tracking-[0.18em] text-(--lm-color-brand-text) uppercase">{eyebrow}</p>
         {meta ? <div className="mt-3">{meta}</div> : null}
         <h1 className={titleVariants({ variant })}>{title}</h1>
         {description ? (

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 // A responsive layout for product feature groups.
 function BentoGrid({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("grid grid-cols-1 gap-2 md:grid-cols-6", className)} {...props} />;
+  return <div className={cn("grid grid-cols-1 gap-3 md:grid-cols-6", className)} {...props} />;
 }
 
 function BentoGridItem({
@@ -32,9 +32,9 @@ function BentoGridItem({
       <header className="relative px-4 py-3.5 sm:px-5">
         <div>
           {eyebrow ? (
-            <p className="mb-1 text-[9px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">{eyebrow}</p>
+            <p className="mb-1 text-[10px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">{eyebrow}</p>
           ) : null}
-          <h2 id={titleId} className="text-xs font-semibold tracking-[-0.015em]">{title}</h2>
+          <h2 id={titleId} className="text-sm font-semibold tracking-[-0.015em]">{title}</h2>
         </div>
       </header>
     </article>

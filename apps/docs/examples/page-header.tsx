@@ -7,6 +7,6 @@ export default function PageHeaderExample() {
       <PageHeader.Title>Members</PageHeader.Title>
       <PageHeader.Description>Manage members of your workspace.</PageHeader.Description>
     </PageHeader.Content>
-    <PageHeader.Actions><Button>Add member</Button></PageHeader.Actions>
+    <PageHeader.Actions><Button variant="outline">Invite link</Button><Button>Add member</Button></PageHeader.Actions>
   </PageHeader>;
 }

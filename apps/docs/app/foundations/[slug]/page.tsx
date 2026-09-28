@@ -39,12 +39,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <p className="mt-3 text-muted-foreground">{item.detail}</p>
     {slug === "color" && <section id="brand-colors" className="mt-10 scroll-mt-24 rounded-xl border border-border bg-card p-5 sm:p-7" aria-labelledby="brand-colors-heading">
       <h2 id="brand-colors-heading" className="text-xl font-semibold">Set your brand colors</h2>
-      <p className="mt-3 text-sm leading-7 text-muted-foreground">CopySinger uses violet, blue and pink for animated highlights; Leesfield uses blue for its gradient and branded loading surface. Both keep ordinary Skeletons neutral. Override these roles after importing the theme in your app CSS. Focus and data accent follow the brand roles automatically. Check focus visibility and text contrast with your own palette.</p>
+      <p className="mt-3 text-sm leading-7 text-muted-foreground">CopySinger uses violet, blue and pink for animated highlights; Leesfield uses blue for its gradient and branded loading surface. Both keep ordinary Skeletons neutral. Override these roles after importing the theme in your app CSS. Set brand text separately from the foreground used on a filled accent surface: small eyebrows and selected filters need contrast against the page. Focus and data accent follow the brand roles automatically. Check both themes with your own palette.</p>
       <pre className="mt-5 overflow-x-auto rounded-lg border border-border bg-background p-4 text-xs leading-6"><code>{`@import "@leement/theme";
 
 :root {
   --lm-color-brand-accent: #7c3aed;
   --lm-color-brand-accent-foreground: #ffffff;
+  --lm-color-brand-text: #6d28d9;
   --lm-color-brand-focus: #6d28d9;
   --lm-color-brand-gradient-start: var(--lm-color-brand-accent);
   --lm-color-brand-gradient-middle: #3b82f6;
@@ -54,6 +55,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 .dark, [data-lm-theme="dark"] {
   --lm-color-brand-accent: #9f7aea;
   --lm-color-brand-accent-foreground: #111113;
+  --lm-color-brand-text: #b794f4;
   --lm-color-brand-focus: #b794f4;
   --lm-color-brand-gradient-start: var(--lm-color-brand-accent);
   --lm-color-brand-gradient-middle: #a4d8ff;
