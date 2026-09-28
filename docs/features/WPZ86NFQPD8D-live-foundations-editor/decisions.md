@@ -69,9 +69,11 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 - **Context**: 현재 Color 스와치는 장식이라 클릭할 수 없고, 여섯 Foundations 페이지에 같은 Workspace settings 카드가 반복되어 각 토큰의 효과가 덜 분명하다.
 - **Constraints**: 현재 Feature를 계속하며 토큰 정본과 복사 CSS 계약을 유지한다. picker와 preview는 기존 registry source를 사용하고 키보드 접근성을 보존한다.
+- **Options**: native color input만 스와치에 붙이는 방식, 기존 Leement ColorPicker를 Popover 안에 넣는 방식. 공통 카드 유지, 범주별 preview 구성.
+- **Decision**: 스와치를 registry Popover trigger로, 내용은 registry ColorPicker로 바꾼다. Canvas의 sRGB 픽셀값으로 OKLCH/alpha 기본색을 picker HEX에 전달하고 텍스트 입력에는 원래 색상 표현을 유지한다. 여섯 범주에 각기 관련된 실제 registry 예제를 두고 공통 Workspace settings 카드를 제거한다. 좁은 화면의 popup은 내부 스크롤을 허용한다.
+- **Rationale**: Leement의 접근 가능한 색상 선택 동작을 재사용하면서 모드별 preview state와 기존 유효성 검사를 공유한다. 범주마다 바뀌는 토큰의 효과를 먼저 보이게 한다.
 - **Trace**:
   - **DOING 준비 시점**: registry에 `ColorPicker`와 Base UI `Popover`가 이미 있으므로 이를 조합한다. OKLCH와 8자리 HEX 기본값을 picker에 정확히 전달하려면 브라우저에서 sRGB/alpha로 변환해야 한다.
-- **Options**: 구현 중 확정.
-- **Decision**: 구현 중 확정.
-- **Rationale**: 구현 중 확정.
-- **Evidence**: `registry/ui/color-picker.tsx`, `registry/ui/popover.tsx`, `apps/docs/components/foundation-editor.tsx` 현재 구조 및 사용자 변경 요청.
+  - **DONE 전 확정 시점**: Chromium에서 light 배경 스와치를 Enter로 열고 native well 선택 `#123456`이 본문과 텍스트 필드에 반영되는 것을 확인했다. Escape는 picker를 닫고 trigger에 초점을 돌렸다. Dark 배경은 독립적으로 남았고 picker에서 `#ABCDEF`를 선택할 수 있었다. Dark border 기본 투명도는 `#FFFFFF1A`, light brand accent OKLCH 기본색은 `#928EEB`로 나타났다. 여섯 route의 preview 제목·registry 요소가 범주별로 다르고 Workspace settings 문구는 0개였다. 375px 폭의 844/667/568px 높이에서 popup이 viewport 안에 있고 내부 스크롤이 가능했다. `pnpm check`는 build/typecheck/lint와 12개 파일의 69개 테스트를 통과했다.
+- **Evidence**: `apps/docs/components/foundation-editor.tsx`, `registry/ui/color-picker.tsx`, `registry/ui/popover.tsx`, `pnpm check` 성공 및 위 Chromium 검사 기록.
+- **Consequences**: picker는 sRGB HEX로 값을 내보내며 원래 OKLCH 문자열은 텍스트 필드를 수정하지 않는 동안 유지된다. 임시 preview와 기본 token 정본의 관계는 그대로다.

@@ -124,15 +124,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-04 Make color swatches open a picker and tailor Foundation previews
+- [DONE][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-04 Make color swatches open a picker and tailor Foundation previews
   - Date: 2026-09-29
   - Acceptance:
     - Clicking each color swatch opens a keyboard-accessible picker whose edits update the current theme and the text value; non-hex and alpha defaults display accurately.
     - Each Foundation page uses a distinct preview relevant to its edited values, with actual registry source; the repeated Workspace settings card is removed.
   - Checklist:
-    - [ ] Implement a popover picker using the registry ColorPicker and safely convert CSS color defaults to editable HEX without changing canonical tokens.
-    - [ ] Replace the repeated generic card with category-specific actual component previews and update the design rule.
-    - [ ] Verify picker interaction, mode separation, accessibility, responsive previews and configured checks; sync Feature docs.
+    - [x] Implement a popover picker using the registry ColorPicker and safely convert CSS color defaults to editable HEX without changing canonical tokens.
+    - [x] Replace the repeated generic card with category-specific actual component previews and update the design rule.
+    - [x] Verify picker interaction, mode separation, accessibility, responsive previews and configured checks; sync Feature docs.
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -
@@ -153,8 +153,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -169,8 +169,8 @@
 | `pnpm lint` | 2026-09-28 | PASS — docs and registry |
 | `pnpm --filter @leement/docs typecheck` | 2026-09-28 | PASS — docs editor and theme integration |
 | `pnpm build:theme` | 2026-09-28 | PASS — generated theme aliases |
-| `pnpm check` | 2026-09-28 | PASS — build, typecheck, lint, 12 files / 69 tests |
+| `pnpm check` | 2026-09-29 | PASS — build, typecheck, lint, 12 files / 69 tests |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:7d0f4f4e033b3bfab9403afaa72e7afc1b868d5ca5758235da462df86cd45df5 -->
+<!-- lee-spec-kit:workflow-sync sha256:50b5bf8c7328055dedc3da77214a1afb23f32d6410dbff5e7b026d8dbb32706e -->
