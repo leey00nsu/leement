@@ -38,3 +38,16 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **Source**: `packages/tokens/src/tokens.json`, `packages/theme/build.mjs`, `apps/docs/lib/foundation-preview.ts` 및 [검증 코드](../../../apps/docs/lib/foundation-preview.test.ts).
   - **Test/Log**: `pnpm exec vitest run apps/docs/lib/foundation-preview.test.ts` (3 passed), `pnpm typecheck` (5 packages), `pnpm lint`; Chromium computed style 수치 위 Trace.
 - **Consequences**: preview와 실제 기본값의 관계를 docs UI에 명시해야 한다. `@leement/tokens`와 theme 기본값은 그대로다.
+
+## D002: Foundations 편집기와 실제 UI 미리보기 (2026-09-28)
+
+- **Context**: 여섯 Foundations 페이지에 정적인 토큰 표만 있으며 각 수치를 바꾸는 진입점과 효과 확인 화면이 없다.
+- **Constraints**: 기존 설명과 정본 토큰 표를 유지하고, 실제 registry source를 미리보기에 사용하며, 사이트 전체와 같은 CSS 변수를 읽어야 한다.
+- **Options**: 복제 예제에 인라인 스타일을 넣는 방식, 실제 registry 컴포넌트를 렌더링하고 공통 CSS 변수를 적용하는 방식.
+- **Decision**: 서버 Foundations 문서는 기본 토큰 참조를 계속 렌더링하고 client editor만 추가한다. 편집기는 실제 Button/Input/Card 및 브랜드 Skeleton/GradientText를 사용하고 모드 전환은 기존 `data-lm-theme`를 따른다. 저장 복원이 끝난 뒤 제어를 활성화한다. theme의 `@theme inline`에 빠져 있던 mono·type scale·weight·line-height·spacing·shadow-lg·default motion 연결을 보완한다.
+- **Rationale**: 사용자에게 보이는 변화가 소비자 컴포넌트와 같은 규칙을 따른다. 기본 token 표를 임시 값과 혼동하지 않고, 첫 조작 유실과 Tailwind 기본값 이탈을 막는다.
+- **Trace**:
+  - **DOING 시작 시점**: 현재 Foundations route는 서버 컴포넌트이며 ThemeToggle이 `data-lm-theme`와 localStorage를 변경한다. 편집기는 클라이언트 컴포넌트로 추가하고 현재 모드를 root attribute에서 읽는 방식을 우선 검토한다.
+  - **DONE 전 확정 시점**: Chromium에서 여섯 페이지의 입력을 열었고 color 전경/배경 변경, 저대비 경고, light/dark 분리, CSS 복사, spacing·radius·shadow·motion의 실제 computed style 변화를 확인했다. 390px에서 가로 스크롤이 없고 키보드 range 조작이 반영됐다. `pnpm --filter @leement/docs typecheck`, `pnpm lint`, focused Vitest 3개가 통과했다.
+- **Evidence**: `apps/docs/components/foundation-editor.tsx`, `apps/docs/app/foundations/[slug]/page.tsx`, `packages/theme/build.mjs`; 위 Chromium 검증 및 focused 검사 로그.
+- **Consequences**: theme 생성 CSS와 docs preview가 같은 기본값을 사용한다. 색상은 현재 모드, 나머지는 두 모드의 공통 편집값이다.

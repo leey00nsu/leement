@@ -92,15 +92,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-02 Build six Foundations editors and actual component previews
+- [DONE][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-02 Build six Foundations editors and actual component previews
   - Date: 2026-09-28
   - Acceptance:
     - Each of six Foundations routes has labeled controls whose changes are visible in real registry component previews and elsewhere in docs; layout works on desktop/mobile and in both modes.
     - Copy CSS returns applicable changed-only Leement overrides, reports copy status, and reset returns the site to default styling; low foreground/background contrast is called out.
   - Checklist:
-    - [ ] Compose editors, mode-specific colors, numeric controls, actual registry previews, copy/reset and accessible feedback without duplicating component source.
-    - [ ] Preserve existing explanations and token reference; clarify canonical defaults versus temporary preview; verify mobile/keyboard/light/dark.
-    - [ ] Update design-system rules; assess actual token/theme, registry component and docs preview impact together.
+    - [x] Compose editors, mode-specific colors, numeric controls, actual registry previews, copy/reset and accessible feedback without duplicating component source.
+    - [x] Preserve existing explanations and token reference; clarify canonical defaults versus temporary preview; verify mobile/keyboard/light/dark.
+    - [x] Update design-system rules; assess actual token/theme, registry component and docs preview impact together.
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -
@@ -150,7 +150,9 @@
 | `pnpm exec vitest run apps/docs/lib/foundation-preview.test.ts` | 2026-09-28 | PASS — 3 tests |
 | `pnpm typecheck` | 2026-09-28 | PASS — 5 packages |
 | `pnpm lint` | 2026-09-28 | PASS — docs and registry |
+| `pnpm --filter @leement/docs typecheck` | 2026-09-28 | PASS — docs editor and theme integration |
+| `pnpm build:theme` | 2026-09-28 | PASS — generated theme aliases |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:7c109396eca677999dca851e967ed165bf3798f2463f63005bc2b7102437bb2c -->
+<!-- lee-spec-kit:workflow-sync sha256:7d0f4f4e033b3bfab9403afaa72e7afc1b868d5ca5758235da462df86cd45df5 -->

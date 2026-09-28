@@ -67,6 +67,8 @@ EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담고, 실제 �
 
 ## 문서 사이트
 
+Foundations의 Color, Typography, Spacing, Radius, Shadow, Motion에는 실제 registry 컴포넌트와 같은 CSS 변수를 읽는 실시간 편집기를 둔다. 편집값은 방문자 브라우저의 임시 미리보기이며 사이트 전체에 적용되고 페이지 이동·새로고침 후에도 유지된다. `packages/tokens/src/tokens.json`은 기본값의 정본으로 남고 primitive/semantic 참조 표는 항상 그 기본값임을 표시한다. Color는 light/dark를 별도로, 나머지 값은 공통으로 편집한다. 문서의 모드 스위치와 편집기는 같은 모드를 보여 준다. 전체 초기화는 브라우저 override를 지우고 기본값으로 돌아간다. CSS 복사는 기본값과 다른 `--lm-*`만 내보내며 필요한 Tailwind/shadcn 호환 변수는 Leement 변수에서 파생한다. 앱에서는 `@leement/theme` import 뒤에 복사한 CSS를 둔다. 저대비 색상 조합은 경고하고 `prefers-reduced-motion`은 편집한 모션 시간보다 우선한다. 문서의 편집값은 npm 패키지나 registry source를 바꾸지 않는다.
+
 홈은 큰 제목, 짧은 설명, 주요 탐색 동작과 실제 registry 컴포넌트로 만든 화면 예제를 먼저 보여 준다. 상단은 Docs, Components, Blocks, Patterns의 큰 범주를 보여 준다. 좌측은 현재 범주의 항목을 작은 사용 분야별로 묶고 현재 항목이 보이도록 스크롤한다. 상세 문서는 제목과 소개 다음에 조작 가능한 Preview·Code·Source를 먼저 제시하고, 설치와 사용 규칙·접근성·API를 이어서 설명한다. 넓은 화면에서는 우측 목차가 본문 위치로 이동하고, 모바일에서는 같은 범주에 접근 가능한 접이식 메뉴를 쓴다. 검색은 키보드로 열고 닫을 수 있어야 한다. Kibo 비교 기록은 Feature artifact에 보존하며 사용자 탐색에 중복 coverage 메뉴를 추가하지 않는다. 화면은 Leement 이름·토큰·실제 registry source를 사용한다.
 
 ## 성숙도와 변경
