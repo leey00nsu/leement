@@ -105,14 +105,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-DA2L9V7BCUS2-ui-residual-repairs-03 Add Marquee edge fade and circular source-backed preview
+- [DONE][PRD-FR-007] T-DA2L9V7BCUS2-ui-residual-repairs-03 Add Marquee edge fade and circular source-backed preview
   - Date: 2026-09-28
   - Acceptance:
     - Both Marquee edges fade on light and dark surfaces, the default docs preview shows circular items, and pause/reduced-motion preserves readable content.
   - Checklist:
-    - [ ] Compare the user image and pinned Kibo source against the installed Leement Marquee API.
-    - [ ] Apply a background-independent fade to the moving track and create a local circular example without remote assets.
-    - [ ] Check pause, hover, reduced motion, mobile clipping and assistive-tech duplicate hiding; sync durable design guidance.
+    - [x] Compare the user image and pinned Kibo source against the installed Leement Marquee API.
+    - [x] Apply a background-independent fade to the moving track and create a local circular example without remote assets.
+    - [x] Check pause, hover, reduced motion, mobile clipping and assistive-tech duplicate hiding; sync durable design guidance.
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -

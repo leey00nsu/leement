@@ -54,3 +54,19 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **Source**: `registry.json`의 stories `registry:ui` 및 reel `registry:block` 항목; `apps/docs/lib/docs.ts`, `apps/docs/components/item-page.tsx`.
   - **Test/Log**: 실제 브라우저에서 dialog=1, social link visible, reel preview=1, 설치 명령 표시 확인.
 - **Consequences**: Reel 페이지는 Blocks 그룹에 남고, Stories 페이지에서는 Social 관련 항목으로 접근 가능하다.
+
+## D003: Marquee fade를 viewport mask로 제공 (2026-09-28)
+
+- **Context**: 기존 Marquee는 텍스트 chip만 흐르고 viewport 양끝 fade가 없었다. 참조 이미지는 원형 항목이 양끝에서 서서히 사라진다.
+- **Constraints**: `items: ReactNode[]`, pause, 중복 콘텐츠 숨김과 reduced motion을 유지하고 테마의 배경색을 하드코딩하지 않는다.
+- **Options**: Kibo처럼 배경색 overlay를 양끝에 두거나, viewport에 alpha mask를 적용한다.
+- **Decision**: 움직이는 두 묶음을 감싼 viewport에 양방향 CSS mask를 적용한다. pause 버튼은 mask 밖에 두고, 문서 예제는 128px 원형 항목을 제공한다.
+- **Rationale**: mask는 card/페이지 색을 별도로 알 필요가 없고 각 테마에 일관되게 동작한다. 모션 축소 시 mask를 없애고 overflow-x를 auto로 하여 정지한 항목을 탐색한다.
+- **Trace**:
+  - **DOING 시작 시점**: 트랙 자체의 mask는 트랙 전체 폭 기준이어서 화면 가장자리에 fade를 만들지 못함을 확인했다.
+  - **DONE 전 확정 시점**: 브라우저에서 양방향 mask, 128×128px 원형, pause 전환, reduced motion의 mask:none/animation:none/overflow:auto, 1440/390px과 두 테마를 확인했다.
+  - **머지 후 확인**: 병합 후 확인 예정.
+- **Evidence**:
+  - **Screenshot**: [Marquee 결과](./artifacts/marquee-after.png)
+  - **Test/Log**: `pnpm exec vitest run registry/ui/complex-utility.test.tsx` — 11 tests passed; 실제 브라우저 CSS computed style 확인.
+- **Consequences**: 문자열 items는 기존 chip 시각을 유지하고 ReactNode로 전달한 원형 요소는 별도 chip 스타일 없이 표시한다.
