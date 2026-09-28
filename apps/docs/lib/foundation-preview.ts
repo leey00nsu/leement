@@ -160,7 +160,8 @@ function sharedDeclarations(values: Record<string, string>): Array<[string, stri
     } else if (key.startsWith("--lm-typography-family-")) {
       declarations.push([key.replace("--lm-typography-family-", "--font-"), `var(${key})`]);
     } else if (key.startsWith("--lm-typography-weight-")) {
-      declarations.push([key.replace("--lm-typography-weight-", "--font-weight-"), `var(${key})`]);
+      const name = key.replace("--lm-typography-weight-", "");
+      declarations.push([`--font-weight-${name === "regular" ? "normal" : name}`, `var(${key})`]);
     } else if (key.startsWith("--lm-typography-line-height-")) {
       declarations.push([key.replace("--lm-typography-line-height-", "--leading-"), `var(${key})`]);
     } else if (key.startsWith("--lm-shadow-")) {

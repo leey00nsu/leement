@@ -46,6 +46,18 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
 .dark, [data-lm-theme="dark"] {\n${lines(colors("dark"), "lm")}\n${compatibility}\n  color-scheme: dark;\n}
 @media (prefers-reduced-motion: reduce) {\n  :root { --lm-motion-duration-fast: 0ms; --lm-motion-duration-normal: 0ms; --lm-motion-duration-slow: 0ms; }\n}
 @theme inline {
+  --spacing: var(--lm-spacing-1);
+  --text-xs: var(--lm-typography-size-xs); --text-sm: var(--lm-typography-size-sm);
+  --text-base: var(--lm-typography-size-base); --text-lg: var(--lm-typography-size-lg);
+  --text-xl: var(--lm-typography-size-xl); --text-2xl: var(--lm-typography-size-2xl);
+  --font-weight-normal: var(--lm-typography-weight-regular);
+  --font-weight-medium: var(--lm-typography-weight-medium);
+  --font-weight-semibold: var(--lm-typography-weight-semibold);
+  --font-weight-bold: var(--lm-typography-weight-bold);
+  --leading-tight: var(--lm-typography-line-height-tight);
+  --leading-normal: var(--lm-typography-line-height-normal);
+  --leading-relaxed: var(--lm-typography-line-height-relaxed);
+  --default-transition-duration: var(--lm-motion-duration-normal);
   --color-background: var(--background); --color-foreground: var(--foreground);
   --color-card: var(--card); --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover); --color-popover-foreground: var(--popover-foreground);
@@ -62,7 +74,9 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   --radius-sm: var(--lm-radius-sm); --radius-md: var(--lm-radius-md);
   --radius-lg: var(--lm-radius-lg); --radius-xl: var(--lm-radius-xl);
   --font-sans: var(--lm-typography-family-sans);
+  --font-mono: var(--lm-typography-family-mono);
   --shadow-sm: var(--lm-shadow-sm); --shadow-md: var(--lm-shadow-md);
+  --shadow-lg: var(--lm-shadow-lg);
 }
 @layer base {
   *, ::before, ::after { box-sizing: border-box; }

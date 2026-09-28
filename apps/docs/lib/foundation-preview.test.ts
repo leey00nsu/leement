@@ -48,6 +48,7 @@ describe("Foundations preview overrides", () => {
     for (const [key, value] of [
       ["--lm-spacing-1", "0.375rem"],
       ["--lm-typography-size-sm", "1rem"],
+      ["--lm-typography-weight-regular", "500"],
       ["--lm-radius-md", "1rem"],
       ["--lm-shadow-sm", "0 4px 12px rgb(0 0 0 / 0.10)"],
       ["--lm-motion-duration-normal", "300ms"],
@@ -56,6 +57,7 @@ describe("Foundations preview overrides", () => {
     expect(css).toContain("--spacing: var(--lm-spacing-1)");
     expect(css).toContain("--lm-spacing-4: calc(var(--lm-spacing-1) * 4)");
     expect(css).toContain("--text-sm: var(--lm-typography-size-sm)");
+    expect(css).toContain("--font-weight-normal: var(--lm-typography-weight-regular)");
     expect(css).toContain("--lm-radius-md: 1rem");
     expect(css).toContain("--shadow-sm: var(--lm-shadow-sm)");
     expect(css).toContain("--default-transition-duration: var(--lm-motion-duration-normal)");

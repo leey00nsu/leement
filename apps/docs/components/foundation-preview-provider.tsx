@@ -15,6 +15,7 @@ import {
 
 type PreviewContextValue = {
   preview: PreviewOverrides;
+  loaded: boolean;
   setValue: (mode: FoundationMode | "shared", key: string, value: string) => boolean;
   reset: () => void;
 };
@@ -65,7 +66,7 @@ export function FoundationPreviewProvider({ children }: { children: React.ReactN
 
   const reset = useCallback(() => setPreview(emptyPreview()), []);
 
-  return <PreviewContext.Provider value={{ preview, setValue, reset }}>{children}</PreviewContext.Provider>;
+  return <PreviewContext.Provider value={{ preview, loaded, setValue, reset }}>{children}</PreviewContext.Provider>;
 }
 
 export function useFoundationPreview(): PreviewContextValue {
