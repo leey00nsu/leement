@@ -121,14 +121,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-DA2L9V7BCUS2-ui-residual-repairs-04 Ship accessible segmented Tabs and align the docs workbench
+- [DONE][PRD-FR-005] T-DA2L9V7BCUS2-ui-residual-repairs-04 Ship accessible segmented Tabs and align the docs workbench
   - Date: 2026-09-28
   - Acceptance:
     - The installable Tabs source can render the wide Code/Preview selection; the workbench uses it; selected indicators exceed 3:1 adjacent contrast in light and dark while keyboard and focus behavior pass.
   - Checklist:
-    - [ ] Measure current selected-surface, text and border contrast and inspect Base UI tab states.
-    - [ ] Add a small segmented variant, migrate workbench from Radix duplicate and update the Tabs example and API guidance.
-    - [ ] Verify keyboard, focus, both themes and mobile; sync Tabs design rule and assess token/theme impact explicitly.
+    - [x] Measure current selected-surface, text and border contrast and inspect Base UI tab states.
+    - [x] Add a small segmented variant, migrate workbench from Radix duplicate and update the Tabs example and API guidance.
+    - [x] Verify keyboard, focus, both themes and mobile; sync Tabs design rule and assess token/theme impact explicitly.
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -

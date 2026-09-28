@@ -70,3 +70,19 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **Screenshot**: [Marquee 결과](./artifacts/marquee-after.png)
   - **Test/Log**: `pnpm exec vitest run registry/ui/complex-utility.test.tsx` — 11 tests passed; 실제 브라우저 CSS computed style 확인.
 - **Consequences**: 문자열 items는 기존 chip 시각을 유지하고 ReactNode로 전달한 원형 요소는 별도 chip 스타일 없이 표시한다.
+
+## D004: 공개 Tabs segmented 변형과 선택 경계 대비 (2026-09-28)
+
+- **Context**: Code/Preview 탭은 docs 내부 Radix 구현이라 공개 `@leement/tabs`로 재현할 수 없었다. 라이트 선택 표면과 주변 표면의 대비는 약 1.03~1.09:1이다.
+- **Constraints**: default/line API, Base UI의 tab/tabpanel 관계와 키보드 동작을 보존하고 theme/token SSOT를 유지한다.
+- **Options**: 문서 전용 스타일을 유지하거나, 공개 TabsList에 넓은 `segmented` 변형을 제공한다. 선택 상태는 배경 차이만 쓰거나 의미색 경계를 추가한다.
+- **Decision**: `TabsList variant="segmented"`를 추가하고 docs workbench가 registry Tabs를 직접 사용한다. 선택 트리거는 `muted-foreground` 경계와 `background` 표면을 쓴다.
+- **Rationale**: 설치된 source가 문서와 같아지고, 표면색 차이가 약해도 경계가 3:1 이상으로 상태를 표시한다. 기존 변형은 유지한다.
+- **Trace**:
+  - **DOING 시작 시점**: docs workbench의 별도 Radix 탭 구현과 공개 Tabs의 default/line 한계를 확인했다.
+  - **DONE 전 확정 시점**: 실제 브라우저에서 선택 경계와 인접 표면 대비 light 4.35:1, dark 5.22:1; active text 17.36/18.07:1; inactive text 4.35/5.22:1을 측정했다. desktop 1440px/mobile 390px의 workbench 및 source-backed 예제를 확인하고 방향키+Enter로 Code 패널 선택을 확인했다. `pnpm typecheck`와 기존 Controls 테스트 5개가 통과했다.
+  - **머지 후 확인**: 병합 후 확인 예정.
+- **Evidence**:
+  - **Screenshots**: [light](./artifacts/tabs-light-after.png), [dark](./artifacts/tabs-dark-after.png)
+  - **Test/Log**: `pnpm exec vitest run registry/ui/controls.test.tsx` — 5 tests passed; `pnpm typecheck` — 5 packages passed; 브라우저 computed style/색 대비 및 키보드 확인.
+- **Consequences**: token/theme 수치 변경 없이 이미 있는 semantic `muted-foreground`를 상태 표시 경계에 사용한다. docs의 세 탭과 공개 두 탭 예제는 같은 source를 공유한다.
