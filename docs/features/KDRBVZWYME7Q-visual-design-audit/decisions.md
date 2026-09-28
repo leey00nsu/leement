@@ -142,3 +142,16 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **검증 시점**: 79개 source와 docs example이 모두 존재하고 직접 연결됐다. 79개 route × 4모드 316개 미리보기가 HTTP 200이고 stage/document overflow가 없었다. 전체 자동화에서 두 hydration 경고는 초기 hydration 전 `<html>`에 dark class를 주입한 검사 코드에서만 발생했다. 이를 재현하고 두 route의 독립적인 정상 hydration에서 오류가 0임을 확인했다. ImageCrop과 RevealContent를 ordinary/reduced-motion fresh page로 별도 검사한 결과 오류 0, crop handle 8개와 reduced opacity 1이었다. 항목별 최종 판정은 감사표에 62개 수정 후 통과, 17개 의도된 차이로 통과로 기록했다.
 - **Evidence**: [전체 브라우저 재검증표](./artifacts/catalog-visual-audit.md#task-09-complete-documentation-and-final-browser-sweep), [ImageCrop after](./artifacts/previews/image-crop-dark-390-hydration-after.png), [RevealContent after](./artifacts/previews/reveal-content-dark-390-hydration-after.png)
 - **Consequences**: 두 컴포넌트의 첫 프레임 동작을 디자인 규칙과 source에 동기화했다. `apps/docs/lib/item-states.ts`가 item별 상태 설명을 소유한다. Changelog은 아직 공개되지 않은 변경을 Unreleased로 표시한다. Task 10은 consumer CLI 설치와 두 제품 도입 경계를 확인한다.
+
+## D010: 전체 registry 설치를 검증하고 두 제품의 화면별 이전 경계를 명시한다 (2026-09-28)
+
+- **Context**: 79개 문서 미리보기와 원본 source가 통과해도, 소비자에게 전달된 파일과 transitive dependency가 같은지 또는 CopySinger·Leesfield의 기존 wrapper API가 바로 호환되는지는 별도의 문제다.
+- **Constraints**: `@leement/react`를 만들지 않고 shadcn CLI로 source를 소유하게 한다. 두 앱의 도메인 동작과 기존 wrapper는 앱 소유이며, 이 Feature에서 두 앱 자체를 수정하지 않는다.
+- **Options**: ① 몇 개의 대표 item만 설치하고 전체 호환을 추정한다. ② 깨끗한 Tailwind v4 소비자에 전체 공개 item을 설치·컴파일하고 두 앱의 실제 wrapper와의 차이를 이전 가이드와 격리 fixture로 확인한다.
+- **Decision**: ②를 선택했다. Button·EmptyState의 최초 설치가 Card·Utils와 npm dependency를 함께 가져오는지 확인한 뒤 공개 alias 79개를 모두 CLI로 설치했다. 81개 전달 파일이 원본과 동일했고, 전체 import consumer의 strict TypeScript/Vite build가 통과했다. [adoption page](../../../apps/docs/app/adoption/page.tsx)에 CopySinger의 `default`/`link`와 Base UI `render`/`nativeButton`, Leesfield의 `AppButton` 변형 및 `isLoading`/`loadingText`, `AppCard` 스타일의 이전 경계를 기록했다.
+- **Rationale**: 실제 registry 전달 검증과 제품별 adapter 규칙을 구분해야 공통 디자인 시스템을 곧바로 완전한 앱 교체로 과장하지 않는다. 격리 fixture는 양쪽 prop mapping을 설치된 source로 컴파일하지만, 제품 전체 런타임·도메인 조합을 대변하지 않는다.
+- **Trace**:
+  - **검증 시점**: 깨끗한 React 19/Vite 7/Tailwind 4 소비자에 `@leement/theme`을 로컬 파일 의존성으로 설치하고 79개 alias를 shadcn CLI로 설치했다. 80개 registry item/81개 source file 전체 일치, `tsc --noEmit && vite build` 통과. `pnpm typecheck`, `pnpm lint`, `pnpm test` 64/64, `pnpm build` 92개 static page, `pnpm registry:build` 통과. `/adoption` production route HTTP 200. 첫 전체 테스트에서 Calendar 이벤트가 두 군데 출력되자 기존 단일 텍스트 assertion을 선택 날짜 목록에 맞춰 고쳤고 재실행을 통과했다.
+  - **머지 후 확인**: 통합 후 Feature 검증 명령을 다시 실행하고 기록한다.
+- **Evidence**: [Task 10 설치·이전 근거](./artifacts/catalog-visual-audit.md#task-10-registry-consumer-and-product-adoption), [기존 두 제품 대응표](../GMA8H5L3TLTY-expanded-component-catalog/artifacts/reference-coverage.md), [adoption page](../../../apps/docs/app/adoption/page.tsx)
+- **Consequences**: Leement의 공유 source는 화면 단위로 이전할 수 있다. CopySinger의 Base UI trigger 구성과 Leesfield의 제품 전용 스타일·크기는 앱 wrapper에서 별도로 적응해야 하며, 두 앱 전체를 이 Feature에서 빌드하거나 일괄 교체했다고 주장하지 않는다. 원격 npm/registry 게시도 검증 범위 밖이다. README는 이번 요청에 수정 허가가 없으므로 건드리지 않았다.

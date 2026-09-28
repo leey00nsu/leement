@@ -235,15 +235,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-012] T-KDRBVZWYME7Q-visual-design-audit-10 Verify registry installation and two-product adoption boundaries
+- [DONE][PRD-FR-012] T-KDRBVZWYME7Q-visual-design-audit-10 Verify registry installation and two-product adoption boundaries
   - Date: 2026-09-27
   - Acceptance:
     - Changed source and transitive dependencies install into an isolated Tailwind v4 consumer and pass typecheck/build.
     - CopySinger and Leesfield shared UI usage remains compatible through demonstrated migration or updated guidance; four feature checks pass.
   - Checklist:
-    - [ ] Run registry build, representative or full changed-item CLI install and consumer typecheck/build.
-    - [ ] Verify representative actual app usages or isolated adoption fixtures with documented pre-existing errors separated.
-    - [ ] Run pnpm typecheck, lint, test and build; close audit rows and record residual risks.
+    - [x] Run registry build, representative or full changed-item CLI install and consumer typecheck/build.
+    - [x] Verify representative actual app usages or isolated adoption fixtures with documented pre-existing errors separated.
+    - [x] Run pnpm typecheck, lint, test and build; close audit rows and record residual risks.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -271,8 +271,16 @@
 > 명령어당 1개 행만 유지합니다. 같은 명령어를 다시 실행하면 새 행 추가 대신 기존 행의 시간/결과를 갱신하세요.
 > `마지막 실행`은 `YYYY-MM-DD` 형식(로컬 날짜)으로 기록하세요.
 
-| 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
-| ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| 명령어 | 마지막 실행(로컬, YYYY-MM-DD) | 결과 |
+| --- | --- | --- |
+| `pnpm typecheck` | 2026-09-28 | PASS — workspace TypeScript |
+| `pnpm lint` | 2026-09-28 | PASS — workspace ESLint |
+| `pnpm test` | 2026-09-28 | PASS — 11 files, 64 tests; Calendar assertion repaired after first run |
+| `pnpm build` | 2026-09-28 | PASS — packages, registry, docs 92 static pages |
+| `pnpm registry:build` | 2026-09-28 | PASS — 80 registry items |
+| `npx shadcn@latest add @leement/button @leement/empty-state --yes` | 2026-09-28 | PASS — transitive Card/Utils and npm dependencies |
+| `npx shadcn@latest add @leement/<item> --yes --overwrite` (79 aliases in seven batches) | 2026-09-28 | PASS — 81/81 installed files match source |
+| `pnpm build` (isolated Tailwind v4 consumer) | 2026-09-28 | PASS — strict TypeScript, all installed modules and adoption fixture, Vite production build |
+| `/adoption` production route | 2026-09-28 | PASS — HTTP 200 after docs build |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
