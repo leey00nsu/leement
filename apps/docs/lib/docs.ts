@@ -11,13 +11,13 @@ const componentSections = [
   { title: "Forms", names: ["Slider", "Choicebox", "Combobox", "Dropzone", "Mini Calendar", "Tags", "Color Picker", "Rating"] },
   { title: "Images", names: ["Image Crop", "Image Zoom"] },
   { title: "Finance", names: ["Credit Card", "Ticker"] },
-  { title: "Social", names: ["Stories", "Reel", "Video Player"] },
+  { title: "Social", names: ["Stories", "Video Player"] },
   { title: "Callouts", names: ["Announcement", "Banner"] },
   { title: "Styling", names: ["Typography", "Brand Gradient Text"] },
   { title: "Other", names: ["Reveal Content", "Collapsible", "Code Block", "Snippet", "Editor", "Glimpse", "Marquee", "Pill", "QR Code", "Relative Time", "Theme Switcher", "Tree", "Comparison"] },
 ];
 
-const componentItem = (label: string): NavItem => ({ label, href: label === "Reel" ? "/blocks/reel" : `/components/${label.toLowerCase().replaceAll(" ", "-")}` });
+const componentItem = (label: string): NavItem => ({ label, href: `/components/${label.toLowerCase().replaceAll(" ", "-")}` });
 const patternItem = (label: string): NavItem => ({ label, href: `/patterns/${label.replace(/[A-Z]/g, (letter, index) => `${index ? "-" : ""}${letter.toLowerCase()}`)}` });
 
 export const navigation: NavGroup[] = [
