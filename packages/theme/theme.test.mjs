@@ -16,7 +16,7 @@ describe("Leement web theme contract", () => {
   it("provides the same semantic roles in light and dark", () => {
     const light = css.split(':root, [data-lm-theme="light"] {')[1].split('color-scheme: light;')[0];
     const dark = css.split('.dark, [data-lm-theme="dark"] {')[1].split('color-scheme: dark;')[0];
-    for (const role of ["surface-default", "surface-raised", "surface-muted", "status-success", "status-warning", "data-accent", "focus-ring", "media-foreground", "media-scrim"]) {
+    for (const role of ["surface-default", "surface-raised", "surface-muted", "status-success", "status-warning", "data-accent", "focus-ring", "media-foreground", "media-scrim", "syntax-keyword", "syntax-string", "syntax-number", "syntax-comment"]) {
       expect(light).toContain(`--lm-color-${role}:`);
       expect(dark).toContain(`--lm-color-${role}:`);
     }

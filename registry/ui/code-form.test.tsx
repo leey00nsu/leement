@@ -21,6 +21,18 @@ test("code block copies the exact source", async () => {
   expect(screen.getByRole("button", { name: "Code copied" })).toBeTruthy();
 });
 
+test("code block switches examples and renders untrusted code as text", async () => {
+  const user = userEvent.setup();
+  const writeText = vi.spyOn(navigator.clipboard, "writeText");
+  const unsafe = '<img src="x" onerror="alert(1)">';
+  const { container } = render(<CodeBlock samples={[{ label: "TypeScript", filename: "app.ts", language: "typescript", code: "const value = 1;" }, { label: "HTML", filename: "index.html", language: "html", code: unsafe }]} showLineNumbers />);
+  await user.selectOptions(screen.getByRole("combobox", { name: "Code example" }), "HTML");
+  expect(screen.getByLabelText("html code").textContent).toBe(unsafe);
+  expect(container.querySelector("img")).toBeNull();
+  await user.click(screen.getByRole("button", { name: "Copy code" }));
+  expect(writeText).toHaveBeenCalledWith(unsafe);
+});
+
 test("contribution graph announces the selected daily count", async () => {
   const user = userEvent.setup();
   const onSelect = vi.fn();

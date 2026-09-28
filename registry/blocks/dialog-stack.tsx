@@ -17,7 +17,7 @@ function DialogStack({ triggerLabel, pages, onFinish, className }: DialogStackPr
     <DialogPrimitive.Trigger className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40">{triggerLabel}</DialogPrimitive.Trigger>
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" />
-      <DialogPrimitive.Content className={cn("fixed left-1/2 top-1/2 z-50 w-[min(32rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border bg-popover p-5 text-popover-foreground shadow-lg", className)}>
+      <DialogPrimitive.Content className={cn("fixed left-1/2 top-1/2 z-50 max-h-[calc(100vh-2rem)] w-[min(32rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-xl border border-border bg-popover p-5 text-popover-foreground shadow-lg", className)}>
         {page ? <>
           <div className="mb-4 flex items-start justify-between gap-2">
             <div>

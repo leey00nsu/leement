@@ -92,6 +92,7 @@ function RevealContent({
     <motion.div
       animate={usesChildSequence || !inView ? undefined : { opacity: 1, y: 0 }}
       className={cn(styles.root, styles[variant], className)}
+      data-slot="reveal-content"
       data-reveal-variant={variant}
       initial={usesChildSequence || shouldReduceMotion ? false : { opacity: resolvedOpacity, y: resolvedDistance }}
       ref={scope}
