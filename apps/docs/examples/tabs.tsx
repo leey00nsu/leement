@@ -1,11 +1,15 @@
 "use client";
 
+import { Code2, Eye } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../registry/ui/tabs";
 
 export default function TabsExample() {
-  return <Tabs defaultValue="overview" className="w-full max-w-sm">
-    <TabsList><TabsTrigger value="overview">Overview</TabsTrigger><TabsTrigger value="activity">Activity</TabsTrigger></TabsList>
-    <TabsContent value="overview" className="pt-3">Your workspace at a glance.</TabsContent>
-    <TabsContent value="activity" className="pt-3">Recent workspace updates.</TabsContent>
+  return <Tabs defaultValue="preview" className="w-full max-w-lg gap-0 overflow-hidden rounded-xl border border-border">
+    <TabsList variant="segmented" aria-label="Example view" className="rounded-none border-b border-border">
+      <TabsTrigger value="code"><Code2 aria-hidden="true" />Code</TabsTrigger>
+      <TabsTrigger value="preview"><Eye aria-hidden="true" />Preview</TabsTrigger>
+    </TabsList>
+    <TabsContent value="code" className="min-h-32 bg-card p-5 font-mono">{"<Button>Save changes</Button>"}</TabsContent>
+    <TabsContent value="preview" className="flex min-h-32 items-center justify-center bg-card p-5">Save changes</TabsContent>
   </Tabs>;
 }

@@ -2,7 +2,7 @@
 
 // The Preview / Code / Source arrangement adapts Kibo UI's MIT-licensed docs preview.
 // The full notice is preserved in licenses/kibo-license.md.
-import * as Tabs from "@radix-ui/react-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../registry/ui/tabs";
 import { Check, Clipboard, Code2, Eye, Files } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
@@ -51,23 +51,23 @@ export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, child
   ];
 
   return <div className="overflow-hidden rounded-xl border border-border bg-card">
-    <Tabs.Root defaultValue="preview">
-      <div className="border-b border-border bg-muted/40 p-1">
-        <Tabs.List aria-label={`${name} workbench`} className="grid grid-cols-3 gap-1">
-          {tabs.map(({ value, label, Icon }) => <Tabs.Trigger key={value} value={value} className="inline-flex h-10 items-center justify-center gap-2 rounded-lg text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm">
+    <Tabs defaultValue="preview" className="gap-0">
+      <div className="border-b border-border bg-muted/60 p-1">
+        <TabsList variant="segmented" aria-label={`${name} workbench`}>
+          {tabs.map(({ value, label, Icon }) => <TabsTrigger key={value} value={value}>
             <Icon aria-hidden="true" size={15} />{label}
-          </Tabs.Trigger>)}
-        </Tabs.List>
+          </TabsTrigger>)}
+        </TabsList>
       </div>
-      <Tabs.Content value="preview" className="outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
+      <TabsContent value="preview" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
         <div className="docs-preview-stage flex min-h-[360px] items-center justify-center bg-background p-5 sm:p-10">{children}</div>
-      </Tabs.Content>
-      <Tabs.Content value="example" className="outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
+      </TabsContent>
+      <TabsContent value="example" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
         <CodePane code={exampleCode} filename={`examples/${name}.tsx`} />
-      </Tabs.Content>
-      <Tabs.Content value="source" className="outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
+      </TabsContent>
+      <TabsContent value="source" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
         <CodePane code={sourceCode} filename={sourceFile} />
-      </Tabs.Content>
-    </Tabs.Root>
+      </TabsContent>
+    </Tabs>
   </div>;
 }

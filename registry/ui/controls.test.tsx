@@ -49,6 +49,19 @@ test("tabs expose panel relationship and arrow-key navigation", async () => {
   expect(screen.getByRole("tabpanel", { name: "Second" })).toBeTruthy();
 });
 
+test("segmented tabs preserve panel selection and keyboard navigation", async () => {
+  const user = userEvent.setup();
+  render(<Tabs defaultValue="preview"><TabsList variant="segmented" aria-label="Example view"><TabsTrigger value="code">Code</TabsTrigger><TabsTrigger value="preview">Preview</TabsTrigger></TabsList><TabsContent value="code">Source code</TabsContent><TabsContent value="preview">Live result</TabsContent></Tabs>);
+  const preview = screen.getByRole("tab", { name: "Preview" });
+  const code = screen.getByRole("tab", { name: "Code" });
+  expect(preview.getAttribute("aria-selected")).toBe("true");
+  preview.focus();
+  await user.keyboard("{ArrowLeft}{Enter}");
+  expect(document.activeElement).toBe(code);
+  expect(code.getAttribute("aria-selected")).toBe("true");
+  expect(screen.getByRole("tabpanel", { name: "Code" }).textContent).toContain("Source code");
+});
+
 test("select opens from the keyboard and exposes options", async () => {
   const user = userEvent.setup();
   render(<><Label htmlFor="role">Role</Label><Select defaultValue="viewer" items={{ viewer: "Viewer", editor: "Editor" }}><SelectTrigger id="role"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="viewer">Viewer</SelectItem><SelectItem value="editor">Editor</SelectItem></SelectContent></Select></>);
