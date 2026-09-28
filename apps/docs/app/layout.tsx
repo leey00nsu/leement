@@ -5,6 +5,7 @@ import "./globals.css";
 import { DocsNavigation } from "../components/docs-navigation";
 import { DocsSearch } from "../components/docs-search";
 import { DocsTopNavigation } from "../components/docs-top-navigation";
+import { FoundationPreviewProvider } from "../components/foundation-preview-provider";
 import { ThemeToggle } from "../components/theme-toggle";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en">
-    <body>
+    <body><FoundationPreviewProvider>
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-6 lg:gap-9">
@@ -43,6 +44,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="mx-auto max-w-[1540px]">{children}</div>
         </main>
       </div>
-    </body>
+    </FoundationPreviewProvider></body>
   </html>;
 }

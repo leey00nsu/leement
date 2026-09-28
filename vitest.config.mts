@@ -6,5 +6,5 @@ export default defineConfig({
     "@/components/ui/button": fileURLToPath(new URL("./registry/ui/button.tsx", import.meta.url)),
     "@/components/ui/skeleton": fileURLToPath(new URL("./registry/ui/skeleton.tsx", import.meta.url)),
   } },
-  test: { environment: "jsdom", include: ["registry/**/*.test.tsx", "packages/theme/**/*.test.mjs"] },
+  test: { environment: "jsdom", include: ["registry/**/*.test.tsx", "apps/docs/lib/**/*.test.ts", "packages/theme/**/*.test.mjs"] },
 });
