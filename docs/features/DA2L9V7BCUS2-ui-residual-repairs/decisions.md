@@ -38,3 +38,19 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **Screenshots**: [수정 전](./artifacts/slider-before.png), [수정 후](./artifacts/slider-after.png)
   - **Test/Log**: `pnpm exec vitest run registry/ui/source-extension.test.tsx` — 7 tests passed; 실제 브라우저 DOM geometry 및 입력 확인.
 - **Consequences**: 디자인 문서에 Base UI `data-orientation` 및 세로 높이 계약을 기록했다. token/theme은 바뀌지 않았다.
+
+## D002: Reel의 Block 분류를 유지하며 Social에서 교차 탐색 (2026-09-28)
+
+- **Context**: Stories 미리보기가 팝업 영상으로 보였고 Social 메뉴에는 Reel이 없어 두 UI의 관계가 불분명했다.
+- **Constraints**: Reel은 이미 `registry:block`과 `/blocks/reel` 경로로 배포된다. 중복 item을 만들지 않는다.
+- **Options**: Reel을 Component로 재분류하거나, Social 목록에 Block 문서로 가는 교차 링크를 둔다.
+- **Decision**: Social 메뉴에 Reel → `/blocks/reel`을 추가하고 두 문서에 서로의 용도와 링크를 명시한다.
+- **Rationale**: 레지스트리 분류와 설치 경로를 유지하면서 발견 가능성만 개선한다.
+- **Trace**:
+  - **DOING 시작 시점**: Stories는 thumbnail-triggered Radix dialog, Reel은 독립 영상 피드로 확인했다.
+  - **DONE 전 확정 시점**: 브라우저에서 Stories dialog 열기/닫기, Social Reel 링크, `/blocks/reel` 피드, `@leement/reel` 설치 명령을 확인했다.
+  - **머지 후 확인**: 병합 후 확인 예정.
+- **Evidence**:
+  - **Source**: `registry.json`의 stories `registry:ui` 및 reel `registry:block` 항목; `apps/docs/lib/docs.ts`, `apps/docs/components/item-page.tsx`.
+  - **Test/Log**: 실제 브라우저에서 dialog=1, social link visible, reel preview=1, 설치 명령 표시 확인.
+- **Consequences**: Reel 페이지는 Blocks 그룹에 남고, Stories 페이지에서는 Social 관련 항목으로 접근 가능하다.

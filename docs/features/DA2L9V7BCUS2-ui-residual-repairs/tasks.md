@@ -91,14 +91,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-DA2L9V7BCUS2-ui-residual-repairs-02 Clarify Stories and Reel and expose Reel in Social navigation
+- [DONE][PRD-FR-008] T-DA2L9V7BCUS2-ui-residual-repairs-02 Clarify Stories and Reel and expose Reel in Social navigation
   - Date: 2026-09-28
   - Acceptance:
     - The Social navigation shows Reel beside Stories with a working /blocks/reel link, and docs accurately distinguish the thumbnail story dialog from the short-video feed.
   - Checklist:
-    - [ ] Inspect the registry types, both live demos and current navigation grouping.
-    - [ ] Update navigation and item guidance without duplicating the Reel registry item or breaking the Blocks route.
-    - [ ] Verify Stories dialog, Reel feed, social navigation and install commands in browser.
+    - [x] Inspect the registry types, both live demos and current navigation grouping.
+    - [x] Update navigation and item guidance without duplicating the Reel registry item or breaking the Blocks route.
+    - [x] Verify Stories dialog, Reel feed, social navigation and install commands in browser.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
