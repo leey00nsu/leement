@@ -163,15 +163,17 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-06 Reconstruct image, media, finance and social items
+- [DONE][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-06 Reconstruct image, media, finance and social items
   - Date: 2026-09-27
   - Acceptance:
     - ImageCrop, ImageZoom, CreditCard, Ticker, Stories, Reel and VideoPlayer present complete, responsive visual states and useful controls.
     - Media controls preserve named keyboard actions and reduced-motion behavior.
   - Checklist:
-    - [ ] Inspect live preview with supplied media and compare the corresponding Kibo anatomy.
-    - [ ] Correct source/examples and relevant tests.
-    - [ ] Record seven item-level verdicts and visual evidence.
+    - [x] Inspect live preview with supplied media and compare the corresponding Kibo anatomy.
+    - [x] Correct source/examples, token/theme, relevant tests and docs workbench together; verify the shared media rules.
+    - [x] Record seven item-level verdicts and visual evidence.
+  - Docs:
+    - docs:designs/design-system.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

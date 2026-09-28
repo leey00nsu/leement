@@ -95,10 +95,11 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 - **Context**: 초기 감사에서 ImageCrop은 이미지가 0×0으로 표시되는 P1, Reel은 정적인 추상 poster가 중심인 P2였다. Kibo Stories는 trigger 집합에서 viewer로 진입하지만 Leement는 곧바로 열린 viewer만 보여 준다. CreditCard의 칩/브랜드 구조와 Ticker의 밀도도 다르다.
 - **Constraints**: 영상/이미지 URL과 콘텐츠는 소비자 또는 docs 예제가 제공한다. Leement source는 결제·시세 fetch·업로드를 하지 않고, 키보드 명령과 reduced motion을 보존한다.
-- **Options**: 조사 후 확정한다.
-- **Decision**: 조사 중.
-- **Rationale**: 조사 중.
+- **Options**: ① 얕은 poster 예제만 교체한다. ② 이미지 영역·Story 진입·Reel 정보 계층·카드/시세 형태의 실제 source 결함을 교정하고 docs에 독립 제작한 재생 가능한 영상과 상태 예제를 제공한다. ③ Kibo 소스와 원격 자산을 그대로 옮긴다.
+- **Decision**: ②를 선택했다. ImageCrop의 이미지 크기, Stories의 trigger gallery→Radix viewer, Reel의 9:16 영상/진행/overlay, CreditCard의 구조, Ticker의 기본 inline 요약을 수정했다. 앱 제공 미디어와 기존 ImageZoom/VideoPlayer 제어를 실제 재생/확대 상태로 검증했다. 영상 위 텍스트/스크림에는 브랜드색 대신 새 `media.foreground`/`media.scrim` 의미 토큰을 사용한다.
+- **Rationale**: poster만 바꾸면 0×0 crop과 Story 진입 방식, Reel의 시각 계층이 그대로 남는다. Kibo의 원격 데모 영상과 브랜드를 복사할 필요 없이 Leement의 원본 영상으로 동일한 미디어 구조와 조작을 검증할 수 있다. 앱에서 자산·데이터를 공급하는 public 계약과 source ownership은 유지한다.
 - **Trace**:
   - **DOING 시작 시점**: Kibo 공개 화면과 고정 source를 대조하고, docs 로컬 SVG/MP4의 실제 크기·재생 상태를 브라우저에서 측정한다. Story trigger/viewer, Reel 영상, ImageCrop 이미지 영역을 우선한다.
-- **Evidence**: [초기 감사표](./artifacts/catalog-visual-audit.md), [Kibo Reel source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/reel/index.tsx)
-- **Consequences**: 바뀌는 공개 사용 경로는 docs metadata와 변경 기록에 반영한다.
+  - **DONE 전 확정 시점**: 7개 item × light/dark × 1440/390px 28개 preview가 모두 HTTP 200이고 stage/body overflow 또는 browser exception이 없었다. ImageCrop 이미지 478×358.5px, Stories 영상 readyState 4/540px와 Escape 초점 복귀, Reel 영상 540×960px 재생·방향키 이동·음소거, VideoPlayer 4초 메타데이터·탐색·음소거를 브라우저에서 확인했다. Reduced motion에서 Reel은 0초에 멈췄고 수동 재생만 허용했다. 모바일 어두운 Story/ImageZoom 열린 상태도 화면 안에 들어갔다. 테스트, registry build, typecheck, lint를 통과했다.
+- **Evidence**: [7개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-06-image-media-finance-and-social-recheck), [Kibo Reel source](https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/packages/reel/index.tsx), [Stories mobile](./artifacts/previews/stories-dark-390-open-after.png), [Reel mobile](./artifacts/previews/reel-dark-390-after.png)
+- **Consequences**: `Stories` 기본 presentation은 trigger gallery가 되며 이전 임베디드 viewer를 원하면 `presentation="viewer"`를 명시한다. `StoryItem.poster`, CreditCard `network`, Ticker `layout`은 선택적 API다. 새 토큰은 `packages/tokens`→`@leement/theme` CSS→registry source 및 디자인 규칙으로 동기화했다. 문서 metadata를 수정했고 통합 changelog은 Task 09에서 갱신한다. 실제 소비자 설치는 Task 10에서 확인한다. Kibo 원격 자산은 포함하지 않으며 docs 영상은 Leement용 code-native 시안의 로컬 화면 녹화로 제작했다.
