@@ -51,3 +51,16 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
   - **DONE 전 확정 시점**: Chromium에서 여섯 페이지의 입력을 열었고 color 전경/배경 변경, 저대비 경고, light/dark 분리, CSS 복사, spacing·radius·shadow·motion의 실제 computed style 변화를 확인했다. 390px에서 가로 스크롤이 없고 키보드 range 조작이 반영됐다. `pnpm --filter @leement/docs typecheck`, `pnpm lint`, focused Vitest 3개가 통과했다.
 - **Evidence**: `apps/docs/components/foundation-editor.tsx`, `apps/docs/app/foundations/[slug]/page.tsx`, `packages/theme/build.mjs`; 위 Chromium 검증 및 focused 검사 로그.
 - **Consequences**: theme 생성 CSS와 docs preview가 같은 기본값을 사용한다. 색상은 현재 모드, 나머지는 두 모드의 공통 편집값이다.
+
+## D003: 최종 동작과 소비자 CSS 재현 검증 (2026-09-28)
+
+- **Context**: 편집기 내부에서 값이 바뀌는 것만으로는 복사 CSS와 실제 설치 환경의 일치, 모드·저장·접근성 계약을 확인할 수 없다.
+- **Constraints**: Plan Verification Contract의 실제 Chromium, 별도 소비자, 기존 전체 검사로 검증한다. 문서 전용 복제 컴포넌트나 영속 테스트 인프라를 추가하지 않는다.
+- **Options**: docs의 CSS만 확인, copied CSS를 별도 Tailwind 소비자에 컴파일해 비교.
+- **Decision**: 실제 브라우저의 여섯 route와 별도 Tailwind 소비자에 복사 CSS를 적용해 computed style을 확인했다. 변동값과 기본값 분리, light/dark 격리, 저장·초기화, 접근성 피드백과 전체 체크를 완료했다.
+- **Rationale**: 복사 문자열 자체가 유효해도 Tailwind와 theme의 실제 utility가 다른 값을 읽을 수 있으므로 소비자 computed style이 완료 기준이다.
+- **Trace**:
+  - **DOING 시작 시점**: 여섯 Foundation route와 외부 소비자에 같은 CSS를 적용해 computed style을 비교한다. 이전 수동 확인에서 첫 입력의 저장 복원 경합을 발견해 편집기 활성화 시점을 수정했으므로 reload 직후 입력도 확인한다.
+  - **DONE 전 확정 시점**: Chromium에서 light 배경 `#202020` 변경 후 dark 배경 `#111113` 유지, 저대비 1.0:1 경고, route 이동과 reload 후 spacing Button 108px 유지, reset 후 기본 배경 `#ffffff`·localStorage 제거를 확인했다. Georgia 글꼴, radius 48px, shadow 0 12px 36px, motion 1s, reduced motion 0s, 390px 모바일 가로 overflow 없음, range 방향키·focus outline, 잘못된 색상 거부와 복사 실패 피드백을 확인했다. 별도 Tailwind/PostCSS 소비자에 복사 CSS를 넣자 height 60px, font 20px/500/40px, radius 16px, shadow 12px 36px, primary `rgb(18,52,86)`, body `rgb(250,245,240)`, duration 0.3s 및 dark primary `rgb(171,205,239)`가 재현됐다. `pnpm check`는 build/typecheck/lint 및 12개 파일의 69개 테스트를 통과했다.
+- **Evidence**: `pnpm check` 성공, [Feature 태스크 검증 기록](./tasks.md), 위 Chromium computed style 및 독립 소비자 결과.
+- **Residual risks**: 테마 편집값은 브라우저 localStorage에 저장되므로 첫 HTML 페인트 뒤 클라이언트 복원 시 짧은 기본 테마 표시가 가능하다. 다만 편집 제어는 복원 완료 뒤 활성화되어 첫 조작은 유실되지 않는다. 복사 CSS 적용은 소비자 CSS import 순서를 따라야 한다.

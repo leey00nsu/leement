@@ -109,15 +109,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-03 Verify site-wide behavior and copied CSS in a consumer
+- [DONE][PRD-FR-013] T-WPZ86NFQPD8D-live-foundations-editor-03 Verify site-wide behavior and copied CSS in a consumer
   - Date: 2026-09-28
   - Acceptance:
     - Browser evidence covers all six categories, route/reload persistence, reset, both modes, mobile, focus and reduced motion; copied CSS reproduces representative values outside docs.
     - Configured repository typecheck, lint, tests and build all pass with current code and documentation.
   - Checklist:
-    - [ ] Check computed styles and usable controls in desktop/mobile browser; compare before/after and retained values after route/reload.
-    - [ ] Apply copied CSS after `@leement/theme` in an isolated consumer and compare representative roles/sizes/shadows/motion.
-    - [ ] Run configured checks, record real residual risks, synchronize Feature docs and workflow marker.
+    - [x] Check computed styles and usable controls in desktop/mobile browser; compare before/after and retained values after route/reload.
+    - [x] Apply copied CSS after `@leement/theme` in an isolated consumer and compare representative roles/sizes/shadows/motion.
+    - [x] Run configured checks, record real residual risks, synchronize Feature docs and workflow marker.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -136,8 +136,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -152,6 +152,7 @@
 | `pnpm lint` | 2026-09-28 | PASS — docs and registry |
 | `pnpm --filter @leement/docs typecheck` | 2026-09-28 | PASS — docs editor and theme integration |
 | `pnpm build:theme` | 2026-09-28 | PASS — generated theme aliases |
+| `pnpm check` | 2026-09-28 | PASS — build, typecheck, lint, 12 files / 69 tests |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
