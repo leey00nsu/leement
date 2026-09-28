@@ -108,10 +108,11 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 - **Context**: 초기 감사에서 일부 콘텐츠 항목은 단일 placeholder나 짧은 예제로 Kibo 대응 구조와 CopySinger/Leesfield의 제품 사용성을 확인하기 어렵다. 특히 Deck, DialogStack, Editor, Glimpse, Marquee, Tree는 열린·실행 상태가 초기 캡처에 드러나지 않는다.
 - **Constraints**: Leement source는 제품별 문구·콘텐츠를 소유하지 않고 token·키보드·reduced-motion 규칙을 따른다. upstream의 브랜딩과 도메인 데이터를 그대로 복사하지 않는다.
-- **Options**: 고정 Kibo source, 공개 데모 및 두 제품의 사용 사례를 확인한 뒤 확정한다.
-- **Decision**: 조사 중.
-- **Rationale**: 조사 중.
+- **Options**: ① 기존 단일 문장 예제를 유지하고 source는 그대로 둔다. ② Kibo 대응 구조 중 실제로 빠진 편집·탭·상태를 보강하고, source가 충분한 항목은 실제 콘텐츠/상태를 가진 예제로 검증한다. ③ upstream의 복합 API와 문구를 통째로 복사한다.
+- **Decision**: ②를 선택했다. CodeBlock에는 파일/예제 선택·구문색을, Sandbox에는 Code/Preview/Console 탭을, Pill에는 상태 tone과 cue를, Banner에는 강조 강도를, Editor에는 heading/quote 편집을 추가했다. DialogStack의 예제는 입력을 보존하는 3단계로 바꾸고, Tree·Typography·RelativeTime을 실제 정보 계층으로 시연했다. Marquee의 reduced motion 제어와 Glimpse의 링크 affordance도 수정했다. 나머지는 source를 유지하며 실제 조작으로 확인했다.
+- **Rationale**: 문제의 일부는 component anatomy 결여이고 일부는 단순 placeholder 예제였다. 기능 없는 큰 upstream surface보다 실제 앱에서 가져다 쓸 수 있는 작은 source를 유지한다. CodeBlock의 구문색은 Leement token이 결정하고 `highlight.js`는 parser 역할만 한다. Sandbox는 좁은 화면에 세 화면을 나란히 놓을 수 없어 탭으로 구분한다. Pill은 Kibo의 상태 표현을 수용하면서 제거 가능한 값이라는 기존 사용 사례도 유지한다.
 - **Trace**:
   - **DOING 시작 시점**: 20개 항목의 실제 docs preview를 네 모드로 재촬영하고, 동적 항목의 열린·실행 상태를 분리해 검사한다. 원본에 있는 anatomy를 예제만 보강해서 표현할 수 있는지와 source 결함인지 구분한다.
-- **Evidence**: [초기 감사표](./artifacts/catalog-visual-audit.md), [Kibo source 기준](https://github.com/shadcnblocks/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263)
-- **Consequences**: 바뀐 public API와 사용 규칙은 docs metadata 및 Task 09 changelog에 반영한다.
+  - **DONE 전 확정 시점**: 20개 item × light/dark × 1440/390px 80개 preview가 HTTP 200이고 stage/body overflow나 browser exception이 없었다. CodeBlock sample 전환, Snippet 방향키, Sandbox 탭과 실행 버튼, DialogStack 3단계 입력 보존, Editor 실제 문서, Tree 방향키·선택, Marquee pause/reduced motion, Pill 제거, ThemeSwitcher 토글 등 주요 조작을 브라우저에서 확인했다. QRCode는 192px SVG와 label만 검증했고 실제 카메라 스캔은 검증하지 않았다. Dev server 로그에서 reduced motion으로 진입한 RevealContent의 server/client motion style 불일치를 발견해 Task 09 hydration 체크에 추가했다. `pnpm registry:build`, docs TypeScript 검사, lint, 관련 Vitest 30개가 통과했다. 소비자 설치는 Task 10에서 확인한다.
+- **Evidence**: [20개 항목의 재검증표](./artifacts/catalog-visual-audit.md#task-07-content-and-utility-recheck), [Kibo source 기준](https://github.com/shadcnblocks/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263), [CodeBlock mobile](./artifacts/previews/code-block-dark-390-after.png), [Sandbox mobile](./artifacts/previews/sandbox-dark-390-after.png), [Editor mobile](./artifacts/previews/editor-dark-390-after.png)
+- **Consequences**: CodeBlock의 `samples`/구문색은 `highlight.js` registry dependency와 semantic syntax roles를 요구한다. Sandbox의 기본 `showConsole`은 true가 되고 preview가 기본 탭이다. Banner의 기본 tone은 prominent이며 기존 낮은 강조에는 `tone="subtle"`을 쓴다. Pill의 `tone`·`trailing`은 선택적이다. public API와 사용 규칙은 docs metadata와 `docs/designs/design-system.md`에 반영했고 Task 09 changelog에서 통합 변경 안내를 제공한다.

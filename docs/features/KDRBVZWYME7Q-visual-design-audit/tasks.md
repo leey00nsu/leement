@@ -180,15 +180,17 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-07 Reconstruct content and utility components
+- [DONE][PRD-FR-007] T-KDRBVZWYME7Q-visual-design-audit-07 Reconstruct content and utility components
   - Date: 2026-09-27
   - Acceptance:
     - CodeBlock, Snippet, Sandbox, Announcement, Banner, Typography, Comparison, Deck, DialogStack, Editor, Glimpse, Marquee, Pill, QRCode, RelativeTime, ThemeSwitcher and Tree meet their documented anatomy and light/dark/mobile states.
     - Leement-only BrandGradientText, RevealContent and Collapsible maintain the shared token and motion rules.
   - Checklist:
-    - [ ] Inspect Kibo cases where mapped and product/design references for Leement-only items.
-    - [ ] Correct source/examples and relevant tests without cloning upstream branding.
-    - [ ] Record all item-level verdicts and visual evidence.
+    - [x] Inspect Kibo cases where mapped and product/design references for Leement-only items.
+    - [x] Correct source/examples and relevant tests without cloning upstream branding.
+    - [x] Record all item-level verdicts and visual evidence.
+  - Docs:
+    - docs:designs/design-system.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -218,6 +220,7 @@
   - Checklist:
     - [ ] Review 79 docs routes, preview/source parity and applicable states.
     - [ ] Resolve the ImageCrop `react-image-crop` server/client ID hydration mismatch observed during Task 06 preview logging; recheck its visible crop controls after hydration.
+    - [ ] Resolve the RevealContent server/client motion style mismatch observed with reduced motion during Task 07 preview logging; recheck its visible text and animation state after hydration.
     - [ ] Update item guidance/changelog and durable design rules for changed APIs or rules.
     - [ ] Recheck all four light/dark and desktop/mobile combinations, audit table and representative after images.
   - Docs:
