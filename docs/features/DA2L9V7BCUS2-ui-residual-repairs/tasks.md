@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/DA2L9V7BCUS2-ui-residual-repairs`
 - **대기 중 변경 요청**: -
@@ -74,6 +74,82 @@
 > 수동 편집이 필요하면 현재 태스크 근처가 아니라 `태스크 목록`의 마지막 기존 태스크 block 아래에만 append 하세요.
 
 ---
+
+- [DONE][PRD-FR-007] T-DA2L9V7BCUS2-ui-residual-repairs-01 Restore Slider geometry and value interaction
+  - Date: 2026-09-28
+  - Acceptance:
+    - Single and range Slider tracks, fill and thumbs render with nonzero geometry in both orientations and retain keyboard/pointer/disabled behavior.
+  - Checklist:
+    - [x] Confirm Base UI orientation attributes and reproduce the broken track in a real browser.
+    - [x] Repair registry Slider and source-backed example; update the existing interaction test only where the contract changed.
+    - [x] Verify desktop/mobile light/dark, focus and disabled states; sync the durable Slider design rule.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-008] T-DA2L9V7BCUS2-ui-residual-repairs-02 Clarify Stories and Reel and expose Reel in Social navigation
+  - Date: 2026-09-28
+  - Acceptance:
+    - The Social navigation shows Reel beside Stories with a working /blocks/reel link, and docs accurately distinguish the thumbnail story dialog from the short-video feed.
+  - Checklist:
+    - [ ] Inspect the registry types, both live demos and current navigation grouping.
+    - [ ] Update navigation and item guidance without duplicating the Reel registry item or breaking the Blocks route.
+    - [ ] Verify Stories dialog, Reel feed, social navigation and install commands in browser.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-DA2L9V7BCUS2-ui-residual-repairs-03 Add Marquee edge fade and circular source-backed preview
+  - Date: 2026-09-28
+  - Acceptance:
+    - Both Marquee edges fade on light and dark surfaces, the default docs preview shows circular items, and pause/reduced-motion preserves readable content.
+  - Checklist:
+    - [ ] Compare the user image and pinned Kibo source against the installed Leement Marquee API.
+    - [ ] Apply a background-independent fade to the moving track and create a local circular example without remote assets.
+    - [ ] Check pause, hover, reduced motion, mobile clipping and assistive-tech duplicate hiding; sync durable design guidance.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005] T-DA2L9V7BCUS2-ui-residual-repairs-04 Ship accessible segmented Tabs and align the docs workbench
+  - Date: 2026-09-28
+  - Acceptance:
+    - The installable Tabs source can render the wide Code/Preview selection; the workbench uses it; selected indicators exceed 3:1 adjacent contrast in light and dark while keyboard and focus behavior pass.
+  - Checklist:
+    - [ ] Measure current selected-surface, text and border contrast and inspect Base UI tab states.
+    - [ ] Add a small segmented variant, migrate workbench from Radix duplicate and update the Tabs example and API guidance.
+    - [ ] Verify keyboard, focus, both themes and mobile; sync Tabs design rule and assess token/theme impact explicitly.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-009] T-DA2L9V7BCUS2-ui-residual-repairs-05 Verify registry delivery and full feature checks
+  - Date: 2026-09-28
+  - Acceptance:
+    - Updated Slider, Marquee and Tabs install through shadcn CLI into a Tailwind v4 consumer, typecheck/build, and all configured feature checks pass.
+  - Checklist:
+    - [ ] Build registry and install changed aliases in a clean consumer; compare delivered source and compile representative usage.
+    - [ ] Run pnpm typecheck, lint, test and build; inspect docs preview and record the real residual risks.
+    - [ ] Synchronize feature evidence and final workflow marker before the implementation approval boundary.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
 
 ## Repository Knowledge (완료 비차단)
 

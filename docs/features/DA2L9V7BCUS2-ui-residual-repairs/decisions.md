@@ -23,19 +23,18 @@ canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `doc
 
 ---
 
-## D001: ui-residual-repairs 결정 (2026-09-28)
+## D001: Slider orientation selector와 실제 DOM 동기화 (2026-09-28)
 
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: Slider 트랙과 제어 영역 높이가 0px으로 렌더되어 thumb·선택 구간이 화면에 표시되지 않았다.
+- **Constraints**: Base UI의 값·키보드·포인터·접근성 동작과 공개 Slider API를 유지한다.
+- **Options**: 자체 Slider 레이아웃/입력을 다시 구현하거나, Base UI의 현재 DOM 속성에 맞는 CSS 선택자를 쓴다.
+- **Decision**: root/control/track/indicator의 방향 선택자를 `data-[orientation=horizontal|vertical]`로 맞추고 source-backed 예제에 세로·disabled 사례를 더한다.
+- **Rationale**: Base UI가 실제로 `data-orientation`을 출력하므로 CSS만 고치면 상호작용 엔진을 유지하면서 가로·세로 크기를 회복한다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+  - **DOING 시작 시점**: `data-horizontal`/`data-vertical` CSS와 Base UI 출력 속성이 불일치하는 것으로 판단했다.
+  - **DONE 전 확정 시점**: 브라우저에서 수정 전 가로 track 384×0px, 수정 후 384×4px, 세로 track 4×160px을 측정했다. 가로 단일·범위 thumb, 키보드 35→36, 포인터 36→81, disabled 35 유지, light/dark 및 1440/390px을 확인했다.
+  - **머지 후 확인**: 병합 후 확인 예정.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - **Screenshots**: [수정 전](./artifacts/slider-before.png), [수정 후](./artifacts/slider-after.png)
+  - **Test/Log**: `pnpm exec vitest run registry/ui/source-extension.test.tsx` — 7 tests passed; 실제 브라우저 DOM geometry 및 입력 확인.
+- **Consequences**: 디자인 문서에 Base UI `data-orientation` 및 세로 높이 계약을 기록했다. token/theme은 바뀌지 않았다.
