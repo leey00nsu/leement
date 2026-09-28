@@ -197,15 +197,17 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-KDRBVZWYME7Q-visual-design-audit-08 Reconstruct patterns and remaining blocks
+- [DONE][PRD-FR-008] T-KDRBVZWYME7Q-visual-design-audit-08 Reconstruct patterns and remaining blocks
   - Date: 2026-09-27
   - Acceptance:
     - PageHeader, EmptyState, FormSection, SearchField, StatCard, StatePanel, ProductPageIntro, ResourceRowLink, FilterToolbar, SettingsSection and BentoGrid use corrected primitives and preserve product hierarchy.
     - All pattern/block dependency metadata installs required source automatically.
   - Checklist:
-    - [ ] Inspect desktop/mobile and light/dark compositions plus states.
-    - [ ] Correct source/examples, registry dependency metadata and relevant tests.
-    - [ ] Record all item-level verdicts and visual evidence.
+    - [x] Inspect desktop/mobile and light/dark compositions plus states.
+    - [x] Correct source/examples, registry dependency metadata and relevant tests.
+    - [x] Record all item-level verdicts and visual evidence.
+  - Docs:
+    - docs:designs/design-system.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -221,6 +223,8 @@
     - [ ] Review 79 docs routes, preview/source parity and applicable states.
     - [ ] Resolve the ImageCrop `react-image-crop` server/client ID hydration mismatch observed during Task 06 preview logging; recheck its visible crop controls after hydration.
     - [ ] Resolve the RevealContent server/client motion style mismatch observed with reduced motion during Task 07 preview logging; recheck its visible text and animation state after hydration.
+    - [ ] Replace docs-only link text uses of `brand.focus` with the contrast-safe `brand.text` role where appropriate; keep focus rings on `brand.focus`.
+    - [ ] Recheck the full catalog with an isolated fresh page for each route so manual theme switching cannot contaminate hydration evidence between routes.
     - [ ] Update item guidance/changelog and durable design rules for changed APIs or rules.
     - [ ] Recheck all four light/dark and desktop/mobile combinations, audit table and representative after images.
   - Docs:

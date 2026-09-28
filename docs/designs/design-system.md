@@ -24,7 +24,7 @@ CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 �
 
 ### 브랜드 역할
 
-`--lm-color-brand-accent`와 `--lm-color-brand-accent-foreground`는 데이터 강조 표면과 전경, `--lm-color-brand-focus`는 키보드 포커스 링을 정한다. `--lm-color-brand-gradient-start/middle/end`는 강조 텍스트와 선택적 브랜드 Skeleton이 공유한다. `--lm-color-data-accent`와 `--lm-color-focus-ring`은 각각 브랜드 역할을 참조하므로 앱이 `@leement/theme` import 뒤에 브랜드 변수만 덮어쓰면 관련 컴포넌트가 함께 바뀐다. light와 dark를 별도로 지정한다. 사용 예제는 docs의 Foundations → Color에 두며, 각 앱에서 focus 가시성·텍스트 대비를 확인한다.
+`--lm-color-brand-accent`와 `--lm-color-brand-accent-foreground`는 데이터 강조 표면과 그 위의 전경, `--lm-color-brand-text`는 보통 배경 위에 직접 놓는 작은 브랜드 문구와 선택된 필터의 텍스트, `--lm-color-brand-focus`는 키보드 포커스 링을 정한다. 채워진 강조 표면의 전경을 일반 배경의 글자색으로 재사용하지 않는다. `--lm-color-brand-gradient-start/middle/end`는 강조 텍스트와 선택적 브랜드 Skeleton이 공유한다. `--lm-color-data-accent`와 `--lm-color-focus-ring`은 각각 브랜드 역할을 참조하므로 앱이 `@leement/theme` import 뒤에 브랜드 변수만 덮어쓰면 관련 컴포넌트가 함께 바뀐다. `brand.text`도 앱이 두 모드에서 각각 정해야 한다. 사용 예제는 docs의 Foundations → Color에 두며, 각 앱에서 focus 가시성·텍스트 대비를 확인한다.
 
 CopySinger의 gradient text·음성 파형·오디오 로딩은 violet/blue/pink 조합을 사용한다. Leesfield는 blue/highlight 조합을 gradient text·앱 Skeleton·선택 상태에 사용한다. 양쪽 기본 Skeleton은 중립 `bg-muted`이므로 Leement도 기본 `Skeleton`은 중립이고 `variant="brand"`는 제품 정체성이 도움이 되는 로딩 구간에만 쓴다. `BrandGradientText`는 짧은 제품 문구에만 사용한다. 반복 움직임은 `prefers-reduced-motion: reduce`에서 멈춘다.
 - Typography: Pretendard 우선의 sans, 읽기 쉬운 14–16px 본문, 18–24px 제목을 기본으로 한다. 의미 없는 display type은 추가하지 않는다. theme은 font stack만 정의하므로 소비자 앱은 Pretendard 파일 또는 신뢰하는 CDN을 직접 로드하고 폴백 동작을 확인한다.
@@ -57,7 +57,7 @@ Announcement는 짧은 제품 소식과 링크, Banner는 설명과 주요 actio
 
 Pill은 짧은 상태 신호와 사용자가 제거할 수 있는 값에 쓴다. neutral/success/warning/danger는 의미 텍스트와 함께 쓰고, 선택적인 앞·뒤 cue는 라벨을 대체하지 않는다. 지속적인 객체 상태는 Status, 잠시 진행 중인 일은 Spinner로 표현한다. 각각 Badge, StatusNotice, Progress와 쓰임을 섞지 않는다. QRCode는 실제 SVG 행렬과 같은 값을 복사할 수 있는 제어를 제공하며 짧은 비밀값을 노출하지 않는다. Rating은 radio 의미와 방향키 선택을 유지한다. RelativeTime은 상대 문구와 절대 시각을 함께 제공하고 필요할 때 분 단위로 갱신한다. ThemeSwitcher는 `data-lm-theme`의 light/dark 두 모드만 전환하며 앱이 이미 모드를 관리하면 controlled prop으로 연결한다. Tree는 계층·확장·선택 상태를 보조기술에 전달하고 방향키/Home/End로 이동한다.
 
-EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담는다. PageHeader는 페이지 제목, 설명, action을 결합한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
+EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담고, 실제 클릭 결과는 앱이 연결한다. PageHeader는 페이지 제목, 설명, 한두 개의 action을 결합하며 작은 화면에서 action을 감싼다. FormSection과 SettingsSection은 서로 관련된 여러 필드와 각 필드 라벨을 보여야 한다. SearchField는 인접한 결과 목록·결과 수와 연결하고, FilterToolbar는 검색·선택 필터·정렬과 결과 수를 함께 보여 준다. ProductPageIntro의 eyebrow는 일반 표면에서 `brand.text`를 사용한다. BentoGrid는 실제 제품 정보를 담는 article을 배치하고 제목을 읽을 수 있는 크기로 유지한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
 
 ## 접근성과 반응형
 
