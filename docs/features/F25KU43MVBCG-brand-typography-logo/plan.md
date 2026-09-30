@@ -1,137 +1,99 @@
-# Implementation Plan: brand-typography-logo
-
-> 스펙이 승인된 후 작성합니다.
-> canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 아키텍처/파일/테스트 내용은 이 파일로 흡수하고 최종 SSOT는 여기로 유지합니다.
-
----
+# Implementation Plan: 기본 폰트와 브랜드 로고
 
 ## 개요
 
 - **기능 ID**: F25KU43MVBCG
 - **대상 레포**: Leement
 - **작성일**: 2026-09-30
-- **상태**: -
-  - 값: Draft | Review | Approved
+- **상태**: Approved
 - **Plan 검수**: Pending
-  - 값: Pending | Running | Done
 - **Plan 검수 Evidence**: -
-  - 예: `docs/features/F001-foo/decisions.md` 또는 docs 루트 아래의 실제 리뷰 산출물
 - **Plan 검수 Decision**: -
-  - 형식: `결정: approve|changes_requested|blocked ...` 또는 `decision: ...`
 - **Plan 검수 Round**: -
-  - `workflow-stage --json`이 반환한 양의 정수이며 첫 리뷰는 `1`
 - **Plan 검수 Spec Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `specHash`
 - **Plan 검수 Plan Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `planHash`
 
----
+## 기술 스택과 접근
 
-## 기술 스택
+기존 JSON tokens, CSS theme 빌드, Tailwind v4, React registry, Next.js docs를 사용한다. 추가 npm UI 라이브러리·폰트 관리 엔진은 만들지 않는다.
 
-| 구분 | 선택 | 이유 |
-| ---- | ---- | ---- |
+1. primitive typography.family에 brand(Paperlogy + sans fallback)를 추가하고 theme의 font-brand를 연결한다. Pretendard Variable과 Paperlogy Bold 700 WOFF2, 원저작자·라이선스 고지를 theme 자산으로 보관한다. 기존 theme build가 자산을 dist/fonts로 복사하고 CSS의 상대 URL font-face로 로드한다. 번들러는 import된 CSS의 자산 URL을 처리한다. 외부 CDN과 next/font에 묶이지 않는다.
+2. BrandLogo는 mark/name을 받는 span pattern으로 만들고 full/icon과 sm/md/lg만 제공한다. icon-only는 이름을 가진 이미지 역할을, full은 장식 mark와 visible name을 사용한다. native anchor/Next Link composition은 소비자가 맡는다. font-brand 700, 의미 전경, 간격·크기·tracking 규칙을 사용하고 candidate로 노출한다.
+3. Leement 마크는 제공 SVG 그대로 public SVG 자산 한 개에서 읽는다. 헤더와 실제 registry 예제는 같은 자산을 사용하는 BrandLogo를 조합하고 favicon도 같은 SVG를 가리킨다. 별도 표면별 로고 source 복사본을 만들지 않는다.
+4. Typography 편집 모델에 브랜드 family를 추가한다. 기본 family 선택과 안전한 custom family 입력을 지원하며 실제 로딩은 기본 폰트 또는 앱의 font-face 책임임을 설명한다. 허용된 font-family 문법만 저장하고 임의 CSS 주입을 거부한다. 기존 provider·CSS export와 저장키를 재사용한다.
+5. Typography 미리보기는 본문·mono·BrandLogo를 함께 보여 준다. Getting Started, Typography, BrandLogo 문서 및 PRD/design-system을 실제 계약에 맞춘다. registry metadata·source dependency·예제·탐색을 기존 경로에 연결한다.
 
----
+## 주요 파일
 
-## 아키텍처
-
-(컴포넌트 구조, 데이터 흐름)
-
----
-
-## 파일 구조
-
-```
-src/
-├── ...
-```
-
----
+- packages/tokens/src/tokens.json
+- packages/theme/build.mjs, packages/theme/package.json, packages/theme/fonts/*
+- registry/patterns/brand-logo.tsx, registry/patterns/composition.test.tsx
+- registry.json
+- apps/docs/public/leement-mark.svg
+- apps/docs/app/layout.tsx, apps/docs/app/getting-started/page.tsx
+- apps/docs/app/foundations/[slug]/page.tsx
+- apps/docs/components/foundation-editor.tsx
+- apps/docs/lib/foundation-preview.ts, apps/docs/lib/foundation-preview.test.ts
+- apps/docs/lib/items.ts, apps/docs/components/previews.tsx, apps/docs/examples/brand-logo.tsx
+- docs/prd/leement-prd.md, docs/designs/design-system.md
 
 ## Curated Documentation Impact
 
-README 보호와 보조 산출물 위치는 `agents` 문서의 해당 규칙을 우선합니다. README 불일치는 수정 요청이 없으면 `decisions.md`의 경로·근거·보류 사유를 참조하는 `NONE`으로 기록할 수 있으며, 이 예외에 별도 후속 항목이나 수정 승인을 요구하지 않습니다. 보존할 Feature 보조 산출물은 활성 Feature의 `artifacts/`에 저장하고 상대경로로 연결합니다.
-
-발견한 문서 불일치는 `decisions.md`에만 남기고 종료하지 않습니다. 현재 사실의 명백한 오류가 승인 범위 안에 있으면 `UPDATE`/`ADD`와 task `Docs`로 연결합니다. 제품 의도 확인이나 범위 확장이 필요하면 충돌한 문서 경로·근거, 확인할 질문, 보류 이유와 실제 후속 task/Feature/issue 참조를 기록합니다. 없는 번호나 승인을 만들지 않습니다. 추적 항목 생성에 승인이 필요하면 사용자 확인 전 해결된 것으로 기록하지 않습니다. `NONE`의 근거에는 알려진 불일치가 없거나, 남은 불일치가 해당 후속 항목으로 추적되고 있음을 설명합니다. 코드나 OpenWiki에 맞추기 위해 미구현 PRD 요구를 삭제하지 않습니다.
-
-> 모든 결정이 `NONE`이어도 영향 판정을 완료합니다. `NONE`은 사람이 관리하는 상위 문서를 검토했지만 변경할 필요가 없다는 뜻입니다. 생성형 OpenWiki 동기화는 별도로 판정합니다.
-
 - **Schema**: 2
-- **Assessment**: Pending
-  - 값: Pending | Complete
-- **Product requirements**: -
-  - 값: NONE | UPDATE | ADD
-- **System architecture**: -
-  - 값: NONE | UPDATE | ADD
-- **Onboarding entrypoint**: -
-  - 값: NONE | UPDATE | ADD
-- **Operational/runtime contract**: -
-  - 값: NONE | UPDATE | ADD
-- **Reason**: -
-- **Targets**: -
-  - UPDATE 또는 ADD가 하나라도 있으면 쉼표로 구분한 `docs:<path>`와 `project:<path>` 대상을 기록합니다.
-  - `docs:<path>`는 설정된 docs 디렉터리 기준이고 `project:<path>`는 프로젝트 저장소 루트 기준입니다. 루트 이름을 반복하지 마세요(예: `docs:docs/agents/constitution.md`가 아니라 `docs:agents/constitution.md`).
-  - 모든 대상은 task `Docs` 목록에 연결하고 Feature 리뷰 전에 활성 Feature scope로 커밋합니다.
-
----
+- **Assessment**: Complete
+- **Product requirements**: UPDATE
+- **System architecture**: NONE
+- **Onboarding entrypoint**: NONE
+- **Operational/runtime contract**: NONE
+- **Reason**: PRD-FR-002/011/013에 실제 폰트 배포·역할별 설정·로고 규칙을 명시한다. 기존 token→theme→registry 계층과 공개 배포 운영은 유지한다. 공개 Getting Started는 업데이트한다. 기존 README는 요청이 없어 보호하며 발견된 불일치는 decisions D002로 기록한다.
+- **Targets**: docs:prd/leement-prd.md
 
 ## Additional Curated Impacts
 
-> constitution/custom, 디자인 시스템, API·데이터, 보안, 배포, 관측성처럼 조건부로 존재하는 상위 문서를 판정합니다. 해당 영향이 없으면 `Decision: NONE`을 명시하고 표는 비워 둡니다.
-
-- **Assessment**: Pending
-- **Decision**: -
-  - 값: NONE | DECLARED
+- **Assessment**: Complete
+- **Decision**: DECLARED
 
 | Kind | Decision | Target | Reason |
-| ---- | -------- | ------ | ------ |
-| -    | -        | -      | -      |
-
-허용 Kind: `engineering-agent-policy`, `design-system-ux`, `api-data-contract`, `security-privacy`, `release-deployment`, `observability`, `other-curated`
-
-`DECLARED` 행의 Decision은 `UPDATE` 또는 `ADD`이고, Target은 `docs:<path>` 또는 `project:<path>`여야 합니다. 모든 Target은 task `Docs` 목록에 연결합니다.
-`docs:<path>`는 설정된 docs 디렉터리에서, `project:<path>`는 프로젝트 저장소 루트에서 해석합니다.
-
----
+| --- | --- | --- | --- |
+| design-system-ux | UPDATE | docs:designs/design-system.md | 기본 body/brand 서체, 로고 조합·접근성, 커스텀 override와 미리보기 계약 |
 
 ## Verification Contract
 
-Feature 완료 전 검사는 실제 `workflow.featureChecks`(컴포넌트 override 포함)를 기준으로 작성합니다. 추가 자동 검사는 실행 설정에도 등록하세요. build 포함 여부와 중복 생략 근거, 수동 검증 증거를 명시하세요.
-
-
 ### 변경 분류
 
-- **유형**: COPY | REFACTOR | BUG_FIX | NEW_BEHAVIOR | HIGH_RISK
-- **위험도**: LOW | MEDIUM | HIGH
+- **유형**: NEW_BEHAVIOR
+- **위험도**: MEDIUM — 배포 theme 자산과 전역 font family 및 저장 데이터에 영향.
 
 ### 관찰 가능한 계약
 
-- **지원해야 하는 동작**:
-- **전제조건**:
-- **성공 후 보장**:
-- **중요한 실패 후 보장**:
-- **의도적으로 지원하지 않는 사례**:
+- **지원해야 하는 동작**: theme만 import한 독립 앱의 폰트 실제 로딩, body/brand 역할 분리와 override; BrandLogo 설치·조합·이름; Typography live 편집·copy/reset/reload.
+- **전제조건**: consumer는 Tailwind v4 및 shadcn 환경. custom font는 앱이 파일을 로드한다.
+- **성공 후 보장**: 기본 폰트와 license가 package에 포함되고 실제 source는 소비자가 소유한다. 기존 preview state는 계속 읽을 수 있다.
+- **중요한 실패 후 보장**: 폰트 로딩 실패는 readable fallback과 swap으로 처리한다. invalid family/CSS injection은 저장·미리보기·export에 들어가지 않는다.
+- **의도적으로 지원하지 않는 사례**: font/logo upload·생성·서버 저장, 원본 두 앱 직접 수정, font editor 문자열에서 외부 font 자동 다운로드.
 
 ### 테스트 결정
 
-| 계약 / 요구사항 | 결정                  | 테스트 수준                     | 보호할 현실적인 회귀 | 독립적인 Oracle            |
-| --------------- | --------------------- | ------------------------------- | -------------------- | -------------------------- |
-| (AC/FR 참조)    | NONE \| UPDATE \| ADD | 단위 \| 통합 \| E2E \| 비테스트 | (방지할 실패)        | (스펙/출시 동작/외부 기준) |
+| 계약 | 결정 | 수준 | 보호할 회귀 | 독립 기준 |
+| --- | --- | --- | --- | --- |
+| 로고 full/icon/custom mark의 이름 | UPDATE | 기존 pattern composition Testing Library | 이름 중복·icon-only unnamed·consumer mark 강제 | FR-3 및 접근 가능한 이미지/링크 계약 |
+| family 저장·재정의·export·안전 입력 | UPDATE | 기존 foundation-preview Vitest | brand 값 누락·CSS 주입·old state 손실 | FR-2 및 CSS font-family 문법/변수 계약 |
+| 웹폰트 배포·실제 로딩 | NONE | package pack + 독립 소비자 브라우저 | dist 자산 누락·relative URL 404·fallback만 표시 | US-1의 단일 theme import 설치 경험 |
+| registry install/build | NONE | 실제 shadcn CLI + 독립 consumer | item/dependency/source alias 실패 | US-2/3 및 source ownership |
+| Typography/editor와 로고 응답형 | NONE | 브라우저 | body/brand 동시 오염·저장 유실·layout overflow | Spec 완료 기준 |
+| 기존 docs/theme/registry | NONE | configured full checks | type/lint/test/build 회귀 | workflow.featureChecks |
 
 ### 의도적으로 제외하는 테스트
 
-- (중복, 구현 세부사항, 비지원 합성 입력, 프레임워크 자체 동작 등)
+폰트 내부 rasterizer, Next.js 자체, CSS 클래스 snapshot, 자산 byte snapshot, 새 E2E 인프라를 추가하지 않는다.
 
 ### 검증 실행
 
-- **구현 중**:
-- **태스크 완료 전**:
-- **Feature 완료 전**:
-- **수동/UI 검증**:
-- **전체 테스트 필요 여부**: Yes | No — (이유)
-
----
+- **구현 중**: 관련 기존 tests, theme build와 pack contents.
+- **태스크 완료 전**: 변경 범위 typecheck/lint·focused tests, actual font-face/registry JSON.
+- **Feature 완료 전**: pnpm typecheck, pnpm lint, pnpm test, pnpm build. pnpm check로 묶어 실행한다.
+- **수동/UI 검증**: desktop/mobile × light/dark, 실제 font loaded 상태/요청, full/icon accessible name·링크 focus, body/brand family 분리·copy/reset/reload, 별도 consumer packed theme import와 registry 설치·빌드.
+- **전체 테스트 필요 여부**: Yes — 배포 theme·root layout 및 foundations 저장 계약에 영향.
 
 ## 관련 문서
 

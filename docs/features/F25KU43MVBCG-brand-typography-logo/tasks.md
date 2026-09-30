@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/F25KU43MVBCG-brand-typography-logo`
 - **대기 중 변경 요청**: -
@@ -75,6 +75,59 @@
 
 ---
 
+- [DONE][PRD-FR-002][PRD-FR-011] T-F25KU43MVBCG-brand-typography-logo-01 Package default body and brand webfonts
+  - Date: 2026-09-30
+  - Acceptance:
+    - Theme import loads Pretendard Variable and Paperlogy 700 from packed local assets; tokens stay framework independent.
+    - Brand font alias and override contract are declared in PRD/design rules and licenses ship with fonts.
+  - Checklist:
+    - [x] Verify font provenance/license and include default WOFF2 assets plus attribution.
+    - [x] Add brand family token, generated font-brand alias, relative font-face URLs and dist asset copy.
+    - [x] Update PRD and typography design rules; verify theme build and pack contents.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005][PRD-FR-011] T-F25KU43MVBCG-brand-typography-logo-02 Deliver the BrandLogo pattern and Leement identity
+  - Date: 2026-09-30
+  - Acceptance:
+    - Registry BrandLogo supports custom mark/name and full/icon sizes with accessible names; docs uses the same source.
+    - Header/favicon use provided SVG and brand font; candidate metadata and complete pattern docs are navigable.
+  - Checklist:
+    - [ ] Build a simple generic BrandLogo pattern with explicit types and full/icon naming; extend existing composition tests.
+    - [ ] Register item/dependency, metadata/source/example/preview and custom mark documentation.
+    - [ ] Apply one Leement SVG asset to header/favicon; sync logo rules and verify responsive/focus/light/dark.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005][PRD-FR-013] T-F25KU43MVBCG-brand-typography-logo-03 Connect font settings and verify consumer installation
+  - Date: 2026-09-30
+  - Acceptance:
+    - Typography body/brand settings affect actual roles, copy/reset/reload works, and custom families are safely validated.
+    - Packed theme assets load and CLI-installed BrandLogo builds in independent consumer; configured checks pass.
+  - Checklist:
+    - [ ] Add brand family field and safe custom family input; extend existing storage/export/security tests.
+    - [ ] Use real BrandLogo in typography preview; update public Typography/Getting Started and preview design rules.
+    - [ ] Verify browser roles/fonts/keyboard/mobile/light/dark; pack theme and install registry source in consumer.
+    - [ ] Run configured checks, record residual risks, synchronize docs and workflow marker.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -98,6 +151,12 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm build:theme` | 2026-09-30 | PASS — font faces and local assets |
+| `pnpm build:tokens` | 2026-09-30 | PASS |
+| `pnpm --filter @leement/theme typecheck` | 2026-09-30 | PASS |
+| `pnpm --filter @leement/theme lint` | 2026-09-30 | PASS |
+| `pnpm --filter @leement/theme pack --pack-destination /tmp/leement-font-source` | 2026-09-30 | PASS — fonts and both OFL notices included |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+<!-- lee-spec-kit:workflow-sync sha256:501e3b785bf3cdf8284286fa0cb10e472397f3beaaf26a7797d4e9cd4dd0e717 -->
