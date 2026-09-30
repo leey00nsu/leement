@@ -1,0 +1,16 @@
+Leement default fonts
+
+Pretendard Variable v1.3.9
+Copyright (c) 2021, Kil Hyung-jin. Reserved Font Name: Pretendard.
+Source: https://github.com/orioncactus/pretendard/tree/v1.3.9
+License: Pretendard-OFL.txt (SIL OFL 1.1)
+Unmodified upstream WOFF2.
+
+Paperlogy Bold 700 v1.000
+Copyright 2024 The PAPERLOGY Authors; font metadata: Copyright 2024 PT&.
+Source: https://freesentation.blog/paperlogyfont
+Archive: https://github.com/Freesentation/paperlogy/blob/main/Paperlogy-1.000.zip
+License: Paperlogy-OFL.txt (SIL OFL 1.1)
+Lossless WOFF2 conversion of original Paperlogy-7Bold.ttf; no glyph subsetting or outline changes.
+
+Font licenses remain OFL; they are separate from Leement code MIT license.

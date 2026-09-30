@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, cp } from "node:fs/promises";
 import { URL } from "node:url";
 const { primitive, semantic } = JSON.parse(await readFile(new URL("../tokens/src/tokens.json", import.meta.url), "utf8"));
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
@@ -42,6 +42,21 @@ const compatibility = `  /* shadcn compatibility: aliases only */
   --ring: var(--lm-color-focus-ring);
   --radius: var(--lm-radius-md);`;
 const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/tokens.json. */
+/* Bundled fonts retain their SIL OFL licenses in fonts/. */
+@font-face {
+  font-family: "Pretendard Variable";
+  font-style: normal;
+  font-weight: 45 930;
+  font-display: swap;
+  src: url("./fonts/pretendard-variable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Paperlogy";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/paperlogy-bold.woff2") format("woff2");
+}
 :root, [data-lm-theme="light"] {\n${lines([...common, ...colors("light")], "lm")}\n${compatibility}\n  color-scheme: light;\n}
 .dark, [data-lm-theme="dark"] {\n${lines(colors("dark"), "lm")}\n${compatibility}\n  color-scheme: dark;\n}
 @media (prefers-reduced-motion: reduce) {\n  :root { --lm-motion-duration-fast: 0ms; --lm-motion-duration-normal: 0ms; --lm-motion-duration-slow: 0ms; }\n}
@@ -74,6 +89,7 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   --radius-sm: var(--lm-radius-sm); --radius-md: var(--lm-radius-md);
   --radius-lg: var(--lm-radius-lg); --radius-xl: var(--lm-radius-xl);
   --font-sans: var(--lm-typography-family-sans);
+  --font-brand: var(--lm-typography-family-brand);
   --font-mono: var(--lm-typography-family-mono);
   --shadow-sm: var(--lm-shadow-sm); --shadow-md: var(--lm-shadow-md);
   --shadow-lg: var(--lm-shadow-lg);
@@ -107,3 +123,4 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
 `;
 await mkdir(new URL("./dist/", import.meta.url), { recursive: true });
 await writeFile(new URL("./dist/index.css", import.meta.url), sheet);
+await cp(new URL("./fonts/", import.meta.url), new URL("./dist/fonts/", import.meta.url), { recursive: true });
