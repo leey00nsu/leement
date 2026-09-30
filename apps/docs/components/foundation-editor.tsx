@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../..
 import { Input } from "../../../registry/ui/input";
 import { Skeleton } from "../../../registry/ui/skeleton";
 import { BrandGradientText } from "../../../registry/ui/brand-gradient-text";
+import { BrandLogo } from "../../../registry/patterns/brand-logo";
 import { ColorPicker } from "../../../registry/ui/color-picker";
 import { Popover, PopoverContent, PopoverTitle, PopoverTrigger } from "../../../registry/ui/popover";
 import { useFoundationPreview } from "./foundation-preview-provider";
@@ -23,10 +24,10 @@ import {
 
 const colorGroups = [...new Set(colorFields.map((field) => field.group))];
 const familyOptions = [
-  ...sharedFields.filter((field) => field.kind === "family").map((field) => field.defaultValue),
-  "system-ui, sans-serif",
-  "Georgia, Cambria, serif",
-  "ui-monospace, monospace",
+  ...sharedFields.filter((field) => field.kind === "family").map((field) => ({ value: field.defaultValue, label: `${field.label} default` })),
+  { value: "system-ui, sans-serif", label: "System sans" },
+  { value: "Georgia, Cambria, serif", label: "Georgia / Cambria" },
+  { value: "ui-monospace, monospace", label: "Generic monospace" },
 ];
 const previewTitles: Record<FoundationCategory, string> = {
   color: "Color in context",
@@ -123,17 +124,37 @@ function numericValue(value: string, unit: string): number {
   return Number.parseFloat(value);
 }
 
+function FamilyControl({ field, value }: { field: SharedField; value: string }) {
+  const { setValue } = useFoundationPreview();
+  const id = useId();
+  const [draft, setDraft] = useState(value);
+  const [touched, setTouched] = useState(false);
+  useEffect(() => { setDraft(value); setTouched(false); }, [value]);
+  const valid = validPreviewValue("shared", field.key, draft);
+  return <div className="rounded-lg border border-border bg-background p-3">
+    <label htmlFor={id} className="mb-2 block text-sm font-medium">{field.label}</label>
+    <select id={id} value={familyOptions.some((option) => option.value === value) ? value : "custom"} onChange={(event) => {
+      if (event.target.value !== "custom") setValue("shared", field.key, event.target.value);
+      else document.getElementById(`${id}-stack`)?.focus();
+    }} className="w-full min-w-0 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+      {familyOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+      <option value="custom">Custom font stack</option>
+    </select>
+    <label htmlFor={`${id}-stack`} className="mt-3 block text-xs text-muted-foreground">{field.label} CSS stack</label>
+    <Input id={`${id}-stack`} value={draft} maxLength={160} spellCheck={false} className="mt-1 font-mono text-xs" aria-invalid={touched && !valid || undefined} aria-describedby={touched && !valid ? `${id}-error` : `${id}-hint`} onChange={(event) => {
+      setDraft(event.target.value);
+      if (validPreviewValue("shared", field.key, event.target.value)) setValue("shared", field.key, event.target.value);
+    }} onBlur={() => setTouched(true)} />
+    <p id={`${id}-hint`} className="mt-2 text-xs leading-5 text-muted-foreground">Pretendard and Paperlogy are included. Other fonts must already be installed or loaded by your app; setting a name does not download a font.</p>
+    {touched && !valid && <p id={`${id}-error`} className="mt-2 text-xs text-destructive">Enter a font family list, such as "My Brand", sans-serif.</p>}
+  </div>;
+}
+
 function SharedControl({ field }: { field: SharedField }) {
   const { preview, setValue } = useFoundationPreview();
   const id = useId();
   const value = preview.shared[field.key] ?? field.defaultValue;
-  if (field.kind === "family") return <div className="rounded-lg border border-border bg-background p-3">
-    <label htmlFor={id} className="mb-2 block text-sm font-medium">{field.label}</label>
-    <select id={id} value={value} onChange={(event) => setValue("shared", field.key, event.target.value)} className="w-full min-w-0 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-      {familyOptions.map((option) => <option key={option} value={option}>{option === familyOptions[0] ? "Pretendard / system" : option === familyOptions[1] ? "System mono" : option}</option>)}
-    </select>
-    <code className="mt-2 block break-all text-xs text-muted-foreground">{value}</code>
-  </div>;
+  if (field.kind === "family") return <FamilyControl field={field} value={value} />;
   if (field.kind === "shadow") {
     const choices = [...new Set([field.defaultValue, "none", "0 2px 8px rgb(0 0 0 / 0.08)", "0 4px 12px rgb(0 0 0 / 0.10)", "0 12px 36px rgb(0 0 0 / 0.18)"])];
     return <div className="rounded-lg border border-border bg-background p-3">
@@ -203,6 +224,7 @@ function ActualPreview({ category }: { category: FoundationCategory }) {
     <div className="rounded-lg border border-border bg-muted p-4"><p className="text-sm font-medium text-foreground">Muted surface</p><p className="mt-1 text-xs text-muted-foreground">Brand accents remain a separate role.</p><p className="mt-4"><BrandGradientText className="text-lg font-semibold">A flexible brand voice.</BrandGradientText></p><Skeleton variant="brand" className="mt-3 h-3 w-3/4" /></div>
   </div>;
   if (category === "typography") return <div className="space-y-4" data-testid="foundation-actual-preview">
+    <div className="space-y-2 border-b border-border pb-4"><BrandLogo name="Leement" mark={<img src="/leement-mark.svg" alt="" width={128} height={128} />} /><p className="text-xs text-muted-foreground">Brand font · Paperlogy 700 by default. Body font edits leave the wordmark independent.</p></div>
     <div className="space-y-2"><p className="font-mono text-xs text-muted-foreground">Type scale and hierarchy</p><p className="text-2xl font-bold leading-tight">Design that feels familiar.</p><p className="text-lg font-semibold leading-normal">A clear heading for every screen.</p><p className="text-base font-normal leading-relaxed">Readable body copy keeps the details easy to follow.</p></div>
     <Card><CardHeader><CardTitle>Information hierarchy</CardTitle><CardDescription>Card titles and descriptions use the same type rules.</CardDescription></CardHeader><CardContent><p className="text-sm text-muted-foreground">Supporting text stays legible at smaller sizes.</p><code className="mt-3 block font-mono text-xs">const type = "consistent";</code></CardContent></Card>
   </div>;

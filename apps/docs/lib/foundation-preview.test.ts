@@ -64,4 +64,30 @@ describe("Foundations preview overrides", () => {
     expect(css).toContain("@media (prefers-reduced-motion: reduce)");
     expect(css).toContain("--default-transition-duration: 0ms");
   });
+
+  it("persists custom body and brand families independently and exports their aliases", () => {
+    const body = "\"My Body Font\", sans-serif";
+    const brand = "Georgia, Cambria, serif";
+    let state = withPreviewValue(emptyPreview(), "shared", "--lm-typography-family-sans", body)!;
+    state = withPreviewValue(state, "shared", "--lm-typography-family-brand", brand)!;
+    const restored = parsePreview(JSON.stringify(state));
+    expect(restored.shared["--lm-typography-family-sans"]).toBe(body);
+    expect(restored.shared["--lm-typography-family-brand"]).toBe(brand);
+    expect(previewCss(restored)).toContain("--font-brand: var(--lm-typography-family-brand)");
+    expect(previewCss(restored)).toContain("--font-sans: var(--lm-typography-family-sans)");
+    expect(defaultValue("shared", "--lm-typography-family-brand")).toContain("Paperlogy");
+    expect(withPreviewValue(restored, "shared", "--lm-typography-family-brand", defaultValue("shared", "--lm-typography-family-brand")!)?.shared).toEqual({ "--lm-typography-family-sans": body });
+    // Old preview data has no brand key and still restores unchanged.
+    expect(parsePreview(JSON.stringify({ shared: { "--lm-spacing-1": "0.375rem" } })).shared).toEqual({ "--lm-spacing-1": "0.375rem" });
+  });
+
+  it("accepts named custom families and rejects CSS functions or injected rules", () => {
+    const key = "--lm-typography-family-brand";
+    expect(validPreviewValue("shared", key, "\"나의 브랜드\", sans-serif")).toBe(true);
+    expect(validPreviewValue("shared", key, "'Acme Font', system-ui")).toBe(true);
+    for (const value of ["Arial; color: red", "Arial} body {display:none}", "url(https://example.com/font)", "var(--other)", "Arial\\3b color:red", "\"Unclosed", "", "Arial/*comment*/"]) {
+      expect(validPreviewValue("shared", key, value)).toBe(false);
+      expect(parsePreview(JSON.stringify({ shared: { [key]: value } })).shared).toEqual({});
+    }
+  });
 });

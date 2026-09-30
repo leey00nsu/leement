@@ -25,8 +25,9 @@ const primitive = tokens.primitive;
 const shared = (key: string, label: string, category: SharedField["category"], kind: FieldKind, defaultValue: string): SharedField => ({ key, label, category, kind, defaultValue });
 
 export const sharedFields: SharedField[] = [
-  shared("--lm-typography-family-sans", "Sans family", "typography", "family", primitive.typography.family.sans),
-  shared("--lm-typography-family-mono", "Mono family", "typography", "family", primitive.typography.family.mono),
+  shared("--lm-typography-family-sans", "Body font", "typography", "family", primitive.typography.family.sans),
+  shared("--lm-typography-family-brand", "Brand font", "typography", "family", primitive.typography.family.brand),
+  shared("--lm-typography-family-mono", "Mono font", "typography", "family", primitive.typography.family.mono),
   ...Object.entries(primitive.typography.size).map(([name, value]) => shared(`--lm-typography-size-${name}`, `${name} size`, "typography", "size", value)),
   ...Object.entries(primitive.typography.weight).map(([name, value]) => shared(`--lm-typography-weight-${name}`, `${name} weight`, "typography", "weight", value)),
   ...Object.entries(primitive.typography.lineHeight).map(([name, value]) => shared(`--lm-typography-line-height-${name}`, `${name} line height`, "typography", "line-height", value)),
@@ -85,13 +86,12 @@ function validLength(value: string, minPx: number, maxPx: number): boolean {
   return Number.isFinite(px) && px >= minPx && px <= maxPx;
 }
 
-const familyChoices = new Set([
-  primitive.typography.family.sans,
-  primitive.typography.family.mono,
-  "system-ui, sans-serif",
-  "Georgia, Cambria, serif",
-  "ui-monospace, monospace",
-]);
+// A bounded list of family names only: no CSS functions, escapes or declarations.
+function validFamily(value: string): boolean {
+  const name = '(?:[\\p{L}_-][\\p{L}\\p{N}_ -]*|"[\\p{L}\\p{N}_ -]+"|\'[\\p{L}\\p{N}_ -]+\')';
+  const syntax = new RegExp(`^${name}(?:\\s*,\\s*${name})*$`, "u");
+  return syntax.test(value) && (typeof CSS === "undefined" || !CSS.supports || CSS.supports("font-family", value));
+}
 
 export function validPreviewValue(mode: FoundationMode | "shared", key: string, value: string): boolean {
   if (value.length > 160 || value !== value.trim()) return false;
@@ -102,7 +102,7 @@ export function validPreviewValue(mode: FoundationMode | "shared", key: string, 
   }
   const field = sharedByKey.get(key);
   if (!field) return false;
-  if (field.kind === "family") return familyChoices.has(value);
+  if (field.kind === "family") return validFamily(value);
   if (field.kind === "size") return validLength(value, 8, 64);
   if (field.kind === "spacing") return validLength(value, 2, 12);
   if (field.kind === "radius") return validLength(value, 0, 48) || value === "0";
