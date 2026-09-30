@@ -75,6 +75,7 @@ import StatusExample from "../examples/status";
 import ThemeSwitcherExample from "../examples/theme-switcher";
 import TreeExample from "../examples/tree";
 import PageHeaderExample from "../examples/page-header";
+import BrandLogoExample from "../examples/brand-logo";
 import EmptyStateExample from "../examples/empty-state";
 import FormSectionExample from "../examples/form-section";
 import SearchFieldExample from "../examples/search-field";
@@ -157,6 +158,7 @@ const examples: Record<keyof typeof items, ComponentType> = {
   "theme-switcher": ThemeSwitcherExample,
   tree: TreeExample,
   "page-header": PageHeaderExample,
+  "brand-logo": BrandLogoExample,
   "empty-state": EmptyStateExample,
   "form-section": FormSectionExample,
   "search-field": SearchFieldExample,

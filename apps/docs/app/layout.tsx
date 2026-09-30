@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { BrandLogo } from "../../../registry/patterns/brand-logo";
 import { Github } from "lucide-react";
 import "./globals.css";
 import { DocsNavigation } from "../components/docs-navigation";
@@ -11,6 +13,7 @@ import { ThemeToggle } from "../components/theme-toggle";
 export const metadata: Metadata = {
   title: { default: "Leement", template: "%s · Leement" },
   description: "Design rules, tokens, components, patterns, and blocks for products.",
+  icons: { icon: { url: "/leement-mark.svg", type: "image/svg+xml" } },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -19,9 +22,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-6 lg:gap-9">
-            <Link href="/" className="inline-flex shrink-0 items-center gap-2.5 text-[17px] font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-              <span className="flex size-7 items-center justify-center rounded-md bg-primary text-xs font-bold text-primary-foreground">L</span>
-              Leement
+            <Link href="/" className="inline-flex shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <BrandLogo name="Leement" size="sm" mark={<Image src="/leement-mark.svg" alt="" width={128} height={128} priority />} />
             </Link>
             <DocsTopNavigation />
           </div>

@@ -7,8 +7,26 @@ import { StatePanel } from "./state-panel";
 import { ProductPageIntro } from "./product-page-intro";
 import { ResourceRow, ResourceRowLink, ResourceRowButton } from "./resource-row-link";
 import { BentoGrid, BentoGridItem } from "../blocks/bento-grid";
+import { BrandLogo } from "./brand-logo";
 
 afterEach(cleanup);
+
+test("brand logo exposes one product name and preserves native link focus", async () => {
+  const user = userEvent.setup();
+  render(<a href="/workspace"><BrandLogo name="My workspace" mark={<svg><title>Decorative mark</title></svg>} /></a>);
+  expect(screen.getByRole("link", { name: "My workspace" }).getAttribute("href")).toBe("/workspace");
+  expect(screen.queryByRole("img", { name: "Decorative mark" })).toBeNull();
+  await user.tab();
+  expect(document.activeElement).toBe(screen.getByRole("link", { name: "My workspace" }));
+});
+
+test("icon-only brand logo announces the app-provided name", () => {
+  render(<a href="/"><BrandLogo name="Custom brand" variant="icon" size="sm" mark={<svg data-testid="custom-mark" />} /></a>);
+  expect(screen.getByRole("img", { name: "Custom brand" })).toBeTruthy();
+  expect(screen.getByRole("link", { name: "Custom brand" })).toBeTruthy();
+  expect(screen.getByTestId("custom-mark")).toBeTruthy();
+  expect(screen.queryByText("Custom brand")).toBeNull();
+});
 
 test("loading, status and empty states preserve semantics", () => {
   render(<>
