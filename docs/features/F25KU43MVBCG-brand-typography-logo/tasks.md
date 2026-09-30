@@ -93,15 +93,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005][PRD-FR-011] T-F25KU43MVBCG-brand-typography-logo-02 Deliver the BrandLogo pattern and Leement identity
+- [DONE][PRD-FR-005][PRD-FR-011] T-F25KU43MVBCG-brand-typography-logo-02 Deliver the BrandLogo pattern and Leement identity
   - Date: 2026-09-30
   - Acceptance:
     - Registry BrandLogo supports custom mark/name and full/icon sizes with accessible names; docs uses the same source.
     - Header/favicon use provided SVG and brand font; candidate metadata and complete pattern docs are navigable.
   - Checklist:
-    - [ ] Build a simple generic BrandLogo pattern with explicit types and full/icon naming; extend existing composition tests.
-    - [ ] Register item/dependency, metadata/source/example/preview and custom mark documentation.
-    - [ ] Apply one Leement SVG asset to header/favicon; sync logo rules and verify responsive/focus/light/dark.
+    - [x] Build a simple generic BrandLogo pattern with explicit types and full/icon naming; extend existing composition tests.
+    - [x] Register item/dependency, metadata/source/example/preview and custom mark documentation.
+    - [x] Apply one Leement SVG asset to header/favicon; sync logo rules and verify responsive/focus/light/dark.
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -
@@ -144,6 +144,8 @@
 - [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
+T02 브라우저 증거: [desktop light](./artifacts/brand-logo-desktop-light.png), [mobile dark](./artifacts/brand-logo-mobile-dark.png). 실제 기본 폰트 두 개가 loaded이고 자산 요청이 200이며, header link 초점·제품 이름 변경·375px 가로 overflow 없음 확인.
+
 ### 테스트 실행 기록
 
 > 명령어당 1개 행만 유지합니다. 같은 명령어를 다시 실행하면 새 행 추가 대신 기존 행의 시간/결과를 갱신하세요.
@@ -151,6 +153,10 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
+| `pnpm registry:build` | 2026-09-30 | PASS — BrandLogo item and utils dependency |
+| `pnpm exec vitest run registry/patterns/composition.test.tsx` | 2026-09-30 | PASS — 5 tests |
+| `pnpm --filter @leement/docs typecheck` | 2026-09-30 | PASS |
+| `pnpm exec eslint <T02 changed source paths>` | 2026-09-30 | PASS |
 | `pnpm build:theme` | 2026-09-30 | PASS — font faces and local assets |
 | `pnpm build:tokens` | 2026-09-30 | PASS |
 | `pnpm --filter @leement/theme typecheck` | 2026-09-30 | PASS |
@@ -159,4 +165,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:501e3b785bf3cdf8284286fa0cb10e472397f3beaaf26a7797d4e9cd4dd0e717 -->
+<!-- lee-spec-kit:workflow-sync sha256:e889b4766cd9981de94f0094b24bb2573d9b00c838de468f5fcbfd457985658b -->

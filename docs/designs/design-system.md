@@ -33,6 +33,10 @@ CopySinger의 gradient text·음성 파형·오디오 로딩은 violet/blue/pink
 - Shadow: 기본 Card와 Input에는 border를 쓰고 기본 shadow를 넣지 않는다. Popover/Dialog 같은 떠 있는 계층에서만 필요한 경우 shadow를 사용한다.
 - Motion: 120/180/260ms 단계. reduced motion 환경에서는 duration을 0ms로 한다.
 
+### 브랜드 로고 조합
+
+BrandLogo pattern은 앱이 제공한 mark와 name을 아이콘+워드마크로 조합한다. full은 장식 mark와 visible name, icon은 제품 이름을 가진 image 역할이다. 라우팅은 외부 anchor/Link가 담당하고 focus-visible을 유지한다. sm/md/lg는 32/40/48px mark와 18/20/24px 글자, 8/10/12px 간격을 사용한다. 워드마크는 font-brand와 700 굵기, -0.03em tracking을 기본으로 하고 본문 family와 독립적이다. 두 앱에서 반복된 조합이므로 초기 maturity는 candidate다. Leement 자체 SVG의 보라·파랑은 브랜드 자산이며 소비자 로고나 범용 UI의 필수 색이 아니다. docs 헤더와 예제는 registry pattern을 그대로 사용하고 favicon은 같은 SVG 자산을 읽는다.
+
 ## 컴포넌트와 상태
 
 Button의 action variant는 primary, secondary, outline, ghost, destructive만 둔다. 한 화면에서 primary action은 우선순위가 명확해야 한다. destructive는 의미색의 연한 표면으로 강조하고 텍스트로 위험을 설명한다. xs(32px), sm(36px), default(40px), lg(44px)를 쓰며 icon 계열은 아이콘만 있을 때 접근 가능한 이름을 지정한다. loading은 `aria-busy`와 disabled를 동반한다. 메뉴를 여는 secondary/outline/ghost Button은 `aria-expanded` 동안 hover와 같은 표면을 유지한다. Input은 모바일 입력 확대를 피하도록 16px 문자를 쓰고 데스크톱에서는 14px을 쓴다. Input, Textarea, Select의 입력 면은 light에서 흰색, dark에서 기본 surface 색을 쓰며 기본 그림자를 넣지 않는다. 파일 Input의 선택 버튼도 주변 입력과 같은 전경색을 쓴다. Input과 Textarea의 오류는 `aria-invalid` 및 외부 설명 텍스트와 함께 제공한다. Card는 20px 기본 inset, 16px 작은 inset과 CardAction을 제공한다. Card 내부 간격도 같은 20/16px 리듬을 쓰고 맨 앞 이미지가 있으면 상단 여백을 없애며 카드 모서리에서 자른다. Footer가 있으면 카드의 아래 여백 대신 낮은 강조 표면과 상단 border로 내용과 분리한다. Badge는 20px 높이의 짧은 메타데이터다. Switch의 켜짐/꺼짐 track과 thumb는 두 테마에서 서로 구별되도록 primary와 muted 역할로 색을 나눈다. Label은 native label 연결을 유지한다. Select/Switch/Tabs의 옵션 이동, 상태 전환, 패널 관계는 Base UI에 맡기고 시각 상태는 Leement token을 사용한다. Tabs의 `segmented` list는 전체 폭의 동등한 보기(Code/Preview 등)에 쓰고, docs workbench도 공개 registry Tabs source를 사용한다. 선택 표면만으로 상태를 구분하지 않고 `muted-foreground` 경계로 인접 표면 대비 3:1 이상을 확보한다. focus-visible과 선택 상태를 따로 유지하며 default/line 변형은 좁은 탭 또는 밑줄 탐색에 쓴다. Dialog와 Tooltip의 초점 및 키보드 처리는 Radix에 맡긴다.

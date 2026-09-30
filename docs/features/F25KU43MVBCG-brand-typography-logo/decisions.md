@@ -29,3 +29,11 @@
 T01 검증: 공식 Paperlogy v1.000 TTF와 CopySinger 원본의 SHA256은 모두 fe71049fe3d3a7dd3f2e0c12efd850acd1293658181af322348edde9b016e6ba였다. 동일 outline을 전체 WOFF2로 변환해 164108 bytes, 11723 cmap 항목을 보존했다. Pretendard v1.3.9 WOFF2는 2057688 bytes, wght 45–930이며 원본 그대로 사용한다. pack에 두 font 파일과 각 OFL/NOTICE가 포함된다. theme build·typecheck·lint와 tokens build가 통과했다. 2026-09-30 사용자 A로 Spec 승인; Plan은 workflow의 자동 승인 정책을 따랐다.
 
 D002 확인: 현재 root README.md와 docs/README.md에서 font/Pretendard/Typography/logo를 언급하는 설명은 발견되지 않았다. 공개 docs의 로딩 가이드는 T03에서 갱신한다.
+
+## D003: 앱이 소유하는 로고와 문서 브랜드 자산 (2026-09-30)
+
+- **Context**: 두 앱의 아이콘+이름 조합을 공유하되 소비자 브랜드를 Leement 색/아이콘에 묶으면 안 된다.
+- **Decision**: BrandLogo는 mark/name을 필수 입력으로 받는 span pattern이며 full/icon·sm/md/lg, brand family·고정 700 굵기를 사용한다. 외부 Link가 navigation/focus를 맡는다. Leement SVG는 public/leement-mark.svg 한 개로 보관해 header·examples·favicon이 공유한다.
+- **Trace**: 기존 패턴 route는 허용 목록을 별도로 사용하므로 BrandLogo를 route/nav/metadata/preview/registry에 모두 연결했다. 실제 Chromium에서 Pretendard Variable/Paperlogy가 loaded, 두 WOFF2 요청 200, wordmark 700, favicon 경로 일치를 확인했다. Header link focus와 icon-only name, consumer name 변경, 375px dark 가로 overflow 없음도 확인했다.
+- **Evidence**: pattern composition 5 tests, docs typecheck, changed-source ESLint, registry build; [desktop light](./artifacts/brand-logo-desktop-light.png), [mobile dark](./artifacts/brand-logo-mobile-dark.png).
+- **Consequences**: 브랜드 고정값은 문서 자산에만 둔다. 테스트용 Aside 프로필이 daemon에 연결되지 않아 기존 Playwright/Chromium으로 같은 검증을 수행했다.
