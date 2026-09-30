@@ -110,18 +110,19 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005][PRD-FR-013] T-F25KU43MVBCG-brand-typography-logo-03 Connect font settings and verify consumer installation
+- [DONE][PRD-FR-005][PRD-FR-013] T-F25KU43MVBCG-brand-typography-logo-03 Connect font settings and verify consumer installation
   - Date: 2026-09-30
   - Acceptance:
     - Typography body/brand settings affect actual roles, copy/reset/reload works, and custom families are safely validated.
     - Packed theme assets load and CLI-installed BrandLogo builds in independent consumer; configured checks pass.
   - Checklist:
-    - [ ] Add brand family field and safe custom family input; extend existing storage/export/security tests.
-    - [ ] Use real BrandLogo in typography preview; update public Typography/Getting Started and preview design rules.
-    - [ ] Verify browser roles/fonts/keyboard/mobile/light/dark; pack theme and install registry source in consumer.
-    - [ ] Run configured checks, record residual risks, synchronize docs and workflow marker.
+    - [x] Add brand family field and safe custom family input; extend existing storage/export/security tests.
+    - [x] Use real BrandLogo in typography preview; update public Typography/Getting Started and preview design rules.
+    - [x] Verify browser roles/fonts/keyboard/mobile/light/dark; pack theme and install registry source in consumer.
+    - [x] Run configured checks, record residual risks, synchronize docs and workflow marker.
   - Docs:
     - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -140,11 +141,13 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 T02 브라우저 증거: [desktop light](./artifacts/brand-logo-desktop-light.png), [mobile dark](./artifacts/brand-logo-mobile-dark.png). 실제 기본 폰트 두 개가 loaded이고 자산 요청이 200이며, header link 초점·제품 이름 변경·375px 가로 overflow 없음 확인.
+
+T03 브라우저 증거: [Typography editor](./artifacts/typography-editor-desktop-light.png). Body/Brand 독립 변경, custom 입력, invalid draft 거부, clipboard CSS, route/reload 복원, reset 및 375px dark overflow 없음 확인. 독립 `/tmp/leement-brand-consumer`에서 packed theme 설치와 `@leement/brand-logo` CLI 설치로 두 source 파일이 생성되고 production build·WOFF2 두 요청 200·기본 font faces loaded·복사 CSS 적용을 확인했다.
 
 ### 테스트 실행 기록
 
@@ -153,6 +156,10 @@ T02 브라우저 증거: [desktop light](./artifacts/brand-logo-desktop-light.pn
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
+| `pnpm check` | 2026-09-30 | PASS — build, typecheck, lint, 12 files / 73 tests |
+| `pnpm exec vitest run apps/docs/lib/foundation-preview.test.ts` | 2026-09-30 | PASS — 5 tests, family storage/export/input validation |
+| `pnpm exec shadcn add @leement/brand-logo --cwd /tmp/leement-brand-consumer --yes` | 2026-09-30 | PASS — BrandLogo and utils installed |
+| `pnpm build` (independent packed-theme consumer) | 2026-09-30 | PASS — strict TS and Vite, both WOFF2 emitted |
 | `pnpm registry:build` | 2026-09-30 | PASS — BrandLogo item and utils dependency |
 | `pnpm exec vitest run registry/patterns/composition.test.tsx` | 2026-09-30 | PASS — 5 tests |
 | `pnpm --filter @leement/docs typecheck` | 2026-09-30 | PASS |
@@ -165,4 +172,4 @@ T02 브라우저 증거: [desktop light](./artifacts/brand-logo-desktop-light.pn
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:e889b4766cd9981de94f0094b24bb2573d9b00c838de468f5fcbfd457985658b -->
+<!-- lee-spec-kit:workflow-sync sha256:f1a333b953f620ffd12a12c5f1eb6d8e5230d15ecb7994baafe52b4f4a7acf7c -->

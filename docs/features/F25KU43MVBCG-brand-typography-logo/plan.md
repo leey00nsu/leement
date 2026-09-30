@@ -34,6 +34,7 @@
 - apps/docs/app/foundations/[slug]/page.tsx
 - apps/docs/components/foundation-editor.tsx
 - apps/docs/lib/foundation-preview.ts, apps/docs/lib/foundation-preview.test.ts
+- apps/docs/lib/docs.ts, apps/docs/lib/item-states.ts, apps/docs/app/patterns/[slug]/page.tsx
 - apps/docs/lib/items.ts, apps/docs/components/previews.tsx, apps/docs/examples/brand-logo.tsx
 - docs/prd/leement-prd.md, docs/designs/design-system.md
 
