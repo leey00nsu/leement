@@ -1,0 +1,65 @@
+# Feature Spec: shared-motion-patterns
+
+> 기술 스택은 plan.md에서 다룹니다.
+
+---
+
+## 개요
+
+- **기능 ID**: W2TPJTYZ2Y4P
+- **기능명**: shared-motion-patterns
+- **대상 레포**: Leement
+- **작성일**: 2026-10-01
+- **상태**: -
+  - 값: Draft | Review | Approved
+
+---
+
+## 목적
+
+CopySinger와 Leesfield의 공통 모션 규칙과 소유 가능한 UI 소스를 Leement로 통합한다. Orb와 Shader 시각 효과는 제외한다.
+
+(이 기능이 왜 필요한지, 어떤 문제를 해결하는지)
+
+---
+
+## 사용자 스토리
+
+### US-1: {스토리 제목}
+
+**As a** {사용자 유형}
+**I want** {원하는 것}
+**So that** {이유/가치}
+
+**Acceptance Criteria:**
+
+- [ ] (검증 조건)
+
+---
+
+## 기능 요구사항
+
+### FR-1: {요구사항 제목}
+
+(상세 설명)
+
+---
+
+## 비기능 요구사항
+
+- **성능**:
+- **보안**:
+
+---
+
+## 관련 문서
+
+- PRD: `../../prd/`
+- PRD Refs: - (예: `PRD-FR-001`, `PRD-US-002`, `PRD-SCOPE-V1-DESKTOP-EDITOR`)
+  - 이미 원문 요구사항 문서에 정의된 ID만 적으세요. `spec.md`나 `tasks.md`에서 임의로 PRD ID를 만들지 않습니다.
+  - 레거시 요구사항 문서에 아직 PRD ID가 없다면, 먼저 원문에 ID를 backfill한 뒤 이 필드와 `tasks.md` 태스크 태그를 함께 갱신하세요.
+  - 요구사항/스코프 변경 시 PRD 문서 + 이 필드 + `tasks.md` 태스크 태그를 함께 갱신하세요.
+  - 구현 중 더 나은 사용자 동작이 발견되어 최종 요구사항이 바뀌었다면, 이를 영구적인 `[NON-PRD]` 예외로 두지 말고 PRD 업데이트로 취급하세요.
+- Design Refs: - (선택 사항, 명시적인 UI/UX 디자인 작업에만 프로젝트 루트 기준 경로 사용)
+  - Design System: - (예: `docs/designs/design-system.md`)
+  - Visual Brief: - (예: `docs/designs/<feature-visual-brief>.md`)
