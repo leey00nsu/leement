@@ -20,9 +20,9 @@ CopySinger와 Leesfield는 본문에 Pretendard, 아이콘과 글자로 구성�
 
 **Acceptance Criteria:**
 
-- [ ] `pnpm add @leement/theme` 후 CSS의 `@import "@leement/theme";`만으로 기본 웹폰트가 로드된다. 별도 CDN 또는 Next.js 전용 설정을 요구하지 않는다.
-- [ ] 본문·컨트롤은 Pretendard, 브랜드 워드마크는 Paperlogy 700을 기본으로 사용한다. 코드의 monospace 역할은 별도로 유지한다.
-- [ ] 실제 폰트 파일과 CSS URL이 배포 패키지에 포함되어 독립 소비자 빌드에서도 정상 제공된다.
+- [x] `pnpm add @leement/theme` 후 CSS의 `@import "@leement/theme";`만으로 기본 웹폰트가 로드된다. 별도 CDN 또는 Next.js 전용 설정을 요구하지 않는다.
+- [x] 본문·컨트롤은 Pretendard, 브랜드 워드마크는 Paperlogy 700을 기본으로 사용한다. 코드의 monospace 역할은 별도로 유지한다.
+- [x] 실제 폰트 파일과 CSS URL이 배포 패키지에 포함되어 독립 소비자 빌드에서도 정상 제공된다.
 
 ### US-2: 프로젝트의 정체성을 적용하는 개발자
 
@@ -30,10 +30,10 @@ CopySinger와 Leesfield는 본문에 Pretendard, 아이콘과 글자로 구성�
 
 **Acceptance Criteria:**
 
-- [ ] 별도 Leement font family 변수를 재정의할 수 있고 Tailwind의 `font-sans`·`font-brand`가 해당 변수에서 파생된다.
-- [ ] Foundations → Typography에서 본문·로고 폰트를 각각 수정하면 문서 전체의 해당 역할과 실제 로고 미리보기가 즉시 바뀐다. CSS 복사·초기화·새로고침 복원도 기존 편집기와 일관된다.
-- [ ] `@leement/brand-logo` registry pattern으로 아이콘+글자 또는 아이콘만의 로고를 설치할 수 있다. 아이콘·이름·크기는 앱이 제공하고 설치된 source를 자유롭게 수정한다.
-- [ ] 소비자 로고가 Leement 아이콘·색상에 고정되지 않으며 커스텀 폰트 로딩과 family override 방법을 문서에서 설명한다.
+- [x] 별도 Leement font family 변수를 재정의할 수 있고 Tailwind의 `font-sans`·`font-brand`가 해당 변수에서 파생된다.
+- [x] Foundations → Typography에서 본문·로고 폰트를 각각 수정하면 문서 전체의 해당 역할과 실제 로고 미리보기가 즉시 바뀐다. CSS 복사·초기화·새로고침 복원도 기존 편집기와 일관된다.
+- [x] `@leement/brand-logo` registry pattern으로 아이콘+글자 또는 아이콘만의 로고를 설치할 수 있다. 아이콘·이름·크기는 앱이 제공하고 설치된 source를 자유롭게 수정한다.
+- [x] 소비자 로고가 Leement 아이콘·색상에 고정되지 않으며 커스텀 폰트 로딩과 family override 방법을 문서에서 설명한다.
 
 ### US-3: Leement 브랜드를 확인하는 문서 방문자
 
@@ -41,9 +41,9 @@ CopySinger와 Leesfield는 본문에 Pretendard, 아이콘과 글자로 구성�
 
 **Acceptance Criteria:**
 
-- [ ] 문서 헤더 등 기존 로고 표면과 favicon에 제공된 SVG를 적용하고 로고 글자는 Paperlogy Bold로 표시한다.
-- [ ] Typography 문서는 폰트 역할·기본 로딩·재정의 방법을 설명한다. BrandLogo 문서는 실제 registry source로 full/icon·크기·커스텀 아이콘/이름 예제를 제공한다.
-- [ ] 작은 화면과 light/dark 모두에서 로고가 잘리지 않고 읽을 수 있다. 로고 링크의 키보드 초점과 접근 가능한 이름이 유지된다.
+- [x] 문서 헤더 등 기존 로고 표면과 favicon에 제공된 SVG를 적용하고 로고 글자는 Paperlogy Bold로 표시한다.
+- [x] Typography 문서는 폰트 역할·기본 로딩·재정의 방법을 설명한다. BrandLogo 문서는 실제 registry source로 full/icon·크기·커스텀 아이콘/이름 예제를 제공한다.
+- [x] 작은 화면과 light/dark 모두에서 로고가 잘리지 않고 읽을 수 있다. 로고 링크의 키보드 초점과 접근 가능한 이름이 유지된다.
 
 ## 기능 요구사항
 

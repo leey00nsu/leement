@@ -46,3 +46,5 @@ D002 확인: 현재 root README.md와 docs/README.md에서 font/Pretendard/Typog
 - **Refinement**: registry.json의 불필요한 전체 재포맷을 원래 형식으로 되돌렸다. Feature 전체 diff에는 BrandLogo item만 추가된다.
 - **Limits**: 기본 Pretendard 전체 Variable WOFF2는 약 2.06 MB, Paperlogy 전체 700 WOFF2는 약 164 KB다. swap과 fallback을 사용하므로 파일 로딩 전에 대체 폰트가 표시될 수 있다. 사용자 custom family 파일과 실제 700 face 로딩은 소비자 앱의 책임이다. npm/public registry publishing은 이 Feature에서 실행하지 않았다. 검증은 실제 packed package와 로컬 배포 URL에 대해 수행했다.
 - **Workflow**: T01/T02/T03 구현 완료 후 implementation_approve에서 사용자 확인을 받는다. main 통합은 별도 local_merge 승인을 받아야 한다.
+
+구현 승인 기록: 2026-09-30 사용자 `A`로 기본 폰트·로고 및 실시간 폰트 편집 구현 결과를 승인했다. 이 응답은 main 병합 승인을 포함하지 않는다.
