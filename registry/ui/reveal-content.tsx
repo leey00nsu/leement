@@ -2,7 +2,7 @@
 
 import type { HTMLMotionProps } from "motion/react";
 import { motion, useAnimate, useInView } from "motion/react";
-import { useEffect } from "react";
+import { useEffect, useImperativeHandle } from "react";
 import { motionEasing, motionMilliseconds, useMotionActivity } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 import styles from "./reveal-content.module.css";
@@ -24,8 +24,9 @@ const defaults = {
 } as const;
 
 // Motion-backed one-shot reveal adapted from the React Bits Fade/Animated Content pattern.
-function RevealContent({ className, delay = 0, distance, duration, fromOpacity, variant = "default", ...props }: RevealContentProps) {
+function RevealContent({ className, delay = 0, distance, duration, fromOpacity, variant = "default", ref: forwardedRef, ...props }: RevealContentProps) {
   const [scope, animate] = useAnimate<HTMLDivElement>();
+  useImperativeHandle(forwardedRef, () => scope.current!);
   const inView = useInView(scope, { amount: 0.08, margin: "0px 0px -10% 0px", once: true });
   const { reduced } = useMotionActivity(scope);
   useEffect(() => {

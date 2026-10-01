@@ -1,6 +1,6 @@
 "use client";
 
-import { Children, cloneElement, isValidElement, useEffect, useRef, useState, type ComponentProps, type CSSProperties } from "react";
+import { Children, cloneElement, isValidElement, useEffect, useImperativeHandle, useRef, useState, type ComponentProps, type CSSProperties } from "react";
 import { useMotionActivity } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 import styles from "./text-reveal.module.css";
@@ -10,8 +10,9 @@ type TextRevealItemProps = ComponentProps<"span"> & { index?: number };
 function TextRevealItem({ index = 0, className, style, ...props }: TextRevealItemProps) {
   return <span className={cn(styles.item, className)} style={{ "--lm-text-index": index, ...style } as CSSProperties} {...props} />;
 }
-function TextRevealRoot({ children, className, duration, stagger, style, ...props }: TextRevealProps) {
+function TextRevealRoot({ children, className, duration, stagger, style, ref: forwardedRef, ...props }: TextRevealProps) {
   const ref = useRef<HTMLSpanElement>(null);
+  useImperativeHandle(forwardedRef, () => ref.current!);
   const { active } = useMotionActivity(ref);
   const [entered, setEntered] = useState(false);
   useEffect(() => { if (active) setEntered(true); }, [active]);

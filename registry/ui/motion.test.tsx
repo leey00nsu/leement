@@ -1,3 +1,4 @@
+import { createRef } from "react";
 import { afterEach, expect, test, vi } from "vitest";
 import { act, cleanup, render, screen, fireEvent } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
@@ -6,6 +7,7 @@ import { BrandAction } from "../patterns/brand-action";
 import { RotatingContent } from "./rotating-content";
 import { motionEasing, motionMilliseconds } from "../lib/leement-motion";
 import { TextReveal } from "./text-reveal";
+import { RevealContent } from "./reveal-content";
 
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 test("text reveal keeps native heading and Korean/English text available once in static HTML", () => {
@@ -86,4 +88,45 @@ test("inline rotation can use an app-owned pause control without nesting control
   view.rerender(<h1>Tools <RotatingContent label="Tools" controls={false} paused interval={500} items={["Voice", "Image"]} /></h1>);
   act(() => { vi.advanceTimersByTime(1000); });
   expect(group.getAttribute("data-index")).toBe("1");
+});
+
+
+test("consumer object and callback refs preserve entrance, rotation and cleanup", () => {
+  vi.useFakeTimers();
+  vi.stubGlobal("matchMedia", () => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+  const textRef = createRef<HTMLSpanElement>();
+  let rotation: HTMLSpanElement | null = null;
+  const released = vi.fn();
+  const rotationRef = (node: HTMLSpanElement | null) => { rotation = node; return () => { rotation = null; released(); }; };
+  const view = render(<><TextReveal ref={textRef}><TextReveal.Item>Voice</TextReveal.Item></TextReveal><RotatingContent ref={rotationRef} label="Referenced tools" interval={500} items={["Voice", "Image"]} /></>);
+  expect(textRef.current?.textContent).toBe("Voice");
+  expect(textRef.current?.getAttribute("data-entered")).toBe("true");
+  const group = screen.getByRole("group", { name: "Referenced tools" });
+  expect(rotation).toBe(group);
+  act(() => { vi.advanceTimersByTime(500); });
+  expect(group.getAttribute("data-index")).toBe("1");
+  view.unmount();
+  expect(textRef.current).toBeNull();
+  expect(rotation).toBeNull();
+  expect(released).toHaveBeenCalled();
+  expect(vi.getTimerCount()).toBe(0);
+});
+
+test("reveal content observes its real element with either kind of consumer ref", () => {
+  const observed: Element[] = [];
+  const disconnect = vi.fn();
+  vi.stubGlobal("IntersectionObserver", class { observe(element: Element) { observed.push(element); } unobserve() {} disconnect = disconnect; });
+  vi.stubGlobal("matchMedia", () => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+  const objectRef = createRef<HTMLDivElement>();
+  const callbackRef = vi.fn();
+  const view = render(<><RevealContent ref={objectRef}>Object reference</RevealContent><RevealContent ref={callbackRef}>Callback reference</RevealContent></>);
+  expect(objectRef.current?.textContent).toBe("Object reference");
+  expect(observed).toContain(objectRef.current);
+  const callbackNode = screen.getByText("Callback reference");
+  expect(callbackRef).toHaveBeenCalledWith(callbackNode);
+  expect(observed).toContain(callbackNode);
+  view.unmount();
+  expect(objectRef.current).toBeNull();
+  expect(callbackRef).toHaveBeenCalledWith(null);
+  expect(disconnect).toHaveBeenCalled();
 });

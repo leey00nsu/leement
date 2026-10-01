@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState, type ComponentProps, type ReactNode } from "react";
+import { useEffect, useImperativeHandle, useRef, useState, type ComponentProps, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { motionMilliseconds, useMotionActivity } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 import styles from "./rotating-content.module.css";
 
 type RotatingContentProps = ComponentProps<"span"> & { items: ReactNode[]; label: string; interval?: number; paused?: boolean; defaultPaused?: boolean; onPausedChange?: (paused: boolean) => void } & ({ controls?: true } | { controls: false; paused: boolean });
-function RotatingContent({ items, label, interval, paused, defaultPaused = false, onPausedChange, controls = true, className, ...props }: RotatingContentProps) {
+function RotatingContent({ items, label, interval, paused, defaultPaused = false, onPausedChange, controls = true, className, ref: forwardedRef, ...props }: RotatingContentProps) {
   const ref = useRef<HTMLSpanElement>(null);
+  useImperativeHandle(forwardedRef, () => ref.current!);
   const { active, reduced } = useMotionActivity(ref);
   const [index, setIndex] = useState(0);
   const [internalPaused, setInternalPaused] = useState(defaultPaused);
