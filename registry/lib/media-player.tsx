@@ -72,6 +72,7 @@ export function useMediaPlayer(ref: RefObject<HTMLMediaElement | null>) {
     const media = ref.current;
     if (!media || !Number.isFinite(value)) return;
     media.volume = Math.min(1, Math.max(0, value));
+    if (media.volume > 0) lastVolume.current = media.volume;
     media.muted = false;
   }
   function toggleMute() {

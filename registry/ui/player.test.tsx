@@ -106,7 +106,7 @@ test("video source changes reset time, errors, readiness and refs", async () => 
   const old = view.container.querySelector("video")!;
   Object.defineProperty(old, "duration", { value: Infinity, configurable: true });
   fireEvent.loadedMetadata(old);
-  expect(screen.getByLabelText("Seek video").hasAttribute("disabled")).toBe(true);
+  expect(screen.getAllByLabelText("Seek video").find((element) => element.tagName === "INPUT")!.hasAttribute("disabled")).toBe(true);
   Object.defineProperty(old, "duration", { value: 20, configurable: true });
   fireEvent.durationChange(old);
   old.currentTime = 8;

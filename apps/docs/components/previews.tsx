@@ -55,6 +55,7 @@ import CreditCardExample from "../examples/credit-card";
 import TickerExample from "../examples/ticker";
 import StoriesExample from "../examples/stories";
 import ReelExample from "../examples/reel";
+import AudioPlayerExample from "../examples/audio-player";
 import VideoPlayerExample from "../examples/video-player";
 import AnnouncementExample from "../examples/announcement";
 import BannerExample from "../examples/banner";
@@ -138,6 +139,7 @@ const examples: Record<keyof typeof items, ComponentType> = {
   ticker: TickerExample,
   stories: StoriesExample,
   reel: ReelExample,
+  "audio-player": AudioPlayerExample,
   "video-player": VideoPlayerExample,
   announcement: AnnouncementExample,
   banner: BannerExample,

@@ -82,5 +82,5 @@ test("video player toggles mute and offers an accessible seek control", async ()
   fireEvent.loadedMetadata(view.container.querySelector("video")!);
   await user.click(screen.getByRole("button", { name: "Mute video" }));
   expect(screen.getByRole("button", { name: "Unmute video" })).toBeTruthy();
-  expect(screen.getByLabelText("Seek video")).toBeTruthy();
+  expect(screen.getAllByLabelText("Seek video").find((element) => element.tagName === "INPUT")!).toBeTruthy();
 });

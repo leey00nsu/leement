@@ -35,6 +35,13 @@ export default function AdoptionPage() {
       </div>
       <p className="text-muted-foreground">This is a screen-by-screen migration path. The existing application wrappers and Base UI trigger call sites need deliberate adaptation before a full app replacement.</p>
     </section>
+    <section className="max-w-3xl space-y-3 rounded-xl border border-border bg-card p-6 text-sm leading-7">
+      <h2 className="text-lg font-semibold">Audio and video playback</h2>
+      <p className="text-muted-foreground">Install <code>@leement/audio-player</code> or <code>@leement/video-player</code>. Media controls and their Button, Slider and Popover sources install together. The renderer dependency is included only for audio.</p>
+      <p className="text-muted-foreground">Map CopySinger&apos;s <code>label → title</code>, <code>waveformPeaks → peaks</code>, <code>waveformDuration → duration</code>. The duration is in seconds. Keep reference-band analysis and preview Blob URL creation in the app, then pass each preview URL to an AudioPlayer. Select <code>brand</code> only for branded playback. Localize the installed control labels in your own source.</p>
+      <p className="text-muted-foreground">VideoPlayer keeps src/title/poster/captionsSrc and adds captionsLang/captionsLabel. Supply a transcript for speech audio and captions for video. Native controls remain available without JavaScript or when waveform decoding fails. CORS/authentication, large-file peaks and URL lifetime are app responsibilities.</p>
+      <p className="text-muted-foreground">The registry currently targets canonical components/ui and lib paths. If your app uses shared/ui or another folder structure, align aliases first or move the installed source and imports deliberately. Runtime stylesheet replacement can dispatch <code>leement:theme-change</code> to redraw waveform colors without resetting playback.</p>
+    </section>
     <AdoptionCompositions />
   </main>;
 }
