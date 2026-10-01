@@ -1,41 +1,23 @@
 # Decisions Log
 
-기술 결정과 그 이유를 기록합니다.
-canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 실제로 채택한 대안과 선택 이유는 이 파일에 다시 남겨 Feature의 결정 이력을 유지합니다.
+## D001: CopySinger 오디오와 기존 VideoPlayer의 공통화 범위 (2026-10-01)
 
-> ADR(Architecture Decision Record)은 구현 중 내린 중요한 기술/구조 결정을 남기는 기록입니다.
-> 나중에 "왜 이렇게 만들었는지"를 추적하고, 팀 합의를 재확인하기 위해 작성합니다.
+- **Context**: 사용자가 CopySinger의 audio player를 토대로 Leement에 추가하고 필요하면 video player도 개선하고 싶다고 요청했다. 진행 중인 모션 Feature는 구현 승인 대기 중이다.
+- **Options**: 현재 모션 Feature를 확장하거나, 별도 player Feature로 명세를 준비한다. Audio는 native controls만 제공하거나, 원본 파형/제어 경험을 기준으로 공통화한다.
+- **Decision**: 별도 다음 Feature에 파형 AudioPlayer와 기존 VideoPlayer 보강을 제안한다. 현재 Feature 범위 확장 여부는 사용자에게 선택을 요청했으며 답변이 없는 상태에서는 구현 전 별도 명세를 준비하는 것으로 가정했다. 기존 모션 구현/병합 승인으로 취급하지 않는다.
+- **Rationale**: waveform engine·미디어 수명주기·fallback·docs/registry 검증은 모션 토큰 연결과 별도의 사용자 계약이다. 원본의 반복된 실제 제품 사용처가 있으며 앱 도메인을 이전하지 않고 UI 재사용을 검증할 수 있다.
+- **Trace / source evidence**:
+  - CopySinger HEAD `f402d7d1bc324af358eeaa18f486aeb0e94da955`: `src/shared/ui/audio-waveform-player/audio-waveform-player.tsx`, Storybook stories와 `src/_app/styles/globals.css`의 audio waveform rules를 읽었다. waveform 72px, barWidth/GAP/radius 2px, 배속 0.75/1/1.25/1.5, volume/mute/restore, keyboard 5초/Home/End/Space, native audio decode fallback이 있다.
+  - 제출 보컬 detail, voice scan input, mixing result, admin custom mixing, reference band preview에서 사용된다. 실제 reference band UI는 앱에서 preview blob을 생성해 여러 player에 전달한다. player segments prop은 조사한 현재 production 호출에 직접 전달되지 않아 초기 공용 범위에서는 제외한다.
+  - 현재 설치 dependency는 wavesurfer.js 7.12.11 및 @wavesurfer/react 1.0.12, 두 package manifest의 license는 BSD-3-Clause다. CopySinger의 legacy token/hardcoded fallback hex와 원본 useMemo([])의 고정된 waveformColors는 theme 편집 시 stale해질 수 있어 그대로 복사하지 않는다.
+  - Leement `registry/ui/video-player.tsx`는 play/pause/timeupdate/loadedmetadata/ended만 연결하고 src 교체 state reset, error/waiting/volumechange/ratechange/duration validation이 없다. play catch는 playing=false만 처리한다. captions는 srcLang=en으로 고정되며 표시 toggle/native controls fallback이 없다. browser 재현/수정은 Plan 및 구현 단계에서 확인한다.
+  - 기존 test `registry/ui/media-finance.test.tsx`는 mute 및 seek control 존재만 확인한다. 실제 playback·source/error 회귀는 아직 검증되지 않았다.
+- **Evidence**: 위 CopySinger source commit; Leement 조사 기준 `a239004` 및 별도 Feature seed commit. [WaveSurfer 공식 문서](https://wavesurfer.xyz/docs/)의 waveform/HTML audio, CORS, 사전 peaks/duration 안내를 확인했다. 현행 사이트는 v8 정보도 있으므로 Plan은 원본 v7의 설치된 API/types/라이선스를 별도 확인하며 임의 major upgrade를 하지 않는다.
+- **Consequences**: registry item은 Components에 하나씩 배치하고 단일 UI 명칭을 사용한다. 새 Audio는 experimental이다. 미디어 sample·API·출처/라이선스·디자인 규칙·migration의 Docs impact는 Spec 승인 후 Plan/task로 연결한다. README는 수정하지 않는다.
 
-> 형식: `DNNN: audio-video-players 결정 (2026-10-01)`
-> 결정 ID는 Feature별로 독립된 번호를 사용하며 Feature ID와 관계없이 `D001`부터 시작합니다.
+## D002: 기존 모션 Feature와 독립 승인·통합 (2026-10-01)
 
-기록 원칙:
-
-- 새 ADR 생성에는 `npx lee-spec-kit decision add <feature-ref> --title "..." --context "..." --decision "..." --rationale "..." --evidence "..."` 사용을 우선하세요.
-- 수동 작성도 마지막 ADR 뒤에 추가해 D001 → D002 순서를 유지하세요. 문서 안내문 앞에 삽입하거나 기존 ID를 재번호화하지 마세요. 같은 결정의 재실행·검증 결과는 해당 ADR의 Trace/Evidence를 갱신하고, 새 선택이나 범위 변경일 때만 새 ADR을 만드세요.
-- 모든 ADR은 **Decision(무엇을 선택했는가)** + **Trace(어떻게 고민했고 무엇을 확인했는가)** 를 함께 남깁니다.
-- 작성 타이밍을 고정합니다.
-  - 태스크 시작(`[TODO] -> [DOING]`): `Context/Constraints`와 `Trace(초기 가설)`를 1~3줄로 먼저 기록
-  - 태스크 완료 직전(`[DOING] -> [DONE]`): `Options/Decision/Rationale`를 최종화하고 `Trace`를 보강
-  - PR 머지 후: 실제 결과/영향을 `Trace(머지 후 확인)`에 1~2줄 추가
-- 모든 ADR에는 최소 1개 이상의 **Evidence 링크**(커밋/PR/테스트 로그 중 하나 이상)를 남깁니다.
-- 디자인 시스템 변경이나 예외를 기록할 때는 영향 받는 규칙과 범위, 예외 이유, 제거 조건, 실행 가능한 정본의 동기화 영향을 함께 남깁니다.
-
----
-
-## D001: audio-video-players 결정 (2026-10-01)
-
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
-- **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
-- **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+- **Context**: W2TPJTYZ2Y4P의 worktree HEAD `12b4006`은 구현 승인 대기이고 main에는 아직 반영되지 않았다.
+- **Decision**: 새 Feature는 managed worktree에서 Spec만 준비한다. 모션 Feature의 source가 필요하면 해당 Feature의 구현/merge 승인 후 최신 main을 명시적으로 sync한다. Feature seed 등록으로 base가 진행했으므로 두 Feature 통합 시 base SHA와 shared documentation을 재확인한다. 사용자 질문이나 새 Feature 진행을 이전 병합 허가로 간주하지 않는다.
+- **Trace**: detect와 built-in 정책, 실제 PRD/design rules를 확인했다. feature 생성 후 반환된 workspace_prepare 명령으로 관리 worktree를 준비했다. workflow-stage는 spec_write, implementationAllowed=false를 반환했다.
+- **Evidence**: `npx lee-spec-kit workflow-stage QJ6JX8SFR87G --json`; [Spec](./spec.md). source 구현/테스트/원본 앱 변경은 이번 명세 단계에서 수행하지 않았다.
