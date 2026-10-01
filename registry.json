@@ -93,24 +93,80 @@
       ]
     },
     {
-      "name": "select", "type": "registry:ui", "title": "Select", "description": "Accessible single choice menu.",
-      "dependencies": ["@base-ui/react", "lucide-react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/select.tsx", "type": "registry:ui", "target": "components/ui/select.tsx" }]
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Accessible single choice menu.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        }
+      ]
     },
     {
-      "name": "switch", "type": "registry:ui", "title": "Switch", "description": "Accessible on or off control.",
-      "dependencies": ["@base-ui/react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/switch.tsx", "type": "registry:ui", "target": "components/ui/switch.tsx" }]
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Accessible on or off control.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        }
+      ]
     },
     {
-      "name": "tabs", "type": "registry:ui", "title": "Tabs", "description": "Accessible views within one section.",
-      "dependencies": ["@base-ui/react", "class-variance-authority"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/tabs.tsx", "type": "registry:ui", "target": "components/ui/tabs.tsx" }]
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Accessible views within one section.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        }
+      ]
     },
     {
-      "name": "label", "type": "registry:ui", "title": "Label", "description": "Semantic form control label.",
-      "dependencies": [], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/label.tsx", "type": "registry:ui", "target": "components/ui/label.tsx" }]
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Semantic form control label.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/label.tsx"
+        }
+      ]
     },
     {
       "name": "badge",
@@ -171,19 +227,64 @@
       ]
     },
     {
-      "name": "dropdown-menu", "type": "registry:ui", "title": "Dropdown Menu", "description": "Accessible action menu.",
-      "dependencies": ["@base-ui/react", "lucide-react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/dropdown-menu.tsx", "type": "registry:ui", "target": "components/ui/dropdown-menu.tsx" }]
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Accessible action menu.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        }
+      ]
     },
     {
-      "name": "popover", "type": "registry:ui", "title": "Popover", "description": "Contextual floating content.",
-      "dependencies": ["@base-ui/react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/popover.tsx", "type": "registry:ui", "target": "components/ui/popover.tsx" }]
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Contextual floating content.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        }
+      ]
     },
     {
-      "name": "sheet", "type": "registry:ui", "title": "Sheet", "description": "Accessible edge panel.",
-      "dependencies": ["@base-ui/react", "lucide-react"], "registryDependencies": ["@leement/utils", "@leement/button"],
-      "files": [{ "path": "registry/ui/sheet.tsx", "type": "registry:ui", "target": "components/ui/sheet.tsx" }]
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Accessible edge panel.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sheet.tsx"
+        }
+      ]
     },
     {
       "name": "tooltip",
@@ -205,162 +306,1089 @@
       ]
     },
     {
-      "name": "chart", "type": "registry:ui", "title": "Chart", "description": "Semantic Recharts composition and tooltip.",
-      "dependencies": ["recharts"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/chart.tsx", "type": "registry:ui", "target": "components/ui/chart.tsx" }]
-    },
-    {
-      "name": "skeleton", "type": "registry:ui", "title": "Skeleton", "description": "Reduced-motion-aware loading placeholder.",
-      "dependencies": [], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/skeleton.tsx", "type": "registry:ui", "target": "components/ui/skeleton.tsx" }]
-    },
-    {
-      "name": "brand-gradient-text", "type": "registry:ui", "title": "Brand Gradient Text", "description": "Optional animated brand gradient for short emphasis.",
-      "dependencies": [], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/brand-gradient-text.tsx", "type": "registry:ui", "target": "components/ui/brand-gradient-text.tsx" }]
-    },
-    {
-      "name": "status-notice", "type": "registry:ui", "title": "Status Notice", "description": "Inline semantic status feedback.",
-      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/status-notice.tsx", "type": "registry:ui", "target": "components/ui/status-notice.tsx" }]
-    },
-    {
-      "name": "reveal-content", "type": "registry:ui", "title": "Reveal Content", "description": "Reduced-motion-aware one-shot content reveal.",
-      "dependencies": ["motion"], "registryDependencies": ["@leement/utils"],
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Semantic Recharts composition and tooltip.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
       "files": [
-        { "path": "registry/ui/reveal-content.tsx", "type": "registry:ui", "target": "components/ui/reveal-content.tsx" },
-        { "path": "registry/ui/reveal-content.module.css", "type": "registry:file", "target": "components/ui/reveal-content.module.css" }
+        {
+          "path": "registry/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/chart.tsx"
+        }
       ]
     },
     {
-      "name": "state-panel", "type": "registry:component", "title": "State Panel", "description": "Empty, success, warning or error state with next action.",
-      "dependencies": ["class-variance-authority"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/patterns/state-panel.tsx", "type": "registry:component", "target": "components/patterns/state-panel.tsx" }]
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Reduced-motion-aware loading placeholder.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/skeleton.tsx"
+        }
+      ]
     },
     {
-      "name": "product-page-intro", "type": "registry:component", "title": "Product Page Intro", "description": "Product page heading, context and action layout.",
-      "dependencies": ["class-variance-authority"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/patterns/product-page-intro.tsx", "type": "registry:component", "target": "components/patterns/product-page-intro.tsx" }]
+      "name": "brand-gradient-text",
+      "type": "registry:ui",
+      "title": "Brand Gradient Text",
+      "description": "Optional animated brand gradient for short emphasis.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/brand-gradient-text.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/brand-gradient-text.tsx"
+        }
+      ]
     },
     {
-      "name": "resource-row-link", "type": "registry:component", "title": "Resource Row Link", "description": "Accessible row-wide navigation or action.",
-      "dependencies": [], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/patterns/resource-row-link.tsx", "type": "registry:component", "target": "components/patterns/resource-row-link.tsx" }]
+      "name": "status-notice",
+      "type": "registry:ui",
+      "title": "Status Notice",
+      "description": "Inline semantic status feedback.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/status-notice.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/status-notice.tsx"
+        }
+      ]
     },
     {
-      "name": "bento-grid", "type": "registry:block", "title": "Bento Grid", "description": "Responsive product feature grid.",
-      "dependencies": [], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/blocks/bento-grid.tsx", "type": "registry:component", "target": "components/blocks/bento-grid.tsx" }]
+      "name": "reveal-content",
+      "type": "registry:ui",
+      "title": "Reveal Content",
+      "description": "Reduced-motion-aware one-shot content reveal.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/reveal-content.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/reveal-content.tsx"
+        },
+        {
+          "path": "registry/ui/reveal-content.module.css",
+          "type": "registry:file",
+          "target": "components/ui/reveal-content.module.css"
+        }
+      ]
     },
     {
-      "name": "collapsible", "type": "registry:ui", "title": "Collapsible", "description": "Accessible disclosure content.",
-      "dependencies": ["@base-ui/react"], "registryDependencies": [],
-      "files": [{ "path": "registry/ui/collapsible.tsx", "type": "registry:ui", "target": "components/ui/collapsible.tsx" }]
+      "name": "state-panel",
+      "type": "registry:component",
+      "title": "State Panel",
+      "description": "Empty, success, warning or error state with next action.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/state-panel.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/state-panel.tsx"
+        }
+      ]
     },
     {
-      "name": "progress", "type": "registry:ui", "title": "Progress", "description": "Accessible task completion progress.",
-      "dependencies": ["@base-ui/react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/progress.tsx", "type": "registry:ui", "target": "components/ui/progress.tsx" }]
+      "name": "product-page-intro",
+      "type": "registry:component",
+      "title": "Product Page Intro",
+      "description": "Product page heading, context and action layout.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/product-page-intro.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/product-page-intro.tsx"
+        }
+      ]
     },
     {
-      "name": "slider", "type": "registry:ui", "title": "Slider", "description": "Accessible single or range value control.",
-      "dependencies": ["@base-ui/react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/slider.tsx", "type": "registry:ui", "target": "components/ui/slider.tsx" }]
+      "name": "resource-row-link",
+      "type": "registry:component",
+      "title": "Resource Row Link",
+      "description": "Accessible row-wide navigation or action.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/resource-row-link.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/resource-row-link.tsx"
+        }
+      ]
     },
     {
-      "name": "toast", "type": "registry:ui", "title": "Toast", "description": "Sonner notification surface with Leement theme.",
-      "dependencies": ["sonner", "lucide-react"], "registryDependencies": [],
-      "files": [{ "path": "registry/ui/toast.tsx", "type": "registry:ui", "target": "components/ui/toast.tsx" }]
+      "name": "bento-grid",
+      "type": "registry:block",
+      "title": "Bento Grid",
+      "description": "Responsive product feature grid.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento-grid.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-grid.tsx"
+        }
+      ]
     },
     {
-      "name": "avatar", "type": "registry:ui", "title": "Avatar", "description": "Image or initials for a person or entity.",
-      "dependencies": ["@radix-ui/react-avatar"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/avatar.tsx", "type": "registry:ui", "target": "components/ui/avatar.tsx" }]
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Accessible disclosure content.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/collapsible.tsx"
+        }
+      ]
     },
     {
-      "name": "alert-dialog", "type": "registry:ui", "title": "Alert Dialog", "description": "Confirmation that requires an explicit choice.",
-      "dependencies": ["@radix-ui/react-alert-dialog"], "registryDependencies": ["@leement/utils", "@leement/button"],
-      "files": [{ "path": "registry/ui/alert-dialog.tsx", "type": "registry:ui", "target": "components/ui/alert-dialog.tsx" }]
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Accessible task completion progress.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/progress.tsx"
+        }
+      ]
     },
     {
-      "name": "page-skeleton", "type": "registry:component", "title": "Page Skeleton", "description": "Loading page structure with accessible status.",
-      "dependencies": [], "registryDependencies": ["@leement/utils", "@leement/skeleton"],
-      "files": [{ "path": "registry/patterns/page-skeleton.tsx", "type": "registry:component", "target": "components/patterns/page-skeleton.tsx" }]
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Accessible single or range value control.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx"
+        }
+      ]
     },
     {
-      "name": "filter-toolbar", "type": "registry:component", "title": "Filter Toolbar", "description": "Search, sorting and pressed filters in one responsive region.",
-      "dependencies": [], "registryDependencies": ["@leement/utils", "@leement/button"],
-      "files": [{ "path": "registry/patterns/filter-toolbar.tsx", "type": "registry:component", "target": "components/patterns/filter-toolbar.tsx" }]
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Sonner notification surface with Leement theme.",
+      "dependencies": [
+        "sonner",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/toast.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toast.tsx"
+        }
+      ]
     },
     {
-      "name": "avatar-stack", "type": "registry:ui", "title": "Avatar Stack", "description": "Compact overlapping avatar group.",
-      "dependencies": [], "registryDependencies": ["@leement/utils", "@leement/avatar"],
-      "files": [{ "path": "registry/ui/avatar-stack.tsx", "type": "registry:ui", "target": "components/ui/avatar-stack.tsx" }]
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Image or initials for a person or entity.",
+      "dependencies": [
+        "@radix-ui/react-avatar"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
+        }
+      ]
     },
     {
-      "name": "cursor", "type": "registry:ui", "title": "Cursor", "description": "Decorative collaborator pointer and label.",
-      "dependencies": [], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/cursor.tsx", "type": "registry:ui", "target": "components/ui/cursor.tsx" }]
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Confirmation that requires an explicit choice.",
+      "dependencies": [
+        "@radix-ui/react-alert-dialog"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert-dialog.tsx"
+        }
+      ]
     },
     {
-      "name": "calendar", "type": "registry:ui", "title": "Calendar", "description": "Keyboard navigable date and event calendar.",
-      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/calendar.tsx", "type": "registry:ui", "target": "components/ui/calendar.tsx" }]
+      "name": "page-skeleton",
+      "type": "registry:component",
+      "title": "Page Skeleton",
+      "description": "Loading page structure with accessible status.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/page-skeleton.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/page-skeleton.tsx"
+        }
+      ]
     },
     {
-      "name": "list", "type": "registry:ui", "title": "List", "description": "Accessible reorderable product list.",
-      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/list.tsx", "type": "registry:ui", "target": "components/ui/list.tsx" }]
+      "name": "filter-toolbar",
+      "type": "registry:component",
+      "title": "Filter Toolbar",
+      "description": "Search, sorting and pressed filters in one responsive region.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/filter-toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/filter-toolbar.tsx"
+        }
+      ]
     },
     {
-      "name": "table", "type": "registry:ui", "title": "Table", "description": "Sortable data table with native semantics.",
-      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/ui/table.tsx", "type": "registry:ui", "target": "components/ui/table.tsx" }]
+      "name": "avatar-stack",
+      "type": "registry:ui",
+      "title": "Avatar Stack",
+      "description": "Compact overlapping avatar group.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/avatar-stack.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar-stack.tsx"
+        }
+      ]
     },
     {
-      "name": "gantt", "type": "registry:block", "title": "Gantt", "description": "Task timeline with keyboard date movement and resizing.",
-      "dependencies": [], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/blocks/gantt.tsx", "type": "registry:component", "target": "components/blocks/gantt.tsx" }]
+      "name": "cursor",
+      "type": "registry:ui",
+      "title": "Cursor",
+      "description": "Decorative collaborator pointer and label.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/cursor.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/cursor.tsx"
+        }
+      ]
     },
     {
-      "name": "kanban", "type": "registry:block", "title": "Kanban", "description": "Accessible movable task board.",
-      "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"],
-      "files": [{ "path": "registry/blocks/kanban.tsx", "type": "registry:component", "target": "components/blocks/kanban.tsx" }]
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Keyboard navigable date and event calendar.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/calendar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/calendar.tsx"
+        }
+      ]
     },
-    { "name": "code-block", "type": "registry:ui", "title": "Code Block", "description": "Highlighted code with example selection, line numbers and copy.", "dependencies": ["highlight.js", "lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/code-block.tsx", "type": "registry:ui", "target": "components/ui/code-block.tsx" }] },
-    { "name": "contribution-graph", "type": "registry:ui", "title": "Contribution Graph", "description": "Accessible daily contribution heatmap.", "dependencies": [], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/contribution-graph.tsx", "type": "registry:ui", "target": "components/ui/contribution-graph.tsx" }] },
-    { "name": "sandbox", "type": "registry:block", "title": "Sandbox", "description": "Editable Sandpack code and isolated preview.", "dependencies": ["@codesandbox/sandpack-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/blocks/sandbox.tsx", "type": "registry:component", "target": "components/blocks/sandbox.tsx" }] },
-    { "name": "snippet", "type": "registry:ui", "title": "Snippet", "description": "Switch and copy command variants.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/snippet.tsx", "type": "registry:ui", "target": "components/ui/snippet.tsx" }] },
-    { "name": "choicebox", "type": "registry:ui", "title": "Choicebox", "description": "Descriptive radio card selection.", "dependencies": [], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/choicebox.tsx", "type": "registry:ui", "target": "components/ui/choicebox.tsx" }] },
-    { "name": "combobox", "type": "registry:ui", "title": "Combobox", "description": "Search and choose one option.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/combobox.tsx", "type": "registry:ui", "target": "components/ui/combobox.tsx" }] },
-    { "name": "dropzone", "type": "registry:ui", "title": "Dropzone", "description": "Collect local files by browse or drop.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/dropzone.tsx", "type": "registry:ui", "target": "components/ui/dropzone.tsx" }] },
-    { "name": "mini-calendar", "type": "registry:ui", "title": "Mini Calendar", "description": "Compact week date selector.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/mini-calendar.tsx", "type": "registry:ui", "target": "components/ui/mini-calendar.tsx" }] },
-    { "name": "tags", "type": "registry:ui", "title": "Tags", "description": "Editable multi-value tags input.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/tags.tsx", "type": "registry:ui", "target": "components/ui/tags.tsx" }] },
-    { "name": "image-crop", "type": "registry:ui", "title": "Image Crop", "description": "Crop an image and return percentage bounds.", "dependencies": ["react-image-crop"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/image-crop.tsx", "type": "registry:ui", "target": "components/ui/image-crop.tsx" }] },
-    { "name": "image-zoom", "type": "registry:ui", "title": "Image Zoom", "description": "Accessible enlarged image dialog.", "dependencies": ["@radix-ui/react-dialog", "lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/image-zoom.tsx", "type": "registry:ui", "target": "components/ui/image-zoom.tsx" }] },
-    { "name": "credit-card", "type": "registry:ui", "title": "Credit Card", "description": "Masked payment card preview with flip control.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/credit-card.tsx", "type": "registry:ui", "target": "components/ui/credit-card.tsx" }] },
-    { "name": "ticker", "type": "registry:ui", "title": "Ticker", "description": "Market value summary with supplied price details.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/ticker.tsx", "type": "registry:ui", "target": "components/ui/ticker.tsx" }] },
-    { "name": "stories", "type": "registry:ui", "title": "Stories", "description": "Navigable image and video story sequence with a trigger gallery.", "dependencies": ["@radix-ui/react-dialog", "lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/stories.tsx", "type": "registry:ui", "target": "components/ui/stories.tsx" }] },
-    { "name": "reel", "type": "registry:block", "title": "Reel", "description": "Keyboard navigable short video feed.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/blocks/reel.tsx", "type": "registry:component", "target": "components/blocks/reel.tsx" }] },
-    { "name": "video-player", "type": "registry:ui", "title": "Video Player", "description": "Media player with play, seek and mute controls.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/video-player.tsx", "type": "registry:ui", "target": "components/ui/video-player.tsx" }] },
-    { "name": "announcement", "type": "registry:ui", "title": "Announcement", "description": "Compact linked or dismissible announcement.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/announcement.tsx", "type": "registry:ui", "target": "components/ui/announcement.tsx" }] },
-    { "name": "banner", "type": "registry:ui", "title": "Banner", "description": "Prominent message with action and dismissal.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/banner.tsx", "type": "registry:ui", "target": "components/ui/banner.tsx" }] },
-    { "name": "typography", "type": "registry:ui", "title": "Typography", "description": "Semantic type roles grounded in Leement tokens.", "dependencies": [], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/typography.tsx", "type": "registry:ui", "target": "components/ui/typography.tsx" }] },
-    { "name": "color-picker", "type": "registry:ui", "title": "Color Picker", "description": "Choose a hex color by well, text or preset.", "dependencies": [], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/color-picker.tsx", "type": "registry:ui", "target": "components/ui/color-picker.tsx" }] },
-    { "name": "comparison", "type": "registry:ui", "title": "Comparison", "description": "Keyboard accessible before-and-after image comparison.", "dependencies": [], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/comparison.tsx", "type": "registry:ui", "target": "components/ui/comparison.tsx" }] },
-    { "name": "deck", "type": "registry:block", "title": "Deck", "description": "Navigable presentation slides.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/blocks/deck.tsx", "type": "registry:component", "target": "components/blocks/deck.tsx" }] },
-    { "name": "dialog-stack", "type": "registry:block", "title": "Dialog Stack", "description": "Focused multi-step modal flow.", "dependencies": ["@radix-ui/react-dialog", "lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/blocks/dialog-stack.tsx", "type": "registry:component", "target": "components/blocks/dialog-stack.tsx" }] },
-    { "name": "editor", "type": "registry:ui", "title": "Editor", "description": "Rich text editor with accessible formatting controls.", "dependencies": ["@tiptap/react", "@tiptap/starter-kit", "lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/editor.tsx", "type": "registry:ui", "target": "components/ui/editor.tsx" }] },
-    { "name": "glimpse", "type": "registry:ui", "title": "Glimpse", "description": "Hover and focus link preview.", "dependencies": ["@radix-ui/react-hover-card"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/glimpse.tsx", "type": "registry:ui", "target": "components/ui/glimpse.tsx" }] },
-    { "name": "marquee", "type": "registry:ui", "title": "Marquee", "description": "Pausable horizontal item stream.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/marquee.tsx", "type": "registry:ui", "target": "components/ui/marquee.tsx" }] },
-    { "name": "pill", "type": "registry:ui", "title": "Pill", "description": "Removable compact value.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/pill.tsx", "type": "registry:ui", "target": "components/ui/pill.tsx" }] },
-    { "name": "qr-code", "type": "registry:ui", "title": "QR Code", "description": "Scannable SVG code with value copy.", "dependencies": ["qrcode.react", "lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/qr-code.tsx", "type": "registry:ui", "target": "components/ui/qr-code.tsx" }] },
-    { "name": "rating", "type": "registry:ui", "title": "Rating", "description": "Keyboard operable star rating.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/rating.tsx", "type": "registry:ui", "target": "components/ui/rating.tsx" }] },
-    { "name": "relative-time", "type": "registry:ui", "title": "Relative Time", "description": "Localized relative and absolute time semantics.", "dependencies": [], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/relative-time.tsx", "type": "registry:ui", "target": "components/ui/relative-time.tsx" }] },
-    { "name": "spinner", "type": "registry:ui", "title": "Spinner", "description": "Reduced-motion-aware loading status.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/spinner.tsx", "type": "registry:ui", "target": "components/ui/spinner.tsx" }] },
-    { "name": "status", "type": "registry:ui", "title": "Status", "description": "Persistent semantic state label.", "dependencies": [], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/status.tsx", "type": "registry:ui", "target": "components/ui/status.tsx" }] },
-    { "name": "theme-switcher", "type": "registry:ui", "title": "Theme Switcher", "description": "Light and dark theme control.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/theme-switcher.tsx", "type": "registry:ui", "target": "components/ui/theme-switcher.tsx" }] },
-    { "name": "tree", "type": "registry:ui", "title": "Tree", "description": "Accessible hierarchical navigation.", "dependencies": ["lucide-react"], "registryDependencies": ["@leement/utils"], "files": [{ "path": "registry/ui/tree.tsx", "type": "registry:ui", "target": "components/ui/tree.tsx" }] },
+    {
+      "name": "list",
+      "type": "registry:ui",
+      "title": "List",
+      "description": "Accessible reorderable product list.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/list.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Sortable data table with native semantics.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gantt",
+      "type": "registry:block",
+      "title": "Gantt",
+      "description": "Task timeline with keyboard date movement and resizing.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/gantt.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/gantt.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kanban",
+      "type": "registry:block",
+      "title": "Kanban",
+      "description": "Accessible movable task board.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/kanban.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/kanban.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "Highlighted code with example selection, line numbers and copy.",
+      "dependencies": [
+        "highlight.js",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/code-block.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contribution-graph",
+      "type": "registry:ui",
+      "title": "Contribution Graph",
+      "description": "Accessible daily contribution heatmap.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/contribution-graph.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/contribution-graph.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sandbox",
+      "type": "registry:block",
+      "title": "Sandbox",
+      "description": "Editable Sandpack code and isolated preview.",
+      "dependencies": [
+        "@codesandbox/sandpack-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/sandbox.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/sandbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snippet",
+      "type": "registry:ui",
+      "title": "Snippet",
+      "description": "Switch and copy command variants.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/snippet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/snippet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "choicebox",
+      "type": "registry:ui",
+      "title": "Choicebox",
+      "description": "Descriptive radio card selection.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/choicebox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/choicebox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Search and choose one option.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropzone",
+      "type": "registry:ui",
+      "title": "Dropzone",
+      "description": "Collect local files by browse or drop.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/dropzone.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropzone.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mini-calendar",
+      "type": "registry:ui",
+      "title": "Mini Calendar",
+      "description": "Compact week date selector.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/mini-calendar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/mini-calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tags",
+      "type": "registry:ui",
+      "title": "Tags",
+      "description": "Editable multi-value tags input.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tags.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tags.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-crop",
+      "type": "registry:ui",
+      "title": "Image Crop",
+      "description": "Crop an image and return percentage bounds.",
+      "dependencies": [
+        "react-image-crop"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/image-crop.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/image-crop.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-zoom",
+      "type": "registry:ui",
+      "title": "Image Zoom",
+      "description": "Accessible enlarged image dialog.",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/image-zoom.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/image-zoom.tsx"
+        }
+      ]
+    },
+    {
+      "name": "credit-card",
+      "type": "registry:ui",
+      "title": "Credit Card",
+      "description": "Masked payment card preview with flip control.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/credit-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/credit-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ticker",
+      "type": "registry:ui",
+      "title": "Ticker",
+      "description": "Market value summary with supplied price details.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/ticker.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/ticker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stories",
+      "type": "registry:ui",
+      "title": "Stories",
+      "description": "Navigable image and video story sequence with a trigger gallery.",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/stories.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stories.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reel",
+      "type": "registry:block",
+      "title": "Reel",
+      "description": "Keyboard navigable short video feed.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/reel.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/reel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "video-player",
+      "type": "registry:ui",
+      "title": "Video Player",
+      "description": "Media player with play, seek and mute controls.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/video-player.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/video-player.tsx"
+        }
+      ]
+    },
+    {
+      "name": "announcement",
+      "type": "registry:ui",
+      "title": "Announcement",
+      "description": "Compact linked or dismissible announcement.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/announcement.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/announcement.tsx"
+        }
+      ]
+    },
+    {
+      "name": "banner",
+      "type": "registry:ui",
+      "title": "Banner",
+      "description": "Prominent message with action and dismissal.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/banner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "type": "registry:ui",
+      "title": "Typography",
+      "description": "Semantic type roles grounded in Leement tokens.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/typography.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/typography.tsx"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Color Picker",
+      "description": "Choose a hex color by well, text or preset.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/color-picker.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/color-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparison",
+      "type": "registry:ui",
+      "title": "Comparison",
+      "description": "Keyboard accessible before-and-after image comparison.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/comparison.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/comparison.tsx"
+        }
+      ]
+    },
+    {
+      "name": "deck",
+      "type": "registry:block",
+      "title": "Deck",
+      "description": "Navigable presentation slides.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/deck.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/deck.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-stack",
+      "type": "registry:block",
+      "title": "Dialog Stack",
+      "description": "Focused multi-step modal flow.",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/dialog-stack.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/dialog-stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "editor",
+      "type": "registry:ui",
+      "title": "Editor",
+      "description": "Rich text editor with accessible formatting controls.",
+      "dependencies": [
+        "@tiptap/react",
+        "@tiptap/starter-kit",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/editor.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/editor.tsx"
+        }
+      ]
+    },
+    {
+      "name": "glimpse",
+      "type": "registry:ui",
+      "title": "Glimpse",
+      "description": "Hover and focus link preview.",
+      "dependencies": [
+        "@radix-ui/react-hover-card"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/glimpse.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/glimpse.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "description": "Pausable horizontal item stream.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/marquee.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pill",
+      "type": "registry:ui",
+      "title": "Pill",
+      "description": "Removable compact value.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/pill.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/pill.tsx"
+        }
+      ]
+    },
+    {
+      "name": "qr-code",
+      "type": "registry:ui",
+      "title": "QR Code",
+      "description": "Scannable SVG code with value copy.",
+      "dependencies": [
+        "qrcode.react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/qr-code.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/qr-code.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rating",
+      "type": "registry:ui",
+      "title": "Rating",
+      "description": "Keyboard operable star rating.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rating.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/rating.tsx"
+        }
+      ]
+    },
+    {
+      "name": "relative-time",
+      "type": "registry:ui",
+      "title": "Relative Time",
+      "description": "Localized relative and absolute time semantics.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/relative-time.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/relative-time.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Reduced-motion-aware loading status.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "type": "registry:ui",
+      "title": "Status",
+      "description": "Persistent semantic state label.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/status.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-switcher",
+      "type": "registry:ui",
+      "title": "Theme Switcher",
+      "description": "Light and dark theme control.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/theme-switcher.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/theme-switcher.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:ui",
+      "title": "Tree",
+      "description": "Accessible hierarchical navigation.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tree.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tree.tsx"
+        }
+      ]
+    },
     {
       "name": "page-header",
       "type": "registry:component",
@@ -482,6 +1510,41 @@
           "path": "registry/patterns/brand-logo.tsx",
           "type": "registry:component",
           "target": "components/patterns/brand-logo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "leement-motion",
+      "type": "registry:lib",
+      "title": "Leement motion helpers",
+      "description": "Scoped preference and CSS motion value helpers.",
+      "files": [
+        {
+          "path": "registry/lib/leement-motion.ts",
+          "type": "registry:lib",
+          "target": "lib/leement-motion.ts"
+        }
+      ]
+    },
+    {
+      "name": "text-reveal",
+      "type": "registry:ui",
+      "title": "Text Reveal",
+      "description": "Composable, readable text entrance.",
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/text-reveal.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/text-reveal.tsx"
+        },
+        {
+          "path": "registry/ui/text-reveal.module.css",
+          "type": "registry:file",
+          "target": "components/ui/text-reveal.module.css"
         }
       ]
     }

@@ -1,6 +1,7 @@
 "use client";
 
 import type { ComponentType } from "react";
+import TextRevealExample from "../examples/text-reveal";
 import ButtonExample from "../examples/button";
 import InputExample from "../examples/input";
 import SelectExample from "../examples/select";
@@ -84,6 +85,7 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "text-reveal": TextRevealExample,
   button: ButtonExample,
   input: InputExample,
   select: SelectExample,

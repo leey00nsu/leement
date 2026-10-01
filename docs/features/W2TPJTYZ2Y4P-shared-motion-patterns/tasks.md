@@ -95,14 +95,14 @@
 
   - Verification: tokens/theme build PASS; theme/button/overlay Vitest 12/12 PASS; scoped ESLint and git diff --check PASS. 새 Foundation 편집/preview 연결은 T05, 새 lifecycle 제어는 T02–04에서 검증한다.
 
-- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-02 RevealContent 개선과 TextReveal 제공
+- [DONE][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-02 RevealContent 개선과 TextReveal 제공
   - Date: 2026-10-01
   - Acceptance:
     - 기존 공개 API를 유지하고 TextReveal이 명시적 조각·정적 표시·reduced motion을 지원한다
   - Checklist:
-    - [ ] 작은 motion helper를 registry로 제공하고 dependency/alias를 연결한다
-    - [ ] RevealContent와 TextReveal을 구현하고 읽기/진입 계약을 검사한다
-    - [ ] 실제 source의 텍스트 예제와 API/설치 문서를 연결한다
+    - [x] 작은 motion helper를 registry로 제공하고 dependency/alias를 연결한다
+    - [x] RevealContent와 TextReveal을 구현하고 읽기/진입 계약을 검사한다
+    - [x] 실제 source의 텍스트 예제와 API/설치 문서를 연결한다
   - Docs:
     - project:apps/docs/lib/items.ts
   - Review Evidence: -
@@ -110,6 +110,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: typecheck 5 tasks PASS; TextReveal static/render contract 1/1 PASS; registry build and scoped ESLint PASS. Actual replay/reduced/hydration checks remain T05/T06.
 
 - [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-03 Collapsible 모션과 MediaReveal 제공
   - Date: 2026-10-01
@@ -207,4 +209,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:8407f037f7b3033aaac361bda92c7410ddd48c7ca7b9e29ec295c42c15bc4306 -->
+<!-- lee-spec-kit:workflow-sync sha256:759e6280b43a008fdace527d9c22bba8b5f42a0810938d7e307688d0bdcb29db -->

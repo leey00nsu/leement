@@ -13,7 +13,7 @@ const componentSections = [
   { title: "Finance", names: ["Credit Card", "Ticker"] },
   { title: "Social", names: ["Stories", "Video Player"] },
   { title: "Callouts", names: ["Announcement", "Banner"] },
-  { title: "Styling", names: ["Typography", "Brand Gradient Text"] },
+  { title: "Styling", names: ["Typography", "Brand Gradient Text", "Text Reveal"] },
   { title: "Other", names: ["Reveal Content", "Collapsible", "Code Block", "Snippet", "Editor", "Glimpse", "Marquee", "Pill", "QR Code", "Relative Time", "Theme Switcher", "Tree", "Comparison"] },
 ];
 

@@ -1,11 +1,10 @@
 "use client";
 
 import type { HTMLMotionProps } from "motion/react";
-import { motion, stagger, useAnimate, useInView, useReducedMotion } from "motion/react";
+import { motion, useAnimate, useInView } from "motion/react";
 import { useEffect } from "react";
-
+import { motionEasing, motionMilliseconds, useMotionActivity } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
-
 import styles from "./reveal-content.module.css";
 
 type RevealContentProps = HTMLMotionProps<"div"> & {
@@ -15,100 +14,41 @@ type RevealContentProps = HTMLMotionProps<"div"> & {
   fromOpacity?: number;
   variant?: "default" | "fade" | "group" | "line" | "section" | "stagger";
 };
-
-const variantDefaults = {
-  default: { distance: 8, duration: 700, fromOpacity: 0.94 },
-  fade: { distance: 0, duration: 800, fromOpacity: 0 },
-  group: { distance: 6, duration: 800, fromOpacity: 0 },
-  line: { distance: 0, duration: 700, fromOpacity: 1 },
-  section: { distance: 16, duration: 700, fromOpacity: 0 },
-  stagger: { distance: 0, duration: 650, fromOpacity: 1 },
+const defaults = {
+  default: { distance: 8, ratio: 1, opacity: 0.94 },
+  fade: { distance: 0, ratio: 8 / 7, opacity: 0 },
+  group: { distance: 6, ratio: 8 / 7, opacity: 0 },
+  line: { distance: 0, ratio: 1, opacity: 1 },
+  section: { distance: 16, ratio: 1, opacity: 0 },
+  stagger: { distance: 0, ratio: 6.5 / 7, opacity: 1 },
 } as const;
 
-const revealEase = [0.22, 1, 0.36, 1] as const;
-
 // Motion-backed one-shot reveal adapted from the React Bits Fade/Animated Content pattern.
-function RevealContent({
-  className,
-  delay = 0,
-  distance,
-  duration,
-  fromOpacity,
-  style,
-  variant = "default",
-  ...props
-}: RevealContentProps) {
+function RevealContent({ className, delay = 0, distance, duration, fromOpacity, variant = "default", ...props }: RevealContentProps) {
   const [scope, animate] = useAnimate<HTMLDivElement>();
   const inView = useInView(scope, { amount: 0.08, margin: "0px 0px -10% 0px", once: true });
-  const shouldReduceMotion = Boolean(useReducedMotion());
-  const defaults = variantDefaults[variant];
-  const resolvedDistance = distance ?? defaults.distance;
-  const resolvedDuration = duration ?? defaults.duration;
-  const resolvedOpacity = fromOpacity ?? defaults.fromOpacity;
-  const usesChildSequence = variant === "line" || variant === "stagger";
-
+  const { reduced } = useMotionActivity(scope);
   useEffect(() => {
-    if (!usesChildSequence || (!inView && !shouldReduceMotion)) return;
-    const instant = shouldReduceMotion;
-    const baseDelay = instant ? 0 : delay / 1000;
-
-    if (variant === "stagger") {
-      animate(
-        "[data-reveal-item]",
-        { opacity: 1, y: 0 },
-        {
-          delay: instant ? 0 : stagger(0.07, { startDelay: baseDelay }),
-          duration: instant ? 0 : 0.65,
-          ease: revealEase,
-        },
-      );
-      if (scope.current.querySelector("[data-reveal-media]")) {
-        animate(
-          "[data-reveal-media]",
-          { scale: 1 },
-          {
-            delay: instant ? 0 : stagger(0.07, { startDelay: baseDelay }),
-            duration: instant ? 0 : 0.9,
-            ease: revealEase,
-          },
-        );
-      }
-      return;
+    const root = scope.current;
+    if (!root || (!inView && !reduced)) return;
+    const base = motionMilliseconds(root, "duration-reveal");
+    const seconds = reduced ? 0 : Math.max(0, duration ?? base * defaults[variant].ratio) / 1000;
+    const wait = reduced ? 0 : Math.max(0, delay) / 1000;
+    const gap = reduced ? 0 : motionMilliseconds(root, "delay-stagger") / 1000;
+    const ease = motionEasing(root);
+    const controls: Array<{ stop: () => void }> = [];
+    const sequence = variant === "line" || variant === "stagger";
+    if (!sequence) controls.push(animate(root, { opacity: reduced ? 1 : [fromOpacity ?? defaults[variant].opacity, 1], y: reduced ? 0 : [distance ?? defaults[variant].distance, 0] }, { delay: wait, duration: seconds, ease }));
+    else {
+      root.querySelectorAll<HTMLElement>("[data-reveal-item]").forEach((element, index) => {
+        controls.push(animate(element, { opacity: reduced ? 1 : [0, 1], y: reduced || variant === "line" ? 0 : [6, 0] }, { delay: wait + index * gap + (variant === "line" && !reduced ? gap * 16 / 7 : 0), duration: seconds, ease }));
+      });
+      root.querySelectorAll<HTMLElement>("[data-reveal-media]").forEach((element, index) => controls.push(animate(element, { scale: reduced ? 1 : [1.025, 1] }, { delay: wait + index * gap, duration: reduced ? 0 : seconds * 9 / 6.5, ease })));
+      root.querySelectorAll<HTMLElement>("[data-reveal-line]").forEach((element) => controls.push(animate(element, { scaleX: reduced ? 1 : [0, 1] }, { delay: wait, duration: reduced ? 0 : seconds * 7.5 / 7, ease })));
     }
-
-    animate("[data-reveal-line]", { scaleX: 1 }, { delay: baseDelay, duration: instant ? 0 : 0.75, ease: revealEase });
-    animate(
-      "[data-reveal-item]",
-      { opacity: 1 },
-      {
-        delay: instant ? 0 : stagger(0.07, { startDelay: baseDelay + 0.16 }),
-        duration: instant ? 0 : 0.65,
-        ease: revealEase,
-      },
-    );
-  }, [animate, delay, inView, scope, shouldReduceMotion, usesChildSequence, variant]);
-
-  return (
-    <motion.div
-      animate={usesChildSequence || !inView ? undefined : { opacity: 1, y: 0 }}
-      className={cn(styles.root, styles[variant], className)}
-      data-slot="reveal-content"
-      data-reveal-variant={variant}
-      initial={usesChildSequence ? false : { opacity: resolvedOpacity, y: resolvedDistance }}
-      ref={scope}
-      style={
-        {
-          ...style,
-          "--reveal-delay": `${delay}ms`,
-          "--reveal-distance": `${resolvedDistance}px`,
-          "--reveal-duration": `${resolvedDuration}ms`,
-          "--reveal-opacity": resolvedOpacity,
-        } as React.CSSProperties
-      }
-      transition={{ delay: delay / 1000, duration: resolvedDuration / 1000, ease: revealEase }}
-      {...props}
-    />
-  );
+    return () => controls.forEach((control) => control.stop());
+  }, [animate, delay, distance, duration, fromOpacity, inView, reduced, scope, variant]);
+  return <motion.div initial={false} ref={scope} data-slot="reveal-content" data-reveal-variant={variant} className={cn(styles.root, className)} {...props} />;
 }
-
 export { RevealContent };
+export type { RevealContentProps };

@@ -17,6 +17,9 @@
       ],
       "@/lib/utils": [
         "../../registry/lib/utils"
+      ],
+      "@/lib/leement-motion": [
+        "../../registry/lib/leement-motion"
       ]
     },
     "allowJs": true

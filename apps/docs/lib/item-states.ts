@@ -2,6 +2,7 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+  "text-reveal": "Visible static HTML, one-shot entrance, Replay, and immediately readable reduced-motion content.",
   "brand-logo": "Full or icon-only at three sizes, app-owned name and mark, light/dark foreground. A surrounding link supplies hover and focus behavior; disabled and loading do not apply to a static identity.",
   button: "Default, hover, focus-visible, disabled and loading; loading prevents another activation.",
   input: "Empty, filled, focused, invalid and disabled; file inputs also show the selected file control.",
