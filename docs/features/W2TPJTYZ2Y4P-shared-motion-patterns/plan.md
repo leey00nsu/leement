@@ -10,7 +10,7 @@
 - **기능 ID**: W2TPJTYZ2Y4P
 - **대상 레포**: Leement
 - **작성일**: 2026-10-01
-- **상태**: -
+- **상태**: Draft
   - 값: Draft | Review | Approved
 - **Plan 검수**: Pending
   - 값: Pending | Running | Done
