@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ImageCrop } from "./image-crop";
 import { ImageZoom } from "./image-zoom";
@@ -78,8 +78,9 @@ test("reel changes active media with keyboard and toggles mute", async () => {
 
 test("video player toggles mute and offers an accessible seek control", async () => {
   const user = userEvent.setup();
-  render(<VideoPlayer src="/demo.mp4" title="Demo" />);
+  const view = render(<VideoPlayer src="/demo.mp4" title="Demo" />);
+  fireEvent.loadedMetadata(view.container.querySelector("video")!);
   await user.click(screen.getByRole("button", { name: "Mute video" }));
   expect(screen.getByRole("button", { name: "Unmute video" })).toBeTruthy();
-  expect(screen.getByRole("slider", { name: "Seek video" })).toBeTruthy();
+  expect(screen.getByLabelText("Seek video")).toBeTruthy();
 });

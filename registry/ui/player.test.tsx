@@ -4,6 +4,7 @@ import { afterEach, beforeEach, expect, test, vi } from "vitest";
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { AudioPlayer } from "./audio-player";
+import { VideoPlayer } from "./video-player";
 import { formatMediaTime } from "../lib/media-player";
 
 const wave = vi.hoisted(() => ({ records: [] as Array<{ events: Record<string, (...args: unknown[]) => void>; destroy: ReturnType<typeof vi.fn>; setOptions: ReturnType<typeof vi.fn> }> }));
@@ -97,4 +98,51 @@ test("rejected playback exposes retry and native fallback without an unhandled p
 test("empty source is idle rather than indefinitely loading", () => {
   render(<AudioPlayer src="" title="Choose a source" />);
   expect(screen.getByRole("status").textContent).toBe("No audio source.");
+});
+
+test("video source changes reset time, errors, readiness and refs", async () => {
+  const ref = createRef<HTMLDivElement>();
+  const view = render(<VideoPlayer ref={ref} src="/one.mp4" title="Video" />);
+  const old = view.container.querySelector("video")!;
+  Object.defineProperty(old, "duration", { value: Infinity, configurable: true });
+  fireEvent.loadedMetadata(old);
+  expect(screen.getByLabelText("Seek video").hasAttribute("disabled")).toBe(true);
+  Object.defineProperty(old, "duration", { value: 20, configurable: true });
+  fireEvent.durationChange(old);
+  old.currentTime = 8;
+  fireEvent.timeUpdate(old);
+  expect(screen.getByText("0:08 / 0:20")).toBeTruthy();
+  view.rerender(<VideoPlayer ref={ref} src="/two.mp4" title="Video" />);
+  expect(screen.getByText("0:00 / 0:00")).toBeTruthy();
+  fireEvent.timeUpdate(old);
+  expect(screen.getByText("0:00 / 0:00")).toBeTruthy();
+  expect(screen.getByRole("button", { name: "Play video" }).hasAttribute("disabled")).toBe(true);
+  view.unmount();
+  expect(ref.current).toBeNull();
+});
+test("video exposes media errors, retry, caption language and caption toggle", async () => {
+  const user = userEvent.setup();
+  const view = render(<VideoPlayer src="/video.mp4" title="Video" captionsSrc="/ko.vtt" captionsLang="ko" captionsLabel="한국어" />);
+  const media = view.container.querySelector("video")!;
+  const track = view.container.querySelector("track")!;
+  Object.defineProperty(track, "track", { value: { mode: "disabled" }, configurable: true });
+  fireEvent.loadedMetadata(media);
+  await user.click(screen.getByRole("button", { name: "Toggle captions" }));
+  expect(track.track.mode).toBe("showing");
+  expect(track.srclang).toBe("ko");
+  expect(track.label).toBe("한국어");
+  await user.click(screen.getByRole("button", { name: "Toggle captions" }));
+  expect(track.track.mode).toBe("disabled");
+  Object.defineProperty(media, "error", { value: { code: 4 }, configurable: true });
+  fireEvent.error(media);
+  expect(screen.getByRole("alert").textContent).toContain("could not be loaded");
+  expect(media.controls).toBe(true);
+  await user.click(screen.getByRole("button", { name: "Retry media" }));
+  expect(media.load).toHaveBeenCalled();
+});
+test("video static HTML offers native controls, caption language and source", () => {
+  const html = renderToString(<VideoPlayer src="/video.mp4" title="Video" captionsSrc="/ko.vtt" captionsLang="ko" />);
+  expect(html).toContain('controls=""');
+  expect(html).toContain('srcLang="ko"');
+  expect(html).toContain('src="/video.mp4"');
 });

@@ -1,24 +1,76 @@
 "use client";
 
-import * as React from "react";
-import { Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { useEffect, useImperativeHandle, useRef, useState, type ComponentProps } from "react";
+import { Captions, Maximize, Minimize } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MediaPlayerControls, MediaPlayerStatus, useMediaPlayer } from "@/lib/media-player";
 import { cn } from "@/lib/utils";
 
-type VideoPlayerProps = Omit<React.ComponentProps<"div">, "children"> & { src: string; title: string; poster?: string; captionsSrc?: string };
+type VideoPlayerProps = Omit<ComponentProps<"div">, "children"> & {
+  src: string;
+  title: string;
+  poster?: string;
+  captionsSrc?: string;
+  captionsLang?: string;
+  captionsLabel?: string;
+};
+function VideoPlayer(props: VideoPlayerProps) {
+  return <VideoPlayerInstance key={props.src} {...props} />;
+}
+function VideoPlayerInstance({ src, title, poster, captionsSrc, captionsLang = "en", captionsLabel = "Captions", className, ref: forwardedRef, ...props }: VideoPlayerProps) {
+  const root = useRef<HTMLDivElement>(null);
+  const video = useRef<HTMLVideoElement>(null);
+  const caption = useRef<HTMLTrackElement>(null);
+  useImperativeHandle(forwardedRef, () => root.current!);
+  const player = useMediaPlayer(video);
+  const [enhanced, setEnhanced] = useState(false);
+  const [captionsOn, setCaptionsOn] = useState(false);
+  const [fullscreenAvailable, setFullscreenAvailable] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+  const [fullscreenError, setFullscreenError] = useState<string | null>(null);
 
-function VideoPlayer({ src, title, poster, captionsSrc, className, ...props }: VideoPlayerProps) {
-  const video = React.useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = React.useState(false);
-  const [muted, setMuted] = React.useState(false);
-  const [time, setTime] = React.useState(0);
-  const [duration, setDuration] = React.useState(0);
-  async function togglePlay() { const element = video.current; if (!element) return; if (element.paused) { try { await element.play(); } catch { setPlaying(false); } } else element.pause(); }
-  function toggleMute() { if (!video.current) return; video.current.muted = !video.current.muted; setMuted(video.current.muted); }
-  return <div data-slot="video-player" className={cn("w-full overflow-hidden rounded-xl border border-border bg-card text-card-foreground", className)} {...props}>
-    <video ref={video} src={src} poster={poster} aria-label={title} playsInline preload="metadata" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)} onLoadedMetadata={(event) => setDuration(event.currentTarget.duration)} onEnded={() => setPlaying(false)} className="aspect-video w-full bg-muted object-contain">{captionsSrc && <track kind="captions" src={captionsSrc} srcLang="en" label="Captions" />}</video>
-    <div className="flex items-center gap-3 p-3"><button type="button" onClick={togglePlay} aria-label={playing ? "Pause video" : "Play video"} className="rounded-md p-1.5 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{playing ? <Pause className="size-4" /> : <Play className="size-4" />}</button><input type="range" min={0} max={duration || 1} step={0.1} value={Math.min(time, duration || 1)} aria-label="Seek video" onChange={(event) => { if (video.current) video.current.currentTime = Number(event.target.value); setTime(Number(event.target.value)); }} className="min-w-0 flex-1 accent-primary" /><span className="text-xs tabular-nums text-muted-foreground">{Math.floor(time / 60)}:{String(Math.floor(time % 60)).padStart(2, "0")} / {Math.floor(duration / 60)}:{String(Math.floor(duration % 60)).padStart(2, "0")}</span><button type="button" onClick={toggleMute} aria-label={muted ? "Unmute video" : "Mute video"} className="rounded-md p-1.5 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{muted ? <VolumeX className="size-4" /> : <Volume2 className="size-4" />}</button></div>
+  useEffect(() => {
+    setEnhanced(true);
+    setFullscreenAvailable(Boolean(document.fullscreenEnabled && root.current?.requestFullscreen));
+    const update = () => setFullscreen(document.fullscreenElement === root.current);
+    document.addEventListener("fullscreenchange", update);
+    return () => document.removeEventListener("fullscreenchange", update);
+  }, []);
+  useEffect(() => {
+    const tracks = video.current?.textTracks;
+    if (!tracks) return;
+    const update = () => setCaptionsOn(Array.from(tracks).some((track) => track.kind === "captions" && track.mode === "showing"));
+    tracks.addEventListener?.("change", update);
+    update();
+    return () => tracks.removeEventListener?.("change", update);
+  }, [captionsSrc]);
+
+  function toggleCaptions() {
+    const track = caption.current?.track;
+    if (!track) return;
+    track.mode = captionsOn ? "disabled" : "showing";
+    setCaptionsOn(!captionsOn);
+  }
+  async function toggleFullscreen() {
+    const element = root.current;
+    if (!element) return;
+    try {
+      if (document.fullscreenElement === element) await document.exitFullscreen();
+      else await element.requestFullscreen();
+      setFullscreenError(null);
+    } catch { if (element.isConnected) setFullscreenError("Full screen is unavailable. You can continue in the player."); }
+  }
+  return <div ref={root} data-slot="video-player" className={cn("w-full overflow-hidden rounded-xl border border-border bg-card text-card-foreground", className)} {...props}>
+    <video ref={video} src={src || undefined} poster={poster} aria-label={title} controls={!enhanced || Boolean(player.state.error)} playsInline preload="metadata" className="aspect-video w-full bg-muted object-contain">
+      {captionsSrc && <track key={captionsSrc} ref={caption} kind="captions" src={captionsSrc} srcLang={captionsLang} label={captionsLabel} />}
+    </video>
+    {enhanced && <MediaPlayerControls player={player} kind="video" title={title} timeline>
+      {captionsSrc && <Button type="button" variant="ghost" size="icon-sm" aria-label="Toggle captions" aria-pressed={captionsOn} disabled={!player.state.ready} onClick={toggleCaptions}><Captions aria-hidden="true" /></Button>}
+      {fullscreenAvailable && <Button type="button" variant="ghost" size="icon-sm" aria-label={fullscreen ? "Exit full screen" : "Enter full screen"} onClick={() => void toggleFullscreen()}>{fullscreen ? <Minimize aria-hidden="true" /> : <Maximize aria-hidden="true" />}</Button>}
+    </MediaPlayerControls>}
+    {src ? <MediaPlayerStatus player={player} title={title} /> : <p role="status" className="p-3 text-sm text-muted-foreground">No video source.</p>}
+    {fullscreenError && <p role="status" className="px-3 pb-3 text-sm text-muted-foreground">{fullscreenError}</p>}
   </div>;
 }
-
 export { VideoPlayer };
 export type { VideoPlayerProps };
