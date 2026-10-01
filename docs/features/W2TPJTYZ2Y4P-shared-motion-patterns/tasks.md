@@ -210,14 +210,14 @@
 
   - Verification: Collapsible 전후 frame 관찰: 시작 높이 24px/측정 32px→auto 44px의 12px jump 재현; inner visual box/gap 배치 후 0→52px 연속, 종료 auto 높이차<0.5px, close-to-zero/inert/removal, Enter/Space 빠른 재개폐와 reduced 0s, pageerrors=0 PASS. typecheck/lint/build/full 83 tests, scoped 15 tests 및 feature-audit PASS. CSV evidence linked in decisions D009.
 
-- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-08 공통 모션 영향 감사와 외부 ref 호환성 수정
+- [DONE][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-08 공통 모션 영향 감사와 외부 ref 호환성 수정
   - Date: 2026-10-01
   - Acceptance:
     - TextReveal·RotatingContent·RevealContent는 외부 object/callback ref와 내부 observer를 함께 유지한다.
-    - 전환 easing 및 overlay·브랜드·미디어의 영향과 검증 한계를 기록한다.
+    - 전환 easing 및 overlay·브랜드·미디어의 영향과 검증 한계를 기록한다. Dialog/Tooltip은 local duration override가 있어도 reduced motion에서 정적이다.
   - Checklist:
-    - [ ] 외부 ref의 진입/순환/관찰 회귀 및 unmount cleanup을 검증한다.
-    - [ ] 기존 핵심 UI의 keyboard/focus/reduced motion과 소비자 설치 빌드를 확인한다.
+    - [x] 외부 ref의 진입/순환/관찰 회귀 및 unmount cleanup을 검증한다.
+    - [x] 기존 핵심 UI의 keyboard/focus/reduced motion과 소비자 설치 빌드를 확인한다.
   - Docs:
     - project:apps/docs/lib/items.ts
   - Review Evidence: -
@@ -225,6 +225,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 외부 ref 회귀 2건 및 전체 85 tests/typecheck/lint/build/feature-audit PASS. Chrome normal/reduced에서 overlay keyboard/focus/disabled와 Switch/Slider/Tabs/Input PASS; 900ms local override에서도 Dialog/Tooltip animation=none. CLI로 최신 세 motion item 재설치, consumer strict TS/build 및 실제 ref 진입/fade/rotation/pause/reduced PASS, pageerrors=0. 영향 및 한계는 decisions D010.
 
 ## Repository Knowledge (완료 비차단)
 
@@ -238,8 +240,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -249,11 +251,11 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `pnpm run typecheck` | 2026-10-01 | PASS — T07 포함 5 tasks |
-| `pnpm run lint` | 2026-10-01 | PASS — T07 포함 3 tasks + registry ESLint |
-| `pnpm run test` | 2026-10-01 | PASS — 13 files / 83 tests |
-| `pnpm run build` | 2026-10-01 | PASS — T07 포함 tokens/theme/registry/docs |
-| `pnpm run build` (독립 consumer) | 2026-10-01 | PASS — strict TS + Vite, source 수정 후 재빌드 |
+| `pnpm run typecheck` | 2026-10-01 | PASS — T08 포함 5 tasks |
+| `pnpm run lint` | 2026-10-01 | PASS — T08 포함 3 tasks + registry ESLint |
+| `pnpm run test` | 2026-10-01 | PASS — 13 files / 85 tests |
+| `pnpm run build` | 2026-10-01 | PASS — T08 포함 tokens/theme/registry/docs |
+| `pnpm run build` (독립 consumer) | 2026-10-01 | PASS — strict TS + Vite, T08 최신 세 motion item 재설치 및 외부 ref 조합 후 빌드 |
 | `npx shadcn@latest add` (새 4항목) | 2026-10-01 | PASS — helper/UI/CSS 11 transitive files |
 | `pnpm run build` / `pnpm run typecheck` (CopySinger baseline/post) | 2026-10-01 | PASS — 각각 baseline 및 실제 adapter/pilot 추가 후 |
 | `pnpm run build` / `pnpm run typecheck` (Leesfield baseline/post) | 2026-10-01 | PASS — Base UI composition/cached readiness 보완 후 |
@@ -263,4 +265,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:483fa9410838d63f44a2c2a343e01940b8e3134df850e5749004613f055d498c -->
+<!-- lee-spec-kit:workflow-sync sha256:0b64508f29ee2c45f84ac98d0aa0b41f1702f02971a29adcba332f47879d0f53 -->

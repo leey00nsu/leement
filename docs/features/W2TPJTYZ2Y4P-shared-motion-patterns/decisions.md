@@ -139,3 +139,17 @@
 - **Decision**: T08에서 세 항목의 내부 ref와 consumer ref를 함께 유지한다. 기존 motion suite에 작은 실제 사용 회귀를 추가하고 문서와 registry 소비자 검증을 동기화한다. UI API나 새 Feature를 추가하지 않는다.
 - **Impact scope**: theme의 Tailwind default transition easing이 standard token을 읽어 기존 Input/Textarea/Switch/Tabs/Slider/Popover 등 기본 transition에도 적용된다. 기존 fast/normal/slow 120/180/260ms는 유지된다. Overlay fade, reduced motion, 브랜드 cycle, 미디어 전환은 승인된 변경이다. 높이 측정 transition은 Collapsible에 한정되고 다른 direct-panel padding 사용처는 발견되지 않았다.
 - **Trace**: 코드 수정 전에 task와 Verification Contract를 기록하고 implementationAllowed gate를 확인한다. 결과와 한계는 검증 후 추가한다.
+
+### D010 reduced-motion 추가 발견
+
+- 실제 Chrome에서 reduced motion의 DialogContent animation-name은 enter였다. 기본 duration=0s 덕분에 움직임은 없지만 클래스가 의도한 animation:none은 적용되지 않았다. 생성된 CSS에도 motion-reduce:[animation:none!important]가 없었다. T05의 이전 검증은 정적 결과/0ms만 확인해 이 누락을 놓쳤다.
+- DialogContent와 TooltipContent를 Tailwind v4의 motion-reduce:animate-none! 문법으로 수정한다. CSS 토큰을 소비자가 local로 900ms override한 상태에서도 reduced motion의 computed animation-name=none과 정적 opacity=1을 직접 확인한다.
+
+### D010 수정 및 감사 결과
+
+- TextReveal/RotatingContent/RevealContent에서 ref를 props spread에서 분리하고 기존 Skeleton/BrandAction과 같은 useImperativeHandle로 root를 전달했다. 내부 observer ref가 유지되며 object/callback ref와 callback cleanup을 보존한다. API 문서를 갱신했다.
+- 기존 motion suite에 두 회귀를 추가해 외부 ref의 TextReveal entered, Rotation 진행, Reveal observer target, unmount ref/timer 정리를 확인했다. full test 13 files / 85 tests, typecheck 5 tasks, lint 3 tasks+registry, tokens/theme/registry/docs build, feature-audit violations=[] 및 diff --check PASS.
+- 로컬 Chrome에서 normal/reduced 각각 Dialog의 Tab trap/Escape/trigger focus 복원, Tooltip focus/aria/Escape, Dropdown keyboard/disabled/Escape/focus, Switch Space, Slider ArrowRight/disabled, Tabs ArrowRight 및 Input 입력/disabled를 확인했다. Dialog/Tooltip에 local duration 900ms를 적용해도 reduced animation-name=none, opacity=1이었다. Input/Switch의 기본 timing은 standard token과 일치하고 reduced transition=0s였다. pageerrors=0.
+- 새 registry 출력으로 CLI 4.21.0가 세 motion 항목을 재설치했다. 독립 consumer에서 object/callback ref를 전달한 source의 strict TS/Vite build, 실제 TextReveal 진입, Reveal fade, Rotation 진행/pause/reduced PASS; pageerrors=0. Motion dependency의 use client bundling 안내는 build 실패가 아니었다.
+- 동일한 높이/padding 문제는 다른 Collapsible 사용처에 없었다. MediaReveal은 측정 height animation 없이 공간을 확보한 grid 층의 opacity 전환이다. 브랜드 text cycle은 3s에서 공통 1.5s로 변경되었고 surface/skeleton은 기존 3.5s가 공통 변수를 읽는다. global default easing은 기존 transition utility에도 적용되는 의도된 영향이다.
+- 감사는 변경된 source, transitive helper/theme 및 대표 브라우저 조작을 대상으로 했다. 전체 브라우저/기기 성능 및 두 원본 앱 전체의 모든 화면을 검증했다는 뜻은 아니다. main은 clean이며 이번 수정은 Feature worktree에만 있다. 구현/병합 승인은 받지 않았다.

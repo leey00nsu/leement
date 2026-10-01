@@ -92,7 +92,7 @@ README/constitution/custom 수정, API/backend/security/운영 구조 변경은 
 | 실제 motion/테마/초기표시/JS 없음 | NONE | 브라우저 수동 + 임시 script | SSR mismatch, 멈추지 않는 반복, fade/height 실제 실패 | Spec FR-3/4 |
 | 두 원본 앱 대표 교체 | NONE | 격리 archive 비교/타입검사/빌드/브라우저 | 도메인/현지화 및 import 회귀 | Spec US-3 |
 
-T08 영향 감사는 기존 motion.test.tsx에 object/callback ref + 진입/순환/observer 및 unmount cleanup의 작은 회귀를 추가한다. 임시 브라우저로 overlay keyboard/focus/reduced와 기본 easing 적용을 확인하고, 갱신된 registry source의 소비자 타입 검사/빌드를 확인한다. 전 제품 전체 마이그레이션이나 전 브라우저 성능 보장은 아니다.
+T08 영향 감사는 기존 motion.test.tsx에 object/callback ref + 진입/순환/observer 및 unmount cleanup의 작은 회귀를 추가한다. 임시 브라우저로 overlay keyboard/focus/reduced와 기본 easing 적용과 Dialog/Tooltip의 CSS duration override보다 reduced motion이 우선하는지 확인하고, 갱신된 registry source의 소비자 타입 검사/빌드를 확인한다. 전 제품 전체 마이그레이션이나 전 브라우저 성능 보장은 아니다.
 
 ### 의도적으로 제외하는 테스트
 
