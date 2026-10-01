@@ -109,16 +109,16 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-  - Verification: typecheck 5 tasks, lint 3 tasks+registry PASS; player/media-finance 13/15 PASS, two seek assertions fail because Base UI root and native input share a label. Verification completion was recorded prematurely. Resolve the test query and rerun in T03 before Feature approval. API docs synchronized; actual visible slider/captions/fullscreen are T03 browser checks.
+  - Verification: typecheck 5 tasks, lint 3 tasks+registry PASS; player/media-finance 13/15 PASS, two seek assertions fail because Base UI root and native input share a label. Verification completion was recorded prematurely. T03 resolved the native-input query and reran the suite: 15/15 PASS; real Chrome visible-slider keyboard, captions and fullscreen PASS. Historical correction remains in D004. API docs synchronized; actual visible slider/captions/fullscreen are T03 browser checks.
 
-- [TODO][PRD-FR-009] T-QJ6JX8SFR87G-audio-video-players-03 문서·registry·실제 소비자와 CopySinger 검증
+- [DONE][PRD-FR-009] T-QJ6JX8SFR87G-audio-video-players-03 문서·registry·실제 소비자와 CopySinger 검증
   - Date: 2026-10-02
   - Acceptance:
     - 실제 소스 문서, namespace 설치, 소비자 빌드 및 대표 앱 adapter가 동작한다.
   - Checklist:
-    - [ ] T02의 중복 seek label 조회를 native input으로 좁혀 관련 suite를 통과시킨다. 로컬 sample과 두 source preview/모바일/light/dark/reduced/no-JS를 확인한다.
-    - [ ] CLI 설치/consumer build/source 수정과 CopySinger 격리 교체를 확인한다.
-    - [ ] 전체 configured gates와 Feature audit를 수행한다.
+    - [x] T02의 중복 seek label 조회를 native input으로 좁혀 관련 suite를 통과시킨다. 로컬 sample과 두 source preview/모바일/light/dark/reduced/no-JS를 확인한다.
+    - [x] CLI 설치/consumer build/source 수정과 CopySinger 격리 교체를 확인한다.
+    - [x] 전체 configured gates와 Feature audit를 수행한다.
   - Docs:
     - project:apps/docs/lib/items.ts
     - project:apps/docs/app/adoption/page.tsx
@@ -128,6 +128,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 81 tests, typecheck/lint/build and feature-audit PASS. Real Chrome waveform/theme/native decode fallback/media controls/errors/replay/captions/fullscreen/mobile/reduced/no-JS PASS. Independent namespace consumer install + strict TS/build + owned source edit + playback PASS. CopySinger archive baseline/post TS/build and actual shared wrapper pilot playback PASS; original checkout unchanged. Evidence/artifacts linked in D005. Public publishing/backend/full migration excluded.
 
 ## Repository Knowledge (완료 비차단)
 
@@ -141,8 +143,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -152,8 +154,15 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm run typecheck` | 2026-10-02 | PASS — 5 tasks |
+| `pnpm run lint` | 2026-10-02 | PASS — 3 tasks + registry |
+| `pnpm run test` | 2026-10-02 | PASS — 13 files / 81 tests |
+| `pnpm run build` | 2026-10-02 | PASS — packages / registry / docs |
+| real Chrome player scripts | 2026-10-02 | PASS — media/canvas/theme/errors/replay/captions/fullscreen/mobile/no-JS |
+| independent consumer CLI, TS/build/source edit/browser | 2026-10-02 | PASS — namespace dependencies and owned source |
+| CopySinger archive baseline/post TS/build and wrapper browser | 2026-10-02 | PASS — original checkout unchanged; backend excluded |
+| `npx lee-spec-kit feature-audit --json`, `git diff --check` | 2026-10-02 | PASS |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:98ed1185ee4f9d43f87a1ee65c9d1396d09beead20f5cf703466f4f1921a6b35 -->
+<!-- lee-spec-kit:workflow-sync sha256:588ea0c572405d0fb52a986755c7fcc43e0d2f4f64ca64aa6896779a7632778c -->
