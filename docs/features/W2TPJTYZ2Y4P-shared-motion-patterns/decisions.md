@@ -124,3 +124,10 @@
 - **Evidence**: 실제 /components/collapsible 브라우저 프레임에서 p-3가 있는 panel이 시작부터 24px, 측정값은 32px, 전환 끝에 auto로 복원되며 44px로 점프했다. 기존 검증은 opened/content-grow/closed 기능은 확인했지만 padding 예제의 프레임 연속성을 놓쳤다.
 - **Decision**: Base UI의 panel/ref/render API와 모션 토큰은 보존한다. animated panel은 측정/클리핑을 맡고 패딩·border 같은 시각적 box는 내부 콘텐츠에 둔다. 현재 예제/문서 규칙을 수정하고 시작·끝 jump, 재개폐·keyboard·reduced motion을 scoped 검증한다. 범위는 승인 Spec의 자연스러운 Collapsible 열림/닫힘 내 수정이고 새 Feature를 만들지 않는다.
 - **Trace**: T07 추가로 current Feature를 다시 진행한다. 구현 gate가 허용하기 전에는 코드 수정 없이 증거와 태스크를 기록한다.
+
+### D009 수정과 재검증 결과
+
+- Collapsible docs 예제의 animated panel에서 p-3를 제거하고 시각 box 내부로 옮겼다. Root space-y-2 간격도 내부 pt-2로 옮겨 mount/unmount 순간의 gap jump를 제거했다. Adoption composition의 panel pt-3도 자식으로 옮겼다. ref/render/className API와 400ms expand token은 그대로다. Source 주석·항목 API docs·design-system 규칙을 동기화했다.
+- 수정 후 panel은 0→52px(본문 44px + 내부 간격 8px)이며 auto 전환 직전/직후의 높이 차이는 0.5px 미만이다. 닫힘은 0까지 이어지고 inert 후 제거된다. Enter/Space 빠른 재개폐, focus 대상과 aria-expanded, reduced duration=0s, pageerrors=0을 확인했다.
+- typecheck/lint/build PASS, 관련 source-extension/motion 15 tests PASS. 전체 test 13 files / 83 tests와 feature-audit violations=[] PASS. Foundations의 dynamic height/exit 및 관련 source routes도 browser PASS. Frame 관찰은 레이아웃 연속성을 검증한 것이며 모든 환경의 프레임 속도를 보장하는 측정은 아니다.
+- **Evidence**: [전후 panel 높이 샘플](./artifacts/collapsible-height-samples.csv). 사용자에게 원인과 수정·검증 결과를 공유했다. 구현/병합 승인은 아직 받지 않았다.

@@ -190,22 +190,25 @@
 
   - Verification: 새 4항목 CLI/11 transitive files/theme import 및 수정한 consumer source strict TS/build PASS; 양쪽 실제 TextReveal/MediaReveal, Leesfield controlled 펼침/BrandAction/Rotation adapter와 baseline/post TS/build 및 browser PASS; full gates 83 tests PASS. 원본 상태 동일. Adapter patches linked in decisions D008; canonical-target and backend/no-JS limits documented.
 
-- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-07 Collapsible 열림·접힘의 단계적 높이 변화 수정
+- [DONE][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-07 Collapsible 열림·접힘의 단계적 높이 변화 수정
   - Date: 2026-10-01
   - Acceptance:
     - 패딩이 있는 실제 예제도 0에서 자연 높이로 매끄럽게 열리고 재개폐·포커스 계약을 유지한다
   - Checklist:
-    - [ ] 수정 전 프레임 높이와 실제 CSS/primitive 계산을 조사한다
-    - [ ] panel 측정과 내부 시각 스타일의 책임을 정리하고 예제를 수정한다
-    - [ ] 브라우저 프레임·재개폐·키보드·reduced motion 및 관련 검증을 수행한다
-    - [ ] 원인·수정·검증과 규칙을 현재 Feature 문서에 동기화한다
+    - [x] 수정 전 프레임 높이와 실제 CSS/primitive 계산을 조사한다
+    - [x] panel 측정과 내부 시각 스타일의 책임을 정리하고 예제를 수정한다
+    - [x] 브라우저 프레임·재개폐·키보드·reduced motion 및 관련 검증을 수행한다
+    - [x] 원인·수정·검증과 규칙을 현재 Feature 문서에 동기화한다
   - Docs:
     - project:apps/docs/lib/items.ts
+    - docs:designs/design-system.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: Collapsible 전후 frame 관찰: 시작 높이 24px/측정 32px→auto 44px의 12px jump 재현; inner visual box/gap 배치 후 0→52px 연속, 종료 auto 높이차<0.5px, close-to-zero/inert/removal, Enter/Space 빠른 재개폐와 reduced 0s, pageerrors=0 PASS. typecheck/lint/build/full 83 tests, scoped 15 tests 및 feature-audit PASS. CSV evidence linked in decisions D009.
 
 ## Repository Knowledge (완료 비차단)
 
@@ -219,8 +222,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -230,10 +233,10 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `pnpm run typecheck` | 2026-10-01 | PASS — 5 tasks |
-| `pnpm run lint` | 2026-10-01 | PASS — 3 tasks + registry ESLint |
+| `pnpm run typecheck` | 2026-10-01 | PASS — T07 포함 5 tasks |
+| `pnpm run lint` | 2026-10-01 | PASS — T07 포함 3 tasks + registry ESLint |
 | `pnpm run test` | 2026-10-01 | PASS — 13 files / 83 tests |
-| `pnpm run build` | 2026-10-01 | PASS — tokens/theme/registry/docs |
+| `pnpm run build` | 2026-10-01 | PASS — T07 포함 tokens/theme/registry/docs |
 | `pnpm run build` (독립 consumer) | 2026-10-01 | PASS — strict TS + Vite, source 수정 후 재빌드 |
 | `npx shadcn@latest add` (새 4항목) | 2026-10-01 | PASS — helper/UI/CSS 11 transitive files |
 | `pnpm run build` / `pnpm run typecheck` (CopySinger baseline/post) | 2026-10-01 | PASS — 각각 baseline 및 실제 adapter/pilot 추가 후 |
@@ -244,4 +247,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:a69da6d5465b03432241e1af9a3d4fd3138197f4607a7d85175d9805750b3a18 -->
+<!-- lee-spec-kit:workflow-sync sha256:483fa9410838d63f44a2c2a343e01940b8e3134df850e5749004613f055d498c -->
