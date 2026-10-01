@@ -32,3 +32,14 @@
 - **Evidence**: [Plan Verification Contract](./plan.md), CopySinger source commit f402d7d 및 local WaveSurfer 7.12.11 d.ts/LICENSE.
 
 - **T01 시작/검증**: task owner session 및 hash transition으로 시작했다. native ref/event/seek/volume restoration, decode fallback/old engine cleanup, rejected play 및 empty-src idle의 scoped 5 tests, typecheck 5 tasks, lint 3 tasks+registry PASS. Foundations provider는 동적 style text를 갱신하므로 scoped attribute observer에 선택적 theme-change event를 연결했다. waveform 기본은 foreground-muted로 unplayed 대비를 확보한다. 실제 waveform/브라우저/registry consumer는 T03에서 검증한다.
+
+## D004: VideoPlayer의 native 상태·자막·fullscreen (2026-10-01)
+
+- **Context**: T02 시작. 기존 mute/seek 검사만 있던 player를 같은 media support로 연결한다.
+- **Decision**: 공개 src/title/poster/captionsSrc와 native root/ref를 유지하고 captionsLang/captionsLabel을 추가한다. key=src로 source 상태를 분리하고 textTracks change, fullscreenchange와 capability를 읽는다. native controls는 static/failure 경로다.
+- **Trace**: 기존 mute test는 실제 metadata 준비를 먼저 발생시키도록 갱신한다. 새 player suite는 unknown/Infinity duration, src 변경/늦은 old event/ref cleanup, media error/retry와 자막 toggle/언어를 검사한다. 실제 fullscreen/자막 파일은 T03 브라우저에서 확인한다.
+- **Evidence**: [Tasks](./tasks.md), [Plan](./plan.md), T01 commit 976c3a2.
+
+- **T02 검증 정정**: typecheck 5 tasks, lint 3 tasks+registry PASS. player/media-finance는 13/15 PASS이고 두 query가 중복 label로 실패했다. 결과를 확인하기 전에 DONE/PASS를 기록한 메인 에이전트의 실수다. JSDOM에서는 Base UI thumb의 initial layout가 hidden일 수 있어 disabled/이름 계약은 native input label로 확인하고 실제 접근성·keyboard/visible slider는 T03 Chrome으로 확인한다. unknown duration, src state reset/late events, root ref cleanup, native SSR, captions language/toggle/error/retry를 검사했다.
+
+- DONE task를 DOING/TODO로 되돌리는 CLI transition은 INVALID_ARGUMENT이다. task_commit checkpoint에서 검사 실패를 명시하고 T03의 기존 검증/국소 수정 범위에 query 수정 및 재실행을 연결한다. 실패를 PASS로 남기지 않으며 T03 종료/구현 승인 전 실제 suite 통과를 확인한다.

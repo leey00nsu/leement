@@ -94,13 +94,13 @@
 
   - Verification: native audio SSR/finite time/keyboard/native event sync/mute restore/decode fallback/source cleanup/ref/rejected play/idle 5 tests PASS; typecheck 5 tasks and direct docs tsc, lint 3 tasks+registry/scoped ESLint PASS. PRD/design rules/BSD notice synchronized. Real engine/browser/consumer verification remains T03.
 
-- [TODO][PRD-FR-008] T-QJ6JX8SFR87G-audio-video-players-02 VideoPlayer 상태·제어·자막·fullscreen 개선
+- [DONE][PRD-FR-008] T-QJ6JX8SFR87G-audio-video-players-02 VideoPlayer 상태·제어·자막·fullscreen 개선
   - Date: 2026-10-02
   - Acceptance:
     - 기존 API와 native fallback을 유지하며 source/error/controls/captions를 처리한다.
   - Checklist:
-    - [ ] 기존 media suite와 player 회귀를 확인한다.
-    - [ ] VideoPlayer API 문서를 갱신한다.
+    - [x] 기존 media suite와 player 회귀를 확인한다.
+    - [x] VideoPlayer API 문서를 갱신한다.
   - Docs:
     - project:apps/docs/lib/items.ts
   - Review Evidence: -
@@ -109,12 +109,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+  - Verification: typecheck 5 tasks, lint 3 tasks+registry PASS; player/media-finance 13/15 PASS, two seek assertions fail because Base UI root and native input share a label. Verification completion was recorded prematurely. Resolve the test query and rerun in T03 before Feature approval. API docs synchronized; actual visible slider/captions/fullscreen are T03 browser checks.
+
 - [TODO][PRD-FR-009] T-QJ6JX8SFR87G-audio-video-players-03 문서·registry·실제 소비자와 CopySinger 검증
   - Date: 2026-10-02
   - Acceptance:
     - 실제 소스 문서, namespace 설치, 소비자 빌드 및 대표 앱 adapter가 동작한다.
   - Checklist:
-    - [ ] 로컬 sample과 두 source preview/모바일/light/dark/reduced/no-JS를 확인한다.
+    - [ ] T02의 중복 seek label 조회를 native input으로 좁혀 관련 suite를 통과시킨다. 로컬 sample과 두 source preview/모바일/light/dark/reduced/no-JS를 확인한다.
     - [ ] CLI 설치/consumer build/source 수정과 CopySinger 격리 교체를 확인한다.
     - [ ] 전체 configured gates와 Feature audit를 수행한다.
   - Docs:
@@ -154,4 +156,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:07f46016789f72c68470dffb0a58b75c4fd829ee134300ce2bb668d52bfb2a20 -->
+<!-- lee-spec-kit:workflow-sync sha256:98ed1185ee4f9d43f87a1ee65c9d1396d09beead20f5cf703466f4f1921a6b35 -->
