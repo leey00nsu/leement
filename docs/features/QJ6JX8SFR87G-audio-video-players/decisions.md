@@ -21,3 +21,14 @@
 - **Decision**: 새 Feature는 managed worktree에서 Spec만 준비한다. 모션 Feature의 source가 필요하면 해당 Feature의 구현/merge 승인 후 최신 main을 명시적으로 sync한다. Feature seed 등록으로 base가 진행했으므로 두 Feature 통합 시 base SHA와 shared documentation을 재확인한다. 사용자 질문이나 새 Feature 진행을 이전 병합 허가로 간주하지 않는다.
 - **Trace**: detect와 built-in 정책, 실제 PRD/design rules를 확인했다. feature 생성 후 반환된 workspace_prepare 명령으로 관리 worktree를 준비했다. workflow-stage는 spec_write, implementationAllowed=false를 반환했다.
 - **Evidence**: `npx lee-spec-kit workflow-stage QJ6JX8SFR87G --json`; [Spec](./spec.md). source 구현/테스트/원본 앱 변경은 이번 명세 단계에서 수행하지 않았다.
+
+- **사용자 승인 기록**: 사용자 `A`를 새 플레이어 Spec 승인으로 기록했다. 현재 모션 Feature의 구현·병합 승인으로 해석하지 않았다.
+
+## D003: native media 상태와 선택적 waveform enhancement (2026-10-01)
+
+- **Context**: Spec 사용자 A 승인 후 Plan 작성. 두 player는 playback/time/volume/rate/error 제어가 반복된다. 모션 Feature는 미병합이다.
+- **Decision**: 작고 내부적인 media-player-support registry lib로 native state와 controls를 공유한다. WaveSurfer 7.12.11을 audio에만 연결하고 별도 React adapter를 추가하지 않는다. native controls가 정적/fallback 경로다. 기존 토큰만 사용하고 미병합 코드에 의존하지 않는다.
+- **Trace**: CopySinger 설치 package types에서 media, peaks, duration, setOptions, load/destroy API와 external media 소유권을 확인했다. BSD notice를 읽었다. Audio는 key=src로 engine/listener 교체, video도 같은 source 수명주기다. scoped theme color 재계산을 추가한다.
+- **Evidence**: [Plan Verification Contract](./plan.md), CopySinger source commit f402d7d 및 local WaveSurfer 7.12.11 d.ts/LICENSE.
+
+- **T01 시작/검증**: task owner session 및 hash transition으로 시작했다. native ref/event/seek/volume restoration, decode fallback/old engine cleanup, rejected play 및 empty-src idle의 scoped 5 tests, typecheck 5 tasks, lint 3 tasks+registry PASS. Foundations provider는 동적 style text를 갱신하므로 scoped attribute observer에 선택적 theme-change event를 연결했다. waveform 기본은 foreground-muted로 unplayed 대비를 확보한다. 실제 waveform/브라우저/registry consumer는 T03에서 검증한다.
