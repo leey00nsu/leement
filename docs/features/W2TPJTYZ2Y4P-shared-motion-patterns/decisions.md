@@ -68,3 +68,10 @@
 - **Decision**: TextReveal은 원문을 한 번 읽는 native span 조합을 쓰고 Reveal 공개 Motion props는 유지한다. Collapsible은 Base UI의 높이/전환 속성을 그대로 사용하고 MediaReveal은 inert/aria-hidden 층을 같은 grid cell에 배치한다.
 - **Trace**: T02 typecheck 5 tasks, registry build, static/render test 1/1 및 ESLint PASS. native line break가 accessible name의 공백을 합칠 수 있어 테스트는 원래 글자 순서/중복 유무를 검사한다. T03 시작 시 Base UI 설치된 1.7 Panel의 height/style/className API를 확인했다. 실제 height/fade는 T05 브라우저에서 추가 확인한다.
 - **Evidence**: Commit `e225ebd`, [Base UI Collapsible](https://base-ui.com/react/components/collapsible), [Motion useAnimate](https://motion.dev/docs/react-use-animate), [Tasks](./tasks.md).
+
+## D006: 명시적인 브랜드·순환 lifecycle (2026-10-01)
+
+- **Context**: T04 시작. Leesfield의 전역 animation scanner 대신 각 source가 자기 element의 lifecycle을 소유해야 한다.
+- **Decision**: 브랜드 효과는 낮은 강도의 gradient를 action 표면에 겹쳐 기본 글자 대비를 유지한다. 반복 CSS 변수와 scoped visibility/reduced 상태를 연결하고 RotatingContent는 longest-item geometry, hidden/inert decorative layers와 pause control을 갖는다.
+- **Trace**: BrandAction/Rotation은 원본 단일 제품 사례이므로 experimental을 유지한다. 일반 Skeleton은 중립이고 animated/paused는 소비자가 명시한다. Theme live 변경 알림은 선택적 event이며 필수 provider를 요구하지 않는다.
+- **Evidence**: [Plan](./plan.md), Commit `68b732c`, [Tasks](./tasks.md). 검증/commit은 T04 완료 시 기록한다.

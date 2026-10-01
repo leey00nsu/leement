@@ -3,6 +3,8 @@
 import type { ComponentType } from "react";
 import TextRevealExample from "../examples/text-reveal";
 import MediaRevealExample from "../examples/media-reveal";
+import BrandActionExample from "../examples/brand-action";
+import RotatingContentExample from "../examples/rotating-content";
 import ButtonExample from "../examples/button";
 import InputExample from "../examples/input";
 import SelectExample from "../examples/select";
@@ -86,6 +88,8 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "brand-action": BrandActionExample,
+  "rotating-content": RotatingContentExample,
   "media-reveal": MediaRevealExample,
   "text-reveal": TextRevealExample,
   button: ButtonExample,

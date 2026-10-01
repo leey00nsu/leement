@@ -131,14 +131,14 @@
 
   - Verification: Media/Text and existing source-extension Vitest 10/10 PASS; direct docs tsc, scoped ESLint, registry build PASS. Hidden media uses inert; closing Collapsible gets a scoped state observer preserving forwarded refs. Browser fade/height checks remain T05/T06.
 
-- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-04 BrandAction과 RotatingContent 제공
+- [DONE][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-04 BrandAction과 RotatingContent 제공
   - Date: 2026-10-01
   - Acceptance:
     - 브랜드 action과 순환 슬롯은 disabled/loading/pause/reduced/offscreen 정지를 지원한다
   - Checklist:
-    - [ ] 명시적 component lifecycle과 소비자 브랜드 override를 적용한다
-    - [ ] BrandGradientText/Skeleton 반복 제어를 연결한다
-    - [ ] 새 registry/API와 source 예제를 추가하고 실제 동작 계약을 검사한다
+    - [x] 명시적 component lifecycle과 소비자 브랜드 override를 적용한다
+    - [x] BrandGradientText/Skeleton 반복 제어를 연결한다
+    - [x] 새 registry/API와 source 예제를 추가하고 실제 동작 계약을 검사한다
   - Docs:
     - project:apps/docs/lib/items.ts
   - Review Evidence: -
@@ -146,6 +146,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: Motion/source-extension tests 13/13 PASS; direct docs TypeScript and scoped ESLint PASS; registry build PASS. Pause/resume, reduced first item and timer cleanup checked; browser theme/visibility checks remain T05/T06.
 
 - [TODO][PRD-FR-013] T-W2TPJTYZ2Y4P-shared-motion-patterns-05 Foundations 실시간 모션 편집과 공개 문서 완성
   - Date: 2026-10-01
@@ -211,4 +213,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:fe7254b3d50aa35f978571e6334fb3e2ef2f51a64353bb320f82e2245741c9c5 -->
+<!-- lee-spec-kit:workflow-sync sha256:17a80f05d6cb603b256ebbca00778d904584e1b0fc6e4dae9b7e8488c0840c4e -->

@@ -13,7 +13,7 @@ const componentSections = [
   { title: "Finance", names: ["Credit Card", "Ticker"] },
   { title: "Social", names: ["Stories", "Video Player"] },
   { title: "Callouts", names: ["Announcement", "Banner"] },
-  { title: "Styling", names: ["Typography", "Brand Gradient Text", "Text Reveal"] },
+  { title: "Styling", names: ["Typography", "Brand Gradient Text", "Text Reveal", "Rotating Content"] },
   { title: "Other", names: ["Reveal Content", "Collapsible", "Code Block", "Snippet", "Editor", "Glimpse", "Marquee", "Pill", "QR Code", "Relative Time", "Theme Switcher", "Tree", "Comparison"] },
 ];
 
@@ -29,7 +29,7 @@ export const navigation: NavGroup[] = [
   ] }] },
   { title: "Foundations", sections: [{ items: ["Color", "Typography", "Spacing", "Radius", "Shadow", "Motion"].map(label => ({ label, href: `/foundations/${label.toLowerCase()}` })) }] },
   { title: "Components", sections: componentSections.map(({ title, names }) => ({ title, items: names.map(componentItem) })) },
-  { title: "Patterns", sections: [{ items: ["BrandLogo", "MediaReveal", "PageHeader", "EmptyState", "FormSection", "SearchField", "StatCard", "StatePanel", "ProductPageIntro", "ResourceRowLink", "PageSkeleton", "FilterToolbar"].map(patternItem) }] },
+  { title: "Patterns", sections: [{ items: ["BrandLogo", "MediaReveal", "BrandAction", "PageHeader", "EmptyState", "FormSection", "SearchField", "StatCard", "StatePanel", "ProductPageIntro", "ResourceRowLink", "PageSkeleton", "FilterToolbar"].map(patternItem) }] },
   { title: "Blocks", sections: [{ items: ["Settings Section", "Bento Grid", "Gantt", "Kanban", "Sandbox", "Reel", "Deck", "Dialog Stack"].map(label => ({ label, href: `/blocks/${label.toLowerCase().replaceAll(" ", "-")}` })) }] },
   { title: "Project", sections: [{ items: [{ label: "Changelog", href: "/changelog" }] }] },
 ];

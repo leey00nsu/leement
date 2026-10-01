@@ -1,0 +1,4 @@
+.slot { display: inline-grid; min-width: 0; }
+.item { grid-area: 1 / 1; opacity: 0; transform: translateY(6px); filter: blur(4px); transition: opacity var(--lm-motion-duration-normal) var(--lm-motion-easing-reveal), transform var(--lm-motion-duration-normal) var(--lm-motion-easing-reveal), filter var(--lm-motion-duration-normal) var(--lm-motion-easing-reveal); }
+.item[data-current="true"] { opacity: 1; transform: none; filter: none; }
+@media (prefers-reduced-motion: reduce), (scripting: none) { .item { transition: none !important; filter: none !important; transform: none !important; } }

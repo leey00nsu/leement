@@ -2,6 +2,8 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+  "brand-action": "Animated or paused, loading/disabled, reduced motion and theme-defined brand colors.",
+  "rotating-content": "Running, paused/resumed, static first item under reduced motion, inactive/offscreen suspension.",
   "media-reveal": "loading, ready, error and retry; hidden layers cannot be focused and reduced motion switches immediately.",
   "text-reveal": "Visible static HTML, one-shot entrance, Replay, and immediately readable reduced-motion content.",
   "brand-logo": "Full or icon-only at three sizes, app-owned name and mark, light/dark foreground. A surrounding link supplies hover and focus behavior; disabled and loading do not apply to a static identity.",

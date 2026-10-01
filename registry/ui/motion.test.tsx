@@ -1,10 +1,12 @@
-import { afterEach, expect, test } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, expect, test, vi } from "vitest";
+import { act, cleanup, render, screen, fireEvent } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import { MediaReveal } from "../patterns/media-reveal";
+import { BrandAction } from "../patterns/brand-action";
+import { RotatingContent } from "./rotating-content";
 import { TextReveal } from "./text-reveal";
 
-afterEach(cleanup);
+afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 test("text reveal keeps native heading and Korean/English text available once in static HTML", () => {
   const content = <h1><TextReveal><TextReveal.Item>나만의</TextReveal.Item>{" "}<TextReveal.Item><strong>voice</strong></TextReveal.Item><br /><TextReveal.Item>만들기</TextReveal.Item></TextReveal></h1>;
   const html = renderToString(content);
@@ -26,4 +28,37 @@ test("media reveal exposes busy state and keeps hidden controls inert through re
   expect(screen.getByRole("img", { name: "Mountain" })).toBeTruthy();
   expect(screen.queryByRole("button", { name: "Retry" })).toBeNull();
   expect(screen.getByRole("group", { name: "Photo" }).getAttribute("aria-busy")).toBe("false");
+});
+
+test("brand action keeps busy and disabled clicks blocked", () => {
+  const onClick = vi.fn();
+  render(<><BrandAction loading onClick={onClick}>Create</BrandAction><BrandAction disabled onClick={onClick}>Unavailable</BrandAction></>);
+  fireEvent.click(screen.getByRole("button", { name: "Create" }));
+  fireEvent.click(screen.getByRole("button", { name: "Unavailable" }));
+  expect(onClick).not.toHaveBeenCalled();
+  expect(screen.getByRole("button", { name: "Create" }).getAttribute("aria-busy")).toBe("true");
+});
+test("rotation pauses, resumes and clears pending timers on unmount", () => {
+  vi.useFakeTimers();
+  vi.stubGlobal("matchMedia", () => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+  const view = render(<RotatingContent label="Tools" interval={500} items={["Voice", "Image"]} />);
+  const group = screen.getByRole("group", { name: "Tools" });
+  act(() => { vi.advanceTimersByTime(500); });
+  expect(group.getAttribute("data-index")).toBe("1");
+  fireEvent.click(screen.getByRole("button", { name: "Pause Tools" }));
+  act(() => { vi.advanceTimersByTime(1000); });
+  expect(group.getAttribute("data-index")).toBe("1");
+  fireEvent.click(screen.getByRole("button", { name: "Resume Tools" }));
+  act(() => { vi.advanceTimersByTime(500); });
+  expect(group.getAttribute("data-index")).toBe("0");
+  view.unmount();
+  expect(vi.getTimerCount()).toBe(0);
+});
+test("rotation stays on the first item under reduced motion", () => {
+  vi.useFakeTimers();
+  vi.stubGlobal("matchMedia", () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+  render(<RotatingContent label="Tools" interval={500} items={["Voice", "Image"]} />);
+  act(() => { vi.advanceTimersByTime(5000); });
+  expect(screen.getByRole("group", { name: "Tools" }).getAttribute("data-index")).toBe("0");
+  expect(screen.getByRole("button", { name: "Pause Tools" }).hasAttribute("disabled")).toBe(true);
 });

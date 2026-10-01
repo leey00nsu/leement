@@ -331,7 +331,8 @@
       "description": "Reduced-motion-aware loading placeholder.",
       "dependencies": [],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -348,7 +349,8 @@
       "description": "Optional animated brand gradient for short emphasis.",
       "dependencies": [],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -1574,6 +1576,47 @@
           "path": "registry/patterns/media-reveal.module.css",
           "type": "registry:file",
           "target": "components/patterns/media-reveal.module.css"
+        }
+      ]
+    },
+    {
+      "name": "brand-action",
+      "type": "registry:component",
+      "title": "Brand Action",
+      "description": "Explicit, pausable product motion.",
+      "registryDependencies": [
+        "@leement/button",
+        "@leement/leement-motion",
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/brand-action.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/brand-action.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rotating-content",
+      "type": "registry:ui",
+      "title": "Rotating Content",
+      "description": "Explicit, pausable product motion.",
+      "registryDependencies": [
+        "@leement/button",
+        "@leement/leement-motion",
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/rotating-content.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/rotating-content.tsx"
+        },
+        {
+          "path": "registry/ui/rotating-content.module.css",
+          "type": "registry:file",
+          "target": "components/ui/rotating-content.module.css"
         }
       ]
     }
