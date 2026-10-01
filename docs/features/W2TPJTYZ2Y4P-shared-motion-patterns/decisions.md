@@ -61,3 +61,10 @@
 - **Decision**: 기존 세 시간 유지, reveal/expand/media/stagger/easing/brand cycles를 Plan의 기본값으로 추가한다. 기존 제어 primitive를 유지하고 CSS 효과는 변수로 연결한다. 새 helper는 T02에서 scoped lifecycle/값 읽기만 제공한다.
 - **Trace**: Spec 승인은 사용자 A로 받았다. Plan/Tasks는 workflow가 자동 승인하도록 반환해 Approved로 진행했다. task owner session claim 및 T01 TODO→DOING hash 확인 후 구현을 시작했다. 반복 cycle을 reduced에서 0으로 바꾸지 않는다.
 - **Evidence**: [Plan](./plan.md), [Spec](./spec.md), [Task](./tasks.md). T01 검증/commit은 완료 시 갱신한다.
+
+## D005: SSR가 읽을 수 있는 진입 및 미디어·펼침 구성 (2026-10-01)
+
+- **Context**: T02는 초기 숨김 CSS/inline style을 제거하고 hydration 뒤 scoped 진입을 적용했다. T03은 실제 종료 lifecycle과 loading/ready/error를 다룬다.
+- **Decision**: TextReveal은 원문을 한 번 읽는 native span 조합을 쓰고 Reveal 공개 Motion props는 유지한다. Collapsible은 Base UI의 높이/전환 속성을 그대로 사용하고 MediaReveal은 inert/aria-hidden 층을 같은 grid cell에 배치한다.
+- **Trace**: T02 typecheck 5 tasks, registry build, static/render test 1/1 및 ESLint PASS. native line break가 accessible name의 공백을 합칠 수 있어 테스트는 원래 글자 순서/중복 유무를 검사한다. T03 시작 시 Base UI 설치된 1.7 Panel의 height/style/className API를 확인했다. 실제 height/fade는 T05 브라우저에서 추가 확인한다.
+- **Evidence**: Commit `e225ebd`, [Base UI Collapsible](https://base-ui.com/react/components/collapsible), [Motion useAnimate](https://motion.dev/docs/react-use-animate), [Tasks](./tasks.md).

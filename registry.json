@@ -482,12 +482,19 @@
       "dependencies": [
         "@base-ui/react"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
       "files": [
         {
           "path": "registry/ui/collapsible.tsx",
           "type": "registry:ui",
           "target": "components/ui/collapsible.tsx"
+        },
+        {
+          "path": "registry/ui/collapsible.module.css",
+          "type": "registry:file",
+          "target": "components/ui/collapsible.module.css"
         }
       ]
     },
@@ -1545,6 +1552,28 @@
           "path": "registry/ui/text-reveal.module.css",
           "type": "registry:file",
           "target": "components/ui/text-reveal.module.css"
+        }
+      ]
+    },
+    {
+      "name": "media-reveal",
+      "type": "registry:component",
+      "title": "Media Reveal",
+      "description": "App-owned media loading, ready and error transition.",
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/media-reveal.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/media-reveal.tsx"
+        },
+        {
+          "path": "registry/patterns/media-reveal.module.css",
+          "type": "registry:file",
+          "target": "components/patterns/media-reveal.module.css"
         }
       ]
     }

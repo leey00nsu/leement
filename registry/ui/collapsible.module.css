@@ -1,0 +1,7 @@
+.panel {
+  height: var(--collapsible-panel-height);
+  overflow: clip;
+  transition: height var(--lm-motion-duration-expand) var(--lm-motion-easing-reveal), opacity var(--lm-motion-duration-expand) var(--lm-motion-easing-reveal);
+}
+.panel[data-starting-style], .panel[data-ending-style] { height: 0; opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .panel { transition: none !important; } }

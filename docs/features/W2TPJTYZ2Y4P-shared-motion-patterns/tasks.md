@@ -113,14 +113,14 @@
 
   - Verification: typecheck 5 tasks PASS; TextReveal static/render contract 1/1 PASS; registry build and scoped ESLint PASS. Actual replay/reduced/hydration checks remain T05/T06.
 
-- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-03 Collapsible 모션과 MediaReveal 제공
+- [DONE][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-03 Collapsible 모션과 MediaReveal 제공
   - Date: 2026-10-01
   - Acceptance:
     - 높이 변화와 재개폐가 가능하며 미디어 loading/ready/error 상태에 공간·aria 의미가 유지된다
   - Checklist:
-    - [ ] Base UI Collapsible의 API와 종료 lifecycle을 보존한다
-    - [ ] MediaReveal과 Skeleton dependency를 제공한다
-    - [ ] 상태/keyboard 계약과 실제 source 예제를 검증한다
+    - [x] Base UI Collapsible의 API와 종료 lifecycle을 보존한다
+    - [x] MediaReveal과 Skeleton dependency를 제공한다
+    - [x] 상태/keyboard 계약과 실제 source 예제를 검증한다
   - Docs:
     - project:apps/docs/lib/items.ts
   - Review Evidence: -
@@ -128,6 +128,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: Media/Text and existing source-extension Vitest 10/10 PASS; direct docs tsc, scoped ESLint, registry build PASS. Hidden media uses inert; closing Collapsible gets a scoped state observer preserving forwarded refs. Browser fade/height checks remain T05/T06.
 
 - [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-04 BrandAction과 RotatingContent 제공
   - Date: 2026-10-01
@@ -209,4 +211,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:759e6280b43a008fdace527d9c22bba8b5f42a0810938d7e307688d0bdcb29db -->
+<!-- lee-spec-kit:workflow-sync sha256:fe7254b3d50aa35f978571e6334fb3e2ef2f51a64353bb320f82e2245741c9c5 -->

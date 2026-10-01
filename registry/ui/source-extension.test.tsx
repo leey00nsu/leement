@@ -85,3 +85,18 @@ test("filter toggles communicate pressed state", async () => {
   await user.click(all);
   expect(all.getAttribute("aria-pressed")).toBe("false");
 });
+
+test("collapsible can close and reopen from keyboard and disabled disclosure does not activate", async () => {
+  const user = userEvent.setup();
+  render(<><Collapsible defaultOpen><CollapsibleTrigger>Result</CollapsibleTrigger><CollapsibleContent keepMounted><button>Inspect result</button></CollapsibleContent></Collapsible><Collapsible disabled><CollapsibleTrigger>Unavailable details</CollapsibleTrigger><CollapsibleContent>Hidden result</CollapsibleContent></Collapsible></>);
+  const trigger = screen.getByRole("button", { name: "Result" });
+  trigger.focus();
+  await user.keyboard("{Enter}");
+  expect(trigger.getAttribute("aria-expanded")).toBe("false");
+  await waitFor(() => expect(screen.getByText("Inspect result").parentElement?.hasAttribute("inert")).toBe(true));
+  await user.keyboard("{Enter}");
+  expect(trigger.getAttribute("aria-expanded")).toBe("true");
+  expect(screen.getByRole("button", { name: "Inspect result" })).toBeTruthy();
+  await user.click(screen.getByRole("button", { name: "Unavailable details" }));
+  expect(screen.queryByText("Hidden result")).toBeNull();
+});
