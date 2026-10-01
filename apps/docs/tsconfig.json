@@ -17,6 +17,9 @@
       ],
       "@/lib/utils": [
         "../../registry/lib/utils"
+      ],
+      "@/lib/media-player": [
+        "../../registry/lib/media-player"
       ]
     },
     "allowJs": true

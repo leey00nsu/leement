@@ -50,6 +50,7 @@ export function FoundationPreviewProvider({ children }: { children: React.ReactN
       document.head.appendChild(style);
     }
     style.textContent = previewCss(preview);
+    window.dispatchEvent(new Event("leement:theme-change"));
     try {
       if (previewChangeCount(preview)) window.localStorage.setItem(PREVIEW_STORAGE_KEY, JSON.stringify(preview));
       else window.localStorage.removeItem(PREVIEW_STORAGE_KEY);

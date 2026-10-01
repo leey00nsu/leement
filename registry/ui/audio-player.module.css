@@ -1,0 +1,7 @@
+.waveform { position: relative; min-height: 72px; overflow: hidden; border-radius: var(--lm-radius-md); }
+.canvas { min-height: 72px; opacity: 0; transition: opacity var(--lm-motion-duration-slow) ease-out; }
+.canvas[data-ready="true"] { opacity: 1; }
+.canvas:focus-visible { outline: 2px solid var(--lm-color-focus-ring); outline-offset: -2px; }
+@media (prefers-reduced-motion: reduce) { .canvas { transition: none; } }
+
+@media (scripting: none) { .waveform { display: none; } }
