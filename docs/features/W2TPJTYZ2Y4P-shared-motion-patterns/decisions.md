@@ -8,6 +8,7 @@
 - **Decision**: Orb·Shader만 제외하고 나머지 제안 항목을 Spec 범위에 포함한다. 기존 RevealContent/Collapsible/브랜드 효과를 개선하고 TextReveal·MediaReveal·BrandAction·RotatingContent를 source로 제공한다.
 - **Rationale**: 사용자의 제외 대상은 명시적이며, 포함할 항목과 검증 부담을 구현 전 승인 가능한 형태로 드러낸다. 단일 제품에서 나온 항목은 experimental로 표시하며 stable로 가정하지 않는다.
 - **Trace**:
+  - 사용자 응답 `A`로 Spec 승인을 받았다. 명세 상태를 Approved로 기록하고 다음 workflow 단계를 확인한다.
   - Feature 생성 후 workflow-stage가 workspace_prepare를 반환했다. 관리 명령으로 seed commit과 코드/문서 worktree를 준비했다.
   - worktree의 workflow-stage는 spec_write, implementationAllowed=false를 반환했다. 이번 단계는 명세 작성이며 구현은 시작하지 않았다.
   - 원본 프로젝트는 읽기만 했고 애니메이션의 실제 재생/브라우저 검증은 아직 수행하지 않았다. 수치 선택과 구현 방식은 Spec 승인 후 Plan에서 결정한다.
@@ -53,3 +54,10 @@
   - **Commit**: `a239004acb1cad50811df2838394409121ecb122` (계획 기준)
   - **PRD**: [leement-prd.md](../../prd/leement-prd.md)
   - **Spec**: [spec.md](./spec.md)
+
+## D004: 모션 역할과 실행 연결 (2026-10-01)
+
+- **Context**: T01 시작. CSS 효과와 JS 모션이 고정된 시간을 공유하지 못한다.
+- **Decision**: 기존 세 시간 유지, reveal/expand/media/stagger/easing/brand cycles를 Plan의 기본값으로 추가한다. 기존 제어 primitive를 유지하고 CSS 효과는 변수로 연결한다. 새 helper는 T02에서 scoped lifecycle/값 읽기만 제공한다.
+- **Trace**: Spec 승인은 사용자 A로 받았다. Plan/Tasks는 workflow가 자동 승인하도록 반환해 Approved로 진행했다. task owner session claim 및 T01 TODO→DOING hash 확인 후 구현을 시작했다. 반복 cycle을 reduced에서 0으로 바꾸지 않는다.
+- **Evidence**: [Plan](./plan.md), [Spec](./spec.md), [Task](./tasks.md). T01 검증/commit은 완료 시 갱신한다.

@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: Draft — Spec 승인 대기; Plan과 실행 태스크는 승인 후 작성
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/W2TPJTYZ2Y4P-shared-motion-patterns`
 - **대기 중 변경 요청**: -
@@ -75,6 +75,111 @@
 
 ---
 
+- [DONE][PRD-FR-011] T-W2TPJTYZ2Y4P-shared-motion-patterns-01 모션 토큰·theme·기존 핵심 UI 연결
+  - Date: 2026-10-01
+  - Acceptance:
+    - 새 모션 역할과 브랜드 반복이 CSS 변수에서 파생되고 reduced motion에서 정지한다
+  - Checklist:
+    - [x] tokens/theme 역할 확장과 기본값 근거를 기록한다
+    - [x] Button loading·Dialog·Tooltip·DropdownMenu를 연결한다
+    - [x] theme 검사와 기존 overlay/button 상호작용 검사를 실행한다
+    - [x] PRD·디자인 규칙과 token/theme/UI/기존 preview 영향을 동기화한다
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+  - Verification: tokens/theme build PASS; theme/button/overlay Vitest 12/12 PASS; scoped ESLint and git diff --check PASS. 새 Foundation 편집/preview 연결은 T05, 새 lifecycle 제어는 T02–04에서 검증한다.
+
+- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-02 RevealContent 개선과 TextReveal 제공
+  - Date: 2026-10-01
+  - Acceptance:
+    - 기존 공개 API를 유지하고 TextReveal이 명시적 조각·정적 표시·reduced motion을 지원한다
+  - Checklist:
+    - [ ] 작은 motion helper를 registry로 제공하고 dependency/alias를 연결한다
+    - [ ] RevealContent와 TextReveal을 구현하고 읽기/진입 계약을 검사한다
+    - [ ] 실제 source의 텍스트 예제와 API/설치 문서를 연결한다
+  - Docs:
+    - project:apps/docs/lib/items.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-03 Collapsible 모션과 MediaReveal 제공
+  - Date: 2026-10-01
+  - Acceptance:
+    - 높이 변화와 재개폐가 가능하며 미디어 loading/ready/error 상태에 공간·aria 의미가 유지된다
+  - Checklist:
+    - [ ] Base UI Collapsible의 API와 종료 lifecycle을 보존한다
+    - [ ] MediaReveal과 Skeleton dependency를 제공한다
+    - [ ] 상태/keyboard 계약과 실제 source 예제를 검증한다
+  - Docs:
+    - project:apps/docs/lib/items.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-04 BrandAction과 RotatingContent 제공
+  - Date: 2026-10-01
+  - Acceptance:
+    - 브랜드 action과 순환 슬롯은 disabled/loading/pause/reduced/offscreen 정지를 지원한다
+  - Checklist:
+    - [ ] 명시적 component lifecycle과 소비자 브랜드 override를 적용한다
+    - [ ] BrandGradientText/Skeleton 반복 제어를 연결한다
+    - [ ] 새 registry/API와 source 예제를 추가하고 실제 동작 계약을 검사한다
+  - Docs:
+    - project:apps/docs/lib/items.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-013] T-W2TPJTYZ2Y4P-shared-motion-patterns-05 Foundations 실시간 모션 편집과 공개 문서 완성
+  - Date: 2026-10-01
+  - Acceptance:
+    - duration/easing/stagger/cycle edit·Replay·CSS copy·persistence·reset이 실제 source에 적용된다
+  - Checklist:
+    - [ ] 필드/검증/export와 기존 저장값 호환을 갱신한다
+    - [ ] 카테고리 미리보기에 실제 진입·펼침·미디어·반복 예제를 연결한다
+    - [ ] navigation/route/metadata/states/설치/adoption/changelog를 동기화한다
+    - [ ] light/dark·모바일·reduced/no-JS·hydration과 편집 재현을 브라우저에서 확인한다
+  - Docs:
+    - project:apps/docs/app/foundations/[slug]/page.tsx
+    - project:apps/docs/lib/items.ts
+    - project:apps/docs/app/adoption/page.tsx
+    - project:apps/docs/app/changelog/page.tsx
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-06 Registry 소비자와 두 제품 대표 사용처 검증
+  - Date: 2026-10-01
+  - Acceptance:
+    - 독립 소비자 및 격리된 두 앱에서 설치·대표 교체·검증을 수행하고 도입 회귀를 구분한다
+  - Checklist:
+    - [ ] 새 4항목의 transitive source와 theme를 CLI로 설치하여 consumer TS/build를 실행한다
+    - [ ] 양쪽 TextReveal/MediaReveal과 Leesfield 펼침/action/회전을 대표 사용처에 교체한다
+    - [ ] 앱 baseline/post-change TS/build와 브라우저 동작을 확인하고 원본 상태를 비교한다
+    - [ ] 설정된 Feature typecheck/lint/test/build와 docs audit를 실행하고 실제 결과·한계를 기록한다
+  - Docs:
+    - project:apps/docs/app/adoption/page.tsx
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -102,4 +207,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:f1a333b953f620ffd12a12c5f1eb6d8e5230d15ecb7994baafe52b4f4a7acf7c -->
+<!-- lee-spec-kit:workflow-sync sha256:8407f037f7b3033aaac361bda92c7410ddd48c7ca7b9e29ec295c42c15bc4306 -->

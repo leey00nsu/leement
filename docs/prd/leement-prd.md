@@ -42,3 +42,9 @@ v0.1의 8 UI·5 pattern·1 block은 초기 출시 범위이며, 최종 제공 �
 - PRD-NFR-005: 교체 검증은 독립 데모만으로 대신하지 않는다. 기존 앱의 사전 오류와 Leement 도입 회귀를 구분하고, 제품별 wrapper/도메인 로직은 적합성 근거 없이 공용 API로 흡수하지 않는다.
 
 블록 카탈로그의 목표 규모는 컴포넌트와 별도로 결정한다. 현재 단일 SettingsSection block은 대표 사용 사례를 늘리기 위한 출발점이다.
+
+## 공통 모션
+
+PRD-FR-011의 공통 디자인 언어는 진입·텍스트 등장·펼침·미디어 준비 전환·브랜드 강조·순환 슬롯을 포함한다. RevealContent/Collapsible/기존 브랜드 효과를 개선하고 TextReveal, MediaReveal, BrandAction, RotatingContent를 수정 가능한 registry source로 제공한다. 도메인 로직은 앱에 남기고 신규 항목은 검증 근거에 따라 experimental/candidate를 표시한다. Orb·Shader 및 그래픽·오디오 엔진은 이 범위에 포함하지 않는다.
+
+PRD-FR-013의 Motion 편집은 duration, easing, stagger, 반복 cycle을 역할별로 제공한다. CSS와 JavaScript 기반 예제는 같은 변수를 읽고 일회 진입은 Replay로 확인한다. 기존 저장값·CSS 복사·초기화를 유지하고 reduced motion, no-JS 가독성, SSR 일치와 pause/lifecycle을 보장한다. PRD-FR-012에 따라 실제 두 제품의 대표 사용처에서 격리 검증하며 원본 앱 전체 교체와 공개 배포는 별도 결정이다.

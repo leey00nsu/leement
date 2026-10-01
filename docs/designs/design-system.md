@@ -31,7 +31,9 @@ CopySinger의 gradient text·음성 파형·오디오 로딩은 violet/blue/pink
 - Spacing: 4px 리듬. 기본 control은 40px, 작은 것은 36px, 큰 것은 44px이다.
 - Radius: 컨트롤 8px, Card 12px, Badge는 full. 두 원본의 Card는 약 10px이고 이전 Leement 값은 16px이었다. 12px은 공통 표면의 선택값이며 원본 수치 복제 기준이 아니다. 표면의 계층을 반경만으로 나타내지 않는다.
 - Shadow: 기본 Card와 Input에는 border를 쓰고 기본 shadow를 넣지 않는다. Popover/Dialog 같은 떠 있는 계층에서만 필요한 경우 shadow를 사용한다.
-- Motion: 120/180/260ms 단계. reduced motion 환경에서는 duration을 0ms로 한다.
+- Motion: fast/normal/slow 120/180/260ms는 짧은 제어 반응이다. reveal 700ms는 양쪽 텍스트 등장 720ms와 기존 Reveal 700ms를 하나의 진입 역할로 정리한 값이다. expand 400ms는 Leesfield 결과 펼침, media 400ms는 CopySinger 파형의 360ms opacity/420ms transform과 이미지 fade를 공통 전환으로 정리한다. 순차 간격은 기존 Reveal 70ms를 쓰고 원본 텍스트의 62/96ms와 다른 점을 명시한다. reveal easing은 양쪽에서 사용한 cubic-bezier(0.22,1,0.36,1)이다.
+- 브랜드 text/surface cycle 1500/3500ms는 Leesfield의 반복 근거이고 rotate 1800ms는 제목 슬롯 근거다. 반복 주기는 제어 반응 시간과 별개다. `--lm-motion-*`가 CSS와 JavaScript 모션의 기본값이며 명시적 component prop이 우선한다. reduced motion은 prop보다 우선해 duration/delay를 0으로, 반복 자체는 none으로 만든다. cycle을 0ms 무한 반복으로 만들지 않는다.
+- 초기 SSR/첫 렌더는 읽을 수 있는 상태를 유지하고 hydration 뒤 장식 진입만 준비한다. 자동 반복은 이름 붙은 pause 제어, 비활성 문서·화면 밖 정지와 unmount 정리를 제공한다. 일반 Skeleton은 중립이다. 브랜드 장식은 짧은 문구·선택적 로딩·주요 action에만 사용하고 핵심 조작을 지연시키지 않는다.
 
 ### 브랜드 로고 조합
 
