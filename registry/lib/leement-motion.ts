@@ -11,6 +11,13 @@ export function motionMilliseconds(element: Element, name: string): number {
 
 export function motionEasing(element: Element): [number, number, number, number] | "linear" {
   const value = getComputedStyle(element).getPropertyValue("--lm-motion-easing-reveal");
+  const named: Record<string, [number, number, number, number]> = {
+    ease: [0.25, 0.1, 0.25, 1],
+    "ease-in": [0.42, 0, 1, 1],
+    "ease-out": [0, 0, 0.58, 1],
+    "ease-in-out": [0.42, 0, 0.58, 1],
+  };
+  if (named[value.trim()]) return named[value.trim()]!;
   const match = /^\s*cubic-bezier\(\s*([\d.-]+)\s*,\s*([\d.-]+)\s*,\s*([\d.-]+)\s*,\s*([\d.-]+)\s*\)\s*$/.exec(value);
   if (!match) return "linear";
   const numbers = match.slice(1).map(Number);

@@ -9,6 +9,7 @@ import { BrandGradientText } from "../../../registry/ui/brand-gradient-text";
 import { BrandLogo } from "../../../registry/patterns/brand-logo";
 import { ColorPicker } from "../../../registry/ui/color-picker";
 import { Popover, PopoverContent, PopoverTitle, PopoverTrigger } from "../../../registry/ui/popover";
+import { MotionPreview } from "./motion-preview";
 import { useFoundationPreview } from "./foundation-preview-provider";
 import {
   colorFields,
@@ -35,7 +36,7 @@ const previewTitles: Record<FoundationCategory, string> = {
   spacing: "Control spacing",
   radius: "Corner scale",
   shadow: "Surface elevation",
-  motion: "Transition timing",
+  motion: "Motion in context",
 };
 
 function useCurrentMode(): FoundationMode {
@@ -113,7 +114,9 @@ function numericDetails(field: SharedField): { min: number; max: number; step: n
     case "radius": return { min: 0, max: 48, step: 1, unit: "px" };
     case "weight": return { min: 100, max: 900, step: 100, unit: "" };
     case "line-height": return { min: 1, max: 2.5, step: 0.05, unit: "" };
-    case "duration": return { min: 0, max: 1000, step: 10, unit: "ms" };
+    case "duration": return { min: 0, max: 2000, step: 10, unit: "ms" };
+    case "delay": return { min: 0, max: 1000, step: 10, unit: "ms" };
+    case "cycle": return { min: 250, max: 10000, step: 50, unit: "ms" };
     default: throw new Error(`Not a numeric field: ${field.kind}`);
   }
 }
@@ -150,10 +153,20 @@ function FamilyControl({ field, value }: { field: SharedField; value: string }) 
   </div>;
 }
 
+function EasingControl({ field, value }: { field: SharedField; value: string }) {
+  const { setValue } = useFoundationPreview();
+  const id = useId();
+  const [draft, setDraft] = useState(value);
+  useEffect(() => setDraft(value), [value]);
+  const valid = validPreviewValue("shared", field.key, draft);
+  return <div className="rounded-lg border border-border bg-background p-3"><label htmlFor={id} className="text-sm font-medium capitalize">{field.label}</label><Input id={id} value={draft} maxLength={160} className="mt-2 font-mono text-xs" aria-invalid={!valid || undefined} aria-describedby={`${id}-help`} onChange={(event) => { setDraft(event.target.value); if (validPreviewValue("shared", field.key, event.target.value)) setValue("shared", field.key, event.target.value); }} /><p id={`${id}-help`} className={`mt-2 text-xs ${valid ? "text-muted-foreground" : "text-destructive"}`}>{valid ? "Use a named easing or cubic-bezier(x1, y1, x2, y2)." : "Use a valid easing; x must be 0–1 and y −2–2."}</p><div className="mt-2 flex flex-wrap gap-2">{[field.defaultValue, "linear", "ease-in-out"].map((choice) => <Button key={choice} size="xs" variant="ghost" onClick={() => { setDraft(choice); setValue("shared", field.key, choice); }}>{choice === field.defaultValue ? "Default" : choice}</Button>)}</div></div>;
+}
+
 function SharedControl({ field }: { field: SharedField }) {
   const { preview, setValue } = useFoundationPreview();
   const id = useId();
   const value = preview.shared[field.key] ?? field.defaultValue;
+  if (field.kind === "easing") return <EasingControl field={field} value={value} />;
   if (field.kind === "family") return <FamilyControl field={field} value={value} />;
   if (field.kind === "shadow") {
     const choices = [...new Set([field.defaultValue, "none", "0 2px 8px rgb(0 0 0 / 0.08)", "0 4px 12px rgb(0 0 0 / 0.10)", "0 12px 36px rgb(0 0 0 / 0.18)"])];
@@ -218,7 +231,6 @@ function ContrastWarning({ mode, values }: { mode: FoundationMode; values: Recor
 }
 
 function ActualPreview({ category }: { category: FoundationCategory }) {
-  const [moved, setMoved] = useState(false);
   if (category === "color") return <div className="space-y-4" data-testid="foundation-actual-preview">
     <Card><CardHeader><CardTitle>Semantic color roles</CardTitle><CardDescription>Surface, text, border, and actions respond together.</CardDescription></CardHeader><CardContent className="flex flex-wrap gap-2"><Button size="sm">Primary action</Button><Button size="sm" variant="secondary">Secondary</Button><Button size="sm" variant="outline">Outline</Button></CardContent></Card>
     <div className="rounded-lg border border-border bg-muted p-4"><p className="text-sm font-medium text-foreground">Muted surface</p><p className="mt-1 text-xs text-muted-foreground">Brand accents remain a separate role.</p><p className="mt-4"><BrandGradientText className="text-lg font-semibold">A flexible brand voice.</BrandGradientText></p><Skeleton variant="brand" className="mt-3 h-3 w-3/4" /></div>
@@ -240,12 +252,7 @@ function ActualPreview({ category }: { category: FoundationCategory }) {
     <p className="text-sm text-muted-foreground">Choose elevation only where a surface needs separation.</p>
     {(["sm", "md", "lg"] as const).map((size) => <Card key={size} className={({ sm: "shadow-sm", md: "shadow-md", lg: "shadow-lg" })[size]}><CardContent className="flex items-center justify-between gap-3"><span className="text-sm font-medium capitalize">{size} elevation</span><span className="text-xs text-muted-foreground">shadow-{size}</span></CardContent></Card>)}
   </div>;
-  return <div className="space-y-4" data-testid="foundation-actual-preview">
-    <p className="text-sm text-muted-foreground">Compare the three timing steps by moving the markers.</p>
-    <Button variant="outline" size="sm" onClick={() => setMoved((value) => !value)} aria-pressed={moved}>Move preview</Button>
-    <div className="space-y-3">{(["fast", "normal", "slow"] as const).map((speed) => <div key={speed} className="flex items-center gap-3 text-xs"><span className="w-12 shrink-0 capitalize">{speed}</span><div className="h-7 flex-1 overflow-hidden rounded-md bg-muted p-1"><div className="size-5 rounded-sm bg-primary transition-[margin-left]" style={{ marginLeft: moved ? "calc(100% - 1.25rem)" : "0", transitionDuration: `var(--lm-motion-duration-${speed})` }} /></div></div>)}</div>
-    <p className="text-xs text-muted-foreground">Reduced motion disables transition timing.</p>
-  </div>;
+  return <MotionPreview />;
 }
 
 export function FoundationEditor({ category }: { category: FoundationCategory }) {

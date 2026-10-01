@@ -1,4 +1,5 @@
 const changes = [
+  { title: "Shared motion", details: "Adds experimental TextReveal, MediaReveal, BrandAction and RotatingContent registry sources. RevealContent and Collapsible use motion roles; Foundations now edits easing, stagger and cycles with actual source previews. Automatic effects support reduced motion and explicit pause." },
   {
     title: "Design language and previews",
     details: "All public items were rechecked in light and dark at desktop and mobile widths. The theme adds semantic roles for muted surfaces, media overlays, syntax highlighting and contrast-safe brand text. Component pages use the distributed registry source in their live previews.",
@@ -14,6 +15,8 @@ const changes = [
 ];
 
 const migrations = [
+  "Motion: existing RevealContent ms props remain valid. Omitting duration now reads the reveal role; remount with a new key to replay. Theme changes leave original text visible before hydration.",
+  "Brand effects: animated/paused are explicit, with local lifecycle handling instead of a global DOM scanner. Keep generation/fetch/audio code in the app.",
   "Calendar: choose variant=\"date\" for a compact date picker; the default is a schedule calendar.",
   "ColorPicker: an opaque value remains #RRGGBB; opacity below 100% returns #RRGGBBAA.",
   "Stories: the default presentation starts with thumbnail triggers. Use presentation=\"viewer\" for an already open embedded viewer.",

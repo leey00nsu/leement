@@ -4,6 +4,7 @@ import { renderToString } from "react-dom/server";
 import { MediaReveal } from "../patterns/media-reveal";
 import { BrandAction } from "../patterns/brand-action";
 import { RotatingContent } from "./rotating-content";
+import { motionEasing, motionMilliseconds } from "../lib/leement-motion";
 import { TextReveal } from "./text-reveal";
 
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
@@ -61,4 +62,14 @@ test("rotation stays on the first item under reduced motion", () => {
   act(() => { vi.advanceTimersByTime(5000); });
   expect(screen.getByRole("group", { name: "Tools" }).getAttribute("data-index")).toBe("0");
   expect(screen.getByRole("button", { name: "Pause Tools" }).hasAttribute("disabled")).toBe(true);
+});
+
+test("JavaScript motion reads local CSS seconds and named easing consistently", () => {
+  const element = document.createElement("div");
+  element.style.setProperty("--lm-motion-duration-reveal", "1.2s");
+  element.style.setProperty("--lm-motion-easing-reveal", "ease-in-out");
+  document.body.appendChild(element);
+  expect(motionMilliseconds(element, "duration-reveal")).toBe(1200);
+  expect(motionEasing(element)).toEqual([0.42, 0, 0.58, 1]);
+  element.remove();
 });

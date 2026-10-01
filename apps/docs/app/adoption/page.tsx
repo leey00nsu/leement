@@ -35,6 +35,10 @@ export default function AdoptionPage() {
       </div>
       <p className="text-muted-foreground">This is a screen-by-screen migration path. The existing application wrappers and Base UI trigger call sites need deliberate adaptation before a full app replacement.</p>
     </section>
+    <section className="max-w-3xl space-y-4 rounded-xl border border-border bg-card p-6 text-sm leading-7"><h2 className="text-lg font-semibold">Bring over shared motion</h2><p className="text-muted-foreground">Use TextReveal.Item for the explicit Korean or English title fragments your app owns. Keep headings and translations outside the source. RevealContent retains its variants and millisecond props, while missing time props read theme roles.</p><p className="text-muted-foreground">Drive MediaReveal with your existing loading/ready/error state and keep the image alt or audio player inside. Reserve geometry with aspect ratio or min-height. A controlled Collapsible can reveal generation results without importing generation logic. Use BrandAction for the existing emphasized action and retain domain callbacks. RotatingContent is a decorative, pausable slot; its accessible label stays fixed.</p><pre className="overflow-x-auto rounded-lg border border-border bg-background p-4 text-xs"><code>{`npx shadcn@latest add @leement/text-reveal
+npx shadcn@latest add @leement/media-reveal
+npx shadcn@latest add @leement/brand-action
+npx shadcn@latest add @leement/rotating-content`}</code></pre><p className="text-muted-foreground">Import the theme and remove duplicate global motion scanners only in the pilot area you migrate. Local brand variables and explicit paused props remain app-owned. New APIs are experimental; the examples show the migration shape, while representative two-app validation is recorded with the Feature. This does not mean the entire apps have been migrated.</p></section>
     <AdoptionCompositions />
   </main>;
 }

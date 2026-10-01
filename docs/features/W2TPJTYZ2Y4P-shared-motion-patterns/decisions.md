@@ -75,3 +75,18 @@
 - **Decision**: 브랜드 효과는 낮은 강도의 gradient를 action 표면에 겹쳐 기본 글자 대비를 유지한다. 반복 CSS 변수와 scoped visibility/reduced 상태를 연결하고 RotatingContent는 longest-item geometry, hidden/inert decorative layers와 pause control을 갖는다.
 - **Trace**: BrandAction/Rotation은 원본 단일 제품 사례이므로 experimental을 유지한다. 일반 Skeleton은 중립이고 animated/paused는 소비자가 명시한다. Theme live 변경 알림은 선택적 event이며 필수 provider를 요구하지 않는다.
 - **Evidence**: [Plan](./plan.md), Commit `68b732c`, [Tasks](./tasks.md). 검증/commit은 T04 완료 시 기록한다.
+
+## D007: 실시간 편집과 검증 cache 정합성 (2026-10-01)
+
+- **Context**: T05 시작. cycle/easing 편집은 기존 duration validator 범위를 넘어선다. T03에서 registry만 바꿨는데 docs typecheck가 cache hit여서 직접 tsc로 확인했다.
+- **Decision**: duration/delay/cycle 범위를 구분하고 easing은 named 또는 bounded cubic-bezier만 허용한다. CSS 반복은 변수 갱신, JS rotation은 선택적 motion-change event로 즉시 갱신한다. turbo globalDependencies에 registry source/metadata를 포함하여 오래된 cache를 검증 증거로 쓰지 않는다. Overlay reduced-motion class는 data-state selector보다 우선한다.
+- **Trace**: T04 motion/source-extension 13/13, 직접 docs tsc, registry build와 scoped ESLint PASS. 새 task scope는 승인된 실제 source preview/검증 정합성의 국소 수정이며 PRD 요구를 확대하지 않는다. 브라우저 결과는 아래에 추가한다.
+- **Evidence**: Commit `e71094c`, [Verification Contract](./plan.md), [Tasks](./tasks.md).
+
+### D007 검증 결과
+
+- Motion editor: reveal 1100ms, stagger 120ms, easing 변경을 실제 TextReveal computed style에서 확인했다. brand text/surface 4500/5500ms와 rotate 2500ms를 편집하고 CSS copy, reload 복원 및 reset 기본 700ms를 확인했다. BrandAction computed cycle은 5.5s였다.
+- Collapsible의 실제 열린 높이, 콘텐츠 증가에 따른 높이 증가, 닫는 동안 inert 및 400ms 후 제거를 확인했다. Media ready/error/retry와 aria-busy, rotation pause/resume/offscreen stop이 작동했다.
+- 네 새 상세 route가 HTTP 200이고 source preview가 렌더됐다. 모바일 light/dark에서 가로 overflow 없음, reduced motion의 animation none/첫 항목 고정, no-JS TextReveal opacity 1과 원문 표시, pageerror 0을 확인했다.
+- Aside u0 profile이 연결되지 않아 로컬 Chrome/Playwright로 확인했다. 임시 검증 script와 로그는 /tmp에 두었고 핵심 화면만 보존한다.
+- **Evidence**: [desktop motion preview](./artifacts/motion-preview-desktop.png), [mobile dark editor](./artifacts/motion-editor-mobile-dark.png), T05 typecheck/lint/build 및 foundation/motion/overlay 테스트 로그는 tasks 기록.

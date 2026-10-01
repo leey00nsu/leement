@@ -149,15 +149,15 @@
 
   - Verification: Motion/source-extension tests 13/13 PASS; direct docs TypeScript and scoped ESLint PASS; registry build PASS. Pause/resume, reduced first item and timer cleanup checked; browser theme/visibility checks remain T05/T06.
 
-- [TODO][PRD-FR-013] T-W2TPJTYZ2Y4P-shared-motion-patterns-05 Foundations 실시간 모션 편집과 공개 문서 완성
+- [DONE][PRD-FR-013] T-W2TPJTYZ2Y4P-shared-motion-patterns-05 Foundations 실시간 모션 편집과 공개 문서 완성
   - Date: 2026-10-01
   - Acceptance:
     - duration/easing/stagger/cycle edit·Replay·CSS copy·persistence·reset이 실제 source에 적용된다
   - Checklist:
-    - [ ] 필드/검증/export와 기존 저장값 호환을 갱신한다
-    - [ ] 카테고리 미리보기에 실제 진입·펼침·미디어·반복 예제를 연결한다
-    - [ ] navigation/route/metadata/states/설치/adoption/changelog를 동기화한다
-    - [ ] light/dark·모바일·reduced/no-JS·hydration과 편집 재현을 브라우저에서 확인한다
+    - [x] 필드/검증/export와 기존 저장값 호환을 갱신한다
+    - [x] 카테고리 미리보기에 실제 진입·펼침·미디어·반복 예제를 연결한다
+    - [x] navigation/route/metadata/states/설치/adoption/changelog를 동기화한다
+    - [x] light/dark·모바일·reduced/no-JS·hydration과 편집 재현을 브라우저에서 확인한다
   - Docs:
     - project:apps/docs/app/foundations/[slug]/page.tsx
     - project:apps/docs/lib/items.ts
@@ -168,6 +168,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: Foundation/motion/overlay tests 16/16 PASS; after named-easing bridge update, foundation/motion tests 12/12 PASS; typecheck/lint/build PASS. Browser edit/replay/copy/reload/reset, source routes, dynamic height/exit/inert, media retry, rotation pause/offscreen, mobile light/dark/reduced/no-JS and pageerrors=0 verified. Screenshots: artifacts/motion-preview-desktop.png, artifacts/motion-editor-mobile-dark.png.
 
 - [TODO][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-06 Registry 소비자와 두 제품 대표 사용처 검증
   - Date: 2026-10-01
@@ -213,4 +215,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:17a80f05d6cb603b256ebbca00778d904584e1b0fc6e4dae9b7e8488c0840c4e -->
+<!-- lee-spec-kit:workflow-sync sha256:9fc1f13fa4954fac4ccf018a91b301245a984755b394a10d2ead684c61b1c8b4 -->

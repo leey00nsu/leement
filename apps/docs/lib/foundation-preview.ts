@@ -12,7 +12,7 @@ export const PREVIEW_STORAGE_KEY = "leement-foundation-preview-v1";
 
 export const emptyPreview = (): PreviewOverrides => ({ shared: {}, light: {}, dark: {} });
 
-type FieldKind = "family" | "size" | "weight" | "line-height" | "spacing" | "radius" | "shadow" | "duration";
+type FieldKind = "family" | "size" | "weight" | "line-height" | "spacing" | "radius" | "shadow" | "duration" | "delay" | "cycle" | "easing";
 export type SharedField = {
   key: string;
   label: string;
@@ -34,7 +34,10 @@ export const sharedFields: SharedField[] = [
   shared("--lm-spacing-1", "Base spacing step", "spacing", "spacing", primitive.spacing["1"]),
   ...(["sm", "md", "lg", "xl"] as const).map((name) => shared(`--lm-radius-${name}`, `${name} radius`, "radius", "radius", primitive.radius[name])),
   ...(["sm", "md", "lg"] as const).map((name) => shared(`--lm-shadow-${name}`, `${name} shadow`, "shadow", "shadow", primitive.shadow[name])),
-  ...(["fast", "normal", "slow"] as const).map((name) => shared(`--lm-motion-duration-${name}`, `${name} duration`, "motion", "duration", primitive.motion.duration[name])),
+  ...Object.entries(primitive.motion.duration).map(([name, value]) => shared(`--lm-motion-duration-${name}`, `${name} duration`, "motion", "duration", value)),
+  shared("--lm-motion-delay-stagger", "Stagger delay", "motion", "delay", primitive.motion.delay.stagger),
+  ...Object.entries(primitive.motion.cycle).map(([name, value]) => shared(`--lm-motion-cycle-${cssName(name)}`, `${name.replace(/([a-z])([A-Z])/g, "$1 $2")} cycle`, "motion", "cycle", value)),
+  ...Object.entries(primitive.motion.easing).map(([name, value]) => shared(`--lm-motion-easing-${name}`, `${name} easing`, "motion", "easing", value)),
 ];
 
 const sharedByKey = new Map(sharedFields.map((field) => [field.key, field]));
@@ -108,9 +111,18 @@ export function validPreviewValue(mode: FoundationMode | "shared", key: string, 
   if (field.kind === "radius") return validLength(value, 0, 48) || value === "0";
   if (field.kind === "weight") return /^(?:[1-9]00)$/.test(value);
   if (field.kind === "line-height") return /^(?:1(?:\.\d{1,2})?|2(?:\.[0-5]\d?)?)$/.test(value);
-  if (field.kind === "duration") {
-    const match = /^(\d{1,4})(ms|s)$/.exec(value);
-    return !!match && Number(match[1]) * (match[2] === "s" ? 1000 : 1) <= 2000;
+  if (field.kind === "duration" || field.kind === "delay" || field.kind === "cycle") {
+    const match = /^(\d+(?:\.\d{1,3})?)(ms|s)$/.exec(value);
+    if (!match) return false;
+    const ms = Number(match[1]) * (match[2] === "s" ? 1000 : 1);
+    return field.kind === "cycle" ? ms >= 250 && ms <= 10000 : ms >= 0 && ms <= (field.kind === "delay" ? 1000 : 2000);
+  }
+  if (field.kind === "easing") {
+    if (["linear", "ease", "ease-in", "ease-out", "ease-in-out"].includes(value)) return true;
+    const match = /^cubic-bezier\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)$/.exec(value);
+    if (!match) return false;
+    const [x1, y1, x2, y2] = match.slice(1).map(Number) as [number, number, number, number];
+    return [x1, x2].every((n) => n >= 0 && n <= 1) && [y1, y2].every((n) => n >= -2 && n <= 2);
   }
   if (field.kind === "shadow") return value === "none" || /^(?:0|-?\d+px)\s+-?\d+px\s+\d+px\s+rgb\(0 0 0 \/ (?:0(?:\.\d+)?|1(?:\.0+)?)\)$/.test(value);
   return false;
@@ -166,6 +178,8 @@ function sharedDeclarations(values: Record<string, string>): Array<[string, stri
       declarations.push([key.replace("--lm-typography-line-height-", "--leading-"), `var(${key})`]);
     } else if (key.startsWith("--lm-shadow-")) {
       declarations.push([key.replace("--lm-shadow-", "--shadow-"), `var(${key})`]);
+    } else if (key === "--lm-motion-easing-standard") {
+      declarations.push(["--default-transition-timing-function", "var(--lm-motion-easing-standard)"]);
     } else if (key === "--lm-motion-duration-normal") {
       declarations.push(["--default-transition-duration", "var(--lm-motion-duration-normal)"]);
     }
@@ -183,11 +197,10 @@ export function previewCss(preview: PreviewOverrides): string {
   if (common.length) blocks.push(block(":root", common));
   if (Object.keys(preview.light).length) blocks.push(block(':root:not(.dark):not([data-lm-theme="dark"]), [data-lm-theme="light"]', Object.entries(preview.light)));
   if (Object.keys(preview.dark).length) blocks.push(block('.dark, [data-lm-theme="dark"]', Object.entries(preview.dark)));
-  if (Object.keys(preview.shared).some((key) => key.startsWith("--lm-motion-duration-"))) {
-    blocks.push(`@media (prefers-reduced-motion: reduce) {\n${block(":root", [
-      ["--lm-motion-duration-fast", "0ms"],
-      ["--lm-motion-duration-normal", "0ms"],
-      ["--lm-motion-duration-slow", "0ms"],
+  if (Object.keys(preview.shared).some((key) => key.startsWith("--lm-motion-"))) {
+    blocks.push(`@media (prefers-reduced-motion: reduce) {\n${block(":root, [data-lm-theme], .dark", [
+      ...Object.keys(primitive.motion.duration).map((name) => [`--lm-motion-duration-${name}`, "0ms"] as [string, string]),
+      ["--lm-motion-delay-stagger", "0ms"],
       ["--default-transition-duration", "0ms"],
     ]).split("\n").map((line) => `  ${line}`).join("\n")}\n}`);
   }

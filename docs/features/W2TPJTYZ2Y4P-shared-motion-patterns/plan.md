@@ -35,7 +35,7 @@
 - packages/tokens/src/tokens.json; packages/theme/build.mjs, theme.test.mjs
 - registry/lib/leement-motion.ts; registry/ui/{reveal-content,text-reveal,rotating-content,collapsible,brand-gradient-text,skeleton,button,dialog,tooltip,dropdown-menu}.tsx 및 필요한 module.css
 - registry/patterns/{media-reveal,brand-action}.tsx
-- registry.json; apps/docs/tsconfig.json; vitest.config.mts (소스 alias와 registry dependency)
+- registry.json; turbo.json (registry source cache inputs); apps/docs/tsconfig.json; vitest.config.mts (소스 alias와 registry dependency)
 - apps/docs/lib/{docs,items,item-states,foundation-preview}.ts; apps/docs/components/{previews,foundation-editor,foundation-preview-provider}.tsx; 필요 시 motion-previews.tsx
 - apps/docs/app/{foundations/[slug],patterns/[slug],components/[slug],adoption,changelog}/page.tsx
 - registry/ui/motion.test.tsx 및 기존 source-extension/overlay/button 테스트의 필요한 계약만 갱신

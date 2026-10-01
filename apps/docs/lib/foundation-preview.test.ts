@@ -11,6 +11,20 @@ import {
 } from "./foundation-preview";
 
 describe("Foundations preview overrides", () => {
+  it("supports bounded cycles and safe easing while preserving old saved duration values", () => {
+    let state = withPreviewValue(emptyPreview(), "shared", "--lm-motion-cycle-brand-surface", "4.5s")!;
+    state = withPreviewValue(state, "shared", "--lm-motion-easing-reveal", "cubic-bezier(0.22, 1, 0.36, 1)")!;
+    const css = previewCss(state);
+    expect(parsePreview(JSON.stringify(state))).toEqual(state);
+    expect(css).toContain("--lm-motion-cycle-brand-surface: 4.5s");
+    expect(css).toContain("--lm-motion-duration-expand: 0ms");
+    expect(css).not.toContain("--lm-motion-cycle-brand-surface: 0ms");
+    expect(validPreviewValue("shared", "--lm-motion-cycle-brand-text", "0ms")).toBe(false);
+    expect(validPreviewValue("shared", "--lm-motion-cycle-rotate", "11s")).toBe(false);
+    expect(validPreviewValue("shared", "--lm-motion-easing-reveal", "cubic-bezier(2, 1, 0.36, 1)")).toBe(false);
+    expect(validPreviewValue("shared", "--lm-motion-easing-reveal", "linear; } body { display:none")).toBe(false);
+    expect(parsePreview(JSON.stringify({ shared: { "--lm-motion-duration-normal": "300ms" } })).shared).toEqual({ "--lm-motion-duration-normal": "300ms" });
+  });
   const brand = colorFields.find((field) => field.key === "--lm-color-brand-accent");
   if (!brand) throw new Error("Missing brand accent token");
 

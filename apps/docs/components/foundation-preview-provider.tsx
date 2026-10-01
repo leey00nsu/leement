@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState, useRef } from "react";
 import {
   emptyPreview,
   parsePreview,
@@ -24,6 +24,7 @@ const PreviewContext = createContext<PreviewContextValue | null>(null);
 
 export function FoundationPreviewProvider({ children }: { children: React.ReactNode }) {
   const [preview, setPreview] = useState<PreviewOverrides>(emptyPreview);
+  const previousMotion = useRef("");
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -50,6 +51,11 @@ export function FoundationPreviewProvider({ children }: { children: React.ReactN
       document.head.appendChild(style);
     }
     style.textContent = previewCss(preview);
+    const motion = JSON.stringify(Object.entries(preview.shared).filter(([key]) => key.startsWith("--lm-motion-")));
+    if (motion !== previousMotion.current) {
+      previousMotion.current = motion;
+      window.dispatchEvent(new Event("leement:motion-change"));
+    }
     try {
       if (previewChangeCount(preview)) window.localStorage.setItem(PREVIEW_STORAGE_KEY, JSON.stringify(preview));
       else window.localStorage.removeItem(PREVIEW_STORAGE_KEY);
