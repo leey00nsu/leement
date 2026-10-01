@@ -117,3 +117,10 @@
 - 앱 검증은 로컬 합성 WAV/SVG를 사용했다. 실제 .env/DB/녹음/생성 backend를 호출하지 않았고 검증 전용 환경값만 설정했다. Leesfield 서버는 기존 NEXT_PHASE=phase-production-build 조건으로 worker 초기화를 건너뛴 UI 검증이다. 외부 backend 및 전체 앱 마이그레이션 통과를 뜻하지 않는다. 기존 middleware/standalone/tracing 경고는 변경 범위 밖이며 build는 통과했다.
 - 앱의 Base UI props/번역/미디어 readiness는 앱 wrapper에 남는다. fixed registry targets/custom layout 조정, no-JS 초기 ready/fallback, 임의 브랜드 대비 및 experimental API를 공개 문서에 안내했다. 공개 npm/registry 배포와 main 통합은 아직 수행하지 않았다.
 - **Evidence**: [CopySinger adapter](./artifacts/copysinger-motion-adapter.patch), [Leesfield adapter](./artifacts/leesfield-motion-adapter.patch), [Tasks](./tasks.md). 테스트/consumer/browser/app 로그와 fixture·pilot 환경은 /tmp의 일회성 검증 자료이고 정본은 이 결과와 retained adapter patch다.
+
+## D009: 사용자 피드백에 따른 Collapsible 모션 수정 (2026-10-01)
+
+- **Context**: 구현 승인 대기 중 사용자가 Collapsible이 버벅이며 열린다고 지적했다. 구현 수락/병합 승인으로 해석하지 않고 현재 Feature의 수정 요청으로 처리한다.
+- **Evidence**: 실제 /components/collapsible 브라우저 프레임에서 p-3가 있는 panel이 시작부터 24px, 측정값은 32px, 전환 끝에 auto로 복원되며 44px로 점프했다. 기존 검증은 opened/content-grow/closed 기능은 확인했지만 padding 예제의 프레임 연속성을 놓쳤다.
+- **Decision**: Base UI의 panel/ref/render API와 모션 토큰은 보존한다. animated panel은 측정/클리핑을 맡고 패딩·border 같은 시각적 box는 내부 콘텐츠에 둔다. 현재 예제/문서 규칙을 수정하고 시작·끝 jump, 재개폐·keyboard·reduced motion을 scoped 검증한다. 범위는 승인 Spec의 자연스러운 Collapsible 열림/닫힘 내 수정이고 새 Feature를 만들지 않는다.
+- **Trace**: T07 추가로 current Feature를 다시 진행한다. 구현 gate가 허용하기 전에는 코드 수정 없이 증거와 태스크를 기록한다.

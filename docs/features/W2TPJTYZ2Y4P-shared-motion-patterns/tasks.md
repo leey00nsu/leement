@@ -190,6 +190,23 @@
 
   - Verification: 새 4항목 CLI/11 transitive files/theme import 및 수정한 consumer source strict TS/build PASS; 양쪽 실제 TextReveal/MediaReveal, Leesfield controlled 펼침/BrandAction/Rotation adapter와 baseline/post TS/build 및 browser PASS; full gates 83 tests PASS. 원본 상태 동일. Adapter patches linked in decisions D008; canonical-target and backend/no-JS limits documented.
 
+- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-07 Collapsible 열림·접힘의 단계적 높이 변화 수정
+  - Date: 2026-10-01
+  - Acceptance:
+    - 패딩이 있는 실제 예제도 0에서 자연 높이로 매끄럽게 열리고 재개폐·포커스 계약을 유지한다
+  - Checklist:
+    - [ ] 수정 전 프레임 높이와 실제 CSS/primitive 계산을 조사한다
+    - [ ] panel 측정과 내부 시각 스타일의 책임을 정리하고 예제를 수정한다
+    - [ ] 브라우저 프레임·재개폐·키보드·reduced motion 및 관련 검증을 수행한다
+    - [ ] 원인·수정·검증과 규칙을 현재 Feature 문서에 동기화한다
+  - Docs:
+    - project:apps/docs/lib/items.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -202,8 +219,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
