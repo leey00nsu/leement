@@ -210,6 +210,22 @@
 
   - Verification: Collapsible 전후 frame 관찰: 시작 높이 24px/측정 32px→auto 44px의 12px jump 재현; inner visual box/gap 배치 후 0→52px 연속, 종료 auto 높이차<0.5px, close-to-zero/inert/removal, Enter/Space 빠른 재개폐와 reduced 0s, pageerrors=0 PASS. typecheck/lint/build/full 83 tests, scoped 15 tests 및 feature-audit PASS. CSV evidence linked in decisions D009.
 
+- [TODO][PRD-FR-008] T-W2TPJTYZ2Y4P-shared-motion-patterns-08 공통 모션 영향 감사와 외부 ref 호환성 수정
+  - Date: 2026-10-01
+  - Acceptance:
+    - TextReveal·RotatingContent·RevealContent는 외부 object/callback ref와 내부 observer를 함께 유지한다.
+    - 전환 easing 및 overlay·브랜드·미디어의 영향과 검증 한계를 기록한다.
+  - Checklist:
+    - [ ] 외부 ref의 진입/순환/관찰 회귀 및 unmount cleanup을 검증한다.
+    - [ ] 기존 핵심 UI의 keyboard/focus/reduced motion과 소비자 설치 빌드를 확인한다.
+  - Docs:
+    - project:apps/docs/lib/items.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -222,8 +238,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록

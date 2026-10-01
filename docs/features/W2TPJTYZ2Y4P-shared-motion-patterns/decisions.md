@@ -131,3 +131,11 @@
 - 수정 후 panel은 0→52px(본문 44px + 내부 간격 8px)이며 auto 전환 직전/직후의 높이 차이는 0.5px 미만이다. 닫힘은 0까지 이어지고 inert 후 제거된다. Enter/Space 빠른 재개폐, focus 대상과 aria-expanded, reduced duration=0s, pageerrors=0을 확인했다.
 - typecheck/lint/build PASS, 관련 source-extension/motion 15 tests PASS. 전체 test 13 files / 83 tests와 feature-audit violations=[] PASS. Foundations의 dynamic height/exit 및 관련 source routes도 browser PASS. Frame 관찰은 레이아웃 연속성을 검증한 것이며 모든 환경의 프레임 속도를 보장하는 측정은 아니다.
 - **Evidence**: [전후 panel 높이 샘플](./artifacts/collapsible-height-samples.csv). 사용자에게 원인과 수정·검증 결과를 공유했다. 구현/병합 승인은 아직 받지 않았다.
+
+## D010: 공통 모션 영향 감사와 외부 ref 호환성 (2026-10-01)
+
+- **Context**: 사용자가 다른 영향받는 UI를 질문했다. 구현/병합 승인으로 해석하지 않고 현재 Feature의 영향을 조사했다.
+- **Evidence**: 임시 Testing Library 재현에서 외부 ref가 있는 TextReveal은 entered=false, RotatingContent는 500ms 뒤 index=0이고, RevealContent observer는 ref 없는 baseline만 관찰했다. 세 source의 props spread가 내부 ref를 덮어썼다. TextReveal/RotatingContent는 새 구현 문제이며 RevealContent 충돌은 main 원본에도 있었다.
+- **Decision**: T08에서 세 항목의 내부 ref와 consumer ref를 함께 유지한다. 기존 motion suite에 작은 실제 사용 회귀를 추가하고 문서와 registry 소비자 검증을 동기화한다. UI API나 새 Feature를 추가하지 않는다.
+- **Impact scope**: theme의 Tailwind default transition easing이 standard token을 읽어 기존 Input/Textarea/Switch/Tabs/Slider/Popover 등 기본 transition에도 적용된다. 기존 fast/normal/slow 120/180/260ms는 유지된다. Overlay fade, reduced motion, 브랜드 cycle, 미디어 전환은 승인된 변경이다. 높이 측정 transition은 Collapsible에 한정되고 다른 direct-panel padding 사용처는 발견되지 않았다.
+- **Trace**: 코드 수정 전에 task와 Verification Contract를 기록하고 implementationAllowed gate를 확인한다. 결과와 한계는 검증 후 추가한다.
