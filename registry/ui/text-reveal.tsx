@@ -17,7 +17,7 @@ function TextRevealRoot({ children, className, duration, stagger, style, ...prop
   useEffect(() => { if (active) setEntered(true); }, [active]);
   let itemIndex = 0;
   return <span ref={ref} data-slot="text-reveal" data-entered={entered} data-motion-paused={!active} className={cn(styles.root, className)} style={{ ...(duration === undefined ? {} : { "--lm-text-duration": `${Math.max(0, duration)}ms` }), ...(stagger === undefined ? {} : { "--lm-text-stagger": `${Math.max(0, stagger)}ms` }), ...style } as CSSProperties} {...props}>
-    {Children.map(children, (child) => isValidElement<TextRevealItemProps>(child) && child.type === TextRevealItem ? cloneElement(child, { index: child.props.index ?? itemIndex++ }) : child)}
+    {Children.map(children, (child) => { if (!isValidElement<TextRevealItemProps>(child) || child.type !== TextRevealItem) return child; const index = itemIndex++; return cloneElement(child, { index: child.props.index ?? index }); })}
   </span>;
 }
 const TextReveal = Object.assign(TextRevealRoot, { Item: TextRevealItem });

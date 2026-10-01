@@ -8,7 +8,7 @@ const content = {
   spacing: { rule: "Use a 4px base rhythm and keep control heights consistent at 36, 40 and 44px.", detail: "Choose spacing based on content relationship. Tighter within one control, wider between independent sections." },
   radius: { rule: "Use 8px for controls, 12px for cards and fully rounded shapes for badges and pills.", detail: "Radius expresses containment. Keep surface hierarchy consistent across light and dark." },
   shadow: { rule: "Prefer borders for static cards and inputs. Add shadow when elevation helps explain layering.", detail: "Use the shadow scale for floating menus and dialogs. A basic Card has no shadow." },
-  motion: { rule: "Use quick, calm state transitions. Motion should communicate response.", detail: "Fast, normal and slow durations are 120, 180 and 260ms. Reduced motion maps them to zero." },
+  motion: { rule: "Use quick, calm state transitions. Motion should communicate response.", detail: "Fast/normal/slow are 120/180/260ms, reveal is 700ms, expand/media are 400ms and stagger is 70ms. Edit role-based durations, easing and positive repeat cycles below. Reduced motion removes transitions and stops repetition." },
 } as const;
 
 function flatten(value: unknown, prefix: string[] = []): Array<[string, string]> {

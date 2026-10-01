@@ -73,3 +73,17 @@ test("JavaScript motion reads local CSS seconds and named easing consistently", 
   expect(motionEasing(element)).toEqual([0.42, 0, 0.58, 1]);
   element.remove();
 });
+
+test("inline rotation can use an app-owned pause control without nesting controls in the heading", () => {
+  vi.useFakeTimers();
+  vi.stubGlobal("matchMedia", () => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+  const view = render(<h1>Tools <RotatingContent label="Tools" controls={false} paused={false} interval={500} items={["Voice", "Image"]} /></h1>);
+  const group = screen.getByRole("group", { name: "Tools" });
+  expect(group.tagName).toBe("SPAN");
+  expect(screen.queryByRole("button")).toBeNull();
+  act(() => { vi.advanceTimersByTime(500); });
+  expect(group.getAttribute("data-index")).toBe("1");
+  view.rerender(<h1>Tools <RotatingContent label="Tools" controls={false} paused interval={500} items={["Voice", "Image"]} /></h1>);
+  act(() => { vi.advanceTimersByTime(1000); });
+  expect(group.getAttribute("data-index")).toBe("1");
+});

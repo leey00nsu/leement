@@ -6,9 +6,9 @@ import { motionMilliseconds, useMotionActivity } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 import styles from "./rotating-content.module.css";
 
-type RotatingContentProps = ComponentProps<"div"> & { items: ReactNode[]; label: string; interval?: number; paused?: boolean; defaultPaused?: boolean; onPausedChange?: (paused: boolean) => void };
-function RotatingContent({ items, label, interval, paused, defaultPaused = false, onPausedChange, className, ...props }: RotatingContentProps) {
-  const ref = useRef<HTMLDivElement>(null);
+type RotatingContentProps = ComponentProps<"span"> & { items: ReactNode[]; label: string; interval?: number; paused?: boolean; defaultPaused?: boolean; onPausedChange?: (paused: boolean) => void } & ({ controls?: true } | { controls: false; paused: boolean });
+function RotatingContent({ items, label, interval, paused, defaultPaused = false, onPausedChange, controls = true, className, ...props }: RotatingContentProps) {
+  const ref = useRef<HTMLSpanElement>(null);
   const { active, reduced } = useMotionActivity(ref);
   const [index, setIndex] = useState(0);
   const [internalPaused, setInternalPaused] = useState(defaultPaused);
@@ -27,10 +27,10 @@ function RotatingContent({ items, label, interval, paused, defaultPaused = false
     return () => window.clearTimeout(timer);
   }, [active, index, interval, isPaused, items.length, revision]);
   const currentIndex = reduced ? 0 : index % Math.max(1, items.length);
-  return <div ref={ref} role="group" aria-label={label} data-slot="rotating-content" data-index={currentIndex} data-motion-paused={isPaused || !active} className={cn("inline-flex max-w-full items-center gap-3", className)} {...props}>
+  return <span ref={ref} role="group" aria-label={label} data-slot="rotating-content" data-index={currentIndex} data-motion-paused={isPaused || !active} className={cn("inline-flex max-w-full items-center gap-3", className)} {...props}>
     <span className={styles.slot} aria-hidden="true" inert>{items.map((item, itemIndex) => <span key={itemIndex} className={styles.item} data-current={itemIndex === currentIndex}>{item}</span>)}</span>
-    <Button type="button" size="sm" variant="ghost" disabled={reduced || items.length < 2} aria-pressed={isPaused || reduced} aria-label={`${isPaused ? "Resume" : "Pause"} ${label}`} onClick={() => { if (paused === undefined) setInternalPaused(!isPaused); onPausedChange?.(!isPaused); }}>{reduced ? "Motion off" : isPaused ? "Resume" : "Pause"}</Button>
-  </div>;
+    {controls && <Button type="button" size="sm" variant="ghost" disabled={reduced || items.length < 2} aria-pressed={isPaused || reduced} aria-label={`${isPaused ? "Resume" : "Pause"} ${label}`} onClick={() => { if (paused === undefined) setInternalPaused(!isPaused); onPausedChange?.(!isPaused); }}>{reduced ? "Motion off" : isPaused ? "Resume" : "Pause"}</Button>}
+  </span>;
 }
 export { RotatingContent };
 export type { RotatingContentProps };

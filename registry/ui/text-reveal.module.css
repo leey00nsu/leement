@@ -1,7 +1,7 @@
 .item { display: inline-block; }
-.root[data-entered="true"] > .item {
+.root[data-entered="true"] .item {
   animation: text-reveal var(--lm-text-duration, var(--lm-motion-duration-reveal)) var(--lm-motion-easing-reveal) calc(var(--lm-text-stagger, var(--lm-motion-delay-stagger)) * var(--lm-text-index)) both;
 }
-.root[data-motion-paused="true"] > .item { animation-play-state: paused; }
+.root[data-motion-paused="true"] .item { animation-play-state: paused; }
 @keyframes text-reveal { from { opacity: 0; filter: blur(5px); transform: translateY(0.32em); } to { opacity: 1; filter: none; transform: none; } }
-@media (prefers-reduced-motion: reduce), (scripting: none) { .root > .item { animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important; } }
+@media (prefers-reduced-motion: reduce), (scripting: none) { .root .item { animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important; } }
