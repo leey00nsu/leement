@@ -90,3 +90,30 @@
 - 네 새 상세 route가 HTTP 200이고 source preview가 렌더됐다. 모바일 light/dark에서 가로 overflow 없음, reduced motion의 animation none/첫 항목 고정, no-JS TextReveal opacity 1과 원문 표시, pageerror 0을 확인했다.
 - Aside u0 profile이 연결되지 않아 로컬 Chrome/Playwright로 확인했다. 임시 검증 script와 로그는 /tmp에 두었고 핵심 화면만 보존한다.
 - **Evidence**: [desktop motion preview](./artifacts/motion-preview-desktop.png), [mobile dark editor](./artifacts/motion-editor-mobile-dark.png), T05 typecheck/lint/build 및 foundation/motion/overlay 테스트 로그는 tasks 기록.
+
+## D008: 격리된 실제 source와 registry 소비자 검증 (2026-10-01)
+
+- **Context**: T06은 임시 consumer와 두 실제 앱의 대표 사용처를 검증한다.
+- **Decision**: 현재 HEAD의 git archive를 별도 /tmp 환경에 풀고 baseline 이후 source를 교체한다. 원본 checkout과 실제 .env/DB를 사용하지 않는다. 앱의 locale/media 준비/오류 상태는 앱에 유지한다.
+- **Trace**: CopySinger f402d7d1bc324af358eeaa18f486aeb0e94da955, Leesfield 5b0393c6f18962385cac72ba64566b02026faa0d. 새 4항목 CLI 설치가 transitive helper/Button/Skeleton 및 CSS까지 11 files를 생성했다. baseline/post-change와 browser 결과는 완료 시 아래 기록한다.
+- **Evidence**: [Verification Contract](./plan.md), [Tasks](./tasks.md).
+
+### D008 통합에서 드러난 API 보완
+
+- 제목의 native 줄/아이콘 wrapper 안에서 명시적 TextReveal.Item이 작동하도록 descendant 조합을 지원한다. 원문 분할은 앱 책임이며 전역 scanner를 추가하지 않는다.
+- RotatingContent root를 native span으로 제공한다. 기본 pause 버튼은 유지하고 controls=false는 controlled paused와 앱 소유의 외부 pause UI를 요구한다. aria-hidden 제목 안에 버튼을 숨기지 않는다. Plan/API docs와 실제 앱 검증을 함께 갱신한다.
+
+- 두 앱의 baseline/post-change TS/build가 통과했다. Leesfield의 Base UI 함수형 style/render API를 Leement native Button에 바로 전달할 수 없어, 기존 Button을 BrandAction asChild로 감싸 보존했다.
+- 실제 HistoryMedia에서 hydration 전에 이미 로드된 이미지의 load event만 기다리면 loading에 남는 경우를 확인했다. 앱 adapter에서 image.complete/naturalWidth를 초기 확인한다. MediaReveal은 미디어 준비 상태를 추정하거나 fetch하지 않는다.
+- registry의 고정 target은 canonical components/ui, components/patterns, lib 경로를 사용한다. custom shared aliases만 바꿔 설치하면 utils alias가 맞지 않아 pilot config를 canonical aliases로 맞췄다. 다른 folder layout에서는 설치 후 owned source 이동/alias 조정이 필요하다는 현재 한계를 adoption 문서에 명시한다.
+
+- MediaReveal의 docs 예제는 이미 알려진 샘플을 ready 상태로 SSR한다. 사용자는 loading/error 버튼으로 전환을 재현하며 JavaScript가 없어도 샘플 이미지와 alt가 유지된다. 초기 loading 상태에서 readiness가 영원히 바뀌지 않는 no-JS 사용은 앱이 정적 ready/fallback을 제공해야 한다.
+
+### D008 최종 검증 및 한계
+
+- Feature 전체: pnpm run typecheck (5 tasks), lint (3 tasks), test (13 files / 83 tests), build (tokens/theme/registry/docs) PASS. feature-audit status=ok, violations=[]; diff --check PASS. Browser의 JS 미디어 pause/visibility, editor 값·CSS copy·reload/reset, 모바일 light/dark, reduced/no-JS, 실제 panel 높이/exit 및 source route checks PASS.
+- 독립 Tailwind v4/React consumer: shadcn 4.21.0의 새 4항목 + 11 transitive files 설치, packed theme import, strict TS/Vite build PASS. 설치된 TextReveal source에 consumer-owned 속성을 추가한 뒤 재빌드했다. 브라우저 render, media retry, pause/resume와 document visibilitychange 이벤트의 timer 정지/재개 PASS.
+- 두 앱: 위 HEAD archive에서 frozen dependency install, Prisma client generate, Leesfield vendor prepare 후 baseline TS/build PASS. 실제 대표 UI adapter 교체 및 임시 /motion-adoption 페이지 추가 후 양쪽 TS/build PASS. CopySinger hero text, 0.7s token, waveform ready와 ArrowRight 재생 위치 이동 PASS. Leesfield title/decoded logo rotation의 외부 pause, controlled 결과 재개폐, generation busy/disabled와 history media ready PASS. 양쪽 pageerrors=0. 원본 git status는 시작 기록과 동일했다.
+- 앱 검증은 로컬 합성 WAV/SVG를 사용했다. 실제 .env/DB/녹음/생성 backend를 호출하지 않았고 검증 전용 환경값만 설정했다. Leesfield 서버는 기존 NEXT_PHASE=phase-production-build 조건으로 worker 초기화를 건너뛴 UI 검증이다. 외부 backend 및 전체 앱 마이그레이션 통과를 뜻하지 않는다. 기존 middleware/standalone/tracing 경고는 변경 범위 밖이며 build는 통과했다.
+- 앱의 Base UI props/번역/미디어 readiness는 앱 wrapper에 남는다. fixed registry targets/custom layout 조정, no-JS 초기 ready/fallback, 임의 브랜드 대비 및 experimental API를 공개 문서에 안내했다. 공개 npm/registry 배포와 main 통합은 아직 수행하지 않았다.
+- **Evidence**: [CopySinger adapter](./artifacts/copysinger-motion-adapter.patch), [Leesfield adapter](./artifacts/leesfield-motion-adapter.patch), [Tasks](./tasks.md). 테스트/consumer/browser/app 로그와 fixture·pilot 환경은 /tmp의 일회성 검증 자료이고 정본은 이 결과와 retained adapter patch다.

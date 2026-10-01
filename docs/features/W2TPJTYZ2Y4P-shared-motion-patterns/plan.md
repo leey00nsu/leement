@@ -27,7 +27,7 @@
 - TextReveal은 span + 명시적 TextReveal.Item 조합을 제공한다. 원래 텍스트를 접근성 트리에 한 번만 유지하고 장식적인 시각 효과만 추가한다. heading은 부모가 소유한다.
 - MediaReveal은 status=loading|ready|error, children, loading/error slots, label과 native div props를 제공한다. grid의 같은 cell에서 loader/ready 전환을 표현하고 공간은 소비자가 aspect-ratio/min-height로 정한다. 숨긴 층은 inert/aria-hidden이며 fetch/audio 엔진을 포함하지 않는다.
 - BrandAction은 ButtonProps를 그대로 받아 Button을 조합하고 gradient는 배경 장식층에 낮은 강도로 적용해 기본 action 글자 대비를 유지한다. animated/paused 및 loading/disabled 상태에서 반복을 제어한다.
-- RotatingContent는 items, label, interval(ms), paused/onPausedChange, className을 제공한다. 전체 항목의 grid geometry를 유지하고 visible 항목만 시각적으로 표시한다. 장식 slot은 aria-hidden, label은 한 번 읽히며 이름 있는 pause 버튼을 기본 제공한다. offscreen/hidden/reduced에서 타이머를 멈추고 정적 첫 항목으로 대체한다.
+- RotatingContent는 items, label, interval(ms), paused/onPausedChange, className을 제공한다. 전체 항목의 grid geometry를 유지하고 visible 항목만 시각적으로 표시한다. native span root라 제목에 배치할 수 있다. controls=false는 controlled paused와 외부 키보드 접근 가능한 pause control을 요구한다. 장식 slot은 aria-hidden, label은 한 번 읽히며 이름 있는 pause 버튼을 기본 제공한다. offscreen/hidden/reduced에서 타이머를 멈추고 정적 첫 항목으로 대체한다.
 - 모든 새 UI는 experimental로 시작한다. helper는 탐색 메뉴에 추가하지 않는다. 신규 UI/Pattern은 정확히 한 범주에 배치하고 Docs에서 실제 source를 사용한다.
 
 ## 파일 구조

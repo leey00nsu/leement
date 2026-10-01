@@ -171,15 +171,15 @@
 
   - Verification: Foundation/motion/overlay tests 16/16 PASS; after named-easing bridge update, foundation/motion tests 12/12 PASS; typecheck/lint/build PASS. Browser edit/replay/copy/reload/reset, source routes, dynamic height/exit/inert, media retry, rotation pause/offscreen, mobile light/dark/reduced/no-JS and pageerrors=0 verified. Screenshots: artifacts/motion-preview-desktop.png, artifacts/motion-editor-mobile-dark.png.
 
-- [TODO][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-06 Registry 소비자와 두 제품 대표 사용처 검증
+- [DONE][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-06 Registry 소비자와 두 제품 대표 사용처 검증
   - Date: 2026-10-01
   - Acceptance:
     - 독립 소비자 및 격리된 두 앱에서 설치·대표 교체·검증을 수행하고 도입 회귀를 구분한다
   - Checklist:
-    - [ ] 새 4항목의 transitive source와 theme를 CLI로 설치하여 consumer TS/build를 실행한다
-    - [ ] 양쪽 TextReveal/MediaReveal과 Leesfield 펼침/action/회전을 대표 사용처에 교체한다
-    - [ ] 앱 baseline/post-change TS/build와 브라우저 동작을 확인하고 원본 상태를 비교한다
-    - [ ] 설정된 Feature typecheck/lint/test/build와 docs audit를 실행하고 실제 결과·한계를 기록한다
+    - [x] 새 4항목의 transitive source와 theme를 CLI로 설치하여 consumer TS/build를 실행한다
+    - [x] 양쪽 TextReveal/MediaReveal과 Leesfield 펼침/action/회전을 대표 사용처에 교체한다
+    - [x] 앱 baseline/post-change TS/build와 브라우저 동작을 확인하고 원본 상태를 비교한다
+    - [x] 설정된 Feature typecheck/lint/test/build와 docs audit를 실행하고 실제 결과·한계를 기록한다
   - Docs:
     - project:apps/docs/app/adoption/page.tsx
   - Review Evidence: -
@@ -187,6 +187,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 새 4항목 CLI/11 transitive files/theme import 및 수정한 consumer source strict TS/build PASS; 양쪽 실제 TextReveal/MediaReveal, Leesfield controlled 펼침/BrandAction/Rotation adapter와 baseline/post TS/build 및 browser PASS; full gates 83 tests PASS. 원본 상태 동일. Adapter patches linked in decisions D008; canonical-target and backend/no-JS limits documented.
 
 ## Repository Knowledge (완료 비차단)
 
@@ -200,8 +202,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -211,8 +213,18 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm run typecheck` | 2026-10-01 | PASS — 5 tasks |
+| `pnpm run lint` | 2026-10-01 | PASS — 3 tasks + registry ESLint |
+| `pnpm run test` | 2026-10-01 | PASS — 13 files / 83 tests |
+| `pnpm run build` | 2026-10-01 | PASS — tokens/theme/registry/docs |
+| `pnpm run build` (독립 consumer) | 2026-10-01 | PASS — strict TS + Vite, source 수정 후 재빌드 |
+| `npx shadcn@latest add` (새 4항목) | 2026-10-01 | PASS — helper/UI/CSS 11 transitive files |
+| `pnpm run build` / `pnpm run typecheck` (CopySinger baseline/post) | 2026-10-01 | PASS — 각각 baseline 및 실제 adapter/pilot 추가 후 |
+| `pnpm run build` / `pnpm run typecheck` (Leesfield baseline/post) | 2026-10-01 | PASS — Base UI composition/cached readiness 보완 후 |
+| 로컬 Chrome / Playwright 임시 browser script | 2026-10-01 | PASS — editor, dynamic panel, media retry, pause/offscreen/visibility, light/dark/mobile/reduced/no-JS, 앱 실사용처; pageerrors=0 |
+| `npx lee-spec-kit feature-audit --json` | 2026-10-01 | PASS — violations=[] |
+| `git diff --check` / 원본 git status 비교 | 2026-10-01 | PASS — 원본 두 저장소 변경 없음 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:9fc1f13fa4954fac4ccf018a91b301245a984755b394a10d2ead684c61b1c8b4 -->
+<!-- lee-spec-kit:workflow-sync sha256:a69da6d5465b03432241e1af9a3d4fd3138197f4607a7d85175d9805750b3a18 -->

@@ -1,0 +1,315 @@
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -1,3 +1,4 @@
++@import "@leement/theme";
+ @import "tailwindcss";
+ @import "tw-animate-css";
+ @import "@xyflow/react/dist/style.css";
+@@ -369,3 +370,5 @@
+  .landing-composer .generation-media-shell,
+  .landing-composer [data-app-prompt-field][data-surface="hero"] { opacity: 1; }
+ }
++
++:root, .dark { --lm-color-brand-accent: var(--data-accent); --lm-color-brand-gradient-start: var(--brand-gradient-start, var(--brand-violet)); --lm-color-brand-gradient-middle: var(--brand-gradient-highlight, var(--brand-blue)); --lm-color-brand-gradient-end: var(--brand-gradient-start, var(--brand-pink)); }
+--- a/src/widgets/landing/ui/landing-title-motion.tsx
++++ b/src/widgets/landing/ui/landing-title-motion.tsx
+@@ -1,20 +1,9 @@
+ "use client";
+-import { useEffect, type ReactNode } from "react";
++import type { ReactNode, CSSProperties } from "react";
+ import { useLocale } from "next-intl";
+-import { useAnimate } from "motion/react";
+-import { useLandingReducedMotion } from "./use-landing-reduced-motion";
+-export const titleInitialStyle = { opacity: 0, filter: "blur(5px)", transform: "translateY(8px)" };
++import { TextReveal } from "@/components/ui/text-reveal";
++export const titleInitialStyle: CSSProperties = {};
+ export function LandingTitleMotion({ children }: { children: ReactNode }) {
+-  const locale = useLocale();
+-  const [scope, animate] = useAnimate<HTMLSpanElement>();
+-  const reduced = useLandingReducedMotion();
+-  useEffect(() => {
+-    const controls = animate(Array.from(scope.current.querySelectorAll<HTMLElement>('[data-title-step]')).map(element => [
+-      element,
+-      { opacity: [0, 1], filter: ['blur(5px)', 'blur(0px)'], transform: ['translateY(8px)', 'translateY(0px)'] },
+-      { at: reduced ? 0 : Number(element.dataset.titleStep) * .096, duration: reduced ? 0 : .72 },
+-    ]));
+-    return () => controls.cancel();
+-  }, [animate, reduced, scope, locale]);
+-  return <span aria-hidden="true" ref={scope}>{children}</span>;
++ const locale=useLocale();
++ return <TextReveal key={locale} aria-hidden="true">{children}</TextReveal>;
+ }
+--- a/src/widgets/landing/ui/landing-hero.tsx
++++ b/src/widgets/landing/ui/landing-hero.tsx
+@@ -8,6 +8,7 @@
+ import { LayoutTextFlip } from "./aceternity-layout-text-flip";
+ import { BrandUnplug } from "./brand-unplug";
+ import models from "@/shared/config/brand-models.json";
++import { TextReveal } from "@/components/ui/text-reveal";
+ import { useState } from "react";
+ import { Tabs as TabsPrimitive } from "@base-ui/react/tabs";
+ import Link from "next/link";
+@@ -36,15 +37,15 @@
+   return (
+     <span className="block whitespace-normal sm:whitespace-nowrap">
+       {words.map((word, index) => (
+-        <span
+-          data-title-step={startIndex + index}
++        <TextReveal.Item
++          index={startIndex + index}
+           key={`${word}-${index}`}
+           className="inline-block"
+           style={titleInitialStyle}
+         >
+           {word}
+           {index < words.length - 1 ? "\u00a0" : null}
+-        </span>
++        </TextReveal.Item>
+       ))}
+     </span>
+   );
+@@ -66,6 +67,7 @@
+     },
+   });
+   const t = useTranslations("landing.hero");
++  const [titlePaused, setTitlePaused] = useState(false);
+   const [media, setMedia] = useState<"image" | "video" | "audio">("image");
+   const vertical = useVerticalMediaRail();
+   const headlineFirst = t("headlineFirst");
+@@ -96,7 +98,7 @@
+           >
+             <LandingTitleMotion>
+               <span className="flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-5">
+-                <LayoutTextFlip
++                <LayoutTextFlip paused={titlePaused}
+                   text={headlineFirst}
+                   textGroups={[headlineFirst.split(" ")[0], headlineFirst.split(" ").slice(1).join(" ")]}
+                   words={flipModels.map((model) => model.name)}
+@@ -120,15 +122,15 @@
+                   text={t("headlineSecondFirst")}
+                   startIndex={2}
+                 />
+-                <span
+-                  data-title-step={2}
++                <TextReveal.Item
++                  index={2}
+                   className="inline-flex"
+                   style={titleInitialStyle}
+                 >
+                   <BrandUnplug />
+-                </span>
+-                <span
+-                  data-title-step={3}
++                </TextReveal.Item>
++                <TextReveal.Item
++                  index={3}
+                   className="inline-block"
+                   style={titleInitialStyle}
+                 >
+@@ -136,10 +138,11 @@
+                     {t("headlineInterface")}
+                   </span>
+                   {t("headlineSuffix")}
+-                </span>
++                </TextReveal.Item>
+               </span>
+             </LandingTitleMotion>
+           </AppHeading>
++          <button type="button" aria-pressed={titlePaused} onClick={() => setTitlePaused(value => !value)}>{titlePaused ? "Resume title icons" : "Pause title icons"}</button>
+           <motion.p
+             {...entry(0.76)}
+             className="mt-6 whitespace-pre-line text-sm leading-7 text-white/68 md:text-lg"
+--- a/src/widgets/landing/ui/aceternity-layout-text-flip.tsx
++++ b/src/widgets/landing/ui/aceternity-layout-text-flip.tsx
+@@ -1,95 +1,23 @@
+ "use client";
+-// Source: Aceternity Layout Text Flip. Keep layers mounted and decoded before cycling.
+-import { useState, useEffect, useRef, type ReactNode } from "react";
+-import { titleInitialStyle } from "./landing-title-motion";
+-import { motion } from "motion/react";
+-import { useLandingReducedMotion } from "./use-landing-reduced-motion";
+-
+-export function LayoutTextFlip({
+-  text,
+-  words,
+-  textGroups = [text],
+-  duration = 1800,
+-  renderWord,
+-}: {
+-  text: string;
+-  textGroups?: string[];
+-  words: string[];
+-  duration?: number;
+-  renderWord?: (word: string, index: number) => ReactNode;
+-}) {
+-  const reduced = useLandingReducedMotion();
+-  const [currentIndex, setCurrentIndex] = useState(0);
+-  const slot = useRef<HTMLSpanElement>(null);
+-  const wordKey = words.join("|");
+-  useEffect(() => {
+-    if (reduced || words.length < 2) return;
+-    let cancelled = false;
+-    let interval: ReturnType<typeof setInterval> | undefined;
+-    const layers = Array.from(slot.current?.children ?? []);
+-    Promise.all(
+-      layers.map(async (layer, index) => {
+-        const images = Array.from(layer.querySelectorAll("img"));
+-        try {
+-          await Promise.all(images.map((image) => image.decode()));
+-          return index;
+-        } catch {
+-          return -1;
+-        }
+-      }),
+-    ).then((indexes) => {
+-      const ready = indexes.filter((index) => index >= 0);
+-      if (cancelled || ready.length < 2) return;
+-      interval = setInterval(
+-        () =>
+-          setCurrentIndex(
+-            (previous) => ready[(ready.indexOf(previous) + 1) % ready.length],
+-          ),
+-        duration,
+-      );
+-    });
+-    return () => {
+-      cancelled = true;
+-      if (interval) clearInterval(interval);
+-    };
+-  }, [duration, reduced, wordKey, words.length]);
+-  return (
+-    <>
+-      <span className="shrink-0">
+-        {textGroups.map((group, index) => (
+-          <span
+-            key={index}
+-            className="inline-block"
+-            data-title-step={index}
+-            style={titleInitialStyle}
+-          >
+-            {index > 0 ? "\u00a0" : null}{group}
+-          </span>
+-        ))}
+-      </span>
+-      <span
+-        data-title-step={textGroups.length - 1}
+-        style={titleInitialStyle}
+-        ref={slot}
+-        className="relative inline-flex size-[0.85em] shrink-0 items-center justify-center overflow-visible leading-none"
+-      >
+-        {words.map((word, index) => (
+-          <motion.span
+-            key={word}
+-            aria-hidden={index !== currentIndex}
+-            initial={false}
+-            animate={{
+-              opacity: index === currentIndex ? 1 : 0,
+-              y: index === currentIndex ? 0 : 8,
+-              filter: index === currentIndex ? "blur(0px)" : "blur(6px)",
+-            }}
+-            transition={{ duration: reduced ? 0 : 0.3 }}
+-            className="pointer-events-none absolute inset-0 flex items-center justify-center leading-none"
+-          >
+-            {renderWord ? renderWord(word, index) : word}
+-          </motion.span>
+-        ))}
+-      </span>
+-    </>
+-  );
++import { useEffect, useRef, useState, type ReactNode } from "react";
++import { TextReveal } from "@/components/ui/text-reveal";
++import { RotatingContent } from "@/components/ui/rotating-content";
++// The product owns asset readiness and logo geometry; the registry owns rotation.
++export function LayoutTextFlip({ text, words, textGroups=[text], duration=1800, renderWord, paused=false }: { text: string; textGroups?: string[]; words: string[]; duration?: number; renderWord?: (word:string,index:number)=>ReactNode; paused?: boolean }) {
++ const slot=useRef<HTMLSpanElement>(null);
++ const [ready,setReady]=useState<number[]>([]);
++ const wordKey=words.join("|");
++ useEffect(()=>{
++  let cancelled=false;
++  const layers=Array.from(slot.current?.querySelectorAll<HTMLElement>("[data-logo-index]") ?? []);
++  Promise.all(layers.map(async layer=>{ try { await Promise.all(Array.from(layer.querySelectorAll("img")).map(image=>image.decode())); return Number(layer.dataset.logoIndex); } catch { return -1; } })).then(indexes=>{ if(!cancelled) setReady(indexes.filter(index=>index>=0)); });
++  return ()=>{cancelled=true;};
++ },[wordKey]);
++ const indexes=ready.length ? ready : words.map((_,index)=>index);
++ return <>
++  <span className="shrink-0">{textGroups.map((group,index)=><TextReveal.Item key={index} index={index}>{index>0 ? "\u00a0" : null}{group}</TextReveal.Item>)}</span>
++  <TextReveal.Item index={textGroups.length-1} ref={slot} className="inline-flex size-[0.85em] shrink-0 leading-none">
++   <RotatingContent label="Model logos" controls={false} paused={paused || ready.length<2} interval={duration} className="size-full [&>span]:size-full" items={indexes.map(index=><span key={words[index]} data-logo-index={index} className="flex size-full items-center justify-center">{renderWord ? renderWord(words[index],index) : words[index]}</span>)} />
++  </TextReveal.Item>
++ </>;
+ }
+--- a/src/shared/ui/generation-result-reveal.tsx
++++ b/src/shared/ui/generation-result-reveal.tsx
+@@ -1,9 +1,6 @@
+ "use client";
+ import type { ReactNode } from "react";
+-import { motion, useReducedMotion } from "motion/react";
+-export function GenerationResultReveal({ visible, children, className }: { visible: boolean; children: ReactNode; className?: string }) {
+-  const reduced = useReducedMotion();
+-  return <motion.div className={className} initial={false} animate={{ height: visible ? "auto" : 0, opacity: visible ? 1 : 0 }} transition={{ duration: reduced ? 0 : 0.4, ease: [0.22, 1, 0.36, 1] }} style={{ overflow: "hidden" }}>
+-    {visible ? children : null}
+-  </motion.div>;
++import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
++export function GenerationResultReveal({visible,children,className}:{visible:boolean;children:ReactNode;className?:string}) {
++ return <Collapsible open={visible} className={className}><CollapsibleContent>{children}</CollapsibleContent></Collapsible>;
+ }
+--- a/src/shared/ui/app-button.tsx
++++ b/src/shared/ui/app-button.tsx
+@@ -1,3 +1,4 @@
++import { BrandAction } from "@/components/patterns/brand-action";
+ import type { ComponentProps } from "react";
+ import { Button } from "@/shared/ui/button";
+ import { cn } from "@/shared/lib/utils";
+@@ -55,11 +56,13 @@
+   className,
+   ...props
+ }: Props) {
++  if (variant === "generate") {
++    return <BrandAction asChild disabled={props.disabled} loading={props.isLoading}><Button {...props} variant="default" size={sizes[size]} className={cn("bg-data-accent text-white hover:bg-data-accent/90", className)} /></BrandAction>;
++  }
+   return (
+     <Button
+       data-app-button=""
+-      data-generation-action={variant === "generate" ? "" : undefined}
+-      className={cn((variant === "generate" || variant === "brand") && "bg-data-accent text-white hover:bg-data-accent/90", className)}
++            className={cn(variant === "brand" && "bg-data-accent text-white hover:bg-data-accent/90", className)}
+       variant={variants[variant]}
+       size={sizes[size]}
+       {...props}
+--- a/src/features/generation-history/ui/history-item.tsx
++++ b/src/features/generation-history/ui/history-item.tsx
+@@ -1,4 +1,5 @@
+ "use client";
++import { MediaReveal } from "@/components/patterns/media-reveal";
+ 
+ import { imageUrlsFor } from "@/shared/media-assets/image-variants";
+ import { useEffect, useRef, useMemo, useState } from "react";
+@@ -223,6 +224,8 @@
+   const [candidate, setCandidate] = useState(0);
+   const url = urls[candidate];
+   const videoRef = useRef<HTMLVideoElement>(null);
++  const imageRef = useRef<HTMLImageElement>(null);
++  useEffect(() => { const image = imageRef.current; if (image?.complete && image.naturalWidth > 0) setState("loaded"); }, [url, attempt]);
+   const [visible, setVisible] = useState(false);
+   useEffect(() => {
+     const video = videoRef.current;
+@@ -239,15 +242,10 @@
+     else video.pause();
+   }, [autoplay, visible, url, attempt]);
+   const failed = () => { if (candidate + 1 < urls.length) {setCandidate(candidate + 1); setState("loading");} else setState("error"); };
+-  const className = cn("h-full w-full object-cover transition-opacity motion-reduce:transition-none", state !== "loaded" && "opacity-0");
+-  return <>
+-    {state === "loading" && <AppSkeleton role="status" aria-label={t("loading")} className="absolute inset-0 rounded-none motion-reduce:animate-none" />}
++  const className = "h-full w-full object-cover";
++  return <MediaReveal status={state === "loaded" ? "ready" : state} label={alt} className="absolute inset-0" loading={<AppSkeleton className="h-full w-full rounded-none" />} error={<div className="flex h-full flex-col items-center justify-center gap-3 bg-card p-4 text-center text-sm"><span>{t("error")}</span><AppButton size="sm" variant="surface" onClick={() => { setState("loading"); setAttempt(value => value + 1); setCandidate(0); }}>{actions("retry")}</AppButton></div>}>
+     {type === "video" ? <video ref={videoRef} autoPlay={autoplay && visible} key={`${candidate}-${attempt}`} src={url} className={className} muted loop playsInline preload="metadata" onLoadedData={() => setState("loaded")} onError={failed} /> :
+       // eslint-disable-next-line @next/next/no-img-element
+-      <img key={`${candidate}-${attempt}`} src={url} alt={alt} loading="lazy" decoding="async" fetchPriority="low" className={className} onLoad={() => setState("loaded")} onError={failed} />}
+-    {state === "error" && <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 bg-card p-4 text-center text-sm">
+-      <span role="status">{t("error")}</span>
+-      <AppButton size="sm" variant="surface" onClick={() => { setState("loading"); setAttempt(value => value + 1); setCandidate(0); }}>{actions("retry")}</AppButton>
+-    </div>}
+-  </>;
++      <img ref={imageRef} key={`${candidate}-${attempt}`} src={url} alt={alt} loading="lazy" decoding="async" fetchPriority="low" className={className} onLoad={() => setState("loaded")} onError={failed} />}
++  </MediaReveal>;
+ }

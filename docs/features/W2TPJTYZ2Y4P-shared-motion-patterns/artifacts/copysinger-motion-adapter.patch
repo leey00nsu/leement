@@ -1,0 +1,110 @@
+--- a/src/_app/styles/globals.css
++++ b/src/_app/styles/globals.css
+@@ -1,3 +1,4 @@
++@import "@leement/theme";
+ @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css");
+ @import "tailwindcss";
+ @import "tw-animate-css";
+@@ -731,3 +732,5 @@
+     }
+   }
+ }
++
++:root, .dark { --lm-color-brand-accent: var(--data-accent); --lm-color-brand-gradient-start: var(--brand-gradient-start, var(--brand-violet)); --lm-color-brand-gradient-middle: var(--brand-gradient-highlight, var(--brand-blue)); --lm-color-brand-gradient-end: var(--brand-gradient-start, var(--brand-pink)); }
+--- a/src/_pages/home/ui/landing-hero.tsx
++++ b/src/_pages/home/ui/landing-hero.tsx
+@@ -5,6 +5,7 @@
+ import Link from "next/link";
+ import { Fragment, type MouseEvent, type ReactNode } from "react";
+ 
++import { TextReveal } from "@/components/ui/text-reveal";
+ import { Button } from "@/shared/ui/button";
+ import { GradientText } from "@/shared/ui/gradient-text";
+ 
+@@ -16,21 +17,8 @@
+ };
+ 
+ const entryEase = [0.22, 1, 0.36, 1] as const;
+-const wordHidden = { filter: "blur(5px)", opacity: 0, y: "0.32em" } as const;
+-const wordVisible = { filter: "blur(0px)", opacity: 1, y: 0 } as const;
+-
+-function MotionWord({ children, index, reduced }: { children: ReactNode; index: number; reduced: boolean }) {
+-  return (
+-    <motion.span
+-      animate={wordVisible}
+-      className={styles.word}
+-      data-word-index={index}
+-      initial={reduced ? false : wordHidden}
+-      transition={{ delay: 0.09 + index * 0.062, duration: 0.72, ease: entryEase }}
+-    >
+-      {children}
+-    </motion.span>
+-  );
++function MotionWord({ children, index }: { children: ReactNode; index: number; reduced: boolean }) {
++ return <TextReveal.Item className={styles.word} index={index}>{children}</TextReveal.Item>;
+ }
+ 
+ function StaggeredWords({ reduced, startIndex = 0, text }: { reduced: boolean; startIndex?: number; text: string }) {
+@@ -85,7 +73,7 @@
+             aria-label="나에게 맞는 노래를 찾고 내 목소리로 완성하세요."
+             className="mt-7 break-keep text-[clamp(2.65rem,5vw,4.4rem)] leading-[1.02] font-medium tracking-[-0.042em] text-balance"
+           >
+-            <span aria-hidden="true">
++            <TextReveal aria-hidden="true">
+               <span className="block">
+                 <StaggeredWords reduced={reduced} text="나에게 맞는 노래를 찾고" />
+               </span>
+@@ -100,7 +88,7 @@
+                 </MotionWord>{" "}
+                 <StaggeredWords reduced={reduced} startIndex={5} text="완성하세요." />
+               </span>
+-            </span>
++            </TextReveal>
+           </h1>
+           <motion.p
+             {...entryMotion(0.76, reduced)}
+--- a/src/shared/ui/audio-waveform-player/audio-waveform-player.tsx
++++ b/src/shared/ui/audio-waveform-player/audio-waveform-player.tsx
+@@ -1,4 +1,5 @@
+ "use client";
++import { MediaReveal } from "@/components/patterns/media-reveal";
+ 
+ import { useWavesurfer } from "@wavesurfer/react";
+ import { Gauge, Pause, Play, RotateCcw, Volume1, Volume2, VolumeX } from "lucide-react";
+@@ -218,11 +219,7 @@
+         </div>
+       ) : (
+         <>
+-          <div
+-            className="audio-waveform-visual"
+-            data-audio-waveform-ready={isReady ? "true" : "false"}
+-            data-audio-waveform-surface="true"
+-          >
++          <MediaReveal status={isReady ? "ready" : "loading"} label={`${label} 파형`} className="relative min-h-20" loading={<div className="audio-waveform-skeleton" aria-hidden="true" style={{ position: "relative", opacity: 1 }} />}>
+             <div
+               aria-busy={!isReady}
+               aria-label={`${label} 파형. 클릭하거나 드래그해 재생 위치를 이동할 수 있어요. 좌우 화살표는 5초 이동, Home/End는 처음과 끝으로 이동해요.`}
+@@ -230,7 +227,7 @@
+               aria-valuemin={0}
+               aria-valuenow={Math.round(currentTime)}
+               aria-valuetext={`${formatPlaybackTime(currentTime)} / ${formatPlaybackTime(Math.round(duration))}`}
+-              className="audio-waveform-canvas"
++              className="audio-waveform-canvas" style={{ opacity: 1, transform: "none", transition: "none" }}
+               data-audio-waveform="brand"
+               data-waveform-progress-gradient="violet-blue-pink"
+               onKeyDown={(event) => {
+@@ -256,13 +253,7 @@
+               role="slider"
+               tabIndex={isReady ? 0 : -1}
+             />
+-            <div aria-hidden="true" className="audio-waveform-skeleton" data-audio-waveform-skeleton="true" />
+-            {!isReady ? (
+-              <span className="sr-only" role="status">
+-                {label} 파형 불러오는 중
+-              </span>
+-            ) : null}
+-          </div>
++          </MediaReveal>
+           <div className="mt-3 flex items-center gap-2">
+             <Button
+               aria-label={isPlaying ? `${label} 일시정지` : `${label} 재생`}
