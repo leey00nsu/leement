@@ -14,6 +14,7 @@ function CollapsibleTrigger({ ...props }: CollapsiblePrimitive.Trigger.Props) {
   return <CollapsiblePrimitive.Trigger data-slot="collapsible-trigger" {...props} />;
 }
 
+// Keep padding and visual box styles on a child so Base UI can measure the full natural height.
 function CollapsibleContent({ className, ref: forwardedRef, inert, ...props }: CollapsiblePrimitive.Panel.Props) {
   // Keep the closing panel inert while Base UI waits for the height transition.
   const ref = useCallback((node: HTMLDivElement | null) => {

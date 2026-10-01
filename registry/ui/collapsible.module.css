@@ -1,3 +1,4 @@
+/* The panel measures/clips height. Put padding, borders and opening gaps on an inner element; panel padding creates a nonzero closed height and incorrect scrollHeight measurements. */
 .panel {
   height: var(--collapsible-panel-height);
   overflow: clip;
