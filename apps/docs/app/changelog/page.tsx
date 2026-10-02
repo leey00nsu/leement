@@ -1,5 +1,6 @@
 const changes = [
   { title: "Shared motion", details: "Adds experimental TextReveal, MediaReveal, BrandAction and RotatingContent registry sources. RevealContent and Collapsible use motion roles; Foundations now edits easing, stagger and cycles with actual source previews. Automatic effects support reduced motion and explicit pause." },
+  { title: "Audio and video players", details: "AudioPlayer brings CopySinger-inspired waveform playback with neutral or optional brand colors, keyboard seek, volume, speed and native fallback. VideoPlayer preserves its API and adds source-safe state, media errors/retry, shared controls, captions language/toggle and available fullscreen. Both use local playable examples and native controls before hydration or without JavaScript." },
   {
     title: "Design language and previews",
     details: "All public items were rechecked in light and dark at desktop and mobile widths. The theme adds semantic roles for muted surfaces, media overlays, syntax highlighting and contrast-safe brand text. Component pages use the distributed registry source in their live previews.",

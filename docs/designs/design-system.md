@@ -83,3 +83,9 @@ Foundations의 Color, Typography, Spacing, Radius, Shadow, Motion에는 실제 r
 ## 성숙도와 변경
 
 `experimental`: 한 프로젝트에서 출발했거나 API가 불안정하다. `candidate`: 두 사용 사례에서 같은 문제를 해결했다. `stable`: 여러 프로젝트에서 API, 접근성, 시각 규칙을 검증했다. 한 번 사용한 UI는 application에 두고, 두 번째 반복에서 candidate를, 세 번째 반복에서 design system 승격을 검토한다. 신규 variant는 유스케이스와 문서 규칙을 먼저 제시한다. 기존 variant 제거 시 changelog와 migration 메모를 작성한다.
+
+## 단일 미디어 플레이어
+
+AudioPlayer는 CopySinger의 72px 파형과 조밀한 재생·시간·배속·음량·음소거 구성을 공통화한다. VideoPlayer도 같은 36px icon-sm 제어와 Popover/Slider 규칙을 사용한다. 일반 파형은 중립 wave와 data-accent-foreground 진행색이며 brand=true일 때만 소비자의 brand gradient를 쓴다. 색 변경은 재생을 재시작하지 않는다.
+
+Native HTML media event가 playback state의 정본이다. src 변경은 이전 시간/오류/engine을 분리하고 유효한 duration 안에서만 seek한다. 파형 decode 실패는 native audio controls로 대체하며 media 자체 실패와 구분한다. SSR/no-JS에서는 native controls를 제공하고 영상은 앱이 자막 언어/label/파일을 전달한다. 로딩/오류는 이름 있는 상태이며 timeupdate는 반복 live announce하지 않는다. reduced motion은 장식만 멈추며 사용자가 재생한 오디오/영상은 보존한다. 구간 분석과 blob preview 생성은 앱 composition이다.

@@ -20,6 +20,9 @@
       ],
       "@/lib/leement-motion": [
         "../../registry/lib/leement-motion"
+      ],
+      "@/lib/media-player": [
+        "../../registry/lib/media-player"
       ]
     },
     "allowJs": true

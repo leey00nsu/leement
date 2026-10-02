@@ -1047,12 +1047,13 @@
       "name": "video-player",
       "type": "registry:ui",
       "title": "Video Player",
-      "description": "Media player with play, seek and mute controls.",
+      "description": "Single video with native state, captions, fullscreen and shared playback controls.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/media-player-support"
       ],
       "files": [
         {
@@ -1617,6 +1618,53 @@
           "path": "registry/ui/rotating-content.module.css",
           "type": "registry:file",
           "target": "components/ui/rotating-content.module.css"
+        }
+      ]
+    },
+    {
+      "name": "media-player-support",
+      "type": "registry:lib",
+      "title": "Media player support",
+      "description": "Native media state and shared controls for AudioPlayer and VideoPlayer. Internal dependency.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/button",
+        "@leement/slider",
+        "@leement/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/media-player.tsx",
+          "type": "registry:lib",
+          "target": "lib/media-player.tsx"
+        }
+      ]
+    },
+    {
+      "name": "audio-player",
+      "type": "registry:ui",
+      "title": "Audio Player",
+      "description": "CopySinger-inspired waveform audio with native playback and fallback.",
+      "dependencies": [
+        "wavesurfer.js@7.12.11"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/media-player-support",
+        "@leement/skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/audio-player.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/audio-player.tsx"
+        },
+        {
+          "path": "registry/ui/audio-player.module.css",
+          "type": "registry:ui",
+          "target": "components/ui/audio-player.module.css"
         }
       ]
     }

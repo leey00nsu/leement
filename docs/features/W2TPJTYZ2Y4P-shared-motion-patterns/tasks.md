@@ -228,7 +228,7 @@
 
   - Verification: 외부 ref 회귀 2건 및 전체 85 tests/typecheck/lint/build/feature-audit PASS. Chrome normal/reduced에서 overlay keyboard/focus/disabled와 Switch/Slider/Tabs/Input PASS; 900ms local override에서도 Dialog/Tooltip animation=none. CLI로 최신 세 motion item 재설치, consumer strict TS/build 및 실제 ref 진입/fade/rotation/pause/reduced PASS, pageerrors=0. 영향 및 한계는 decisions D010.
 
-- [TODO][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-09 오디오·비디오 구현과 작업 기록을 공통 모션 Feature로 통합
+- [DOING][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-09 오디오·비디오 구현과 작업 기록을 공통 모션 Feature로 통합
   - Date: 2026-10-02
   - Acceptance:
     - 기존 모션 구현과 AudioPlayer·VideoPlayer 구현 및 검증 기록이 W2TPJTYZ2Y4P 한 Feature에 보존된다.
@@ -288,4 +288,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:0b64508f29ee2c45f84ac98d0aa0b41f1702f02971a29adcba332f47879d0f53 -->
+<!-- lee-spec-kit:workflow-sync sha256:96b44919467e79d9d65bf3453b3e11f306806519c657374eb8bfc55a965eb876 -->

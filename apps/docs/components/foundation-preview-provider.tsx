@@ -56,6 +56,7 @@ export function FoundationPreviewProvider({ children }: { children: React.ReactN
       previousMotion.current = motion;
       window.dispatchEvent(new Event("leement:motion-change"));
     }
+    window.dispatchEvent(new Event("leement:theme-change"));
     try {
       if (previewChangeCount(preview)) window.localStorage.setItem(PREVIEW_STORAGE_KEY, JSON.stringify(preview));
       else window.localStorage.removeItem(PREVIEW_STORAGE_KEY);

@@ -48,7 +48,7 @@
 - **System architecture**: NONE
 - **Onboarding entrypoint**: UPDATE
 - **Operational/runtime contract**: NONE
-- **Reason**: 승인된 공통 모션과 Foundations 편집을 PRD 및 기존 adoption 웹 문서에 명시한다. Source ownership/workspace/배포 방식은 유지한다. README 수정 요청이 없으므로 보호하며 구체 불일치는 decisions D003에 기록한다.
+- **Reason**: 승인된 공통 모션, 미디어 플레이어와 Foundations 편집을 PRD 및 기존 adoption 웹 문서에 명시한다. Source ownership/workspace/배포 방식은 유지한다. README 수정 요청이 없으므로 보호하며 구체 불일치는 decisions D003에 기록한다.
 - **Targets**: docs:prd/leement-prd.md, project:apps/docs/app/adoption/page.tsx
 
 ## Additional Curated Impacts
@@ -62,6 +62,7 @@
 | design-system-ux | UPDATE | project:apps/docs/app/foundations/[slug]/page.tsx | Motion Foundation의 역할/단위와 미리보기 가이드 |
 | design-system-ux | UPDATE | project:apps/docs/lib/items.ts | 공개 API와 사용 규칙, maturity |
 | other-curated | UPDATE | project:apps/docs/app/changelog/page.tsx | 추가 UI와 모션 계약 변경 |
+| other-curated | UPDATE | project:THIRD_PARTY_NOTICES.md | waveform engine BSD-3-Clause notice |
 
 README/constitution/custom 수정, API/backend/security/운영 구조 변경은 없다. 외부 코드를 새로 복사하지 않고 단순 구현을 작성하며 기존 Reveal notice는 유지한다. 외부 코드 재사용이 필요해지면 THIRD_PARTY_NOTICES.md를 같은 task에 연결한 뒤 출처를 보존한다.
 
@@ -78,7 +79,7 @@ README/constitution/custom 수정, API/backend/security/운영 구조 변경은 
 - **전제조건**: theme import, Tailwind v4 consumer; 실제 데이터/이미지/상태와 slot geometry는 앱 제공.
 - **성공 후 보장**: token override가 실제 모션에 반영되고 정적 환경에서도 읽기와 핵심 조작 가능. source는 소비자 소유.
 - **중요한 실패 후 보장**: 잘못된 편집값은 적용/저장하지 않음. error media는 named 오류/재시도 표시. timer/animation은 unmount 시 정리.
-- **의도적으로 지원하지 않는 사례**: Orb/Shader, 원본 앱 전면 교체, 미디어 엔진, 공개 배포, arbitrary CSS 실행.
+- **의도적으로 지원하지 않는 사례**: Orb/Shader, 원본 앱 전면 교체, 미디어 backend/SDK, 공개 배포, arbitrary CSS 실행. waveform rendering은 아래 통합 계약에 포함한다.
 
 ### 테스트 결정
 
