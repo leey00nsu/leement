@@ -75,6 +75,41 @@
 
 ---
 
+- [TODO][PRD-FR-005] T-GH2BH755MMYB-readme-refresh-01 README 소개·구조 정돈과 실제 화면 캡처
+  - Date: 2026-10-02
+  - Acceptance:
+    - 실제 light/dark/Foundations 화면과 현재 기능·레이어·기여 기준이 README에 표시된다
+    - README와 PRD의 현재 block 설명이 registry inventory에 맞고 초기 요구사항은 보존된다
+  - Checklist:
+    - [ ] 실제 docs 실행·시각 검증 후 제품 경로에 적정 크기의 캡처 저장
+    - [ ] 로고·배지·navigation·기능·구조·검증·라이선스를 정돈하고 source ownership 설명
+    - [ ] PRD 현재 block 설명 정정 및 GFM·상대 링크·이미지·anchor·diff 확인
+  - Docs:
+    - project:README.md
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-006] T-GH2BH755MMYB-readme-refresh-02 설치 안내 실증과 최종 문서 검증
+  - Date: 2026-10-02
+  - Acceptance:
+    - README의 theme/CSS/registry 안내를 독립 consumer에서 따라 dependency 설치·source 수정·build가 성공한다
+    - 공개 배포 여부와 설치 전제가 사실에 맞고 configured checks를 통과한다
+  - Checklist:
+    - [ ] 공개 package/host를 읽기 전용 확인하고 local trial과 조건부 공개 사용 안내 확정
+    - [ ] theme pack·CSS import·namespace 설정·UI/pattern/block 자동 설치·source 수정·production build
+    - [ ] README 렌더·파일/anchor 확인 및 configured typecheck/lint/test/build 결과 기록
+  - Docs:
+    - project:README.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생

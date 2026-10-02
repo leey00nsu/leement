@@ -17,3 +17,15 @@
   - Leesfield `/Volumes/sn850x/programming-2/leesfield/leesfield-fe/README.md`, README revision `7ea5b7282699998c59b435c78fe94552270c92f2`.
   - Leement `registry.json`, `apps/docs/lib/docs.ts`, root/docs/theme/tokens package.json, `components.json`, `apps/docs/public/leement-mark.svg` 및 font assets.
 - **Consequences**: 새 Feature GH2BH755MMYB는 official workspace prepare로 만든 단일 managed worktree에서 진행한다. Spec 단계에서는 README/제품 자산/실행 코드를 수정하지 않는다. 기존 shared-motion-patterns는 done 상태다.
+
+## D002: Spec 명시적 승인 (2026-10-02)
+
+- **Context**: 작성된 명세 링크와 lee-spec-kit spec_approve의 A/B 옵션을 공유했다.
+- **Decision**: 사용자 응답 `A`로 GH2BH755MMYB 명세가 승인되었다. Spec을 Approved로 기록하고 다음 workflow 단계로 진행한다.
+- **Boundary**: 이 응답은 명세 승인이다. 구현 결과 승인과 local merge 승인은 해당 경계에서 별도로 받는다.
+
+## D003: 자동 Plan 승격과 문서 영향 (2026-10-02)
+
+- **Decision**: workflow-stage의 plan_approve가 approvalRequired=false이며 Review에서 Approved로 자동 승격하도록 반환했다. 사용자 승인을 꾸미지 않고 반환된 정책으로 승격한다.
+- **Scope**: 두 순차 태스크로 README/제품 캡처와 설치 실증을 진행한다. Curated impact는 root README와 PRD의 현재 block 설명 한 문장이다. 제품 요구·API·디자인은 바꾸지 않는다.
+- **Shared documentation**: 기존 완료 Feature들의 PRD 수정과 경로가 겹친다는 경고를 확인했다. main seed와 worktree의 PRD가 같은 base에서 출발했고 기존 브랜드/폰트/Foundation/도입/모션 요구를 유지한다. 초기 FR-003도 유지한다.

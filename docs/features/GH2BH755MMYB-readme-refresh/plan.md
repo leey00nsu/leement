@@ -1,139 +1,101 @@
 # Implementation Plan: readme-refresh
 
-> 스펙이 승인된 후 작성합니다.
-> canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 아키텍처/파일/테스트 내용은 이 파일로 흡수하고 최종 SSOT는 여기로 유지합니다.
-
----
-
 ## 개요
 
 - **기능 ID**: GH2BH755MMYB
 - **대상 레포**: Leement
 - **작성일**: 2026-10-02
-- **상태**: -
-  - 값: Draft | Review | Approved
+- **상태**: Approved
 - **Plan 검수**: Pending
-  - 값: Pending | Running | Done
 - **Plan 검수 Evidence**: -
-  - 예: `docs/features/F001-foo/decisions.md` 또는 docs 루트 아래의 실제 리뷰 산출물
 - **Plan 검수 Decision**: -
-  - 형식: `결정: approve|changes_requested|blocked ...` 또는 `decision: ...`
 - **Plan 검수 Round**: -
-  - `workflow-stage --json`이 반환한 양의 정수이며 첫 리뷰는 `1`
 - **Plan 검수 Spec Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `specHash`
 - **Plan 검수 Plan Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `planHash`
 
----
+## 구현 접근
+
+기존 root README를 한국어 중심의 첫 진입 안내로 재구성한다. CopySinger/Leesfield의 로고·배지·실제 화면·시작·기능·구조 구성을 참고한다. 기존 Leement SVG를 사용하고 실제 docs의 light/dark showcase와 Color Foundations 편집 결과를 최대 세 장 캡처한다. README는 현재 public registry 목록을 정확히 소개하며 상세 API는 docs로 연결한다.
+
+설치 안내는 로컬 docs 실행, 로컬 consumer trial, 공개 배포 후 사용을 구분한다. theme은 build 후 pack한 tarball로 독립 consumer에 설치한다. shadcn 초기화/Tailwind v4/기본 alias를 전제로 localhost namespace에서 button, empty-state, settings-section을 설치해 dependency 전개·import·source 수정·production build를 확인한다. 공개 npm/host는 읽기 전용으로 조회하고 검증되지 않은 주소를 실제 설치 URL로 적지 않는다. 변경이 필요한 package/config가 발견되면 README 계약 안에서 안내를 수정하며 제품 API는 바꾸지 않는다.
 
 ## 기술 스택
 
-| 구분 | 선택 | 이유 |
-| ---- | ---- | ---- |
-
----
-
-## 아키텍처
-
-(컴포넌트 구조, 데이터 흐름)
-
----
+| 구분 | 사용 | 이유 |
+| --- | --- | --- |
+| 문서 | GitHub 호환 Markdown와 제한적인 HTML | 두 참조 README의 중앙 헤더와 배지 표현 |
+| 제품 캡처 | 기존 docs + 사용 가능한 브라우저 자동화 | 실제 registry source의 화면을 기록 |
+| 사용 검증 | 기존 pnpm/shadcn/Next.js/Tailwind | README의 실제 소비자 경로 검증 |
+| 품질 검사 | 기존 typecheck/lint/test/build | 설정된 Feature gate 유지 |
 
 ## 파일 구조
 
-```
-src/
-├── ...
+```text
+README.md                              # 소개·설치·기여·라이선스
+apps/docs/public/readme-captures/       # 실제 light/dark/Foundation 화면
+  showcase-light.png
+  showcase-dark.png
+  foundations-color.png
+docs/prd/leement-prd.md                 # 현재 블록 규모 설명 한 문장 정정
 ```
 
----
+캡처 이름은 실제로 선택한 화면에 맞춰 최종 확정한다. 일회성 consumer/렌더 스크립트·출력은 임시 경로를 사용하며 새 영구 테스트나 생성 도구를 추가하지 않는다. 필요한 검증 결과는 tasks/decisions에 기록한다.
 
 ## Curated Documentation Impact
 
-README 보호와 보조 산출물 위치는 `agents` 문서의 해당 규칙을 우선합니다. README 불일치는 수정 요청이 없으면 `decisions.md`의 경로·근거·보류 사유를 참조하는 `NONE`으로 기록할 수 있으며, 이 예외에 별도 후속 항목이나 수정 승인을 요구하지 않습니다. 보존할 Feature 보조 산출물은 활성 Feature의 `artifacts/`에 저장하고 상대경로로 연결합니다.
-
-발견한 문서 불일치는 `decisions.md`에만 남기고 종료하지 않습니다. 현재 사실의 명백한 오류가 승인 범위 안에 있으면 `UPDATE`/`ADD`와 task `Docs`로 연결합니다. 제품 의도 확인이나 범위 확장이 필요하면 충돌한 문서 경로·근거, 확인할 질문, 보류 이유와 실제 후속 task/Feature/issue 참조를 기록합니다. 없는 번호나 승인을 만들지 않습니다. 추적 항목 생성에 승인이 필요하면 사용자 확인 전 해결된 것으로 기록하지 않습니다. `NONE`의 근거에는 알려진 불일치가 없거나, 남은 불일치가 해당 후속 항목으로 추적되고 있음을 설명합니다. 코드나 OpenWiki에 맞추기 위해 미구현 PRD 요구를 삭제하지 않습니다.
-
-> 모든 결정이 `NONE`이어도 영향 판정을 완료합니다. `NONE`은 사람이 관리하는 상위 문서를 검토했지만 변경할 필요가 없다는 뜻입니다. 생성형 OpenWiki 동기화는 별도로 판정합니다.
-
 - **Schema**: 2
-- **Assessment**: Pending
-  - 값: Pending | Complete
-- **Product requirements**: -
-  - 값: NONE | UPDATE | ADD
-- **System architecture**: -
-  - 값: NONE | UPDATE | ADD
-- **Onboarding entrypoint**: -
-  - 값: NONE | UPDATE | ADD
-- **Operational/runtime contract**: -
-  - 값: NONE | UPDATE | ADD
-- **Reason**: -
-- **Targets**: -
-  - UPDATE 또는 ADD가 하나라도 있으면 쉼표로 구분한 `docs:<path>`와 `project:<path>` 대상을 기록합니다.
-  - `docs:<path>`는 설정된 docs 디렉터리 기준이고 `project:<path>`는 프로젝트 저장소 루트 기준입니다. 루트 이름을 반복하지 마세요(예: `docs:docs/agents/constitution.md`가 아니라 `docs:agents/constitution.md`).
-  - 모든 대상은 task `Docs` 목록에 연결하고 Feature 리뷰 전에 활성 Feature scope로 커밋합니다.
-
----
+- **Assessment**: Complete
+- **Product requirements**: NONE
+- **System architecture**: UPDATE
+- **Onboarding entrypoint**: UPDATE
+- **Operational/runtime contract**: NONE
+- **Reason**: 제품 요구사항·레이어·API·운영 계약은 그대로다. README의 오래된 inventory와 설치 안내를 현재 executable source에 맞춘다. PRD-FR-003의 초기 8/5/1 요구는 유지하며, PRD의 카탈로그 설명에 남아 있는 현재 단일 SettingsSection block 문장만 현재 8개 block의 규모와 별도 확장 기준에 맞춘다. docs/README.md, design-system.md, agents/constitution.md/custom.md와 현재 docs 설치·도입 페이지를 검토한다. 헌법/custom의 템플릿은 런타임 정본으로 인용하지 않으며 새 정책을 만들지 않는다.
+- **Targets**: project:README.md, docs:prd/leement-prd.md
 
 ## Additional Curated Impacts
 
-> constitution/custom, 디자인 시스템, API·데이터, 보안, 배포, 관측성처럼 조건부로 존재하는 상위 문서를 판정합니다. 해당 영향이 없으면 `Decision: NONE`을 명시하고 표는 비워 둡니다.
+- **Assessment**: Complete
+- **Decision**: NONE
 
-- **Assessment**: Pending
-- **Decision**: -
-  - 값: NONE | DECLARED
-
-| Kind | Decision | Target | Reason |
-| ---- | -------- | ------ | ------ |
-| -    | -        | -      | -      |
-
-허용 Kind: `engineering-agent-policy`, `design-system-ux`, `api-data-contract`, `security-privacy`, `release-deployment`, `observability`, `other-curated`
-
-`DECLARED` 행의 Decision은 `UPDATE` 또는 `ADD`이고, Target은 `docs:<path>` 또는 `project:<path>`여야 합니다. 모든 Target은 task `Docs` 목록에 연결합니다.
-`docs:<path>`는 설정된 docs 디렉터리에서, `project:<path>`는 프로젝트 저장소 루트에서 해석합니다.
-
----
+디자인 규칙·token/theme·primitive behavior·공통 정책·배포/보안/관측성은 변경하지 않는다. README에서 기존 규칙/고지로 연결한다. OpenWiki는 disabled이며 생성하지 않는다.
 
 ## Verification Contract
 
-Feature 완료 전 검사는 실제 `workflow.featureChecks`(컴포넌트 override 포함)를 기준으로 작성합니다. 추가 자동 검사는 실행 설정에도 등록하세요. build 포함 여부와 중복 생략 근거, 수동 검증 증거를 명시하세요.
-
-
 ### 변경 분류
 
-- **유형**: COPY | REFACTOR | BUG_FIX | NEW_BEHAVIOR | HIGH_RISK
-- **위험도**: LOW | MEDIUM | HIGH
+- **유형**: COPY
+- **위험도**: LOW
 
 ### 관찰 가능한 계약
 
-- **지원해야 하는 동작**:
-- **전제조건**:
-- **성공 후 보장**:
-- **중요한 실패 후 보장**:
-- **의도적으로 지원하지 않는 사례**:
+- **지원해야 하는 동작**: 실제 디자인을 README에서 확인하고 로컬 docs 실행, theme/CSS/registry 설치·dependency 설치·소스 수정·consumer build까지 따라 할 수 있다.
+- **전제조건**: Node 22 이상과 packageManager의 pnpm 10.34.5, 네트워크와 initialized shadcn/Tailwind v4 React consumer. 공개 배포 경로는 publish/host의 실제 확인이 전제다.
+- **성공 후 보장**: README의 파일·anchor·패키지·명령·소스 경로는 현재 구현과 일치하며 캡처는 실제 docs 화면이다. 제공 항목은 experimental/candidate/stable 근거를 따른다.
+- **중요한 실패 후 보장**: 공개 주소가 없거나 네트워크 조회에 실패하면 미확인/조건부임을 표기하고 검증 가능한 local trial을 제공한다. 사용자 프로젝트나 원본 앱을 수정·배포하지 않는다.
+- **의도적으로 지원하지 않는 사례**: source ownership 없는 React npm 패키지 import, 전면 앱 교체 보장, custom alias 자동 이식, publish/deploy, UI/API 변경.
 
 ### 테스트 결정
 
-| 계약 / 요구사항 | 결정                  | 테스트 수준                     | 보호할 현실적인 회귀 | 독립적인 Oracle            |
-| --------------- | --------------------- | ------------------------------- | -------------------- | -------------------------- |
-| (AC/FR 참조)    | NONE \| UPDATE \| ADD | 단위 \| 통합 \| E2E \| 비테스트 | (방지할 실패)        | (스펙/출시 동작/외부 기준) |
+| 계약 / 요구사항 | 결정 | 테스트 수준 | 보호할 현실적인 회귀 | 독립적인 Oracle |
+| --- | --- | --- | --- | --- |
+| US-1, FR-3 시각 자료 | NONE | 비테스트: 실제 UI/Markdown 렌더 검사 | 깨진 이미지·보이지 않는 글자·가상 화면 | 실제 docs와 승인된 소개 범위 |
+| US-2 실제 설치 | NONE | 비테스트: 임시 독립 consumer 설치·수정·build | theme export/폰트 누락·registry dependency/import 실패 | 생성된 consumer source와 production compiler |
+| US-3, FR-2 현재 사실 | NONE | 비테스트: 코드·metadata·scripts·license 대조 | 공개 항목과 helper 혼동·잘못된 링크·과장된 배포 상태 | tracked registry/package/theme/라이선스와 읽기 전용 외부 조회 |
 
 ### 의도적으로 제외하는 테스트
 
-- (중복, 구현 세부사항, 비지원 합성 입력, 프레임워크 자체 동작 등)
+README 문구/컴포넌트 수를 복제하는 snapshot, 새 screenshot golden suite, 브라우저 전체 조합 검증은 추가하지 않는다. 제품 behavior가 바뀌지 않으므로 기존 테스트를 수정하지 않는다.
 
 ### 검증 실행
 
-- **구현 중**:
-- **태스크 완료 전**:
-- **Feature 완료 전**:
-- **수동/UI 검증**:
-- **전체 테스트 필요 여부**: Yes | No — (이유)
-
----
+- **구현 중**: frozen dependency 설치, docs 실행, 실제 light/dark/Color 편집 확인과 캡처, inventory·exports·폰트·링크 근거 확인.
+- **태스크 완료 전**: 상대 파일/이미지/anchor와 GFM 호환 렌더 확인; 임시 initialized consumer에 tarball theme 및 registry 설치, 컴포넌트 소스 한 곳 수정 후 build; git diff --check.
+- **Feature 완료 전**: 실제 workflow.featureChecks인 pnpm run typecheck, pnpm run lint, pnpm run test, pnpm run build를 실행한다. 명령별 결과를 기록하고 local verify가 요구하는 정확한 tip 검사도 따른다.
+- **수동/UI 검증**: 실제 docs와 README의 rendered HTML을 브라우저에서 보고 캡처 폭·글자·light/dark·편집 결과를 확인한다. GitHub에 원격 게시하지 않으므로 실제 GitHub 게시 화면 확인과 구분한다.
+- **전체 테스트 필요 여부**: Yes — 저장소의 configured Feature checks에 포함된다. 태스크마다 중복 실행하지 않으며 최종 gate에서 실행한다. build는 theme/font/registry/docs를 함께 검증하므로 제외하지 않는다.
 
 ## 관련 문서
 
 - Spec: [spec.md](./spec.md)
 - Decisions: [decisions.md](./decisions.md)
+- Tasks: [tasks.md](./tasks.md)
