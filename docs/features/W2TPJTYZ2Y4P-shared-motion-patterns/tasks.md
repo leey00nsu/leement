@@ -228,16 +228,16 @@
 
   - Verification: 외부 ref 회귀 2건 및 전체 85 tests/typecheck/lint/build/feature-audit PASS. Chrome normal/reduced에서 overlay keyboard/focus/disabled와 Switch/Slider/Tabs/Input PASS; 900ms local override에서도 Dialog/Tooltip animation=none. CLI로 최신 세 motion item 재설치, consumer strict TS/build 및 실제 ref 진입/fade/rotation/pause/reduced PASS, pageerrors=0. 영향 및 한계는 decisions D010.
 
-- [DOING][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-09 오디오·비디오 구현과 작업 기록을 공통 모션 Feature로 통합
+- [DONE][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-09 오디오·비디오 구현과 작업 기록을 공통 모션 Feature로 통합
   - Date: 2026-10-02
   - Acceptance:
     - 기존 모션 구현과 AudioPlayer·VideoPlayer 구현 및 검증 기록이 W2TPJTYZ2Y4P 한 Feature에 보존된다.
     - 분리된 QJ6JX8SFR87G 등록·워크트리·브랜치를 정리하고 통합 결과를 다시 검증한다. main 코드 통합은 별도 승인 상태를 유지한다.
   - Checklist:
-    - [ ] Spec·Plan·Tasks·Decisions와 보조 산출물을 하나로 통합하고 원본 커밋 provenance를 기록한다.
-    - [ ] 공통 문서·registry·Foundations 이벤트·빌드 설정 충돌을 해결하고 양쪽 구현을 보존한다.
-    - [ ] 통합 target typecheck/lint/test/build, 실제 브라우저와 소비자 설치를 확인한다.
-    - [ ] 분리 Feature를 정리하고 단일 구현 승인 대기 상태를 확인한다.
+    - [x] Spec·Plan·Tasks·Decisions와 보조 산출물을 하나로 통합하고 원본 커밋 provenance를 기록한다.
+    - [x] 공통 문서·registry·Foundations 이벤트·빌드 설정 충돌을 해결하고 양쪽 구현을 보존한다.
+    - [x] 통합 target typecheck/lint/test/build, 실제 브라우저와 소비자 설치를 확인한다.
+    - [x] 분리 Feature를 정리하고 단일 구현 승인 대기 상태를 확인한다.
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -250,6 +250,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 모션/미디어의 명세·계획·개별 task provenance·git parents·artifacts를 단일 Feature에 보존. 8 conflicts resolved; 88 registry items. 통합 full 93 tests/typecheck/lint/build, docs-audit/diff PASS. 통합 docs motion/player/native fallback/ended replay 및 source-edit combined consumer CLI/strict TS/build/browser PASS; pageerrors=0. QJ6JX8SFR87G 등록/session/worktree/merged branch 제거, main 제품 코드와 두 원본 앱 변경 없음. Main metadata를 공식 local sync로 반영. Evidence D011; 구현/main merge 승인은 별도.
 
 ## Repository Knowledge (완료 비차단)
 
@@ -274,16 +276,16 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `pnpm run typecheck` | 2026-10-01 | PASS — T08 포함 5 tasks |
-| `pnpm run lint` | 2026-10-01 | PASS — T08 포함 3 tasks + registry ESLint |
-| `pnpm run test` | 2026-10-01 | PASS — 13 files / 85 tests |
-| `pnpm run build` | 2026-10-01 | PASS — T08 포함 tokens/theme/registry/docs |
-| `pnpm run build` (독립 consumer) | 2026-10-01 | PASS — strict TS + Vite, T08 최신 세 motion item 재설치 및 외부 ref 조합 후 빌드 |
+| `pnpm run typecheck` | 2026-10-02 | PASS — T09 통합 5 tasks |
+| `pnpm run lint` | 2026-10-02 | PASS — T09 통합 3 tasks + registry ESLint |
+| `pnpm run test` | 2026-10-02 | PASS — 14 files / 93 tests |
+| `pnpm run build` | 2026-10-02 | PASS — T09 통합 tokens/theme/88 registry items/docs |
+| `pnpm run build` (독립 consumer) | 2026-10-02 | PASS — 통합 여섯 registry item/theme, 소비자 source 수정 후 strict TS + Vite |
 | `npx shadcn@latest add` (새 4항목) | 2026-10-01 | PASS — helper/UI/CSS 11 transitive files |
 | `pnpm run build` / `pnpm run typecheck` (CopySinger baseline/post) | 2026-10-01 | PASS — 각각 baseline 및 실제 adapter/pilot 추가 후 |
 | `pnpm run build` / `pnpm run typecheck` (Leesfield baseline/post) | 2026-10-01 | PASS — Base UI composition/cached readiness 보완 후 |
-| 로컬 Chrome / Playwright 임시 browser script | 2026-10-01 | PASS — editor, dynamic panel, media retry, pause/offscreen/visibility, light/dark/mobile/reduced/no-JS, 앱 실사용처; pageerrors=0 |
-| `npx lee-spec-kit feature-audit --json` | 2026-10-01 | PASS — violations=[] |
+| 로컬 Chrome / Playwright 임시 browser script | 2026-10-02 | PASS — 통합 motion/player docs 및 combined consumer, pageerrors=0 |
+| `npx lee-spec-kit docs-audit --json` | 2026-10-02 | PASS — violations=[]; 과거 feature-audit 기록은 T08/D010 |
 | `git diff --check` / 원본 git status 비교 | 2026-10-01 | PASS — 원본 두 저장소 변경 없음 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.

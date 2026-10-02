@@ -232,3 +232,13 @@
 - **제한 및 승인**: Chrome 한 환경의 검증이며 OS별 volume/fullscreen 제한은 native browser에 따른다. 영어 control label은 consumer-owned source에서 현지화한다. README 변경 없음. 별도 모션 Feature는 기존 승인 대기 상태를 유지한다. 구현 승인 뒤에도 local merge 승인은 별도로 받는다.
 
 - **등록 정리 검사**: main의 QJ6JX8SFR87G seed 문서 제거에 commit-audit가 CANONICAL_FEATURE_DOC_DELETION을 반환했다. toolkit 구현은 canonical 삭제를 무조건 차단하며 이미 다른 Feature의 canonical 문서로 내용이 옮겨졌는지 확인하지 않는다. 이 요청은 사용자가 두 Feature를 하나로 합치라고 명시한 예외이며, 대체 Spec/Plan/Tasks/Decisions와 모든 미디어 산출물은 먼저 W2TPJTYZ2Y4P commit `4a82a85`에 보존했다. 이 근거를 확인하고 중복 seed 등록만 제거한다. validator/config/hook을 변경하지 않고 원래 미디어 git 이력도 통합 commit의 parent로 보존한다.
+
+### T09 통합 결과와 검증 (2026-10-02)
+
+- 두 부모 `4a82a85` / `d4225cb`를 가진 통합 commit `4dcd1e6`으로 모션/미디어 git 이력을 보존했다. main의 중복 seed 삭제 `2ce71df`는 공식 `local sync W2TPJTYZ2Y4P`로 반영했으며 `3d8dcbe`에서 제품 code-content 차이는 없다. main 제품 코드는 변경하지 않았다.
+- 충돌 8곳을 확인했다. adoption/changelog/API metadata는 양쪽 내용을 보존했고 components route와 TS/Vitest aliases, registry dependencies를 합쳤다. Foundations provider는 leement:motion-change와 leement:theme-change를 모두 보낸다. 최종 registry는 88개 항목이며 공개 UI와 내부 helper를 같은 기준으로 배포한다.
+- 통합 code target의 typecheck 5 tasks, lint 3 tasks+registry, 14 files/93 tests, tokens/theme/registry/docs build PASS. main metadata sync 이후 같은 code target에 configured gates를 다시 실행했고 타입/lint/build는 유효한 Turbo cache를 재사용했으며 tests는 93개 실제 재실행했다. docs-audit violations=[], git diff --check PASS.
+- 통합 docs port 43213에서 기존 motion script의 편집/Replay/CSS copy/reload/reset, dynamic Collapsible/MediaReveal/rotation pause, mobile light/dark/reduced/no-JS PASS. player script의 실제 waveform/재생/seek/speed/volume/mute/theme pixel 갱신 및 재생 유지/source/error recovery, video 자막/fullscreen/mobile/reduced/no-JS PASS. audio/video 자연 ended/replay와 waveform-fetch failure시 native 실제 재생 PASS, pageerrors=0.
+- 독립 consumer에 통합 theme를 pack해 설치하고 audio/video/text-reveal/media-reveal/brand-action/rotating-content 여섯 항목을 namespace CLI로 다시 설치했다. 실제 source 수정 후 strict TS/Vite build PASS. 같은 화면에서 audio/video 재생, TextReveal 표시, BrandAction 클릭으로 MediaReveal ready, rotation pause/reduced/mobile 및 pageerrors=0 PASS. reduced 선호 변경은 native media-query/React event 반영을 기다린 뒤 확인한다.
+- player task session을 release했고 clean worktree를 제거했다. `git merge-base --is-ancestor d4225cb HEAD`를 확인한 뒤 병합된 branch를 `git branch -d`로 삭제했다. 현재 worktree는 main과 W2TPJTYZ2Y4P뿐이며 QJ6JX8SFR87G 별도 등록은 main/Feature 양쪽에 없다. 두 원본 앱 git status는 빈 값으로 동일하다.
+- 과거 CopySinger/Leesfield baseline/post 도입 증거와 adapter는 보존했다. 통합된 전체 앱 backend를 새로 실행했다고 주장하지 않는다. feature 구현 승인과 main 병합 승인은 계속 별도 경계다.
