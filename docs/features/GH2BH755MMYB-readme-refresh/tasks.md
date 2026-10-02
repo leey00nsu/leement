@@ -110,17 +110,17 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-GH2BH755MMYB-readme-refresh-03 사용자 요청에 따른 README 축약
+- [DONE][PRD-FR-005] T-GH2BH755MMYB-readme-refresh-03 사용자 요청에 따른 README 축약
   - Date: 2026-10-02
   - Acceptance:
     - 검증과 기여/문서와 배포 상태 섹션과 링크가 없고 소개 문구가 shadcn 기반 디자인 시스템이다
     - 필수 설치·기능·구조·라이선스만 간결하게 남기고 유효한 링크와 예제를 유지한다
   - Checklist:
-    - [ ] 두 섹션·탐색 링크 삭제 및 전체 설명 축약
-    - [ ] 파일·anchor·GFM 렌더와 단축 TSX 예제의 기존 consumer build 확인
+    - [x] 두 섹션·탐색 링크 삭제 및 전체 설명 축약
+    - [x] 파일·anchor·GFM 렌더와 단축 TSX 예제의 기존 consumer build 확인
   - Docs:
     - project:README.md
-  - Review Evidence: -
+  - Verification: README 276→168줄, 글자 9810→4564자(약 53% 축소). 두 섹션·링크 제거/소개 문구 일치 확인. 상대 파일 9개·anchor 4개·표 2개·이미지 9개와 desktop/mobile GFM 렌더 확인; 단축 TSX 예제의 strict typecheck+consumer production build 통과. 런타임 변경 없어 전체 검사 반복 안 함.
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
@@ -155,8 +155,8 @@
 | `npx shadcn@latest init --yes --defaults` (독립 consumer) | 2026-10-02 | PASS — Vite/Tailwind v4/alias 확인 |
 | `pnpm add /tmp/leement-pack/leement-theme-0.1.0.tgz` (consumer) | 2026-10-02 | PASS — theme export 설치 |
 | `npx shadcn@latest add @leement/button @leement/empty-state @leement/settings-section` (consumer) | 2026-10-02 | PASS — 폴더별 6개 source; 기존 utils/button 교체 승인 |
-| `pnpm build` (consumer) | 2026-10-02 | PASS — README 예제·소스 수정 뒤 strict TS 및 Vite build |
-| README 파일/anchor 및 GFM 렌더 확인 | 2026-10-02 | PASS — 파일 18개/anchor 15개/표 4개/이미지 9개, desktop/mobile 렌더 |
+| `pnpm build` (consumer) | 2026-10-02 | PASS — 초기/축약 README 예제·소스 수정 뒤 strict TS 및 Vite build |
+| README 파일/anchor 및 GFM 렌더 확인 | 2026-10-02 | PASS — 축약 후 파일 9개/anchor 4개/표 2개/이미지 9개, desktop/mobile 렌더 |
 | consumer browser 확인 | 2026-10-02 | PASS — Pretendard loaded, light #1a1a1d/dark #fafafa, 높이 40px/반경 8px, source 수정, pageerror 없음 |
 | `pnpm run typecheck` | 2026-10-02 | PASS — 5 tasks, 일부 Turbo cache |
 | `pnpm run lint` | 2026-10-02 | PASS — packages/docs 및 registry |
