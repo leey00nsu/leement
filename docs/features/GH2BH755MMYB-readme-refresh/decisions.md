@@ -1,41 +1,19 @@
 # Decisions Log
 
-기술 결정과 그 이유를 기록합니다.
-canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 실제로 채택한 대안과 선택 이유는 이 파일에 다시 남겨 Feature의 결정 이력을 유지합니다.
+## D001: 두 제품의 소개 방식을 Leement의 source 설치 경험에 맞춘다 (2026-10-02)
 
-> ADR(Architecture Decision Record)은 구현 중 내린 중요한 기술/구조 결정을 남기는 기록입니다.
-> 나중에 "왜 이렇게 만들었는지"를 추적하고, 팀 합의를 재확인하기 위해 작성합니다.
-
-> 형식: `DNNN: readme-refresh 결정 (2026-10-02)`
-> 결정 ID는 Feature별로 독립된 번호를 사용하며 Feature ID와 관계없이 `D001`부터 시작합니다.
-
-기록 원칙:
-
-- 새 ADR 생성에는 `npx lee-spec-kit decision add <feature-ref> --title "..." --context "..." --decision "..." --rationale "..." --evidence "..."` 사용을 우선하세요.
-- 수동 작성도 마지막 ADR 뒤에 추가해 D001 → D002 순서를 유지하세요. 문서 안내문 앞에 삽입하거나 기존 ID를 재번호화하지 마세요. 같은 결정의 재실행·검증 결과는 해당 ADR의 Trace/Evidence를 갱신하고, 새 선택이나 범위 변경일 때만 새 ADR을 만드세요.
-- 모든 ADR은 **Decision(무엇을 선택했는가)** + **Trace(어떻게 고민했고 무엇을 확인했는가)** 를 함께 남깁니다.
-- 작성 타이밍을 고정합니다.
-  - 태스크 시작(`[TODO] -> [DOING]`): `Context/Constraints`와 `Trace(초기 가설)`를 1~3줄로 먼저 기록
-  - 태스크 완료 직전(`[DOING] -> [DONE]`): `Options/Decision/Rationale`를 최종화하고 `Trace`를 보강
-  - PR 머지 후: 실제 결과/영향을 `Trace(머지 후 확인)`에 1~2줄 추가
-- 모든 ADR에는 최소 1개 이상의 **Evidence 링크**(커밋/PR/테스트 로그 중 하나 이상)를 남깁니다.
-- 디자인 시스템 변경이나 예외를 기록할 때는 영향 받는 규칙과 범위, 예외 이유, 제거 조건, 실행 가능한 정본의 동기화 영향을 함께 남깁니다.
-
----
-
-## D001: readme-refresh 결정 (2026-10-02)
-
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: 사용자가 CopySinger와 Leesfield 수준으로 README를 정돈하고 싶다고 요청했고 비교 분석 제안 후 `ㄱㄱ`로 진행했다. 기존 Leement README는 초기 bootstrap 내용이다.
+- **Options**: 문구 몇 곳만 갱신하거나, 두 제품처럼 로고/실제 화면/시작/주요 기능/구조/검증의 읽기 순서로 구성한다.
+- **Decision**: 기존 루트 README와 필요한 실제 UI 캡처를 정돈한다. 한국어 소개를 기본으로 하고, 일반 앱의 backend/API 목록 대신 Leement의 theme+registry source 설치와 Foundations 경험을 중심으로 한다. 상세 API는 기존 docs로 연결한다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+  - Leement README는 73줄, 로고/캡처/기술 스택 표가 없고 UI 8/pattern 5/block 1이라는 초기 inventory를 적고 있다. CopySinger는 306줄, Leesfield는 222줄로 로고·설명·배지·바로가기·실제 화면 2장과 주요 기능/시스템/실행/구조/검증을 제공한다. 길이는 목표가 아니라 비교 근거다.
+  - 현재 registry는 UI 64, pattern 13, block 8, 내부 lib 3으로 총 88항목이다. tokens/theme exports와 scripts, 기본 Pretendard Variable/Paperlogy Bold, Foundations editor, AudioPlayer/VideoPlayer 및 motion metadata를 읽었다. 기존 Radix-only 설명은 Base UI/Radix 혼용에 맞춰 갱신할 필요가 있다.
+  - 기존 README는 미배포라고 설명하고 Git remote 출력은 빈 값이었다. docs source의 GitHub URL을 공개 저장소 검증 근거로 간주하지 않는다. 실제 npm/host 상태와 링크는 구현의 읽기 전용 검증에서 확인하며 배포하지 않는다.
+  - PRD-FR-003의 8/5/1은 초기 v0.1 요구사항이고 README의 현재 inventory와 다르다. PRD의 초기 요구를 현재 코드 수량에 맞춰 삭제하지 않는다. README에는 현재 registry를 근거로 소개하며 별도 문서 변경 영향은 Plan에서 판정한다.
+  - 사용자가 README 수정을 명시했으므로 이 Feature의 루트 README 정돈은 보호 규칙의 허용 범위다. 다른 README나 원본 두 앱은 읽기 전용으로 둔다.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - Leement 분석 기준 main `e248874`; README 최초 commit `72023c6`.
+  - CopySinger `/Volumes/sn850x/programming-2/copy-singer-3/README.md`, README revision `b479e9a0f3bca19358f4c54e758fb8f2a64b152f`.
+  - Leesfield `/Volumes/sn850x/programming-2/leesfield/leesfield-fe/README.md`, README revision `7ea5b7282699998c59b435c78fe94552270c92f2`.
+  - Leement `registry.json`, `apps/docs/lib/docs.ts`, root/docs/theme/tokens package.json, `components.json`, `apps/docs/public/leement-mark.svg` 및 font assets.
+- **Consequences**: 새 Feature GH2BH755MMYB는 official workspace prepare로 만든 단일 managed worktree에서 진행한다. Spec 단계에서는 README/제품 자산/실행 코드를 수정하지 않는다. 기존 shared-motion-patterns는 done 상태다.
