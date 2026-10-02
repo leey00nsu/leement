@@ -228,6 +228,29 @@
 
   - Verification: 외부 ref 회귀 2건 및 전체 85 tests/typecheck/lint/build/feature-audit PASS. Chrome normal/reduced에서 overlay keyboard/focus/disabled와 Switch/Slider/Tabs/Input PASS; 900ms local override에서도 Dialog/Tooltip animation=none. CLI로 최신 세 motion item 재설치, consumer strict TS/build 및 실제 ref 진입/fade/rotation/pause/reduced PASS, pageerrors=0. 영향 및 한계는 decisions D010.
 
+- [TODO][PRD-FR-012] T-W2TPJTYZ2Y4P-shared-motion-patterns-09 오디오·비디오 구현과 작업 기록을 공통 모션 Feature로 통합
+  - Date: 2026-10-02
+  - Acceptance:
+    - 기존 모션 구현과 AudioPlayer·VideoPlayer 구현 및 검증 기록이 W2TPJTYZ2Y4P 한 Feature에 보존된다.
+    - 분리된 QJ6JX8SFR87G 등록·워크트리·브랜치를 정리하고 통합 결과를 다시 검증한다. main 코드 통합은 별도 승인 상태를 유지한다.
+  - Checklist:
+    - [ ] Spec·Plan·Tasks·Decisions와 보조 산출물을 하나로 통합하고 원본 커밋 provenance를 기록한다.
+    - [ ] 공통 문서·registry·Foundations 이벤트·빌드 설정 충돌을 해결하고 양쪽 구현을 보존한다.
+    - [ ] 통합 target typecheck/lint/test/build, 실제 브라우저와 소비자 설치를 확인한다.
+    - [ ] 분리 Feature를 정리하고 단일 구현 승인 대기 상태를 확인한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:apps/docs/lib/items.ts
+    - project:apps/docs/app/adoption/page.tsx
+    - project:apps/docs/app/changelog/page.tsx
+    - project:THIRD_PARTY_NOTICES.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
