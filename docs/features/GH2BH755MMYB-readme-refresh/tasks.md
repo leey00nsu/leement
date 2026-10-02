@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/GH2BH755MMYB-readme-refresh`
 - **대기 중 변경 요청**: -
@@ -75,19 +75,19 @@
 
 ---
 
-- [TODO][PRD-FR-005] T-GH2BH755MMYB-readme-refresh-01 README 소개·구조 정돈과 실제 화면 캡처
+- [DONE][PRD-FR-005] T-GH2BH755MMYB-readme-refresh-01 README 소개·구조 정돈과 실제 화면 캡처
   - Date: 2026-10-02
   - Acceptance:
     - 실제 light/dark/Foundations 화면과 현재 기능·레이어·기여 기준이 README에 표시된다
     - README와 PRD의 현재 block 설명이 registry inventory에 맞고 초기 요구사항은 보존된다
   - Checklist:
-    - [ ] 실제 docs 실행·시각 검증 후 제품 경로에 적정 크기의 캡처 저장
-    - [ ] 로고·배지·navigation·기능·구조·검증·라이선스를 정돈하고 source ownership 설명
-    - [ ] PRD 현재 block 설명 정정 및 GFM·상대 링크·이미지·anchor·diff 확인
+    - [x] 실제 docs 실행·시각 검증 후 제품 경로에 적정 크기의 캡처 저장
+    - [x] 로고·배지·navigation·기능·구조·검증·라이선스를 정돈하고 source ownership 설명
+    - [x] PRD 현재 block 설명 정정 및 GFM·상대 링크·이미지·anchor·diff 확인
   - Docs:
     - project:README.md
     - docs:prd/leement-prd.md
-  - Review Evidence: -
+  - Verification: frozen install 및 docs dev 실행 성공. 실제 light/dark 홈과 Color의 네 브랜드값 편집·CSS 복사·저장값 반영 확인; browser pageerror 없음. GFM 렌더와 파일 18개·anchor 15개·표 4개·이미지 9개 확인. 캡처 PNG 3개 총 약 460KB. PRD 초기 FR-003 유지, 현재 block 설명만 정정.
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
@@ -136,3 +136,5 @@
 | `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+<!-- lee-spec-kit:workflow-sync sha256:96b44919467e79d9d65bf3453b3e11f306806519c657374eb8bfc55a965eb876 -->

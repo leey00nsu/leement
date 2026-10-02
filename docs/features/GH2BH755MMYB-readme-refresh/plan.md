@@ -15,7 +15,7 @@
 
 ## 구현 접근
 
-기존 root README를 한국어 중심의 첫 진입 안내로 재구성한다. CopySinger/Leesfield의 로고·배지·실제 화면·시작·기능·구조 구성을 참고한다. 기존 Leement SVG를 사용하고 실제 docs의 light/dark showcase와 Color Foundations 편집 결과를 최대 세 장 캡처한다. README는 현재 public registry 목록을 정확히 소개하며 상세 API는 docs로 연결한다.
+기존 root README를 한국어 중심의 첫 진입 안내로 재구성한다. CopySinger/Leesfield의 로고·배지·실제 화면·시작·기능·구조 구성을 참고한다. 기존 Leement SVG를 사용하고 실제 docs의 light/dark 홈과 Color Foundations 편집 결과를 최대 세 장 캡처한다. README는 현재 public registry 목록을 정확히 소개하며 상세 API는 docs로 연결한다.
 
 설치 안내는 로컬 docs 실행, 로컬 consumer trial, 공개 배포 후 사용을 구분한다. theme은 build 후 pack한 tarball로 독립 consumer에 설치한다. shadcn 초기화/Tailwind v4/기본 alias를 전제로 localhost namespace에서 button, empty-state, settings-section을 설치해 dependency 전개·import·source 수정·production build를 확인한다. 공개 npm/host는 읽기 전용으로 조회하고 검증되지 않은 주소를 실제 설치 URL로 적지 않는다. 변경이 필요한 package/config가 발견되면 README 계약 안에서 안내를 수정하며 제품 API는 바꾸지 않는다.
 
@@ -33,8 +33,8 @@
 ```text
 README.md                              # 소개·설치·기여·라이선스
 apps/docs/public/readme-captures/       # 실제 light/dark/Foundation 화면
-  showcase-light.png
-  showcase-dark.png
+  home-light.png
+  home-dark.png
   foundations-color.png
 docs/prd/leement-prd.md                 # 현재 블록 규모 설명 한 문장 정정
 ```

@@ -41,7 +41,7 @@ v0.1의 8 UI·5 pattern·1 block은 초기 출시 범위이며, 최종 제공 �
 - PRD-NFR-004: 복합 UI에서도 Leement semantic token과 source ownership을 유지한다. 외부 라이브러리·MIT 코드의 사용 근거와 라이선스를 추적하고, 동작·접근성 검증 없이 카탈로그 수만 늘리지 않는다.
 - PRD-NFR-005: 교체 검증은 독립 데모만으로 대신하지 않는다. 기존 앱의 사전 오류와 Leement 도입 회귀를 구분하고, 제품별 wrapper/도메인 로직은 적합성 근거 없이 공용 API로 흡수하지 않는다.
 
-블록 카탈로그의 목표 규모는 컴포넌트와 별도로 결정한다. 현재 단일 SettingsSection block은 대표 사용 사례를 늘리기 위한 출발점이다.
+블록 카탈로그의 목표 규모는 컴포넌트와 별도로 결정한다. 현재 registry는 SettingsSection을 포함한 8개 block을 제공하며, 추가 승격은 실제 반복 사용과 검증을 근거로 결정한다.
 
 ## 공통 모션
 

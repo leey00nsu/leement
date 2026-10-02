@@ -29,3 +29,10 @@
 - **Decision**: workflow-stage의 plan_approve가 approvalRequired=false이며 Review에서 Approved로 자동 승격하도록 반환했다. 사용자 승인을 꾸미지 않고 반환된 정책으로 승격한다.
 - **Scope**: 두 순차 태스크로 README/제품 캡처와 설치 실증을 진행한다. Curated impact는 root README와 PRD의 현재 block 설명 한 문장이다. 제품 요구·API·디자인은 바꾸지 않는다.
 - **Shared documentation**: 기존 완료 Feature들의 PRD 수정과 경로가 겹친다는 경고를 확인했다. main seed와 worktree의 PRD가 같은 base에서 출발했고 기존 브랜드/폰트/Foundation/도입/모션 요구를 유지한다. 초기 FR-003도 유지한다.
+
+## D004: 실제 캡처와 배포 사실 확인 (2026-10-02)
+
+- **Capture**: 홈의 light/dark와 Color live editor를 실제 registry source에서 캡처했다. 기본 홈은 현재 브랜드값 그대로이며 Color는 사용자가 편집할 수 있음을 보이도록 brand text/start/middle/end를 teal 계열로 입력했다. Copy CSS의 성공 상태와 localStorage/current CSS variable을 확인했다. 개발자 도구 표시만 screenshot style에서 숨겼고 제품 UI를 합성하지 않았다. 각 PNG는 1440×1280, 총 약 460KB다.
+- **Browser**: aside-browser 절차를 읽고 연결을 시도했으나 profile u0가 daemon에 연결되어 있지 않았다. 기존 Playwright와 설치된 Chrome으로 대체했다. 페이지 error는 없었다.
+- **Publication**: 2026-10-02 읽기 전용 npm endpoint 조회에서 theme/tokens가 각각 404, GitHub repository API도 404였다. 404는 private/public 여부 전체를 증명하지 않으므로 공개 조회 결과만 적고 clone/demo 주소를 만들지 않는다. public registry URL은 확정하지 않는다.
+- **Rendering**: 임시 Marked GFM 출력과 GitHub 호환 스타일로 README를 렌더해 이미지/표/코드/헤더를 확인했다. 이는 실제 GitHub 게시 결과가 아니며 원격 업로드는 하지 않았다. 일회성 스크립트/렌더 출력은 /tmp에만 두고 제품에는 README와 캡처만 저장한다.
