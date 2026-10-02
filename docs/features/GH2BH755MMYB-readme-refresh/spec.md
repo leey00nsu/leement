@@ -22,8 +22,8 @@ CopySinger와 Leesfield README의 로고·핵심 설명·배지·바로가기·�
 | 디자인 소개 | 실제 docs의 light/dark UI와 Foundations 편집 경험을 보여주는 적정 수의 캡처 |
 | 시작·설치 | 로컬 docs Quick Start와 소비자 theme/CSS/registry/source 설치를 각각 명확히 안내 |
 | 기능·구조 | Foundations, 브랜드·폰트, UI/Patterns/Blocks, 미디어·모션과 레이어 책임 소개 |
-| 개발·참여 | 기술 스택, 프로젝트 구조, 검증 명령, 사용 규칙·maturity·기여 기준, 관련 문서·라이선스 |
-| 현재 사실 | registry inventory, primitive 구현, scripts, 패키지 exports, 실제 배포 상태와 링크 확인 |
+| 개발 정보 | 기술 스택, 프로젝트 구조, 라이선스 |
+| 현재 사실 | registry inventory, scripts, exports와 유효한 설치 안내 |
 
 ## 사용자 스토리
 
@@ -35,7 +35,7 @@ CopySinger와 Leesfield README의 로고·핵심 설명·배지·바로가기·�
 
 **Acceptance Criteria:**
 
-- [x] 기존 SVG mark와 제목, 한국어 한 문장 설명, 배지·바로가기 및 실제 화면을 상단에 배치한다. 본문은 한국어를 중심으로 하고 API·기술명은 원래 이름을 유지한다.
+- [x] 기존 SVG mark와 제목, 소개 문구 `shadcn 기반 디자인 시스템`, 배지·바로가기 및 실제 화면을 상단에 배치한다. 본문은 필요한 사용 정보만 짧게 쓰고 API·기술명은 원래 이름을 유지한다.
 - [x] 핵심 설명은 Design Tokens + Design Rules가 정본이며 shadcn registry가 editable React source의 배포 수단임을 표현한다. 컴포넌트 npm 라이브러리로 오해하게 만들지 않는다.
 - [x] 실제 light/dark 디자인과 Foundations에서 값을 바꿔 UI에 반영하는 경험을 캡처로 보여준다. 문서용 UI 복사본이나 가상 기능을 만들지 않는다.
 - [x] 대표 기능으로 semantic tokens/theme, 브랜드·Pretendard/Paperlogy, UI·패턴·블록, CSS 편집/복사, 공통 모션, AudioPlayer/VideoPlayer를 현재 계약에 맞게 소개한다.
@@ -53,27 +53,27 @@ CopySinger와 Leesfield README의 로고·핵심 설명·배지·바로가기·�
 - [x] 소비자 안내는 theme 설치 → Tailwind 뒤 CSS import → components.json namespace → 필요한 UI/pattern/block 설치 → 프로젝트 소스로 import/수정의 순서를 제공한다.
 - [x] 로컬 trial과 공개 배포 사용 조건을 구분한다. local theme build/pack 또는 file 설치와 registry host/alias 전제를 명시하고 설치 예제를 검증한다.
 - [x] README의 패키지명·명령·코드 예제·별칭·경로를 실제 scripts/exports/source로 대조한다. 초기 README의 오래된 inventory 및 Radix-only 설명을 현재 registry/primitive 구성에 맞춘다.
-- [x] npm/registry/데모 링크의 공개 상태를 확인한다. 미배포 항목을 배포 완료로 표시하거나 YOUR_HOST를 실제 사이트로 연결하지 않는다. Git remote가 없어도 검증 가능한 로컬 사용 경로를 제공한다.
+- [x] 검증 가능한 로컬 설치 경로를 제공한다. 미배포 항목을 배포 완료로 표시하지 않으며 배포 조회 결과는 Feature 검증 기록에만 보관한다.
 
-### US-3: 프로젝트의 구조와 기여 기준을 찾는다
+### US-3: 프로젝트의 구조를 이해한다
 
 **As a** 소스를 수정하거나 기여하려는 개발자
-**I want** 레이어·폴더·검증·설계 기준과 라이선스를 이해한다
+**I want** 레이어·폴더·기술 스택과 라이선스를 이해한다
 **So that** 기존 디자인 언어와 source ownership을 유지한다.
 
 **Acceptance Criteria:**
 
 - [x] Design Language → Tokens → Web Theme → UI Components → Patterns → Blocks → Application 관계와 Leement/shadcn compatibility 방향을 설명한다.
 - [x] tokens/theme/registry ui-patterns-blocks/docs/tooling의 실제 책임을 구분한다. registry source와 docs preview는 같은 구현이라는 점을 유지한다.
-- [x] 기술 스택과 핵심 검증 명령을 실제 설정에서 확인하고 디자인 규칙·설치/도입 문서·변경 기록 등 유효한 관련 문서로 연결한다.
-- [x] experimental/candidate/stable과 승격 원칙을 설명한다. 대표 앱의 격리 교체 검증을 원본 앱 전체 적용 완료나 모든 브라우저 보장으로 과장하지 않는다.
+- [x] 기술 스택과 프로젝트 구조를 실제 설정에 맞게 간결하게 소개한다. README에는 검증·기여·문서·배포 상태 섹션을 두지 않는다.
+- [x] README에 maturity·승격·원본 앱 교체 검증 설명을 나열하지 않는다. 상세 규칙은 기존 docs에 유지한다.
 - [x] MIT 본체와 외부 코드·WaveSurfer·폰트 고지를 연결한다. 다른 제품 README의 backend/API/OpenWiki 설정을 Leement 기능으로 복제하지 않는다.
 
 ## 기능 요구사항
 
 ### FR-1: 정돈된 읽기 순서
 
-소개/바로가기/화면 → Quick Start → 프로젝트에 설치 → 주요 기능 → 디자인 시스템 구성 → 기술 스택·프로젝트 구조 → 검증·기여 → 배포 상태·관련 문서·라이선스를 기본 순서로 한다. 로컬 개발과 소비자 설치의 대상 독자를 구분한다. 길이를 늘리는 것 자체를 목표로 하지 않으며 README는 첫 진입 안내, 상세 API·상태별 설명은 기존 docs의 책임이다.
+소개/바로가기/화면 → Quick Start → 프로젝트에 설치 → 주요 기능 → 디자인 시스템 구성 → 기술 스택·프로젝트 구조 → 라이선스를 기본 순서로 한다. 검증과 기여, 문서와 배포 상태 및 그 링크는 제거한다. 목차와 상단 탐색의 중복, 긴 부연 설명과 내부 진행 기록을 줄인다. 로컬 개발과 소비자 설치의 대상 독자를 구분한다. 길이를 늘리는 것 자체를 목표로 하지 않으며 README는 첫 진입 안내, 상세 API·상태별 설명은 기존 docs의 책임이다.
 
 ### FR-2: 실행 가능한 정본으로 사실 확인
 

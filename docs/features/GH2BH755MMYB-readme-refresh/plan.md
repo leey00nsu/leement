@@ -15,7 +15,7 @@
 
 ## 구현 접근
 
-기존 root README를 한국어 중심의 첫 진입 안내로 재구성한다. CopySinger/Leesfield의 로고·배지·실제 화면·시작·기능·구조 구성을 참고한다. 기존 Leement SVG를 사용하고 실제 docs의 light/dark 홈과 Color Foundations 편집 결과를 최대 세 장 캡처한다. README는 현재 public registry 목록을 정확히 소개하며 상세 API는 docs로 연결한다.
+기존 root README를 한국어 중심의 첫 진입 안내로 재구성한다. CopySinger/Leesfield의 로고·배지·실제 화면·시작·기능·구조 구성을 참고한다. 기존 Leement SVG를 사용하고 실제 docs의 light/dark 홈과 Color Foundations 편집 결과를 최대 세 장 캡처한다. README는 현재 public registry 목록을 간결하게 소개한다. 사용자 수정 요청에 따라 검증/기여/문서/배포 상태 섹션을 제거하고 소개를 `shadcn 기반 디자인 시스템`으로 바꾼다.
 
 설치 안내는 로컬 docs 실행, 로컬 consumer trial, 공개 배포 후 사용을 구분한다. theme은 build 후 pack한 tarball로 독립 consumer에 설치한다. shadcn 초기화/Tailwind v4/기본 alias를 전제로 localhost namespace에서 button, empty-state, settings-section을 설치해 dependency 전개·import·source 수정·production build를 확인한다. 공개 npm/host는 읽기 전용으로 조회하고 검증되지 않은 주소를 실제 설치 URL로 적지 않는다. 변경이 필요한 package/config가 발견되면 README 계약 안에서 안내를 수정하며 제품 API는 바꾸지 않는다.
 
@@ -31,7 +31,7 @@
 ## 파일 구조
 
 ```text
-README.md                              # 소개·설치·기여·라이선스
+README.md                              # 짧은 소개·설치·기능·구조·라이선스
 apps/docs/public/readme-captures/       # 실제 light/dark/Foundation 화면
   home-light.png
   home-dark.png
@@ -90,6 +90,7 @@ README 문구/컴포넌트 수를 복제하는 snapshot, 새 screenshot golden s
 
 - **구현 중**: frozen dependency 설치, docs 실행, 실제 light/dark/Color 편집 확인과 캡처, inventory·exports·폰트·링크 근거 확인.
 - **태스크 완료 전**: 상대 파일/이미지/anchor와 GFM 호환 렌더 확인; 임시 initialized consumer에 tarball theme 및 registry 설치, 컴포넌트 소스 한 곳 수정 후 build; git diff --check.
+- **추가 문구 수정 검증**: T-03은 README 링크·anchor·제거 요구·GFM 렌더와 짧아진 TSX 예제의 기존 consumer build만 확인한다. 런타임 변경이 없어 전체 검사·캡처·설치 재실행은 하지 않는다. 통합 전 local verify가 요구하는 정확한 tip 검사는 따른다.
 - **Feature 완료 전**: 실제 workflow.featureChecks인 pnpm run typecheck, pnpm run lint, pnpm run test, pnpm run build를 실행한다. 명령별 결과를 기록하고 local verify가 요구하는 정확한 tip 검사도 따른다.
 - **수동/UI 검증**: 실제 docs와 README의 rendered HTML을 브라우저에서 보고 캡처 폭·글자·light/dark·편집 결과를 확인한다. GitHub에 원격 게시하지 않으므로 실제 GitHub 게시 화면 확인과 구분한다.
 - **전체 테스트 필요 여부**: Yes — 저장소의 configured Feature checks에 포함된다. 태스크마다 중복 실행하지 않으며 최종 gate에서 실행한다. build는 theme/font/registry/docs를 함께 검증하므로 제외하지 않는다.

@@ -110,6 +110,22 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-005] T-GH2BH755MMYB-readme-refresh-03 사용자 요청에 따른 README 축약
+  - Date: 2026-10-02
+  - Acceptance:
+    - 검증과 기여/문서와 배포 상태 섹션과 링크가 없고 소개 문구가 shadcn 기반 디자인 시스템이다
+    - 필수 설치·기능·구조·라이선스만 간결하게 남기고 유효한 링크와 예제를 유지한다
+  - Checklist:
+    - [ ] 두 섹션·탐색 링크 삭제 및 전체 설명 축약
+    - [ ] 파일·anchor·GFM 렌더와 단축 TSX 예제의 기존 consumer build 확인
+  - Docs:
+    - project:README.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생

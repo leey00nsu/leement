@@ -43,3 +43,9 @@
 - **Decision**: 초기화 CSS의 기본 :root/.dark 색상과 font/radius @theme preset이 Leement를 덮어쓸 수 있어 README에 해당 preset 정리를 명시했다. 소비자 테스트 CSS는 Tailwind → Leement → animation/shadcn CSS를 사용한다. 제품 theme/registry나 API는 바꾸지 않는다.
 - **Limits**: Vite가 use client directive를 무시한다는 bundle warning은 있었으나 strict typecheck/build는 성공했다. Pretendard는 실제 loaded이고 사용하지 않는 Paperlogy는 브라우저에서 unloaded 상태이며 패키지/출력에 포함된 것은 확인했다. 전체 브라우저/앱 채택을 증명하지 않는다. npm 조회 404와 public host 미확정은 README에 명시했다.
 - **Rendering**: 최종 README는 상대 파일 18개, fragment 15개와 표/코드/9개 이미지를 확인했다. 임시 GitHub 호환 preview의 desktop 및 390px 폭에서 broken local image나 body 가로 넘침이 없었다.
+
+## D006: README 축약 수정 요청 (2026-10-02)
+
+- **Request**: 구현 승인 대신 사용자가 검증과 기여/문서와 배포 상태 제거, 소개 문구를 `shadcn 기반 디자인 시스템`으로 변경, 전반적인 부연 설명 축약을 명시했다.
+- **Decision**: 같은 Feature의 후속 태스크로 적용한다. 기존 DONE 태스크의 이력은 보존하고 Spec/Plan의 현재 요구를 수정한다. 명시적 수정 지시를 승인으로 꾸미지 않으며 구현 승인/병합 승인은 아직 대기다.
+- **Scope**: README와 Feature 문서만 수정한다. 설치에 꼭 필요한 전제와 CSS preset 처리, 토큰+규칙 기준/source ownership, 기존 세 캡처와 라이선스 링크는 짧게 유지한다. 검증·배포 조회 결과는 기존 Feature 기록에만 보관한다.
