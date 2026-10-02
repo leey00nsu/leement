@@ -14,7 +14,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## WaveSurfer.js
 
-AudioPlayer uses wavesurfer.js 7.12.11 as its optional waveform renderer, via its public API. Source: https://github.com/katspaugh/wavesurfer.js. The dependency and its BSD-3-Clause license are distributed by its package. No CopySinger domain/backend source is included.
+The AudioPlayer registry item installs wavesurfer.js 7.12.11 and loads its waveform renderer through its public API on the client. Native audio controls remain available when enhancement fails. VideoPlayer and the shared motion registry items do not require this dependency. Source: https://github.com/katspaugh/wavesurfer.js. The dependency and its BSD-3-Clause license are distributed by its package. No CopySinger domain/backend source is included.
 
 BSD 3-Clause License
 

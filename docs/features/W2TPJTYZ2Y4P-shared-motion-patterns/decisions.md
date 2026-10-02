@@ -242,3 +242,5 @@
 - 독립 consumer에 통합 theme를 pack해 설치하고 audio/video/text-reveal/media-reveal/brand-action/rotating-content 여섯 항목을 namespace CLI로 다시 설치했다. 실제 source 수정 후 strict TS/Vite build PASS. 같은 화면에서 audio/video 재생, TextReveal 표시, BrandAction 클릭으로 MediaReveal ready, rotation pause/reduced/mobile 및 pageerrors=0 PASS. reduced 선호 변경은 native media-query/React event 반영을 기다린 뒤 확인한다.
 - player task session을 release했고 clean worktree를 제거했다. `git merge-base --is-ancestor d4225cb HEAD`를 확인한 뒤 병합된 branch를 `git branch -d`로 삭제했다. 현재 worktree는 main과 W2TPJTYZ2Y4P뿐이며 QJ6JX8SFR87G 별도 등록은 main/Feature 양쪽에 없다. 두 원본 앱 git status는 빈 값으로 동일하다.
 - 과거 CopySinger/Leesfield baseline/post 도입 증거와 adapter는 보존했다. 통합된 전체 앱 backend를 새로 실행했다고 주장하지 않는다. feature 구현 승인과 main 병합 승인은 계속 별도 경계다.
+
+- **Curated commit 귀속**: merge parent의 QJ6JX8SFR87G notice commit은 현재 Feature scope 검사에 잡히지 않았다. T09 task_commit에서 THIRD_PARTY_NOTICES의 기존 WaveSurfer 설명을 audio-only dependency/lazy enhancement/native fallback 책임으로 정확히 갱신하고 W2TPJTYZ2Y4P scope에 귀속했다. license 원문은 보존했다.
