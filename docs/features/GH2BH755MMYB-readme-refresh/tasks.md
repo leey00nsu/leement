@@ -140,7 +140,11 @@
 
 - [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+
+### 구현 승인 기록
+
+- 2026-10-02 사용자 `A`: README 축약을 포함한 최종 구현 결과를 승인했다. `local_merge` 승인은 별도 대기다.
 
 ### 테스트 실행 기록
 
