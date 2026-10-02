@@ -93,18 +93,18 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-006] T-GH2BH755MMYB-readme-refresh-02 설치 안내 실증과 최종 문서 검증
+- [DONE][PRD-FR-006] T-GH2BH755MMYB-readme-refresh-02 설치 안내 실증과 최종 문서 검증
   - Date: 2026-10-02
   - Acceptance:
     - README의 theme/CSS/registry 안내를 독립 consumer에서 따라 dependency 설치·source 수정·build가 성공한다
     - 공개 배포 여부와 설치 전제가 사실에 맞고 configured checks를 통과한다
   - Checklist:
-    - [ ] 공개 package/host를 읽기 전용 확인하고 local trial과 조건부 공개 사용 안내 확정
-    - [ ] theme pack·CSS import·namespace 설정·UI/pattern/block 자동 설치·source 수정·production build
-    - [ ] README 렌더·파일/anchor 확인 및 configured typecheck/lint/test/build 결과 기록
+    - [x] 공개 package/host를 읽기 전용 확인하고 local trial과 조건부 공개 사용 안내 확정
+    - [x] theme pack·CSS import·namespace 설정·UI/pattern/block 자동 설치·source 수정·production build
+    - [x] README 렌더·파일/anchor 확인 및 configured typecheck/lint/test/build 결과 기록
   - Docs:
     - project:README.md
-  - Review Evidence: -
+  - Verification: 독립 Vite/React/Tailwind v4 consumer를 shadcn@latest 4.21.1로 초기화했다. README theme tarball과 namespace를 사용해 항목 3개/소스 6개를 설치, README TSX 예제 그대로 import, Button 소스 수정 후 tsc+production build 성공. 실제 브라우저에서 source 수정 attribute·Pretendard 로딩·40px 높이·8px radius·light/dark primary를 확인했다. pageerror 없음. 전체 typecheck/lint/test 14파일·93개/build 98페이지 통과.
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
@@ -122,8 +122,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -133,7 +133,21 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm install --frozen-lockfile` | 2026-10-02 | PASS — lockfile 변경 없음 |
+| `pnpm --filter @leement/docs dev --port 43214` | 2026-10-02 | PASS — tokens/theme/registry 자동 준비, 실제 홈/Color 확인 |
+| `pnpm --filter @leement/theme pack --pack-destination /tmp/leement-pack` | 2026-10-02 | PASS — CSS·두 폰트·OFL 고지 포함 |
+| `npx shadcn@latest init --yes --defaults` (독립 consumer) | 2026-10-02 | PASS — Vite/Tailwind v4/alias 확인 |
+| `pnpm add /tmp/leement-pack/leement-theme-0.1.0.tgz` (consumer) | 2026-10-02 | PASS — theme export 설치 |
+| `npx shadcn@latest add @leement/button @leement/empty-state @leement/settings-section` (consumer) | 2026-10-02 | PASS — 폴더별 6개 source; 기존 utils/button 교체 승인 |
+| `pnpm build` (consumer) | 2026-10-02 | PASS — README 예제·소스 수정 뒤 strict TS 및 Vite build |
+| README 파일/anchor 및 GFM 렌더 확인 | 2026-10-02 | PASS — 파일 18개/anchor 15개/표 4개/이미지 9개, desktop/mobile 렌더 |
+| consumer browser 확인 | 2026-10-02 | PASS — Pretendard loaded, light #1a1a1d/dark #fafafa, 높이 40px/반경 8px, source 수정, pageerror 없음 |
+| `pnpm run typecheck` | 2026-10-02 | PASS — 5 tasks, 일부 Turbo cache |
+| `pnpm run lint` | 2026-10-02 | PASS — packages/docs 및 registry |
+| `pnpm run test` | 2026-10-02 | PASS — 14 files / 93 tests |
+| `pnpm run build` | 2026-10-02 | PASS — tokens/theme/88 registry items/docs 98 pages |
+| `git diff --check` | 2026-10-02 | PASS |
+| `npx lee-spec-kit docs-audit --json` | 2026-10-02 | PASS — DOCS_TAXONOMY_OK |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 

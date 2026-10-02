@@ -36,3 +36,10 @@
 - **Browser**: aside-browser 절차를 읽고 연결을 시도했으나 profile u0가 daemon에 연결되어 있지 않았다. 기존 Playwright와 설치된 Chrome으로 대체했다. 페이지 error는 없었다.
 - **Publication**: 2026-10-02 읽기 전용 npm endpoint 조회에서 theme/tokens가 각각 404, GitHub repository API도 404였다. 404는 private/public 여부 전체를 증명하지 않으므로 공개 조회 결과만 적고 clone/demo 주소를 만들지 않는다. public registry URL은 확정하지 않는다.
 - **Rendering**: 임시 Marked GFM 출력과 GitHub 호환 스타일로 README를 렌더해 이미지/표/코드/헤더를 확인했다. 이는 실제 GitHub 게시 결과가 아니며 원격 업로드는 하지 않았다. 일회성 스크립트/렌더 출력은 /tmp에만 두고 제품에는 README와 캡처만 저장한다.
+
+## D005: 최신 shadcn 설치와 CSS preset 충돌 안내 (2026-10-02)
+
+- **Evidence**: 독립 Vite consumer를 latest CLI 4.21.1로 init하고 README theme tarball·registry alias·세 항목 설치·TSX 예제를 그대로 사용했다. 기본 init은 Button/utils를 생성하므로 add의 두 overwrite prompt에 동의했다. 실제 자동 dependency 결과는 utils/Button/Card/FormSection/EmptyState/SettingsSection이다. Button에 consumer-owned data attribute를 직접 추가하고 다시 production build했다.
+- **Decision**: 초기화 CSS의 기본 :root/.dark 색상과 font/radius @theme preset이 Leement를 덮어쓸 수 있어 README에 해당 preset 정리를 명시했다. 소비자 테스트 CSS는 Tailwind → Leement → animation/shadcn CSS를 사용한다. 제품 theme/registry나 API는 바꾸지 않는다.
+- **Limits**: Vite가 use client directive를 무시한다는 bundle warning은 있었으나 strict typecheck/build는 성공했다. Pretendard는 실제 loaded이고 사용하지 않는 Paperlogy는 브라우저에서 unloaded 상태이며 패키지/출력에 포함된 것은 확인했다. 전체 브라우저/앱 채택을 증명하지 않는다. npm 조회 404와 public host 미확정은 README에 명시했다.
+- **Rendering**: 최종 README는 상대 파일 18개, fragment 15개와 표/코드/9개 이미지를 확인했다. 임시 GitHub 호환 preview의 desktop 및 390px 폭에서 broken local image나 body 가로 넘침이 없었다.

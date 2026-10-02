@@ -35,11 +35,11 @@ CopySinger와 Leesfield README의 로고·핵심 설명·배지·바로가기·�
 
 **Acceptance Criteria:**
 
-- [ ] 기존 SVG mark와 제목, 한국어 한 문장 설명, 배지·바로가기 및 실제 화면을 상단에 배치한다. 본문은 한국어를 중심으로 하고 API·기술명은 원래 이름을 유지한다.
-- [ ] 핵심 설명은 Design Tokens + Design Rules가 정본이며 shadcn registry가 editable React source의 배포 수단임을 표현한다. 컴포넌트 npm 라이브러리로 오해하게 만들지 않는다.
-- [ ] 실제 light/dark 디자인과 Foundations에서 값을 바꿔 UI에 반영하는 경험을 캡처로 보여준다. 문서용 UI 복사본이나 가상 기능을 만들지 않는다.
-- [ ] 대표 기능으로 semantic tokens/theme, 브랜드·Pretendard/Paperlogy, UI·패턴·블록, CSS 편집/복사, 공통 모션, AudioPlayer/VideoPlayer를 현재 계약에 맞게 소개한다.
-- [ ] GitHub에서 읽기 쉬운 크기와 유효한 상대 경로·alt를 가진 자산을 사용한다. 캡처는 실제 제품 자산 경로에 두고 검증용 보조 자료와 구분한다.
+- [x] 기존 SVG mark와 제목, 한국어 한 문장 설명, 배지·바로가기 및 실제 화면을 상단에 배치한다. 본문은 한국어를 중심으로 하고 API·기술명은 원래 이름을 유지한다.
+- [x] 핵심 설명은 Design Tokens + Design Rules가 정본이며 shadcn registry가 editable React source의 배포 수단임을 표현한다. 컴포넌트 npm 라이브러리로 오해하게 만들지 않는다.
+- [x] 실제 light/dark 디자인과 Foundations에서 값을 바꿔 UI에 반영하는 경험을 캡처로 보여준다. 문서용 UI 복사본이나 가상 기능을 만들지 않는다.
+- [x] 대표 기능으로 semantic tokens/theme, 브랜드·Pretendard/Paperlogy, UI·패턴·블록, CSS 편집/복사, 공통 모션, AudioPlayer/VideoPlayer를 현재 계약에 맞게 소개한다.
+- [x] GitHub에서 읽기 쉬운 크기와 유효한 상대 경로·alt를 가진 자산을 사용한다. 캡처는 실제 제품 자산 경로에 두고 검증용 보조 자료와 구분한다.
 
 ### US-2: 직접 실행하거나 프로젝트에 설치한다
 
@@ -49,11 +49,11 @@ CopySinger와 Leesfield README의 로고·핵심 설명·배지·바로가기·�
 
 **Acceptance Criteria:**
 
-- [ ] 로컬 Quick Start에 저장소 준비, Node/pnpm 요구사항, frozen dependency 설치와 실제 docs 실행 명령·주소를 제공한다. 미확인 clone URL을 실행 가능한 주소처럼 적지 않는다.
-- [ ] 소비자 안내는 theme 설치 → Tailwind 뒤 CSS import → components.json namespace → 필요한 UI/pattern/block 설치 → 프로젝트 소스로 import/수정의 순서를 제공한다.
-- [ ] 로컬 trial과 공개 배포 사용 조건을 구분한다. local theme build/pack 또는 file 설치와 registry host/alias 전제를 명시하고 설치 예제를 검증한다.
-- [ ] README의 패키지명·명령·코드 예제·별칭·경로를 실제 scripts/exports/source로 대조한다. 초기 README의 오래된 inventory 및 Radix-only 설명을 현재 registry/primitive 구성에 맞춘다.
-- [ ] npm/registry/데모 링크의 공개 상태를 확인한다. 미배포 항목을 배포 완료로 표시하거나 YOUR_HOST를 실제 사이트로 연결하지 않는다. Git remote가 없어도 검증 가능한 로컬 사용 경로를 제공한다.
+- [x] 로컬 Quick Start에 저장소 준비, Node/pnpm 요구사항, frozen dependency 설치와 실제 docs 실행 명령·주소를 제공한다. 미확인 clone URL을 실행 가능한 주소처럼 적지 않는다.
+- [x] 소비자 안내는 theme 설치 → Tailwind 뒤 CSS import → components.json namespace → 필요한 UI/pattern/block 설치 → 프로젝트 소스로 import/수정의 순서를 제공한다.
+- [x] 로컬 trial과 공개 배포 사용 조건을 구분한다. local theme build/pack 또는 file 설치와 registry host/alias 전제를 명시하고 설치 예제를 검증한다.
+- [x] README의 패키지명·명령·코드 예제·별칭·경로를 실제 scripts/exports/source로 대조한다. 초기 README의 오래된 inventory 및 Radix-only 설명을 현재 registry/primitive 구성에 맞춘다.
+- [x] npm/registry/데모 링크의 공개 상태를 확인한다. 미배포 항목을 배포 완료로 표시하거나 YOUR_HOST를 실제 사이트로 연결하지 않는다. Git remote가 없어도 검증 가능한 로컬 사용 경로를 제공한다.
 
 ### US-3: 프로젝트의 구조와 기여 기준을 찾는다
 
@@ -63,11 +63,11 @@ CopySinger와 Leesfield README의 로고·핵심 설명·배지·바로가기·�
 
 **Acceptance Criteria:**
 
-- [ ] Design Language → Tokens → Web Theme → UI Components → Patterns → Blocks → Application 관계와 Leement/shadcn compatibility 방향을 설명한다.
-- [ ] tokens/theme/registry ui-patterns-blocks/docs/tooling의 실제 책임을 구분한다. registry source와 docs preview는 같은 구현이라는 점을 유지한다.
-- [ ] 기술 스택과 핵심 검증 명령을 실제 설정에서 확인하고 디자인 규칙·설치/도입 문서·변경 기록 등 유효한 관련 문서로 연결한다.
-- [ ] experimental/candidate/stable과 승격 원칙을 설명한다. 대표 앱의 격리 교체 검증을 원본 앱 전체 적용 완료나 모든 브라우저 보장으로 과장하지 않는다.
-- [ ] MIT 본체와 외부 코드·WaveSurfer·폰트 고지를 연결한다. 다른 제품 README의 backend/API/OpenWiki 설정을 Leement 기능으로 복제하지 않는다.
+- [x] Design Language → Tokens → Web Theme → UI Components → Patterns → Blocks → Application 관계와 Leement/shadcn compatibility 방향을 설명한다.
+- [x] tokens/theme/registry ui-patterns-blocks/docs/tooling의 실제 책임을 구분한다. registry source와 docs preview는 같은 구현이라는 점을 유지한다.
+- [x] 기술 스택과 핵심 검증 명령을 실제 설정에서 확인하고 디자인 규칙·설치/도입 문서·변경 기록 등 유효한 관련 문서로 연결한다.
+- [x] experimental/candidate/stable과 승격 원칙을 설명한다. 대표 앱의 격리 교체 검증을 원본 앱 전체 적용 완료나 모든 브라우저 보장으로 과장하지 않는다.
+- [x] MIT 본체와 외부 코드·WaveSurfer·폰트 고지를 연결한다. 다른 제품 README의 backend/API/OpenWiki 설정을 Leement 기능으로 복제하지 않는다.
 
 ## 기능 요구사항
 

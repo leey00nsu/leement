@@ -83,7 +83,7 @@ Tailwind CSS v4와 shadcn 설정이 준비된 React 프로젝트에서 실행합
 pnpm add /tmp/leement-pack/leement-theme-0.1.0.tgz
 ```
 
-전역 CSS에서 Tailwind 다음에 theme을 불러옵니다. 별도로 `shadcn/tailwind.css`를 불러오는 프로젝트라면 Leement를 그 파일보다 앞에 두세요.
+전역 CSS에서 Tailwind 다음에 theme을 불러옵니다. `shadcn init`이 생성한 기본 색상(`:root`·`.dark`)과 폰트·반경의 `@theme` preset은 Leement 값을 덮어쓰지 않도록 정리하세요. 앱 고유 스타일과 필요한 animation 스타일은 유지합니다. 별도로 `shadcn/tailwind.css`를 불러오는 프로젝트라면 Leement를 그 파일보다 앞에 두세요.
 
 ```css
 @import "tailwindcss";
@@ -112,7 +112,7 @@ theme에는 CSS 변수·reset·Tailwind 호환 매핑과 기본 폰트가 포함
 npx shadcn@latest add @leement/button @leement/empty-state @leement/settings-section
 ```
 
-pattern과 block이 쓰는 Card·FormSection 및 helper는 registry dependency로 함께 설치됩니다. 설치된 소스를 직접 import합니다.
+기존 Button·utils처럼 같은 이름의 파일이 있으면 CLI가 덮어쓸지 묻습니다. 해당 파일의 변경을 확인하고 Leement 소스를 사용할 항목에 동의하세요. pattern과 block이 쓰는 Card·FormSection 및 helper는 registry dependency로 함께 설치됩니다. 설치된 소스를 직접 import합니다.
 
 ```tsx
 import { Button } from "@/components/ui/button";
