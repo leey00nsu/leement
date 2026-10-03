@@ -1,0 +1,364 @@
+{
+  "date": "2026-10-03",
+  "baselineRevision": "ed8baa5bd5663bdd5cabbc14409c3a303fa4c2f3",
+  "sources": [
+    "https://ui.shadcn.com/docs/components",
+    "https://ui.shadcn.com/docs/components/base/field",
+    "https://ui.shadcn.com/docs/components/base/data-table",
+    "https://ui.shadcn.com/docs/components/base/date-picker"
+  ],
+  "summary": {
+    "officialMenu": 64,
+    "matchingRegistryNames": 28,
+    "missingRegistryNames": 36,
+    "plannedNewItems": 17
+  },
+  "qualification": "Name mapping only. Existing matching names are not certified API or behavior parity. Planned items are not implemented.",
+  "entries": [
+    {
+      "name": "accordion",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "alert",
+      "baselineSameName": false,
+      "decision": "existing-alternative",
+      "mappedTo": "status-notice"
+    },
+    {
+      "name": "alert-dialog",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "aspect-ratio",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "attachment",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Conversation/specialized usage requires separate product evidence."
+    },
+    {
+      "name": "avatar",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "badge",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "breadcrumb",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "bubble",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Conversation/specialized usage requires separate product evidence."
+    },
+    {
+      "name": "button",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "button-group",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "calendar",
+      "baselineSameName": true,
+      "decision": "extend-existing",
+      "note": "Custom single-date and schedule API today; extend range without breaking legacy."
+    },
+    {
+      "name": "card",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "carousel",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "chart",
+      "baselineSameName": true,
+      "decision": "retain-existing",
+      "note": "Existing limited wrapper; no complete upstream variant parity claim."
+    },
+    {
+      "name": "checkbox",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "collapsible",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "combobox",
+      "baselineSameName": true,
+      "decision": "retain-existing",
+      "note": "Custom prop-based single select; no complete upstream composition parity claim."
+    },
+    {
+      "name": "command",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "context-menu",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "data-table",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "date-picker",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "dialog",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "direction",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Full RTL contract is separate."
+    },
+    {
+      "name": "drawer",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "dropdown-menu",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "empty",
+      "baselineSameName": false,
+      "decision": "existing-alternative",
+      "mappedTo": "empty-state"
+    },
+    {
+      "name": "field",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "hover-card",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "input",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "input-group",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "input-otp",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "item",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "kbd",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "label",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "marker",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Conversation/specialized usage requires separate product evidence."
+    },
+    {
+      "name": "menubar",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "message",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Conversation/specialized usage requires separate product evidence."
+    },
+    {
+      "name": "message-scroller",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Conversation/specialized usage requires separate product evidence."
+    },
+    {
+      "name": "native-select",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "navigation-menu",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "pagination",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "popover",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "progress",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "questionnaire",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Conversation/specialized usage requires separate product evidence."
+    },
+    {
+      "name": "radio-group",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "resizable",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "scroll-area",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "select",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "separator",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "sheet",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "sidebar",
+      "baselineSameName": false,
+      "decision": "defer",
+      "reason": "Outside the first core input/navigation/data completion scope; revisit based on real product usage."
+    },
+    {
+      "name": "skeleton",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "slider",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "spinner",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "switch",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "table",
+      "baselineSameName": true,
+      "decision": "extend-existing",
+      "note": "Only a simple DataTable export today; add compound native Table and preserve legacy."
+    },
+    {
+      "name": "tabs",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "textarea",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "toast",
+      "baselineSameName": true,
+      "decision": "retain-existing",
+      "note": "Existing Sonner wrapper; do not count another name as a new behavior."
+    },
+    {
+      "name": "toggle",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "toggle-group",
+      "baselineSameName": false,
+      "decision": "add"
+    },
+    {
+      "name": "tooltip",
+      "baselineSameName": true,
+      "decision": "retain-existing"
+    },
+    {
+      "name": "typography",
+      "baselineSameName": true,
+      "decision": "retain-existing",
+      "note": "Existing design roles; no identical upstream styles claim."
+    }
+  ]
+}

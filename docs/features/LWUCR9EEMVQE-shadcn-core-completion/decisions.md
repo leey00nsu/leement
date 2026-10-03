@@ -1,41 +1,30 @@
 # Decisions Log
 
-기술 결정과 그 이유를 기록합니다.
-canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 실제로 채택한 대안과 선택 이유는 이 파일에 다시 남겨 Feature의 결정 이력을 유지합니다.
+## D001: 기본 입력·탐색·데이터 조합부터 보완한다 (2026-10-03)
 
-> ADR(Architecture Decision Record)은 구현 중 내린 중요한 기술/구조 결정을 남기는 기록입니다.
-> 나중에 "왜 이렇게 만들었는지"를 추적하고, 팀 합의를 재확인하기 위해 작성합니다.
-
-> 형식: `DNNN: shadcn-core-completion 결정 (2026-10-03)`
-> 결정 ID는 Feature별로 독립된 번호를 사용하며 Feature ID와 관계없이 `D001`부터 시작합니다.
-
-기록 원칙:
-
-- 새 ADR 생성에는 `npx lee-spec-kit decision add <feature-ref> --title "..." --context "..." --decision "..." --rationale "..." --evidence "..."` 사용을 우선하세요.
-- 수동 작성도 마지막 ADR 뒤에 추가해 D001 → D002 순서를 유지하세요. 문서 안내문 앞에 삽입하거나 기존 ID를 재번호화하지 마세요. 같은 결정의 재실행·검증 결과는 해당 ADR의 Trace/Evidence를 갱신하고, 새 선택이나 범위 변경일 때만 새 ADR을 만드세요.
-- 모든 ADR은 **Decision(무엇을 선택했는가)** + **Trace(어떻게 고민했고 무엇을 확인했는가)** 를 함께 남깁니다.
-- 작성 타이밍을 고정합니다.
-  - 태스크 시작(`[TODO] -> [DOING]`): `Context/Constraints`와 `Trace(초기 가설)`를 1~3줄로 먼저 기록
-  - 태스크 완료 직전(`[DOING] -> [DONE]`): `Options/Decision/Rationale`를 최종화하고 `Trace`를 보강
-  - PR 머지 후: 실제 결과/영향을 `Trace(머지 후 확인)`에 1~2줄 추가
-- 모든 ADR에는 최소 1개 이상의 **Evidence 링크**(커밋/PR/테스트 로그 중 하나 이상)를 남깁니다.
-- 디자인 시스템 변경이나 예외를 기록할 때는 영향 받는 규칙과 범위, 예외 이유, 제거 조건, 실행 가능한 정본의 동기화 영향을 함께 남깁니다.
-
----
-
-## D001: shadcn-core-completion 결정 (2026-10-03)
-
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: 사용자가 shadcn 전체 대응 여부 분석을 요청했고, 기본 UI 누락 및 기존 유사 항목의 차이를 확인한 뒤 이를 수정하는 Feature 진행을 요청했다.
+- **Constraints**: 기존 token/rule와 source ownership, 기존 API를 유지한다. Spec 승인 전에 구현하지 않으며 구현 승인과 병합 승인을 구분한다.
+- **Options**: 공식64개 이름을 모두 복제하기 / 기본 입력·탐색과 실제 차이가 있는 표·날짜·hover 조합부터 보완하고 보류를 명시하기.
+- **Decision**: 두 번째 방향을 Spec에 제안한다. 신규17개(UI15/Pattern2), 기존 Table/Calendar 및 필요한 Glimpse source를 정리한다. NativeSelect/Kbd/AspectRatio는 native form·단축키 설명·미디어 배치를 위한 작은 기본 요소로 함께 제안한다. StatusNotice/EmptyState는 중복 구현 없이 기존 대응으로 안내한다.
+- **Rationale**: 기본 controls의 빈틈이 공통 UI 사용성을 제한하며 Kibo 복합 UI의 개수로 이를 대신할 수 없다. 28개의 이름 일치를 기능 호환으로 오해하지 않게 기준을 분리한다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+  - 기준 registry에는64 UI/13 Pattern/8 Block/3 libs가 있으며 공식 메뉴와 동명28개를 확인했다.
+  - registry/ui/table.tsx는 DataTable만 export하고 정렬만 제공한다. 기존 export를 유지하면서 native Table compound API와 고급 pattern을 구분해야 한다.
+  - Calendar는 custom 단일 날짜/일정 API, Glimpse는 링크 preview 전용이다. 기존 계약을 깨지 않고 조합 범위를 보완한다.
+  - Field의 오류/description 연결과 FormSection의 여러 필드 배치는 서로 다른 책임이다.
+  - theme의 일반 compatibility aliases는 전체 upstream UI의 크기/상태/API 및 Sidebar 전용 aliases를 보장하지 않는다. Sidebar/전체 RTL/대화 전용 UI는 이번 범위에 넣지 않는다.
+  - Plan/Tasks는 Spec 승인 뒤 작성한다. 현재 PRD-FR-014와 Spec은 검토용 제안이며 기능 구현 완료를 의미하지 않는다.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - [고정 기준표](./artifacts/shadcn-baseline.json)
+  - 기준 commit: `ed8baa5bd5663bdd5cabbc14409c3a303fa4c2f3`
+  - [공식 목록](https://ui.shadcn.com/docs/components), [Field](https://ui.shadcn.com/docs/components/base/field), [Data Table](https://ui.shadcn.com/docs/components/base/data-table), [Date Picker](https://ui.shadcn.com/docs/components/base/date-picker)
+- **Consequences**: PRD는 FR-014로 신규 기본 UI 요구를 추적한다. Plan에서 docs/designs/design-system.md의 사용 규칙·문서 카탈로그·registry 소비자 검증·기존 API 회귀를 각 task와 연결한다. 일반적인 UI library로의 진전이며 전체 shadcn 완전 대응이 아니다.
+
+## D002: README와 공개 배포는 이번 요청에 포함하지 않는다 (2026-10-03)
+
+- **Context**: 사용자 요청은 컴포넌트 보완 Feature다. README 수정이나 push/배포 요청은 없다.
+- **Decision**: README를 수정하지 않는다. 발견한 구체적 불일치가 있다면 경로·근거·보류 이유를 여기 기록한다. 현재 조사에서 갱신이 필요한 README 불일치를 확정하지 않았다.
+- **Trace**: 원본 두 앱은 이번 분석의 참고이며 전면 교체는 별도 범위다. managed worktree의 문서와 구현만 변경하고 main은 base branch를 유지한다.
+- **Evidence**: [Spec 범위](./spec.md), 기준 commit `ed8baa5bd5663bdd5cabbc14409c3a303fa4c2f3`.
+
+<!-- lee-spec-kit:workflow-sync sha256:29c1b1d0744badd445d98b7846323b509f73fbc8b710c8d0851525eb3f2aace7 -->

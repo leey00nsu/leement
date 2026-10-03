@@ -1,65 +1,105 @@
 # Feature Spec: shadcn-core-completion
 
-> 기술 스택은 plan.md에서 다룹니다.
-
----
-
 ## 개요
 
 - **기능 ID**: LWUCR9EEMVQE
 - **기능명**: shadcn-core-completion
 - **대상 레포**: Leement
 - **작성일**: 2026-10-03
-- **상태**: -
-  - 값: Draft | Review | Approved
-
----
+- **상태**: Review
 
 ## 목적
 
-shadcn 기본 입력·탐색 UI를 보완하고 Table·DatePicker·HoverCard 조합과 registry 설치 경험을 정리한다.
+일반 React 제품 화면에서 사용할 기본 입력·탐색 UI를 보완한다. Kibo 계열 복합 UI와 조합 가능한 기반을 제공하고 Table·날짜 선택의 기능과 source ownership 경험을 정리한다. 디자인의 정본은 Leement token과 rule이며 shadcn registry는 수정 가능한 source의 배포 수단이다.
 
-(이 기능이 왜 필요한지, 어떤 문제를 해결하는지)
+## 조사 기준
 
----
+2026-10-03 공식 Components 메뉴64개와 현재 registry를 대조했다. 동일 이름은28개이며36개는 없다. 이 수치는 기능 충족률이나 API 호환율이 아니다. 현재 Leement는 UI64·Pattern13·Block8·지원 lib3개다. 기준 revision은 `ed8baa5bd5663bdd5cabbc14409c3a303fa4c2f3`이며 [기준표](./artifacts/shadcn-baseline.json)에 변경·기존 대응·보류 사유를 고정한다. upstream 이후 추가는 자동으로 범위에 넣지 않는다.
 
 ## 사용자 스토리
 
-### US-1: {스토리 제목}
+### US-1: 기본 입력·선택을 같은 디자인으로 조합한다
 
-**As a** {사용자 유형}
-**I want** {원하는 것}
-**So that** {이유/가치}
+React 개발자가 폼과 설정 화면에서 checkbox/radio/오류 표시를 제품마다 다시 구현하지 않아도 된다.
 
 **Acceptance Criteria:**
 
-- [ ] (검증 조건)
+- [ ] UI registry로 Checkbox, RadioGroup, Field, InputGroup, NativeSelect, Toggle, ToggleGroup을 제공한다.
+- [ ] Checkbox는 checked/unchecked/indeterminate, controlled/uncontrolled, disabled 및 form 제출 연결을 지원한다. RadioGroup은 단일 값과 방향키 탐색을 제공한다.
+- [ ] Field는 label·description·error·fieldset/legend를 조합하며 입력 id/aria-describedby/aria-invalid의 연결 예제를 제공한다. 특정 form engine에 의존하지 않는다.
+- [ ] InputGroup은 앞/뒤 icon·text·button·input과 focus/disabled/invalid 상태를 조합한다. NativeSelect는 native select와 form 의미를 보존한다.
+- [ ] Toggle/ToggleGroup은 pressed·단일/복수 선택·disabled를 표현한다. Switch/Checkbox/Choicebox/FilterToggle과의 용도 차이를 설명한다.
 
----
+### US-2: 기본 탐색·표시를 Leement source로 구성한다
+
+**Acceptance Criteria:**
+
+- [ ] Accordion, Breadcrumb, Pagination, Command, ButtonGroup, Kbd, AspectRatio를 UI registry로 제공한다.
+- [ ] Accordion은 단일/복수 열림·disabled·키보드 탐색을 지원하고 기존 Collapsible의 높이/간격·reduced motion 규칙을 따른다.
+- [ ] Breadcrumb/Pagination은 native link·current page 의미를 보존하고 앱이 URL/페이지를 소유한다. 경계·disabled·ellipsis를 실제 예제에서 보여 준다.
+- [ ] Command는 검색·group·empty·disabled·방향키/Enter 선택을 제공하고 Dialog 조합 예제가 있다. 데이터 조회와 실행 callback은 앱 책임이다.
+- [ ] ButtonGroup은 Button의 variant/size/disabled를 보존하고 좁은 화면에서도 조작 가능하다. Kbd는 단축키 설명, AspectRatio는 미디어 비율에 사용한다.
+
+### US-3: 기본 Table과 복합 데이터·날짜·미리보기 UI를 구분한다
+
+**Acceptance Criteria:**
+
+- [ ] 기존 `@leement/table`에 Table/Header/Body/Footer/Row/Head/Cell/Caption의 native table compound API를 추가한다.
+- [ ] 기존 table item의 DataTable export와 data/columns/rowId/caption/emptyMessage API, 정렬 동작을 유지한다. 기본 Table에 고급 table engine 의존성을 강제하지 않는다.
+- [ ] `@leement/data-table`을 Pattern으로 제공하고 기본 Table·Pagination·Checkbox 등 실제 필요한 source를 dependency로 설치한다. 정렬·열 필터·페이지네이션·행 선택·열 표시 제어·empty를 조합하는 실제 예제가 있다. 기존 간단한 DataTable과 구분되는 export/API 및 이전 안내를 제공한다.
+- [ ] Calendar의 schedule/date view와 기존 value/defaultValue/onValueChange·min/max·locale·startDay·events 사용처를 유지하면서 단일/기간 날짜 선택을 지원한다.
+- [ ] `@leement/date-picker`를 Pattern으로 제공하고 Calendar·Popover·Button 등 필요한 source를 자동 설치한다. 단일/기간·disabled·날짜 제약·선택 표시·Escape·focus 복귀를 검증한다. 데이터 조회/서버 저장은 앱 책임이다.
+- [ ] `@leement/hover-card`를 UI로 제공하며 임의 React trigger/content를 조합한다. 기존 Glimpse의 href/label/title/description API와 링크 기능을 유지하고 공통 primitive 사용을 검토한다.
+- [ ] StatusNotice/EmptyState는 Alert/Empty 대응으로 안내하고 이름만 다른 중복을 추가하지 않는다. FormSection은 Field, Sheet는 제스처 Drawer 전체를 대신하지 않는다는 경계를 설명한다.
+
+### US-4: 웹에서 확인하고 source로 설치한다
+
+**Acceptance Criteria:**
+
+- [ ] 신규17개 item마다 실제 registry 원본 예제·주요 상태·API·사용/비사용 규칙·접근성·설치 명령·성숙도 metadata를 제공한다.
+- [ ] UI15개와 Pattern2개(DatePicker/DataTable)를 역할에 맞는 한 메뉴에 배치하고 Showcase/검색에서도 같은 원본을 사용한다.
+- [ ] 기존 muted 외부 표면·콘텐츠 inset·상세 네 방향 점선을 유지하고390/1024/1440px light/dark에서 읽고 조작할 수 있다.
+- [ ] 독립 React/Tailwind 소비자에서 `npx shadcn@latest add @leement/<name>` namespace 설치·종속 source·import·typecheck/build를 신규 전체 항목에 대해 검증한다.
+- [ ] 기존 item 이름·export·문서 경로·종속 설치에 회귀가 없다. 신규 항목은 실제 재사용 근거 없이 stable로 표시하지 않고 기본 experimental로 시작한다.
 
 ## 기능 요구사항
 
-### FR-1: {요구사항 제목}
+### FR-1: 신규 범위
 
-(상세 설명)
+| 레이어 | registry 이름 |
+| --- | --- |
+| UI 입력 | checkbox, radio-group, field, input-group, native-select, toggle, toggle-group |
+| UI 탐색/표시 | accordion, breadcrumb, pagination, command, button-group, kbd, aspect-ratio |
+| UI 미리보기 | hover-card |
+| Pattern | data-table, date-picker |
 
----
+총17개 신규 item(UI15+Pattern2)과 기존 Table/Calendar 및 필요한 Glimpse source/docs를 보완한다.
+
+### FR-2: 디자인과 API
+
+현재 font·semantic color·40/36/44px control·radius·focus·disabled·motion 규칙을 적용한다. 제품 브랜드색을 하드코딩하지 않는다. shadcn의 단순하고 조합 가능한 API와 primitive 접근성 동작을 참고하되 모든 upstream props/variant 완전 호환을 약속하지 않는다. 차이를 문서화한다. 별도 React npm library나 설정 engine을 만들지 않는다.
+
+### FR-3: 검증과 호환
+
+키보드·label·aria·disabled·form 값·선택 상태를 관찰 가능한 동작으로 확인한다. 기존 Table/Calendar/Glimpse의 사용 예제를 유지한다. 표의 정렬/필터/페이지/선택/열 표시와 날짜 범위/제약/focus를 검증한다. typecheck/lint/test/build 및 namespace 설치를 통과한다. 영구 테스트 추가/수정은 승인 후 Plan의 Verification Contract에 명시한다.
+
+## 제외 및 보류 범위
+
+- ContextMenu, Menubar, NavigationMenu, Sidebar, Drawer, Carousel, ScrollArea, Resizable, InputOTP, Item: 우선 범위 밖이며 실제 사용 사례로 다음 확장을 결정한다.
+- Direction/전체 RTL: 전체 방향성 계약을 별도로 정의해야 한다.
+- Attachment, Bubble, Marker, Message, MessageScroller, Questionnaire: 대화/전용 UI 필요성 확인 후 결정한다. lee-chat-sdk 로직 편입은 없다.
+- Alert/Empty: StatusNotice/EmptyState 대응 안내로 유지한다.
+- 기존 Combobox/Chart/Toast 등 모든 upstream variant 복제, 두 원본 앱 전체 교체, README 변경, Figma/MCP/CLI/codemod, npm 게시·push·공개 배포는 제외한다.
+- 전체64개 완전 대응으로 완료를 주장하지 않는다. 보류와 차이는 기준표에 남긴다.
 
 ## 비기능 요구사항
 
-- **성능**:
-- **보안**:
-
----
+strict TypeScript, framework-agnostic tokens, source ownership을 유지한다. HTML semantics·keyboard·focus-visible·disabled·screen reader label·대비·reduced motion을 확인한다. 코드와 dependencies는 사용자가 읽고 수정하기 쉽게 유지한다. 구현 승인과 local-ff 병합 승인은 각각 받는다.
 
 ## 관련 문서
 
-- PRD: `../../prd/`
-- PRD Refs: - (예: `PRD-FR-001`, `PRD-US-002`, `PRD-SCOPE-V1-DESKTOP-EDITOR`)
-  - 이미 원문 요구사항 문서에 정의된 ID만 적으세요. `spec.md`나 `tasks.md`에서 임의로 PRD ID를 만들지 않습니다.
-  - 레거시 요구사항 문서에 아직 PRD ID가 없다면, 먼저 원문에 ID를 backfill한 뒤 이 필드와 `tasks.md` 태스크 태그를 함께 갱신하세요.
-  - 요구사항/스코프 변경 시 PRD 문서 + 이 필드 + `tasks.md` 태스크 태그를 함께 갱신하세요.
-  - 구현 중 더 나은 사용자 동작이 발견되어 최종 요구사항이 바뀌었다면, 이를 영구적인 `[NON-PRD]` 예외로 두지 말고 PRD 업데이트로 취급하세요.
-- Design Refs: - (선택 사항, 명시적인 UI/UX 디자인 작업에만 프로젝트 루트 기준 경로 사용)
-  - Design System: - (예: `docs/designs/design-system.md`)
-  - Visual Brief: - (예: `docs/designs/<feature-visual-brief>.md`)
+- PRD: [leement-prd.md](../../prd/leement-prd.md)
+- PRD Refs: PRD-FR-005, PRD-FR-008, PRD-FR-009, PRD-FR-014, PRD-NFR-001, PRD-NFR-002, PRD-NFR-004
+- Design Refs: docs/designs/design-system.md
+- Design System: docs/designs/design-system.md
+- 공식 기준: [Components](https://ui.shadcn.com/docs/components), [Field](https://ui.shadcn.com/docs/components/base/field), [Data Table](https://ui.shadcn.com/docs/components/base/data-table), [Date Picker](https://ui.shadcn.com/docs/components/base/date-picker)
