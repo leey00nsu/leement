@@ -1,139 +1,100 @@
 # Implementation Plan: shadcn-core-completion
 
-> 스펙이 승인된 후 작성합니다.
-> canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 아키텍처/파일/테스트 내용은 이 파일로 흡수하고 최종 SSOT는 여기로 유지합니다.
-
----
-
 ## 개요
 
 - **기능 ID**: LWUCR9EEMVQE
 - **대상 레포**: Leement
 - **작성일**: 2026-10-03
-- **상태**: -
-  - 값: Draft | Review | Approved
+- **상태**: Approved
 - **Plan 검수**: Pending
-  - 값: Pending | Running | Done
-- **Plan 검수 Evidence**: -
-  - 예: `docs/features/F001-foo/decisions.md` 또는 docs 루트 아래의 실제 리뷰 산출물
-- **Plan 검수 Decision**: -
-  - 형식: `결정: approve|changes_requested|blocked ...` 또는 `decision: ...`
-- **Plan 검수 Round**: -
-  - `workflow-stage --json`이 반환한 양의 정수이며 첫 리뷰는 `1`
-- **Plan 검수 Spec Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `specHash`
-- **Plan 검수 Plan Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `planHash`
-
----
 
 ## 기술 스택
 
-| 구분 | 선택 | 이유 |
-| ---- | ---- | ---- |
-
----
+기존 React19/Next.js/strict TypeScript/Tailwind v4/Vitest/Testing Library와 Base UI1.7/Radix를 사용한다. Command는 cmdk를 사용해 직접 listbox 엔진을 재구현하지 않는다. 기본 Table은 native HTML이며 AdvancedDataTable pattern은 TanStack Table의 generic column/API와 native Table·Leement controls를 조합한다. 설치된 호환 버전과 공식 API를 확인하고 필요한 의존성만 선언한다. Calendar는 기존 구현에 discriminated single/range 계약을 추가한다.
 
 ## 아키텍처
 
-(컴포넌트 구조, 데이터 흐름)
-
----
+1. Checkbox/RadioGroup/Toggle/ToggleGroup/Accordion은 기존 Base UI primitive를 스타일링한다. Field는 form 엔진 없이 label/description/error/fieldset 조합을 제공하고 연결 책임을 명확하게 예제로 표현한다. InputGroup/NativeSelect/Kbd/AspectRatio/Breadcrumb/Pagination/ButtonGroup은 native semantic HTML과 기존 Button/Input을 사용한다.
+2. Accordion은 측정 panel과 내부 padding을 분리하고 closing 중 비활성·reduced motion을 유지한다. HoverCard는 Radix composition을 감싸며 Glimpse는 동일 source를 사용한다.
+3. table.tsx에 기본 Table parts를 추가하고 기존 간단한 DataTable export/props/정렬은 유지한다. 신규 AdvancedDataTable은 registry/patterns/data-table.tsx에서 TanStack column definitions를 받고 정렬/필터/선택/열 표시/페이지를 소유한다. 필요한 controls를 조합한다. 서버 조회·가상화·대용량 튜닝은 앱 책임이다.
+4. Calendar 기존 API는 single default로 유지하고 mode=range에 range/defaultRange/onRangeChange를 제공한다. disabled/min/max 및 focused day를 함께 처리한다. DatePicker pattern은 single/range Calendar와 Base UI Popover를 조합하고 trigger 이름·선택 표시·Escape·focus 복귀를 보존한다.
+5. registry.json 및 docs lib/items.ts/item-states.ts/docs.ts, route 이름 목록, previews.tsx와 examples를 신규 item별로 갱신한다. 실제 registry source를 docs에서 import한다. 같은 component의 복사본이나 비교 전용 메뉴를 만들지 않는다. 기존 표면/점선/반응형 규칙을 적용한다.
 
 ## 파일 구조
 
-```
-src/
-├── ...
-```
-
----
+- registry/ui/{checkbox,radio-group,field,input-group,native-select,toggle,toggle-group,accordion,breadcrumb,pagination,command,button-group,kbd,aspect-ratio,hover-card}.tsx 및 필요한 Accordion CSS module
+- registry/ui/{table,calendar,glimpse}.tsx
+- registry/patterns/{data-table,date-picker}.tsx
+- apps/docs/examples/<name>.tsx, lib/{items,item-states,docs}.ts, components/previews.tsx, app/{components,patterns}/[slug]/page.tsx
+- registry.json, 필요한 package.json/pnpm-lock.yaml
+- registry/ui/{core-form,core-navigation}.test.tsx, registry/patterns/{data-table,date-picker}.test.tsx 및 기존 날짜/표 회귀를 소유한 테스트 최소 수정
 
 ## Curated Documentation Impact
 
-README 보호와 보조 산출물 위치는 `agents` 문서의 해당 규칙을 우선합니다. README 불일치는 수정 요청이 없으면 `decisions.md`의 경로·근거·보류 사유를 참조하는 `NONE`으로 기록할 수 있으며, 이 예외에 별도 후속 항목이나 수정 승인을 요구하지 않습니다. 보존할 Feature 보조 산출물은 활성 Feature의 `artifacts/`에 저장하고 상대경로로 연결합니다.
-
-발견한 문서 불일치는 `decisions.md`에만 남기고 종료하지 않습니다. 현재 사실의 명백한 오류가 승인 범위 안에 있으면 `UPDATE`/`ADD`와 task `Docs`로 연결합니다. 제품 의도 확인이나 범위 확장이 필요하면 충돌한 문서 경로·근거, 확인할 질문, 보류 이유와 실제 후속 task/Feature/issue 참조를 기록합니다. 없는 번호나 승인을 만들지 않습니다. 추적 항목 생성에 승인이 필요하면 사용자 확인 전 해결된 것으로 기록하지 않습니다. `NONE`의 근거에는 알려진 불일치가 없거나, 남은 불일치가 해당 후속 항목으로 추적되고 있음을 설명합니다. 코드나 OpenWiki에 맞추기 위해 미구현 PRD 요구를 삭제하지 않습니다.
-
-> 모든 결정이 `NONE`이어도 영향 판정을 완료합니다. `NONE`은 사람이 관리하는 상위 문서를 검토했지만 변경할 필요가 없다는 뜻입니다. 생성형 OpenWiki 동기화는 별도로 판정합니다.
-
 - **Schema**: 2
-- **Assessment**: Pending
-  - 값: Pending | Complete
-- **Product requirements**: -
-  - 값: NONE | UPDATE | ADD
-- **System architecture**: -
-  - 값: NONE | UPDATE | ADD
-- **Onboarding entrypoint**: -
-  - 값: NONE | UPDATE | ADD
-- **Operational/runtime contract**: -
-  - 값: NONE | UPDATE | ADD
-- **Reason**: -
-- **Targets**: -
-  - UPDATE 또는 ADD가 하나라도 있으면 쉼표로 구분한 `docs:<path>`와 `project:<path>` 대상을 기록합니다.
-  - `docs:<path>`는 설정된 docs 디렉터리 기준이고 `project:<path>`는 프로젝트 저장소 루트 기준입니다. 루트 이름을 반복하지 마세요(예: `docs:docs/agents/constitution.md`가 아니라 `docs:agents/constitution.md`).
-  - 모든 대상은 task `Docs` 목록에 연결하고 Feature 리뷰 전에 활성 Feature scope로 커밋합니다.
-
----
+- **Assessment**: Complete
+- **Product requirements**: UPDATE
+- **System architecture**: NONE
+- **Onboarding entrypoint**: NONE
+- **Operational/runtime contract**: NONE
+- **Reason**: PRD-FR-014와 docs의 신규 item/API/사용 경계를 연결한다. 기존 npm/theme/호스팅 방식은 유지한다. README 요청이 없으므로 보호한다(D002). 기존 design-system.md의 오래된 'GMA8H5L3TLTY 진행 중' 문구는 현재 통합된 상태에 맞게 같은 문서에서 바로잡는다.
+- **Targets**: docs:prd/leement-prd.md
 
 ## Additional Curated Impacts
 
-> constitution/custom, 디자인 시스템, API·데이터, 보안, 배포, 관측성처럼 조건부로 존재하는 상위 문서를 판정합니다. 해당 영향이 없으면 `Decision: NONE`을 명시하고 표는 비워 둡니다.
-
-- **Assessment**: Pending
-- **Decision**: -
-  - 값: NONE | DECLARED
+- **Assessment**: Complete
+- **Decision**: DECLARED
 
 | Kind | Decision | Target | Reason |
-| ---- | -------- | ------ | ------ |
-| -    | -        | -      | -      |
-
-허용 Kind: `engineering-agent-policy`, `design-system-ux`, `api-data-contract`, `security-privacy`, `release-deployment`, `observability`, `other-curated`
-
-`DECLARED` 행의 Decision은 `UPDATE` 또는 `ADD`이고, Target은 `docs:<path>` 또는 `project:<path>`여야 합니다. 모든 Target은 task `Docs` 목록에 연결합니다.
-`docs:<path>`는 설정된 docs 디렉터리에서, `project:<path>`는 프로젝트 저장소 루트에서 해석합니다.
-
----
+| --- | --- | --- | --- |
+| design-system-ux | UPDATE | docs:designs/design-system.md | 기본 control/field/표/날짜/탐색 사용 규칙 및 기존 설명 정합성 |
 
 ## Verification Contract
 
-Feature 완료 전 검사는 실제 `workflow.featureChecks`(컴포넌트 override 포함)를 기준으로 작성합니다. 추가 자동 검사는 실행 설정에도 등록하세요. build 포함 여부와 중복 생략 근거, 수동 검증 증거를 명시하세요.
-
-
 ### 변경 분류
 
-- **유형**: COPY | REFACTOR | BUG_FIX | NEW_BEHAVIOR | HIGH_RISK
-- **위험도**: LOW | MEDIUM | HIGH
+- **유형**: NEW_BEHAVIOR
+- **위험도**: HIGH
 
 ### 관찰 가능한 계약
 
-- **지원해야 하는 동작**:
-- **전제조건**:
-- **성공 후 보장**:
-- **중요한 실패 후 보장**:
-- **의도적으로 지원하지 않는 사례**:
+- **지원해야 하는 동작**: 신규17개 설치/렌더, checkbox form·indeterminate·disabled, radio/toggle group keyboard, field label/error 연결, native input form, command 선택/disabled, accordion keyboard/close, table 정렬/필터/페이지/선택/열 표시, single/range/date bounds, popup Escape/focus 복귀, 기존Table/Calendar/Glimpse 사용.
+- **전제조건**: workspace 의존성·token/theme·registry를 빌드한 Tailwind v4 React 환경.
+- **성공 후 보장**: registry source가 소비자 alias로 변환되고 dependencies가 설치되어 타입/build 및 실제 조작이 가능하다. 문서가 같은 source와 일관된 시각 규칙을 보여 준다.
+- **중요한 실패 후 보장**: 기존 API 제거를 피하고 실패한 설치/상태를 완료로 기록하지 않는다. 앱 데이터 조회/저장은 포함하지 않는다.
+- **의도적으로 지원하지 않는 사례**: shadcn 모든 props/variant parity, 대용량/virtual/server table, 전체 RTL, 도메인/대화 UI, 극단적인 임의 token override, 배포.
 
 ### 테스트 결정
 
-| 계약 / 요구사항 | 결정                  | 테스트 수준                     | 보호할 현실적인 회귀 | 독립적인 Oracle            |
-| --------------- | --------------------- | ------------------------------- | -------------------- | -------------------------- |
-| (AC/FR 참조)    | NONE \| UPDATE \| ADD | 단위 \| 통합 \| E2E \| 비테스트 | (방지할 실패)        | (스펙/출시 동작/외부 기준) |
+| 계약/요구사항 | 결정 | 테스트 수준 | 보호할 현실적 회귀 | 독립적인 Oracle |
+| --- | --- | --- | --- | --- |
+| US-1 폼/선택 | ADD | core-form.test.tsx 통합 | form 값/indeterminate/disabled/label/error 및 키보드 선택 손실 | HTML form/ARIA 및 승인 AC |
+| US-2 탐색/command/accordion | ADD | core-navigation.test.tsx 통합 | disabled 선택·검색 결과 선택·접근 가능한 현재 페이지/접힘 | 사용자 선택 callback, landmark와 focused element |
+| US-3 표 | ADD | patterns/data-table.test.tsx 통합 | 필터 뒤 잘못된 페이지/행 선택/열 표시·legacy table export 손실 | 실제 렌더한 rows/selection callback·native table semantics |
+| US-3 날짜 | ADD | patterns/date-picker.test.tsx 통합 | 날짜 제약·역순 range·disabled·Escape/focus 및 기존 single API 손실 | 실제 날짜 값과 focused trigger |
+| 기존 Table/Calendar 계약 | UPDATE | 기존 media-finance/code-form/source-extension 소유 테스트 필요 시 | 기존 props 사용 회귀 | 기존 public API·사용 예제 |
+| 정적인 작은 wrapper | NONE | 타입/build 및 브라우저 | HTML 의미/배치 손실 | 실제 문서 및 화면 |
+| 설치/전체 docs | NONE | 일회 CLI/Chrome 소비자 검증 | dependencies/alias/source 누락·폭과테마문제 | 독립 빌드·실제 DOM/스크린샷 |
 
 ### 의도적으로 제외하는 테스트
 
-- (중복, 구현 세부사항, 비지원 합성 입력, 프레임워크 자체 동작 등)
+CSS class 문자열 snapshot, primitive 내부 엔진을 다시 검증하는 대규모 suite, 자체 compiler/테스트 인프라는 추가하지 않는다. 새 영구 테스트는 위4개 동작 계약 범위만 추가하고 나머지는 기존 소유 테스트의 필요 수정과 일회 검증으로 처리한다.
 
 ### 검증 실행
 
-- **구현 중**:
-- **태스크 완료 전**:
-- **Feature 완료 전**:
-- **수동/UI 검증**:
-- **전체 테스트 필요 여부**: Yes | No — (이유)
+- **구현 중**: frozen install, 실제 dependency/API 확인, 해당 task의 계약 테스트와 변경 source lint/typecheck.
+- **태스크 완료 전**: 해당 item의 source/metadata/원본 예제 확인, focused 검증, 문서 sync 및 checkpoint commit.
+- **Feature 완료 전**: workflow.featureChecks의 typecheck/lint/test/build 전체. 신규17개 namespace CLI 설치와 dependency/source/import/typecheck/build를 독립 소비자에서 확인.
+- **수동/UI 검증**: 신규17개와 수정 기존3개의 상세 및 Showcase를390/1024/1440px light/dark에서 조사. 대표 화면을 직접 읽고 checkbox/radio/toggle/accordion/command/table/date/hover keyboard·포털·focus·disabled를 실제 조작. 날짜와 표는 기본/empty/제약 상태도 확인. 결과와 대표 screenshot은 Feature artifacts에 저장한다.
+- **전체 테스트 필요 여부**: Yes — 새 동작과 기존 API 변경 위험 및 명시된 featureChecks.
 
----
+## 실행 순서
+
+T01 입력7개 → T02 탐색/표시7개+HoverCard → T03 Table/DataTable → T04 Calendar/DatePicker → T05 전수 문서/소비자 설치/최종 검증. 각 task에서 소유 source·docs·metadata를 함께 완료한다.
 
 ## 관련 문서
 
 - Spec: [spec.md](./spec.md)
 - Decisions: [decisions.md](./decisions.md)
+
+Plan 승인: agentReview.plan disabled 및 workflow-stage의 plan_approve 자동 진행 지시에 따라 승인했다.

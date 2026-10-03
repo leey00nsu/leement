@@ -2,6 +2,13 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+  "toggle-group": "Selected/unselected, focused, disabled and single/multiple.",
+  "toggle": "Pressed, unpressed, focused and disabled.",
+  "native-select": "Selected, focused, disabled, invalid.",
+  "input-group": "Empty, filled, focused, invalid, input disabled and independent button state.",
+  "field": "Empty, filled, focused, invalid and disabled.",
+  "radio-group": "Selected and unselected, focused, disabled.",
+  "checkbox": "Unchecked, checked, mixed, focused, disabled, invalid.",
   "brand-action": "Animated or paused, loading/disabled, reduced motion and theme-defined brand colors.",
   "rotating-content": "Running, paused/resumed, static first item under reduced motion, inactive/offscreen suspension.",
   "media-reveal": "loading, ready, error and retry; hidden layers cannot be focused and reduced motion switches immediately.",

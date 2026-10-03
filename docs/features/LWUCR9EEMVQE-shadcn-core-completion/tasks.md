@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/LWUCR9EEMVQE-shadcn-core-completion`
 - **대기 중 변경 요청**: -
@@ -75,6 +75,86 @@
 
 ---
 
+- [DONE][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-01 입력·선택 기본 UI7개
+  - Date: 2026-10-03
+  - Acceptance:
+    - Checkbox/RadioGroup/Field/InputGroup/NativeSelect/Toggle/ToggleGroup source·예제·metadata가 완성되고 form/keyboard/disabled 계약 검사가 통과한다.
+  - Checklist:
+    - [x] 기본 source와 registry/docs 원본 예제 및 디자인 규칙 연결
+    - [x] 승인된 core-form 계약 테스트·타입/lint 확인
+  - Docs:
+    - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-02 탐색·표시 UI와 HoverCard
+  - Date: 2026-10-03
+  - Acceptance:
+    - Accordion/Breadcrumb/Pagination/Command/ButtonGroup/Kbd/AspectRatio/HoverCard source·문서·registry 및 Glimpse 기존 API가 동작한다.
+  - Checklist:
+    - [ ] source·metadata·예제 및 navigation/hover 규칙 연결
+    - [ ] core-navigation 계약과 기존 Glimpse 회귀 확인
+  - Docs:
+    - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-03 기본 Table과 AdvancedDataTable
+  - Date: 2026-10-03
+  - Acceptance:
+    - 기존 DataTable API를 유지하면서 Table compound API와 정렬/필터/페이지/행 선택/열 표시 pattern·문서·dependency 설치를 제공한다.
+  - Checklist:
+    - [ ] 기본 Table 및 AdvancedDataTable source·문서/registry 완성
+    - [ ] data-table 계약 테스트와 기존 table 회귀 확인
+  - Docs:
+    - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-04 Calendar range와 DatePicker
+  - Date: 2026-10-03
+  - Acceptance:
+    - Calendar single API를 유지하고 range/date constraints와 DatePicker pattern·registry·문서·focus 복귀를 제공한다.
+  - Checklist:
+    - [ ] single/range source·예제·설치 metadata 및 규칙 완성
+    - [ ] date-picker 계약 테스트와 기존 날짜 회귀 확인
+  - Docs:
+    - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-05 전체 문서·소비자 설치·최종 검증
+  - Date: 2026-10-03
+  - Acceptance:
+    - 신규17개와 수정3개를 light/dark 세 폭에서 확인하고 신규 전체 namespace 설치/import/typecheck/build 및 featureChecks가 통과한다.
+  - Checklist:
+    - [ ] 실제 화면·상태·모든 메뉴/예제/기준표 및 curated docs 최종 동기화
+    - [ ] 독립 소비자17개 설치와 typecheck/lint/test/build 결과 보존
+  - Docs:
+    - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -98,6 +178,8 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+T01 검증: core-form 계약6개 PASS, docs typecheck 및 변경 source/docs eslint PASS, registry JSON 생성 PASS. 화면·전체 소비자 설치는 T05에서 검증한다.

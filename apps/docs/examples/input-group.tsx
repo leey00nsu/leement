@@ -1,0 +1,3 @@
+import { Search, ArrowRight } from "lucide-react";
+import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupButton } from "../../../registry/ui/input-group";
+export default function InputGroupExample() { return <div className="w-full max-w-sm space-y-4"><InputGroup><InputGroupAddon><Search aria-hidden="true" /></InputGroupAddon><InputGroupInput aria-label="Search members" placeholder="Search members" /><InputGroupButton aria-label="Search"><ArrowRight /></InputGroupButton></InputGroup><InputGroup><InputGroupAddon>https://</InputGroupAddon><InputGroupInput aria-label="Website" placeholder="example.com" /></InputGroup><InputGroup><InputGroupInput aria-label="Unavailable search" disabled placeholder="Unavailable" /></InputGroup></div>; }

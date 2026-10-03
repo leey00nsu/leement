@@ -12,7 +12,7 @@ lee-spec-kit:
 
 ## 출처와 테마
 
-CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 다크 모드처럼 만들려 한 의도가 출발점이다. Leement는 두 제품의 숫자를 복제하거나 평균 내지 않고 하나의 semantic 역할 집합에 light/dark 값을 배정한다. 두 앱에서 공통 source/API를 쓸 수 있는지, 본문 가독성·상태 대비·사용 맥락이 일관적인지를 우선한다. 제품별 브랜드·도메인 표현은 앱에 남긴다. light는 밝은 중립 표면과 진한 본문, dark는 `#111113` 배경 위에 `#1a1a1d` 기본 표면과 `#242427` 떠 있는 표면을 쓴다. dark는 `[data-lm-theme="dark"]` 또는 기존 앱의 `.dark`로 선택한다. 숫자·픽셀 단위의 원본 일치 여부는 성공 기준이 아니며 두 앱의 실제 적용 검증은 Feature GMA8H5L3TLTY에서 진행 중이다.
+CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 다크 모드처럼 만들려 한 의도가 출발점이다. Leement는 두 제품의 숫자를 복제하거나 평균 내지 않고 하나의 semantic 역할 집합에 light/dark 값을 배정한다. 두 앱에서 공통 source/API를 쓸 수 있는지, 본문 가독성·상태 대비·사용 맥락이 일관적인지를 우선한다. 제품별 브랜드·도메인 표현은 앱에 남긴다. light는 밝은 중립 표면과 진한 본문, dark는 `#111113` 배경 위에 `#1a1a1d` 기본 표면과 `#242427` 떠 있는 표면을 쓴다. dark는 `[data-lm-theme="dark"]` 또는 기존 앱의 `.dark`로 선택한다. 숫자·픽셀 단위의 원본 일치 여부는 성공 기준이 아니며 두 앱의 공통22개 설치/렌더와 대표 사용처의 격리 적용 검증은 Feature GMA8H5L3TLTY에 기록되어 있다. 원본 앱 전체 교체를 의미하지 않는다.
 
 기존 Tailwind 앱에 도입할 때 CSS에서는 `@leement/theme`을 Tailwind 다음, `shadcn/tailwind.css`보다 앞에 import한다. 기존 앱이 같은 `--background`, `--primary` 등의 alias를 다시 정의한다면 뒤의 값이 Leement 호환 alias를 덮을 수 있다. 작은 영역에 `data-lm-theme="light"` 또는 `"dark"`를 부여해 공통 source와 의미 토큰을 먼저 확인하고, 전면 도입할 때 중복 alias를 정리한다. 제품 전용 wrapper는 도메인 동작·현지화와 이전 API 매핑을 맡되 Leement component source를 복제하거나 제품별로 fork하지 않는다. 예를 들어 기존 Button `default`를 Leement `primary`로, 앱의 `isLoading`/`loadingText`를 Leement `loading` 및 자식 텍스트로 연결할 수 있다. `data-accent-foreground`는 채워진 데이터 강조 표면 위의 전경색이므로 일반 카드 위 텍스트로 사용하지 않는다.
 
@@ -95,3 +95,9 @@ FormSection의 제목과 입력 영역은 실제 section 너비가 40rem 이상�
 AudioPlayer는 CopySinger의 72px 파형과 조밀한 재생·시간·배속·음량·음소거 구성을 공통화한다. VideoPlayer도 같은 36px icon-sm 제어와 Popover/Slider 규칙을 사용한다. 일반 파형은 중립 wave와 data-accent-foreground 진행색이며 brand=true일 때만 소비자의 brand gradient를 쓴다. 색 변경은 재생을 재시작하지 않는다.
 
 Native HTML media event가 playback state의 정본이다. src 변경은 이전 시간/오류/engine을 분리하고 유효한 duration 안에서만 seek한다. 파형 decode 실패는 native audio controls로 대체하며 media 자체 실패와 구분한다. SSR/no-JS에서는 native controls를 제공하고 영상은 앱이 자막 언어/label/파일을 전달한다. 로딩/오류는 이름 있는 상태이며 timeupdate는 반복 live announce하지 않는다. reduced motion은 장식만 멈추며 사용자가 재생한 오디오/영상은 보존한다. 구간 분석과 blob preview 생성은 앱 composition이다.
+
+## 기본 입력과 선택
+
+Checkbox는 함께 제출할 독립 옵션이며 mixed 상태는 일부 선택을 뜻한다. RadioGroup은 한 값을 고르고 Choicebox는 설명을 비교하는 카드형 선택이다. Switch는 즉시 적용할 설정, Toggle/ToggleGroup은 눌린 도구 모드, FilterToggle은 결과 필터에 쓴다. 체크/라디오 표식은16px이고 label row는 최소40px로 조작 영역을 확보한다.
+
+Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/Legend는 관련 입력의 의미를 묶는다. FormSection은 여러 필드의 배치이며 Field를 대체하지 않는다. Base UI input은 Field와 자동 연결되며 Leement의 native Input/Textarea/NativeSelect는 FieldControl render로 연결하거나 id/aria-describedby/aria-invalid를 명시한다. 이름 없는 아이콘 action과 placeholder만의 라벨을 피한다. InputGroup은 앞/뒤 adornment와 입력의 focus/invalid 표면을 묶되 별도 버튼의 disabled는 앱이 전달한다. NativeSelect는 browser form 의미가 충분한 경우 우선하고 custom popup은 Select, 검색은 Combobox를 사용한다. ToggleGroup은 Base UI의 배열 값 계약을 유지하며 단일 선택에서는 multiple=false다.

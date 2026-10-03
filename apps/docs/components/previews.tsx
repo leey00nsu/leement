@@ -1,6 +1,13 @@
 "use client";
 
 import type { ComponentType } from "react";
+import ToggleGroupExample from "../examples/toggle-group";
+import ToggleExample from "../examples/toggle";
+import NativeSelectExample from "../examples/native-select";
+import InputGroupExample from "../examples/input-group";
+import FieldExample from "../examples/field";
+import RadioGroupExample from "../examples/radio-group";
+import CheckboxExample from "../examples/checkbox";
 import TextRevealExample from "../examples/text-reveal";
 import MediaRevealExample from "../examples/media-reveal";
 import BrandActionExample from "../examples/brand-action";
@@ -89,6 +96,13 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "toggle-group": ToggleGroupExample,
+  "toggle": ToggleExample,
+  "native-select": NativeSelectExample,
+  "input-group": InputGroupExample,
+  "field": FieldExample,
+  "radio-group": RadioGroupExample,
+  "checkbox": CheckboxExample,
   "brand-action": BrandActionExample,
   "rotating-content": RotatingContentExample,
   "media-reveal": MediaRevealExample,

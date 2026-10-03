@@ -27,4 +27,11 @@
 - **Trace**: 원본 두 앱은 이번 분석의 참고이며 전면 교체는 별도 범위다. managed worktree의 문서와 구현만 변경하고 main은 base branch를 유지한다.
 - **Evidence**: [Spec 범위](./spec.md), 기준 commit `ed8baa5bd5663bdd5cabbc14409c3a303fa4c2f3`.
 
-<!-- lee-spec-kit:workflow-sync sha256:29c1b1d0744badd445d98b7846323b509f73fbc8b710c8d0851525eb3f2aace7 -->
+## D003: T01 native form과 Field 연결을 보존한다 (2026-10-03)
+
+- **Context/Constraints**: T01을 시작하며 checkbox/radio/toggle에는 Base UI의 form/keyboard 의미를 사용한다. native Leement Input은 FieldControl render로 감싸 자동 label/help/error 관계를 유지한다.
+- **Decision**: 7개 UI와 실제 원본 예제·registry·metadata를 함께 추가한다. ToggleGroup은 native Base UI 배열 value 계약을 명시하고 field는 특정 form 엔진에 의존하지 않는다.
+- **Trace**: pnpm frozen install 완료. InputGroup은 하나의 focus/invalid 표면을 제공한다. 기본 표식16px과 label 최소40px을 예제에서 결합한다. T01 계약6개/form/label/error/controlled/disabled/keyboard가 통과했고 docs typecheck·변경 eslint·registry build가 통과했다. 화면/소비자 설치는 T05에서 확인한다.
+- **Evidence**: [기본 입력 source](../../../../registry/ui/core-form.test.tsx), [명세](./spec.md).
+
+<!-- lee-spec-kit:workflow-sync sha256:49ec6cf1a4be0693484c3e88359ee2ab6896ff739a4f89869fa94df2ae424ac5 -->

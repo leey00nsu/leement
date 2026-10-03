@@ -1,0 +1,3 @@
+import { Field, FieldLabel, FieldControl, FieldDescription, FieldError, FieldGroup } from "../../../registry/ui/field";
+import { Input } from "../../../registry/ui/input";
+export default function FieldExample() { return <FieldGroup className="w-full max-w-sm"><Field><FieldLabel>Email</FieldLabel><FieldControl type="email" render={<Input />} /><FieldDescription>Used for workspace updates.</FieldDescription></Field><Field invalid><FieldLabel>Username</FieldLabel><FieldControl defaultValue="admin" render={<Input />} /><FieldError match>Choose another username.</FieldError></Field><Field disabled><FieldLabel>Organization</FieldLabel><FieldControl defaultValue="Leement" render={<Input />} /></Field></FieldGroup>; }
