@@ -169,7 +169,7 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-009] T-LWUCR9EEMVQE-shadcn-core-completion-07 이름 있는 추가 예제와 실제 source Code 문서 구조
+- [TODO][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-07 이름 있는 추가 예제와 실제 source Code 문서 구조
   - Date: 2026-10-03
   - Acceptance:
     - 대표 예제를 유지하고 상세 추가예제의 독립 Preview와 실제 source Code/설명을 제공한다.
@@ -185,7 +185,7 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-009] T-LWUCR9EEMVQE-shadcn-core-completion-08 우선13개 핵심 조합과 상태 예제
+- [TODO][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-08 우선13개 핵심 조합과 상태 예제
   - Date: 2026-10-03
   - Acceptance:
     - 우선13개가 지원하는 핵심 API와 조합·결과를 실제 원본 예제로 제공한다.
@@ -198,7 +198,7 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-009] T-LWUCR9EEMVQE-shadcn-core-completion-09 보완42개 크기·변형·폼 및 결과 예제
+- [TODO][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-09 보완42개 크기·변형·폼 및 결과 예제
   - Date: 2026-10-03
   - Acceptance:
     - 보완42개 조사 행마다 실제 의미 있는 추가예제를 제공한다.
@@ -211,7 +211,7 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-009] T-LWUCR9EEMVQE-shadcn-core-completion-10 전체55개 추가예제 화면·조작·source 소비자 최종 검증
+- [TODO][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-10 전체55개 추가예제 화면·조작·source 소비자 최종 검증
   - Date: 2026-10-03
   - Acceptance:
     - 55개 실제 추가예제와 Code 연결·theme/viewport·소비자 strict build 및 featureChecks가 통과한다.

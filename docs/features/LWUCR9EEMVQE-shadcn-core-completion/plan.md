@@ -118,4 +118,4 @@ Plan 승인: agentReview.plan disabled 및 workflow-stage의 plan_approve 자동
 | 정적 metadata·크기·조합 | NONE | 실제 TypeScript/build와 일회 catalog 대조 및 브라우저 스크린샷. CSS 문자열 snapshot 금지 |
 | 폼/overlay/선택/motion 동작 | NONE | 재사용 primitive의 기존 계약 테스트와 실제 신규 예제 조작; 지표 전체를 다시 테스트하지 않는다 |
 
-추가예제의 제목만 만들어 놓거나 같은 예제를 재사용해 이름만 바꾸지 않는다.55개의 조사 행마다 실제로 제공된 예제 ID를 최종 evidence로 연결한다. 전체 featureChecks는 마지막T10에서 실행한다. 각 중간태스크는 관련 eslint와 docs typecheck/build 범위 검사 후 commit한다. PRD-FR-009 및 docs/designs/design-system.md의 예제 작성 규칙을T07/T10에서 동기화한다. README와 다른 운영/아키텍처 문서에는 추가 영향NONE이다.
+추가예제의 제목만 만들어 놓거나 같은 예제를 재사용해 이름만 바꾸지 않는다.55개의 조사 행마다 실제로 제공된 예제 ID를 최종 evidence로 연결한다. 전체 featureChecks는 마지막T10에서 실행한다. 각 중간태스크는 관련 eslint와 docs typecheck/build 범위 검사 후 commit한다. PRD-FR-008 및 docs/designs/design-system.md의 예제 작성 규칙을T07/T10에서 동기화한다. README와 다른 운영/아키텍처 문서에는 추가 영향NONE이다.
