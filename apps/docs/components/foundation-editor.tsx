@@ -81,7 +81,7 @@ function ColorControl({ field, mode }: { field: ColorField; mode: FoundationMode
   const [pickerOpen, setPickerOpen] = useState(false);
   useEffect(() => { setDraft(value); setTouched(false); }, [value, mode]);
   const valid = validPreviewValue(mode, field.key, draft);
-  return <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-1 rounded-lg border border-border bg-background p-3">
+  return <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-1 rounded-lg bg-background p-3">
     <Popover open={pickerOpen} onOpenChange={setPickerOpen}>
       <PopoverTrigger aria-label={`Pick ${mode} ${field.label} color`} className="relative row-span-2 size-10 overflow-hidden rounded-md border border-border bg-[repeating-conic-gradient(var(--lm-color-border-default)_0%_25%,var(--lm-color-surface-default)_0%_50%)] bg-size-[12px_12px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
         <span aria-hidden="true" className="absolute inset-0" style={{ backgroundColor: valid ? draft : value }} />
@@ -134,7 +134,7 @@ function FamilyControl({ field, value }: { field: SharedField; value: string }) 
   const [touched, setTouched] = useState(false);
   useEffect(() => { setDraft(value); setTouched(false); }, [value]);
   const valid = validPreviewValue("shared", field.key, draft);
-  return <div className="rounded-lg border border-border bg-background p-3">
+  return <div className="rounded-lg bg-background p-3">
     <label htmlFor={id} className="mb-2 block text-sm font-medium">{field.label}</label>
     <select id={id} value={familyOptions.some((option) => option.value === value) ? value : "custom"} onChange={(event) => {
       if (event.target.value !== "custom") setValue("shared", field.key, event.target.value);
@@ -159,7 +159,7 @@ function EasingControl({ field, value }: { field: SharedField; value: string }) 
   const [draft, setDraft] = useState(value);
   useEffect(() => setDraft(value), [value]);
   const valid = validPreviewValue("shared", field.key, draft);
-  return <div className="rounded-lg border border-border bg-background p-3"><label htmlFor={id} className="text-sm font-medium capitalize">{field.label}</label><Input id={id} value={draft} maxLength={160} className="mt-2 font-mono text-xs" aria-invalid={!valid || undefined} aria-describedby={`${id}-help`} onChange={(event) => { setDraft(event.target.value); if (validPreviewValue("shared", field.key, event.target.value)) setValue("shared", field.key, event.target.value); }} /><p id={`${id}-help`} className={`mt-2 text-xs ${valid ? "text-muted-foreground" : "text-destructive"}`}>{valid ? "Use a named easing or cubic-bezier(x1, y1, x2, y2)." : "Use a valid easing; x must be 0–1 and y −2–2."}</p><div className="mt-2 flex flex-wrap gap-2">{[field.defaultValue, "linear", "ease-in-out"].map((choice) => <Button key={choice} size="xs" variant="ghost" onClick={() => { setDraft(choice); setValue("shared", field.key, choice); }}>{choice === field.defaultValue ? "Default" : choice}</Button>)}</div></div>;
+  return <div className="rounded-lg bg-background p-3"><label htmlFor={id} className="text-sm font-medium capitalize">{field.label}</label><Input id={id} value={draft} maxLength={160} className="mt-2 font-mono text-xs" aria-invalid={!valid || undefined} aria-describedby={`${id}-help`} onChange={(event) => { setDraft(event.target.value); if (validPreviewValue("shared", field.key, event.target.value)) setValue("shared", field.key, event.target.value); }} /><p id={`${id}-help`} className={`mt-2 text-xs ${valid ? "text-muted-foreground" : "text-destructive"}`}>{valid ? "Use a named easing or cubic-bezier(x1, y1, x2, y2)." : "Use a valid easing; x must be 0–1 and y −2–2."}</p><div className="mt-2 flex flex-wrap gap-2">{[field.defaultValue, "linear", "ease-in-out"].map((choice) => <Button key={choice} size="xs" variant="ghost" onClick={() => { setDraft(choice); setValue("shared", field.key, choice); }}>{choice === field.defaultValue ? "Default" : choice}</Button>)}</div></div>;
 }
 
 function SharedControl({ field }: { field: SharedField }) {
@@ -170,7 +170,7 @@ function SharedControl({ field }: { field: SharedField }) {
   if (field.kind === "family") return <FamilyControl field={field} value={value} />;
   if (field.kind === "shadow") {
     const choices = [...new Set([field.defaultValue, "none", "0 2px 8px rgb(0 0 0 / 0.08)", "0 4px 12px rgb(0 0 0 / 0.10)", "0 12px 36px rgb(0 0 0 / 0.18)"])];
-    return <div className="rounded-lg border border-border bg-background p-3">
+    return <div className="rounded-lg bg-background p-3">
       <label htmlFor={id} className="mb-2 block text-sm font-medium capitalize">{field.label}</label>
       <select id={id} value={value} onChange={(event) => setValue("shared", field.key, event.target.value)} className="w-full min-w-0 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
         {choices.map((choice) => <option key={choice} value={choice}>{choice === field.defaultValue ? `Default · ${choice}` : choice}</option>)}
@@ -179,7 +179,7 @@ function SharedControl({ field }: { field: SharedField }) {
   }
   const { min, max, step, unit } = numericDetails(field);
   const number = numericValue(value, unit);
-  return <div className="rounded-lg border border-border bg-background p-3">
+  return <div className="rounded-lg bg-background p-3">
     <div className="flex items-baseline justify-between gap-3"><label htmlFor={id} className="text-sm font-medium capitalize">{field.label}</label><output htmlFor={id} className="font-mono text-sm tabular-nums text-muted-foreground">{Number.isFinite(number) ? number : min}{unit}</output></div>
     <input id={id} type="range" min={min} max={max} step={step} value={Number.isFinite(number) ? number : min} aria-valuetext={`${Number.isFinite(number) ? number : min}${unit}`} onChange={(event) => setValue("shared", field.key, `${event.target.value}${unit}`)}
       className="mt-3 w-full accent-[var(--lm-color-brand-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring" />
@@ -273,14 +273,14 @@ export function FoundationEditor({ category }: { category: FoundationCategory })
     }
   }
 
-  if (!loaded) return <section id="live-editor" aria-label="Live editor" className="mt-10 rounded-xl border border-border bg-card p-6 text-sm text-muted-foreground" role="status">Loading saved preview…</section>;
+  if (!loaded) return <section id="live-editor" aria-label="Live editor" className="mt-10 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground text-sm text-muted-foreground" role="status">Loading saved preview…</section>;
 
-  return <section id="live-editor" aria-labelledby="live-editor-heading" className="mt-10 scroll-mt-24">
-    <div className="mb-5 flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-widest text-[var(--lm-color-brand-text)]">Live editor</p><h2 id="live-editor-heading" className="mt-1 text-2xl font-semibold">Try the {category} rules</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">Changes apply across this documentation site. They stay in this browser until you reset them. The token reference below shows Leement defaults.</p></div><span className="rounded-full border border-border bg-muted px-3 py-1 text-xs text-muted-foreground" role="status">{count} {count === 1 ? "change" : "changes"}</span></div>
-    <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(300px,.9fr)]">
-      <div className="min-w-0 space-y-4 rounded-xl border border-border bg-card p-4 sm:p-5">
+  return <section id="live-editor" aria-labelledby="live-editor-heading" className="@container mt-10 scroll-mt-24">
+    <div className="mb-5 flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-widest text-[var(--lm-color-brand-text)]">Live editor</p><h2 id="live-editor-heading" className="mt-1 text-2xl font-semibold">Try the {category} rules</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">Changes apply across this documentation site. They stay in this browser until you reset them. The token reference below shows Leement defaults.</p></div><span className="rounded-full border border-border bg-muted px-3 py-1 text-xs text-foreground" role="status">{count} {count === 1 ? "change" : "changes"}</span></div>
+    <div className="grid items-start gap-5 @min-[52rem]:grid-cols-[minmax(0,1fr)_minmax(300px,.9fr)]">
+      <div className="min-w-0 space-y-4 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground">
         {category === "color" ? <>
-          <div className="flex flex-wrap items-center justify-between gap-3"><h3 className="text-base font-semibold">Semantic colors</h3><div role="group" aria-label="Preview theme" className="inline-flex rounded-lg border border-border bg-muted p-1">{(["light", "dark"] as const).map((option) => <button key={option} type="button" onClick={() => setDocsMode(option)} aria-pressed={mode === option} className="rounded-md px-3 py-1.5 text-xs font-medium capitalize text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-pressed:bg-background aria-pressed:text-foreground aria-pressed:shadow-sm">{option}</button>)}</div></div>
+          <div className="flex flex-wrap items-center justify-between gap-3"><h3 className="text-base font-semibold">Semantic colors</h3><div role="group" aria-label="Preview theme" className="inline-flex rounded-lg border border-border bg-muted p-1">{(["light", "dark"] as const).map((option) => <button key={option} type="button" onClick={() => setDocsMode(option)} aria-pressed={mode === option} className="rounded-md px-3 py-1.5 text-xs font-medium capitalize text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-pressed:bg-background aria-pressed:text-foreground aria-pressed:shadow-sm">{option}</button>)}</div></div>
           <p className="text-xs leading-5 text-muted-foreground">Editing {mode} colors. Switch mode to edit its own values; other foundation values are shared.</p>
           <div className="space-y-3">{colorGroups.map((group) => <details key={group} open={openGroups.has(group)} onToggle={(event) => {
             const isOpen = event.currentTarget.open;
@@ -291,13 +291,13 @@ export function FoundationEditor({ category }: { category: FoundationCategory })
               else next.delete(group);
               return next;
             });
-          }} className="group rounded-lg border border-border bg-muted/30"><summary className="cursor-pointer px-3 py-2.5 text-sm font-medium capitalize focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{group} <span className="text-xs font-normal text-muted-foreground">({colorFields.filter((field) => field.group === group).length})</span></summary><div className="grid gap-2 border-t border-border p-2 sm:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2">{colorFields.filter((field) => field.group === group).map((field) => <ColorControl key={`${mode}-${field.key}`} field={field} mode={mode} />)}</div></details>)}</div>
+          }} className="group rounded-xl bg-background"><summary className="cursor-pointer px-4 py-3 text-sm font-medium capitalize focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{group} <span className="text-xs font-normal text-muted-foreground">({colorFields.filter((field) => field.group === group).length})</span></summary><div className="grid gap-2 px-1 pb-1 @min-[40rem]:grid-cols-2 @min-[52rem]:grid-cols-1 @min-[70rem]:grid-cols-2">{colorFields.filter((field) => field.group === group).map((field) => <ColorControl key={`${mode}-${field.key}`} field={field} mode={mode} />)}</div></details>)}</div>
         </> : <><h3 className="text-base font-semibold capitalize">{category} values</h3><div className="grid gap-3">{fields.map((field) => <SharedControl key={field.key} field={field} />)}</div></>}
       </div>
-      <div className="min-w-0 space-y-4 lg:sticky lg:top-24">
-        <div className="rounded-xl border border-border bg-background p-4 sm:p-5"><div className="mb-4 flex items-center justify-between gap-2"><h3 className="text-base font-semibold">{previewTitles[category]}</h3><span className="text-xs capitalize text-muted-foreground">{mode} mode</span></div><ActualPreview category={category} /></div>
+      <div className="min-w-0 space-y-4 @min-[52rem]:sticky @min-[52rem]:top-24">
+        <div className="rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground"><div className="mb-4 flex items-center justify-between gap-2"><h3 className="text-base font-semibold">{previewTitles[category]}</h3><span className="text-xs capitalize text-foreground">{mode} mode</span></div><div className="min-w-0 rounded-xl bg-background p-4 sm:p-5"><ActualPreview category={category} /></div></div>
         {category === "color" && <ContrastWarning mode={mode} values={preview[mode]} />}
-        <div className="rounded-xl border border-border bg-card p-4"><div className="flex flex-wrap gap-2"><Button type="button" variant="outline" size="sm" onClick={copyCss} disabled={!count}>Copy CSS</Button><Button type="button" variant="ghost" size="sm" onClick={() => { reset(); setCopyStatus("All preview changes were reset."); }} disabled={!count}>Reset all</Button></div><p className="mt-3 text-xs leading-5 text-muted-foreground">Paste copied overrides after <code>@import "@leement/theme";</code> in your app CSS. Only changed values are included.</p><p role="status" aria-live="polite" className="mt-2 min-h-5 text-xs text-foreground">{copyStatus}</p></div>
+        <div className="rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground"><div className="flex flex-wrap gap-2"><Button type="button" variant="outline" size="sm" onClick={copyCss} disabled={!count}>Copy CSS</Button><Button type="button" variant="ghost" size="sm" onClick={() => { reset(); setCopyStatus("All preview changes were reset."); }} disabled={!count}>Reset all</Button></div><p className="mt-3 text-xs leading-5 text-muted-foreground">Paste copied overrides after <code>@import "@leement/theme";</code> in your app CSS. Only changed values are included.</p><p role="status" aria-live="polite" className="mt-2 min-h-5 text-xs text-foreground">{copyStatus}</p></div>
       </div>
     </div>
   </section>;

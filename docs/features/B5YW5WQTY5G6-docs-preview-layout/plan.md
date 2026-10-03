@@ -19,7 +19,7 @@
 3. RootLayout이 문서 바깥 inset을 소유한다. Adoption의 중첩 main/px/py를 제거하고 전체 route에서 추가 바깥 padding을 확인한다. 의도적인 본문 폭 제한과 우측 목차는 유지한다.
 4. FormSection은 실제 영역이 40rem 이상일 때 2단으로 전환해 좁은 gallery column에서도 입력 영역을 확보한다. 전체 85개 예제의 source/geometry를 조사하고 실질적인 내부 overflow, 잘린 제어, flex 축소 문제만 책임 위치에 수정한다. 문서 여백을 registry 컴포넌트 API에 추가하지 않는다.
 
-5. Docs 전용 section은 `rounded-2xl bg-muted p-5 sm:p-6`를 사용하고 입력·코드·예제에 `bg-background`의 독립 표면을 제공한다. Installation은 순서, Changelog는 세로 목록, Overview는 넓은 소개 배치를 유지한다. FoundationEditor/AdoptionCompositions의 표시 wrapper만 바꾸고 실제 registry source와 detail page는 수정하지 않는다.
+5. Docs 전용 section은 `rounded-2xl bg-muted p-5 sm:p-6`를 사용하고 입력·코드·예제에 `bg-background`의 독립 표면을 제공한다. Installation은 순서, Changelog는 세로 목록, Overview는 넓은 소개 배치를 유지한다. FoundationEditor는 52rem container 기준으로 2단을 전환한다. FoundationEditor/AdoptionCompositions의 표시 wrapper만 바꾸고 실제 registry source와 detail page는 수정하지 않는다.
 
 ## 파일 구조
 

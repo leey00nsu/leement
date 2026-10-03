@@ -1,0 +1,794 @@
+{
+  "date": "2026-10-03",
+  "scope": "Docs surface extension in existing Feature; afc634e baseline",
+  "surfaceViews": [
+    {
+      "path": "/",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/showcase",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 86,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/showcase",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 86,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/showcase",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 86,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/showcase",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 86,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/showcase",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 86,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/showcase",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 86,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/getting-started",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/getting-started",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/getting-started",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/getting-started",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/getting-started",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/getting-started",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/adoption",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 8,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/adoption",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 8,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/adoption",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 8,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/adoption",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 8,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/adoption",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 8,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/adoption",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 8,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/changelog",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 3,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/changelog",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 3,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/changelog",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 3,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/changelog",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 3,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/changelog",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 3,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/changelog",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 3,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/color",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 7,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/color",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 7,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/color",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 7,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/color",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 7,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/color",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 7,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/color",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 7,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/typography",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/typography",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/typography",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/typography",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/typography",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/typography",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/spacing",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/spacing",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/spacing",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/spacing",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/spacing",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/spacing",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/radius",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/radius",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/radius",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/radius",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/radius",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/radius",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/shadow",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/shadow",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/shadow",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/shadow",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/shadow",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/shadow",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 4,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/motion",
+      "width": 390,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/motion",
+      "width": 390,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/motion",
+      "width": 1024,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/motion",
+      "width": 1024,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/motion",
+      "width": 1440,
+      "mode": "light",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    },
+    {
+      "path": "/foundations/motion",
+      "width": 1440,
+      "mode": "dark",
+      "mainCount": 1,
+      "documentOverflow": false,
+      "bad": [],
+      "panelCount": 5,
+      "borderlessPanels": "pass"
+    }
+  ],
+  "interactions": [
+    {
+      "check": "Color picker, document-wide value update, CSS copy and reset",
+      "status": "pass"
+    },
+    {
+      "check": "typography edit/copy/reset/TOC",
+      "status": "pass"
+    },
+    {
+      "check": "spacing edit/copy/reset/TOC",
+      "status": "pass"
+    },
+    {
+      "check": "radius edit/copy/reset/TOC",
+      "status": "pass"
+    },
+    {
+      "check": "shadow edit/copy/reset/TOC",
+      "status": "pass"
+    },
+    {
+      "check": "motion edit/copy/reset/TOC",
+      "status": "pass"
+    },
+    {
+      "check": "Adoption email/date/select/copy/collapsible",
+      "status": "pass"
+    },
+    {
+      "check": "Installation order and six code examples preserved",
+      "status": "pass"
+    }
+  ],
+  "foundationInternalBounds": [
+    {
+      "slug": "color",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "slug": "color",
+      "width": 1024,
+      "status": "pass"
+    },
+    {
+      "slug": "color",
+      "width": 1440,
+      "status": "pass"
+    },
+    {
+      "slug": "typography",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "slug": "typography",
+      "width": 1024,
+      "status": "pass"
+    },
+    {
+      "slug": "typography",
+      "width": 1440,
+      "status": "pass"
+    },
+    {
+      "slug": "spacing",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "slug": "spacing",
+      "width": 1024,
+      "status": "pass"
+    },
+    {
+      "slug": "spacing",
+      "width": 1440,
+      "status": "pass"
+    },
+    {
+      "slug": "radius",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "slug": "radius",
+      "width": 1024,
+      "status": "pass"
+    },
+    {
+      "slug": "radius",
+      "width": 1440,
+      "status": "pass"
+    },
+    {
+      "slug": "shadow",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "slug": "shadow",
+      "width": 1024,
+      "status": "pass"
+    },
+    {
+      "slug": "shadow",
+      "width": 1440,
+      "status": "pass"
+    },
+    {
+      "slug": "motion",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "slug": "motion",
+      "width": 1024,
+      "status": "pass"
+    },
+    {
+      "slug": "motion",
+      "width": 1440,
+      "status": "pass"
+    }
+  ],
+  "excludedPathsUnchanged": "registry; components/blocks/patterns routes; public examples; ItemPage/ItemWorkbench/PreviewFrame/previews; globals.css compared with afc634e",
+  "limits": "Temporary Chrome geometry/interaction checks and representative screenshots; no pixel diff of every state or extreme custom foundation values."
+}

@@ -65,7 +65,6 @@ T-03 최종 확인: [catalog-audit.json](./artifacts/catalog-audit.json)에85개
 - [Showcase](./artifacts/showcase-desktop.png), [Preview](./artifacts/preview-text-reveal.png), [dark Preview](./artifacts/preview-text-reveal-dark.png), [Adoption](./artifacts/adoption-desktop.png), [SettingsSection](./artifacts/fixed-settings-section-desktop.png), [MiniCalendar](./artifacts/fixed-mini-calendar-mobile.png), [Date picker](./artifacts/fixed-calendar-mobile.png), [Tags](./artifacts/fixed-tags-mobile.png)를 직접 확인했다.
 - 잔여 한계: 전체1020개는 geometry 검증이며 각 조합의 pixel diff가 아니다. 의도적 내부 스크롤/동적 외부 Sandpack pane 및 portal은 각각의 표시 책임을 유지한다. 공통 surface와 focus ring의 token 값은 그대로다.
 
-<!-- lee-spec-kit:workflow-sync sha256:eb96a20f193d3d9234a48af133470b54db0ea8ea6771525e2467cb5f14ba9215 -->
 
 ## D005: Docs의 표면을 통일하고 페이지별 읽기 구조를 유지한다 (2026-10-03)
 
@@ -73,3 +72,11 @@ T-03 최종 확인: [catalog-audit.json](./artifacts/catalog-audit.json)에85개
 - **Decision**: 같은 Feature에 T-04를 추가한다. Overview, Installation, Adoption, 여섯 Foundations, Changelog의 Docs 전용 표면을 정리한다. 타일 그리드는 비교할 샘플에 사용하고 긴 문서는 순서대로 읽게 한다. Component/Block/Pattern detail·registry 및 공용 PreviewFrame/workbench는 추가 작업에서 변경하지 않는다.
 - **Trace**: DocsNavigation의 Overview는 `/`이다. 홈의 hero/넓은 scaffold를 유지하면서 소개 구획과 sample 바깥 표면을 정리한다. FoundationEditor는 편집·실제 샘플·복사 wrapper만 변경하고 실제 registry component는 유지한다.
 - **Verification**: Docs11 routes의 세 폭/두 테마, picker/editor/CSS copy/reset/목차/adoption 조작, 기존 featureChecks와 afc634e 대비 제외 경로의 무변경을 검증한다. README는 이번에도 요청 범위에 없다.
+
+T-04 구현: Docs 전용7개 source 파일의 wrapper를 정리했다. FoundationEditor의 입력 구획은 muted 배경/white 입력 그룹, 샘플은 muted 바깥 구획/독립 background 표면, 복사 영역은 같은 padding을 사용한다. Adoption의 예제 wrapper는 문서 section으로 변경하고 실제 제어 source를 유지한다. Installation의 기존 prose CSS가 Tailwind보다 우선해 코드 border/background를 덮는 것을 실제 screenshot에서 확인했으므로 해당 페이지를 로컬 Tailwind 스타일로 표현하여 다른 경로의 CSS에 영향을 주지 않는다.
+
+T-04 추가 확인: actual preview 내부 bounds 검사는1024px Motion의 Pause accent 버튼 넘침을 발견했다. FoundationEditor는 자신의 폭52rem 이상에서만2단으로 전환하며 field grid도 같은 container 기준을 사용한다. 기존 example/registry를 수정하지 않고 좁은 Docs 샘플 영역의 가용 폭을 확보한다. Light muted 표면(#f5f5f5) 위 muted text(#737373)는 약4.35:1이므로 새 Docs 구획의 긴 설명에는 기본 foreground를 사용한다. 테마 토큰 자체와 기존 Showcase/상세 페이지는 그대로다.
+
+T-04 최종 검증: [docs-surface-audit.json](./artifacts/docs-surface-audit.json)에 Docs66개 화면, 실제 Foundation preview18개 내부 bounds,8개 picker/edit/copy/reset/TOC/adoption/설치 검사 결과를 보존했다. Typecheck/lint/test/build 모두 통과했고 기존93개 테스트도 통과했다. 제외 경로의 afc634e 대비 diff는 비어 있다. Desktop/mobile/dark 대표 screenshot을 직접 확인했다. 현재 Feature의 구현 승인과 별도 병합 승인은 계속 대기 중이다.
+
+<!-- lee-spec-kit:workflow-sync sha256:29c1b1d0744badd445d98b7846323b509f73fbc8b710c8d0851525eb3f2aace7 -->

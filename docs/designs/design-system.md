@@ -82,6 +82,8 @@ Foundations의 Color, Typography, Spacing, Radius, Shadow, Motion에는 실제 r
 
 문서 카탈로그 항목은 `bg-muted`의 낮은 강조 표면과 20/24px 여백으로 구분하고 바깥 border·shadow·footer 구분선을 중첩하지 않는다. 실제 예제는 `bg-background` 프리뷰 표면에 표시하며 컴포넌트 자체 border는 유지한다. PreviewFrame의 기본 inset은 상세 20/40px, gallery 16/24px이다. 가로·세로 점선과 콘텐츠 padding은 동일한 inset을 읽으며 콘텐츠가 커지면 아래 선과 프레임 높이도 함께 늘어난다. 장식선은 pointer-events를 받지 않는다. 넓은 표·타임라인·편집기는 자기 영역에서 스크롤하고 포털·focus ring을 표시 장식 때문에 자르지 않는다. 문서 바깥 inset은 RootLayout이 소유하고 페이지는 중복 main/padding을 추가하지 않는다. 본문 최대 폭·우측 목차·홈의 넓은 배치는 의도에 맞게 유지한다.
 
+Docs Overview·Installation·Adoption·Foundations·Changelog도 같은 muted 외부 구획과 20/24px padding을 사용한다. 실제 입력·코드·예제는 안쪽 background 표면에서 표시한다. Installation의 순서와 Changelog의 세로 목록, Overview의 넓은 소개 배치는 유지하며 긴 설명을 타일 그리드로 강제하지 않는다. Muted 문서 표면 위의 긴 설명은 기본 foreground로 읽을 수 있게 한다. Foundations editor는 자신의 폭이 52rem 이상일 때 편집/샘플을 2단으로 배치한다. Foundations는 editor·샘플·CSS 복사를 분명한 구획으로 정리하고 token 참조 표의 행 경계와 실제 컴포넌트 border는 유지한다.
+
 FormSection의 제목과 입력 영역은 실제 section 너비가 40rem 이상일 때 2단으로 배치한다. 좁은 카드·사이드 패널에서는 화면 전체가 넓어도 1단으로 쌓는다. 저장 action과 상태 문구는 좁은 영역에서 줄바꿈할 수 있어야 한다.
 
 ## 성숙도와 변경

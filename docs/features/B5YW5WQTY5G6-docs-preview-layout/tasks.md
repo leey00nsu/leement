@@ -120,13 +120,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-B5YW5WQTY5G6-docs-preview-layout-04 Docs 전체 표면과 여백 통일
+- [DONE][PRD-FR-005] T-B5YW5WQTY5G6-docs-preview-layout-04 Docs 전체 표면과 여백 통일
   - Date: 2026-10-03
   - Acceptance:
     - Docs Overview·Installation·Adoption·여섯 Foundations·Changelog가 Showcase와 같은 muted 외부 표면과 내부 콘텐츠 여백을 사용한다. 읽는 순서·editor·CSS 복사·목차를 보존하며 component/block/pattern 페이지와 registry source는 이번 추가 작업에서 변경하지 않는다.
   - Checklist:
-    - [ ] Docs 페이지와 전용 editor/adoption 표시 영역의 표면·padding 정리 및 디자인 문서 동기화
-    - [ ] 390/1024/1440px light/dark 화면과 editor·CSS 복사·목차·설치 안내를 확인하고 기존 featureChecks 실행
+    - [x] Docs 페이지와 전용 editor/adoption 표시 영역의 표면·padding 정리 및 디자인 문서 동기화; token/theme/API 비영향 확인
+    - [x] 390/1024/1440px light/dark 화면과 editor·CSS 복사·목차·설치 안내를 확인하고 기존 featureChecks 실행
   - Docs:
     - docs:designs/design-system.md
     - docs:prd/leement-prd.md
@@ -148,8 +148,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -165,6 +165,7 @@
 | `pnpm run build` | 2026-10-03 | PASS — tokens/theme/88 registry items/Next docs |
 | Chrome layout audit | 2026-10-03 | PASS — 85 items × 12 views, zero findings |
 | Chrome state/keyboard audit | 2026-10-03 | PASS — 62 checks; 22 static-route views plus all85 detail routes |
+| Chrome Docs surface/editor audit | 2026-10-03 | PASS — 66 route views,18 sample bounds,8 interaction flows |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
@@ -174,3 +175,11 @@
 - [Showcase](./artifacts/showcase-desktop.png), [상세 Preview light](./artifacts/preview-text-reveal.png), [dark](./artifacts/preview-text-reveal-dark.png), [Adoption](./artifacts/adoption-desktop.png).
 - [SettingsSection 좁은 desktop 타일](./artifacts/fixed-settings-section-desktop.png), [MiniCalendar mobile](./artifacts/fixed-mini-calendar-mobile.png), [Date picker mobile](./artifacts/fixed-calendar-mobile.png), [긴 Tags mobile](./artifacts/fixed-tags-mobile.png).
 - 기본 geometry는 내부 스크롤/mask/portal을 제외하며 실제 상태8개 항목은 입력/키보드/내용 bounds로 추가 확인했다. 모든 화면 조합의 pixel diff나 모든 제품 데이터 조합을 검증한 것은 아니다. 기존93개 테스트는 통과했고 새 영구 테스트는 추가하지 않았다.
+
+### T-04 검증 증거
+
+- [Docs 표면/조작 판정](./artifacts/docs-surface-audit.json):11개 route × 세 폭 × 두 테마=66개 화면, Foundation 실제 샘플 내부18개 검사,8개 editor/adoption/설치 흐름 확인 통과.
+- [Installation](./artifacts/docs-getting-started-desktop.png), [Adoption](./artifacts/docs-adoption-desktop.png), [Color](./artifacts/docs-color-desktop.png), [모바일](./artifacts/docs-color-mobile.png), [Typography dark](./artifacts/docs-typography-dark.png), [Changelog](./artifacts/docs-changelog-desktop.png), [Overview](./artifacts/docs-overview-desktop.png).
+- 현재 typecheck/lint/test/build 전부 PASS.14개 파일93개 테스트 통과. afc634e 대비 registry·component/block/pattern page·공용 workbench·예제·globals.css의 변경0건 확인. 새 영구 테스트는 추가하지 않았다.
+
+T-04 추가 화면: [Overview 내부 예제](./artifacts/docs-overview-preview.png), [Motion tablet](./artifacts/docs-motion-tablet.png).
