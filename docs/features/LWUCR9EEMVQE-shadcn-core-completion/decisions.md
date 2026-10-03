@@ -103,3 +103,7 @@ Tabs가 orientation을 class용 data attribute에만 쓰고 primitive에는 전�
 - 시각 검토에서 Chart 추가예제의 두 번째 series가 보이지 않았다. --lm-color-fg-muted는 실제 theme에 없고 --lm-color-foreground-muted가 정식 이름이다. 예제의 token 참조를 수정하며 최종 chart4조합의 실제 stroke/Code와 소비자 build를 다시 확인한다. layout/legend 존재만으로 선의 가시성을 검증했다고 주장하지 않는다.
 
 T10 최종 결과:55개 항목/57개 추가예제, Code·설치 명령·outline을 제공한다. Chrome228화면 및44조작,57Code 대조와55항목+Badge 설치 consumer의57예제 strict build/6조작을 완료했다. 모든 featureChecks PASS(19files117tests). README/main을 변경하거나 push/배포하지 않았다. 구현 승인 gate에서 결과 수락을 요청하며 local-ff 통합은 별도 승인이 필요하다.
+
+## D013: 사용자 요청으로 기본 mono 폰트를 D2Coding으로 고정한다
+
+기기별 시스템 mono 대신 한글과 영문 코드를 위한 D2Coding을 기본값으로 제공한다. “다음 task로 진행해줘.”는 T11 구현 허가이며 main 병합 허가가 아니다. 기존 Fonts 배포 규칙대로 theme에 font-face와 자체 웹폰트/OFL/NOTICE를 포함하고 Fonts 이름 입력만으로 외부 폰트를 받지 않는다. mono family는 Foundations에서 재정의할 수 있다. font 파일은 공식 출처의 고정 revision을 기록하며 fallback을 유지한다. README 변경 없음.

@@ -119,3 +119,11 @@ Plan 승인: agentReview.plan disabled 및 workflow-stage의 plan_approve 자동
 | 폼/overlay/선택/motion 동작 | NONE | 재사용 primitive의 기존 계약 테스트와 실제 신규 예제 조작; 지표 전체를 다시 테스트하지 않는다 |
 
 추가예제의 제목만 만들어 놓거나 같은 예제를 재사용해 이름만 바꾸지 않는다.55개의 조사 행마다 실제로 제공된 예제 ID를 최종 evidence로 연결한다. 전체 featureChecks는 마지막T10에서 실행한다. 각 중간태스크는 관련 eslint와 docs typecheck/build 범위 검사 후 commit한다. PRD-FR-008 및 docs/designs/design-system.md의 예제 작성 규칙을T07/T10에서 동기화한다. README와 다른 운영/아키텍처 문서에는 추가 영향NONE이다.
+
+## T11 기본 mono 폰트
+
+사용자의 추가 구현 지시를 반영한다. 공식 D2Coding의 고정 revision 자산 Regular400/Bold700를 lossless WOFF2로 배포하고 OFL 및 출처/해시를 fonts/에 보존한다. theme build의 font-face(swap)와 tokens mono family를 갱신한다. Foundations 기본 옵션에 폰트명을 표시하고 한국어/영문 코드 sample 및 커스텀 파일 로드 안내를 제공한다. registry API나 본문/브랜드 token은 변경하지 않는다.
+
+Curated Documentation Impact: 기존 PRD-FR-002/011/013과 docs/designs/design-system.md를 UPDATE한다. 두 대상은 T11 Docs에 연결한다. 아키텍처·운영·README는 NONE(README 요청 없음).
+
+Verification Contract: UI_RULE_CHANGE, 위험 LOW. 영구 테스트 NONE—기존 typography/preview/token 계약과 typecheck/lint/test/build를 실행한다. 일회 검증으로 npm pack에 두 WOFF2/OFL/NOTICE와 CSS 상대 URL 포함, 독립 소비자 빌드, 실제 Chrome에서 400/700 font 로드 및 glyph 측정(한국어 폭2배/영문 고정폭), Foundations mono 변경/사이트 적용/새로고침 유지/CSS 복사/초기화, 본문·로고 독립성을 확인한다. light/dark390/1440px에서 코드 가로 overflow를 확인한다. Feature supporting artifact에 필요한 검증 결과만 보존한다. 공개 publish/배포는 범위 밖이다.

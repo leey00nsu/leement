@@ -117,3 +117,10 @@ strict TypeScript, framework-agnostic tokens, source ownership을 유지한다. 
 - [x] 55개 추가 예제를 light/dark390/1440px에서 확인하고13개 우선 item의 핵심 동작을 실제 조작한다. 기존 build/typecheck/lint/test를 통과한다.
 
 Pattern15/Block8 조사 결과는 이 예제 보강의 참고다. 이번 추가 구현 대상은 UI55개로 한정하며 두 원본 앱 교체·공개 배포·전체upstream variants 복제는 포함하지 않는다.
+
+## US-6: 기본 mono 폰트를 일관되게 사용한다
+
+- **추가 범위 승인 근거**: 사용자가 D2Coding 추천과 웹폰트 배포 제안을 확인한 뒤 “다음 task로 진행해줘.”라고 요청했다. 기존 Feature T11로 구현하며 병합 승인으로 해석하지 않는다.
+- [ ] theme import에 D2Coding Regular/Bold와 OFL/출처를 포함하며 mono 기본 token을 D2Coding으로 지정한다.
+- [ ] Foundations에서 mono 기본값·커스텀·초기화·CSS 복사를 지원하고 한국어/영문 예제로 역할을 설명한다.
+- [ ] pack 산출물과 실제 소비자 폰트 로드 및 기존 featureChecks를 확인한다. 본문/브랜드 폰트 역할은 독립적이다.

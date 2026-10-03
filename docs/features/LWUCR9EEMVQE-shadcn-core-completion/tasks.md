@@ -227,6 +227,23 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-002] T-LWUCR9EEMVQE-shadcn-core-completion-11 D2Coding 기본 mono 웹폰트와 Foundations 설정
+  - Date: 2026-10-03
+  - Acceptance:
+    - theme 기본 import로 D2Coding Regular/Bold가 실제 로드되고 한국어·영문 코드와 Foundations mono 변경·초기화·CSS 복사가 동작한다.
+  - Checklist:
+    - [ ] 공식 font 자산과 OFL·출처를 theme 배포에 포함하고 token 및 문서 기본값을 맞춘다.
+    - [ ] Foundations에서 기본 mono와 커스텀 설정을 안내하고 실제 font 로드·CSS 복사·초기화 및 package pack 소비자를 검증한다.
+    - [ ] typecheck/lint/test/build와 최종 workflow 검증을 통과한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -239,9 +256,9 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
 
