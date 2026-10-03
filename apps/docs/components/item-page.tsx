@@ -163,6 +163,15 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
                 >
                   <AdditionalExamplePreview file={example.file} />
                 </ItemWorkbench>
+                <div className="flex min-w-0 flex-wrap items-center justify-between gap-3 rounded-md bg-muted p-3">
+                  <code className="min-w-0 overflow-x-auto text-xs">
+                    {example.installCommand}
+                  </code>
+                  <CopyButton
+                    value={example.installCommand}
+                    label={`Copy dependencies for ${example.title}`}
+                  />
+                </div>
               </section>
             ))}
           </section>

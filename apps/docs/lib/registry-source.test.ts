@@ -24,6 +24,9 @@ describe("copyable docs example source", () => {
         original.replaceAll("../../../registry/ui/", "@/components/ui/"),
       );
       expect(groups?.exampleCode).toContain("SelectGroup");
+      expect(groups?.installCommand).toBe(
+        "npx shadcn@latest add @leement/label @leement/select",
+      );
     } finally {
       cwd.mockRestore();
     }

@@ -17,7 +17,7 @@ const data = [
 ];
 const config = {
   active: { label: "Active members", color: "var(--lm-color-data-accent)" },
-  new: { label: "New members", color: "var(--lm-color-fg-muted)" },
+  new: { label: "New members", color: "var(--lm-color-foreground-muted)" },
 } satisfies ChartConfig;
 export default function Example() {
   const [indicator, setIndicator] = useState<"dot" | "line" | "dashed">("dot");
@@ -55,12 +55,14 @@ export default function Example() {
           />
           <ChartLegend content={<ChartLegendContent />} />
           <Line
+            isAnimationActive={false}
             dataKey="active"
             stroke="var(--color-active)"
             strokeWidth={2}
             dot={false}
           />
           <Line
+            isAnimationActive={false}
             dataKey="new"
             stroke="var(--color-new)"
             strokeWidth={2}

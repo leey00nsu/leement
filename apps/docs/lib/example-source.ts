@@ -19,7 +19,19 @@ export async function getAdditionalExampleCodes(name: keyof typeof items) {
         path.join(process.cwd(), "examples", `${example.file}.tsx`),
         "utf8",
       );
-      return { ...example, exampleCode: toConsumerExampleCode(code) };
+      const registryImports = [
+        ...code.matchAll(
+          /from\s+["']\.\.\/\.\.\/\.\.\/registry\/(?:ui|patterns|blocks)\/([a-z0-9-]+)["']/g,
+        ),
+      ];
+      const installItems = [
+        ...new Set(registryImports.map((match) => `@leement/${match[1]}`)),
+      ];
+      return {
+        ...example,
+        exampleCode: toConsumerExampleCode(code),
+        installCommand: `npx shadcn@latest add ${installItems.join(" ")}`,
+      };
     }),
   );
 }

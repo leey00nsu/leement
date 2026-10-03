@@ -72,7 +72,7 @@
 - **T06 root cause/result**:40px Input 안의 native file selector button 높이가24px로 제한되고 vertical padding이 없어 파일 input line box가 위에 배치됐다. file:h-6를 file:h-full로 바꾸어 border 내부38px를 채우며 native baseline이 중앙에 놓이게 하고 file:mr-2로8px 간격을 준다. parent line-height/높이 및 일반 입력 스타일은 유지한다. 실제 native 입력을 custom wrapper로 교체하지 않는다.
 - **T06 evidence/limits**: [브라우저8조합·24상태 및 키보드/일반 입력 검증](./artifacts/input-alignment-check.json). Chrome의 실제 렌더링을 확인했으며 다른 브라우저를 검증했다고 주장하지 않는다. Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 생성 registry source 일치,113개 tests,lint/typecheck/build PASS. 사용자 요청으로 구현 승인을 다시 요청하며 병합은 별도 승인이다.
 
-<!-- lee-spec-kit:workflow-sync sha256:ebafc3c556eefffa350c965d19e63af2960b0975a7399fcd57ff4f47d1d53d86 -->
+<!-- lee-spec-kit:workflow-sync sha256:ecf80390c7ece4b992935b76281f635dbc22f9f6c287b98cb7e5b3a79891bca0 -->
 
 ## D009: 사용자 요청에 따른 전체 예제 부족 분석 (2026-10-03)
 
@@ -93,3 +93,13 @@
 ## D011: 추가예제로 드러난 지원 상태를 보정한다 (2026-10-03)
 
 Tabs가 orientation을 class용 data attribute에만 쓰고 primitive에는 전달하지 않아 vertical navigation이 horizontal로 남았다. 전달을 보정한다. Progress value=null에서 indicator의 inline width가 없고 기본 class에도 폭이 없어 시각적으로0폭이었다. data-indeterminate의 전체폭 pulse와 reduced-motion 정지를 적용하며 임의 percent를 만들지 않는다. 새 API/animation engine을 추가하지 않는다. source 변경도 기존 Feature의 예제 지원 범위에 포함하며 T10에서 실제 동작을 확인한다.
+
+## D012: T10 예제 소비와 고정 상태를 검증하며 보정한다 (2026-10-03)
+
+독립 소비자에서 list 예제가 Badge source 없이 compile되지 않았다. 각 실제 example source의 registry import로 추가 설치 명령을 표시한다. UI registry의 runtime dependency를 예제 때문에 늘리지 않는다. ImageCrop aspect=1의 초기 선택 영역이 실제 Chrome에서219.1875×164.390625(4:3)였다. 이미지 크기로 초기/Reset crop을 makeAspectCrop/centerCrop 계산하며 aspect 변경과 이미지 로드도 반영한다. Editor readOnly는 contenteditable뿐 아니라 aria-readonly에 반영한다. 기존 source를 보정하는 범위이며 새로운 public API나 영구 테스트를 추가하지 않는다.
+
+- T10 검증 환경: 실제 Chrome 및 기존 Playwright를 사용했다(Aside 연결 불가의 기존 fallback). paused/offscreen CSS animation의 finished promise는 끝나지 않으므로 UI settle은 실행 중 finite animation과1200ms 상한을 사용한다. Sonner Toaster의 부모 ol은 높이0이며 absolute toast li가 실제 표면이므로 컨테이너가 visible이어야 한다는 잘못된 oracle을 제거했다. Base UI Tabs는 Arrow focus 후 Enter/Space로 활성화하는 기본 계약이며 Menu radio selection은 기본적으로 menu를 닫는다고 가정하지 않는다. 각 조작을 독립 시나리오로 확인한다. Chart 예제의 정적 데이터에는 isAnimationActive=false를 사용해 초기 그래프를 바로 읽도록 했다.
+
+- 시각 검토에서 Chart 추가예제의 두 번째 series가 보이지 않았다. --lm-color-fg-muted는 실제 theme에 없고 --lm-color-foreground-muted가 정식 이름이다. 예제의 token 참조를 수정하며 최종 chart4조합의 실제 stroke/Code와 소비자 build를 다시 확인한다. layout/legend 존재만으로 선의 가시성을 검증했다고 주장하지 않는다.
+
+T10 최종 결과:55개 항목/57개 추가예제, Code·설치 명령·outline을 제공한다. Chrome228화면 및44조작,57Code 대조와55항목+Badge 설치 consumer의57예제 strict build/6조작을 완료했다. 모든 featureChecks PASS(19files117tests). README/main을 변경하거나 push/배포하지 않았다. 구현 승인 gate에서 결과 수락을 요청하며 local-ff 통합은 별도 승인이 필요하다.

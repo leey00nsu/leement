@@ -1,0 +1,269 @@
+{
+  "checks": [
+    {
+      "theme": "light",
+      "name": "native-select",
+      "file": "native-select-groups",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "input-group",
+      "file": "input-group-compositions",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "field",
+      "file": "field-fieldset",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "select",
+      "file": "select-groups",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "select",
+      "file": "select-scroll",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "tabs",
+      "file": "tabs-variants",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "menu-checkbox-radio",
+      "checked": true
+    },
+    {
+      "theme": "light",
+      "name": "dropdown-menu",
+      "file": "dropdown-menu-selection",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "chart",
+      "file": "chart-series",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "progress",
+      "file": "progress-states",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "toast",
+      "file": "toast-feedback",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "avatar",
+      "file": "avatar-images",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "table",
+      "file": "table-native",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "dropzone",
+      "file": "dropzone-files",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "editor",
+      "file": "editor-readonly",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "checkbox",
+      "file": "checkbox-select-all",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "combobox",
+      "file": "combobox-controlled",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "dialog",
+      "file": "dialog-controlled",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "color-picker",
+      "file": "color-picker-controlled",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "image-crop-initial-ratio",
+      "observed": 1,
+      "target": 1,
+      "wide": true,
+      "reset": true
+    },
+    {
+      "theme": "light",
+      "name": "image-crop",
+      "file": "image-crop-aspect",
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "name": "code-clipboard",
+      "exact": true
+    },
+    {
+      "theme": "dark",
+      "name": "native-select",
+      "file": "native-select-groups",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "input-group",
+      "file": "input-group-compositions",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "field",
+      "file": "field-fieldset",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "select",
+      "file": "select-groups",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "select",
+      "file": "select-scroll",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "tabs",
+      "file": "tabs-variants",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "menu-checkbox-radio",
+      "checked": true
+    },
+    {
+      "theme": "dark",
+      "name": "dropdown-menu",
+      "file": "dropdown-menu-selection",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "chart",
+      "file": "chart-series",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "progress",
+      "file": "progress-states",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "toast",
+      "file": "toast-feedback",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "avatar",
+      "file": "avatar-images",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "table",
+      "file": "table-native",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "dropzone",
+      "file": "dropzone-files",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "editor",
+      "file": "editor-readonly",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "checkbox",
+      "file": "checkbox-select-all",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "combobox",
+      "file": "combobox-controlled",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "dialog",
+      "file": "dialog-controlled",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "color-picker",
+      "file": "color-picker-controlled",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "image-crop-initial-ratio",
+      "observed": 1,
+      "target": 1,
+      "wide": true,
+      "reset": true
+    },
+    {
+      "theme": "dark",
+      "name": "image-crop",
+      "file": "image-crop-aspect",
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "name": "code-clipboard",
+      "exact": true
+    }
+  ],
+  "errors": []
+}

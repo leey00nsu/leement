@@ -211,13 +211,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-10 전체55개 추가예제 화면·조작·source 소비자 최종 검증
+- [DONE][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-10 전체55개 추가예제 화면·조작·source 소비자 최종 검증
   - Date: 2026-10-03
   - Acceptance:
     - 55개 실제 추가예제와 Code 연결·theme/viewport·소비자 strict build 및 featureChecks가 통과한다.
   - Checklist:
-    - [ ] 55개 행 예제ID evidence와 실제 화면·주요 조작 검증
-    - [ ] typecheck/lint/test/build 및 소비자 타입/build 확인
+    - [x] 55개 행 예제ID evidence와 실제 화면·주요 조작 검증
+    - [x] typecheck/lint/test/build 및 소비자 타입/build 확인
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -239,9 +239,9 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
 
@@ -252,7 +252,7 @@
 | ------------------------ | ----------------------------- | ------------------ |
 | pnpm run typecheck | 2026-10-03 | PASS,5 workspace tasks |
 | pnpm run lint | 2026-10-03 | PASS,docs/theme/tokens와 registry |
-| pnpm run test | 2026-10-03 | PASS,18 files/113 tests; 신규20 계약 테스트 포함 |
+| pnpm run test | 2026-10-03 | PASS,19 files/117 tests; 기존113+source Code 계약4 |
 | pnpm run build | 2026-10-03 | PASS,tokens/theme/registry/Next production |
 | shadcn@4.21.1 add @leement/신규17개 | 2026-10-03 | PASS,독립 React19/Tailwind4 consumer에서 종속 source27개·typecheck/build |
 | shadcn@4.21.1 add @leement/data-table (빈 consumer) | 2026-10-03 | PASS,source7개+dependencies 자동 설치·typecheck/build |
@@ -286,3 +286,7 @@ T08 검증: 우선13개 항목에15개 named 예제를 연결했다(Select3개 �
 T08 focused regression: source Code/core-form/media-finance/source-extension4 files25 tests PASS(일부 jsdom media pause 미구현 진단은 기존 테스트 환경의 제한).
 
 T09 검증: 보완42개에42개 named 예제를 추가했다. 우선 항목 포함55개/57예제이며 조사 목록 대조 누락/초과0. 고유useId 또는 wrapping label, 지원props를 사용했고 range Calendar의 single-only defaultValue를 제거했다. 새 예제의 코드는 formatter로 정리했다. docs typecheck, 예제 전체 및 변경 docs eslint, source Code 계약4개 PASS. 화면·조작·소비자 build는T10에서 확인한다.
+
+T10 완료 증거: [55개/57예제 대응표](./artifacts/additional-example-coverage.json), [228화면·57Code 및 chart stroke4조합](./artifacts/additional-example-matrix.json), [44실제 조작](./artifacts/additional-example-interactions.json), [55registry항목+Badge 설치 및57예제 strict consumer build/실제6조작](./artifacts/additional-consumer-checks.json). Chrome에서 light/dark390/1440px를 확인했고 보존한12개 대표 화면을 포함하여 contact sheet로 새 예제의 배치를 직접 검토했다. 가로 overflow/렌더 오류0, Code 원본 불일치0, Showcase 추가예제 mount0이다. Chart 두 series의 stroke가 실제 색으로 resolve되는 것도 확인했다.
+
+T10 회귀 보정: Tabs vertical orientation 전달, Progress unknown indicator 폭과 reduced motion, ImageCrop 고정 aspect 초기/Reset 및 Editor aria-readonly를 수정했다. 추가 예제의 설치 명령은 실제 import 항목으로 표시한다. typecheck/lint/test117개/build PASS, consumer55항목+Badge namespace 설치/57예제 compile·build PASS. Vite의 use client directive 무시 진단은 client-only consumer에서 예상된 것으로 빌드 실패가 아니다. theme은 로컬 pack, registry는 localhost3011을 사용했다. 공개 publish/배포·다른 브라우저·원본 두 앱 교체는 수행하지 않았다. 구현 승인과 병합 승인은 별도다.

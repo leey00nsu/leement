@@ -1,0 +1,34 @@
+{
+  "registryItems": 55,
+  "additionalDependency": "@leement/badge",
+  "examples": 57,
+  "strictTypecheck": true,
+  "build": true,
+  "checks": [
+    {
+      "file": "select-groups",
+      "pass": true
+    },
+    {
+      "file": "field-fieldset",
+      "pass": true
+    },
+    {
+      "file": "dropdown-menu-selection",
+      "pass": true
+    },
+    {
+      "file": "image-crop-aspect",
+      "pass": true
+    },
+    {
+      "file": "editor-readonly",
+      "pass": true
+    },
+    {
+      "file": "button-sizes",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

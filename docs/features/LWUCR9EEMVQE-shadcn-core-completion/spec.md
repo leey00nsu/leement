@@ -109,11 +109,11 @@ strict TypeScript, framework-agnostic tokens, source ownership을 유지한다. 
 ## US-5: 지원 기능을 이름 있는 실제 예제로 확인한다
 
 - **추가 범위 승인 근거**: 전수 분석 결과표(우선13·보완42·유지24)와 상세 Examples 구조를 제시한 뒤2026-10-03 사용자가 “수정 시작.”이라고 명시적으로 구현을 요청했다. 현재 Feature에 반영한다. 기존 구현 결과 수락이나 병합 승인으로 해석하지 않는다.
-- [ ] UI55개(우선13·보완42)의 조사 결과에 연결된 예제를 추가한다.24개는 기존 핵심 예제를 유지한다.
-- [ ] 상세 문서에 이름·사용 목적·독립 Preview/Code를 갖춘 Examples를 제공하며 Code는 해당 예제 source와 일치한다.
-- [ ] Showcase는 기존 대표 예제를 사용하며 추가 예제를 동시에 mount하지 않는다. 실제 registry source를 import한다.
-- [ ] API가 지원하는 variant/size/disabled/error/compound 조합 및 callback 결과를 보여준다. upstream 미지원 API를 추가하거나 약속하지 않는다.
-- [ ] 입력의 label/id,keyboard/focus,disabled/ARIA 및 로컬 앱 결과가 예제에서 동작한다. label/id는 동일 페이지의 기존 예제와 충돌하지 않는다.
-- [ ] 55개 추가 예제를 light/dark390/1440px에서 확인하고13개 우선 item의 핵심 동작을 실제 조작한다. 기존 build/typecheck/lint/test를 통과한다.
+- [x] UI55개(우선13·보완42)의 조사 결과에 연결된 예제를 추가한다.24개는 기존 핵심 예제를 유지한다.
+- [x] 상세 문서에 이름·사용 목적·독립 Preview/Code를 갖춘 Examples를 제공하며 Code는 해당 예제 source와 일치한다.
+- [x] Showcase는 기존 대표 예제를 사용하며 추가 예제를 동시에 mount하지 않는다. 실제 registry source를 import한다.
+- [x] API가 지원하는 variant/size/disabled/error/compound 조합 및 callback 결과를 보여준다. upstream 미지원 API를 추가하거나 약속하지 않는다.
+- [x] 입력의 label/id,keyboard/focus,disabled/ARIA 및 로컬 앱 결과가 예제에서 동작한다. label/id는 동일 페이지의 기존 예제와 충돌하지 않는다.
+- [x] 55개 추가 예제를 light/dark390/1440px에서 확인하고13개 우선 item의 핵심 동작을 실제 조작한다. 기존 build/typecheck/lint/test를 통과한다.
 
 Pattern15/Block8 조사 결과는 이 예제 보강의 참고다. 이번 추가 구현 대상은 UI55개로 한정하며 두 원본 앱 교체·공개 배포·전체upstream variants 복제는 포함하지 않는다.

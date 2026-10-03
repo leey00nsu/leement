@@ -17,7 +17,7 @@ function Editor({ label, initialContent = "", onChange, readOnly = false, classN
   const onChangeRef = React.useRef(onChange);
   onChangeRef.current = onChange;
   const editor = useEditor({ extensions: [StarterKit], content: initialContent, immediatelyRender: false, editable: !readOnly, editorProps: { attributes: { "aria-label": label, role: "textbox", "aria-multiline": "true" } }, onUpdate: ({ editor }) => onChangeRef.current?.(editor.getHTML()) });
-  React.useEffect(() => { editor?.setEditable(!readOnly); }, [editor, readOnly]);
+  React.useEffect(() => { editor?.setEditable(!readOnly); editor?.view.dom.setAttribute("aria-readonly", String(readOnly)); }, [editor, readOnly]);
   const actions = [
     { label: "Heading 1", pressed: editor?.isActive("heading", { level: 1 }), disabled: false, Icon: Heading1, run: () => editor?.chain().focus().toggleHeading({ level: 1 }).run() },
     { label: "Heading 2", pressed: editor?.isActive("heading", { level: 2 }), disabled: false, Icon: Heading2, run: () => editor?.chain().focus().toggleHeading({ level: 2 }).run() },

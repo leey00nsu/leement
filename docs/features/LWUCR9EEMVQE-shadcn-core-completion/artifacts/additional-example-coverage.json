@@ -1,0 +1,997 @@
+{
+  "items": 55,
+  "examples": 57,
+  "retained": 24,
+  "missing": [],
+  "rows": [
+    {
+      "name": "aspect-ratio",
+      "priority": "보완",
+      "recommendation": "실제 이미지의 object-cover 조합과 1:1 비율 비교.",
+      "examples": [
+        {
+          "id": "media",
+          "title": "Square and widescreen media",
+          "description": "The ratio controls the frame; object-fit controls how the image fills it.",
+          "file": "aspect-ratio-media",
+          "sourceSha256": "5c7f44d7b9e7865dbc38df0d7cb41e3a47e77400b864eb0c5e41b1548077024e",
+          "installItems": [
+            "aspect-ratio"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "priority": "보완",
+      "recommendation": "orientation=vertical, 아이콘/분할 action 조합.",
+      "examples": [
+        {
+          "id": "orientation",
+          "title": "Vertical and icon actions",
+          "description": "Use a group label and individual accessible names. Grouping does not turn buttons into a menu or tab list.",
+          "file": "button-group-orientation",
+          "sourceSha256": "bd855179dc548142394fa7c6d232b7431410fe9d63f9175f09ad5015217a971d",
+          "installItems": [
+            "button-group",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "priority": "보완",
+      "recommendation": "multiple 배열 값과 controlled value 조합.",
+      "examples": [
+        {
+          "id": "multiple",
+          "title": "Multiple open sections",
+          "description": "Control the array of open sections when the application needs to observe or reset expansion.",
+          "file": "accordion-multiple",
+          "sourceSha256": "8620394077a085fefb4c40c5088d547f07e42c3eb59774df15d6f9c9cd115a9e",
+          "installItems": [
+            "accordion",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "priority": "보완",
+      "recommendation": "vertical orientation과 앱에 전달되는 배열 값 표시.",
+      "examples": [
+        {
+          "id": "vertical",
+          "title": "Vertical controlled selection",
+          "description": "Multiple selection uses an array of values. The result belongs to the application.",
+          "file": "toggle-group-vertical",
+          "sourceSha256": "eb0320abcad4a3afea65ae601413077ea425fe4e5f6e8eb5fc08f8a08d8659a9",
+          "installItems": [
+            "toggle-group"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "priority": "보완",
+      "recommendation": "sm 크기 비교와 controlled pressed 결과.",
+      "examples": [
+        {
+          "id": "controlled",
+          "title": "Compact controlled toggle",
+          "description": "A toggle expresses an on/off preference for an action; it does not submit a checkbox value.",
+          "file": "toggle-controlled",
+          "sourceSha256": "19c671678859d7098b8554bf8137d67cb8e76f4457a82f79c8dc4c716ec0ddb6",
+          "installItems": [
+            "toggle"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "priority": "우선",
+      "recommendation": "NativeSelectOptGroup으로 그룹, small 및 invalid Field 조합.",
+      "examples": [
+        {
+          "id": "groups",
+          "title": "Grouped native options",
+          "description": "Native optgroups, a compact control, and an invalid field retain browser selection and form submission.",
+          "file": "native-select-groups",
+          "sourceSha256": "6eb59957d5c637fa0293afa4533fd0720d3a581fa8b428a0b9f5afe2925defdf",
+          "installItems": [
+            "native-select",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "priority": "우선",
+      "recommendation": "Textarea part, suffix 단위, invalid 상태, 검색 action 결과. disabled 입력과 별도 버튼을 함께 잠그는 사용법.",
+      "examples": [
+        {
+          "id": "compositions",
+          "title": "Search, units and multiline",
+          "description": "Addons and buttons belong to the same control. The application owns search results and disables both input and action.",
+          "file": "input-group-compositions",
+          "sourceSha256": "72c477c6ac7ba5eac2b64f44f0e6cf70fc724e9914777ff6bf01e4eded0fc518",
+          "installItems": [
+            "input-group"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "priority": "우선",
+      "recommendation": "FieldSet/Legend와 RadioGroup/Checkbox 조합; Textarea/NativeSelect의 FieldControl render 연결.",
+      "examples": [
+        {
+          "id": "fieldset",
+          "title": "Related fields and form values",
+          "description": "Use a legend for the group, labels for each control, and a local submission result. No form engine is required.",
+          "file": "field-fieldset",
+          "sourceSha256": "3fa9621c64c4a7e70047fd569efd667cb10912f98110df7f0da2f447acc3a916",
+          "installItems": [
+            "field",
+            "textarea",
+            "native-select",
+            "checkbox",
+            "radio-group",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "priority": "보완",
+      "recommendation": "controlled 값과 form 제출 결과, invalid Field 조합.",
+      "examples": [
+        {
+          "id": "form",
+          "title": "Form selection and invalid state",
+          "description": "Radio values share one form name. An invalid group describes how to correct the selection.",
+          "file": "radio-group-form",
+          "sourceSha256": "e88618c90a96f99dccb392f908f7fc46b34621d56aa299f153745ce8a8d8e517",
+          "installItems": [
+            "radio-group",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "priority": "보완",
+      "recommendation": "상위 전체 선택과 자식 항목을 연결하는 실제 indeterminate 예제 및 form 제출 결과.",
+      "examples": [
+        {
+          "id": "select-all",
+          "title": "Derived mixed selection",
+          "description": "The parent is indeterminate when only some children are selected. Form submission contains the checked child values.",
+          "file": "checkbox-select-all",
+          "sourceSha256": "55ec681cd421b99dcd6e98ca7842e0661f16a03d11dc7c600b8238ba9ac7eeee",
+          "installItems": [
+            "checkbox",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rotating-content",
+      "priority": "보완",
+      "recommendation": "controls=false의 외부 controlled pause button 조합; decorative heading 밖에 접근 가능한 제어를 둔다.",
+      "examples": [
+        {
+          "id": "external-control",
+          "title": "An external pause control",
+          "description": "When controls are hidden, supply controlled paused state and an accessible control outside the decorative text.",
+          "file": "rotating-content-external-control",
+          "sourceSha256": "d4fafedef10556a18b1a4753b4989612b39da7116bdf0e662556488a33fdee94",
+          "installItems": [
+            "rotating-content",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "text-reveal",
+      "priority": "보완",
+      "recommendation": "duration/stagger를 비교할 수 있는 replay 예제.",
+      "examples": [
+        {
+          "id": "timing",
+          "title": "Duration, stagger and replay",
+          "description": "Short and slower timings use the same readable text. Replay remounts the example rather than adding a component replay API.",
+          "file": "text-reveal-timing",
+          "sourceSha256": "87dc5a4ffd7152271a246b9f83a2f8631e3ffc029f05b8acd4c553699a1f9a55",
+          "installItems": [
+            "text-reveal",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "priority": "보완",
+      "recommendation": "xs/sm/default/lg/icon/icon-sm 크기 비교, 아이콘 label, asChild 실제 링크.",
+      "examples": [
+        {
+          "id": "sizes",
+          "title": "Sizes, icon names and links",
+          "description": "Choose control size consistently. Icon buttons still need labels; navigation keeps an anchor element.",
+          "file": "button-sizes",
+          "sourceSha256": "3ba09134fdc395cd9f31e62120aa1654e6e73719f5556a15d8ea294742ad601a",
+          "installItems": [
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "priority": "보완",
+      "recommendation": "password/number 등 대표 HTML 타입, error text와 aria-invalid/aria-describedby 연결. file 선택 후는 기존 예제에서 도달 가능.",
+      "examples": [
+        {
+          "id": "types",
+          "title": "Input types and validation feedback",
+          "description": "Native types preserve browser behavior. Associate error text with the invalid input.",
+          "file": "input-types",
+          "sourceSha256": "a28c5e41437373fda19e7a8a07efdd512701e5d6d3c9af43a9dc1fac2e2b1c6a",
+          "installItems": [
+            "input"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "priority": "우선",
+      "recommendation": "라벨 있는 그룹·여러 그룹과 separator, 많은 옵션의 스크롤, sm/disabled/invalid, alignItemWithTrigger 비교.",
+      "examples": [
+        {
+          "id": "groups",
+          "title": "Groups",
+          "description": "Organize choices with group labels and separators. The field label names the input.",
+          "file": "select-groups",
+          "sourceSha256": "18aadfe5c37de916d5499e20f7bd38a90bd11e09c46c678643c7cb6ce84cc616",
+          "installItems": [
+            "label",
+            "select"
+          ]
+        },
+        {
+          "id": "states",
+          "title": "Sizes, errors and positioning",
+          "description": "Compare compact and standard controls. Invalid fields explain the error, and disabled fields remain unavailable.",
+          "file": "select-states",
+          "sourceSha256": "0fd96d8d1228457e4678a246d03eb7c4bb78bf871e537f42ae2c377d3430d088",
+          "installItems": [
+            "select"
+          ]
+        },
+        {
+          "id": "scroll",
+          "title": "Long option lists",
+          "description": "The popup scrolls within its available height and keeps keyboard selection on the active option.",
+          "file": "select-scroll",
+          "sourceSha256": "3212c798a81067a682268b4db0ba3115ebd70e93ec360d3853e4f3826a4b30b6",
+          "installItems": [
+            "select"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "priority": "보완",
+      "recommendation": "sm/default 비교, disabled/invalid, controlled 즉시 설정 결과.",
+      "examples": [
+        {
+          "id": "states",
+          "title": "Sizes and unavailable settings",
+          "description": "Controlled state can update a visible result. Disabled switches are excluded from interaction; invalid switches explain the constraint.",
+          "file": "switch-states",
+          "sourceSha256": "5595b2fc86926533223891676e8c5426002c6c86a49b90122ac27f13828c448d",
+          "installItems": [
+            "switch",
+            "label"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "priority": "우선",
+      "recommendation": "default/line/segmented 비교, vertical, disabled tab, 앱 controlled value.",
+      "examples": [
+        {
+          "id": "variants",
+          "title": "Variants and controlled selection",
+          "description": "Default, line and segmented lists use the same selection model. Vertical lists use vertical keyboard navigation.",
+          "file": "tabs-variants",
+          "sourceSha256": "f17328965f7c3f8c3fbe2ab3ea218f800267a1c1b03db477696e0669e86215e2",
+          "installItems": [
+            "tabs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "priority": "보완",
+      "recommendation": "Checkbox/Switch 연결과 disabled control에 맞춘 label 조합.",
+      "examples": [
+        {
+          "id": "controls",
+          "title": "Labels for binary controls",
+          "description": "A label names its control and enlarges the target. A disabled control remains disabled when its label is clicked.",
+          "file": "label-controls",
+          "sourceSha256": "90f6c80d215365db45ad5ac26deebe7133a9fd3bc230db07d7596d2243447f8c",
+          "installItems": [
+            "label",
+            "checkbox",
+            "switch"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "priority": "보완",
+      "recommendation": "disabled/readOnly/invalid 및 description/error 연결; controlled 글자 수는 앱 조합으로 설명.",
+      "examples": [
+        {
+          "id": "states",
+          "title": "Character feedback, read-only and disabled",
+          "description": "Character limits and validation are application rules. Keep help and error text connected to the field.",
+          "file": "textarea-states",
+          "sourceSha256": "960de10edd80a2bac1225694a659aa24e23cdd11ac19aae189b3182437d273ed",
+          "installItems": [
+            "textarea"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "priority": "보완",
+      "recommendation": "sm/default density 비교, 이미지와 정보·action의 조합.",
+      "examples": [
+        {
+          "id": "media",
+          "title": "Compact cards and media",
+          "description": "Card sizes change content density. A leading image can share the card boundary while actions keep normal control semantics.",
+          "file": "card-media",
+          "sourceSha256": "e3d35ab6f85fd7f81565065c0b005e564dd3ef7efb4870a96a361dc40e0e4415",
+          "installItems": [
+            "card",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "priority": "보완",
+      "recommendation": "높이가 확보된 vertical separator 조합, decorative=false의 의미 설명.",
+      "examples": [
+        {
+          "id": "vertical",
+          "title": "Vertical and semantic separation",
+          "description": "Vertical separators need a container height. Decorative rules do not announce a separator to assistive technology.",
+          "file": "separator-vertical",
+          "sourceSha256": "c4b525270e378a7d58a8f5f6a578a5add781df2ede40b1f9018cf04828e3a5c8",
+          "installItems": [
+            "separator"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "priority": "보완",
+      "recommendation": "controlled open, 긴 내용의 스크롤, showCloseButton=false일 때 명시적 닫기 제어.",
+      "examples": [
+        {
+          "id": "controlled",
+          "title": "Controlled dialog with scrollable content",
+          "description": "Explicit close actions stay available when the corner close button is hidden. Escape and focus return remain primitive behavior.",
+          "file": "dialog-controlled",
+          "sourceSha256": "87cf5fcbcb137895577f630e972bd2ff7ef4ac2e091421dd99f54871a5b797b5",
+          "installItems": [
+            "button",
+            "dialog"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "priority": "우선",
+      "recommendation": "Group/Label/Shortcut, CheckboxItem, RadioGroup/RadioItem, Submenu와 실제 선택 결과.",
+      "examples": [
+        {
+          "id": "selection",
+          "title": "Checkbox, radio and nested actions",
+          "description": "Persist menu choices in application state. Shortcut hints describe commands; they do not register keyboard shortcuts.",
+          "file": "dropdown-menu-selection",
+          "sourceSha256": "4c92bad9a01e69892b24b80980cbacd37bec0a939f726c2b868bf157742d3e86",
+          "installItems": [
+            "button",
+            "dropdown-menu"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "priority": "보완",
+      "recommendation": "side/align 배치 비교와 controlled open 조합.",
+      "examples": [
+        {
+          "id": "positioning",
+          "title": "Positioning and controlled state",
+          "description": "Positioners may flip to fit the viewport. Controlled state still preserves trigger, Escape and focus behavior.",
+          "file": "popover-positioning",
+          "sourceSha256": "f3bed9d9fb30277fdc073b68f3c32da4d68e18b3ce00cd16d9166559034427d6",
+          "installItems": [
+            "button",
+            "popover"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "priority": "보완",
+      "recommendation": "left/top/bottom 방향 비교, 긴 내용과 명시적 닫기.",
+      "examples": [
+        {
+          "id": "sides",
+          "title": "Sides and long content",
+          "description": "Choose a side for the task. The content region scrolls while header and explicit close action stay accessible.",
+          "file": "sheet-sides",
+          "sourceSha256": "41cc088537af4ca820201fd303b81ad980990a9b3e20f4152b3ffc3b5d488dd5",
+          "installItems": [
+            "button",
+            "sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "priority": "보완",
+      "recommendation": "4방향 배치와 아이콘 버튼의 visible/accessible label 조합.",
+      "examples": [
+        {
+          "id": "sides",
+          "title": "Placement and accessible icon targets",
+          "description": "Tooltips supplement labels. Icon buttons must remain named even when the tooltip is closed.",
+          "file": "tooltip-sides",
+          "sourceSha256": "a145249b9196be1f1923835f89baa2886aa70ca7ada86f9efdd70d19805ccc6e",
+          "installItems": [
+            "button",
+            "tooltip"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "priority": "우선",
+      "recommendation": "다중 시리즈+Legend, line/area 등 대표 Recharts 조합, tooltip dot/line/dashed 및 formatter. 각 차트가 별도 Leement API인 것은 아니다.",
+      "examples": [
+        {
+          "id": "series",
+          "title": "Multiple series and legend",
+          "description": "Compare two series with a line chart, semantic colors, a legend and formatted tooltip values. The text summary remains available without hovering.",
+          "file": "chart-series",
+          "sourceSha256": "045186fc64c219ed09c2189caa2a3a951e4b0916f5e2770b08f6a845017cdfc0",
+          "installItems": [
+            "chart"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "brand-gradient-text",
+      "priority": "보완",
+      "recommendation": "animated=false와 paused 비교 및 실제 정지 제어.",
+      "examples": [
+        {
+          "id": "motion",
+          "title": "Static and paused gradients",
+          "description": "A static gradient keeps the brand treatment without animation. A paused gradient can resume through an external button.",
+          "file": "brand-gradient-text-motion",
+          "sourceSha256": "7d4e390648a3d0baa6025451591d33b7c953219b4fb382b9433b9cf7d07e8a86",
+          "installItems": [
+            "brand-gradient-text",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "status-notice",
+      "priority": "보완",
+      "recommendation": "action 슬롯으로 재시도·도움말이 있는 결과 메시지; 기존 tone 예제는 유지.",
+      "examples": [
+        {
+          "id": "actions",
+          "title": "Recovery and contextual actions",
+          "description": "Pair a notice with a useful next step. Application callbacks own retry and completion state.",
+          "file": "status-notice-actions",
+          "sourceSha256": "87e22e1305c7bc815026afa31d2a1cf4b90df78fa28c7663d68b51599a7d3f39",
+          "installItems": [
+            "status-notice",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "reveal-content",
+      "priority": "보완",
+      "recommendation": "6 variants의 차이, line/stagger의 data-reveal-item/media/line 표시와 replay. variant만 바꾼 빈 wrapper를 늘리지 않는다.",
+      "examples": [
+        {
+          "id": "variants",
+          "title": "Reveal variants and child markers",
+          "description": "Line and stagger variants animate marked children. Replay resets the demo; reduced motion shows content immediately.",
+          "file": "reveal-content-variants",
+          "sourceSha256": "6e0ba0fe7c1fb0c2138db2021693f423aa6153877d24c1b9b97e8e6a4f167699",
+          "installItems": [
+            "reveal-content",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "priority": "보완",
+      "recommendation": "disabled/controlled 예제와 form controls를 포함한 긴 panel 조합.",
+      "examples": [
+        {
+          "id": "controlled",
+          "title": "Controlled expansion and disabled trigger",
+          "description": "Control expansion when another action must open the details. Put padding inside the animated content rather than on the height container.",
+          "file": "collapsible-controlled",
+          "sourceSha256": "0e1b59fe4954622ae9f11e819513d369c8f25170b92fbb846de7466be399884a",
+          "installItems": [
+            "collapsible",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "priority": "우선",
+      "recommendation": "indeterminate(value=null)의 실제 표현을 확인한 후 추가, 0/100 경계와 진행값 변경. 자동 Track과 수동 parts 중복 금지 안내.",
+      "examples": [
+        {
+          "id": "states",
+          "title": "Determinate and indeterminate",
+          "description": "Known progress shows its percentage, including zero and completion. Unknown progress omits an invented percentage.",
+          "file": "progress-states",
+          "sourceSha256": "7ace8042e31407d6ff16cfc12b99ed61f4c3b0c7ae091d6214be7c05c65e0e87",
+          "installItems": [
+            "progress",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "priority": "우선",
+      "recommendation": "info/warning/error/loading, promise 결과, action/dismiss 및 host theme 연결. Toaster는 한 번만 mount.",
+      "examples": [
+        {
+          "id": "feedback",
+          "title": "Types, promise and action",
+          "description": "One Toaster is mounted in the representative preview above. These triggers share it; promise work and undo callbacks are owned by the application.",
+          "file": "toast-feedback",
+          "sourceSha256": "fda02633f8a8593f64548b5e3e91831b5035bca64306fc034bc8225c3af699ff",
+          "installItems": [
+            "button",
+            "toast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "priority": "우선",
+      "recommendation": "실제 이미지, 깨진 이미지 fallback, 크기 비교.",
+      "examples": [
+        {
+          "id": "images",
+          "title": "Images, fallback and sizes",
+          "description": "Loaded images use informative alternative text. Failed images fall back to initials; size is controlled with className.",
+          "file": "avatar-images",
+          "sourceSha256": "39f0f8cfb8ba81e326b456d499648f793525a9dacf9d8446542ddb8d3f09511f",
+          "installItems": [
+            "avatar"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "avatar-stack",
+      "priority": "보완",
+      "recommendation": "animate=true 비교와 실제 이미지, 서로 다른 size. 자동 overflow count가 있다고 가정하지 않는다.",
+      "examples": [
+        {
+          "id": "animated",
+          "title": "Images, sizes and expansion",
+          "description": "Animate the stack on hover without adding automatic overflow rules. The application chooses which people to include.",
+          "file": "avatar-stack-animated",
+          "sourceSha256": "0fb475aeca388cdc695ba0fa1197823e30d62b31fc0b6f0fd1184e6e9c15f446",
+          "installItems": [
+            "avatar",
+            "avatar-stack"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "priority": "보완",
+      "recommendation": "disabled date predicate, range 내부 제외 날짜, ko-KR/startDay=1; 기존3 modes를 새로 없는 것처럼 추가하지 않는다.",
+      "examples": [
+        {
+          "id": "constraints",
+          "title": "Locale, unavailable dates and range limits",
+          "description": "Start weeks on Monday and prevent ranges that cross an unavailable day. The application owns availability data.",
+          "file": "calendar-constraints",
+          "sourceSha256": "31da752ebae7db4374d83fadd80186f5922e48b8a21b2d8cb11e682ed4aa4ee3",
+          "installItems": [
+            "calendar"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "priority": "보완",
+      "recommendation": "renderItem으로 맞춤 row를 만드는 source 예제.",
+      "examples": [
+        {
+          "id": "custom-rows",
+          "title": "Custom row content",
+          "description": "Custom rendering changes row content while built-in drag and move controls keep ownership of reordering.",
+          "file": "list-custom-rows",
+          "sourceSha256": "34f49bac17378078f28b8210c967d7480c025a226d45835a173efef0af2dcd17",
+          "installItems": [
+            "list",
+            "badge"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "priority": "우선",
+      "recommendation": "TableHeader/Body/Footer/Caption 조합; legacy empty; AdvancedDataTable로 연결. 기본 Table과 DataTable 이름/API 차이를 설명.",
+      "examples": [
+        {
+          "id": "native",
+          "title": "Native composition and empty results",
+          "description": "Table parts preserve HTML semantics. Use the Data Table pattern when sorting, filtering and selection must work together.",
+          "file": "table-native",
+          "sourceSha256": "cc37cec9b6d6bedcf46034830582c27f67faa6becfe644aab2c00bd9a2a8a184",
+          "installItems": [
+            "table"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "priority": "보완",
+      "recommendation": "단일 code prop, showLineNumbers=false, 지원하지 않는 language의 plain text 처리.",
+      "examples": [
+        {
+          "id": "plain",
+          "title": "Single code and plain-text fallback",
+          "description": "A single source does not need a language selector. Unknown languages render safely as plain text, with line numbers omitted.",
+          "file": "code-block-plain",
+          "sourceSha256": "99bde17a6c640f1dd267d3bb1a4fbebad502d1b32099daf2109681258247871d",
+          "installItems": [
+            "code-block"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "contribution-graph",
+      "priority": "보완",
+      "recommendation": "onSelect 결과, 짧은 기간과 ko-KR 예제.",
+      "examples": [
+        {
+          "id": "selection",
+          "title": "Localized interval and selection",
+          "description": "Use a short reporting interval and read the selected day through the application callback.",
+          "file": "contribution-graph-selection",
+          "sourceSha256": "f5720b6d45abca2b2ab068820c07f3ec25e0342f571044b2dfa4f3ca4cb2301d",
+          "installItems": [
+            "contribution-graph"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "choicebox",
+      "priority": "보완",
+      "recommendation": "controlled 선택 및 form/name 제출 결과, fieldset 전체 disabled.",
+      "examples": [
+        {
+          "id": "form",
+          "title": "Controlled choice and form submission",
+          "description": "The controlled selection remains a native radio value. Disabling the fieldset locks all choices.",
+          "file": "choicebox-form",
+          "sourceSha256": "aafedbe0f58b7ef9b612257bcfcb5d06bee155d67423aee7b0f0bb70479711f2",
+          "installItems": [
+            "choicebox",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "priority": "보완",
+      "recommendation": "control 전체 disabled, default selection, controlled value를 앱에 반영하는 예제. 그룹/다중/async는 현 API 미지원.",
+      "examples": [
+        {
+          "id": "controlled",
+          "title": "Controlled assignment and disabled field",
+          "description": "Observe the selected option in application state. Disabling the whole combobox differs from disabling individual options.",
+          "file": "combobox-controlled",
+          "sourceSha256": "832a917707fcfdecada543463f145aca738e230bdef73c01b15d40c3ae041564",
+          "installItems": [
+            "combobox"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dropzone",
+      "priority": "우선",
+      "recommendation": "단일/전체 disabled 비교; onFiles로 파일 목록·정보를 외부에 전달하는 실제 소비자 예제와 거절 시나리오 안내.",
+      "examples": [
+        {
+          "id": "files",
+          "title": "Single, multiple and disabled",
+          "description": "Read selected files locally to show names and sizes. Selecting a file does not upload it to a server.",
+          "file": "dropzone-files",
+          "sourceSha256": "f09721e936363a1b1f1dc622780132094b6a5cc67a621752055d6426c82a9df9",
+          "installItems": [
+            "dropzone"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tags",
+      "priority": "보완",
+      "recommendation": "disabled와 controlled value의 실제 소비자 저장 값 예제. limit 기능을 미구현으로 분류하지 않는다.",
+      "examples": [
+        {
+          "id": "controlled",
+          "title": "Controlled tags and locked values",
+          "description": "Read tag changes outside the control. Disabled tags cannot be added or removed.",
+          "file": "tags-controlled",
+          "sourceSha256": "abb9969c0342e731b90a25b6a25ddb935381d10ac463f966dd108e0faa0e6e35",
+          "installItems": [
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "image-crop",
+      "priority": "보완",
+      "recommendation": "aspect=1 및 16/9 fixed aspect 비교. 실제 파일 저장은 앱 책임.",
+      "examples": [
+        {
+          "id": "aspect",
+          "title": "Fixed crop ratios",
+          "description": "Choose a square or widescreen crop. The callback returns percentages; creating or uploading the resulting image is application work.",
+          "file": "image-crop-aspect",
+          "sourceSha256": "4ce60833ecbecb705d1e8623a913c4fa1ba3230b243c5dbbe0c6de0280e56b45",
+          "installItems": [
+            "image-crop",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ticker",
+      "priority": "보완",
+      "recommendation": "negative 값과 layout=card를 비교; 다른 currency/locale은 선택적 보완.",
+      "examples": [
+        {
+          "id": "card",
+          "title": "Negative change and localized currency",
+          "description": "A card layout supports more context. Currency formatting and sign convey the value without relying on color alone.",
+          "file": "ticker-card",
+          "sourceSha256": "6e5f4a71162e0ee45fc145a9f083ab9b25d1a3739c0846a01e734bcf5779ddb5",
+          "installItems": [
+            "ticker"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stories",
+      "priority": "보완",
+      "recommendation": "presentation=viewer와 autoAdvanceMs; pause 및 reduced motion 규칙. Reel과 같은 항목으로 합치지 않는다.",
+      "examples": [
+        {
+          "id": "viewer",
+          "title": "Embedded viewer and automatic advance",
+          "description": "Use an embedded viewer when thumbnails are unnecessary. Playback controls pause automatic advance; reduced motion avoids autoplay.",
+          "file": "stories-viewer",
+          "sourceSha256": "a491dc4ff0d001c54ffd2ee34c0cd5605bb6a9eb4315e0f52350fa5ab0c8d089",
+          "installItems": [
+            "stories"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "announcement",
+      "priority": "보완",
+      "recommendation": "href 없는 static 및 dismissible=false 비교.",
+      "examples": [
+        {
+          "id": "static",
+          "title": "Static and persistent announcement",
+          "description": "Informational announcements can omit a link and dismissal. Use a link only when there is a destination.",
+          "file": "announcement-static",
+          "sourceSha256": "10bbf69255ba048bd8efe6f89e16945774c1231fe052e7656b9398ff452af473",
+          "installItems": [
+            "announcement"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "banner",
+      "priority": "보완",
+      "recommendation": "tone=subtle 비교와 tone에 맞는 action 대비.",
+      "examples": [
+        {
+          "id": "subtle",
+          "title": "Subtle contextual banner",
+          "description": "Use a quiet surface for secondary guidance and an outlined action for a clear, readable next step.",
+          "file": "banner-subtle",
+          "sourceSha256": "47c9504fda5bb737b9aa1c3a772083d0ad57790d32939da7e2a2f9c562089a85",
+          "installItems": [
+            "banner",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "priority": "보완",
+      "recommendation": "누락된 small role, 동일 heading element에 다른 visual variant 비교.",
+      "examples": [
+        {
+          "id": "semantics",
+          "title": "Visual hierarchy and HTML meaning",
+          "description": "The same heading element can use different visual variants. Small text remains legible supporting content.",
+          "file": "typography-semantics",
+          "sourceSha256": "f9693cf5ceeddbbbcf18c9ac6f734ec6978a05f3c2d7aef1cd8bc2461a3f5bc5",
+          "installItems": [
+            "typography"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "priority": "보완",
+      "recommendation": "controlled value/onValueChange로 외부 실제 대상 색상을 바꾸는 예제, translucent initial value와 disabled.",
+      "examples": [
+        {
+          "id": "controlled",
+          "title": "Controlled color and transparency",
+          "description": "Change a local illustration fill to observe the selected color, including alpha. These example values belong to content, not the system palette.",
+          "file": "color-picker-controlled",
+          "sourceSha256": "11f1e1d90dd7a8538b88f805c86c428b145cbd519ce4eb5ae8cef5dd2a5fb3a0",
+          "installItems": [
+            "color-picker"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "editor",
+      "priority": "우선",
+      "recommendation": "readOnly 전환과 onChange HTML을 앱 결과에 전달하는 예제. controlled value prop은 없는 API이므로 약속하지 않는다.",
+      "examples": [
+        {
+          "id": "readonly",
+          "title": "Read-only mode and change output",
+          "description": "Toggle editing and inspect the application’s HTML result. Rendering stored HTML elsewhere requires your own sanitization policy.",
+          "file": "editor-readonly",
+          "sourceSha256": "06603dc7989fd9a6e380e0b4f11e223f71a22bc8374c5cf0c18472b3be366b64",
+          "installItems": [
+            "editor",
+            "button"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "glimpse",
+      "priority": "보완",
+      "recommendation": "image 없는 text-only preview와 비교.",
+      "examples": [
+        {
+          "id": "text-only",
+          "title": "Text-only preview",
+          "description": "A link preview can contain just a title and description. Navigation remains available without opening the hover card.",
+          "file": "glimpse-text-only",
+          "sourceSha256": "7706c690285024df12a20455595c26c06c8af3db7aeec02e33e9d38ed5fd9ce3",
+          "installItems": [
+            "glimpse"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pill",
+      "priority": "보완",
+      "recommendation": "disabled removal과 trailing slot.",
+      "examples": [
+        {
+          "id": "locked",
+          "title": "Trailing content and locked removal",
+          "description": "A trailing slot can show supplemental metadata. Disabled removal keeps a required value present.",
+          "file": "pill-locked",
+          "sourceSha256": "0152cfa2a054709dfae16e88b44e5970248580594fd34af65a4cad9d5f279ccd",
+          "installItems": [
+            "pill"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "priority": "보완",
+      "recommendation": "sm/md/lg 크기 비교. 이미 있는8 variants는 새로 추가하지 않는다.",
+      "examples": [
+        {
+          "id": "sizes",
+          "title": "Spinner sizes",
+          "description": "Match the spinner to its context. Each instance keeps an accessible loading label.",
+          "file": "spinner-sizes",
+          "sourceSha256": "d3751467853a91d28358ae9697cc26e22e94405e5021974f79cb766dc57b4879",
+          "installItems": [
+            "spinner"
+          ]
+        }
+      ]
+    }
+  ]
+}
