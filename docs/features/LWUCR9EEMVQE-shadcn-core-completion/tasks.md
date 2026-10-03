@@ -169,6 +169,64 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-009] T-LWUCR9EEMVQE-shadcn-core-completion-07 이름 있는 추가 예제와 실제 source Code 문서 구조
+  - Date: 2026-10-03
+  - Acceptance:
+    - 대표 예제를 유지하고 상세 추가예제의 독립 Preview와 실제 source Code/설명을 제공한다.
+  - Checklist:
+    - [ ] 추가 metadata/lazy preview/source 변환과 Examples navigation
+    - [ ] source 변환 focused 계약과 타입/lint 확인
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-009] T-LWUCR9EEMVQE-shadcn-core-completion-08 우선13개 핵심 조합과 상태 예제
+  - Date: 2026-10-03
+  - Acceptance:
+    - 우선13개가 지원하는 핵심 API와 조합·결과를 실제 원본 예제로 제공한다.
+  - Checklist:
+    - [ ] 13개 조사 행과 추가예제 연결
+    - [ ] 선택/menu/form/table/chart/toast 등 타입/lint 검증
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-009] T-LWUCR9EEMVQE-shadcn-core-completion-09 보완42개 크기·변형·폼 및 결과 예제
+  - Date: 2026-10-03
+  - Acceptance:
+    - 보완42개 조사 행마다 실제 의미 있는 추가예제를 제공한다.
+  - Checklist:
+    - [ ] 42개 조사 권고에 대응하는 원본 예제 구현
+    - [ ] 고유label/id와 지원props 및 타입/lint 확인
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-009] T-LWUCR9EEMVQE-shadcn-core-completion-10 전체55개 추가예제 화면·조작·source 소비자 최종 검증
+  - Date: 2026-10-03
+  - Acceptance:
+    - 55개 실제 추가예제와 Code 연결·theme/viewport·소비자 strict build 및 featureChecks가 통과한다.
+  - Checklist:
+    - [ ] 55개 행 예제ID evidence와 실제 화면·주요 조작 검증
+    - [ ] typecheck/lint/test/build 및 소비자 타입/build 확인
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -181,8 +239,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록

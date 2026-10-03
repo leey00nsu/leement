@@ -102,3 +102,20 @@ Plan 승인: agentReview.plan disabled 및 workflow-stage의 plan_approve 자동
 ## T06 사용자 검토 후 Input 정렬 보정
 
 기존 native file Input의40px control 높이 안에서 파일 선택 버튼·파일명을 중앙에 배치한다. 실제 Chrome에서 원인과 수정 전후를 비교하고 한국어/영어,390/1440px,light/dark의 빈 파일·선택 후·disabled 및 일반 Input/Field/InputGroup 회귀를 확인한다. CSS class snapshot이나 새로운 영구 테스트는 추가하지 않는다(NONE). 기존 featureChecks 및 생성 registry source를 확인한다. 기존 승인 범위의 native input form 계약을 보정하며 별도 기능이나 API를 추가하지 않는다.
+
+## T07–T10 예제 보강 계획
+
+- T07: framework-agnostic docs metadata에 추가예제 이름/설명/file을 선언한다. client lazy loader는 명시적 import만 사용하고 server가 해당 예제 source를 읽어 기존 registry import 경로를 consumer alias로 변환한다. 상세 ItemPage의 Examples 섹션/outline에서 기존 ItemWorkbench를 재사용한다. Showcase는 현재 Preview만 사용한다.
+- T08: 우선13개 UI의 source-owned usage 예제. 많은 선택지/상태는 목적별 작은 예제로 나누고 내부 slot engine을 재작성하지 않는다. Progress value=null의 실제 시각 상태가 부족하면 scoped 회귀 보정만 한다.
+- T09: 보완42개 UI의 크기/variant/form/결과 조합. schema engine/자동 props playground/새 배포 패키지 없이 읽기 쉬운 예제 source를 작성한다.
+- T10:55개 예제/metadata/import/API/Code 대조, light/dark390/1440px actual docs 검사와 우선13개 및 대표 폼/overlay/motion 조작. 예제 source를 한 소비자에 가져온 strict 타입/build 확인.
+
+### 예제 보강 Verification Contract
+
+| 계약 | 결정 | 보호할 회귀 / Oracle |
+| --- | --- | --- |
+| 예제 source→consumer Code 변환과 안전한 경로 resolve | ADD | 기존 examples와 추가 examples의 코드 대응/alias 재작성/허용된 경로; registry-source 소유의 focused Vitest 계약 |
+| 정적 metadata·크기·조합 | NONE | 실제 TypeScript/build와 일회 catalog 대조 및 브라우저 스크린샷. CSS 문자열 snapshot 금지 |
+| 폼/overlay/선택/motion 동작 | NONE | 재사용 primitive의 기존 계약 테스트와 실제 신규 예제 조작; 지표 전체를 다시 테스트하지 않는다 |
+
+추가예제의 제목만 만들어 놓거나 같은 예제를 재사용해 이름만 바꾸지 않는다.55개의 조사 행마다 실제로 제공된 예제 ID를 최종 evidence로 연결한다. 전체 featureChecks는 마지막T10에서 실행한다. 각 중간태스크는 관련 eslint와 docs typecheck/build 범위 검사 후 commit한다. PRD-FR-009 및 docs/designs/design-system.md의 예제 작성 규칙을T07/T10에서 동기화한다. README와 다른 운영/아키텍처 문서에는 추가 영향NONE이다.

@@ -83,3 +83,9 @@
 - **Recommendation**: Showcase의 가벼운 대표 예제를 유지하면서 상세 문서에는 중요한 variant/state/composition마다 설명·Preview·해당 Code를 가진 Examples를 추가한다. registry 원본을 재사용하고 unsupported upstream API를 약속하지 않는다. callback 결과와 앱 책임을 보여준다. 추가예제를 모두 Showcase에 mount하지 않는다.
 - **Evidence**: [전체102개 결과표](./artifacts/example-audit.html), [항목별 API·source 근거](./artifacts/example-audit.json). Progress의value=null 계약은 설치된 Base UI 타입을 직접 확인했다.
 - **Workflow**: 이번 요청은 분석이다. 예제/UI 구현 추가, Feature scope 확장, 구현 승인이나 merge 승인으로 해석하지 않는다. 제품 코드는 수정하지 않았다. 분석 결과를 검토한 뒤 사용자가 구현을 요청하면 범위/계획/태스크를 갱신한다.
+
+## D010: 사용자 구현 요청을 현재 Feature의 예제 보강 범위로 반영한다 (2026-10-03)
+
+- **Authorization**: 사용자가 D009의 분석·우선순위·상세 Examples 제안을 확인한 뒤 “수정 시작.”이라고 요청했다. Spec US-5와 Plan T07–T10에 UI55개 구현 범위와 source/Code 검증 계약을 구체화한다. 기존 Feature를 유지한다.
+- **Decision**: 분석된13개 우선 및42개 보완을 모두 완료한다.24개 유지와Pattern/Block의 추가 후보는 기존 예제를 유지한다. compound example과 state별 사용법을 소비자 소스로 제공하고 Showcase의 대표 예제는 보존한다.
+- **Approvals**: 이 요청은 분석 결과에 대한 구현 지시다. 구현 승인 또는local-ff병합 승인은 아니다. 마지막에 별도로 정해진 checkpoint에 멈춘다.
