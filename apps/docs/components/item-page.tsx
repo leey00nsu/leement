@@ -53,7 +53,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
       <div className="mt-12 space-y-9 border-t border-border pt-10">
         {sections.map(section => <section key={section.id} id={section.id} className="scroll-mt-24">
           <h2 className="text-xl font-semibold tracking-tight">{section.title}</h2>
-          <p className="mt-3 text-sm leading-7 text-muted-foreground">{section.body}</p>
+          <p className="mt-3 break-words text-sm leading-7 text-muted-foreground">{section.body}</p>
         </section>)}
       </div>
     </article>

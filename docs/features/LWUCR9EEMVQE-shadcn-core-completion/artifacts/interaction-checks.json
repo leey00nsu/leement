@@ -1,0 +1,203 @@
+{
+  "checks": [
+    {
+      "theme": "light",
+      "name": "checkbox",
+      "keyboard": true,
+      "mixed": true,
+      "contrast": 4.741667181590045
+    },
+    {
+      "theme": "light",
+      "name": "radio-group",
+      "keyboard": true
+    },
+    {
+      "theme": "light",
+      "name": "toggle-group",
+      "exclusive": true,
+      "multiple": true
+    },
+    {
+      "theme": "light",
+      "name": "field",
+      "labels": true,
+      "error": true,
+      "disabled": true
+    },
+    {
+      "theme": "light",
+      "name": "native-select",
+      "selection": true
+    },
+    {
+      "theme": "light",
+      "name": "accordion",
+      "keyboard": true,
+      "exclusive": true,
+      "close": true
+    },
+    {
+      "theme": "light",
+      "name": "command",
+      "search": true,
+      "keyboard": true,
+      "empty": true,
+      "dialog": true,
+      "focusReturn": true
+    },
+    {
+      "theme": "light",
+      "name": "data-table",
+      "pointerColumns": true,
+      "sorting": true,
+      "selection": true,
+      "pagination": true,
+      "filter": true,
+      "empty": true
+    },
+    {
+      "theme": "light",
+      "name": "calendar",
+      "range": true,
+      "bounds": true
+    },
+    {
+      "theme": "light",
+      "name": "date-picker",
+      "pointer": true,
+      "keyboard": true,
+      "focusReturn": true,
+      "escape": true,
+      "viewport": true
+    },
+    {
+      "theme": "light",
+      "name": "hover-card",
+      "hover": true,
+      "viewport": true
+    },
+    {
+      "theme": "light",
+      "name": "glimpse",
+      "legacyHover": true
+    },
+    {
+      "theme": "dark",
+      "name": "checkbox",
+      "keyboard": true,
+      "mixed": true,
+      "contrast": 7.477028928774702
+    },
+    {
+      "theme": "dark",
+      "name": "radio-group",
+      "keyboard": true
+    },
+    {
+      "theme": "dark",
+      "name": "toggle-group",
+      "exclusive": true,
+      "multiple": true
+    },
+    {
+      "theme": "dark",
+      "name": "field",
+      "labels": true,
+      "error": true,
+      "disabled": true
+    },
+    {
+      "theme": "dark",
+      "name": "native-select",
+      "selection": true
+    },
+    {
+      "theme": "dark",
+      "name": "accordion",
+      "keyboard": true,
+      "exclusive": true,
+      "close": true
+    },
+    {
+      "theme": "dark",
+      "name": "command",
+      "search": true,
+      "keyboard": true,
+      "empty": true,
+      "dialog": true,
+      "focusReturn": true
+    },
+    {
+      "theme": "dark",
+      "name": "data-table",
+      "pointerColumns": true,
+      "sorting": true,
+      "selection": true,
+      "pagination": true,
+      "filter": true,
+      "empty": true
+    },
+    {
+      "theme": "dark",
+      "name": "calendar",
+      "range": true,
+      "bounds": true
+    },
+    {
+      "theme": "dark",
+      "name": "date-picker",
+      "pointer": true,
+      "keyboard": true,
+      "focusReturn": true,
+      "escape": true,
+      "viewport": true
+    },
+    {
+      "theme": "dark",
+      "name": "hover-card",
+      "hover": true,
+      "viewport": true
+    },
+    {
+      "theme": "dark",
+      "name": "glimpse",
+      "legacyHover": true
+    },
+    {
+      "name": "accordion",
+      "reducedMotion": true
+    },
+    {
+      "name": "consumer",
+      "items": 17,
+      "baseUiVersion": "1.8.0",
+      "pointerColumns": true,
+      "commandDialog": true,
+      "noNestedButton": true,
+      "focusReturn": true,
+      "legacyGlimpse": true
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "light",
+      "border": "rgb(115, 115, 115)",
+      "bg": "rgb(255, 255, 255)",
+      "ring": "#7554c8",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(117, 84, 200) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "foreground": "rgb(26, 26, 29)",
+      "borderRatio": 4.741667181590045
+    },
+    {
+      "theme": "dark",
+      "border": "rgb(163, 163, 163)",
+      "bg": "rgb(17, 17, 19)",
+      "ring": "#347ff4",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(52, 127, 244) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "foreground": "rgb(250, 250, 250)",
+      "borderRatio": 7.477028928774702
+    }
+  ],
+  "errors": []
+}

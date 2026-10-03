@@ -1875,7 +1875,8 @@
       "description": "\uac80\uc0c9\uacfc \ud0a4\ubcf4\ub4dc \uc120\ud0dd\uc774 \uac00\ub2a5\ud55c \uba85\ub839 \ubaa9\ub85d\uc785\ub2c8\ub2e4.",
       "dependencies": [
         "cmdk",
-        "lucide-react"
+        "lucide-react",
+        "@radix-ui/react-dialog"
       ],
       "registryDependencies": [
         "@leement/utils",

@@ -1,0 +1,53 @@
+{
+  "cli": "shadcn@4.21.1",
+  "registry": "http://localhost:3010/r/{name}.json",
+  "publicDeployTested": false,
+  "theme": "packed @leement/theme@0.1.0 with CSS/fonts",
+  "react": "19.3.0",
+  "installedBaseUi": "1.8.0",
+  "allNewItems": [
+    "checkbox",
+    "radio-group",
+    "field",
+    "input-group",
+    "native-select",
+    "toggle",
+    "toggle-group",
+    "accordion",
+    "breadcrumb",
+    "pagination",
+    "command",
+    "button-group",
+    "kbd",
+    "aspect-ratio",
+    "hover-card",
+    "data-table",
+    "date-picker"
+  ],
+  "allNewSources": 27,
+  "checks": [
+    "TypeScript strict",
+    "Vite/Tailwind v4 production build",
+    "Actual browser render of17 examples",
+    "Installed CommandDialog has no nested button and restores focus",
+    "Installed Glimpse retains href and hover"
+  ],
+  "singleCommandInstalls": [
+    {
+      "item": "data-table",
+      "command": "npx shadcn@latest add @leement/data-table",
+      "sourceFiles": 7,
+      "typecheck": "PASS",
+      "build": "PASS"
+    },
+    {
+      "item": "date-picker",
+      "command": "npx shadcn@latest add @leement/date-picker",
+      "sourceFiles": 5,
+      "typecheck": "PASS",
+      "build": "PASS"
+    }
+  ],
+  "legacyGlimpseInstall": "PASS (native Radix anchor trigger preserves href/label)",
+  "transformCompatibility": "Base-style CLI no longer rewrites Glimpse asChild; CommandDialog uses direct Radix Trigger namespace and explicit asChild props spread to retain Slot and avoid nested buttons."
+}

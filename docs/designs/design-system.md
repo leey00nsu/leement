@@ -123,3 +123,11 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 - min/max는 날짜 단위의 포함 경계다. Calendar.disabled는 전체 disabled 또는 날짜 predicate, DatePicker.disabled는 필드 전체, disabledDate는 개별 날짜다. 범위 안쪽에 unavailable 날짜가 있으면 완료를 거절하고 status로 안내한다. 화살표는 제외 날짜를 건너뛰고 경계를 벗어나지 않는다.
 - DatePicker는 Button/Popover/Calendar(date)를 조합한다. 접근 가능한 label과 선택 값을 trigger에 제공하고 popup이 열리면 선택 가능한 날짜로 focus를 이동한다. single 또는 range 완료 시 닫고 trigger로 복귀하며 Escape도 같은 복귀를 유지한다. 필드 id/aria-describedby/aria-invalid를 연결할 수 있다.
 - 날짜 값은 consumer의 local Date이며 시간·타임존 변환·서버 저장을 추가하지 않는다. range를 controlled로 사용하면 부분 선택도 consumer가 반영해야 한다.
+
+- 신규 작은 선택 표식(Checkbox/Radio)과 NativeSelect/InputGroup 경계는 muted foreground semantic 역할을 사용해 라이트 표면에서도 식별한다. 단순 장식 border와 control 경계를 구분하며 focus ring은 불투명한 ring 역할을 사용한다. Base UI의 data-disabled도 시각 상태에 연결한다.
+
+### upstream 이름과 사용 문제의 대응
+
+- StatusNotice는 짧은 Alert, EmptyState는 Empty 문제에 대응한다. 이름만 다른 source alias를 추가하지 않는다.
+- Field는 입력 하나의 label/help/error를 연결하고 FormSection은 여러 필드의 제품 섹션을 구성한다. Sheet는 측면 Dialog이며 swipe/snap-point Drawer 전체 동작을 보장하지 않는다.
+- 이번 확장은 신규17개(UI15/Pattern2)다. 공개 UI79/Pattern15/Block8과 지원 lib3을 제공한다. 공식64개와 같은 이름은45개이며 이는 API/동작 완전 호환율이 아니다. 기존 대응2개와 보류17개는 Feature 기준표에 남긴다.

@@ -8,7 +8,7 @@ function BreadcrumbList({ className, ...props }: ComponentProps<"ol">) { return 
 function BreadcrumbItem({ className, ...props }: ComponentProps<"li">) { return <li className={cn("inline-flex items-center gap-1.5", className)} {...props} />; }
 function BreadcrumbLink({ asChild = false, className, ...props }: ComponentProps<"a"> & { asChild?: boolean }) {
   const Component = asChild ? Slot : "a";
-  return <Component className={cn("rounded-sm transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40", className)} {...props} />;
+  return <Component className={cn("rounded-sm transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring", className)} {...props} />;
 }
 function BreadcrumbPage({ className, ...props }: ComponentProps<"span">) { return <span aria-current="page" className={cn("font-medium text-foreground", className)} {...props} />; }
 function BreadcrumbSeparator({ children, className, ...props }: ComponentProps<"li">) { return <li aria-hidden="true" role="presentation" className={cn("[&_svg]:size-3.5", className)} {...props}>{children ?? <ChevronRight />}</li>; }

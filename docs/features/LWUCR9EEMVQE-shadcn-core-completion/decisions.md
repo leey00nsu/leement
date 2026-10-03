@@ -34,7 +34,7 @@
 - **Trace**: pnpm frozen install 완료. InputGroup은 하나의 focus/invalid 표면을 제공한다. 기본 표식16px과 label 최소40px을 예제에서 결합한다. T01 계약6개/form/label/error/controlled/disabled/keyboard가 통과했고 docs typecheck·변경 eslint·registry build가 통과했다. 화면/소비자 설치는 T05에서 확인한다.
 - **Evidence**: [기본 입력 source](../../../../registry/ui/core-form.test.tsx), [명세](./spec.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:0a98c7c9e342397c4258971e01caba9eb1ceaba918c40cb7c41b240acfb86d80 -->
+<!-- lee-spec-kit:workflow-sync sha256:146b4d0f9311956afc9ba060f8d039007486f118a43cad7981551e5c74c44ccb -->
 
 ## D004: Command 엔진과 보조 popup을 재사용한다 (2026-10-03)
 
@@ -53,3 +53,13 @@
 - **Decision**: 기존 Calendar single/schedule API를 유지하고 mode=range의 별도 typed props를 추가한다. 시작일 선택 뒤 두 번째 선택으로 종료를 완료하며 역순 정규화와 unavailable 내부 날짜 거절을 제공한다. DatePicker는 기존 Calendar/Button/Popover를 조합한다.
 - **Trace**: 날짜 경계는 포함이며 disabled는 Calendar에서 predicate/전체, DatePicker에서 필드 전체와 disabledDate로 구분한다. 초기 focus는 해당 popup의 Calendar ref에서 찾으며 전역 selector로 다른 popup을 선택하지 않는다. Arrow skip은 최대366 step으로 무한 반복을 피한다. min/max 밖의 월 버튼을 disabled 처리한다.
 - **Evidence**: [계약5개](../../../../registry/patterns/date-picker.test.tsx), docs typecheck/eslint/registry build PASS.
+
+## D007: T05 소비자 설치와 화면 검증에서 발견한 문제를 수정한다 (2026-10-03)
+
+- **Decision**: 전체102개 문서/메뉴/예제/registry 경로와 종속 source를 대조한다. 신규17개와 수정3개를 상세/Showcase,390/1024/1440px,light/dark로 확인한다. 최신 shadcn4.21.1의 base-nova 소비자에서도 타입/build/실제 조작을 확인한다.
+- **Trace**: DatePicker 메뉴 누락, 모바일 긴 API 문자열 overflow, Base UI data-disabled 표현을 수정했다. 선택 표식의 경계와 신규 focus ring을 강화하고 Toggle/Command 선택 경계를 추가했다. Checkbox 경계 대비는 light4.7417/dark7.4770이다. 기준은 [W3C 비텍스트 대비](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)이며 전체 WCAG 인증을 주장하지 않는다.
+- **Compatibility fix**: 최신 CLI가 custom wrapper의 asChild를 base 스타일용 render로 바꾸거나 제거했다. Glimpse는 Radix Trigger의 native anchor props를 직접 사용해 href/label API를 유지한다. CommandDialog는 direct Radix namespace Trigger와 명시적 props spread로 JSX attribute 변환을 피하여 Slot을 유지하며 Radix dependency를 명시한다. 설치 후 nested button 없음과 focus 복귀를 실제 consumer에서 확인한다.
+- **Evidence**: [화면240건](./artifacts/browser-matrix.json), [실제 조작26건](./artifacts/interaction-checks.json), [카탈로그102개](./artifacts/catalog-check.json), [소비자 설치](./artifacts/consumer-installation.json). 대표 화면: [모바일 Checkbox](./artifacts/checkbox-light-390.png), [dark 표](./artifacts/data-table-dark-1440.png), [모바일 날짜 popup](./artifacts/date-picker-popup-dark-390.png), [소비자](./artifacts/consumer-light-390.png).
+- **Limits**: public deployment/npm publish는 미실행이다. theme은 실제 pack 산출물, registry는 로컬 HTTP namespace를 사용했다. Base UI consumer1.8.0에서도 확인했으나 모든 향후 upstream API를 보장하지 않는다. 신규17개는 experimental이며 원본 두 앱 전면 교체·upstream 전체 호환은 범위 밖이다. Aside daemon 연결 실패 후 기존 Chrome/Playwright로 검증했다. 소스102개 전체 동작 인증이 아니라17신규+3수정에 대한 전수 화면 검증이다.
+
+최종 검증 완료: 모두 PASS. 구현 승인 전이므로 main 병합·push·배포를 하지 않았으며 lee-spec-kit implementation_approve에서 결과 수락을 요청한다.

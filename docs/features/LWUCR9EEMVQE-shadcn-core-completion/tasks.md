@@ -139,13 +139,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-05 전체 문서·소비자 설치·최종 검증
+- [DONE][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-05 전체 문서·소비자 설치·최종 검증
   - Date: 2026-10-03
   - Acceptance:
     - 신규17개와 수정3개를 light/dark 세 폭에서 확인하고 신규 전체 namespace 설치/import/typecheck/build 및 featureChecks가 통과한다.
   - Checklist:
-    - [ ] 실제 화면·상태·모든 메뉴/예제/기준표 및 curated docs 최종 동기화
-    - [ ] 독립 소비자17개 설치와 typecheck/lint/test/build 결과 보존
+    - [x] 실제 화면·상태·모든 메뉴/예제/기준표 및 curated docs 최종 동기화
+    - [x] 독립 소비자17개 설치와 typecheck/lint/test/build 결과 보존
   - Docs:
     - docs:designs/design-system.md
     - docs:prd/leement-prd.md
@@ -167,8 +167,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -178,6 +178,19 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
+| pnpm run typecheck | 2026-10-03 | PASS,5 workspace tasks |
+| pnpm run lint | 2026-10-03 | PASS,docs/theme/tokens와 registry |
+| pnpm run test | 2026-10-03 | PASS,18 files/113 tests; 신규20 계약 테스트 포함 |
+| pnpm run build | 2026-10-03 | PASS,tokens/theme/registry/Next production |
+| shadcn@4.21.1 add @leement/신규17개 | 2026-10-03 | PASS,독립 React19/Tailwind4 consumer에서 종속 source27개·typecheck/build |
+| shadcn@4.21.1 add @leement/data-table (빈 consumer) | 2026-10-03 | PASS,source7개+dependencies 자동 설치·typecheck/build |
+| shadcn@4.21.1 add @leement/date-picker (빈 consumer) | 2026-10-03 | PASS,source5개+dependencies 자동 설치·typecheck/build |
+| shadcn@4.21.1 add @leement/glimpse | 2026-10-03 | PASS,HoverCard dependency·typecheck/build·native link/hover |
+| Chrome 화면 matrix | 2026-10-03 | PASS,20 items×2 views×3 widths×2 themes=240건; overflow/오류0 |
+| Chrome 실제 조작 | 2026-10-03 | PASS,26건; keyboard/form/ARIA/disabled/table/date/hover/consumer/reduced motion |
+| catalog/registry/examples/nav 대조 | 2026-10-03 | PASS,공개102개 누락0; [결과](./artifacts/catalog-check.json) |
+| git diff --check | 2026-10-03 | PASS |
+
 
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
@@ -189,3 +202,5 @@ T02 검증: core-navigation 계약5개 PASS(accordion·탐색 semantics·command
 T03 검증: data-table 계약4개(정렬/필터/페이지/empty·controlled 선택ID·키보드 열 표시·native/legacy Table) PASS. docs typecheck·변경 eslint·registry build PASS. mouse/모바일/테마는 T05에서 확인한다.
 
 T04 검증: date-picker 계약5개 PASS(legacy schedule/single·skip unavailable·역순 range·interior rejection/bounds·popup completion/Escape/focus·disabled). docs typecheck·변경 eslint·registry build PASS.
+
+T05 완료 증거: [화면 matrix](./artifacts/browser-matrix.json), [실제 조작](./artifacts/interaction-checks.json), [독립 설치](./artifacts/consumer-installation.json), [기준/보류표](./artifacts/shadcn-baseline.json). 신규17개(UI15/Pattern2), 기존 Table/Calendar/Glimpse 보완을 확인했다. 공개 배포/npm publish와 원본 앱 전체 교체는 미실행이다. 구현 승인 및 local-ff 병합 승인은 별도 gate에서 받는다.

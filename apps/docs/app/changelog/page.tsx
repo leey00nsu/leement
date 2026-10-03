@@ -1,4 +1,6 @@
 const changes = [
+  { title: "Core controls and navigation", details: "Adds experimental Checkbox, RadioGroup, Field, InputGroup, NativeSelect, Toggle/ToggleGroup, Accordion, Breadcrumb, Pagination, Command, ButtonGroup, Kbd, AspectRatio and HoverCard with editable registry source and live examples." },
+  { title: "Data and dates", details: "Table now exports native compound parts while keeping the existing DataTable API. AdvancedDataTable adds client-side filtering, sorting, selection, pagination and column visibility. Calendar supports bounded range selection, and DatePicker composes it with Popover. Glimpse keeps its link-preview API and reuses HoverCard." },
   { title: "Shared motion", details: "Adds experimental TextReveal, MediaReveal, BrandAction and RotatingContent registry sources. RevealContent and Collapsible use motion roles; Foundations now edits easing, stagger and cycles with actual source previews. Automatic effects support reduced motion and explicit pause." },
   { title: "Audio and video players", details: "AudioPlayer brings CopySinger-inspired waveform playback with neutral or optional brand colors, keyboard seek, volume, speed and native fallback. VideoPlayer preserves its API and adds source-safe state, media errors/retry, shared controls, captions language/toggle and available fullscreen. Both use local playable examples and native controls before hydration or without JavaScript." },
   {
@@ -16,6 +18,9 @@ const changes = [
 ];
 
 const migrations = [
+  "Table: the existing DataTable stays in ui/table. Install @leement/data-table for AdvancedDataTable and TanStack v8 column definitions.",
+  "Calendar: existing single-date props stay valid. Range mode uses range/defaultRange/onRangeChange; excluded dates cannot occur inside a completed range.",
+  "ToggleGroup: Base UI values are arrays for both exclusive and multiple selection; use multiple rather than the Radix type prop.",
   "Motion: existing RevealContent ms props remain valid. Omitting duration now reads the reveal role; remount with a new key to replay. Theme changes leave original text visible before hydration.",
   "Brand effects: animated/paused are explicit, with local lifecycle handling instead of a global DOM scanner. Keep generation/fetch/audio code in the app.",
   "Calendar: choose variant=\"date\" for a compact date picker; the default is a schedule calendar.",
@@ -30,7 +35,7 @@ const migrations = [
 export default function Page() {
   return <article className="min-w-0 max-w-3xl space-y-8 pb-16">
     <header><p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Project</p><h1 className="mt-2 text-4xl font-semibold">Changelog</h1></header>
-    <section aria-labelledby="unreleased-heading" className="space-y-5 rounded-2xl bg-muted p-5 sm:p-6 [&_p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground"><h2 id="unreleased-heading" className="text-2xl font-semibold">Unreleased · Visual audit</h2><p className="text-sm leading-7 text-muted-foreground">The source-owned registry remains the installation path. These changes are available in the repository and will be included in the next published registry build.</p>{changes.map((change) => <div key={change.title}><h3 className="font-semibold">{change.title}</h3><p className="mt-1 text-sm leading-7 text-muted-foreground">{change.details}</p></div>)}</section>
+    <section aria-labelledby="unreleased-heading" className="space-y-5 rounded-2xl bg-muted p-5 sm:p-6 [&_p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground"><h2 id="unreleased-heading" className="text-2xl font-semibold">Unreleased · Core UI</h2><p className="text-sm leading-7 text-muted-foreground">The source-owned registry remains the installation path. These changes are available in the repository and will be included in the next published registry build.</p>{changes.map((change) => <div key={change.title}><h3 className="font-semibold">{change.title}</h3><p className="mt-1 text-sm leading-7 text-muted-foreground">{change.details}</p></div>)}</section>
     <section aria-labelledby="migration-heading" className="space-y-4 rounded-2xl bg-muted p-5 sm:p-6 [&_p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground"><h2 id="migration-heading" className="text-xl font-semibold">Migration notes</h2><ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-muted-foreground">{migrations.map((note) => <li key={note}>{note}</li>)}</ul></section>
     <section aria-labelledby="initial-heading" className="rounded-2xl bg-muted p-5 sm:p-6 [&_p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground"><h2 id="initial-heading" className="text-xl font-semibold">0.1.0 · Initial candidate</h2><p className="mt-3 text-sm leading-7 text-muted-foreground">Introduced framework-agnostic tokens, a CSS theme, source-owned shadcn registry components, patterns and blocks.</p></section>
   </article>;

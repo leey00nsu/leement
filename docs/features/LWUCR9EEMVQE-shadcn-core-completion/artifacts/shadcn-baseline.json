@@ -360,5 +360,19 @@
       "decision": "retain-existing",
       "note": "Existing design roles; no identical upstream styles claim."
     }
-  ]
+  ],
+  "implementationOutcome": {
+    "newRegistryItems": 17,
+    "publicUI": 79,
+    "patterns": 15,
+    "blocks": 8,
+    "supportLibs": 3,
+    "sameNameAfter": 45,
+    "existingAlternatives": [
+      "alert → status-notice",
+      "empty → empty-state"
+    ],
+    "deferred": 17,
+    "qualification": "Name mapping does not certify upstream API/behavior parity. Original baseline fields remain the pre-implementation snapshot."
+  }
 }
