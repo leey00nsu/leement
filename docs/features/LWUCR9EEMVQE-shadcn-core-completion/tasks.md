@@ -155,6 +155,20 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-06 기존 Input 파일 선택 영역의 세로 정렬 보정
+  - Date: 2026-10-03
+  - Acceptance:
+    - 기본40px Input에서 native 파일 선택 버튼과 파일명이 중앙에 정렬되고 일반 입력과 disabled 및 실제 파일 선택 동작이 유지된다.
+  - Checklist:
+    - [ ] native file input의 line box 원인 측정과 최소 source 수정
+    - [ ] 한국어 및 영어 light/dark 모바일/데스크톱에서 빈 파일·선택 후·disabled와 일반 Input 확인
+    - [ ] 타입/lint/test/build 및 registry source 동기화 확인
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -167,7 +181,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 

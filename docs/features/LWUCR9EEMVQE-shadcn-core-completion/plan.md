@@ -98,3 +98,7 @@ T01 입력7개 → T02 탐색/표시7개+HoverCard → T03 Table/DataTable → T
 - Decisions: [decisions.md](./decisions.md)
 
 Plan 승인: agentReview.plan disabled 및 workflow-stage의 plan_approve 자동 진행 지시에 따라 승인했다.
+
+## T06 사용자 검토 후 Input 정렬 보정
+
+기존 native file Input의40px control 높이 안에서 파일 선택 버튼·파일명을 중앙에 배치한다. 실제 Chrome에서 원인과 수정 전후를 비교하고 한국어/영어,390/1440px,light/dark의 빈 파일·선택 후·disabled 및 일반 Input/Field/InputGroup 회귀를 확인한다. CSS class snapshot이나 새로운 영구 테스트는 추가하지 않는다(NONE). 기존 featureChecks 및 생성 registry source를 확인한다. 기존 승인 범위의 native input form 계약을 보정하며 별도 기능이나 API를 추가하지 않는다.

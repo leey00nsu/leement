@@ -63,3 +63,9 @@
 - **Limits**: public deployment/npm publish는 미실행이다. theme은 실제 pack 산출물, registry는 로컬 HTTP namespace를 사용했다. Base UI consumer1.8.0에서도 확인했으나 모든 향후 upstream API를 보장하지 않는다. 신규17개는 experimental이며 원본 두 앱 전면 교체·upstream 전체 호환은 범위 밖이다. Aside daemon 연결 실패 후 기존 Chrome/Playwright로 검증했다. 소스102개 전체 동작 인증이 아니라17신규+3수정에 대한 전수 화면 검증이다.
 
 최종 검증 완료: 모두 PASS. 구현 승인 전이므로 main 병합·push·배포를 하지 않았으며 lee-spec-kit implementation_approve에서 결과 수락을 요청한다.
+
+## D008: 구현 검토에서 발견한 native file Input 정렬을 보정한다 (2026-10-03)
+
+- **Context**: 사용자가 Input 예제에서 파일 선택 버튼과 빈 파일명이 위로 치우치는 스크린샷을 전달했다. 구현 승인 응답이 아닌 기존 Feature의 변경 요청으로 처리한다.
+- **Decision**: 완료된 T01–T05의 기록을 유지하고 T06을 추가한다. native 파일 선택과 일반 Input API를 유지하면서 파일 입력의 세로 정렬을 최소 수정한다.
+- **Verification**: Plan T06의 실제 브라우저 검증을 사용하며 계획되지 않은 영구 테스트는 추가하지 않는다. 이전240건 matrix는 신규17개/수정3개만 대상으로 기존 Input을 포함하지 않았으므로 이 문제를 이미 검증했다고 주장하지 않는다.
