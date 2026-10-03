@@ -43,5 +43,14 @@ function DataTable<T>({ data, columns, rowId, caption, emptyMessage = "No result
   </div>;
 }
 
-export { DataTable };
+function Table({ className, ...props }: React.ComponentProps<"table">) { return <div data-slot="table-container" className="w-full overflow-x-auto"><table data-slot="table" className={cn("w-full border-collapse text-left text-sm", className)} {...props} /></div>; }
+function TableHeader({ className, ...props }: React.ComponentProps<"thead">) { return <thead className={cn("bg-muted/50 [&_tr]:border-b", className)} {...props} />; }
+function TableBody({ className, ...props }: React.ComponentProps<"tbody">) { return <tbody className={cn("[&_tr:last-child]:border-0", className)} {...props} />; }
+function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) { return <tfoot className={cn("border-t border-border bg-muted/50 font-medium", className)} {...props} />; }
+function TableRow({ className, ...props }: React.ComponentProps<"tr">) { return <tr className={cn("border-b border-border hover:bg-muted/30 data-[selected=true]:bg-accent", className)} {...props} />; }
+function TableHead({ className, scope = "col", ...props }: React.ComponentProps<"th">) { return <th scope={scope} className={cn("px-4 py-3 font-medium text-foreground", className)} {...props} />; }
+function TableCell({ className, ...props }: React.ComponentProps<"td">) { return <td className={cn("px-4 py-3 text-foreground", className)} {...props} />; }
+function TableCaption({ className, ...props }: React.ComponentProps<"caption">) { return <caption className={cn("mt-3 caption-bottom text-sm text-muted-foreground", className)} {...props} />; }
+
+export { Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption, DataTable };
 export type { DataTableProps, TableColumn };

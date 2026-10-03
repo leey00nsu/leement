@@ -107,13 +107,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-03 기본 Table과 AdvancedDataTable
+- [DONE][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-03 기본 Table과 AdvancedDataTable
   - Date: 2026-10-03
   - Acceptance:
     - 기존 DataTable API를 유지하면서 Table compound API와 정렬/필터/페이지/행 선택/열 표시 pattern·문서·dependency 설치를 제공한다.
   - Checklist:
-    - [ ] 기본 Table 및 AdvancedDataTable source·문서/registry 완성
-    - [ ] data-table 계약 테스트와 기존 table 회귀 확인
+    - [x] 기본 Table 및 AdvancedDataTable source·문서/registry 완성
+    - [x] data-table 계약 테스트와 기존 table 회귀 확인
   - Docs:
     - docs:designs/design-system.md
     - docs:prd/leement-prd.md
@@ -185,3 +185,5 @@
 T01 검증: core-form 계약6개 PASS, docs typecheck 및 변경 source/docs eslint PASS, registry JSON 생성 PASS. 화면·전체 소비자 설치는 T05에서 검증한다.
 
 T02 검증: core-navigation 계약5개 PASS(accordion·탐색 semantics·command 검색/disabled·Dialog Escape/focus·Glimpse hover), docs typecheck·변경 eslint·registry build PASS.
+
+T03 검증: data-table 계약4개(정렬/필터/페이지/empty·controlled 선택ID·키보드 열 표시·native/legacy Table) PASS. docs typecheck·변경 eslint·registry build PASS. mouse/모바일/테마는 T05에서 확인한다.

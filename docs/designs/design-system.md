@@ -109,3 +109,10 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 - Command는 cmdk의 검색·키보드 선택 엔진을 사용한다. 입력 이름, disabled item, empty 결과를 명시한다. CommandDialog의 trigger로 opener를 연결하면 Escape 후 focus가 복귀한다. trigger 없이 전역 단축키로 여는 consumer는 별도 focus 복귀 대상 관리를 맡는다.
 - ButtonGroup은 관련 행동의 경계만 묶는다. 선택 상태에는 RadioGroup/ToggleGroup을 사용한다. Kbd는 실제 단축키 설명이며 동작을 등록하지 않는다. AspectRatio는 CSS 비율 배치이며 media의 alt/captions를 대신하지 않는다.
 - HoverCard는 임의 보조 내용, Glimpse는 링크 metadata 편의 API다. HoverCard의 내용은 screen reader에 노출되지 않을 수 있으므로 필수 정보·action은 본문/목적지 또는 Popover/Dialog로 제공한다. 링크 의미와 기존 Glimpse props를 유지한다.
+
+### 표의 조합과 데이터 상태
+
+- UI Table은 native table/caption/thead/tbody/tfoot/tr/th/td parts를 제공한다. caption과 header scope를 유지한다. 기존 DataTable(data/columns/rowId/caption)의 작은 정렬 API는 유지한다.
+- AdvancedDataTable pattern은 TanStack Table v8의 ColumnDef/getRowId와 client-side row model을 사용한다. 정렬·지정 열 필터·페이지·페이지 단위 선택·열 표시를 조합하고 필터 변경 시 첫 페이지로 돌아간다. 안정적인 row ID를 필수로 제공한다.
+- rowSelection/onRowSelectionChange는 controlled 사용을 지원한다. 필터에 포함되지 않는 선택 행도 유지하며 상태 문구는 필터된 행의 선택 수를 표시한다. 숨기기 메뉴는 마지막 열까지 숨겨 의미 없는 표가 되지 않도록 제한한다.
+- toolbar와 footer는 좁은 폭에서 줄바꿈하고 표만 가로 스크롤한다. 서버 조회·virtualization·전체 spreadsheet 동작은 포함하지 않으며 설치된 source에서 확장한다.

@@ -1,6 +1,7 @@
 "use client";
 
 import type { ComponentType } from "react";
+import DataTableExample from "../examples/data-table";
 import HoverCardExample from "../examples/hover-card";
 import AspectRatioExample from "../examples/aspect-ratio";
 import KbdExample from "../examples/kbd";
@@ -104,6 +105,7 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "data-table": DataTableExample,
   "hover-card": HoverCardExample,
   "aspect-ratio": AspectRatioExample,
   "kbd": KbdExample,
