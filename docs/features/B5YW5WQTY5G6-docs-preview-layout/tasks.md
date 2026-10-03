@@ -91,13 +91,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-B5YW5WQTY5G6-docs-preview-layout-02 Adoption과 전체 문서 scaffold 정리
+- [DONE][PRD-FR-005] T-B5YW5WQTY5G6-docs-preview-layout-02 Adoption과 전체 문서 scaffold 정리
   - Date: 2026-10-03
   - Acceptance:
     - 모든 문서 route가 공통 바깥 inset을 사용하며 중첩 main은 없다.
   - Checklist:
-    - [ ] Adoption 중복 main/padding 제거와 모든 route source/geometry 조사
-    - [ ] 홈 레이아웃과 모바일 탐색 보존 확인
+    - [x] Adoption 중복 main/padding 제거와 모든 route source/geometry 조사
+    - [x] 홈 레이아웃과 모바일 탐색 보존 확인
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

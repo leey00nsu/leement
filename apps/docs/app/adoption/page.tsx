@@ -4,7 +4,7 @@ import { AdoptionCompositions } from "../../components/adoption-compositions";
 export const metadata = { title: "Adopting Leement UI" };
 
 export default function AdoptionPage() {
-  return <main className="mx-auto max-w-6xl space-y-8 px-6 py-12">
+  return <article className="min-w-0 space-y-8 pb-16">
     <header className="space-y-3">
       <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Getting started</p>
       <h1 className="text-4xl font-semibold tracking-tight">Adopting existing UI</h1>
@@ -47,5 +47,5 @@ npx shadcn@latest add @leement/rotating-content`}</code></pre><p className="text
       <p className="text-muted-foreground">The registry currently targets canonical components/ui and lib paths. If your app uses shared/ui or another folder structure, align aliases first or move the installed source and imports deliberately. Runtime stylesheet replacement can dispatch <code>leement:theme-change</code> to redraw waveform colors without resetting playback.</p>
     </section>
     <AdoptionCompositions />
-  </main>;
+  </article>;
 }

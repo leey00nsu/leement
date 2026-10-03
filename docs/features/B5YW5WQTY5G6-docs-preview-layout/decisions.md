@@ -32,4 +32,14 @@
 
 T-01 확인: 1440px light Showcase 85개 프레임에서 24px padding, RotatingContent 상세에서 40px padding과 가로/세로 1px 점선을 확인했다. 두 route 모두 document overflow가 없고 대표 screenshot을 직접 확인했다. 변경 4개 component 파일의 eslint 통과. 전체 개별 판정은 T-03에서 수행한다.
 
-<!-- lee-spec-kit:workflow-sync sha256:ff0e4ab4af68ce2fa69bf31b6acdab5785b747539bdae6f6fa0706d838820277 -->
+
+## D003: 페이지의 바깥 inset은 RootLayout이 소유한다 (2026-10-03)
+
+- **Context/Constraints**: T-02 시작. Adoption의 중복 main과 24px/48px 추가 여백을 확인했다. 홈과 좁은 본문/목차의 의도는 유지한다.
+- **Decision**: Adoption을 padding 없는 article로 바꾸고 나머지 route의 source와 main/inset geometry를 확인한다.
+- **Trace**: 다른 route는 article/div 또는 ItemPage를 사용하고 RootLayout의 바깥 여백을 상속한다. 실제 route별 측정은 태스크 완료 전 기록한다.
+- **Evidence**: apps/docs/app/adoption/page.tsx 및 RootLayout, T-02 브라우저 확인 결과.
+
+T-02 확인: 전체 route template source를 조사했고 14개 대표 경로를 390/1440px에서 측정했다. 모든 페이지의 main 개수=1, route wrapper padding-left=0, document overflow=false. Adoption 제목 x는 390px에서20, 1440px에서304로 공통 scaffold와 일치한다. 홈의 넓은 레이아웃은 유지된다. Adoption eslint 통과. 동일 template의 85개 상세 경로는 T-03 전수 matrix에서도 확인한다.
+
+<!-- lee-spec-kit:workflow-sync sha256:a90bec65ef746118f2eab72419496d74a921e916364c99191be484327418b594 -->
