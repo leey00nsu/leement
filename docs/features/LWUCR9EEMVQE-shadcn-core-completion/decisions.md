@@ -34,7 +34,6 @@
 - **Trace**: pnpm frozen install 완료. InputGroup은 하나의 focus/invalid 표면을 제공한다. 기본 표식16px과 label 최소40px을 예제에서 결합한다. T01 계약6개/form/label/error/controlled/disabled/keyboard가 통과했고 docs typecheck·변경 eslint·registry build가 통과했다. 화면/소비자 설치는 T05에서 확인한다.
 - **Evidence**: [기본 입력 source](../../../../registry/ui/core-form.test.tsx), [명세](./spec.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:146b4d0f9311956afc9ba060f8d039007486f118a43cad7981551e5c74c44ccb -->
 
 ## D004: Command 엔진과 보조 popup을 재사용한다 (2026-10-03)
 
@@ -69,3 +68,8 @@
 - **Context**: 사용자가 Input 예제에서 파일 선택 버튼과 빈 파일명이 위로 치우치는 스크린샷을 전달했다. 구현 승인 응답이 아닌 기존 Feature의 변경 요청으로 처리한다.
 - **Decision**: 완료된 T01–T05의 기록을 유지하고 T06을 추가한다. native 파일 선택과 일반 Input API를 유지하면서 파일 입력의 세로 정렬을 최소 수정한다.
 - **Verification**: Plan T06의 실제 브라우저 검증을 사용하며 계획되지 않은 영구 테스트는 추가하지 않는다. 이전240건 matrix는 신규17개/수정3개만 대상으로 기존 Input을 포함하지 않았으므로 이 문제를 이미 검증했다고 주장하지 않는다.
+
+- **T06 root cause/result**:40px Input 안의 native file selector button 높이가24px로 제한되고 vertical padding이 없어 파일 input line box가 위에 배치됐다. file:h-6를 file:h-full로 바꾸어 border 내부38px를 채우며 native baseline이 중앙에 놓이게 하고 file:mr-2로8px 간격을 준다. parent line-height/높이 및 일반 입력 스타일은 유지한다. 실제 native 입력을 custom wrapper로 교체하지 않는다.
+- **T06 evidence/limits**: [브라우저8조합·24상태 및 키보드/일반 입력 검증](./artifacts/input-alignment-check.json). Chrome의 실제 렌더링을 확인했으며 다른 브라우저를 검증했다고 주장하지 않는다. Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 생성 registry source 일치,113개 tests,lint/typecheck/build PASS. 사용자 요청으로 구현 승인을 다시 요청하며 병합은 별도 승인이다.
+
+<!-- lee-spec-kit:workflow-sync sha256:80a55fc4c656f149e8a67a64b46e984c020410fd89475ba28f554a25c0d21510 -->

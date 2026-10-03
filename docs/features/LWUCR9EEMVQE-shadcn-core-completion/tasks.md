@@ -155,14 +155,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-06 기존 Input 파일 선택 영역의 세로 정렬 보정
+- [DONE][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-06 기존 Input 파일 선택 영역의 세로 정렬 보정
   - Date: 2026-10-03
   - Acceptance:
     - 기본40px Input에서 native 파일 선택 버튼과 파일명이 중앙에 정렬되고 일반 입력과 disabled 및 실제 파일 선택 동작이 유지된다.
   - Checklist:
-    - [ ] native file input의 line box 원인 측정과 최소 source 수정
-    - [ ] 한국어 및 영어 light/dark 모바일/데스크톱에서 빈 파일·선택 후·disabled와 일반 Input 확인
-    - [ ] 타입/lint/test/build 및 registry source 동기화 확인
+    - [x] native file input의 line box 원인 측정과 최소 source 수정
+    - [x] 한국어 및 영어 light/dark 모바일/데스크톱에서 빈 파일·선택 후·disabled와 일반 Input 확인
+    - [x] 타입/lint/test/build 및 registry source 동기화 확인
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -181,7 +181,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
@@ -218,3 +218,5 @@ T03 검증: data-table 계약4개(정렬/필터/페이지/empty·controlled 선�
 T04 검증: date-picker 계약5개 PASS(legacy schedule/single·skip unavailable·역순 range·interior rejection/bounds·popup completion/Escape/focus·disabled). docs typecheck·변경 eslint·registry build PASS.
 
 T05 완료 증거: [화면 matrix](./artifacts/browser-matrix.json), [실제 조작](./artifacts/interaction-checks.json), [독립 설치](./artifacts/consumer-installation.json), [기준/보류표](./artifacts/shadcn-baseline.json). 신규17개(UI15/Pattern2), 기존 Table/Calendar/Glimpse 보완을 확인했다. 공개 배포/npm publish와 원본 앱 전체 교체는 미실행이다. 구현 승인 및 local-ff 병합 승인은 별도 gate에서 받는다.
+
+T06 검증: Chrome에서 한국어/영어×390/1440px×light/dark8조합, 빈 파일/선택 후/disabled24상태를 확인했다. keyboard Enter가 native file chooser를 열고 파일을 선택하며 disabled는 Tab focus에서 제외된다. 일반 Input/Field/InputGroup40px와 form 값 유지. typecheck/lint/test113개/build PASS. 생성 registry의 Input source가 수정 원본과 동일하다. [검증](./artifacts/input-alignment-check.json), [light 정렬](./artifacts/input-empty-light-1440.png), [dark 선택 후](./artifacts/input-selected-dark-1440.png).

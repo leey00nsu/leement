@@ -1,0 +1,167 @@
+{
+  "browser": "Chrome",
+  "variants": 8,
+  "fileStatesPerVariant": 3,
+  "results": [
+    {
+      "locale": "ko-KR",
+      "width": 390,
+      "theme": "light",
+      "metric": {
+        "height": 40,
+        "buttonHeight": 38,
+        "buttonMargin": 8,
+        "padding": "0px 12px",
+        "normalLineHeight": "24px"
+      },
+      "empty": true,
+      "keyboardFileSelection": true,
+      "selectedFilename": true,
+      "disabledKeyboardSkip": true,
+      "ordinaryInput": true,
+      "fieldInput": true,
+      "inputGroup": true,
+      "pageErrors": []
+    },
+    {
+      "locale": "ko-KR",
+      "width": 390,
+      "theme": "dark",
+      "metric": {
+        "height": 40,
+        "buttonHeight": 38,
+        "buttonMargin": 8,
+        "padding": "0px 12px",
+        "normalLineHeight": "24px"
+      },
+      "empty": true,
+      "keyboardFileSelection": true,
+      "selectedFilename": true,
+      "disabledKeyboardSkip": true,
+      "ordinaryInput": true,
+      "fieldInput": true,
+      "inputGroup": true,
+      "pageErrors": []
+    },
+    {
+      "locale": "ko-KR",
+      "width": 1440,
+      "theme": "light",
+      "metric": {
+        "height": 40,
+        "buttonHeight": 38,
+        "buttonMargin": 8,
+        "padding": "0px 12px",
+        "normalLineHeight": "20px"
+      },
+      "empty": true,
+      "keyboardFileSelection": true,
+      "selectedFilename": true,
+      "disabledKeyboardSkip": true,
+      "ordinaryInput": true,
+      "fieldInput": true,
+      "inputGroup": true,
+      "pageErrors": []
+    },
+    {
+      "locale": "ko-KR",
+      "width": 1440,
+      "theme": "dark",
+      "metric": {
+        "height": 40,
+        "buttonHeight": 38,
+        "buttonMargin": 8,
+        "padding": "0px 12px",
+        "normalLineHeight": "20px"
+      },
+      "empty": true,
+      "keyboardFileSelection": true,
+      "selectedFilename": true,
+      "disabledKeyboardSkip": true,
+      "ordinaryInput": true,
+      "fieldInput": true,
+      "inputGroup": true,
+      "pageErrors": []
+    },
+    {
+      "locale": "en-US",
+      "width": 390,
+      "theme": "light",
+      "metric": {
+        "height": 40,
+        "buttonHeight": 38,
+        "buttonMargin": 8,
+        "padding": "0px 12px",
+        "normalLineHeight": "24px"
+      },
+      "empty": true,
+      "keyboardFileSelection": true,
+      "selectedFilename": true,
+      "disabledKeyboardSkip": true,
+      "ordinaryInput": true,
+      "fieldInput": true,
+      "inputGroup": true,
+      "pageErrors": []
+    },
+    {
+      "locale": "en-US",
+      "width": 390,
+      "theme": "dark",
+      "metric": {
+        "height": 40,
+        "buttonHeight": 38,
+        "buttonMargin": 8,
+        "padding": "0px 12px",
+        "normalLineHeight": "24px"
+      },
+      "empty": true,
+      "keyboardFileSelection": true,
+      "selectedFilename": true,
+      "disabledKeyboardSkip": true,
+      "ordinaryInput": true,
+      "fieldInput": true,
+      "inputGroup": true,
+      "pageErrors": []
+    },
+    {
+      "locale": "en-US",
+      "width": 1440,
+      "theme": "light",
+      "metric": {
+        "height": 40,
+        "buttonHeight": 38,
+        "buttonMargin": 8,
+        "padding": "0px 12px",
+        "normalLineHeight": "20px"
+      },
+      "empty": true,
+      "keyboardFileSelection": true,
+      "selectedFilename": true,
+      "disabledKeyboardSkip": true,
+      "ordinaryInput": true,
+      "fieldInput": true,
+      "inputGroup": true,
+      "pageErrors": []
+    },
+    {
+      "locale": "en-US",
+      "width": 1440,
+      "theme": "dark",
+      "metric": {
+        "height": 40,
+        "buttonHeight": 38,
+        "buttonMargin": 8,
+        "padding": "0px 12px",
+        "normalLineHeight": "20px"
+      },
+      "empty": true,
+      "keyboardFileSelection": true,
+      "selectedFilename": true,
+      "disabledKeyboardSkip": true,
+      "ordinaryInput": true,
+      "fieldInput": true,
+      "inputGroup": true,
+      "pageErrors": []
+    }
+  ]
+}
