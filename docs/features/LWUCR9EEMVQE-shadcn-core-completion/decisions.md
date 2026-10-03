@@ -72,7 +72,7 @@
 - **T06 root cause/result**:40px Input 안의 native file selector button 높이가24px로 제한되고 vertical padding이 없어 파일 input line box가 위에 배치됐다. file:h-6를 file:h-full로 바꾸어 border 내부38px를 채우며 native baseline이 중앙에 놓이게 하고 file:mr-2로8px 간격을 준다. parent line-height/높이 및 일반 입력 스타일은 유지한다. 실제 native 입력을 custom wrapper로 교체하지 않는다.
 - **T06 evidence/limits**: [브라우저8조합·24상태 및 키보드/일반 입력 검증](./artifacts/input-alignment-check.json). Chrome의 실제 렌더링을 확인했으며 다른 브라우저를 검증했다고 주장하지 않는다. Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 생성 registry source 일치,113개 tests,lint/typecheck/build PASS. 사용자 요청으로 구현 승인을 다시 요청하며 병합은 별도 승인이다.
 
-<!-- lee-spec-kit:workflow-sync sha256:4e1105c5846ea4c7c970334a6bcfb34065ca847bb80551b79d8fd1eecc76663d -->
+<!-- lee-spec-kit:workflow-sync sha256:10a3e13d1c015ce9a65f157f5729c4573c1749af48685813f0b7ea1e958a7b6d -->
 
 ## D009: 사용자 요청에 따른 전체 예제 부족 분석 (2026-10-03)
 
@@ -89,3 +89,7 @@
 - **Authorization**: 사용자가 D009의 분석·우선순위·상세 Examples 제안을 확인한 뒤 “수정 시작.”이라고 요청했다. Spec US-5와 Plan T07–T10에 UI55개 구현 범위와 source/Code 검증 계약을 구체화한다. 기존 Feature를 유지한다.
 - **Decision**: 분석된13개 우선 및42개 보완을 모두 완료한다.24개 유지와Pattern/Block의 추가 후보는 기존 예제를 유지한다. compound example과 state별 사용법을 소비자 소스로 제공하고 Showcase의 대표 예제는 보존한다.
 - **Approvals**: 이 요청은 분석 결과에 대한 구현 지시다. 구현 승인 또는local-ff병합 승인은 아니다. 마지막에 별도로 정해진 checkpoint에 멈춘다.
+
+## D011: 추가예제로 드러난 지원 상태를 보정한다 (2026-10-03)
+
+Tabs가 orientation을 class용 data attribute에만 쓰고 primitive에는 전달하지 않아 vertical navigation이 horizontal로 남았다. 전달을 보정한다. Progress value=null에서 indicator의 inline width가 없고 기본 class에도 폭이 없어 시각적으로0폭이었다. data-indeterminate의 전체폭 pulse와 reduced-motion 정지를 적용하며 임의 percent를 만들지 않는다. 새 API/animation engine을 추가하지 않는다. source 변경도 기존 Feature의 예제 지원 범위에 포함하며 T10에서 실제 동작을 확인한다.

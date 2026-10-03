@@ -185,13 +185,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-08 우선13개 핵심 조합과 상태 예제
+- [DONE][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-08 우선13개 핵심 조합과 상태 예제
   - Date: 2026-10-03
   - Acceptance:
     - 우선13개가 지원하는 핵심 API와 조합·결과를 실제 원본 예제로 제공한다.
   - Checklist:
-    - [ ] 13개 조사 행과 추가예제 연결
-    - [ ] 선택/menu/form/table/chart/toast 등 타입/lint 검증
+    - [x] 13개 조사 행과 추가예제 연결
+    - [x] 선택/menu/form/table/chart/toast 등 타입/lint 검증
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -280,3 +280,7 @@ T05 완료 증거: [화면 matrix](./artifacts/browser-matrix.json), [실제 조
 T06 검증: Chrome에서 한국어/영어×390/1440px×light/dark8조합, 빈 파일/선택 후/disabled24상태를 확인했다. keyboard Enter가 native file chooser를 열고 파일을 선택하며 disabled는 Tab focus에서 제외된다. 일반 Input/Field/InputGroup40px와 form 값 유지. typecheck/lint/test113개/build PASS. 생성 registry의 Input source가 수정 원본과 동일하다. [검증](./artifacts/input-alignment-check.json), [light 정렬](./artifacts/input-empty-light-1440.png), [dark 선택 후](./artifacts/input-selected-dark-1440.png).
 
 T07 검증: 실제 select-groups source를 상세 Preview와 Code가 함께 사용한다. source 읽기/alias 보존/경로 차단/미등록 처리 계약4개 PASS, docs typecheck 및 변경8파일 eslint PASS. 추가예제는 lazy 로딩하며 Showcase 원본은 유지한다. 전체 브라우저/소비자 검증은T10에서 수행한다.
+
+T08 검증: 우선13개 항목에15개 named 예제를 연결했다(Select3개 포함). docs typecheck 및 변경 예제/registry eslint PASS. FieldSet/Legend와 native control, menu checkbox/radio/submenu, Chart legend, null Progress, file callback/Editor HTML 결과를 구성했다. Progress null의 indicator 폭이0이어서 data-indeterminate 전체 폭+reduced-motion 지원 pulse로 보정했고 Tabs orientation을 primitive에 전달했다. 실제 조작/모바일/테마/소비자는T10에서 확인한다.
+
+T08 focused regression: source Code/core-form/media-finance/source-extension4 files25 tests PASS(일부 jsdom media pause 미구현 진단은 기존 테스트 환경의 제한).
