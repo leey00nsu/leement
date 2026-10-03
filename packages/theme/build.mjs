@@ -57,6 +57,20 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   font-display: swap;
   src: url("./fonts/paperlogy-bold.woff2") format("woff2");
 }
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/d2coding-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/d2coding-bold.woff2") format("woff2");
+}
 :root, [data-lm-theme="light"] {\n${lines([...common, ...colors("light")], "lm")}\n${compatibility}\n  color-scheme: light;\n}
 .dark, [data-lm-theme="dark"] {\n${lines(colors("dark"), "lm")}\n${compatibility}\n  color-scheme: dark;\n}
 @media (prefers-reduced-motion: reduce) {\n  :root, [data-lm-theme], .dark { --lm-motion-duration-fast: 0ms; --lm-motion-duration-normal: 0ms; --lm-motion-duration-slow: 0ms; --lm-motion-duration-reveal: 0ms; --lm-motion-duration-expand: 0ms; --lm-motion-duration-media: 0ms; --lm-motion-delay-stagger: 0ms; }\n}

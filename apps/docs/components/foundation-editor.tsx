@@ -25,7 +25,7 @@ import {
 
 const colorGroups = [...new Set(colorFields.map((field) => field.group))];
 const familyOptions = [
-  ...sharedFields.filter((field) => field.kind === "family").map((field) => ({ value: field.defaultValue, label: `${field.label} default` })),
+  ...sharedFields.filter((field) => field.kind === "family").map((field) => ({ value: field.defaultValue, label: `${field.label} default · ${field.defaultValue.split(",")[0]?.replaceAll('"', '') ?? field.defaultValue}` })),
   { value: "system-ui, sans-serif", label: "System sans" },
   { value: "Georgia, Cambria, serif", label: "Georgia / Cambria" },
   { value: "ui-monospace, monospace", label: "Generic monospace" },
@@ -148,7 +148,7 @@ function FamilyControl({ field, value }: { field: SharedField; value: string }) 
       setDraft(event.target.value);
       if (validPreviewValue("shared", field.key, event.target.value)) setValue("shared", field.key, event.target.value);
     }} onBlur={() => setTouched(true)} />
-    <p id={`${id}-hint`} className="mt-2 text-xs leading-5 text-muted-foreground">Pretendard and Paperlogy are included. Other fonts must already be installed or loaded by your app; setting a name does not download a font.</p>
+    <p id={`${id}-hint`} className="mt-2 text-xs leading-5 text-muted-foreground">Pretendard, Paperlogy and D2Coding are included. Other fonts must already be installed or loaded by your app; setting a name does not download a font.</p>
     {touched && !valid && <p id={`${id}-error`} className="mt-2 text-xs text-destructive">Enter a font family list, such as "My Brand", sans-serif.</p>}
   </div>;
 }
@@ -238,7 +238,8 @@ function ActualPreview({ category }: { category: FoundationCategory }) {
   if (category === "typography") return <div className="space-y-4" data-testid="foundation-actual-preview">
     <div className="space-y-2 border-b border-border pb-4"><BrandLogo name="Leement" mark={<img src="/leement-mark.svg" alt="" width={128} height={128} />} /><p className="text-xs text-muted-foreground">Brand font · Paperlogy 700 by default. Body font edits leave the wordmark independent.</p></div>
     <div className="space-y-2"><p className="font-mono text-xs text-muted-foreground">Type scale and hierarchy</p><p className="text-2xl font-bold leading-tight">Design that feels familiar.</p><p className="text-lg font-semibold leading-normal">A clear heading for every screen.</p><p className="text-base font-normal leading-relaxed">Readable body copy keeps the details easy to follow.</p></div>
-    <Card><CardHeader><CardTitle>Information hierarchy</CardTitle><CardDescription>Card titles and descriptions use the same type rules.</CardDescription></CardHeader><CardContent><p className="text-sm text-muted-foreground">Supporting text stays legible at smaller sizes.</p><code className="mt-3 block font-mono text-xs">const type = "consistent";</code></CardContent></Card>
+    <Card><CardHeader><CardTitle>Information hierarchy</CardTitle><CardDescription>Card titles and descriptions use the same type rules.</CardDescription></CardHeader><CardContent><p className="text-sm text-muted-foreground">Supporting text stays legible at smaller sizes.</p></CardContent></Card>
+    <div className="space-y-3"><p className="text-sm font-medium">Code font</p><p className="text-xs leading-5 text-muted-foreground">Mono font edits apply to code, commands and shortcuts across the site. The default D2Coding includes Korean glyphs; each Hangul syllable occupies two Latin character widths.</p><pre className="overflow-x-auto rounded-lg bg-muted p-3 text-xs leading-relaxed"><code>{`// 한글 주석과 English code\nconst message = "안녕하세요, Leement";\nconst sample = "0O 1Il => !==";`}</code></pre><p className="font-mono text-xs font-bold">Bold 700 · 굵은 코드</p></div>
   </div>;
   if (category === "spacing") return <div className="space-y-4" data-testid="foundation-actual-preview">
     <Card><CardHeader><CardTitle>Control rhythm</CardTitle><CardDescription>One spacing step shapes control heights and inset.</CardDescription></CardHeader><CardContent className="space-y-4"><div className="flex flex-wrap items-center gap-3"><Button size="xs">Extra small</Button><Button size="sm">Small</Button><Button>Default</Button><Button size="lg">Large</Button></div><Input aria-label="Spacing preview input" placeholder="Input uses the same spacing scale" /></CardContent></Card>

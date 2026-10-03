@@ -227,14 +227,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-002] T-LWUCR9EEMVQE-shadcn-core-completion-11 D2Coding 기본 mono 웹폰트와 Foundations 설정
+- [DONE][PRD-FR-002] T-LWUCR9EEMVQE-shadcn-core-completion-11 D2Coding 기본 mono 웹폰트와 Foundations 설정
   - Date: 2026-10-03
   - Acceptance:
     - theme 기본 import로 D2Coding Regular/Bold가 실제 로드되고 한국어·영문 코드와 Foundations mono 변경·초기화·CSS 복사가 동작한다.
   - Checklist:
-    - [ ] 공식 font 자산과 OFL·출처를 theme 배포에 포함하고 token 및 문서 기본값을 맞춘다.
-    - [ ] Foundations에서 기본 mono와 커스텀 설정을 안내하고 실제 font 로드·CSS 복사·초기화 및 package pack 소비자를 검증한다.
-    - [ ] typecheck/lint/test/build와 최종 workflow 검증을 통과한다.
+    - [x] 공식 일반 Regular/Bold font 자산과 OFL·출처를 theme 배포에 포함하고 token·디자인/PRD 기본값을 맞춘다. registry API와 본문/로고 역할의 영향 여부를 확인한다.
+    - [x] Foundations에서 기본 mono와 커스텀 설정을 안내하고 실제 font 로드·CSS 복사·초기화 및 package pack 소비자를 검증한다.
+    - [x] typecheck/lint/test/build와 최종 workflow 검증을 통과한다.
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -256,9 +256,9 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
 
@@ -269,7 +269,7 @@
 | ------------------------ | ----------------------------- | ------------------ |
 | pnpm run typecheck | 2026-10-03 | PASS,5 workspace tasks |
 | pnpm run lint | 2026-10-03 | PASS,docs/theme/tokens와 registry |
-| pnpm run test | 2026-10-03 | PASS,19 files/117 tests; 기존113+source Code 계약4 |
+| pnpm run test | 2026-10-03 | PASS,19 files/117 tests |
 | pnpm run build | 2026-10-03 | PASS,tokens/theme/registry/Next production |
 | shadcn@4.21.1 add @leement/신규17개 | 2026-10-03 | PASS,독립 React19/Tailwind4 consumer에서 종속 source27개·typecheck/build |
 | shadcn@4.21.1 add @leement/data-table (빈 consumer) | 2026-10-03 | PASS,source7개+dependencies 자동 설치·typecheck/build |
@@ -307,3 +307,5 @@ T09 검증: 보완42개에42개 named 예제를 추가했다. 우선 항목 포�
 T10 완료 증거: [55개/57예제 대응표](./artifacts/additional-example-coverage.json), [228화면·57Code 및 chart stroke4조합](./artifacts/additional-example-matrix.json), [44실제 조작](./artifacts/additional-example-interactions.json), [55registry항목+Badge 설치 및57예제 strict consumer build/실제6조작](./artifacts/additional-consumer-checks.json). Chrome에서 light/dark390/1440px를 확인했고 보존한12개 대표 화면을 포함하여 contact sheet로 새 예제의 배치를 직접 검토했다. 가로 overflow/렌더 오류0, Code 원본 불일치0, Showcase 추가예제 mount0이다. Chart 두 series의 stroke가 실제 색으로 resolve되는 것도 확인했다.
 
 T10 회귀 보정: Tabs vertical orientation 전달, Progress unknown indicator 폭과 reduced motion, ImageCrop 고정 aspect 초기/Reset 및 Editor aria-readonly를 수정했다. 추가 예제의 설치 명령은 실제 import 항목으로 표시한다. typecheck/lint/test117개/build PASS, consumer55항목+Badge namespace 설치/57예제 compile·build PASS. Vite의 use client directive 무시 진단은 client-only consumer에서 예상된 것으로 빌드 실패가 아니다. theme은 로컬 pack, registry는 localhost3011을 사용했다. 공개 publish/배포·다른 브라우저·원본 두 앱 교체는 수행하지 않았다. 구현 승인과 병합 승인은 별도다.
+
+T11 검증: D2Coding v1.4.0 일반 Regular400/Bold700 TTF의 lossless WOFF2를 theme에 포함했다. 각 cmap19936개, outline/hmtx 동일성을 확인했다. OFL/NOTICE와 고정 source revision/원본 및 산출물 SHA256을 보존했다. 패키지 pack의 CSS 상대경로·font/license/notice 일치, 실제 docs light/dark390/1440px 네 조합과 폰트 실사용(CDP), 한국어2칸/영문 고정폭, mono 선택/커스텀/CSS 복사/페이지 이동/새로고침/초기화6계약, 독립 소비자 타입/build와400/700 실사용 PASS. 본문 Pretendard·로고 Paperlogy 독립성 유지. typecheck/lint/test117개/build PASS. [폰트·pack·실제 브라우저 검증](./artifacts/mono-font-checks.json), [light 모바일](./artifacts/mono-light-390.png), [dark](./artifacts/mono-dark-1440.png). Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 공개 배포·다른 브라우저는 미실행이다.

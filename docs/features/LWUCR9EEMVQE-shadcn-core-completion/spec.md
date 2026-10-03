@@ -101,7 +101,7 @@ strict TypeScript, framework-agnostic tokens, source ownership을 유지한다. 
 ## 관련 문서
 
 - PRD: [leement-prd.md](../../prd/leement-prd.md)
-- PRD Refs: PRD-FR-005, PRD-FR-008, PRD-FR-009, PRD-FR-014, PRD-NFR-001, PRD-NFR-002, PRD-NFR-004
+- PRD Refs: PRD-FR-002, PRD-FR-011, PRD-FR-013, PRD-FR-005, PRD-FR-008, PRD-FR-009, PRD-FR-014, PRD-NFR-001, PRD-NFR-002, PRD-NFR-004
 - Design Refs: docs/designs/design-system.md
 - Design System: docs/designs/design-system.md
 - 공식 기준: [Components](https://ui.shadcn.com/docs/components), [Field](https://ui.shadcn.com/docs/components/base/field), [Data Table](https://ui.shadcn.com/docs/components/base/data-table), [Date Picker](https://ui.shadcn.com/docs/components/base/date-picker)
@@ -121,6 +121,6 @@ Pattern15/Block8 조사 결과는 이 예제 보강의 참고다. 이번 추가 
 ## US-6: 기본 mono 폰트를 일관되게 사용한다
 
 - **추가 범위 승인 근거**: 사용자가 D2Coding 추천과 웹폰트 배포 제안을 확인한 뒤 “다음 task로 진행해줘.”라고 요청했다. 기존 Feature T11로 구현하며 병합 승인으로 해석하지 않는다.
-- [ ] theme import에 D2Coding Regular/Bold와 OFL/출처를 포함하며 mono 기본 token을 D2Coding으로 지정한다.
-- [ ] Foundations에서 mono 기본값·커스텀·초기화·CSS 복사를 지원하고 한국어/영문 예제로 역할을 설명한다.
-- [ ] pack 산출물과 실제 소비자 폰트 로드 및 기존 featureChecks를 확인한다. 본문/브랜드 폰트 역할은 독립적이다.
+- [x] theme import에 D2Coding Regular/Bold와 OFL/출처를 포함하며 mono 기본 token을 D2Coding으로 지정한다.
+- [x] Foundations에서 mono 기본값·커스텀·초기화·CSS 복사를 지원하고 한국어/영문 예제로 역할을 설명한다.
+- [x] pack 산출물과 실제 소비자 폰트 로드 및 기존 featureChecks를 확인한다. 본문/브랜드 폰트 역할은 독립적이다.

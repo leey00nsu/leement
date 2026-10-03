@@ -72,7 +72,7 @@
 - **T06 root cause/result**:40px Input 안의 native file selector button 높이가24px로 제한되고 vertical padding이 없어 파일 input line box가 위에 배치됐다. file:h-6를 file:h-full로 바꾸어 border 내부38px를 채우며 native baseline이 중앙에 놓이게 하고 file:mr-2로8px 간격을 준다. parent line-height/높이 및 일반 입력 스타일은 유지한다. 실제 native 입력을 custom wrapper로 교체하지 않는다.
 - **T06 evidence/limits**: [브라우저8조합·24상태 및 키보드/일반 입력 검증](./artifacts/input-alignment-check.json). Chrome의 실제 렌더링을 확인했으며 다른 브라우저를 검증했다고 주장하지 않는다. Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 생성 registry source 일치,113개 tests,lint/typecheck/build PASS. 사용자 요청으로 구현 승인을 다시 요청하며 병합은 별도 승인이다.
 
-<!-- lee-spec-kit:workflow-sync sha256:ecf80390c7ece4b992935b76281f635dbc22f9f6c287b98cb7e5b3a79891bca0 -->
+<!-- lee-spec-kit:workflow-sync sha256:065e8a640e37efea423bb4f421ccfd17b78492c559e6b833a11458edd13fed4d -->
 
 ## D009: 사용자 요청에 따른 전체 예제 부족 분석 (2026-10-03)
 
@@ -107,3 +107,5 @@ T10 최종 결과:55개 항목/57개 추가예제, Code·설치 명령·outline�
 ## D013: 사용자 요청으로 기본 mono 폰트를 D2Coding으로 고정한다
 
 기기별 시스템 mono 대신 한글과 영문 코드를 위한 D2Coding을 기본값으로 제공한다. “다음 task로 진행해줘.”는 T11 구현 허가이며 main 병합 허가가 아니다. 기존 Fonts 배포 규칙대로 theme에 font-face와 자체 웹폰트/OFL/NOTICE를 포함하고 Fonts 이름 입력만으로 외부 폰트를 받지 않는다. mono family는 Foundations에서 재정의할 수 있다. font 파일은 공식 출처의 고정 revision을 기록하며 fallback을 유지한다. README 변경 없음.
+
+D013 결과: 공식 site WOFF2를 실제 CDP로 조사하니 D2Coding ligature였으므로 사용하지 않았다. 고정 revision b0dc372e28d7abdba7f3cba854855ceffbd490a8의 일반 TTF를 기존 임시 fontTools4.66.1 환경으로 WOFF2 변환했다(프로젝트 tooling/compiler 추가 없음). Regular/Bold 모두 cmap19936개와 glyf/hmtx를 원본과 대조해 일치했다. 실제 렌더링은 D2Coding custom font이며400/700과 한국어 포함 예제를 확인했다. fonts를 등록만 한 상태에서 다운로드되었다고 주장하지 않는다. 약3.06MB의 두 전체 WOFF2를 패키지에 포함하며 CSS font-face는 사용되는 굵기만 로드하고 swap/fallback을 제공한다. 큰 한글 폰트의 subset/복잡한 로더는 추가하지 않는다. Foundations mono default와 font-role 안내·override sample을 동기화했다. registry public API·README 변경 없음. 검증은 [T11 증거](./artifacts/mono-font-checks.json)에 보존한다.

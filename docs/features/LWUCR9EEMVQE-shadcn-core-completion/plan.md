@@ -122,7 +122,7 @@ Plan 승인: agentReview.plan disabled 및 workflow-stage의 plan_approve 자동
 
 ## T11 기본 mono 폰트
 
-사용자의 추가 구현 지시를 반영한다. 공식 D2Coding의 고정 revision 자산 Regular400/Bold700를 lossless WOFF2로 배포하고 OFL 및 출처/해시를 fonts/에 보존한다. theme build의 font-face(swap)와 tokens mono family를 갱신한다. Foundations 기본 옵션에 폰트명을 표시하고 한국어/영문 코드 sample 및 커스텀 파일 로드 안내를 제공한다. registry API나 본문/브랜드 token은 변경하지 않는다.
+사용자의 추가 구현 지시를 반영한다. 공식 D2Coding의 고정 revision 자산 Regular400/Bold700를 공식 standard TTF를 lossless WOFF2로 변환해 배포하고 OFL 및 출처/해시를 fonts/에 보존한다. theme build의 font-face(swap)와 tokens mono family를 갱신한다. Foundations 기본 옵션에 폰트명을 표시하고 한국어/영문 코드 sample 및 커스텀 파일 로드 안내를 제공한다. registry API나 본문/브랜드 token은 변경하지 않는다.
 
 Curated Documentation Impact: 기존 PRD-FR-002/011/013과 docs/designs/design-system.md를 UPDATE한다. 두 대상은 T11 Docs에 연결한다. 아키텍처·운영·README는 NONE(README 요청 없음).
 

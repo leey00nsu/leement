@@ -1,0 +1,348 @@
+{
+  "fontSource": {
+    "version": "1.4.0",
+    "revision": "b0dc372e28d7abdba7f3cba854855ceffbd490a8",
+    "files": [
+      {
+        "file": "d2coding-regular.woff2",
+        "source": "https://raw.githubusercontent.com/naver/d2-coding-font/b0dc372e28d7abdba7f3cba854855ceffbd490a8/fonts/ttf/D2Coding-Regular.ttf",
+        "sourceSha256": "d5f2b6bf5b1826cfbf3734c70582f0cd42ea2e1d6c2636ae681b612bc9c5682f",
+        "sha256": "54cdf333d014363f7042023a899a42f7be30194e2004bb8cd7156cb5367b1d91",
+        "size": 1484828,
+        "family": "D2Coding",
+        "subfamily": "Regular",
+        "glyphs": 26190,
+        "cmap": 19936,
+        "outlinesAndMetricsPreserved": true
+      },
+      {
+        "file": "d2coding-bold.woff2",
+        "source": "https://raw.githubusercontent.com/naver/d2-coding-font/b0dc372e28d7abdba7f3cba854855ceffbd490a8/fonts/ttf/D2Coding-Bold.ttf",
+        "sourceSha256": "14a0cfa4d96fbd976bc4b1a6ef81e51df353a1689d5273ebcd908c857a4f2752",
+        "sha256": "126d8d44fe76fda763e725d3583d0073e1a06abef9c27735182d855f30dfa5ef",
+        "size": 1579096,
+        "family": "D2Coding",
+        "subfamily": "Bold",
+        "glyphs": 26168,
+        "cmap": 19936,
+        "outlinesAndMetricsPreserved": true
+      },
+      {
+        "file": "D2Coding-OFL.txt",
+        "source": "https://raw.githubusercontent.com/naver/d2-coding-font/b0dc372e28d7abdba7f3cba854855ceffbd490a8/OFL.txt",
+        "size": 4511,
+        "sha256": "1807e8dec4d65f474cbf9be39f5e2254ecb81702babc320749e272ea66ffcc69"
+      }
+    ],
+    "package": {
+      "name": "@leement/theme",
+      "archiveSha256": "86160b11e35b4ccdb2c4e0548c28b7123796e9376f256f62a375b06a126742ba",
+      "fontFilesAndCssUrlsValid": true
+    }
+  },
+  "matrix": [
+    {
+      "theme": "light",
+      "width": 390,
+      "facts": {
+        "faces": [
+          {
+            "family": "D2Coding",
+            "weight": "400",
+            "status": "loaded"
+          },
+          {
+            "family": "D2Coding",
+            "weight": "700",
+            "status": "loaded"
+          }
+        ],
+        "metrics": [
+          {
+            "weight": 400,
+            "i": 8,
+            "W": 8,
+            "hangul": 16
+          },
+          {
+            "weight": 700,
+            "i": 8,
+            "W": 8,
+            "hangul": 16
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3011/_next/static/media/d2coding-regular.0p5nm319fssep.woff2",
+            "encodedBodySize": 1484828
+          },
+          {
+            "url": "http://localhost:3011/_next/static/media/d2coding-bold.0tacp87ivko6e.woff2",
+            "encodedBodySize": 1579096
+          }
+        ],
+        "body": "\"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "brand": "Paperlogy, \"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "mono": "D2Coding, ui-monospace, SFMono-Regular, Menlo, monospace",
+        "overflow": false
+      },
+      "actualFont": [
+        {
+          "familyName": "D2Coding",
+          "postScriptName": "D2Coding",
+          "isCustomFont": true,
+          "glyphCount": 86
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "facts": {
+        "faces": [
+          {
+            "family": "D2Coding",
+            "weight": "400",
+            "status": "loaded"
+          },
+          {
+            "family": "D2Coding",
+            "weight": "700",
+            "status": "loaded"
+          }
+        ],
+        "metrics": [
+          {
+            "weight": 400,
+            "i": 8,
+            "W": 8,
+            "hangul": 16
+          },
+          {
+            "weight": 700,
+            "i": 8,
+            "W": 8,
+            "hangul": 16
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3011/_next/static/media/d2coding-regular.0p5nm319fssep.woff2",
+            "encodedBodySize": 1484828
+          },
+          {
+            "url": "http://localhost:3011/_next/static/media/d2coding-bold.0tacp87ivko6e.woff2",
+            "encodedBodySize": 1579096
+          }
+        ],
+        "body": "\"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "brand": "Paperlogy, \"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "mono": "D2Coding, ui-monospace, SFMono-Regular, Menlo, monospace",
+        "overflow": false
+      },
+      "actualFont": [
+        {
+          "familyName": "D2Coding",
+          "postScriptName": "D2Coding",
+          "isCustomFont": true,
+          "glyphCount": 86
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "facts": {
+        "faces": [
+          {
+            "family": "D2Coding",
+            "weight": "400",
+            "status": "loaded"
+          },
+          {
+            "family": "D2Coding",
+            "weight": "700",
+            "status": "loaded"
+          }
+        ],
+        "metrics": [
+          {
+            "weight": 400,
+            "i": 8,
+            "W": 8,
+            "hangul": 16
+          },
+          {
+            "weight": 700,
+            "i": 8,
+            "W": 8,
+            "hangul": 16
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3011/_next/static/media/d2coding-regular.0p5nm319fssep.woff2",
+            "encodedBodySize": 1484828
+          },
+          {
+            "url": "http://localhost:3011/_next/static/media/d2coding-bold.0tacp87ivko6e.woff2",
+            "encodedBodySize": 1579096
+          }
+        ],
+        "body": "\"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "brand": "Paperlogy, \"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "mono": "D2Coding, ui-monospace, SFMono-Regular, Menlo, monospace",
+        "overflow": false
+      },
+      "actualFont": [
+        {
+          "familyName": "D2Coding",
+          "postScriptName": "D2Coding",
+          "isCustomFont": true,
+          "glyphCount": 86
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "facts": {
+        "faces": [
+          {
+            "family": "D2Coding",
+            "weight": "400",
+            "status": "loaded"
+          },
+          {
+            "family": "D2Coding",
+            "weight": "700",
+            "status": "loaded"
+          }
+        ],
+        "metrics": [
+          {
+            "weight": 400,
+            "i": 8,
+            "W": 8,
+            "hangul": 16
+          },
+          {
+            "weight": 700,
+            "i": 8,
+            "W": 8,
+            "hangul": 16
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3011/_next/static/media/d2coding-regular.0p5nm319fssep.woff2",
+            "encodedBodySize": 1484828
+          },
+          {
+            "url": "http://localhost:3011/_next/static/media/d2coding-bold.0tacp87ivko6e.woff2",
+            "encodedBodySize": 1579096
+          }
+        ],
+        "body": "\"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "brand": "Paperlogy, \"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+        "mono": "D2Coding, ui-monospace, SFMono-Regular, Menlo, monospace",
+        "overflow": false
+      },
+      "actualFont": [
+        {
+          "familyName": "D2Coding",
+          "postScriptName": "D2Coding",
+          "isCustomFont": true,
+          "glyphCount": 86
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    "mono selection changes code independently",
+    {
+      "check": "exact mono CSS copy",
+      "css": "/* Paste after @import \"@leement/theme\"; */\n:root {\n  --lm-typography-family-mono: ui-monospace, monospace;\n  --font-mono: var(--lm-typography-family-mono);\n}"
+    },
+    "page navigation retains mono override",
+    "reload retains mono override",
+    "custom mono family applies without font download",
+    "reset restores bundled default and clears persistence"
+  ],
+  "consumer": {
+    "facts": {
+      "faces": [
+        {
+          "family": "D2Coding",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "D2Coding",
+          "weight": "700",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "weight": 400,
+          "i": 8,
+          "W": 8,
+          "hangul": 16
+        },
+        {
+          "weight": 700,
+          "i": 8,
+          "W": 8,
+          "hangul": 16
+        }
+      ],
+      "resources": [
+        {
+          "url": "http://localhost:3020/assets/d2coding-regular-9Gw1f9yE.woff2",
+          "encodedBodySize": 1484828
+        },
+        {
+          "url": "http://localhost:3020/assets/d2coding-bold-DiJbI65z.woff2",
+          "encodedBodySize": 1579096
+        }
+      ],
+      "body": "\"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "brand": "Paperlogy, \"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "mono": "D2Coding, ui-monospace, SFMono-Regular, Menlo, monospace",
+      "overflow": false
+    },
+    "actualFont": [
+      {
+        "familyName": "D2Coding",
+        "postScriptName": "D2Coding",
+        "isCustomFont": true,
+        "glyphCount": 55
+      }
+    ],
+    "boldFont": [
+      {
+        "familyName": "D2Coding",
+        "postScriptName": "D2CodingBold",
+        "isCustomFont": true,
+        "glyphCount": 16
+      }
+    ],
+    "themePackage": "file:/tmp/leement-d2-pack/leement-theme-0.1.0.tgz",
+    "typecheck": "PASS",
+    "build": "PASS"
+  },
+  "errors": [],
+  "checks": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "test": "PASS (19 files,117 tests)",
+    "build": "PASS",
+    "consumerTypecheck": "PASS",
+    "consumerBuild": "PASS"
+  },
+  "limitations": [
+    "Chrome only",
+    "local package pack; not published or deployed"
+  ]
+}

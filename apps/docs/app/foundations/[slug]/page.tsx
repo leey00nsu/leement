@@ -4,7 +4,7 @@ import { FoundationEditor } from "../../../components/foundation-editor";
 
 const content = {
   color: { rule: "Use semantic roles for background, surface, foreground, border, action, brand, focus, status and data accent. Palette names stay in primitive tokens.", detail: "Surface.muted is the visible control and loading placeholder surface in both modes; background.subtle is a quieter page background. CopySinger light and Leesfield dark provide example brand defaults. Your product sets its own brand values without editing component source." },
-  typography: { rule: "Use Pretendard for readable body text, Paperlogy Bold for brand wordmarks, and a small type scale for hierarchy.", detail: "The theme includes and loads Pretendard Variable and Paperlogy 700 locally. Body and brand families can be changed independently; custom fonts are loaded by your app." },
+  typography: { rule: "Use Pretendard for readable body text, Paperlogy Bold for brand wordmarks, D2Coding for code, and a small type scale for hierarchy.", detail: "The theme includes and loads Pretendard Variable, Paperlogy 700 and D2Coding 400/700 locally. Body, brand and mono families can be changed independently; custom fonts are loaded by your app." },
   spacing: { rule: "Use a 4px base rhythm and keep control heights consistent at 36, 40 and 44px.", detail: "Choose spacing based on content relationship. Tighter within one control, wider between independent sections." },
   radius: { rule: "Use 8px for controls, 12px for cards and fully rounded shapes for badges and pills.", detail: "Radius expresses containment. Keep surface hierarchy consistent across light and dark." },
   shadow: { rule: "Prefer borders for static cards and inputs. Add shadow when elevation helps explain layering.", detail: "Use the shadow scale for floating menus and dialogs. A basic Card has no shadow." },
@@ -40,15 +40,16 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <p className="mt-3 text-muted-foreground">{item.detail}</p>
     <FoundationEditor category={slug as keyof typeof content} />
     {slug === "typography" && <section id="font-roles" className="mt-10 scroll-mt-24 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground" aria-labelledby="font-roles-heading">
-      <h2 id="font-roles-heading" className="text-xl font-semibold">Body and brand fonts</h2>
-      <p className="mt-3 text-sm leading-7 text-muted-foreground">Importing the theme loads Pretendard Variable for body text and controls, and Paperlogy Bold (700) for brand wordmarks. Use <code>font-brand</code> or the <a href="/patterns/brand-logo" className="underline underline-offset-4">BrandLogo pattern</a> for an icon and product name. Both defaults include their OFL notices in the theme package.</p>
-      <p className="mt-3 text-sm leading-7 text-muted-foreground">Body font and Brand font in the editor affect the whole site independently. Copy CSS after editing, or override these variables after the theme import. Custom font names do not download files: load your own fonts with <code>@font-face</code> or your app’s font loader. Keep a readable fallback and a 700 face for the wordmark.</p>
+      <h2 id="font-roles-heading" className="text-xl font-semibold">Body, brand and code fonts</h2>
+      <p className="mt-3 text-sm leading-7 text-muted-foreground">Importing the theme loads Pretendard Variable for body text and controls, Paperlogy Bold (700) for brand wordmarks, and D2Coding Regular (400) / Bold (700) for code, commands and shortcuts. Use <code>font-brand</code> or the <a href="/patterns/brand-logo" className="underline underline-offset-4">BrandLogo pattern</a> for an icon and product name. All three defaults include their OFL notices in the theme package.</p>
+      <p className="mt-3 text-sm leading-7 text-muted-foreground">Body font, Brand font and Mono font in the editor affect the whole site independently. Copy CSS after editing, or override these variables after the theme import. Custom font names do not download files: load your own fonts with <code>@font-face</code> or your app’s font loader. Keep a readable fallback and a 700 face for the wordmark.</p>
       <pre className="mt-5 overflow-x-auto rounded-xl bg-background p-4 text-xs leading-6"><code>{`@import "@leement/theme";
 
 /* Load these custom families with your app's font loader. */
 :root {
   --lm-typography-family-sans: "My Body", system-ui, sans-serif;
   --lm-typography-family-brand: "My Brand", sans-serif;
+  --lm-typography-family-mono: "My Code", monospace;
 }`}</code></pre>
     </section>}
     {slug === "color" && <section id="brand-colors" className="mt-10 scroll-mt-24 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground" aria-labelledby="brand-colors-heading">
