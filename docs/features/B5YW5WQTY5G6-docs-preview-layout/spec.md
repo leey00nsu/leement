@@ -57,6 +57,14 @@ Showcase를 낮은 강조 배경 안에서 실제 UI를 보는 카탈로그로 �
 - [x] 점선은 장식이며 포인터·키보드 조작·보조기술을 방해하지 않는다.
 - [x] Code와 Source 보기에 점선을 표시하지 않고 탭의 키보드 조작을 보존한다.
 
+### US-4: Docs에서 같은 표면 규칙으로 내용을 읽고 편집한다
+
+- **추가 명세 승인**: 2026-10-03 사용자가 Docs 페이지별 적용 제안에 `ㄱㄱ`로 진행을 승인했다. 기존 구현 승인과 병합 승인은 아직 대기 중이다.
+- [ ] Overview·Installation·Adoption·여섯 Foundations·Changelog의 바깥 구획은 Showcase와 같은 테두리 없는 muted 배경과 충분한 padding을 사용한다.
+- [ ] 실제 입력·코드·샘플은 구획 안의 독립 표면으로 배치하며 설명만 담은 영역에 border/card를 중첩하지 않는다.
+- [ ] 설치 순서와 Changelog의 세로 읽기 구조, Foundations의 editor·picker·CSS 복사·reset·목차를 유지한다.
+- [ ] 이번 추가 작업은 컴포넌트·블록·패턴 페이지 및 registry source를 변경하지 않는다. Overview의 넓은 소개 배치도 유지한다.
+
 ## 기능 요구사항
 
 ### FR-1: Showcase의 표면 계층
@@ -87,7 +95,7 @@ Adoption, Showcase, Getting Started, 여섯 Foundations, Changelog, Component/Pa
 
 - 카탈로그 추가, 브랜드 변경, token 값 변경, 컴포넌트 API 재설계와 원본 앱 마이그레이션.
 - README 및 README 스크린샷 갱신.
-- Kibo 콘텐츠·브랜드의 복제 또는 다른 화면의 전체 재설계.
+- Kibo 콘텐츠·브랜드의 복제. US-4의 Docs 정리 외 다른 화면의 전체 재설계.
 
 ## 관련 문서
 

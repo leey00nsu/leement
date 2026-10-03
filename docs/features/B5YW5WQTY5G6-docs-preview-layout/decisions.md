@@ -66,3 +66,10 @@ T-03 최종 확인: [catalog-audit.json](./artifacts/catalog-audit.json)에85개
 - 잔여 한계: 전체1020개는 geometry 검증이며 각 조합의 pixel diff가 아니다. 의도적 내부 스크롤/동적 외부 Sandpack pane 및 portal은 각각의 표시 책임을 유지한다. 공통 surface와 focus ring의 token 값은 그대로다.
 
 <!-- lee-spec-kit:workflow-sync sha256:eb96a20f193d3d9234a48af133470b54db0ea8ea6771525e2467cb5f14ba9215 -->
+
+## D005: Docs의 표면을 통일하고 페이지별 읽기 구조를 유지한다 (2026-10-03)
+
+- **Context**: 구현 승인 대기 중 사용자가 Docs 전체를 Showcase와 같은 UI 규칙으로 정리할지 의견을 요청했다. muted 외부 구획/독립 내부 표면/공통 간격과 페이지별 배치 유지 제안에 `ㄱㄱ`로 진행을 승인했다.
+- **Decision**: 같은 Feature에 T-04를 추가한다. Overview, Installation, Adoption, 여섯 Foundations, Changelog의 Docs 전용 표면을 정리한다. 타일 그리드는 비교할 샘플에 사용하고 긴 문서는 순서대로 읽게 한다. Component/Block/Pattern detail·registry 및 공용 PreviewFrame/workbench는 추가 작업에서 변경하지 않는다.
+- **Trace**: DocsNavigation의 Overview는 `/`이다. 홈의 hero/넓은 scaffold를 유지하면서 소개 구획과 sample 바깥 표면을 정리한다. FoundationEditor는 편집·실제 샘플·복사 wrapper만 변경하고 실제 registry component는 유지한다.
+- **Verification**: Docs11 routes의 세 폭/두 테마, picker/editor/CSS copy/reset/목차/adoption 조작, 기존 featureChecks와 afc634e 대비 제외 경로의 무변경을 검증한다. README는 이번에도 요청 범위에 없다.

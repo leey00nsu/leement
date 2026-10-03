@@ -19,12 +19,15 @@
 3. RootLayout이 문서 바깥 inset을 소유한다. Adoption의 중첩 main/px/py를 제거하고 전체 route에서 추가 바깥 padding을 확인한다. 의도적인 본문 폭 제한과 우측 목차는 유지한다.
 4. FormSection은 실제 영역이 40rem 이상일 때 2단으로 전환해 좁은 gallery column에서도 입력 영역을 확보한다. 전체 85개 예제의 source/geometry를 조사하고 실질적인 내부 overflow, 잘린 제어, flex 축소 문제만 책임 위치에 수정한다. 문서 여백을 registry 컴포넌트 API에 추가하지 않는다.
 
+5. Docs 전용 section은 `rounded-2xl bg-muted p-5 sm:p-6`를 사용하고 입력·코드·예제에 `bg-background`의 독립 표면을 제공한다. Installation은 순서, Changelog는 세로 목록, Overview는 넓은 소개 배치를 유지한다. FoundationEditor/AdoptionCompositions의 표시 wrapper만 바꾸고 실제 registry source와 detail page는 수정하지 않는다.
+
 ## 파일 구조
 
 - apps/docs/components/preview-frame.tsx: 공통 문서 프레임.
 - apps/docs/app/globals.css: inset과 장식선.
 - apps/docs/components/item-workbench.tsx, showcase-gallery.tsx, previews.tsx: 프레임 적용, 카탈로그 계층, 항목 식별.
-- apps/docs/app/adoption/page.tsx 및 조사에서 확인된 route: 중복 inset 수정.
+- apps/docs/app/{page,getting-started,adoption,changelog}/page.tsx, foundations/[slug]/page.tsx: Docs 표면과 문서 inset.
+- apps/docs/components/foundation-editor.tsx, adoption-compositions.tsx: Docs 전용 wrapper 정리.
 - apps/docs/examples/*.tsx: 조사로 확인된 예제 자체의 배치 수정.
 - registry/*: 실제 컴포넌트 내부에 문제가 입증될 경우에만 최소 수정.
 
@@ -70,6 +73,7 @@
 | US-1, FR-1/2 | NONE | 비테스트 브라우저 전수 점검 | 85개 중 일부만 수정, 예제 경계 밀착, 모바일 넘침 | 사용자 이미지 1/2와 실제 콘텐츠 bounds |
 | US-2, FR-3 | NONE | 비테스트 전체 route 점검 | 중복 main/inset | RootLayout 공통 inset과 main landmark |
 | US-3, FR-4 | NONE | 비테스트 geometry 및 화면 확인 | 점선/내용 기준 불일치, 높이 증가 시 잘림 | 사용자 이미지 3/4와 동일 inset 계약 |
+| US-4 Docs 표면 | NONE | 비테스트 브라우저 검사 | 좁은 editor 넘침, 복사/reset 및 목차 손상 | Showcase 표면 규칙, DOM/실제 조작과 screenshot |
 | 기존 동작 | NONE | 기존 typecheck/lint/test/build | 컴포넌트 렌더/API/registry build 회귀 | 기존 테스트 및 타입 계약 |
 
 ### 의도적으로 제외하는 테스트
@@ -90,3 +94,5 @@ CSS class 문자열을 복제하는 영구 단위 테스트, 프레임워크 탭
 - Decisions: [decisions.md](./decisions.md)
 
 Plan 승인: workflow-stage의 plan_approve 자동 진행 지시에 따라 승격. agentReview.plan은 disabled다.
+
+추가 검증: Docs11개 경로 × 390/1024/1440 × light/dark, foundation editor/picker/CSS 복사/reset/목차 및 adoption 제어를 확인한다. afc634e 대비 component/block/pattern page·registry·공용 workbench·PreviewFrame의 변경이 없음을 diff로 검증한다. 기존 전체 featureChecks를 수행한다.

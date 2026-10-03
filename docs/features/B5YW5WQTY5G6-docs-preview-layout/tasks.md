@@ -120,6 +120,22 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-005] T-B5YW5WQTY5G6-docs-preview-layout-04 Docs 전체 표면과 여백 통일
+  - Date: 2026-10-03
+  - Acceptance:
+    - Docs Overview·Installation·Adoption·여섯 Foundations·Changelog가 Showcase와 같은 muted 외부 표면과 내부 콘텐츠 여백을 사용한다. 읽는 순서·editor·CSS 복사·목차를 보존하며 component/block/pattern 페이지와 registry source는 이번 추가 작업에서 변경하지 않는다.
+  - Checklist:
+    - [ ] Docs 페이지와 전용 editor/adoption 표시 영역의 표면·padding 정리 및 디자인 문서 동기화
+    - [ ] 390/1024/1440px light/dark 화면과 editor·CSS 복사·목차·설치 안내를 확인하고 기존 featureChecks 실행
+  - Docs:
+    - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -132,8 +148,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
