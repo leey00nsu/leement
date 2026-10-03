@@ -17,7 +17,7 @@
 1. 문서 표시 전용 PreviewFrame을 Showcase와 ItemWorkbench에서 공유한다. 같은 inset 변수를 콘텐츠 padding과 가로/세로 점선 위치에 사용한다. 모바일 20px, 상세 데스크톱 40px, 좁은 gallery에서는 16/24px을 사용한다. 콘텐츠가 커지면 프레임도 함께 커지고 장식선은 pointer-events:none이다.
 2. Showcase의 항목 컨테이너는 bg-muted와 20/24px 여백으로 구분하며 border/shadow/footer 구분선을 제거한다. 안쪽 실제 Preview는 bg-background 표면과 필요한 한 겹 경계만 제공한다. 컴포넌트 자체 border는 유지한다. 기본 표면 규칙은 semantic token을 읽는다.
 3. RootLayout이 문서 바깥 inset을 소유한다. Adoption의 중첩 main/px/py를 제거하고 전체 route에서 추가 바깥 padding을 확인한다. 의도적인 본문 폭 제한과 우측 목차는 유지한다.
-4. 전체 85개 예제의 source/geometry를 조사하고 실질적인 내부 overflow, 잘린 제어, flex 축소 문제만 책임 위치에 수정한다. 문서 여백을 registry 컴포넌트 API에 추가하지 않는다.
+4. FormSection은 실제 영역이 40rem 이상일 때 2단으로 전환해 좁은 gallery column에서도 입력 영역을 확보한다. 전체 85개 예제의 source/geometry를 조사하고 실질적인 내부 overflow, 잘린 제어, flex 축소 문제만 책임 위치에 수정한다. 문서 여백을 registry 컴포넌트 API에 추가하지 않는다.
 
 ## 파일 구조
 

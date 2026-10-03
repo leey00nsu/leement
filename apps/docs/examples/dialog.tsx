@@ -9,7 +9,7 @@ import { Label } from "../../../registry/ui/label";
 export default function DialogExample() {
   const [name, setName] = useState("Studio");
   const [savedName, setSavedName] = useState("Studio");
-  return <div className="flex flex-wrap items-center gap-3"><Dialog>
+  return <div className="flex max-w-full min-w-0 flex-wrap items-center gap-3"><Dialog>
     <DialogTrigger asChild><Button>Open dialog</Button></DialogTrigger>
     <DialogContent>
       <DialogHeader>
@@ -22,5 +22,5 @@ export default function DialogExample() {
         <DialogClose asChild><Button onClick={() => setSavedName(name)}>Save changes</Button></DialogClose>
       </DialogFooter>
     </DialogContent>
-  </Dialog><span role="status" className="text-sm text-muted-foreground">Current: {savedName}</span></div>;
+  </Dialog><span role="status" className="min-w-0 text-sm [overflow-wrap:anywhere] text-muted-foreground">Current: {savedName}</span></div>;
 }

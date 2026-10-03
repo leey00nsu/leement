@@ -82,6 +82,8 @@ Foundations의 Color, Typography, Spacing, Radius, Shadow, Motion에는 실제 r
 
 문서 카탈로그 항목은 `bg-muted`의 낮은 강조 표면과 20/24px 여백으로 구분하고 바깥 border·shadow·footer 구분선을 중첩하지 않는다. 실제 예제는 `bg-background` 프리뷰 표면에 표시하며 컴포넌트 자체 border는 유지한다. PreviewFrame의 기본 inset은 상세 20/40px, gallery 16/24px이다. 가로·세로 점선과 콘텐츠 padding은 동일한 inset을 읽으며 콘텐츠가 커지면 아래 선과 프레임 높이도 함께 늘어난다. 장식선은 pointer-events를 받지 않는다. 넓은 표·타임라인·편집기는 자기 영역에서 스크롤하고 포털·focus ring을 표시 장식 때문에 자르지 않는다. 문서 바깥 inset은 RootLayout이 소유하고 페이지는 중복 main/padding을 추가하지 않는다. 본문 최대 폭·우측 목차·홈의 넓은 배치는 의도에 맞게 유지한다.
 
+FormSection의 제목과 입력 영역은 실제 section 너비가 40rem 이상일 때 2단으로 배치한다. 좁은 카드·사이드 패널에서는 화면 전체가 넓어도 1단으로 쌓는다. 저장 action과 상태 문구는 좁은 영역에서 줄바꿈할 수 있어야 한다.
+
 ## 성숙도와 변경
 
 `experimental`: 한 프로젝트에서 출발했거나 API가 불안정하다. `candidate`: 두 사용 사례에서 같은 문제를 해결했다. `stable`: 여러 프로젝트에서 API, 접근성, 시각 규칙을 검증했다. 한 번 사용한 UI는 application에 두고, 두 번째 반복에서 candidate를, 세 번째 반복에서 design system 승격을 검토한다. 신규 variant는 유스케이스와 문서 규칙을 먼저 제시한다. 기존 variant 제거 시 changelog와 migration 메모를 작성한다.

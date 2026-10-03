@@ -1,0 +1,1333 @@
+{
+  "date": "2026-10-03",
+  "environment": "Chrome + installed Playwright; docs local dev",
+  "widths": [
+    390,
+    1024,
+    1440
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "sourceItems": 85,
+  "surfaceViews": 516,
+  "previewMeasurements": 1020,
+  "overflowFindings": 0,
+  "scaffoldRouteViews": 22,
+  "scopeLimits": [
+    "기본 geometry는 의도적 내부 overflow와 portalled popup을 제외한다. 발견한 hidden clipping과 8개 상태 예제는 별도 입력/키보드 및 화면으로 확인했다.",
+    "85개 gallery light 데스크톱 타일을 실제 screenshot으로 확인했다. 모든 화면 조합을 pixel diff로 판정한 것은 아니다."
+  ],
+  "items": [
+    {
+      "name": "alert-dialog",
+      "href": "/components/alert-dialog",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "announcement",
+      "href": "/components/announcement",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "audio-player",
+      "href": "/components/audio-player",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "avatar",
+      "href": "/components/avatar",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "avatar-stack",
+      "href": "/components/avatar-stack",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "badge",
+      "href": "/components/badge",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "banner",
+      "href": "/components/banner",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "bento-grid",
+      "href": "/blocks/bento-grid",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "brand-action",
+      "href": "/patterns/brand-action",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "brand-gradient-text",
+      "href": "/components/brand-gradient-text",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "brand-logo",
+      "href": "/patterns/brand-logo",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "button",
+      "href": "/components/button",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "calendar",
+      "href": "/components/calendar",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": "Date picker 7열을 가용 폭에 맞춰 축소",
+      "intentionalScroll": "schedule 내부 가로 스크롤; date 모드는 축소"
+    },
+    {
+      "name": "card",
+      "href": "/components/card",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "chart",
+      "href": "/components/chart",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "choicebox",
+      "href": "/components/choicebox",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "code-block",
+      "href": "/components/code-block",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "pre 내부 가로 스크롤"
+    },
+    {
+      "name": "collapsible",
+      "href": "/components/collapsible",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "color-picker",
+      "href": "/components/color-picker",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "combobox",
+      "href": "/components/combobox",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "options 내부 세로 스크롤"
+    },
+    {
+      "name": "comparison",
+      "href": "/components/comparison",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "contribution-graph",
+      "href": "/components/contribution-graph",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "연간 cell 내부 가로 스크롤"
+    },
+    {
+      "name": "credit-card",
+      "href": "/components/credit-card",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "cursor",
+      "href": "/components/cursor",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "deck",
+      "href": "/blocks/deck",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "dialog",
+      "href": "/components/dialog",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": "저장한 긴 이름 status 줄바꿈",
+      "intentionalScroll": null
+    },
+    {
+      "name": "dialog-stack",
+      "href": "/blocks/dialog-stack",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": "review grid 축소와 긴 값/완료 문구 줄바꿈",
+      "intentionalScroll": null
+    },
+    {
+      "name": "dropdown-menu",
+      "href": "/components/dropdown-menu",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "dropzone",
+      "href": "/components/dropzone",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": "긴 파일명 status 줄바꿈",
+      "intentionalScroll": null
+    },
+    {
+      "name": "editor",
+      "href": "/components/editor",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "toolbar 내부 가로 스크롤"
+    },
+    {
+      "name": "empty-state",
+      "href": "/patterns/empty-state",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "filter-toolbar",
+      "href": "/patterns/filter-toolbar",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "form-section",
+      "href": "/patterns/form-section",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": "section 실제 폭 40rem 기준 1/2단 전환",
+      "intentionalScroll": null
+    },
+    {
+      "name": "gantt",
+      "href": "/blocks/gantt",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "timeline 내부 가로 스크롤"
+    },
+    {
+      "name": "glimpse",
+      "href": "/components/glimpse",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "image-crop",
+      "href": "/components/image-crop",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "image-zoom",
+      "href": "/components/image-zoom",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "input",
+      "href": "/components/input",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "kanban",
+      "href": "/blocks/kanban",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "board 내부 가로 스크롤"
+    },
+    {
+      "name": "label",
+      "href": "/components/label",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "list",
+      "href": "/components/list",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "marquee",
+      "href": "/components/marquee",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "이동 mask; reduced motion 내부 스크롤"
+    },
+    {
+      "name": "media-reveal",
+      "href": "/patterns/media-reveal",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "mini-calendar",
+      "href": "/components/mini-calendar",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": "날짜 group/day flex 축소로 탐색 버튼 넘침 해결",
+      "intentionalScroll": null
+    },
+    {
+      "name": "page-header",
+      "href": "/patterns/page-header",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "page-skeleton",
+      "href": "/patterns/page-skeleton",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "pill",
+      "href": "/components/pill",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "popover",
+      "href": "/components/popover",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "product-page-intro",
+      "href": "/patterns/product-page-intro",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "progress",
+      "href": "/components/progress",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "qr-code",
+      "href": "/components/qr-code",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "rating",
+      "href": "/components/rating",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "reel",
+      "href": "/blocks/reel",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "relative-time",
+      "href": "/components/relative-time",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "resource-row-link",
+      "href": "/patterns/resource-row-link",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "reveal-content",
+      "href": "/components/reveal-content",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "rotating-content",
+      "href": "/components/rotating-content",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "sandbox",
+      "href": "/blocks/sandbox",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "Sandpack pane 내부 스크롤"
+    },
+    {
+      "name": "search-field",
+      "href": "/patterns/search-field",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "select",
+      "href": "/components/select",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "separator",
+      "href": "/components/separator",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "settings-section",
+      "href": "/blocks/settings-section",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": "저장 행 줄바꿈과 부모 FormSection 반응형 적용",
+      "intentionalScroll": null
+    },
+    {
+      "name": "sheet",
+      "href": "/components/sheet",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "skeleton",
+      "href": "/components/skeleton",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "slider",
+      "href": "/components/slider",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "snippet",
+      "href": "/components/snippet",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "command 내부 가로 스크롤"
+    },
+    {
+      "name": "spinner",
+      "href": "/components/spinner",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "stat-card",
+      "href": "/patterns/stat-card",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "state-panel",
+      "href": "/patterns/state-panel",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "status",
+      "href": "/components/status",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "status-notice",
+      "href": "/components/status-notice",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "stories",
+      "href": "/components/stories",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "switch",
+      "href": "/components/switch",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "table",
+      "href": "/components/table",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": "data table 내부 가로 스크롤"
+    },
+    {
+      "name": "tabs",
+      "href": "/components/tabs",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "tags",
+      "href": "/components/tags",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": "긴 tag 줄바꿈 및 Remove 버튼 유지",
+      "intentionalScroll": null
+    },
+    {
+      "name": "text-reveal",
+      "href": "/components/text-reveal",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "textarea",
+      "href": "/components/textarea",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "theme-switcher",
+      "href": "/components/theme-switcher",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "ticker",
+      "href": "/components/ticker",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "toast",
+      "href": "/components/toast",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "tooltip",
+      "href": "/components/tooltip",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "tree",
+      "href": "/components/tree",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "typography",
+      "href": "/components/typography",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    },
+    {
+      "name": "video-player",
+      "href": "/components/video-player",
+      "sourceAudit": "pass",
+      "previewMeasurements": 12,
+      "geometry": "pass",
+      "additionalFix": null,
+      "intentionalScroll": null
+    }
+  ],
+  "interactions": [
+    {
+      "name": "mini-calendar",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "calendar",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "settings-section",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "tags",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dropzone",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dialog",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dialog-stack",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "credit-card",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "mini-calendar",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "calendar",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "settings-section",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "tags",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dropzone",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dialog",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dialog-stack",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "credit-card",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "mini-calendar",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "calendar",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "settings-section",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "tags",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dropzone",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dialog",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dialog-stack",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "credit-card",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "mini-calendar",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "calendar",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "settings-section",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "tags",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dropzone",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dialog",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dialog-stack",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "credit-card",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "mini-calendar",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "calendar",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "settings-section",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "tags",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dropzone",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dialog",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "dialog-stack",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "credit-card",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "name": "mini-calendar",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "calendar",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "settings-section",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "tags",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dropzone",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dialog",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "dialog-stack",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "name": "credit-card",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "check": "popover/tooltip portals, Escape and focus ring",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "check": "popover/tooltip portals, Escape and focus ring",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "check": "popover/tooltip portals, Escape and focus ring",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "check": "popover/tooltip portals, Escape and focus ring",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "check": "normal motion replay/pause",
+      "status": "pass"
+    },
+    {
+      "check": "four updated registry JSON items served with actual source",
+      "status": "pass"
+    },
+    {
+      "check": "search/filter/clear",
+      "status": "pass"
+    },
+    {
+      "check": "container-based FormSection and save state",
+      "width": 390,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "check": "container-based FormSection and save state",
+      "width": 390,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "check": "container-based FormSection and save state",
+      "width": 1024,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "check": "container-based FormSection and save state",
+      "width": 1024,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "check": "container-based FormSection and save state",
+      "width": 1440,
+      "mode": "light",
+      "status": "pass"
+    },
+    {
+      "check": "container-based FormSection and save state",
+      "width": 1440,
+      "mode": "dark",
+      "status": "pass"
+    },
+    {
+      "check": "manual-activation tabs: arrows move focus, Enter selects; guides only in Preview",
+      "status": "pass"
+    }
+  ],
+  "scaffold": [
+    {
+      "path": "/",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/showcase",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/adoption",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/getting-started",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/changelog",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/color",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/typography",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/spacing",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/radius",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/shadow",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/motion",
+      "width": 390,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 20,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 176,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/showcase",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/adoption",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/getting-started",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/changelog",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/color",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/typography",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/spacing",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/radius",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/shadow",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    },
+    {
+      "path": "/foundations/motion",
+      "width": 1440,
+      "mainCount": 1,
+      "overflow": false,
+      "headingX": 304,
+      "rootPadding": "0px"
+    }
+  ]
+}

@@ -29,7 +29,7 @@ function Dropzone({ label, accept, multiple = false, disabled, onFiles, classNam
     <input ref={input} type="file" className="sr-only" tabIndex={-1} aria-label={label} accept={accept} multiple={multiple} disabled={disabled} onChange={(event) => receive(event.target.files)} />
     <Upload aria-hidden="true" className="mx-auto mb-2 size-5 text-muted-foreground" /><p className="text-sm font-medium">{label}</p><p className="mt-1 text-xs text-muted-foreground">Drop files here or browse your device{accept ? ` · ${accept} only` : ""}</p>
     <button type="button" disabled={disabled} onClick={() => input.current?.click()} className="mt-3 rounded-md border border-border px-3 py-2 text-sm hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 disabled:cursor-not-allowed">Browse files</button>
-    <p role="status" className={cn("mt-2 text-xs", error ? "text-destructive" : "text-muted-foreground")}>{error || (files.length ? files.map((file) => file.name).join(", ") : "No files selected")}</p>
+    <p role="status" className={cn("mt-2 break-all text-xs", error ? "text-destructive" : "text-muted-foreground")}>{error || (files.length ? files.map((file) => file.name).join(", ") : "No files selected")}</p>
   </div>;
 }
 

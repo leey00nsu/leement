@@ -42,4 +42,27 @@ T-01 확인: 1440px light Showcase 85개 프레임에서 24px padding, RotatingC
 
 T-02 확인: 전체 route template source를 조사했고 14개 대표 경로를 390/1440px에서 측정했다. 모든 페이지의 main 개수=1, route wrapper padding-left=0, document overflow=false. Adoption 제목 x는 390px에서20, 1440px에서304로 공통 scaffold와 일치한다. 홈의 넓은 레이아웃은 유지된다. Adoption eslint 통과. 동일 template의 85개 상세 경로는 T-03 전수 matrix에서도 확인한다.
 
-<!-- lee-spec-kit:workflow-sync sha256:a90bec65ef746118f2eab72419496d74a921e916364c99191be484327418b594 -->
+
+## D004: 카탈로그 전체를 source와 실제 프레임 측정으로 대조한다 (2026-10-03)
+
+- **Context/Constraints**: T-03 시작. 좁아진 gallery 콘텐츠 폭에서 고정폭/flex 조합의 문제 가능성을 확인했다. 새 테스트 인프라는 추가하지 않는다.
+- **Decision**: 85개 예제를 source 검토 및 390/1024/1440px × light/dark의 Showcase/상세 측정으로 확인한다. 내부 스크롤, marquee mask, dialog 포털 등 의도적 clipping과 실제 경계 위반을 구분한다.
+- **Trace**: 읽기 전용 source 조사도 별도 worker에 위임했다. 일회 브라우저 측정은 /tmp에서 실행하며 최종 결과를 이 Feature artifacts에 보존한다.
+- **Evidence**: 전수 조사 결과와 대표 screenshot은 태스크 완료 전 추가한다.
+
+T-03 중간 조사: 전체 85개 × Showcase/상세 × 세 폭 × 두 테마=1020개 프리뷰 측정에서 mobile gallery MiniCalendar의 다음 주 버튼이 콘텐츠 오른쪽을29px 넘었다. 공개 MiniCalendar의 날짜 그룹에 min-w-0/flex-1, 날짜 버튼에 축소 가능한 flex를 적용하여 일주일과 탐색 버튼을 같은 가용 폭 안에 유지한다. 기존 API 및 방향키 handler는 그대로다.
+
+T-03 source 조사 완료: 별도 읽기 전용 worker가 85개 예제 및 해당 registry 배치 source를 모두 확인했다. 추가로 Date picker의 고정 36px×7 열, SettingsSection 저장 버튼/상태의 nowrap, 긴 Tags/Dropzone 파일명/저장한 Dialog 이름/DialogStack review 값의 줄바꿈 누락을 찾았다. 날짜 셀은 높이를 유지하고 가용 폭으로 축소하며, 실제 registry 입력 결과는 내부 줄바꿈을 허용한다. 예제 전용 저장/상태 배치는 예제에서만 수정한다. 표·타임라인·보드·코드·editor toolbar 등의 의도적 내부 스크롤과 marquee mask, portalled overlay는 예외로 유지한다.
+
+T-03 화면 확인: SettingsSection 저장 행의 잘림을 해결한 뒤에도 1440px gallery의 약440px 영역에서 FormSection의 viewport 기준 2단 배치가 유지되어 입력 영역이 과도하게 좁았다. FormSection은 section을 container로 하고 내부 grid를 40rem 이상에서만 2단으로 전환한다. 제목/description/children의 API와 14rem label column은 유지하며 실제 영역이 좁으면 세로 배치한다. CreditCard 앞/뒤는 390px에서 내용과21px 하단 여백을 유지하며 Slider의 vertical root/control도160px로 일치해 변경하지 않았다.
+
+T-03 최종 확인: [catalog-audit.json](./artifacts/catalog-audit.json)에85개 판정,1020개 geometry 요약,62개 상태/조작 확인과22개 static-route 측정을 보존했다. 상세85개 route도 같은 matrix에서 main=1, 중복 inset=0, document overflow=false였다. Light/dark override는 provider hydration 완료 후 적용하고 실제 mode를 확인했다. Sandpack의 지속 네트워크 요청 때문에 networkidle을 readiness로 쓸 수 없어 문서 provider의 hydration 완료 표식을 기준으로 측정했다.
+
+- Source 조사와 대표 screenshot 확인을 결합했고 문제8개 항목을 수정했다. 실제 registry JSON5개(MiniCalendar/Calendar/Tags/Dropzone/FormSection)의 최신 source 제공을 확인했다.
+- 기존 typecheck/lint/test/build가 모두 통과했다.14개 test file의93개 test가 통과하며 jsdom의 media pause 미구현 로그는 기존 환경의 출력이다.
+- Tabs는 Base UI의 기존 manual activation을 보존한다. 방향키로 focus를 이동하고 Enter로 선택한다. Code/Source에는 프레임 점선이 없다. Popup/Tooltip은 포털로 프레임 밖에 표시되고 Escape 및 trigger focus 복귀가 동작한다.
+- Tokens/theme 값과 설치 metadata/API는 변경하지 않았다. 공개 registry5개의 반응형/줄바꿈 CSS는 변경되어 소비자에게도 전달된다.
+- [Showcase](./artifacts/showcase-desktop.png), [Preview](./artifacts/preview-text-reveal.png), [dark Preview](./artifacts/preview-text-reveal-dark.png), [Adoption](./artifacts/adoption-desktop.png), [SettingsSection](./artifacts/fixed-settings-section-desktop.png), [MiniCalendar](./artifacts/fixed-mini-calendar-mobile.png), [Date picker](./artifacts/fixed-calendar-mobile.png), [Tags](./artifacts/fixed-tags-mobile.png)를 직접 확인했다.
+- 잔여 한계: 전체1020개는 geometry 검증이며 각 조합의 pixel diff가 아니다. 의도적 내부 스크롤/동적 외부 Sandpack pane 및 portal은 각각의 표시 책임을 유지한다. 공통 surface와 focus ring의 token 값은 그대로다.
+
+<!-- lee-spec-kit:workflow-sync sha256:eb96a20f193d3d9234a48af133470b54db0ea8ea6771525e2467cb5f14ba9215 -->
