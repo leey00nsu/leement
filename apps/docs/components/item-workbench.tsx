@@ -38,11 +38,12 @@ function CodePane({ code, filename }: { code: string; filename: string }) {
   </div>;
 }
 
-export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, children }: {
+export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, exampleFile, children }: {
   name: string;
   exampleCode: string;
   sourceCode: string;
   sourceFile: string;
+  exampleFile?: string;
   children: ReactNode;
 }) {
   const tabs = [
@@ -64,7 +65,7 @@ export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, child
         <PreviewFrame>{children}</PreviewFrame>
       </TabsContent>
       <TabsContent value="example" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
-        <CodePane code={exampleCode} filename={`examples/${name}.tsx`} />
+        <CodePane code={exampleCode} filename={`examples/${exampleFile ?? name}.tsx`} />
       </TabsContent>
       <TabsContent value="source" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
         <CodePane code={sourceCode} filename={sourceFile} />

@@ -169,13 +169,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-07 이름 있는 추가 예제와 실제 source Code 문서 구조
+- [DONE][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-07 이름 있는 추가 예제와 실제 source Code 문서 구조
   - Date: 2026-10-03
   - Acceptance:
     - 대표 예제를 유지하고 상세 추가예제의 독립 Preview와 실제 source Code/설명을 제공한다.
   - Checklist:
-    - [ ] 추가 metadata/lazy preview/source 변환과 Examples navigation
-    - [ ] source 변환 focused 계약과 타입/lint 확인
+    - [x] 추가 metadata/lazy preview/source 변환과 Examples navigation
+    - [x] source 변환 focused 계약과 타입/lint 확인
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -278,3 +278,5 @@ T04 검증: date-picker 계약5개 PASS(legacy schedule/single·skip unavailable
 T05 완료 증거: [화면 matrix](./artifacts/browser-matrix.json), [실제 조작](./artifacts/interaction-checks.json), [독립 설치](./artifacts/consumer-installation.json), [기준/보류표](./artifacts/shadcn-baseline.json). 신규17개(UI15/Pattern2), 기존 Table/Calendar/Glimpse 보완을 확인했다. 공개 배포/npm publish와 원본 앱 전체 교체는 미실행이다. 구현 승인 및 local-ff 병합 승인은 별도 gate에서 받는다.
 
 T06 검증: Chrome에서 한국어/영어×390/1440px×light/dark8조합, 빈 파일/선택 후/disabled24상태를 확인했다. keyboard Enter가 native file chooser를 열고 파일을 선택하며 disabled는 Tab focus에서 제외된다. 일반 Input/Field/InputGroup40px와 form 값 유지. typecheck/lint/test113개/build PASS. 생성 registry의 Input source가 수정 원본과 동일하다. [검증](./artifacts/input-alignment-check.json), [light 정렬](./artifacts/input-empty-light-1440.png), [dark 선택 후](./artifacts/input-selected-dark-1440.png).
+
+T07 검증: 실제 select-groups source를 상세 Preview와 Code가 함께 사용한다. source 읽기/alias 보존/경로 차단/미등록 처리 계약4개 PASS, docs typecheck 및 변경8파일 eslint PASS. 추가예제는 lazy 로딩하며 Showcase 원본은 유지한다. 전체 브라우저/소비자 검증은T10에서 수행한다.

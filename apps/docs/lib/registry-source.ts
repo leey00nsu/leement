@@ -1,6 +1,8 @@
 import "server-only";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { toConsumerExampleCode } from "./example-source";
+export { getAdditionalExampleCodes } from "./example-source";
 import { items } from "./items";
 
 type RegistryFile = { path: string; content: string };
@@ -15,10 +17,8 @@ export async function getItemCode(name: keyof typeof items) {
   const sourceFile = registryItem.files.find((file) => file.path.endsWith(".tsx"));
   if (!sourceFile) throw new Error(`Missing registry source for ${name}`);
 
-  const consumerExampleCode = exampleCode
-    .replaceAll("../../../registry/ui/", "@/components/ui/")
-    .replaceAll("../../../registry/patterns/", "@/components/patterns/")
-    .replaceAll("../../../registry/blocks/", "@/components/blocks/");
+  const consumerExampleCode = toConsumerExampleCode(exampleCode);
 
   return { exampleCode: consumerExampleCode, sourceCode: sourceFile.content, sourceFile: sourceFile.path };
 }
+

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { CopyButton, ItemWorkbench } from "./item-workbench";
+import { AdditionalExamplePreview } from "./example-previews";
 import { Preview } from "./previews";
 import { items } from "../lib/items";
 import { itemStates } from "../lib/item-states";
-import { getItemCode } from "../lib/registry-source";
+import { getAdditionalExampleCodes, getItemCode } from "../lib/registry-source";
 
 function displayName(name: string) {
   return name.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
@@ -12,6 +13,7 @@ function displayName(name: string) {
 export async function ItemPage({ name }: { name: keyof typeof items }) {
   const item = items[name];
   const { exampleCode, sourceCode, sourceFile } = await getItemCode(name);
+  const examples = await getAdditionalExampleCodes(name);
   const command = `npx shadcn@latest add @leement/${name}`;
   const sections = [
     { title: "When to use", id: "when-to-use", body: item.use },
@@ -19,11 +21,11 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
     { title: "Anatomy", id: "anatomy", body: item.anatomy },
     { title: "Variants", id: "variants", body: item.variants },
     { title: "Sizes", id: "sizes", body: item.sizes },
-    { title: "States", id: "states", body: itemStates[name] + " The live preview shows a useful subset; open controls or adjust props to inspect other supported states." },
+    { title: "States", id: "states", body: itemStates[name] + (examples.length ? " Explore the preview and examples to see supported states." : " Explore the preview to see supported states.") },
     { title: "Accessibility", id: "accessibility", body: item.accessibility },
     { title: "API", id: "api", body: item.api },
   ];
-  const outline = [{ title: "Preview", id: "preview" }, { title: "Installation", id: "installation" }, ...sections.map(({ title, id }) => ({ title, id }))];
+  const outline = [{ title: "Preview", id: "preview" }, { title: "Installation", id: "installation" }, ...(examples.length ? [{ title: "Examples", id: "examples" }, ...examples.map(example => ({ title: example.title, id: `example-${example.id}` }))] : []), ...sections.map(({ title, id }) => ({ title, id }))];
 
   return <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_190px] xl:gap-12">
     <article className="min-w-0 pb-16">
@@ -49,6 +51,14 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
         </div>
         <Link href="/getting-started" className="mt-3 inline-block text-sm text-[var(--lm-color-brand-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Theme setup and installation guide</Link>
       </section>
+
+      {examples.length > 0 && <section id="examples" className="mt-12 scroll-mt-24 space-y-8">
+        <h2 className="text-2xl font-semibold tracking-tight">Examples</h2>
+        {examples.map(example => <section key={example.id} id={`example-${example.id}`} className="scroll-mt-24 space-y-4">
+          <div><h3 className="text-xl font-semibold">{example.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{example.description}</p></div>
+          <ItemWorkbench name={`${name}-${example.id}`} exampleFile={example.file} exampleCode={example.exampleCode} sourceCode={sourceCode} sourceFile={sourceFile}><AdditionalExamplePreview file={example.file} /></ItemWorkbench>
+        </section>)}
+      </section>}
 
       <div className="mt-12 space-y-9 border-t border-border pt-10">
         {sections.map(section => <section key={section.id} id={section.id} className="scroll-mt-24">

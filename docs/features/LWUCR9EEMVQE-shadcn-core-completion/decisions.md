@@ -72,7 +72,7 @@
 - **T06 root cause/result**:40px Input 안의 native file selector button 높이가24px로 제한되고 vertical padding이 없어 파일 input line box가 위에 배치됐다. file:h-6를 file:h-full로 바꾸어 border 내부38px를 채우며 native baseline이 중앙에 놓이게 하고 file:mr-2로8px 간격을 준다. parent line-height/높이 및 일반 입력 스타일은 유지한다. 실제 native 입력을 custom wrapper로 교체하지 않는다.
 - **T06 evidence/limits**: [브라우저8조합·24상태 및 키보드/일반 입력 검증](./artifacts/input-alignment-check.json). Chrome의 실제 렌더링을 확인했으며 다른 브라우저를 검증했다고 주장하지 않는다. Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 생성 registry source 일치,113개 tests,lint/typecheck/build PASS. 사용자 요청으로 구현 승인을 다시 요청하며 병합은 별도 승인이다.
 
-<!-- lee-spec-kit:workflow-sync sha256:80a55fc4c656f149e8a67a64b46e984c020410fd89475ba28f554a25c0d21510 -->
+<!-- lee-spec-kit:workflow-sync sha256:4e1105c5846ea4c7c970334a6bcfb34065ca847bb80551b79d8fd1eecc76663d -->
 
 ## D009: 사용자 요청에 따른 전체 예제 부족 분석 (2026-10-03)
 

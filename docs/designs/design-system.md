@@ -131,3 +131,7 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 - StatusNotice는 짧은 Alert, EmptyState는 Empty 문제에 대응한다. 이름만 다른 source alias를 추가하지 않는다.
 - Field는 입력 하나의 label/help/error를 연결하고 FormSection은 여러 필드의 제품 섹션을 구성한다. Sheet는 측면 Dialog이며 swipe/snap-point Drawer 전체 동작을 보장하지 않는다.
 - 이번 확장은 신규17개(UI15/Pattern2)다. 공개 UI79/Pattern15/Block8과 지원 lib3을 제공한다. 공식64개와 같은 이름은45개이며 이는 API/동작 완전 호환율이 아니다. 기존 대응2개와 보류17개는 Feature 기준표에 남긴다.
+
+## 문서 예제 규칙
+
+Showcase는 항목마다 대표 예제 하나를 사용한다. 상세 Examples는 사용법이 달라지는 주요 variant/size/state/compound 조합을 이름과 설명·독립 Preview/Code로 제공한다. 예제는 registry 원본을 import하고 문서 표시 코드는 그 source를 소비자 alias로만 변환한다. 모든 props 조합을 복제하지 않으며 미지원 upstream API를 약속하지 않는다. 입력 label/id는 useId로 같은 페이지의 다른 예제와 구분한다. 파일 처리·폼 저장·비동기 결과는 로컬 앱 조합으로 보여 주고 앱 책임을 설명한다. 무거운 추가 예제는 상세에서 lazy load하며 Showcase에 동시에 mount하지 않는다.
