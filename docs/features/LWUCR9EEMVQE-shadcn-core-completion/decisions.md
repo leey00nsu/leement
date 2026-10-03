@@ -109,3 +109,7 @@ T10 최종 결과:55개 항목/57개 추가예제, Code·설치 명령·outline�
 기기별 시스템 mono 대신 한글과 영문 코드를 위한 D2Coding을 기본값으로 제공한다. “다음 task로 진행해줘.”는 T11 구현 허가이며 main 병합 허가가 아니다. 기존 Fonts 배포 규칙대로 theme에 font-face와 자체 웹폰트/OFL/NOTICE를 포함하고 Fonts 이름 입력만으로 외부 폰트를 받지 않는다. mono family는 Foundations에서 재정의할 수 있다. font 파일은 공식 출처의 고정 revision을 기록하며 fallback을 유지한다. README 변경 없음.
 
 D013 결과: 공식 site WOFF2를 실제 CDP로 조사하니 D2Coding ligature였으므로 사용하지 않았다. 고정 revision b0dc372e28d7abdba7f3cba854855ceffbd490a8의 일반 TTF를 기존 임시 fontTools4.66.1 환경으로 WOFF2 변환했다(프로젝트 tooling/compiler 추가 없음). Regular/Bold 모두 cmap19936개와 glyf/hmtx를 원본과 대조해 일치했다. 실제 렌더링은 D2Coding custom font이며400/700과 한국어 포함 예제를 확인했다. fonts를 등록만 한 상태에서 다운로드되었다고 주장하지 않는다. 약3.06MB의 두 전체 WOFF2를 패키지에 포함하며 CSS font-face는 사용되는 굵기만 로드하고 swap/fallback을 제공한다. 큰 한글 폰트의 subset/복잡한 로더는 추가하지 않는다. Foundations mono default와 font-role 안내·override sample을 동기화했다. registry public API·README 변경 없음. 검증은 [T11 증거](./artifacts/mono-font-checks.json)에 보존한다.
+
+## D014: 사용자 요청으로 Preview 정렬을 조사하고 T12에서 보정한다
+
+공통 frame의 flex center와 전체폭 preview wrapper는 이미 있으나, example root의 w-full과 내부 row의 기본 start 배치 또는 가시 내용보다 큰 예약 높이가 실제 내용의 중앙 배치를 보장하지 않는다. compact 데모의 그룹을 중앙에 두고 panel/폼 내부 읽기 정렬은 유지한다. 실제 source와 Code를 함께 사용하고 별도 문서 복사본을 만들지 않는다. 사용자 요청은 T12 분석·구현 허가이며 local-ff merge 허가가 아니다.

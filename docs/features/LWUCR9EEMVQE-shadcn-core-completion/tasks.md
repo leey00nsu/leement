@@ -244,6 +244,23 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-005] T-LWUCR9EEMVQE-shadcn-core-completion-12 Preview 전체 정렬 조사와 중앙 배치 보정
+  - Date: 2026-10-03
+  - Acceptance:
+    - 대표102개 및 추가57개 예제를 조사하고 작은 control·장식 데모를 Preview 중앙에 배치한다. panel·form·목록 내부 정렬과 넓은 source의 스크롤 및 주요 조작을 보존한다.
+  - Checklist:
+    - [ ] 상세/Showcase/추가 예제의 root와 내부 배치 원인을 조사해 항목별 변경 또는 유지 근거를 기록한다.
+    - [ ] 공통 Preview 배치와 필요한 example source를 보정하고 디자인·PRD 규칙을 동기화한다. token/theme와 registry API의 영향 여부를 확인한다.
+    - [ ] light/dark390/1440px 전수 geometry·화면 확인과 대표 keyboard/popup/overflow/Code 일치 및 featureChecks를 검증한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -256,9 +273,9 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
 

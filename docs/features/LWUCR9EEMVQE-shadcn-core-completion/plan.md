@@ -127,3 +127,11 @@ Plan 승인: agentReview.plan disabled 및 workflow-stage의 plan_approve 자동
 Curated Documentation Impact: 기존 PRD-FR-002/011/013과 docs/designs/design-system.md를 UPDATE한다. 두 대상은 T11 Docs에 연결한다. 아키텍처·운영·README는 NONE(README 요청 없음).
 
 Verification Contract: UI_RULE_CHANGE, 위험 LOW. 영구 테스트 NONE—기존 typography/preview/token 계약과 typecheck/lint/test/build를 실행한다. 일회 검증으로 npm pack에 두 WOFF2/OFL/NOTICE와 CSS 상대 URL 포함, 독립 소비자 빌드, 실제 Chrome에서 400/700 font 로드 및 glyph 측정(한국어 폭2배/영문 고정폭), Foundations mono 변경/사이트 적용/새로고침 유지/CSS 복사/초기화, 본문·로고 독립성을 확인한다. light/dark390/1440px에서 코드 가로 overflow를 확인한다. Feature supporting artifact에 필요한 검증 결과만 보존한다. 공개 publish/배포는 범위 밖이다.
+
+## T12 Preview 중앙 정렬
+
+대표102개(UI79/Pattern15/Block8)와 상세 추가57개 source의 root/직접 children 및 실제 화면을 조사한다. 공통 frame과 docs preview wrapper가 담당하는 중앙 배치를 확인하고, compact 예제의 불필요한 전체폭/고정 빈 높이 및 flex wrap start를 source별로 최소 수정한다. panel·form·데이터 캔버스는 폭을 유지하고 내부 text/label/표를 중앙 정렬하지 않는다. 모든 children에 text-center를 강제하는 규칙을 만들지 않는다. 실제 docs가 읽는 source를 수정해 Code 복사가 같은 예제를 제공하도록 한다.
+
+Curated Documentation Impact: PRD-FR-005 및 docs/designs/design-system.md의 Preview 배치 규칙을 UPDATE하며 T12 Docs로 연결한다. token/theme/registry behavior는 영향 확인 후 유지, README·아키텍처·운영 문서 NONE.
+
+Verification Contract: UI_RULE_CHANGE, 위험 LOW. 영구 테스트 NONE(기존 source Code 계약과 전체 featureChecks 사용). 일회 실제 Chrome 검증으로 상세159개 및 Showcase102개에서 light/dark390/1440px의 frame/group 중앙 geometry·inset·overflow를 확인하고 contact sheet/대표 screenshot을 직접 검토한다. compact wrap 행은 가시 children의 행별 bounding box를 대조한다. Combobox popup, Dialog/Tooltip, form label/control과 Replay·회전 pause 등 변경 항목의 실제 조작을 확인한다. 해당 source Code와 표시 코드의 일치를 대조한다. 실패한 검사와 원인은 기록하고 수정 후 다시 확인한다. 보존 자료는 Feature artifacts에만 둔다. Chrome 이외 브라우저/공개 배포/소비자 UI 재설계는 범위 밖이다.
