@@ -34,4 +34,10 @@
 - **Trace**: pnpm frozen install 완료. InputGroup은 하나의 focus/invalid 표면을 제공한다. 기본 표식16px과 label 최소40px을 예제에서 결합한다. T01 계약6개/form/label/error/controlled/disabled/keyboard가 통과했고 docs typecheck·변경 eslint·registry build가 통과했다. 화면/소비자 설치는 T05에서 확인한다.
 - **Evidence**: [기본 입력 source](../../../../registry/ui/core-form.test.tsx), [명세](./spec.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:49ec6cf1a4be0693484c3e88359ee2ab6896ff739a4f89869fa94df2ae424ac5 -->
+<!-- lee-spec-kit:workflow-sync sha256:616d4d8236adfc5646db8b2878c38b47340483828816c85959bd2152c628b2b5 -->
+
+## D004: Command 엔진과 보조 popup을 재사용한다 (2026-10-03)
+
+- **Decision**: cmdk 검색/키보드 엔진과 Leement Dialog를 조합한다. trigger 없는 controlled Dialog의 focus 복귀 대상이 없음을 테스트에서 확인하여 trigger prop으로 primitive opener를 연결했다. HoverCard는 Radix를 사용하고 Glimpse는 기존 props를 그대로 유지하면서 이를 조합한다.
+- **Trace**: 탐색8개 source/registry/원본 예제와 디자인 문서를 추가했다. Accordion은 Base UI 1.7의 Tab/Enter/Space 계약을 문서화하고 높이 CSS와 closing inert/reduced motion을 보존한다.
+- **Evidence**: [navigation 계약5개](../../../../registry/ui/core-navigation.test.tsx), docs typecheck/변경 eslint/registry build PASS.

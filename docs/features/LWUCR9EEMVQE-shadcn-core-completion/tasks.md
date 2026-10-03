@@ -91,13 +91,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-02 탐색·표시 UI와 HoverCard
+- [DONE][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-02 탐색·표시 UI와 HoverCard
   - Date: 2026-10-03
   - Acceptance:
     - Accordion/Breadcrumb/Pagination/Command/ButtonGroup/Kbd/AspectRatio/HoverCard source·문서·registry 및 Glimpse 기존 API가 동작한다.
   - Checklist:
-    - [ ] source·metadata·예제 및 navigation/hover 규칙 연결
-    - [ ] core-navigation 계약과 기존 Glimpse 회귀 확인
+    - [x] source·metadata·예제 및 navigation/hover 규칙 연결
+    - [x] core-navigation 계약과 기존 Glimpse 회귀 확인
   - Docs:
     - docs:designs/design-system.md
     - docs:prd/leement-prd.md
@@ -183,3 +183,5 @@
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
 T01 검증: core-form 계약6개 PASS, docs typecheck 및 변경 source/docs eslint PASS, registry JSON 생성 PASS. 화면·전체 소비자 설치는 T05에서 검증한다.
+
+T02 검증: core-navigation 계약5개 PASS(accordion·탐색 semantics·command 검색/disabled·Dialog Escape/focus·Glimpse hover), docs typecheck·변경 eslint·registry build PASS.

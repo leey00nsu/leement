@@ -3,8 +3,8 @@ type NavSection = { title?: string; items: NavItem[] };
 export type NavGroup = { title: string; sections: NavSection[] };
 
 const componentSections = [
-  { title: "Core", names: ["Toggle Group", "Toggle", "Native Select", "Input Group", "Field", "Radio Group", "Checkbox", "Button", "Input", "Select", "Switch", "Tabs", "Label", "Textarea", "Badge", "Card", "Separator"] },
-  { title: "Overlays", names: ["Dialog", "Dropdown Menu", "Popover", "Sheet", "Tooltip", "Alert Dialog"] },
+  { title: "Core", names: ["Aspect Ratio", "Kbd", "Button Group", "Command", "Pagination", "Breadcrumb", "Accordion", "Toggle Group", "Toggle", "Native Select", "Input Group", "Field", "Radio Group", "Checkbox", "Button", "Input", "Select", "Switch", "Tabs", "Label", "Textarea", "Badge", "Card", "Separator"] },
+  { title: "Overlays", names: ["Hover Card", "Dialog", "Dropdown Menu", "Popover", "Sheet", "Tooltip", "Alert Dialog"] },
   { title: "Feedback", names: ["Skeleton", "Status Notice", "Progress", "Toast", "Spinner", "Status"] },
   { title: "Data", names: ["Chart", "Calendar", "List", "Table", "Contribution Graph"] },
   { title: "Collaboration", names: ["Avatar", "Avatar Stack", "Cursor"] },

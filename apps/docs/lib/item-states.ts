@@ -2,6 +2,14 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+  "hover-card": "closed/open. portal\uacfc viewport \ucda9\ub3cc \ubc30\uce58\ub97c Radix\uac00 \ub2f4\ub2f9\ud569\ub2c8\ub2e4.",
+  "aspect-ratio": "\uc815\uc801 layout. \ub85c\ub529 \ud45c\uc2dc\ub294 Skeleton\uc744 \ubcc4\ub3c4\ub85c \uc870\ud569\ud569\ub2c8\ub2e4.",
+  "kbd": "\uc815\uc801 \uc124\uba85. focus/disabled/loading\uc774 \uc5c6\uc2b5\ub2c8\ub2e4.",
+  "button-group": "\ubd80\ubaa8 \uc0c1\ud0dc \uc5c6\uc74c. \uc790\uc2dd Button\uc758 \uc0c1\ud0dc\ub97c \uadf8\ub300\ub85c \uc0ac\uc6a9\ud569\ub2c8\ub2e4.",
+  "command": "\uac80\uc0c9 \uacb0\uacfc/empty/selected/disabled. Item disabled \uc0c1\ud0dc\ub294 data-disabled=true.",
+  "pagination": "current/hover/focus/disabled. \uc774\uc804/\ub2e4\uc74c \ud55c\uacc4\ub294 consumer\uac00 \uc9c0\uc815\ud569\ub2c8\ub2e4.",
+  "breadcrumb": "link hover/focus \ubc0f current page. \ub85c\ub529 \ub3d9\uc791\uc740 \uc5c6\uc2b5\ub2c8\ub2e4.",
+  "accordion": "open/closed/disabled. \ub2eb\ud788\ub294 panel\uc740 inert; reduced motion\uc5d0\uc11c\ub294 height transition\uc744 \uc81c\uac70\ud569\ub2c8\ub2e4.",
   "toggle-group": "Selected/unselected, focused, disabled and single/multiple.",
   "toggle": "Pressed, unpressed, focused and disabled.",
   "native-select": "Selected, focused, disabled, invalid.",

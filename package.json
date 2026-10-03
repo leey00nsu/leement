@@ -34,6 +34,7 @@
     "@types/react-dom": "^19.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
     "eslint": "^9.39.0",
     "eslint-config-next": "^16.0.0",
     "highlight.js": "^11.12.0",

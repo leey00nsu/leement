@@ -101,3 +101,11 @@ Native HTML media event가 playback state의 정본이다. src 변경은 이전 
 Checkbox는 함께 제출할 독립 옵션이며 mixed 상태는 일부 선택을 뜻한다. RadioGroup은 한 값을 고르고 Choicebox는 설명을 비교하는 카드형 선택이다. Switch는 즉시 적용할 설정, Toggle/ToggleGroup은 눌린 도구 모드, FilterToggle은 결과 필터에 쓴다. 체크/라디오 표식은16px이고 label row는 최소40px로 조작 영역을 확보한다.
 
 Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/Legend는 관련 입력의 의미를 묶는다. FormSection은 여러 필드의 배치이며 Field를 대체하지 않는다. Base UI input은 Field와 자동 연결되며 Leement의 native Input/Textarea/NativeSelect는 FieldControl render로 연결하거나 id/aria-describedby/aria-invalid를 명시한다. 이름 없는 아이콘 action과 placeholder만의 라벨을 피한다. InputGroup은 앞/뒤 adornment와 입력의 focus/invalid 표면을 묶되 별도 버튼의 disabled는 앱이 전달한다. NativeSelect는 browser form 의미가 충분한 경우 우선하고 custom popup은 Select, 검색은 Combobox를 사용한다. ToggleGroup은 Base UI의 배열 값 계약을 유지하며 단일 선택에서는 multiple=false다.
+
+### 기본 탐색과 보조 표시
+
+- Accordion은 같은 섹션의 보조 설명을 접는다. 필수 오류나 필수 안내는 접힌 내용에만 두지 않는다. Base UI 1.7의 Tab/Enter/Space 동작과 배열 value를 사용하며 multiple로 다중 open을 지정한다. Content panel에 padding을 직접 추가하지 말고 내용 안쪽에 둔다. 측정한 높이를 token duration/easing으로 전환하고 닫힘 중 inert와 reduced motion을 유지한다.
+- Breadcrumb은 상위 경로, Pagination은 URL 페이지 이동이다. 현재 페이지는 aria-current, 사용할 수 없는 페이지 링크는 href·Tab 진입을 제거한다. 로컬 테이블 페이지 상태에는 native Button을 사용한다.
+- Command는 cmdk의 검색·키보드 선택 엔진을 사용한다. 입력 이름, disabled item, empty 결과를 명시한다. CommandDialog의 trigger로 opener를 연결하면 Escape 후 focus가 복귀한다. trigger 없이 전역 단축키로 여는 consumer는 별도 focus 복귀 대상 관리를 맡는다.
+- ButtonGroup은 관련 행동의 경계만 묶는다. 선택 상태에는 RadioGroup/ToggleGroup을 사용한다. Kbd는 실제 단축키 설명이며 동작을 등록하지 않는다. AspectRatio는 CSS 비율 배치이며 media의 alt/captions를 대신하지 않는다.
+- HoverCard는 임의 보조 내용, Glimpse는 링크 metadata 편의 API다. HoverCard의 내용은 screen reader에 노출되지 않을 수 있으므로 필수 정보·action은 본문/목적지 또는 Popover/Dialog로 제공한다. 링크 의미와 기존 Glimpse props를 유지한다.

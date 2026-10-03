@@ -1217,11 +1217,10 @@
       "type": "registry:ui",
       "title": "Glimpse",
       "description": "Hover and focus link preview.",
-      "dependencies": [
-        "@radix-ui/react-hover-card"
-      ],
+      "dependencies": [],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/hover-card"
       ],
       "files": [
         {
@@ -1801,6 +1800,163 @@
           "path": "registry/ui/toggle-group.tsx",
           "type": "registry:ui",
           "target": "components/ui/toggle-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "\uad00\ub828 \uc815\ubcf4\ub97c \uc811\uace0 \ud3bc\uce58\ub294 \uc9c8\ubb38\u00b7\uc124\uc815 \ubaa9\ub85d\uc785\ub2c8\ub2e4.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/accordion.tsx"
+        },
+        {
+          "path": "registry/ui/accordion.module.css",
+          "type": "registry:file",
+          "target": "components/ui/accordion.module.css"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "\ud604\uc7ac \ud398\uc774\uc9c0\uc758 \uc0c1\uc704 \ud0d0\uc0c9 \uacbd\ub85c\uc785\ub2c8\ub2e4.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "\uc5ec\ub7ec \ud398\uc774\uc9c0\uc758 \ub370\uc774\ud130\uc5d0 \ub300\ud55c \ub9c1\ud06c \ud0d0\uc0c9\uc785\ub2c8\ub2e4.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "\uac80\uc0c9\uacfc \ud0a4\ubcf4\ub4dc \uc120\ud0dd\uc774 \uac00\ub2a5\ud55c \uba85\ub839 \ubaa9\ub85d\uc785\ub2c8\ub2e4.",
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "\uc11c\ub85c \uad00\ub828\ub41c \ubc84\ud2bc\uc758 \uacbd\uacc4\ub97c \uc5f0\uacb0\ud569\ub2c8\ub2e4.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "\uc2e4\uc81c\ub85c \uc9c0\uc6d0\ud558\ub294 \ud0a4\ubcf4\ub4dc \ub2e8\ucd95\ud0a4\ub97c \uc124\uba85\ud569\ub2c8\ub2e4.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "\ubbf8\ub514\uc5b4\uac00 \ub85c\ub4dc\ub418\uae30 \uc804\uc5d0\ub3c4 \uac00\ub85c\uc138\ub85c \ube44\uc728\uc744 \uc720\uc9c0\ud569\ub2c8\ub2e4.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/aspect-ratio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "\ub9c1\ud06c\ub098 \ub300\uc0c1\uc758 \ubcf4\uc870 \ub0b4\uc6a9\uc744 \ubbf8\ub9ac \ubcf4\uc5ec \uc8fc\ub294 \ube44\ubaa8\ub2ec popup\uc785\ub2c8\ub2e4.",
+      "dependencies": [
+        "@radix-ui/react-hover-card"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hover-card.tsx"
         }
       ]
     }

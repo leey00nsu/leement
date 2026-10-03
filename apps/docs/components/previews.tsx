@@ -1,6 +1,14 @@
 "use client";
 
 import type { ComponentType } from "react";
+import HoverCardExample from "../examples/hover-card";
+import AspectRatioExample from "../examples/aspect-ratio";
+import KbdExample from "../examples/kbd";
+import ButtonGroupExample from "../examples/button-group";
+import CommandExample from "../examples/command";
+import PaginationExample from "../examples/pagination";
+import BreadcrumbExample from "../examples/breadcrumb";
+import AccordionExample from "../examples/accordion";
 import ToggleGroupExample from "../examples/toggle-group";
 import ToggleExample from "../examples/toggle";
 import NativeSelectExample from "../examples/native-select";
@@ -96,6 +104,14 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "hover-card": HoverCardExample,
+  "aspect-ratio": AspectRatioExample,
+  "kbd": KbdExample,
+  "button-group": ButtonGroupExample,
+  "command": CommandExample,
+  "pagination": PaginationExample,
+  "breadcrumb": BreadcrumbExample,
+  "accordion": AccordionExample,
   "toggle-group": ToggleGroupExample,
   "toggle": ToggleExample,
   "native-select": NativeSelectExample,
