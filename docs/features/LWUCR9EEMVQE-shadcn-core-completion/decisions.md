@@ -73,3 +73,13 @@
 - **T06 evidence/limits**: [브라우저8조합·24상태 및 키보드/일반 입력 검증](./artifacts/input-alignment-check.json). Chrome의 실제 렌더링을 확인했으며 다른 브라우저를 검증했다고 주장하지 않는다. Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 생성 registry source 일치,113개 tests,lint/typecheck/build PASS. 사용자 요청으로 구현 승인을 다시 요청하며 병합은 별도 승인이다.
 
 <!-- lee-spec-kit:workflow-sync sha256:80a55fc4c656f149e8a67a64b46e984c020410fd89475ba28f554a25c0d21510 -->
+
+## D009: 사용자 요청에 따른 전체 예제 부족 분석 (2026-10-03)
+
+- **Context**: Select의 그룹 라벨이 구현되어도 예제에서 보이지 않는 원인을 설명한 뒤 사용자가 모든 컴포넌트의 예제 추가 여부 분석을 요청했다.
+- **Scope**: commit6b5fba0의 UI79개 public API/registry/docs metadata/실제 example source 및 docs 렌더링 경로를 정적으로 대조했다. Pattern15/Block8도 추가 조사했다. 실제 브라우저의102개 전수 조작이나 upstream 전체 parity 검증은 수행하지 않았다.
+- **Finding**: UI79개 모두 대표 예제 파일은 있다. 우선 추가13개, 보완42개, 현재 핵심 사용법 예제 유지24개로 분류했다. 유지 판정은 모든 props/모든 상태를 시연한다는 뜻이 아니다. live 예제에서 조작으로 도달할 수 있는 상태를 없는 기능으로 세지 않았다.
+- **Structural cause**: ItemPage는 Preview 하나만 보여주고 getItemCode는 examples/<name>.tsx 하나를 읽는다. Variants/Sizes/States는 텍스트이며 별도 named Examples section이 없다. Showcase도 같은 예제를 전체 mount한다.
+- **Recommendation**: Showcase의 가벼운 대표 예제를 유지하면서 상세 문서에는 중요한 variant/state/composition마다 설명·Preview·해당 Code를 가진 Examples를 추가한다. registry 원본을 재사용하고 unsupported upstream API를 약속하지 않는다. callback 결과와 앱 책임을 보여준다. 추가예제를 모두 Showcase에 mount하지 않는다.
+- **Evidence**: [전체102개 결과표](./artifacts/example-audit.html), [항목별 API·source 근거](./artifacts/example-audit.json). Progress의value=null 계약은 설치된 Base UI 타입을 직접 확인했다.
+- **Workflow**: 이번 요청은 분석이다. 예제/UI 구현 추가, Feature scope 확장, 구현 승인이나 merge 승인으로 해석하지 않는다. 제품 코드는 수정하지 않았다. 분석 결과를 검토한 뒤 사용자가 구현을 요청하면 범위/계획/태스크를 갱신한다.

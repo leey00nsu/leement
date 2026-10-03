@@ -1,0 +1,1170 @@
+{
+  "revision": "6b5fba015cf4e9a6c6a241c527f74efc480a63e2",
+  "scope": "현재 미병합 Feature worktree; UI79의 public source API·registry·metadata·예제와 렌더링 경로를 정적 대조. Pattern15/Block8은 추가 조사. 이번 분석에서는 실제 브라우저 전수 조작/접근성/시각 검증을 수행하지 않음.",
+  "counts": {
+    "우선": 13,
+    "보완": 42,
+    "유지": 24
+  },
+  "allExamplesPresent": true,
+  "structuralFinding": "ItemPage→ItemWorkbench→Preview(name)로 대표 예제 하나를 렌더하며 getItemCode는 examples/name.tsx 한 파일만 읽는다. Variants/Sizes/States는 별도 live example이 아니라 설명 문장. Showcase도 같은 예제 전체를 mount한다.",
+  "criteria": {
+    "우선": "핵심 public composition/API가 예제에서 빠져 소비자가 기능 존재/연결법을 파악하기 어려움.",
+    "보완": "기본 예제는 있으나 의미 있는 크기/variant/상태/소비자 결과 조합을 추가할 가치가 있음.",
+    "유지": "현재 조작 가능한 예제로 핵심 public 계약을 파악 가능. 모든 prop을 시연한다는 뜻은 아님."
+  },
+  "assessments": [
+    {
+      "name": "hover-card",
+      "priority": "유지",
+      "current": "실제 링크와 hover 콘텐츠 조합이 있다.",
+      "recommendation": "새 예제는 필수 아님. 보조 정보만 제공한다는 규칙을 유지.",
+      "examplePath": "apps/docs/examples/hover-card.tsx",
+      "sourcePaths": [
+        "registry/ui/hover-card.tsx"
+      ],
+      "exportedAPI": "export { HoverCard, HoverCardTrigger, HoverCardContent };",
+      "documentedAPI": "Radix Root(open/defaultOpen/onOpenChange/openDelay/closeDelay), Trigger(asChild), Content(align/side/sideOffset). Glimpse는 링크 metadata 편의 API.",
+      "documentedVariants": "단일 시각 규칙. className과 composition으로 조정합니다."
+    },
+    {
+      "name": "aspect-ratio",
+      "priority": "보완",
+      "current": "16:9 자리표시자만 제공한다.",
+      "recommendation": "실제 이미지의 object-cover 조합과 1:1 비율 비교.",
+      "examplePath": "apps/docs/examples/aspect-ratio.tsx",
+      "sourcePaths": [
+        "registry/ui/aspect-ratio.tsx"
+      ],
+      "exportedAPI": "export { AspectRatio };\nexport type { AspectRatioProps };",
+      "documentedAPI": "ratio 양의 유한 숫자(default1), div props/style. 잘못된 ratio는1로 처리합니다.",
+      "documentedVariants": "단일 시각 규칙. className과 composition으로 조정합니다."
+    },
+    {
+      "name": "kbd",
+      "priority": "유지",
+      "current": "KbdGroup과 여러 키 조합을 함께 보여 준다.",
+      "recommendation": "현재 예제로 충분. 단축키 동작 자체는 앱 책임.",
+      "examplePath": "apps/docs/examples/kbd.tsx",
+      "sourcePaths": [
+        "registry/ui/kbd.tsx"
+      ],
+      "exportedAPI": "export { Kbd, KbdGroup };",
+      "documentedAPI": "Kbd는 native kbd, KbdGroup은 span입니다. 단축키 동작을 등록하지 않습니다.",
+      "documentedVariants": "단일 시각 규칙. className과 composition으로 조정합니다."
+    },
+    {
+      "name": "button-group",
+      "priority": "보완",
+      "current": "가로 버튼 그룹과 disabled 버튼이 있다.",
+      "recommendation": "orientation=vertical, 아이콘/분할 action 조합.",
+      "examplePath": "apps/docs/examples/button-group.tsx",
+      "sourcePaths": [
+        "registry/ui/button-group.tsx"
+      ],
+      "exportedAPI": "export { ButtonGroup };",
+      "documentedAPI": "orientation horizontal(default)/vertical, native div props. 선택·키보드 엔진은 없습니다.",
+      "documentedVariants": "단일 시각 규칙. className과 composition으로 조정합니다."
+    },
+    {
+      "name": "command",
+      "priority": "유지",
+      "current": "inline 검색/empty/disabled/shortcut/결과와 Dialog 조합까지 있다.",
+      "recommendation": "현재 예제로 핵심 계약을 탐색할 수 있다.",
+      "examplePath": "apps/docs/examples/command.tsx",
+      "sourcePaths": [
+        "registry/ui/command.tsx"
+      ],
+      "exportedAPI": "export { Command, CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut };\nexport type { CommandDialogProps };",
+      "documentedAPI": "cmdk의 value/onValueChange, filter/keywords/shouldFilter, loop와 Item.onSelect/disabled를 전달합니다. CommandDialog는 Leement Dialog를 조합합니다.",
+      "documentedVariants": "단일 시각 규칙. className과 composition으로 조정합니다."
+    },
+    {
+      "name": "pagination",
+      "priority": "유지",
+      "current": "현재 페이지/disabled Previous/ellipsis/Next 링크가 있다.",
+      "recommendation": "현재 예제로 충분. 실제 페이지 조회는 앱 책임.",
+      "examplePath": "apps/docs/examples/pagination.tsx",
+      "sourcePaths": [
+        "registry/ui/pagination.tsx"
+      ],
+      "exportedAPI": "export { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis };\nexport type { PaginationLinkProps };",
+      "documentedAPI": "PaginationLink: href/isActive/disabled/size. Previous/Next도 같은 props. 조회·페이지 계산은 consumer 소유.",
+      "documentedVariants": "단일 시각 규칙. className과 composition으로 조정합니다."
+    },
+    {
+      "name": "breadcrumb",
+      "priority": "유지",
+      "current": "링크·현재 페이지·ellipsis를 조합한다.",
+      "recommendation": "현재 예제로 충분. ellipsis 자체를 메뉴로 오해하지 않도록 설명.",
+      "examplePath": "apps/docs/examples/breadcrumb.tsx",
+      "sourcePaths": [
+        "registry/ui/breadcrumb.tsx"
+      ],
+      "exportedAPI": "export { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis };",
+      "documentedAPI": "각 part는 해당 HTML 또는 primitive props를 그대로 전달합니다.",
+      "documentedVariants": "단일 시각 규칙. className과 composition으로 조정합니다."
+    },
+    {
+      "name": "accordion",
+      "priority": "보완",
+      "current": "단일 열림, 여닫기 및 disabled item을 제공한다.",
+      "recommendation": "multiple 배열 값과 controlled value 조합.",
+      "examplePath": "apps/docs/examples/accordion.tsx",
+      "sourcePaths": [
+        "registry/ui/accordion.tsx"
+      ],
+      "exportedAPI": "export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };",
+      "documentedAPI": "value/defaultValue는 배열이며 multiple로 여러 panel을 엽니다. Item.disabled; Content.keepMounted 지원.",
+      "documentedVariants": "단일 시각 규칙. className과 composition으로 조정합니다."
+    },
+    {
+      "name": "toggle-group",
+      "priority": "보완",
+      "current": "단일/복수 선택 및 disabled item이 있다.",
+      "recommendation": "vertical orientation과 앱에 전달되는 배열 값 표시.",
+      "examplePath": "apps/docs/examples/toggle-group.tsx",
+      "sourcePaths": [
+        "registry/ui/toggle-group.tsx"
+      ],
+      "exportedAPI": "export { ToggleGroup, ToggleGroupItem };\nexport type { ToggleGroupProps };",
+      "documentedAPI": "Base UI ToggleGroup props use an array for value/defaultValue/onValueChange even in single mode; multiple enables multi-select. ToggleGroupItem is Toggle.",
+      "documentedVariants": "Single by default, multiple, horizontal/vertical, disabled"
+    },
+    {
+      "name": "toggle",
+      "priority": "보완",
+      "current": "outline/default 및 pressed/disabled를 제공한다.",
+      "recommendation": "sm 크기 비교와 controlled pressed 결과.",
+      "examplePath": "apps/docs/examples/toggle.tsx",
+      "sourcePaths": [
+        "registry/ui/toggle.tsx"
+      ],
+      "exportedAPI": "export { Toggle };\nexport type { ToggleProps };",
+      "documentedAPI": "Toggle forwards Base UI Toggle props and adds variant/default|outline, size/default|sm. pressed/defaultPressed/onPressedChange control state.",
+      "documentedVariants": "Default/outline, pressed, disabled"
+    },
+    {
+      "name": "native-select",
+      "priority": "우선",
+      "current": "일반 옵션과 disabled item/control이 있다.",
+      "recommendation": "NativeSelectOptGroup으로 그룹, small 및 invalid Field 조합.",
+      "examplePath": "apps/docs/examples/native-select.tsx",
+      "sourcePaths": [
+        "registry/ui/native-select.tsx"
+      ],
+      "exportedAPI": "export { NativeSelect, NativeSelectOption, NativeSelectOptGroup };\nexport type { NativeSelectProps };",
+      "documentedAPI": "NativeSelect accepts native select props plus sizeVariant. NativeSelectOption and NativeSelectOptGroup forward native props; size remains the native attribute.",
+      "documentedVariants": "Default/small, disabled, invalid"
+    },
+    {
+      "name": "input-group",
+      "priority": "우선",
+      "current": "검색 아이콘·버튼, URL prefix, disabled input이 있다. 검색 버튼 callback은 없다.",
+      "recommendation": "Textarea part, suffix 단위, invalid 상태, 검색 action 결과. disabled 입력과 별도 버튼을 함께 잠그는 사용법.",
+      "examplePath": "apps/docs/examples/input-group.tsx",
+      "sourcePaths": [
+        "registry/ui/input-group.tsx"
+      ],
+      "exportedAPI": "export { InputGroup, InputGroupAddon, InputGroupInput, InputGroupTextarea, InputGroupButton };",
+      "documentedAPI": "Parts accept native or existing Input/Textarea/Button props. Place Addon before or after Input in JSX; no ordering configuration.",
+      "documentedVariants": "Prefix/suffix, input/textarea, invalid, disabled"
+    },
+    {
+      "name": "field",
+      "priority": "우선",
+      "current": "Input의 label/description/error/disabled 연결은 예제로 제공한다.",
+      "recommendation": "FieldSet/Legend와 RadioGroup/Checkbox 조합; Textarea/NativeSelect의 FieldControl render 연결.",
+      "examplePath": "apps/docs/examples/field.tsx",
+      "sourcePaths": [
+        "registry/ui/field.tsx"
+      ],
+      "exportedAPI": "export { Field, FieldLabel, FieldControl, FieldDescription, FieldError, FieldSet, FieldLegend, FieldGroup };",
+      "documentedAPI": "Field/Label/Control/Description/Error forward Base UI props. FieldSet/Legend/Group are native parts. invalid and FieldError match support app-owned validation.",
+      "documentedVariants": "Default, invalid, disabled"
+    },
+    {
+      "name": "radio-group",
+      "priority": "보완",
+      "current": "단일 선택·label·name 및 disabled 항목이 있다.",
+      "recommendation": "controlled 값과 form 제출 결과, invalid Field 조합.",
+      "examplePath": "apps/docs/examples/radio-group.tsx",
+      "sourcePaths": [
+        "registry/ui/radio-group.tsx"
+      ],
+      "exportedAPI": "export { RadioGroup, RadioGroupItem };\nexport type { RadioGroupProps, RadioGroupItemProps };",
+      "documentedAPI": "RadioGroup uses Base UI string value/defaultValue/onValueChange and name. RadioGroupItem forwards Radio.Root props.",
+      "documentedVariants": "Selected, unselected, disabled, invalid"
+    },
+    {
+      "name": "checkbox",
+      "priority": "보완",
+      "current": "체크 전환, mixed 및 disabled를 제공한다.",
+      "recommendation": "상위 전체 선택과 자식 항목을 연결하는 실제 indeterminate 예제 및 form 제출 결과.",
+      "examplePath": "apps/docs/examples/checkbox.tsx",
+      "sourcePaths": [
+        "registry/ui/checkbox.tsx"
+      ],
+      "exportedAPI": "export { Checkbox };\nexport type { CheckboxProps };",
+      "documentedAPI": "CheckboxProps are Base UI Checkbox.Root props, including checked/defaultChecked, indeterminate, onCheckedChange, name, value and disabled.",
+      "documentedVariants": "Checked, unchecked, indeterminate, disabled, invalid"
+    },
+    {
+      "name": "rotating-content",
+      "priority": "보완",
+      "current": "여러 텍스트를 순환하고 기본 pause control이 있다.",
+      "recommendation": "controls=false의 외부 controlled pause button 조합; decorative heading 밖에 접근 가능한 제어를 둔다.",
+      "examplePath": "apps/docs/examples/rotating-content.tsx",
+      "sourcePaths": [
+        "registry/ui/rotating-content.tsx"
+      ],
+      "exportedAPI": "export { RotatingContent };\nexport type { RotatingContentProps };",
+      "documentedAPI": "Native span props, including object or callback ref to the root without disabling motion. RotatingContent accepts items: ReactNode[], label, interval in ms, paused/defaultPaused and onPausedChange. Theme cycle-rotate is the default. Nonpositive intervals are static. controls=false requires controlled paused state and a caller-owned, keyboard reachable pause control; place that control outside decorative aria-hidden headings. Cleanup stops timers; consumers changing JS timing variables during runtime may dispatch leement:motion-change to refresh immediately.",
+      "documentedVariants": "Running, paused, offscreen, reduced-motion static first item."
+    },
+    {
+      "name": "text-reveal",
+      "priority": "보완",
+      "current": "TextReveal.Item, 줄바꿈, 브랜드 텍스트와 replay가 있다.",
+      "recommendation": "duration/stagger를 비교할 수 있는 replay 예제.",
+      "examplePath": "apps/docs/examples/text-reveal.tsx",
+      "sourcePaths": [
+        "registry/ui/text-reveal.tsx"
+      ],
+      "exportedAPI": "export { TextReveal, TextRevealItem };\nexport type { TextRevealProps, TextRevealItemProps };",
+      "documentedAPI": "TextReveal accepts span props (including object or callback ref without disabling entrance), duration and stagger in milliseconds. Compose Item children and literal spaces/line breaks; Item index can override sequence order. Theme variables supply defaults; replay by remounting with a new key.",
+      "documentedVariants": "One-shot entrance, static reduced motion"
+    },
+    {
+      "name": "audio-player",
+      "priority": "유지",
+      "current": "재생/탐색/속도/볼륨 외에 brand·source 변경·error/reset 버튼이 있다.",
+      "recommendation": "추가 예제는 필수 아님. precomputed peaks/duration은 긴 오디오 사용 가이드의 코드 예제 후보.",
+      "examplePath": "apps/docs/examples/audio-player.tsx",
+      "sourcePaths": [
+        "registry/ui/audio-player.tsx"
+      ],
+      "exportedAPI": "export { AudioPlayer };\nexport type { AudioPlayerProps };",
+      "documentedAPI": "AudioPlayer accepts src, title, optional peaks: Array<Float32Array | number[]>, duration (seconds, with peaks), brand (default false), and native root div props/ref. Source changes reset state and clean up the renderer. For long audio provide precomputed peaks and duration; URLs must allow waveform fetching. Native audio can remain usable if decoding or CORS prevents waveform rendering. A 15-second waveform preparation timeout exposes the native fallback. Runtime stylesheet changes may dispatch leement:theme-change; scoped ancestor class/style changes are observed automatically. Labels are English in the installed source; consumers can localize their owned controls.",
+      "documentedVariants": "Neutral by default; brand=true uses your brand gradient. Loading, ready, waveform fallback, media error and replay."
+    },
+    {
+      "name": "button",
+      "priority": "보완",
+      "current": "5 action variants와 disabled/loading을 모두 보여 준다.",
+      "recommendation": "xs/sm/default/lg/icon/icon-sm 크기 비교, 아이콘 label, asChild 실제 링크.",
+      "examplePath": "apps/docs/examples/button.tsx",
+      "sourcePaths": [
+        "registry/ui/button.tsx"
+      ],
+      "exportedAPI": "export { Button, buttonVariants };\nexport type { ButtonProps };",
+      "documentedAPI": "ButtonProps extends native button props; variant, size, asChild, loading. Source-project default maps to primary; link maps to a native link.",
+      "documentedVariants": "primary, secondary, outline, ghost, destructive"
+    },
+    {
+      "name": "input",
+      "priority": "보완",
+      "current": "email, native file, disabled 입력이 있다.",
+      "recommendation": "password/number 등 대표 HTML 타입, error text와 aria-invalid/aria-describedby 연결. file 선택 후는 기존 예제에서 도달 가능.",
+      "examplePath": "apps/docs/examples/input.tsx",
+      "sourcePaths": [
+        "registry/ui/input.tsx"
+      ],
+      "exportedAPI": "export { Input };",
+      "documentedAPI": "Native input props. Source-project custom classes can be carried into owned source.",
+      "documentedVariants": "Default, file, invalid, disabled"
+    },
+    {
+      "name": "select",
+      "priority": "우선",
+      "current": "일반 단일 선택만 있고 Group/Label/Separator를 사용하지 않는다.",
+      "recommendation": "라벨 있는 그룹·여러 그룹과 separator, 많은 옵션의 스크롤, sm/disabled/invalid, alignItemWithTrigger 비교.",
+      "examplePath": "apps/docs/examples/select.tsx",
+      "sourcePaths": [
+        "registry/ui/select.tsx"
+      ],
+      "exportedAPI": "export {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectScrollDownButton,\n  SelectScrollUpButton,\n  SelectSeparator,\n  SelectTrigger,\n  SelectValue,\n};",
+      "documentedAPI": "Base UI Select props with composable Leement parts. Pass items to map values to visible labels.",
+      "documentedVariants": "Default, invalid, disabled"
+    },
+    {
+      "name": "switch",
+      "priority": "보완",
+      "current": "defaultChecked와 Label만 있다. 사용자가 checked/unchecked를 전환할 수 있다.",
+      "recommendation": "sm/default 비교, disabled/invalid, controlled 즉시 설정 결과.",
+      "examplePath": "apps/docs/examples/switch.tsx",
+      "sourcePaths": [
+        "registry/ui/switch.tsx"
+      ],
+      "exportedAPI": "export { Switch };",
+      "documentedAPI": "Base UI Switch.Root props plus size.",
+      "documentedVariants": "Checked, unchecked, invalid, disabled"
+    },
+    {
+      "name": "tabs",
+      "priority": "우선",
+      "current": "segmented Code/Preview만 제공한다.",
+      "recommendation": "default/line/segmented 비교, vertical, disabled tab, 앱 controlled value.",
+      "examplePath": "apps/docs/examples/tabs.tsx",
+      "sourcePaths": [
+        "registry/ui/tabs.tsx"
+      ],
+      "exportedAPI": "export { Tabs, TabsContent, TabsList, TabsTrigger, tabsListVariants };",
+      "documentedAPI": "Base UI Tabs props; TabsList variant=segmented makes equal-width workbench choices. The selected border uses muted-foreground for at least 3:1 adjacent contrast.",
+      "documentedVariants": "Default, line, segmented"
+    },
+    {
+      "name": "label",
+      "priority": "보완",
+      "current": "일반 Input의 htmlFor 연결만 있다.",
+      "recommendation": "Checkbox/Switch 연결과 disabled control에 맞춘 label 조합.",
+      "examplePath": "apps/docs/examples/label.tsx",
+      "sourcePaths": [
+        "registry/ui/label.tsx"
+      ],
+      "exportedAPI": "export { Label };",
+      "documentedAPI": "Native label props.",
+      "documentedVariants": "Default, disabled"
+    },
+    {
+      "name": "textarea",
+      "priority": "보완",
+      "current": "기본 placeholder와 label만 제공한다.",
+      "recommendation": "disabled/readOnly/invalid 및 description/error 연결; controlled 글자 수는 앱 조합으로 설명.",
+      "examplePath": "apps/docs/examples/textarea.tsx",
+      "sourcePaths": [
+        "registry/ui/textarea.tsx"
+      ],
+      "exportedAPI": "export { Textarea };",
+      "documentedAPI": "Native textarea props.",
+      "documentedVariants": "Default, invalid, disabled"
+    },
+    {
+      "name": "badge",
+      "priority": "유지",
+      "current": "4 variants를 모두 표시한다.",
+      "recommendation": "현재 예제로 충분.",
+      "examplePath": "apps/docs/examples/badge.tsx",
+      "sourcePaths": [
+        "registry/ui/badge.tsx"
+      ],
+      "exportedAPI": "export { Badge, badgeVariants };",
+      "documentedAPI": "Native span props and variant.",
+      "documentedVariants": "default, secondary, outline, destructive"
+    },
+    {
+      "name": "card",
+      "priority": "보완",
+      "current": "Header/Title/Description/Action/Content/Footer를 모두 사용한다.",
+      "recommendation": "sm/default density 비교, 이미지와 정보·action의 조합.",
+      "examplePath": "apps/docs/examples/card.tsx",
+      "sourcePaths": [
+        "registry/ui/card.tsx"
+      ],
+      "exportedAPI": "export { Card, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter };",
+      "documentedAPI": "Card accepts size; each part accepts its native element props.",
+      "documentedVariants": "One surface style; Footer uses a subtle separated surface"
+    },
+    {
+      "name": "separator",
+      "priority": "보완",
+      "current": "horizontal만 표시한다.",
+      "recommendation": "높이가 확보된 vertical separator 조합, decorative=false의 의미 설명.",
+      "examplePath": "apps/docs/examples/separator.tsx",
+      "sourcePaths": [
+        "registry/ui/separator.tsx"
+      ],
+      "exportedAPI": "export { Separator };",
+      "documentedAPI": "Radix Separator.Root props.",
+      "documentedVariants": "horizontal, vertical"
+    },
+    {
+      "name": "dialog",
+      "priority": "보완",
+      "current": "입력 편집, save/cancel, 결과 표시를 제공한다.",
+      "recommendation": "controlled open, 긴 내용의 스크롤, showCloseButton=false일 때 명시적 닫기 제어.",
+      "examplePath": "apps/docs/examples/dialog.tsx",
+      "sourcePaths": [
+        "registry/ui/dialog.tsx"
+      ],
+      "exportedAPI": "export { Dialog, DialogTrigger, DialogClose, DialogPortal, DialogOverlay, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription };",
+      "documentedAPI": "Radix Dialog props; DialogContent adds showCloseButton. Migrating Base UI triggers use asChild instead of render.",
+      "documentedVariants": "One modal surface"
+    },
+    {
+      "name": "dropdown-menu",
+      "priority": "우선",
+      "current": "일반 action/disabled/destructive/separator만 제공한다.",
+      "recommendation": "Group/Label/Shortcut, CheckboxItem, RadioGroup/RadioItem, Submenu와 실제 선택 결과.",
+      "examplePath": "apps/docs/examples/dropdown-menu.tsx",
+      "sourcePaths": [
+        "registry/ui/dropdown-menu.tsx"
+      ],
+      "exportedAPI": "export {\n  DropdownMenu,\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuPortal,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuSeparator,\n  DropdownMenuShortcut,\n  DropdownMenuSub,\n  DropdownMenuSubContent,\n  DropdownMenuSubTrigger,\n  DropdownMenuTrigger,\n};",
+      "documentedAPI": "Base UI Menu parts wrapped with Leement surface and action styles.",
+      "documentedVariants": "Default and destructive items"
+    },
+    {
+      "name": "popover",
+      "priority": "보완",
+      "current": "title/description와 controlled Switch를 포함한 popup이 있다.",
+      "recommendation": "side/align 배치 비교와 controlled open 조합.",
+      "examplePath": "apps/docs/examples/popover.tsx",
+      "sourcePaths": [
+        "registry/ui/popover.tsx"
+      ],
+      "exportedAPI": "export { Popover, PopoverContent, PopoverDescription, PopoverTitle, PopoverTrigger };",
+      "documentedAPI": "Base UI Popover props and position options.",
+      "documentedVariants": "One floating surface"
+    },
+    {
+      "name": "sheet",
+      "priority": "보완",
+      "current": "right(default) panel과 Header/Footer/Close 조합이 있다.",
+      "recommendation": "left/top/bottom 방향 비교, 긴 내용과 명시적 닫기.",
+      "examplePath": "apps/docs/examples/sheet.tsx",
+      "sourcePaths": [
+        "registry/ui/sheet.tsx"
+      ],
+      "exportedAPI": "export { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger };",
+      "documentedAPI": "Base UI Dialog props; SheetContent adds side and showCloseButton.",
+      "documentedVariants": "Top, right, bottom, left"
+    },
+    {
+      "name": "tooltip",
+      "priority": "보완",
+      "current": "hover 또는 keyboard focus로 확인하는 기본 Tooltip이 있다.",
+      "recommendation": "4방향 배치와 아이콘 버튼의 visible/accessible label 조합.",
+      "examplePath": "apps/docs/examples/tooltip.tsx",
+      "sourcePaths": [
+        "registry/ui/tooltip.tsx"
+      ],
+      "exportedAPI": "export { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent };",
+      "documentedAPI": "Radix Tooltip props. Migrating Base UI providers use delayDuration instead of delay.",
+      "documentedVariants": "One high contrast surface"
+    },
+    {
+      "name": "chart",
+      "priority": "우선",
+      "current": "단일 시리즈 BarChart와 기본 tooltip만 있다.",
+      "recommendation": "다중 시리즈+Legend, line/area 등 대표 Recharts 조합, tooltip dot/line/dashed 및 formatter. 각 차트가 별도 Leement API인 것은 아니다.",
+      "examplePath": "apps/docs/examples/chart.tsx",
+      "sourcePaths": [
+        "registry/ui/chart.tsx"
+      ],
+      "exportedAPI": "export { ChartContainer, ChartLegend, ChartLegendContent, ChartStyle, ChartTooltip, ChartTooltipContent };",
+      "documentedAPI": "ChartConfig labels/colors, ChartContainer and Recharts child. Prefer --lm data accent tokens.",
+      "documentedVariants": "Chart type is composed through Recharts"
+    },
+    {
+      "name": "skeleton",
+      "priority": "유지",
+      "current": "neutral 원형/텍스트와 brand variant를 함께 보여 준다.",
+      "recommendation": "현재 예제로 충분. pause 비교는 motion 가이드의 선택적 보완.",
+      "examplePath": "apps/docs/examples/skeleton.tsx",
+      "sourcePaths": [
+        "registry/ui/skeleton.tsx"
+      ],
+      "exportedAPI": "export type { SkeletonProps };\nexport { Skeleton };",
+      "documentedAPI": "Native div props plus variant and paused. Repetition stops offscreen, when the document is hidden and under reduced motion.",
+      "documentedVariants": "neutral (default), brand"
+    },
+    {
+      "name": "brand-gradient-text",
+      "priority": "보완",
+      "current": "animated 기본 텍스트만 있다.",
+      "recommendation": "animated=false와 paused 비교 및 실제 정지 제어.",
+      "examplePath": "apps/docs/examples/brand-gradient-text.tsx",
+      "sourcePaths": [
+        "registry/ui/brand-gradient-text.tsx"
+      ],
+      "exportedAPI": "export type { BrandGradientTextProps };\nexport { BrandGradientText };",
+      "documentedAPI": "Native span props plus animated and paused booleans. Repetition stops offscreen, when the document is hidden and under reduced motion.",
+      "documentedVariants": "animated (default) or static"
+    },
+    {
+      "name": "status-notice",
+      "priority": "보완",
+      "current": "4개 tone을 모두 보여 준다.",
+      "recommendation": "action 슬롯으로 재시도·도움말이 있는 결과 메시지; 기존 tone 예제는 유지.",
+      "examplePath": "apps/docs/examples/status-notice.tsx",
+      "sourcePaths": [
+        "registry/ui/status-notice.tsx"
+      ],
+      "exportedAPI": "export type { StatusNoticeProps, StatusNoticeTone };\nexport { StatusNotice };",
+      "documentedAPI": "StatusNoticeProps adds tone, icon, title, description and action.",
+      "documentedVariants": "neutral, success, warning, destructive"
+    },
+    {
+      "name": "reveal-content",
+      "priority": "보완",
+      "current": "section variant 한 개만 있다.",
+      "recommendation": "6 variants의 차이, line/stagger의 data-reveal-item/media/line 표시와 replay. variant만 바꾼 빈 wrapper를 늘리지 않는다.",
+      "examplePath": "apps/docs/examples/reveal-content.tsx",
+      "sourcePaths": [
+        "registry/ui/reveal-content.tsx"
+      ],
+      "exportedAPI": "export { RevealContent };\nexport type { RevealContentProps };",
+      "documentedAPI": "HTMLMotionProps plus variant, delay, distance, duration and fromOpacity. Object or callback ref receives the root div while internal viewport observation stays active.",
+      "documentedVariants": "default, fade, group, line, section, stagger"
+    },
+    {
+      "name": "collapsible",
+      "priority": "보완",
+      "current": "기본 여닫기와 panel 안쪽 padding 구조를 보여 준다.",
+      "recommendation": "disabled/controlled 예제와 form controls를 포함한 긴 panel 조합.",
+      "examplePath": "apps/docs/examples/collapsible.tsx",
+      "sourcePaths": [
+        "registry/ui/collapsible.tsx"
+      ],
+      "exportedAPI": "export { Collapsible, CollapsibleContent, CollapsibleTrigger };",
+      "documentedAPI": "Base UI Collapsible props. Put padding, borders and opening gaps on a child inside CollapsibleContent. Keep the animated panel free of padding and external spacing so height runs from zero to its full measured size without a final jump.",
+      "documentedVariants": "Open and closed"
+    },
+    {
+      "name": "progress",
+      "priority": "우선",
+      "current": "64% determinate와 label/value를 제공한다.",
+      "recommendation": "indeterminate(value=null)의 실제 표현을 확인한 후 추가, 0/100 경계와 진행값 변경. 자동 Track과 수동 parts 중복 금지 안내.",
+      "examplePath": "apps/docs/examples/progress.tsx",
+      "sourcePaths": [
+        "registry/ui/progress.tsx"
+      ],
+      "exportedAPI": "export { Progress, ProgressIndicator, ProgressLabel, ProgressTrack, ProgressValue };",
+      "documentedAPI": "Base UI Progress props and composable parts.",
+      "documentedVariants": "Determinate and indeterminate"
+    },
+    {
+      "name": "slider",
+      "priority": "유지",
+      "current": "controlled 단일 값/range/vertical/disabled가 있다.",
+      "recommendation": "현재 예제로 주요 차이를 보여 준다. step/min/max는 선택적 보완.",
+      "examplePath": "apps/docs/examples/slider.tsx",
+      "sourcePaths": [
+        "registry/ui/slider.tsx"
+      ],
+      "exportedAPI": "export { Slider };",
+      "documentedAPI": "Base UI Slider.Root props. defaultValue/value arrays determine thumb count.",
+      "documentedVariants": "One or multiple thumbs"
+    },
+    {
+      "name": "toast",
+      "priority": "우선",
+      "current": "success 호출 하나만 제공한다.",
+      "recommendation": "info/warning/error/loading, promise 결과, action/dismiss 및 host theme 연결. Toaster는 한 번만 mount.",
+      "examplePath": "apps/docs/examples/toast.tsx",
+      "sourcePaths": [
+        "registry/ui/toast.tsx"
+      ],
+      "exportedAPI": "export { Toaster, toast };",
+      "documentedAPI": "Mount Toaster once; call toast from sonner-compatible export. Pass theme when the host app controls mode.",
+      "documentedVariants": "success, info, warning, error, loading"
+    },
+    {
+      "name": "avatar",
+      "priority": "우선",
+      "current": "AvatarFallback 이니셜만 제공하며 AvatarImage를 사용하지 않는다.",
+      "recommendation": "실제 이미지, 깨진 이미지 fallback, 크기 비교.",
+      "examplePath": "apps/docs/examples/avatar.tsx",
+      "sourcePaths": [
+        "registry/ui/avatar.tsx"
+      ],
+      "exportedAPI": "export { Avatar, AvatarImage, AvatarFallback };",
+      "documentedAPI": "Radix Avatar props.",
+      "documentedVariants": "Image or fallback"
+    },
+    {
+      "name": "alert-dialog",
+      "priority": "유지",
+      "current": "실제 cancel/delete와 결과 status를 제공한다.",
+      "recommendation": "현재 예제로 핵심 계약을 설명한다.",
+      "examplePath": "apps/docs/examples/alert-dialog.tsx",
+      "sourcePaths": [
+        "registry/ui/alert-dialog.tsx"
+      ],
+      "exportedAPI": "export { AlertDialog, AlertDialogTrigger, AlertDialogPortal, AlertDialogOverlay, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel };",
+      "documentedAPI": "Radix AlertDialog props and Leement-styled action/cancel.",
+      "documentedVariants": "Destructive action and outline cancel"
+    },
+    {
+      "name": "avatar-stack",
+      "priority": "보완",
+      "current": "animate=false의 이니셜 5개와 size=36만 있다.",
+      "recommendation": "animate=true 비교와 실제 이미지, 서로 다른 size. 자동 overflow count가 있다고 가정하지 않는다.",
+      "examplePath": "apps/docs/examples/avatar-stack.tsx",
+      "sourcePaths": [
+        "registry/ui/avatar-stack.tsx"
+      ],
+      "exportedAPI": "",
+      "documentedAPI": "AvatarStack accepts native div props plus animate and size.",
+      "documentedVariants": "Static or spacing animation"
+    },
+    {
+      "name": "cursor",
+      "priority": "유지",
+      "current": "3개 cursor와 이름/메시지/presence 설명을 조합한다.",
+      "recommendation": "현재 예제로 충분. 실시간 위치 동기화는 앱 책임.",
+      "examplePath": "apps/docs/examples/cursor.tsx",
+      "sourcePaths": [
+        "registry/ui/cursor.tsx"
+      ],
+      "exportedAPI": "",
+      "documentedAPI": "Cursor, CursorPointer, CursorBody, CursorName and CursorMessage accept native props.",
+      "documentedVariants": "One semantic surface"
+    },
+    {
+      "name": "calendar",
+      "priority": "보완",
+      "current": "schedule/date/range 전환과 range min/max를 제공한다.",
+      "recommendation": "disabled date predicate, range 내부 제외 날짜, ko-KR/startDay=1; 기존3 modes를 새로 없는 것처럼 추가하지 않는다.",
+      "examplePath": "apps/docs/examples/calendar.tsx",
+      "sourcePaths": [
+        "registry/ui/calendar.tsx"
+      ],
+      "exportedAPI": "export { Calendar };\nexport type { CalendarProps, DateRange };",
+      "documentedAPI": "CalendarProps single: value/defaultValue/onValueChange (preserved). Range: mode=range, range/defaultRange/onRangeChange; DateRange={from,to?}. Shared min/max, disabled boolean/date predicate, locale/startDay/variant/events.",
+      "documentedVariants": "Schedule (legacy default), date and range mode; selected, today, disabled and event dates"
+    },
+    {
+      "name": "list",
+      "priority": "보완",
+      "current": "두 그룹의 실제 순서 변경과 move 경계를 제공한다.",
+      "recommendation": "renderItem으로 맞춤 row를 만드는 source 예제.",
+      "examplePath": "apps/docs/examples/list.tsx",
+      "sourcePaths": [
+        "registry/ui/list.tsx"
+      ],
+      "exportedAPI": "export { List };\nexport type { ListItem, ListProps };",
+      "documentedAPI": "List accepts items, onItemsChange and optional renderItem.",
+      "documentedVariants": "Default and disabled move limits"
+    },
+    {
+      "name": "table",
+      "priority": "우선",
+      "current": "legacy DataTable와 sorting만 예제로 표시한다. 신규 native Table parts는 미사용이다.",
+      "recommendation": "TableHeader/Body/Footer/Caption 조합; legacy empty; AdvancedDataTable로 연결. 기본 Table과 DataTable 이름/API 차이를 설명.",
+      "examplePath": "apps/docs/examples/table.tsx",
+      "sourcePaths": [
+        "registry/ui/table.tsx"
+      ],
+      "exportedAPI": "export { Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption, DataTable };\nexport type { DataTableProps, TableColumn };",
+      "documentedAPI": "Table/Header/Body/Footer/Row/Head/Cell/Caption accept native props. Existing DataTable accepts data, columns with optional sortValue, rowId and caption. AdvancedDataTable is a separate pattern.",
+      "documentedVariants": "Ascending, descending and unsorted columns"
+    },
+    {
+      "name": "code-block",
+      "priority": "보완",
+      "current": "TS/CSS/JSON samples 전환과 line numbers/copy가 있다.",
+      "recommendation": "단일 code prop, showLineNumbers=false, 지원하지 않는 language의 plain text 처리.",
+      "examplePath": "apps/docs/examples/code-block.tsx",
+      "sourcePaths": [
+        "registry/ui/code-block.tsx"
+      ],
+      "exportedAPI": "export { CodeBlock };\nexport type { CodeBlockProps, CodeSample };",
+      "documentedAPI": "CodeBlock accepts code, language, filename, optional samples ({ label, code, language, filename }) and showLineNumbers. Highlighting covers JS/TS, JSON, CSS, HTML and Bash; unknown languages render as plain text.",
+      "documentedVariants": "Single code value or a samples list; line numbers on or off"
+    },
+    {
+      "name": "contribution-graph",
+      "priority": "보완",
+      "current": "annual intensity grid만 제공한다.",
+      "recommendation": "onSelect 결과, 짧은 기간과 ko-KR 예제.",
+      "examplePath": "apps/docs/examples/contribution-graph.tsx",
+      "sourcePaths": [
+        "registry/ui/contribution-graph.tsx"
+      ],
+      "exportedAPI": "export { ContributionGraph };\nexport type { Contribution, ContributionGraphProps };",
+      "documentedAPI": "ContributionGraph accepts data, startDate, endDate, locale and onSelect.",
+      "documentedVariants": "Four intensity levels"
+    },
+    {
+      "name": "snippet",
+      "priority": "유지",
+      "current": "pnpm/npm/yarn 탭 전환과 copy를 제공한다.",
+      "recommendation": "현재 예제로 충분.",
+      "examplePath": "apps/docs/examples/snippet.tsx",
+      "sourcePaths": [
+        "registry/ui/snippet.tsx"
+      ],
+      "exportedAPI": "export { Snippet };\nexport type { SnippetOption, SnippetProps };",
+      "documentedAPI": "Snippet accepts options and label.",
+      "documentedVariants": "One tab per provided option"
+    },
+    {
+      "name": "choicebox",
+      "priority": "보완",
+      "current": "선택·미선택·disabled 항목과 descriptions가 있다.",
+      "recommendation": "controlled 선택 및 form/name 제출 결과, fieldset 전체 disabled.",
+      "examplePath": "apps/docs/examples/choicebox.tsx",
+      "sourcePaths": [
+        "registry/ui/choicebox.tsx"
+      ],
+      "exportedAPI": "export { Choicebox };\nexport type { Choice, ChoiceboxProps };",
+      "documentedAPI": "Choicebox accepts legend, choices, controlled or default value and onValueChange.",
+      "documentedVariants": "Selected, disabled and unselected"
+    },
+    {
+      "name": "combobox",
+      "priority": "보완",
+      "current": "검색/선택/no-results를 조작할 수 있고 disabled option이 있다.",
+      "recommendation": "control 전체 disabled, default selection, controlled value를 앱에 반영하는 예제. 그룹/다중/async는 현 API 미지원.",
+      "examplePath": "apps/docs/examples/combobox.tsx",
+      "sourcePaths": [
+        "registry/ui/combobox.tsx"
+      ],
+      "exportedAPI": "export { Combobox };\nexport type { ComboboxOption, ComboboxProps };",
+      "documentedAPI": "Combobox accepts label, options, value/defaultValue and onValueChange.",
+      "documentedVariants": "Selected, empty, disabled"
+    },
+    {
+      "name": "dropzone",
+      "priority": "우선",
+      "current": "image/*·multiple을 제공하고 내부 파일명/거절 상태는 조작 가능. onFiles callback은 빈 함수다.",
+      "recommendation": "단일/전체 disabled 비교; onFiles로 파일 목록·정보를 외부에 전달하는 실제 소비자 예제와 거절 시나리오 안내.",
+      "examplePath": "apps/docs/examples/dropzone.tsx",
+      "sourcePaths": [
+        "registry/ui/dropzone.tsx"
+      ],
+      "exportedAPI": "export { Dropzone };\nexport type { DropzoneProps };",
+      "documentedAPI": "Dropzone accepts label, accept, multiple, disabled and onFiles. Unsupported files do not call onFiles.",
+      "documentedVariants": "Single or multiple, disabled, dragging and rejected"
+    },
+    {
+      "name": "mini-calendar",
+      "priority": "유지",
+      "current": "7일 strip의 선택과 previous/next 조작이 있다.",
+      "recommendation": "현재 예제로 핵심 계약을 탐색할 수 있다. locale은 선택적 코드 보완.",
+      "examplePath": "apps/docs/examples/mini-calendar.tsx",
+      "sourcePaths": [
+        "registry/ui/mini-calendar.tsx"
+      ],
+      "exportedAPI": "export { MiniCalendar };\nexport type { MiniCalendarProps };",
+      "documentedAPI": "MiniCalendar accepts value/defaultValue, onValueChange and locale.",
+      "documentedVariants": "Selected and unselected"
+    },
+    {
+      "name": "tags",
+      "priority": "보완",
+      "current": "추가/삭제·suggestions·max=4 경계에 조작으로 도달할 수 있다.",
+      "recommendation": "disabled와 controlled value의 실제 소비자 저장 값 예제. limit 기능을 미구현으로 분류하지 않는다.",
+      "examplePath": "apps/docs/examples/tags.tsx",
+      "sourcePaths": [
+        "registry/ui/tags.tsx"
+      ],
+      "exportedAPI": "export { Tags };\nexport type { TagsProps };",
+      "documentedAPI": "Tags accepts label, value/defaultValue, suggestions, max and onValueChange.",
+      "documentedVariants": "Editable, full and disabled"
+    },
+    {
+      "name": "image-crop",
+      "priority": "보완",
+      "current": "freeform crop, reset/apply와 percent 결과를 제공한다.",
+      "recommendation": "aspect=1 및 16/9 fixed aspect 비교. 실제 파일 저장은 앱 책임.",
+      "examplePath": "apps/docs/examples/image-crop.tsx",
+      "sourcePaths": [
+        "registry/ui/image-crop.tsx"
+      ],
+      "exportedAPI": "export { ImageCrop };\nexport type { ImageCropProps };",
+      "documentedAPI": "ImageCrop accepts src, alt, aspect and onApply(percentCrop).",
+      "documentedVariants": "Freeform or fixed aspect"
+    },
+    {
+      "name": "image-zoom",
+      "priority": "유지",
+      "current": "실제 썸네일→Dialog와 caption을 제공한다.",
+      "recommendation": "현재 예제로 핵심 계약을 설명한다.",
+      "examplePath": "apps/docs/examples/image-zoom.tsx",
+      "sourcePaths": [
+        "registry/ui/image-zoom.tsx"
+      ],
+      "exportedAPI": "export { ImageZoom };\nexport type { ImageZoomProps };",
+      "documentedAPI": "ImageZoom accepts src, alt and optional caption.",
+      "documentedVariants": "With or without caption"
+    },
+    {
+      "name": "credit-card",
+      "priority": "유지",
+      "current": "front/back flip와 brand/network/holder/last4/expiry를 제공한다.",
+      "recommendation": "현재 예제로 충분. 실제 결제 처리는 범위 밖.",
+      "examplePath": "apps/docs/examples/credit-card.tsx",
+      "sourcePaths": [
+        "registry/ui/credit-card.tsx"
+      ],
+      "exportedAPI": "export { CreditCard };\nexport type { CreditCardProps };",
+      "documentedAPI": "CreditCard accepts brand, holder, last4, expiry, optional network and backNote. network is a display label, not payment processing.",
+      "documentedVariants": "Front and back"
+    },
+    {
+      "name": "ticker",
+      "priority": "보완",
+      "current": "positive inline 및 high/low 펼치기가 있다.",
+      "recommendation": "negative 값과 layout=card를 비교; 다른 currency/locale은 선택적 보완.",
+      "examplePath": "apps/docs/examples/ticker.tsx",
+      "sourcePaths": [
+        "registry/ui/ticker.tsx"
+      ],
+      "exportedAPI": "export { Ticker };\nexport type { TickerProps };",
+      "documentedAPI": "Ticker accepts symbol, name, price, changePercent, currency, locale, high, low and layout (inline or card).",
+      "documentedVariants": "Positive and negative"
+    },
+    {
+      "name": "stories",
+      "priority": "보완",
+      "current": "이미지/영상과 thumbnail-triggered modal을 제공한다.",
+      "recommendation": "presentation=viewer와 autoAdvanceMs; pause 및 reduced motion 규칙. Reel과 같은 항목으로 합치지 않는다.",
+      "examplePath": "apps/docs/examples/stories.tsx",
+      "sourcePaths": [
+        "registry/ui/stories.tsx"
+      ],
+      "exportedAPI": "export { Stories };\nexport type { StoriesProps, StoryItem };",
+      "documentedAPI": "Stories accepts items with optional video poster, autoAdvanceMs and presentation (triggers or viewer).",
+      "documentedVariants": "Trigger gallery by default; presentation=viewer for an embedded viewer; optional auto advance"
+    },
+    {
+      "name": "video-player",
+      "priority": "유지",
+      "current": "captions, source 변경/error/reset와 재생·볼륨·속도·fullscreen 조작이 있다.",
+      "recommendation": "현재 예제로 핵심 계약을 탐색할 수 있다.",
+      "examplePath": "apps/docs/examples/video-player.tsx",
+      "sourcePaths": [
+        "registry/ui/video-player.tsx"
+      ],
+      "exportedAPI": "export { VideoPlayer };\nexport type { VideoPlayerProps };",
+      "documentedAPI": "VideoPlayer accepts src, title, poster, captionsSrc, captionsLang (default en), captionsLabel and native root div props/ref. Source changes reset playback state. Fullscreen is exposed when the browser supports it. Keep transcripts and media URL authentication in your app.",
+      "documentedVariants": "With optional caption track"
+    },
+    {
+      "name": "announcement",
+      "priority": "보완",
+      "current": "linked+dismissible만 있다.",
+      "recommendation": "href 없는 static 및 dismissible=false 비교.",
+      "examplePath": "apps/docs/examples/announcement.tsx",
+      "sourcePaths": [
+        "registry/ui/announcement.tsx"
+      ],
+      "exportedAPI": "export { Announcement };\nexport type { AnnouncementProps };",
+      "documentedAPI": "Announcement accepts label, title, href, dismissible and onDismiss.",
+      "documentedVariants": "Linked, static or dismissible"
+    },
+    {
+      "name": "banner",
+      "priority": "보완",
+      "current": "prominent+action+dismissible만 있다.",
+      "recommendation": "tone=subtle 비교와 tone에 맞는 action 대비.",
+      "examplePath": "apps/docs/examples/banner.tsx",
+      "sourcePaths": [
+        "registry/ui/banner.tsx"
+      ],
+      "exportedAPI": "export { Banner };\nexport type { BannerProps };",
+      "documentedAPI": "Banner accepts title, description, action, tone (prominent or subtle), dismissible and onDismiss. Choose an action style with contrast against the selected tone.",
+      "documentedVariants": "Prominent by default or subtle; dismissible"
+    },
+    {
+      "name": "typography",
+      "priority": "보완",
+      "current": "display/heading/subheading/body/muted/code와 semantic as를 조합한다.",
+      "recommendation": "누락된 small role, 동일 heading element에 다른 visual variant 비교.",
+      "examplePath": "apps/docs/examples/typography.tsx",
+      "sourcePaths": [
+        "registry/ui/typography.tsx"
+      ],
+      "exportedAPI": "export { Typography };\nexport type { TypographyProps, TypographyVariant };",
+      "documentedAPI": "Typography accepts as, variant and native HTML attributes.",
+      "documentedVariants": "display, heading, subheading, body, small, muted, code"
+    },
+    {
+      "name": "color-picker",
+      "priority": "보완",
+      "current": "plane/hue/opacity/formats/presets와 HEX validation에 기존 UI에서 도달할 수 있다.",
+      "recommendation": "controlled value/onValueChange로 외부 실제 대상 색상을 바꾸는 예제, translucent initial value와 disabled.",
+      "examplePath": "apps/docs/examples/color-picker.tsx",
+      "sourcePaths": [
+        "registry/ui/color-picker.tsx"
+      ],
+      "exportedAPI": "export { ColorPicker };\nexport type { ColorPickerProps };",
+      "documentedAPI": "ColorPicker accepts label, value/defaultValue, onValueChange, swatches and disabled. onValueChange emits #RRGGBB when opaque and #RRGGBBAA when translucent; RGB/HSL are read-only display formats.",
+      "documentedVariants": "Controlled or default, disabled; opaque or translucent"
+    },
+    {
+      "name": "comparison",
+      "priority": "유지",
+      "current": "실제 before/after 이미지와 slider로0~100 이동 가능.",
+      "recommendation": "현재 예제로 핵심 계약을 설명한다.",
+      "examplePath": "apps/docs/examples/comparison.tsx",
+      "sourcePaths": [
+        "registry/ui/comparison.tsx"
+      ],
+      "exportedAPI": "export { Comparison };\nexport type { ComparisonProps };",
+      "documentedAPI": "Comparison accepts beforeSrc/afterSrc, alt texts, value/defaultValue and onValueChange.",
+      "documentedVariants": "Controlled or default position"
+    },
+    {
+      "name": "editor",
+      "priority": "우선",
+      "current": "풍부한 편집 내용과 toolbar를 제공하지만 readOnly/onChange 사용 예제가 없다.",
+      "recommendation": "readOnly 전환과 onChange HTML을 앱 결과에 전달하는 예제. controlled value prop은 없는 API이므로 약속하지 않는다.",
+      "examplePath": "apps/docs/examples/editor.tsx",
+      "sourcePaths": [
+        "registry/ui/editor.tsx"
+      ],
+      "exportedAPI": "export { Editor };\nexport type { EditorProps };",
+      "documentedAPI": "Editor accepts label, initialContent, onChange(html) and readOnly. Toolbar includes headings, strong/emphasis, lists and quote. Supply trusted initial HTML.",
+      "documentedVariants": "Editable or read-only"
+    },
+    {
+      "name": "glimpse",
+      "priority": "보완",
+      "current": "imageSrc가 있는 링크 preview만 있다.",
+      "recommendation": "image 없는 text-only preview와 비교.",
+      "examplePath": "apps/docs/examples/glimpse.tsx",
+      "sourcePaths": [
+        "registry/ui/glimpse.tsx"
+      ],
+      "exportedAPI": "export { Glimpse };\nexport type { GlimpseProps };",
+      "documentedAPI": "Glimpse accepts href, label, title, description and optional imageSrc/imageAlt.",
+      "documentedVariants": "Text-only or with image"
+    },
+    {
+      "name": "marquee",
+      "priority": "유지",
+      "current": "원형 items/fade/수동 pause를 제공한다.",
+      "recommendation": "현재 예제로 핵심 계약을 설명한다.",
+      "examplePath": "apps/docs/examples/marquee.tsx",
+      "sourcePaths": [
+        "registry/ui/marquee.tsx"
+      ],
+      "exportedAPI": "export { Marquee };\nexport type { MarqueeProps };",
+      "documentedAPI": "Marquee accepts items, label and duration.",
+      "documentedVariants": "Running or paused"
+    },
+    {
+      "name": "pill",
+      "priority": "보완",
+      "current": "4 tone, leading cue와 removable 상태를 제공한다.",
+      "recommendation": "disabled removal과 trailing slot.",
+      "examplePath": "apps/docs/examples/pill.tsx",
+      "sourcePaths": [
+        "registry/ui/pill.tsx"
+      ],
+      "exportedAPI": "export { Pill };\nexport type { PillProps };",
+      "documentedAPI": "Pill accepts label, leading, trailing, tone, onRemove and disabled. Decorative cues are hidden from assistive technology.",
+      "documentedVariants": "Neutral, success, warning and danger; static, removable or disabled"
+    },
+    {
+      "name": "qr-code",
+      "priority": "유지",
+      "current": "SVG와 configurable size 및 copy를 제공한다.",
+      "recommendation": "현재 예제로 충분. showCopy=false는 선택적 보완.",
+      "examplePath": "apps/docs/examples/qr-code.tsx",
+      "sourcePaths": [
+        "registry/ui/qr-code.tsx"
+      ],
+      "exportedAPI": "export { QRCode };\nexport type { QRCodeProps };",
+      "documentedAPI": "QRCode accepts value, label, size and showCopy.",
+      "documentedVariants": "Copy shown or hidden"
+    },
+    {
+      "name": "rating",
+      "priority": "유지",
+      "current": "editable와 readOnly를 모두 제공한다.",
+      "recommendation": "현재 예제로 충분.",
+      "examplePath": "apps/docs/examples/rating.tsx",
+      "sourcePaths": [
+        "registry/ui/rating.tsx"
+      ],
+      "exportedAPI": "export { Rating };\nexport type { RatingProps };",
+      "documentedAPI": "Rating accepts label, value/defaultValue, onValueChange, max and readOnly.",
+      "documentedVariants": "Editable or read-only"
+    },
+    {
+      "name": "relative-time",
+      "priority": "유지",
+      "current": "past/future와 deterministic now를 함께 제공한다.",
+      "recommendation": "현재 예제로 핵심 계약을 설명한다.",
+      "examplePath": "apps/docs/examples/relative-time.tsx",
+      "sourcePaths": [
+        "registry/ui/relative-time.tsx"
+      ],
+      "exportedAPI": "export { RelativeTime };\nexport type { RelativeTimeProps };",
+      "documentedAPI": "RelativeTime accepts date, locale and optional now for deterministic display.",
+      "documentedVariants": "Past or future"
+    },
+    {
+      "name": "spinner",
+      "priority": "보완",
+      "current": "8 variants 모두 있지만 size=lg만 제공한다.",
+      "recommendation": "sm/md/lg 크기 비교. 이미 있는8 variants는 새로 추가하지 않는다.",
+      "examplePath": "apps/docs/examples/spinner.tsx",
+      "sourcePaths": [
+        "registry/ui/spinner.tsx"
+      ],
+      "exportedAPI": "export { Spinner };\nexport type { SpinnerProps, SpinnerVariant };",
+      "documentedAPI": "Spinner accepts native span props, label, size and variant. Existing label/size calls remain valid.",
+      "documentedVariants": "default, throbber, pinwheel, circle-filled, ellipsis, ring, bars, infinite"
+    },
+    {
+      "name": "status",
+      "priority": "유지",
+      "current": "4 tone, shorthand/compound API 및 pulse를 함께 보여 준다.",
+      "recommendation": "현재 예제로 충분.",
+      "examplePath": "apps/docs/examples/status.tsx",
+      "sourcePaths": [
+        "registry/ui/status.tsx"
+      ],
+      "exportedAPI": "export { Status, StatusIndicator, StatusLabel };\nexport type { StatusProps, StatusIndicatorProps, StatusTone };",
+      "documentedAPI": "Status accepts label and tone as before, or composed StatusIndicator (pulse?) and StatusLabel children.",
+      "documentedVariants": "neutral, success, warning, danger; optional live pulse"
+    },
+    {
+      "name": "theme-switcher",
+      "priority": "유지",
+      "current": "controlled 상태/결과와 applyToDocument=false를 명시한다.",
+      "recommendation": "문서 theme과 충돌하지 않는 현재 예제를 유지. 실제 host document 연결은 사용 가이드 코드로 설명.",
+      "examplePath": "apps/docs/examples/theme-switcher.tsx",
+      "sourcePaths": [
+        "registry/ui/theme-switcher.tsx"
+      ],
+      "exportedAPI": "export { ThemeSwitcher };\nexport type { Theme, ThemeSwitcherProps };",
+      "documentedAPI": "ThemeSwitcher accepts value/defaultValue, onValueChange and applyToDocument.",
+      "documentedVariants": "Light or dark, controlled or default"
+    },
+    {
+      "name": "tree",
+      "priority": "유지",
+      "current": "다중 깊이/기본 expanded/selected/disabled leaf와 selection callback 결과가 있다.",
+      "recommendation": "현재 예제로 핵심 계약을 탐색할 수 있다. controlled expansion은 선택적 보완.",
+      "examplePath": "apps/docs/examples/tree.tsx",
+      "sourcePaths": [
+        "registry/ui/tree.tsx"
+      ],
+      "exportedAPI": "export { Tree };\nexport type { TreeNode, TreeProps };",
+      "documentedAPI": "Tree accepts nodes, label, selection and expansion controlled/default props.",
+      "documentedVariants": "Expanded/collapsed, selected, disabled"
+    }
+  ],
+  "additionalPatternsAndBlocks": [
+    {
+      "name": "date-picker",
+      "type": "Pattern",
+      "finding": "기존 single/range/min/max/disabledDate/control disabled로 주요 계약 예제가 충분하다. empty placeholder/invalid Field 연결은 보완 후보."
+    },
+    {
+      "name": "data-table",
+      "type": "Pattern",
+      "finding": "sorting/filter/no-results/selection/column visibility/pagination이 기존 live 예제에서 조작 가능하다. selection off와 실제 empty data/no search 설정을 보완할 수 있다."
+    },
+    {
+      "name": "brand-action",
+      "type": "Pattern",
+      "finding": "loading/disabled/pause/finish와 실제 callback이 있다. animated=false는 선택적 보완."
+    },
+    {
+      "name": "media-reveal",
+      "type": "Pattern",
+      "finding": "loading/ready/error 및 retry control이 있다. 현재 예제로 충분."
+    },
+    {
+      "name": "brand-logo",
+      "type": "Pattern",
+      "finding": "full/icon, 자체mark/custommark,3sizes,customname을 보여 준다. 현재 예제로 충분."
+    },
+    {
+      "name": "page-header",
+      "type": "Pattern",
+      "finding": "Content/Title/Description/Actions가 있다. actions 없는 view 및 supplementary meta 조합은 코드 후보."
+    },
+    {
+      "name": "state-panel",
+      "type": "Pattern",
+      "finding": "success만 있다.4tones와 action/headingLevel 조합을 보완."
+    },
+    {
+      "name": "product-page-intro",
+      "type": "Pattern",
+      "finding": "기본 variant/meta/aside만 있다. index/detail/task hierarchy 비교를 보완."
+    },
+    {
+      "name": "resource-row-link",
+      "type": "Pattern",
+      "finding": "link만 있다. ResourceRowButton의 실제 action 예제를 보완."
+    },
+    {
+      "name": "page-skeleton",
+      "type": "Pattern",
+      "finding": "기본 loading/rows가 있다. 현재 예제로 충분."
+    },
+    {
+      "name": "filter-toolbar",
+      "type": "Pattern",
+      "finding": "query/filter/sort/results/no-results까지 실제로 연결되어 충분하다."
+    },
+    {
+      "name": "empty-state",
+      "type": "Pattern",
+      "finding": "first-use만 있다. 검색0건+필터 초기화 action,읽기 전용/action 없는 empty를 보완."
+    },
+    {
+      "name": "form-section",
+      "type": "Pattern",
+      "finding": "두Input layout만 있다. Field+Textarea/Select/Radio 등의 혼합 form 조합을 보완."
+    },
+    {
+      "name": "search-field",
+      "type": "Pattern",
+      "finding": "controlled query/results/no-results가 연결된다. 기본 예제로 충분;disabled는 보완 후보."
+    },
+    {
+      "name": "stat-card",
+      "type": "Pattern",
+      "finding": "value/detail을 제공한다. 현재 API는 충분;loading/trend API가 있다고 가정하지 않는다."
+    },
+    {
+      "name": "settings-section",
+      "type": "Block",
+      "finding": "실제 입력·설정 변경·save 결과를 제공한다. form errors와 save loading은 앱 조합 보완 후보."
+    },
+    {
+      "name": "bento-grid",
+      "type": "Block",
+      "finding": "다양한 article spans와 실제 children을 제공한다. 현재 예제로 충분."
+    },
+    {
+      "name": "gantt",
+      "type": "Block",
+      "finding": "groups/long timeline/move/resize가 있다. 현재 예제로 충분;locale/short schedule은 보완 후보."
+    },
+    {
+      "name": "kanban",
+      "type": "Block",
+      "finding": "3columns/custom renderer/이동을 제공한다. 기본 renderer/empty column 비교를 보완."
+    },
+    {
+      "name": "sandbox",
+      "type": "Block",
+      "finding": "ReactJS+CSS live 편집과 console을 제공한다. ReactTS/vanilla/showConsole=false는 추가 후보. 늘린 sandbox를 Showcase에 모두 mount하지 않는다."
+    },
+    {
+      "name": "reel",
+      "type": "Block",
+      "finding": "여러 실제영상·poster/caption·재생/이동을 제공한다. 현재 예제로 충분."
+    },
+    {
+      "name": "deck",
+      "type": "Block",
+      "finding": "3slides 및 previous/next/count를 제공한다. custom ReactNode와 onSlideChange 결과는 보완 후보."
+    },
+    {
+      "name": "dialog-stack",
+      "type": "Block",
+      "finding": "입력 보존/Back/Review/Finish 결과까지 있다. 현재 예제로 충분."
+    }
+  ],
+  "proposal": [
+    "Showcase에는 가벼운 대표 예제 하나를 유지한다.",
+    "상세 페이지에는 이름·설명·각 예제의 Code/Preview를 갖춘 Examples 섹션을 둔다.",
+    "Example source를 중복하지 않고 catalog에서 showcase 기본예제와 상세추가예제를 참조한다.",
+    "실제 registry 원본을 import하고 지원하지 않는 upstream 기능을 예제 범위로 섞지 않는다.",
+    "서버 저장·파일 처리·비동기 결과는 앱 조합임을 명확히 표시한다.",
+    "전체 조합의 곱집합을 만들지 않고 기본/중요변형/상태/조합 중 필요한 것만 보강한다."
+  ]
+}
