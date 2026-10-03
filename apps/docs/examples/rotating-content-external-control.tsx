@@ -5,7 +5,7 @@ import { Button } from "../../../registry/ui/button";
 export default function Example() {
   const [paused, setPaused] = useState(false);
   return (
-    <div className="space-y-5">
+    <div className="flex max-w-md flex-col items-center gap-5 text-center">
       <h3 className="text-2xl font-semibold">
         Create with{" "}
         <RotatingContent

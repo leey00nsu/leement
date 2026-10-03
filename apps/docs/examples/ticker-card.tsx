@@ -1,7 +1,7 @@
 import { Ticker } from "../../../registry/ui/ticker";
 export default function Example() {
   return (
-    <div className="w-full max-w-sm space-y-4">
+    <div className="flex w-full max-w-sm flex-col items-center gap-4">
       <Ticker
         symbol="LMNT"
         name="Sample asset"

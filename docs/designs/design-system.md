@@ -135,3 +135,9 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 ## 문서 예제 규칙
 
 Showcase는 항목마다 대표 예제 하나를 사용한다. 상세 Examples는 사용법이 달라지는 주요 variant/size/state/compound 조합을 이름과 설명·독립 Preview/Code로 제공한다. 예제는 registry 원본을 import하고 문서 표시 코드는 그 source를 소비자 alias로만 변환한다. 각 추가예제에 실제로 import하는 registry 항목의 설치 명령을 함께 제공하며 예제 때문에 UI runtime dependency를 늘리지 않는다. 모든 props 조합을 복제하지 않으며 미지원 upstream API를 약속하지 않는다. 입력 label/id는 useId로 같은 페이지의 다른 예제와 구분한다. 파일 처리·폼 저장·비동기 결과는 로컬 앱 조합으로 보여 주고 앱 책임을 설명한다. 무거운 추가 예제는 상세에서 lazy load하며 Showcase에 동시에 mount하지 않는다.
+
+### Preview 중앙 배치
+
+상세 기본/추가 예제와 Showcase는 예제 그룹 자체를 가로·세로 중앙에 배치한다. compact control 행은 wrap 후에도 justify-center를 쓰고, 장식 텍스트/상태/독립 조작을 묶는 데모는 items-center와 적절한 max-width를 사용한다. 폼 label/오류·목록·표·panel 내부는 읽기 순서에 맞게 좌측 정렬하며 전체 텍스트를 강제로 중앙 정렬하지 않는다. 작은 그룹에 불필요한 w-full 또는 닫힌 상태의 팝업 예약 높이를 넣지 않는다.
+
+PreviewFrame의 최소 높이/inset/가로·세로 점선은 콘텐츠가 커지면 함께 늘어난다. inline popup은 frame 밖에도 읽고 조작할 수 있게 workbench 전체를 overflow-hidden으로 자르지 않는다. Code pane은 자체 scroll/rounded clipping을 소유한다. 실제 예제 source와 표시 Code는 일치해야 하며 registry public API와 디자인 token의 정렬 규칙을 바꾸지 않는다.

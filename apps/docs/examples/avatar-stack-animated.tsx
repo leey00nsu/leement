@@ -6,9 +6,9 @@ import {
 import { AvatarStack } from "../../../registry/ui/avatar-stack";
 export default function Example() {
   return (
-    <div className="space-y-6">
+    <div className="flex flex-col items-center gap-6 text-center">
       {[28, 44].map((size) => (
-        <div key={size} className="space-y-2">
+        <div key={size} className="flex flex-col items-center gap-2">
           <AvatarStack size={size} animate aria-label="Alex, Blair and Casey">
             {["Alex", "Blair", "Casey"].map((name) => (
               <Avatar key={name}>

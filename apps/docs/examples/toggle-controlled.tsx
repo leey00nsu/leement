@@ -5,7 +5,7 @@ import { Toggle } from "../../../registry/ui/toggle";
 export default function Example() {
   const [pressed, setPressed] = useState(false);
   return (
-    <div className="space-y-3">
+    <div className="flex max-w-full flex-col items-center gap-3 text-center">
       <Toggle
         size="sm"
         variant="outline"

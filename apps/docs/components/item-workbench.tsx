@@ -29,7 +29,7 @@ export function CopyButton({ value, label }: { value: string; label: string }) {
 }
 
 function CodePane({ code, filename }: { code: string; filename: string }) {
-  return <div className="min-w-0">
+  return <div className="min-w-0 overflow-hidden rounded-b-xl">
     <div className="flex items-center justify-between gap-3 border-b border-border bg-muted/40 px-4 py-2.5">
       <span className="truncate font-mono text-xs text-muted-foreground">{filename}</span>
       <CopyButton value={code} label={`Copy ${filename}`} />
@@ -52,9 +52,9 @@ export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, examp
     { value: "source", label: "Source", Icon: Files },
   ];
 
-  return <div className="overflow-hidden rounded-xl border border-border bg-card">
+  return <div className="rounded-xl border border-border bg-card">
     <Tabs defaultValue="preview" className="gap-0">
-      <div className="border-b border-border bg-muted/60 p-1">
+      <div className="rounded-t-xl border-b border-border bg-muted/60 p-1">
         <TabsList variant="segmented" aria-label={`${name} workbench`}>
           {tabs.map(({ value, label, Icon }) => <TabsTrigger key={value} value={value}>
             <Icon aria-hidden="true" size={15} />{label}

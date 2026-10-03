@@ -9,7 +9,7 @@ import { Label } from "../../../registry/ui/label";
 export default function DialogExample() {
   const [name, setName] = useState("Studio");
   const [savedName, setSavedName] = useState("Studio");
-  return <div className="flex max-w-full min-w-0 flex-wrap items-center gap-3"><Dialog>
+  return <div className="flex max-w-full min-w-0 flex-wrap items-center justify-center gap-3"><Dialog>
     <DialogTrigger asChild><Button>Open dialog</Button></DialogTrigger>
     <DialogContent>
       <DialogHeader>

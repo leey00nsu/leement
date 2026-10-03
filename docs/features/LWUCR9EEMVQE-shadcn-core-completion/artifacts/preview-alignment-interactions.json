@@ -1,0 +1,149 @@
+{
+  "checks": [
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "closed Combobox visible group is vertically centered"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "inline Combobox popup first/last options remain visible and hit-testable beyond frame"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "Combobox keyboard selection and Escape retained"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "centered RadioGroup keeps label and Arrow navigation"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "centered Checkbox group keeps clickable labels"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "Dialog portal and Escape focus return retained"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "Tooltip appears on keyboard focus"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "Pill removal and remaining controls retained"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "Rating Arrow selection retained"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "centered TextReveal Replay retained"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "centered RotatingContent pause retained"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "BrandAction loading and app completion retained"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "centered Stories opens and closes its viewer"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "check": "wide Table retains owned horizontal scroll"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "closed Combobox visible group is vertically centered"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "inline Combobox popup first/last options remain visible and hit-testable beyond frame"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "Combobox keyboard selection and Escape retained"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "centered RadioGroup keeps label and Arrow navigation"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "centered Checkbox group keeps clickable labels"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "Dialog portal and Escape focus return retained"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "Tooltip appears on keyboard focus"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "Pill removal and remaining controls retained"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "Rating Arrow selection retained"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "centered TextReveal Replay retained"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "centered RotatingContent pause retained"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "BrandAction loading and app completion retained"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "centered Stories opens and closes its viewer"
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "check": "wide Table retains owned horizontal scroll"
+    }
+  ],
+  "errors": [],
+  "screens": [
+    "combobox-centered-light-390.png",
+    "combobox-popup-light-390.png"
+  ]
+}

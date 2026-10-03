@@ -7,7 +7,7 @@ import {
 export default function Example() {
   const [value, setValue] = useState<string[]>(["design"]);
   return (
-    <div className="space-y-3">
+    <div className="flex max-w-full flex-col items-center gap-3 text-center">
       <ToggleGroup
         orientation="vertical"
         multiple

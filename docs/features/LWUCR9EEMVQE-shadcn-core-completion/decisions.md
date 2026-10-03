@@ -72,7 +72,7 @@
 - **T06 root cause/result**:40px Input 안의 native file selector button 높이가24px로 제한되고 vertical padding이 없어 파일 input line box가 위에 배치됐다. file:h-6를 file:h-full로 바꾸어 border 내부38px를 채우며 native baseline이 중앙에 놓이게 하고 file:mr-2로8px 간격을 준다. parent line-height/높이 및 일반 입력 스타일은 유지한다. 실제 native 입력을 custom wrapper로 교체하지 않는다.
 - **T06 evidence/limits**: [브라우저8조합·24상태 및 키보드/일반 입력 검증](./artifacts/input-alignment-check.json). Chrome의 실제 렌더링을 확인했으며 다른 브라우저를 검증했다고 주장하지 않는다. Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 생성 registry source 일치,113개 tests,lint/typecheck/build PASS. 사용자 요청으로 구현 승인을 다시 요청하며 병합은 별도 승인이다.
 
-<!-- lee-spec-kit:workflow-sync sha256:065e8a640e37efea423bb4f421ccfd17b78492c559e6b833a11458edd13fed4d -->
+<!-- lee-spec-kit:workflow-sync sha256:a090f9db09a1b4f128bd39781160002624bff7ebc576045a68b56d24d1204db9 -->
 
 ## D009: 사용자 요청에 따른 전체 예제 부족 분석 (2026-10-03)
 
@@ -113,3 +113,5 @@ D013 결과: 공식 site WOFF2를 실제 CDP로 조사하니 D2Coding ligature�
 ## D014: 사용자 요청으로 Preview 정렬을 조사하고 T12에서 보정한다
 
 공통 frame의 flex center와 전체폭 preview wrapper는 이미 있으나, example root의 w-full과 내부 row의 기본 start 배치 또는 가시 내용보다 큰 예약 높이가 실제 내용의 중앙 배치를 보장하지 않는다. compact 데모의 그룹을 중앙에 두고 panel/폼 내부 읽기 정렬은 유지한다. 실제 source와 Code를 함께 사용하고 별도 문서 복사본을 만들지 않는다. 사용자 요청은 T12 분석·구현 허가이며 local-ff merge 허가가 아니다.
+
+D014 결과: 공통 frame 중앙 배치는 이미 정상이며102개 Showcase 기준 조사에서 바깥 그룹 offset은0이었다. 불필요한 전체폭·wrap start·compact stack의 서로 다른 폭·Combobox 예약 높이·StoriesViewer 중첩 max-width가 가시 내용의 위치를 바꿨다. 예제36개에 필요한 center/fit/폭 보정만 적용했다. 큰 panel·form·table의 내부 좌측 읽기 정렬을 강제 변경하지 않는다. 상세 workbench 외부 overflow를 열고 CodePane에서 clipping을 소유하도록 하며 상하 모서리는 해당 header/frame/pane에서 보존한다. Combobox popup 첫/마지막 option의 실제 hit-test와 keyboard 선택을 확인했다. Source/Code159개가 같고 Showcase에는 추가예제가 mount되지 않는다. [항목별 근거](./artifacts/preview-alignment-audit.json), [1044 geometry](./artifacts/preview-alignment-matrix.json), [28조작](./artifacts/preview-alignment-interactions.json). Chrome 이외 브라우저·배포는 미실행이다. 임시 oracle의 Kbd anonymous text·중첩 Code tab 이름·회전 accessible name·표 content/clientWidth 보정을 반영한 최종 검사는 오류0이다. main/README/registry public API/token/theme 변경 없음; 사용자 요청은 병합 승인이 아니므로 local_merge에서 멈춘다.

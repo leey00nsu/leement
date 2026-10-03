@@ -1,7 +1,7 @@
 import { Button } from "../../../registry/ui/button";
 
 export default function ButtonExample() {
-  return <div className="flex max-w-lg flex-wrap items-center gap-3">
+  return <div className="flex max-w-lg flex-wrap items-center justify-center gap-3">
     <Button>Primary</Button>
     <Button variant="secondary">Secondary</Button>
     <Button variant="outline">Outline</Button>

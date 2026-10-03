@@ -5,9 +5,9 @@ import {
 } from "../../../registry/ui/avatar";
 export default function Example() {
   return (
-    <div className="flex flex-wrap items-end gap-5">
+    <div className="flex flex-wrap items-end justify-center gap-5">
       {["size-8", "size-10", "size-14"].map((size) => (
-        <div key={size} className="space-y-2">
+        <div key={size} className="flex flex-col items-center gap-2 text-center">
           <Avatar className={size}>
             <AvatarImage
               src="/demo-scene.svg"
@@ -18,7 +18,7 @@ export default function Example() {
           <p className="text-xs text-muted-foreground">{size}</p>
         </div>
       ))}
-      <div className="space-y-2">
+      <div className="flex flex-col items-center gap-2 text-center">
         <Avatar className="size-10">
           <AvatarImage src="data:image/png;base64,broken" alt="Blair" />
           <AvatarFallback>BK</AvatarFallback>

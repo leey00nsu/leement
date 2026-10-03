@@ -1,0 +1,4591 @@
+{
+  "date": "2026-10-03",
+  "task": "T-LWUCR9EEMVQE-shadcn-core-completion-12",
+  "counts": {
+    "representative": 102,
+    "additional": 57,
+    "modified": 36,
+    "retained": 123,
+    "geometry": 1044,
+    "code": 159,
+    "interaction": 28
+  },
+  "rootCause": "Shared frame already centered outer groups; excessive example width, start-aligned wrapping rows/columns, closed-state reserved height and mismatched nested widths shifted visible content.",
+  "sharedChanges": [
+    "Keep Preview overflow visible for inline Combobox popup; CodePane owns clipping; retain rounded corners and four inset guides."
+  ],
+  "verification": {
+    "browser": "Chrome via existing Playwright (Aside daemon unavailable)",
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "widths": [
+      390,
+      1440
+    ],
+    "visualReview": "All 159 detail examples inspected in 16 contact sheets (light390/dark1440), baseline102 Showcase inspected, full1044 geometry and159 source/Code exact comparison passed. Representative captures retained; temporary contact sheets are not committed.",
+    "errors": [],
+    "oracleCorrections": [
+      "Account for anonymous text in Kbd wrapping rows.",
+      "Disambiguate workbench Code tabs from nested demo tabs.",
+      "Use actual RotatingContent accessible name.",
+      "Compare Table scrollWidth with clientWidth, excluding fractional outer borders. Mobile scroll is asserted separately."
+    ]
+  },
+  "limits": [
+    "Other browsers and public deployment not run.",
+    "No claim of certifying all102 component behaviors; representative affected interactions verified.",
+    "No registry API/token/theme changes."
+  ],
+  "examples": [
+    {
+      "file": "apps/docs/examples/accordion-multiple.tsx",
+      "item": "accordion",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-lg space-y-4\"",
+          "children": [
+            {
+              "tag": "Accordion"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/accordion.tsx",
+      "item": "accordion",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "Accordion",
+          "class": "\"w-full max-w-lg\"",
+          "children": [
+            {
+              "tag": "AccordionItem"
+            },
+            {
+              "tag": "AccordionItem"
+            },
+            {
+              "tag": "AccordionItem"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/alert-dialog.tsx",
+      "item": "alert-dialog",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-wrap items-center gap-3\"",
+          "children": [
+            {
+              "tag": "AlertDialog"
+            },
+            {
+              "tag": "span",
+              "class": "\"text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/announcement-static.tsx",
+      "item": "announcement",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xl space-y-4\"",
+          "children": [
+            {
+              "tag": "Announcement"
+            },
+            {
+              "tag": "Announcement"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/announcement.tsx",
+      "item": "announcement",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Announcement",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/aspect-ratio-media.tsx",
+      "item": "aspect-ratio",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"grid w-full max-w-lg gap-5 sm:grid-cols-2\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/aspect-ratio.tsx",
+      "item": "aspect-ratio",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "AspectRatio",
+          "class": "\"max-w-md overflow-hidden rounded-lg bg-muted\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex h-full items-center justify-center text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/audio-player.tsx",
+      "item": "audio-player",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xl space-y-4\"",
+          "children": [
+            {
+              "tag": "AudioPlayer"
+            },
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-xs leading-5 text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/avatar-images.tsx",
+      "item": "avatar",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-wrap items-end gap-5\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"space-y-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/avatar-stack-animated.tsx",
+      "item": "avatar-stack",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-6\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/avatar-stack.tsx",
+      "item": "avatar-stack",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex items-center gap-3\"",
+          "children": [
+            {
+              "tag": "AvatarStack"
+            },
+            {
+              "tag": "span",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/avatar.tsx",
+      "item": "avatar",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex items-center gap-3\"",
+          "children": [
+            {
+              "tag": "Avatar"
+            },
+            {
+              "tag": "div"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/badge.tsx",
+      "item": "badge",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-wrap gap-2\"",
+          "children": [
+            {
+              "tag": "Badge"
+            },
+            {
+              "tag": "Badge"
+            },
+            {
+              "tag": "Badge"
+            },
+            {
+              "tag": "Badge"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/banner-subtle.tsx",
+      "item": "banner",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Banner",
+          "children": []
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/banner.tsx",
+      "item": "banner",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Banner",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/bento-grid.tsx",
+      "item": "bento-grid",
+      "layer": "blocks",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "BentoGrid",
+          "class": "\"w-full\"",
+          "children": [
+            {
+              "tag": "BentoGridItem",
+              "class": "\"md:col-span-4\""
+            },
+            {
+              "tag": "BentoGridItem",
+              "class": "\"md:col-span-2\""
+            },
+            {
+              "tag": "BentoGridItem",
+              "class": "\"md:col-span-6\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/brand-action.tsx",
+      "item": "brand-action",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-4\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-3\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm text-muted-foreground\""
+            },
+            {
+              "tag": "div",
+              "class": "\"flex gap-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/brand-gradient-text-motion.tsx",
+      "item": "brand-gradient-text",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-5\"",
+          "children": [
+            {
+              "tag": "p",
+              "class": "\"text-2xl font-semibold\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-2xl font-semibold\""
+            },
+            {
+              "tag": "Button"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/brand-gradient-text.tsx",
+      "item": "brand-gradient-text",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-4 text-center\"",
+          "children": [
+            {
+              "tag": "p",
+              "class": "\"text-3xl font-semibold\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/brand-logo.tsx",
+      "item": "brand-logo",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "svg",
+          "children": [
+            {
+              "tag": "rect"
+            },
+            {
+              "tag": "path"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-lg space-y-8\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap items-center gap-6\""
+            },
+            {
+              "tag": "div",
+              "class": "\"space-y-4 border-t border-border pt-6\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/breadcrumb.tsx",
+      "item": "breadcrumb",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Breadcrumb",
+          "children": [
+            {
+              "tag": "BreadcrumbList"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/button-group-orientation.tsx",
+      "item": "button-group",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-5\"",
+          "children": [
+            {
+              "tag": "ButtonGroup"
+            },
+            {
+              "tag": "ButtonGroup"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/button-group.tsx",
+      "item": "button-group",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "ButtonGroup",
+          "children": [
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/button-sizes.tsx",
+      "item": "button",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex max-w-lg flex-wrap items-center gap-3\"",
+          "children": [
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/button.tsx",
+      "item": "button",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex max-w-lg flex-wrap items-center gap-3\"",
+          "children": [
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Button"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/calendar-constraints.tsx",
+      "item": "calendar",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-4\"",
+          "children": [
+            {
+              "tag": "Calendar"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm text-muted-foreground\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/calendar.tsx",
+      "item": "calendar",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full space-y-3\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/card-media.tsx",
+      "item": "card",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"grid w-full max-w-xl gap-5 sm:grid-cols-2\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/card.tsx",
+      "item": "card",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "Card",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "CardHeader"
+            },
+            {
+              "tag": "CardContent"
+            },
+            {
+              "tag": "CardFooter",
+              "class": "\"justify-between\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/chart-series.tsx",
+      "item": "chart",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xl space-y-4\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"flex flex-wrap items-center gap-2 text-sm\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            },
+            {
+              "tag": "ChartContainer",
+              "class": "\"h-64 w-full\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/chart.tsx",
+      "item": "chart",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full space-y-3\"",
+          "children": [
+            {
+              "tag": "div"
+            },
+            {
+              "tag": "ChartContainer",
+              "class": "\"h-64 w-full\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/checkbox-select-all.tsx",
+      "item": "checkbox",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "form",
+          "class": "\"space-y-4\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"flex min-h-10 items-center gap-2 text-sm font-medium\""
+            },
+            {
+              "tag": "fieldset",
+              "class": "\"space-y-2 pl-6\""
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/checkbox.tsx",
+      "item": "checkbox",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "remove excess full-width root: center intrinsic demo group while retaining label/internal reading alignment",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/choicebox-form.tsx",
+      "item": "choicebox",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "form",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": [
+            {
+              "tag": "Choicebox"
+            },
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/choicebox.tsx",
+      "item": "choicebox",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md\"",
+          "children": [
+            {
+              "tag": "Choicebox"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/code-block-plain.tsx",
+      "item": "code-block",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xl space-y-5\"",
+          "children": [
+            {
+              "tag": "CodeBlock"
+            },
+            {
+              "tag": "CodeBlock"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/code-block.tsx",
+      "item": "code-block",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full\"",
+          "children": [
+            {
+              "tag": "CodeBlock"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/collapsible-controlled.tsx",
+      "item": "collapsible",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": [
+            {
+              "tag": "Collapsible"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Collapsible"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/collapsible.tsx",
+      "item": "collapsible",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "Collapsible",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "CollapsibleTrigger",
+              "class": "\"flex w-full items-center justify-between rounded-md border border-border px-3 py-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40\""
+            },
+            {
+              "tag": "CollapsibleContent"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/color-picker-controlled.tsx",
+      "item": "color-picker",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-5\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex justify-center rounded-lg bg-muted p-4\""
+            },
+            {
+              "tag": "ColorPicker"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            },
+            {
+              "tag": "ColorPicker"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/color-picker.tsx",
+      "item": "color-picker",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "ColorPicker",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/combobox-controlled.tsx",
+      "item": "combobox",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-5\"",
+          "children": [
+            {
+              "tag": "Combobox"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            },
+            {
+              "tag": "Combobox"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/combobox.tsx",
+      "item": "combobox",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "remove unused closed-state min-height; preserve inline popup visibility through workbench overflow",
+      "baselineRoots": [
+        {
+          "tag": "Combobox",
+          "class": "\"min-h-72\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/command.tsx",
+      "item": "command",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-3\"",
+          "children": [
+            {
+              "tag": "Command",
+              "class": "\"border border-border\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm text-muted-foreground\""
+            },
+            {
+              "tag": "CommandDialog"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/comparison.tsx",
+      "item": "comparison",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Comparison",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/contribution-graph-selection.tsx",
+      "item": "contribution-graph",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-4\"",
+          "children": [
+            {
+              "tag": "ContributionGraph"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/contribution-graph.tsx",
+      "item": "contribution-graph",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "ContributionGraph",
+          "class": "\"w-full\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/credit-card.tsx",
+      "item": "credit-card",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "CreditCard",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/cursor.tsx",
+      "item": "cursor",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"relative h-72 w-full rounded-lg border border-dashed border-border bg-card\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"absolute inset-4 rounded-md border border-border bg-muted/30 p-4\""
+            },
+            {
+              "tag": "Cursor",
+              "class": "\"absolute left-[8%] top-[18%] text-data-accent\""
+            },
+            {
+              "tag": "Cursor",
+              "class": "\"absolute left-[48%] top-[48%] text-primary\""
+            },
+            {
+              "tag": "Cursor",
+              "class": "\"absolute left-[22%] top-[74%] text-foreground\""
+            },
+            {
+              "tag": "span",
+              "class": "\"sr-only\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/data-table.tsx",
+      "item": "data-table",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "AdvancedDataTable",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/date-picker.tsx",
+      "item": "date-picker",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"grid gap-4\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"grid gap-2\""
+            },
+            {
+              "tag": "div",
+              "class": "\"grid gap-2\""
+            },
+            {
+              "tag": "DatePicker"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/deck.tsx",
+      "item": "deck",
+      "layer": "blocks",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Deck",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/dialog-controlled.tsx",
+      "item": "dialog",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-3\"",
+          "children": [
+            {
+              "tag": "Dialog"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/dialog-stack.tsx",
+      "item": "dialog-stack",
+      "layer": "blocks",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"max-w-full min-w-0\"",
+          "children": [
+            {
+              "tag": "DialogStack"
+            },
+            {
+              "tag": "p",
+              "class": "\"mt-3 text-sm [overflow-wrap:anywhere] text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/dialog.tsx",
+      "item": "dialog",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex max-w-full min-w-0 flex-wrap items-center gap-3\"",
+          "children": [
+            {
+              "tag": "Dialog"
+            },
+            {
+              "tag": "span",
+              "class": "\"min-w-0 text-sm [overflow-wrap:anywhere] text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/dropdown-menu-selection.tsx",
+      "item": "dropdown-menu",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-3\"",
+          "children": [
+            {
+              "tag": "DropdownMenu"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/dropdown-menu.tsx",
+      "item": "dropdown-menu",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex items-center gap-3\"",
+          "children": [
+            {
+              "tag": "DropdownMenu"
+            },
+            {
+              "tag": "span",
+              "class": "\"text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/dropzone-files.tsx",
+      "item": "dropzone",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-5\"",
+          "children": [
+            {
+              "tag": "Dropzone"
+            },
+            {
+              "tag": "Dropzone"
+            },
+            {
+              "tag": "Dropzone"
+            },
+            {
+              "tag": "div",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/dropzone.tsx",
+      "item": "dropzone",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md\"",
+          "children": [
+            {
+              "tag": "Dropzone"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/editor-readonly.tsx",
+      "item": "editor",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xl space-y-4\"",
+          "children": [
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Editor"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-xs text-muted-foreground\""
+            },
+            {
+              "tag": "pre",
+              "class": "\"max-h-40 overflow-auto rounded-md bg-muted p-3 text-xs\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/editor.tsx",
+      "item": "editor",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full\"",
+          "children": [
+            {
+              "tag": "Editor"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/empty-state.tsx",
+      "item": "empty-state",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "EmptyState",
+          "class": "\"w-full\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/field-fieldset.tsx",
+      "item": "field",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "form",
+          "class": "\"w-full max-w-sm space-y-5\"",
+          "children": [
+            {
+              "tag": "FieldSet"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "p",
+              "class": "\"break-all text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/field.tsx",
+      "item": "field",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "FieldGroup",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "Field"
+            },
+            {
+              "tag": "Field"
+            },
+            {
+              "tag": "Field"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/filter-toolbar.tsx",
+      "item": "filter-toolbar",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full space-y-3\"",
+          "children": [
+            {
+              "tag": "FilterToolbar"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-xs text-muted-foreground\""
+            },
+            {
+              "tag": "ul",
+              "class": "\"divide-y divide-border rounded-lg border border-border bg-card text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/form-section.tsx",
+      "item": "form-section",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "FormSection",
+          "class": "\"w-full\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"space-y-2\""
+            },
+            {
+              "tag": "div",
+              "class": "\"space-y-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/gantt.tsx",
+      "item": "gantt",
+      "layer": "blocks",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Gantt",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/glimpse-text-only.tsx",
+      "item": "glimpse",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "p",
+          "class": "\"max-w-md text-sm leading-7\"",
+          "children": [
+            {
+              "tag": "Glimpse"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/glimpse.tsx",
+      "item": "glimpse",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "p",
+          "class": "\"text-sm\"",
+          "children": [
+            {
+              "tag": "Glimpse"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/hover-card.tsx",
+      "item": "hover-card",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "HoverCard",
+          "children": [
+            {
+              "tag": "HoverCardTrigger"
+            },
+            {
+              "tag": "HoverCardContent"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/image-crop-aspect.tsx",
+      "item": "image-crop",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-lg space-y-4\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex gap-2\""
+            },
+            {
+              "tag": "ImageCrop"
+            },
+            {
+              "tag": "p",
+              "class": "\"break-words text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/image-crop.tsx",
+      "item": "image-crop",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full\"",
+          "children": [
+            {
+              "tag": "ImageCrop"
+            },
+            {
+              "tag": "p",
+              "class": "\"mt-2 text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/image-zoom.tsx",
+      "item": "image-zoom",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "ImageZoom"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/input-group-compositions.tsx",
+      "item": "input-group",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-5\"",
+          "children": [
+            {
+              "tag": "form",
+              "class": "\"space-y-2\""
+            },
+            {
+              "tag": "label",
+              "class": "\"grid gap-2 text-sm\""
+            },
+            {
+              "tag": "label",
+              "class": "\"grid gap-2 text-sm\""
+            },
+            {
+              "tag": "div",
+              "class": "\"space-y-2\""
+            },
+            {
+              "tag": "InputGroup"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/input-group.tsx",
+      "item": "input-group",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": [
+            {
+              "tag": "InputGroup"
+            },
+            {
+              "tag": "InputGroup"
+            },
+            {
+              "tag": "InputGroup"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/input-types.tsx",
+      "item": "input",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"grid gap-2 text-sm\""
+            },
+            {
+              "tag": "label",
+              "class": "\"grid gap-2 text-sm\""
+            },
+            {
+              "tag": "div",
+              "class": "\"space-y-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/input.tsx",
+      "item": "input",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-3\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"text-sm font-medium\""
+            },
+            {
+              "tag": "Input"
+            },
+            {
+              "tag": "Input"
+            },
+            {
+              "tag": "Input"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/kanban.tsx",
+      "item": "kanban",
+      "layer": "blocks",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Kanban",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/kbd.tsx",
+      "item": "kbd",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "p",
+          "class": "\"flex flex-wrap items-center gap-2 text-sm\"",
+          "children": [
+            {
+              "tag": "KbdGroup"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/label-controls.tsx",
+      "item": "label",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-4\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex min-h-10 items-center gap-3\""
+            },
+            {
+              "tag": "div",
+              "class": "\"flex min-h-10 items-center gap-3\""
+            },
+            {
+              "tag": "div",
+              "class": "\"flex min-h-10 items-center gap-3\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/label.tsx",
+      "item": "label",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xs space-y-2\"",
+          "children": [
+            {
+              "tag": "Label"
+            },
+            {
+              "tag": "Input"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/list-custom-rows.tsx",
+      "item": "list",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-4\"",
+          "children": [
+            {
+              "tag": "List"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-xs text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/list.tsx",
+      "item": "list",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full space-y-5\"",
+          "children": [
+            {
+              "tag": "section"
+            },
+            {
+              "tag": "section"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/marquee.tsx",
+      "item": "marquee",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Marquee",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/media-reveal.tsx",
+      "item": "media-reveal",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full space-y-4\"",
+          "children": [
+            {
+              "tag": "MediaReveal",
+              "class": "\"aspect-video overflow-hidden rounded-lg border border-border\""
+            },
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/mini-calendar.tsx",
+      "item": "mini-calendar",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "MiniCalendar",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/native-select-groups.tsx",
+      "item": "native-select",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "form",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"block text-sm font-medium\""
+            },
+            {
+              "tag": "NativeSelect"
+            },
+            {
+              "tag": "label",
+              "class": "\"block text-sm font-medium\""
+            },
+            {
+              "tag": "NativeSelect"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm text-destructive\""
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/native-select.tsx",
+      "item": "native-select",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"grid gap-2 text-sm\""
+            },
+            {
+              "tag": "NativeSelect"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/page-header.tsx",
+      "item": "page-header",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "PageHeader",
+          "class": "\"w-full\"",
+          "children": [
+            {
+              "tag": "PageHeader.Content"
+            },
+            {
+              "tag": "PageHeader.Actions"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/page-skeleton.tsx",
+      "item": "page-skeleton",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "PageSkeleton",
+          "class": "\"p-0\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/pagination.tsx",
+      "item": "pagination",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Pagination",
+          "children": [
+            {
+              "tag": "PaginationContent"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/pill-locked.tsx",
+      "item": "pill",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-3\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/pill.tsx",
+      "item": "pill",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-col gap-3\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            },
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/popover-positioning.tsx",
+      "item": "popover",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-wrap gap-3\"",
+          "children": [
+            {
+              "tag": "Popover"
+            },
+            {
+              "tag": "Popover"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/popover.tsx",
+      "item": "popover",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Popover",
+          "children": [
+            {
+              "tag": "PopoverTrigger"
+            },
+            {
+              "tag": "PopoverContent",
+              "class": "\"w-64 space-y-3\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/product-page-intro.tsx",
+      "item": "product-page-intro",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "ProductPageIntro",
+          "class": "\"w-full\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0.01
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/progress-states.tsx",
+      "item": "progress",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-6\"",
+          "children": [
+            {
+              "tag": "Progress"
+            },
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            },
+            {
+              "tag": "Progress"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/progress.tsx",
+      "item": "progress",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "Progress",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "ProgressLabel"
+            },
+            {
+              "tag": "ProgressValue"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/qr-code.tsx",
+      "item": "qr-code",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "QRCode",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/radio-group-form.tsx",
+      "item": "radio-group",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "form",
+          "class": "\"space-y-5\"",
+          "children": [
+            {
+              "tag": "fieldset"
+            },
+            {
+              "tag": "fieldset"
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/radio-group.tsx",
+      "item": "radio-group",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "remove excess full-width root: center intrinsic demo group while retaining label/internal reading alignment",
+      "baselineRoots": [
+        {
+          "tag": "RadioGroup",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"flex min-h-10 items-center gap-3 text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/rating.tsx",
+      "item": "rating",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-4\"",
+          "children": [
+            {
+              "tag": "div"
+            },
+            {
+              "tag": "div"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/reel.tsx",
+      "item": "reel",
+      "layer": "blocks",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Reel",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/relative-time.tsx",
+      "item": "relative-time",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm rounded-xl border border-border bg-card p-4\"",
+          "children": [
+            {
+              "tag": "p",
+              "class": "\"mb-3 text-xs text-muted-foreground\""
+            },
+            {
+              "tag": "ul",
+              "class": "\"space-y-3\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/resource-row-link.tsx",
+      "item": "resource-row-link",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "ResourceRow",
+          "class": "\"flex w-full max-w-sm items-center justify-between rounded-lg border border-border p-4\"",
+          "children": [
+            {
+              "tag": "div"
+            },
+            {
+              "tag": "ResourceRowLink"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/reveal-content-variants.tsx",
+      "item": "reveal-content",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xl space-y-5\"",
+          "children": [
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "div",
+              "class": "\"grid gap-5 sm:grid-cols-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/reveal-content.tsx",
+      "item": "reveal-content",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "RevealContent",
+          "class": "\"rounded-xl border border-border bg-card p-5\"",
+          "children": [
+            {
+              "tag": "h3",
+              "class": "\"font-semibold\""
+            },
+            {
+              "tag": "p",
+              "class": "\"mt-2 text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/rotating-content-external-control.tsx",
+      "item": "rotating-content",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-5\"",
+          "children": [
+            {
+              "tag": "h3",
+              "class": "\"text-2xl font-semibold\""
+            },
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/rotating-content.tsx",
+      "item": "rotating-content",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full space-y-4\"",
+          "children": [
+            {
+              "tag": "p",
+              "class": "\"text-sm text-muted-foreground\""
+            },
+            {
+              "tag": "RotatingContent"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/sandbox.tsx",
+      "item": "sandbox",
+      "layer": "blocks",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full\"",
+          "children": [
+            {
+              "tag": "Sandbox"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/search-field.tsx",
+      "item": "search-field",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-3\"",
+          "children": [
+            {
+              "tag": "SearchField"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-xs text-muted-foreground\""
+            },
+            {
+              "tag": "ul",
+              "class": "\"divide-y divide-border rounded-lg border border-border bg-card text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/select-groups.tsx",
+      "item": "select",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xs space-y-3\"",
+          "children": [
+            {
+              "tag": "Label"
+            },
+            {
+              "tag": "Select"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/select-scroll.tsx",
+      "item": "select",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xs space-y-3\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"text-sm\""
+            },
+            {
+              "tag": "Select"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/select-states.tsx",
+      "item": "select",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xs space-y-5\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"space-y-2\""
+            },
+            {
+              "tag": "Select"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/select.tsx",
+      "item": "select",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xs space-y-2\"",
+          "children": [
+            {
+              "tag": "Label"
+            },
+            {
+              "tag": "Select"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/separator-vertical.tsx",
+      "item": "separator",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-5\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex h-10 items-center gap-4 text-sm\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            },
+            {
+              "tag": "Separator"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/separator.tsx",
+      "item": "separator",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": [
+            {
+              "tag": "p"
+            },
+            {
+              "tag": "Separator"
+            },
+            {
+              "tag": "p"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/settings-section.tsx",
+      "item": "settings-section",
+      "layer": "blocks",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full min-w-0\"",
+          "children": [
+            {
+              "tag": "SettingsSection"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/sheet-sides.tsx",
+      "item": "sheet",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-wrap gap-3\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/sheet.tsx",
+      "item": "sheet",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Sheet",
+          "children": [
+            {
+              "tag": "SheetTrigger"
+            },
+            {
+              "tag": "SheetContent"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/skeleton.tsx",
+      "item": "skeleton",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-3\"",
+          "children": [
+            {
+              "tag": "Skeleton",
+              "class": "\"size-10 rounded-full\""
+            },
+            {
+              "tag": "Skeleton",
+              "class": "\"h-4 w-2/3\""
+            },
+            {
+              "tag": "Skeleton",
+              "class": "\"h-4 w-full\""
+            },
+            {
+              "tag": "Skeleton",
+              "class": "\"h-4 w-1/2\""
+            },
+            {
+              "tag": "span",
+              "class": "\"sr-only\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/slider.tsx",
+      "item": "slider",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-8\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"space-y-3\""
+            },
+            {
+              "tag": "div",
+              "class": "\"space-y-3\""
+            },
+            {
+              "tag": "div",
+              "class": "\"flex items-end gap-8\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/snippet.tsx",
+      "item": "snippet",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full\"",
+          "children": [
+            {
+              "tag": "Snippet"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/spinner-sizes.tsx",
+      "item": "spinner",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-wrap items-center gap-8\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/spinner.tsx",
+      "item": "spinner",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"grid w-full max-w-md grid-cols-2 gap-4 sm:grid-cols-4\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/stat-card.tsx",
+      "item": "stat-card",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "StatCard",
+          "class": "\"w-full max-w-xs\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/state-panel.tsx",
+      "item": "state-panel",
+      "layer": "patterns",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "StatePanel",
+          "class": "\"w-full\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/status-notice-actions.tsx",
+      "item": "status-notice",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-4\"",
+          "children": [
+            {
+              "tag": "StatusNotice"
+            },
+            {
+              "tag": "StatusNotice"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/status-notice.tsx",
+      "item": "status-notice",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-3\"",
+          "children": [
+            {
+              "tag": "StatusNotice"
+            },
+            {
+              "tag": "StatusNotice"
+            },
+            {
+              "tag": "StatusNotice"
+            },
+            {
+              "tag": "StatusNotice"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/status.tsx",
+      "item": "status",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-wrap gap-2\"",
+          "children": [
+            {
+              "tag": "Status"
+            },
+            {
+              "tag": "Status"
+            },
+            {
+              "tag": "Status"
+            },
+            {
+              "tag": "Status"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/stories-viewer.tsx",
+      "item": "stories",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "match demo wrapper max-width to viewer max-width to remove nested width offset",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "Stories"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/stories.tsx",
+      "item": "stories",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "Stories",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/switch-states.tsx",
+      "item": "switch",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-5\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex items-center gap-3\""
+            },
+            {
+              "tag": "div",
+              "class": "\"space-y-2\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/switch.tsx",
+      "item": "switch",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex items-center gap-3\"",
+          "children": [
+            {
+              "tag": "Switch"
+            },
+            {
+              "tag": "Label"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/table-native.tsx",
+      "item": "table",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full space-y-8\"",
+          "children": [
+            {
+              "tag": "Table"
+            },
+            {
+              "tag": "DataTable"
+            },
+            {
+              "tag": "a",
+              "class": "\"text-sm underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-ring\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/table.tsx",
+      "item": "table",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "DataTable",
+          "class": "\"w-full [&_table]:min-w-[640px]\"",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/tabs-variants.tsx",
+      "item": "tabs",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-lg space-y-8\"",
+          "children": [
+            {
+              "tag": "Tabs"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/tabs.tsx",
+      "item": "tabs",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "Tabs",
+          "class": "\"w-full max-w-lg gap-0 overflow-hidden rounded-xl border border-border\"",
+          "children": [
+            {
+              "tag": "TabsList",
+              "class": "\"rounded-none border-b border-border\""
+            },
+            {
+              "tag": "TabsContent",
+              "class": "\"min-h-32 bg-card p-5 font-mono\""
+            },
+            {
+              "tag": "TabsContent",
+              "class": "\"flex min-h-32 items-center justify-center bg-card p-5\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/tags-controlled.tsx",
+      "item": "tags",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-5\"",
+          "children": [
+            {
+              "tag": "Tags"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            },
+            {
+              "tag": "Tags"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/tags.tsx",
+      "item": "tags",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "Tags",
+          "children": []
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/text-reveal-timing.tsx",
+      "item": "text-reveal",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-5\"",
+          "children": [
+            {
+              "tag": "Button"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/text-reveal.tsx",
+      "item": "text-reveal",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full space-y-5\"",
+          "children": [
+            {
+              "tag": "h3",
+              "class": "\"text-2xl font-semibold leading-relaxed\""
+            },
+            {
+              "tag": "Button"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/textarea-states.tsx",
+      "item": "textarea",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-5\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"space-y-2\""
+            },
+            {
+              "tag": "label",
+              "class": "\"grid gap-2 text-sm\""
+            },
+            {
+              "tag": "label",
+              "class": "\"grid gap-2 text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/textarea.tsx",
+      "item": "textarea",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-md space-y-3\"",
+          "children": [
+            {
+              "tag": "label",
+              "class": "\"text-sm font-medium\""
+            },
+            {
+              "tag": "Textarea"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/theme-switcher.tsx",
+      "item": "theme-switcher",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex items-center gap-3\"",
+          "children": [
+            {
+              "tag": "ThemeSwitcher"
+            },
+            {
+              "tag": "span",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/ticker-card.tsx",
+      "item": "ticker",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "keep full-width card and center short inline ticker in the composed column",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm space-y-4\"",
+          "children": [
+            {
+              "tag": "Ticker"
+            },
+            {
+              "tag": "Ticker"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/ticker.tsx",
+      "item": "ticker",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "remove excess full-width root: center intrinsic demo group while retaining label/internal reading alignment",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "Ticker"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/toast-feedback.tsx",
+      "item": "toast",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-lg space-y-4\"",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/toast.tsx",
+      "item": "toast",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "fragment",
+          "children": [
+            {
+              "tag": "Button"
+            },
+            {
+              "tag": "Toaster"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/toggle-controlled.tsx",
+      "item": "toggle",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-3\"",
+          "children": [
+            {
+              "tag": "Toggle"
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/toggle-group-vertical.tsx",
+      "item": "toggle-group",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-3\"",
+          "children": [
+            {
+              "tag": "ToggleGroup",
+              "class": "\"w-fit\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-sm\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/toggle-group.tsx",
+      "item": "toggle-group",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact composed demo: center controls, captions and actions as a column; center any wrapping rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"space-y-5\"",
+          "children": [
+            {
+              "tag": "ToggleGroup"
+            },
+            {
+              "tag": "ToggleGroup"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/toggle.tsx",
+      "item": "toggle",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"flex flex-wrap gap-2\"",
+          "children": [
+            {
+              "tag": "Toggle"
+            },
+            {
+              "tag": "Toggle"
+            },
+            {
+              "tag": "Toggle"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0.01,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/tooltip-sides.tsx",
+      "item": "tooltip",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "modified",
+      "reason": "compact wrapping row: center each visible row, including short final rows",
+      "baselineRoots": [
+        {
+          "tag": "TooltipProvider",
+          "children": [
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-4\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/tooltip.tsx",
+      "item": "tooltip",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain existing source composition: visible demo group already centers in the shared frame; preserve its internal presentation",
+      "baselineRoots": [
+        {
+          "tag": "TooltipProvider",
+          "children": [
+            {
+              "tag": "Tooltip"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/tree.tsx",
+      "item": "tree",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-sm\"",
+          "children": [
+            {
+              "tag": "Tree"
+            },
+            {
+              "tag": "p",
+              "class": "\"mt-2 text-sm text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/typography-semantics.tsx",
+      "item": "typography",
+      "layer": "components",
+      "kind": "additional",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-lg space-y-5\"",
+          "children": [
+            {
+              "tag": "section",
+              "class": "\"space-y-2\""
+            },
+            {
+              "tag": "section",
+              "class": "\"space-y-2\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 4,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/typography.tsx",
+      "item": "typography",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "article",
+          "class": "\"w-full max-w-2xl space-y-4\"",
+          "children": [
+            {
+              "tag": "Typography"
+            },
+            {
+              "tag": "Typography"
+            },
+            {
+              "tag": "Typography",
+              "class": "\"border-b border-border pb-2\""
+            },
+            {
+              "tag": "Typography"
+            },
+            {
+              "tag": "Typography"
+            },
+            {
+              "tag": "Typography",
+              "class": "\"list-disc space-y-1 pl-5\""
+            },
+            {
+              "tag": "Typography"
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    },
+    {
+      "file": "apps/docs/examples/video-player.tsx",
+      "item": "video-player",
+      "layer": "components",
+      "kind": "representative",
+      "decision": "retained",
+      "reason": "retain bounded panel/form/data layout: frame centers its region; internal reading order and content layout remain owned by the example",
+      "baselineRoots": [
+        {
+          "tag": "div",
+          "class": "\"w-full max-w-xl space-y-4\"",
+          "children": [
+            {
+              "tag": "VideoPlayer"
+            },
+            {
+              "tag": "div",
+              "class": "\"flex flex-wrap gap-2\""
+            },
+            {
+              "tag": "p",
+              "class": "\"text-xs leading-5 text-muted-foreground\""
+            }
+          ]
+        }
+      ],
+      "checkedVariants": 8,
+      "maxGroupOffsetPx": {
+        "x": 0,
+        "y": 0
+      },
+      "codeExact": true
+    }
+  ]
+}

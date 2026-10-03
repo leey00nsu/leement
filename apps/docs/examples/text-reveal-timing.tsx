@@ -5,7 +5,7 @@ import { Button } from "../../../registry/ui/button";
 export default function Example() {
   const [replay, setReplay] = useState(0);
   return (
-    <div className="space-y-5">
+    <div className="flex max-w-sm flex-col items-center gap-5 text-center">
       {[
         { duration: 300, stagger: 60 },
         { duration: 900, stagger: 180 },

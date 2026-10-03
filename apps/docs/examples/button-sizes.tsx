@@ -2,7 +2,7 @@ import { Plus } from "lucide-react";
 import { Button } from "../../../registry/ui/button";
 export default function Example() {
   return (
-    <div className="flex max-w-lg flex-wrap items-center gap-3">
+    <div className="flex max-w-lg flex-wrap items-center justify-center gap-3">
       {(["xs", "sm", "default", "lg"] as const).map((size) => (
         <Button key={size} size={size}>
           {size}

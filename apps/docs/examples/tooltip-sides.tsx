@@ -10,7 +10,7 @@ import {
 export default function Example() {
   return (
     <TooltipProvider delayDuration={200}>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap justify-center gap-4">
         {(["top", "right", "bottom", "left"] as const).map((side) => (
           <Tooltip key={side}>
             <TooltipTrigger asChild>

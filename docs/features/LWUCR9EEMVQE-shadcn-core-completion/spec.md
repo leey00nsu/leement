@@ -128,6 +128,6 @@ Pattern15/Block8 조사 결과는 이 예제 보강의 참고다. 이번 추가 
 ## US-7: Preview 중앙에 실제 예제 그룹을 배치한다
 
 - **추가 범위 승인 근거**: 사용자 “중앙에 정렬하면 되는데 그렇지 못한것들이 있다. 분석하고 task로 추가해 수정을 진행하라.”를 기존 Feature T12로 반영한다. 병합 승인은 아니다.
-- [ ] 대표102개와 추가57개를 확인하고 상세/Showcase에서 compact control·장식 예제 그룹의 중앙 배치를 보정한다.
-- [ ] 넓은 panel/폼/목록은 영역을 중앙에 두며 내부 label·읽기 순서·좌측 정렬을 유지한다. wrap된 control 행의 중앙 정렬 및 높이 확보를 확인한다.
-- [ ] 네 방향 점선/inset, 포털·키보드·내부 스크롤, 원본 Preview/Code 일치와 featureChecks를 보존한다. Foundations 레이아웃과 registry public API는 이 정렬 변경 대상이 아니다.
+- [x] 대표102개와 추가57개를 확인하고 상세/Showcase에서 compact control·장식 예제 그룹의 중앙 배치를 보정한다.
+- [x] 넓은 panel/폼/목록은 영역을 중앙에 두며 내부 label·읽기 순서·좌측 정렬을 유지한다. wrap된 control 행의 중앙 정렬 및 높이 확보를 확인한다.
+- [x] 네 방향 점선/inset, 포털·키보드·내부 스크롤, 원본 Preview/Code 일치와 featureChecks를 보존한다. Foundations 레이아웃과 registry public API는 이 정렬 변경 대상이 아니다.

@@ -12,7 +12,7 @@ import {
 } from "../../../registry/ui/sheet";
 export default function Example() {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap justify-center gap-3">
       {(["left", "top", "bottom"] as const).map((side) => (
         <Sheet key={side}>
           <SheetTrigger render={<Button variant="outline" />}>

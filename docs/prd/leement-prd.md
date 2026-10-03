@@ -15,7 +15,7 @@ CopySinger의 밝은 UI를 바탕으로 Leesfield를 그 다크 모드처럼 만
 - PRD-FR-002: `@leement/theme`이 Leement CSS 변수와 하위 호환 shadcn alias를 제공한다. 기본 import는 패키지에 포함한 Pretendard Variable, Paperlogy Bold(700), D2Coding Regular(400)/Bold(700) 웹폰트를 로드하며, 폰트 자산과 원본 라이선스를 함께 배포한다.
 - PRD-FR-003: registry가 UI 8개, pattern 5개, block 1개의 소스를 소비자 프로젝트에 설치한다.
 - PRD-FR-004: pattern과 block이 사용하는 내부 컴포넌트는 registry dependency로 함께 설치된다.
-- PRD-FR-005: docs가 토큰, 사용 규칙, 예시, 접근성, API, 설치법을 설명하고 registry 원본을 예시에 사용한다. 상단 탐색·범주별 메뉴·상세 목차와 실제 미리보기를 제공하며 중복 비교 페이지를 메뉴에 두지 않는다. Showcase는 낮은 강조 배경과 실제 프리뷰 표면으로 항목을 구분하고 모든 예제의 기본 inset을 보장한다. Docs의 소개·설치·Adoption·Foundations·Changelog도 같은 표면 규칙을 사용하며 정보에 맞는 읽기 순서와 편집/복사 기능을 유지한다. 문서 바깥 여백은 공통 레이아웃이 소유하며 중복 main/inset을 만들지 않는다. 상세 Preview는 동일 inset으로 정렬된 가로·세로 점선 안에 콘텐츠를 배치하고 넓은 예제의 내부 스크롤과 조작을 보존한다.
+- PRD-FR-005: docs가 토큰, 사용 규칙, 예시, 접근성, API, 설치법을 설명하고 registry 원본을 예시에 사용한다. 상단 탐색·범주별 메뉴·상세 목차와 실제 미리보기를 제공하며 중복 비교 페이지를 메뉴에 두지 않는다. Showcase는 낮은 강조 배경과 실제 프리뷰 표면으로 항목을 구분하고 모든 예제의 기본 inset을 보장한다. Docs의 소개·설치·Adoption·Foundations·Changelog도 같은 표면 규칙을 사용하며 정보에 맞는 읽기 순서와 편집/복사 기능을 유지한다. 문서 바깥 여백은 공통 레이아웃이 소유하며 중복 main/inset을 만들지 않는다. 상세 Preview와 Showcase는 실제 예제 그룹을 가로·세로 중앙에 배치하며 compact control의 줄바꿈 행도 중앙 정렬한다. 폼·목록·표는 내부 읽기 정렬을 유지한다. 상세 Preview는 동일 inset으로 정렬된 가로·세로 점선 안에 콘텐츠를 배치하고 넓은 예제의 내부 스크롤과 조작을 보존한다.
 - PRD-FR-006: 설치된 소스가 Tailwind v4 기반 소비자 앱에서 타입 검사 및 빌드된다.
 - PRD-NFR-001: 키보드 탐색, focus-visible, disabled, aria와 Radix 접근성 동작을 유지한다.
 - PRD-NFR-002: light와 dark의 semantic 이름을 공유하고 light를 우선 제공한다.

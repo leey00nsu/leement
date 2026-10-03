@@ -5,7 +5,7 @@ import { Button } from "../../../registry/ui/button";
 export default function Example() {
   const [paused, setPaused] = useState(true);
   return (
-    <div className="space-y-5">
+    <div className="flex max-w-lg flex-col items-center gap-5 text-center">
       <p className="text-2xl font-semibold">
         <BrandGradientText animated={false}>
           A static brand signature.

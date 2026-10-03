@@ -1,7 +1,7 @@
 import { Stories } from "../../../registry/ui/stories";
 export default function Example() {
   return (
-    <div className="w-full max-w-sm">
+    <div className="w-full max-w-xs">
       <Stories
         presentation="viewer"
         autoAdvanceMs={4000}

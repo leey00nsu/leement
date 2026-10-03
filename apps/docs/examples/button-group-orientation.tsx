@@ -6,7 +6,7 @@ import { Button } from "../../../registry/ui/button";
 export default function Example() {
   const [result, setResult] = useState("No action yet");
   return (
-    <div className="space-y-5">
+    <div className="flex flex-col items-center gap-5 text-center">
       <ButtonGroup orientation="vertical" aria-label="Revision actions">
         <Button variant="outline" onClick={() => setResult("Draft saved")}>
           Save draft

@@ -244,14 +244,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-LWUCR9EEMVQE-shadcn-core-completion-12 Preview 전체 정렬 조사와 중앙 배치 보정
+- [DONE][PRD-FR-005] T-LWUCR9EEMVQE-shadcn-core-completion-12 Preview 전체 정렬 조사와 중앙 배치 보정
   - Date: 2026-10-03
   - Acceptance:
     - 대표102개 및 추가57개 예제를 조사하고 작은 control·장식 데모를 Preview 중앙에 배치한다. panel·form·목록 내부 정렬과 넓은 source의 스크롤 및 주요 조작을 보존한다.
   - Checklist:
-    - [ ] 상세/Showcase/추가 예제의 root와 내부 배치 원인을 조사해 항목별 변경 또는 유지 근거를 기록한다.
-    - [ ] 공통 Preview 배치와 필요한 example source를 보정하고 디자인·PRD 규칙을 동기화한다. token/theme와 registry API의 영향 여부를 확인한다.
-    - [ ] light/dark390/1440px 전수 geometry·화면 확인과 대표 keyboard/popup/overflow/Code 일치 및 featureChecks를 검증한다.
+    - [x] 상세/Showcase/추가 예제의 root와 내부 배치 원인을 조사해 항목별 변경 또는 유지 근거를 기록한다.
+    - [x] 공통 Preview 배치와 필요한 example source를 보정하고 디자인·PRD 규칙을 동기화한다. token/theme와 registry API의 영향 여부를 확인한다.
+    - [x] light/dark390/1440px 전수 geometry·화면 확인과 대표 keyboard/popup/overflow/Code 일치 및 featureChecks를 검증한다.
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -273,9 +273,9 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
 
@@ -326,3 +326,7 @@ T10 완료 증거: [55개/57예제 대응표](./artifacts/additional-example-cov
 T10 회귀 보정: Tabs vertical orientation 전달, Progress unknown indicator 폭과 reduced motion, ImageCrop 고정 aspect 초기/Reset 및 Editor aria-readonly를 수정했다. 추가 예제의 설치 명령은 실제 import 항목으로 표시한다. typecheck/lint/test117개/build PASS, consumer55항목+Badge namespace 설치/57예제 compile·build PASS. Vite의 use client directive 무시 진단은 client-only consumer에서 예상된 것으로 빌드 실패가 아니다. theme은 로컬 pack, registry는 localhost3011을 사용했다. 공개 publish/배포·다른 브라우저·원본 두 앱 교체는 수행하지 않았다. 구현 승인과 병합 승인은 별도다.
 
 T11 검증: D2Coding v1.4.0 일반 Regular400/Bold700 TTF의 lossless WOFF2를 theme에 포함했다. 각 cmap19936개, outline/hmtx 동일성을 확인했다. OFL/NOTICE와 고정 source revision/원본 및 산출물 SHA256을 보존했다. 패키지 pack의 CSS 상대경로·font/license/notice 일치, 실제 docs light/dark390/1440px 네 조합과 폰트 실사용(CDP), 한국어2칸/영문 고정폭, mono 선택/커스텀/CSS 복사/페이지 이동/새로고침/초기화6계약, 독립 소비자 타입/build와400/700 실사용 PASS. 본문 Pretendard·로고 Paperlogy 독립성 유지. typecheck/lint/test117개/build PASS. [폰트·pack·실제 브라우저 검증](./artifacts/mono-font-checks.json), [light 모바일](./artifacts/mono-light-390.png), [dark](./artifacts/mono-dark-1440.png). Aside daemon 미연결로 기존 Chrome/Playwright를 사용했다. 공개 배포·다른 브라우저는 미실행이다.
+
+T12 완료 증거: [159개 항목별 정렬 조사](./artifacts/preview-alignment-audit.json), [상세159+Showcase102×2테마×2폭=1044검사·159Code 대조](./artifacts/preview-alignment-matrix.json), [실제 조작28건](./artifacts/preview-alignment-interactions.json). 예제36개를 보정하고123개는 기존 내부 읽기/패널 구조를 유지했다. 실제 Chrome light/dark390/1440px에서 가로 overflow·렌더 오류·Code 불일치0, wrap 행 중앙 위치를 확인했다. 전체159상세 예제의 light390/dark1440 contact sheet16장을 직접 검토했다. 폼 label/키보드·Dialog/Tooltip·Replay/pause·Stories·브랜드 loading·표 내부 스크롤을 확인했다. Combobox의 닫힌 예약 높이를 제거하고 inline popup이 workbench 밖에서도 표시/선택되도록 CodePane으로 clipping을 한정했다. [모바일 TextReveal](./artifacts/preview-text-reveal-light-390.png), [Showcase Button](./artifacts/preview-button-showcase-light-390.png), [dark StoriesViewer](./artifacts/preview-stories-viewer-dark-1440.png), [닫힌 Combobox](./artifacts/combobox-centered-light-390.png), [열린 popup](./artifacts/combobox-popup-light-390.png). typecheck/lint/test117개/build PASS. token/theme·registry API 변경 없음. 다른 브라우저/공개 배포는 미실행, main 병합 승인은 별도 checkpoint에서 받는다.
+
+T12 결과 공유: 중앙 정렬 보정과1044geometry/159Code/28조작 통과를 안내했다. 전체 Feature의 기존 구현 수락 이력은 유지하며 이번 추가 요청은 병합 허가가 아니다. local-ff 통합 승인은 workflow-stage의 local_merge A/B checkpoint에서 별도로 대기한다.

@@ -11,7 +11,7 @@ import {
 export default function Example() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap justify-center gap-3">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger render={<Button variant="outline" />}>
           Top, start aligned
