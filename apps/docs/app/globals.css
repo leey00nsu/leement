@@ -6,9 +6,46 @@
 body { background: var(--lm-color-background-default); color: var(--lm-color-foreground-default); }
 .docs-shell { min-height: 100vh; }
 .docs-sidebar { scrollbar-width: thin; }
-.docs-preview-stage { position: relative; isolation: isolate; }
-.docs-preview-stage::before { content: ""; position: absolute; inset: 0 5%; border-inline: 1px dashed var(--lm-color-border-default); opacity: .55; pointer-events: none; }
-.docs-preview-stage > * { position: relative; z-index: 1; }
+/* The guides and content use one inset, including when the example grows. */
+.docs-preview-frame {
+  --docs-preview-inset: 20px;
+  --docs-preview-height: 360px;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  width: 100%;
+  min-height: var(--docs-preview-height);
+  padding: var(--docs-preview-inset);
+}
+.docs-preview-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: calc(var(--docs-preview-height) - 2 * var(--docs-preview-inset));
+}
+.docs-preview-guides::before,
+.docs-preview-guides::after {
+  content: "";
+  position: absolute;
+  opacity: .55;
+  pointer-events: none;
+}
+.docs-preview-guides::before {
+  inset: 0 var(--docs-preview-inset);
+  border-inline: 1px dashed var(--lm-color-border-default);
+}
+.docs-preview-guides::after {
+  inset: var(--docs-preview-inset) 0;
+  border-block: 1px dashed var(--lm-color-border-default);
+}
+.docs-preview-gallery { --docs-preview-inset: 16px; --docs-preview-height: 280px; }
+@media (min-width: 640px) {
+  .docs-preview-frame { --docs-preview-inset: 40px; }
+  .docs-preview-gallery { --docs-preview-inset: 24px; }
+}
 body:has(#leement-home) .docs-shell { display: block; }
 body:has(#leement-home) .docs-sidebar { display: none; }
 body:has(#leement-home) .docs-shell > main { padding: 0; }

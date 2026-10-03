@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { SearchField } from "../../../registry/patterns/search-field";
 import { Preview } from "./previews";
+import { PreviewFrame } from "./preview-frame";
 import { registryCommand } from "../lib/docs";
 import { items } from "../lib/items";
 
@@ -34,7 +35,7 @@ export function ShowcaseGallery() {
   });
 
   return <div>
-    <div className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+    <div className="rounded-2xl bg-muted p-4 sm:p-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="w-full lg:max-w-sm">
           <label htmlFor="item-search" className="mb-2 block text-sm font-medium">Find an item</label>
@@ -64,19 +65,19 @@ export function ShowcaseGallery() {
           </div>
           <span className="text-xs text-muted-foreground">{sectionNames.length} items</span>
         </div>
-        <div className="grid gap-5 xl:grid-cols-2">
+        <div className="grid items-start gap-6 xl:grid-cols-2">
           {sectionNames.map((name) => {
             const item = items[name];
-            return <article key={name} className="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-              <div className="flex flex-wrap items-start justify-between gap-3 px-5 py-5">
-                <div className="min-w-0">
+            return <article key={name} data-showcase-item={name} className="flex min-w-0 flex-col gap-5 rounded-2xl bg-muted p-5 sm:p-6">
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="text-lg font-semibold tracking-tight">{displayName(name)}</h3>
-                  <p className="mt-1 max-w-lg text-sm leading-6 text-muted-foreground">{item.overview}</p>
+                  <span className="shrink-0 rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">{item.maturity}</span>
                 </div>
-                <span className="shrink-0 rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">{item.maturity}</span>
+                <p className="max-w-lg text-sm leading-6 text-muted-foreground">{item.overview}</p>
               </div>
-              <div className="mx-5 mb-5 flex min-h-48 items-center rounded-xl border border-border bg-background [&>div]:border-0"><Preview name={name} /></div>
-              <div className="mt-auto flex min-w-0 flex-col gap-3 border-t border-border bg-muted/20 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+              <PreviewFrame gallery><Preview name={name} /></PreviewFrame>
+              <div className="flex min-w-0 flex-wrap items-center justify-between gap-3">
                 <code className="min-w-0 overflow-x-auto text-xs text-muted-foreground">{registryCommand(name)}</code>
                 <Link href={`/${section.id}/${name}`} className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                   Explore <ArrowUpRight aria-hidden="true" size={15} />

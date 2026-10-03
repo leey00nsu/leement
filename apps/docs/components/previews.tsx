@@ -178,5 +178,5 @@ const examples: Record<keyof typeof items, ComponentType> = {
 
 export function Preview({ name }: { name: keyof typeof items }) {
   const Example = examples[name];
-  return <div className="flex w-full items-center justify-center text-foreground"><Example /></div>;
+  return <div data-preview-name={name} className="flex min-w-0 w-full items-center justify-center text-foreground"><Example /></div>;
 }

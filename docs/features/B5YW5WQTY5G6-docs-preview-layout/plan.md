@@ -1,139 +1,92 @@
-# Implementation Plan: docs-preview-layout
-
-> 스펙이 승인된 후 작성합니다.
-> canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 아키텍처/파일/테스트 내용은 이 파일로 흡수하고 최종 SSOT는 여기로 유지합니다.
-
----
+# Implementation Plan: Docs preview layout
 
 ## 개요
 
 - **기능 ID**: B5YW5WQTY5G6
 - **대상 레포**: Leement
 - **작성일**: 2026-10-03
-- **상태**: -
-  - 값: Draft | Review | Approved
+- **상태**: Approved
 - **Plan 검수**: Pending
-  - 값: Pending | Running | Done
-- **Plan 검수 Evidence**: -
-  - 예: `docs/features/F001-foo/decisions.md` 또는 docs 루트 아래의 실제 리뷰 산출물
-- **Plan 검수 Decision**: -
-  - 형식: `결정: approve|changes_requested|blocked ...` 또는 `decision: ...`
-- **Plan 검수 Round**: -
-  - `workflow-stage --json`이 반환한 양의 정수이며 첫 리뷰는 `1`
-- **Plan 검수 Spec Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `specHash`
-- **Plan 검수 Plan Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `planHash`
-
----
 
 ## 기술 스택
 
-| 구분 | 선택 | 이유 |
-| ---- | ---- | ---- |
-
----
+기존 Next.js / React / strict TypeScript / Tailwind v4를 사용한다. 실제 registry 예제를 유지한다. 검증은 기존 Vitest와 설치된 Playwright/Chrome으로 수행한다.
 
 ## 아키텍처
 
-(컴포넌트 구조, 데이터 흐름)
-
----
+1. 문서 표시 전용 PreviewFrame을 Showcase와 ItemWorkbench에서 공유한다. 같은 inset 변수를 콘텐츠 padding과 가로/세로 점선 위치에 사용한다. 모바일 20px, 상세 데스크톱 40px, 좁은 gallery에서는 16/24px을 사용한다. 콘텐츠가 커지면 프레임도 함께 커지고 장식선은 pointer-events:none이다.
+2. Showcase의 항목 컨테이너는 bg-muted와 20/24px 여백으로 구분하며 border/shadow/footer 구분선을 제거한다. 안쪽 실제 Preview는 bg-background 표면과 필요한 한 겹 경계만 제공한다. 컴포넌트 자체 border는 유지한다. 기본 표면 규칙은 semantic token을 읽는다.
+3. RootLayout이 문서 바깥 inset을 소유한다. Adoption의 중첩 main/px/py를 제거하고 전체 route에서 추가 바깥 padding을 확인한다. 의도적인 본문 폭 제한과 우측 목차는 유지한다.
+4. 전체 85개 예제의 source/geometry를 조사하고 실질적인 내부 overflow, 잘린 제어, flex 축소 문제만 책임 위치에 수정한다. 문서 여백을 registry 컴포넌트 API에 추가하지 않는다.
 
 ## 파일 구조
 
-```
-src/
-├── ...
-```
-
----
+- apps/docs/components/preview-frame.tsx: 공통 문서 프레임.
+- apps/docs/app/globals.css: inset과 장식선.
+- apps/docs/components/item-workbench.tsx, showcase-gallery.tsx, previews.tsx: 프레임 적용, 카탈로그 계층, 항목 식별.
+- apps/docs/app/adoption/page.tsx 및 조사에서 확인된 route: 중복 inset 수정.
+- apps/docs/examples/*.tsx: 조사로 확인된 예제 자체의 배치 수정.
+- registry/*: 실제 컴포넌트 내부에 문제가 입증될 경우에만 최소 수정.
 
 ## Curated Documentation Impact
 
-README 보호와 보조 산출물 위치는 `agents` 문서의 해당 규칙을 우선합니다. README 불일치는 수정 요청이 없으면 `decisions.md`의 경로·근거·보류 사유를 참조하는 `NONE`으로 기록할 수 있으며, 이 예외에 별도 후속 항목이나 수정 승인을 요구하지 않습니다. 보존할 Feature 보조 산출물은 활성 Feature의 `artifacts/`에 저장하고 상대경로로 연결합니다.
-
-발견한 문서 불일치는 `decisions.md`에만 남기고 종료하지 않습니다. 현재 사실의 명백한 오류가 승인 범위 안에 있으면 `UPDATE`/`ADD`와 task `Docs`로 연결합니다. 제품 의도 확인이나 범위 확장이 필요하면 충돌한 문서 경로·근거, 확인할 질문, 보류 이유와 실제 후속 task/Feature/issue 참조를 기록합니다. 없는 번호나 승인을 만들지 않습니다. 추적 항목 생성에 승인이 필요하면 사용자 확인 전 해결된 것으로 기록하지 않습니다. `NONE`의 근거에는 알려진 불일치가 없거나, 남은 불일치가 해당 후속 항목으로 추적되고 있음을 설명합니다. 코드나 OpenWiki에 맞추기 위해 미구현 PRD 요구를 삭제하지 않습니다.
-
-> 모든 결정이 `NONE`이어도 영향 판정을 완료합니다. `NONE`은 사람이 관리하는 상위 문서를 검토했지만 변경할 필요가 없다는 뜻입니다. 생성형 OpenWiki 동기화는 별도로 판정합니다.
-
 - **Schema**: 2
-- **Assessment**: Pending
-  - 값: Pending | Complete
-- **Product requirements**: -
-  - 값: NONE | UPDATE | ADD
-- **System architecture**: -
-  - 값: NONE | UPDATE | ADD
-- **Onboarding entrypoint**: -
-  - 값: NONE | UPDATE | ADD
-- **Operational/runtime contract**: -
-  - 값: NONE | UPDATE | ADD
-- **Reason**: -
-- **Targets**: -
-  - UPDATE 또는 ADD가 하나라도 있으면 쉼표로 구분한 `docs:<path>`와 `project:<path>` 대상을 기록합니다.
-  - `docs:<path>`는 설정된 docs 디렉터리 기준이고 `project:<path>`는 프로젝트 저장소 루트 기준입니다. 루트 이름을 반복하지 마세요(예: `docs:docs/agents/constitution.md`가 아니라 `docs:agents/constitution.md`).
-  - 모든 대상은 task `Docs` 목록에 연결하고 Feature 리뷰 전에 활성 Feature scope로 커밋합니다.
-
----
+- **Assessment**: Complete
+- **Product requirements**: UPDATE
+- **System architecture**: NONE
+- **Onboarding entrypoint**: NONE
+- **Operational/runtime contract**: NONE
+- **Reason**: PRD-FR-005의 문서 표시 요구를 구체화한다. 배포 방식·설치/API·아키텍처 변경은 없다. README 및 캡처는 보호 규칙에 따라 갱신하지 않는다(D001).
+- **Targets**: docs:prd/leement-prd.md
 
 ## Additional Curated Impacts
 
-> constitution/custom, 디자인 시스템, API·데이터, 보안, 배포, 관측성처럼 조건부로 존재하는 상위 문서를 판정합니다. 해당 영향이 없으면 `Decision: NONE`을 명시하고 표는 비워 둡니다.
-
-- **Assessment**: Pending
-- **Decision**: -
-  - 값: NONE | DECLARED
+- **Assessment**: Complete
+- **Decision**: DECLARED
 
 | Kind | Decision | Target | Reason |
 | ---- | -------- | ------ | ------ |
-| -    | -        | -      | -      |
-
-허용 Kind: `engineering-agent-policy`, `design-system-ux`, `api-data-contract`, `security-privacy`, `release-deployment`, `observability`, `other-curated`
-
-`DECLARED` 행의 Decision은 `UPDATE` 또는 `ADD`이고, Target은 `docs:<path>` 또는 `project:<path>`여야 합니다. 모든 Target은 task `Docs` 목록에 연결합니다.
-`docs:<path>`는 설정된 docs 디렉터리에서, `project:<path>`는 프로젝트 저장소 루트에서 해석합니다.
-
----
+| design-system-ux | UPDATE | docs:designs/design-system.md | 문서의 카탈로그 표면·공통 inset·Preview 점선의 지속 규칙 |
 
 ## Verification Contract
 
-Feature 완료 전 검사는 실제 `workflow.featureChecks`(컴포넌트 override 포함)를 기준으로 작성합니다. 추가 자동 검사는 실행 설정에도 등록하세요. build 포함 여부와 중복 생략 근거, 수동 검증 증거를 명시하세요.
-
-
 ### 변경 분류
 
-- **유형**: COPY | REFACTOR | BUG_FIX | NEW_BEHAVIOR | HIGH_RISK
-- **위험도**: LOW | MEDIUM | HIGH
+- **유형**: BUG_FIX
+- **위험도**: MEDIUM
 
 ### 관찰 가능한 계약
 
-- **지원해야 하는 동작**:
-- **전제조건**:
-- **성공 후 보장**:
-- **중요한 실패 후 보장**:
-- **의도적으로 지원하지 않는 사례**:
+- **지원해야 하는 동작**: Showcase 85개 항목의 실제 조작·필터·검색, 상세 Code/Preview/Source 탭, 모든 문서 scaffold, light/dark와 모바일.
+- **전제조건**: 전체 workspace 의존성과 token/theme/registry 빌드를 갖춘 docs 앱.
+- **성공 후 보장**: 프리뷰 콘텐츠가 공통 inset 안에 배치되고 네 방향 점선은 같은 경계를 표시한다. 표 등은 지정 내부 스크롤로 접근한다. 한 main landmark와 공통 페이지 inset을 제공한다.
+- **중요한 실패 후 보장**: 동작/API·token 원본을 변경하지 않는다. 적용 후 overflow 문제가 남으면 해당 프레임/예제를 수정하고 전수 검사 결과를 다시 갱신한다.
+- **의도적으로 지원하지 않는 사례**: Kibo 픽셀 전체 복제, 임의 테마 수치의 극단값, 앱 마이그레이션/공개 배포.
 
 ### 테스트 결정
 
-| 계약 / 요구사항 | 결정                  | 테스트 수준                     | 보호할 현실적인 회귀 | 독립적인 Oracle            |
-| --------------- | --------------------- | ------------------------------- | -------------------- | -------------------------- |
-| (AC/FR 참조)    | NONE \| UPDATE \| ADD | 단위 \| 통합 \| E2E \| 비테스트 | (방지할 실패)        | (스펙/출시 동작/외부 기준) |
+| 계약 / 요구사항 | 결정 | 테스트 수준 | 보호할 현실적인 회귀 | 독립적인 Oracle |
+| --- | --- | --- | --- | --- |
+| US-1, FR-1/2 | NONE | 비테스트 브라우저 전수 점검 | 85개 중 일부만 수정, 예제 경계 밀착, 모바일 넘침 | 사용자 이미지 1/2와 실제 콘텐츠 bounds |
+| US-2, FR-3 | NONE | 비테스트 전체 route 점검 | 중복 main/inset | RootLayout 공통 inset과 main landmark |
+| US-3, FR-4 | NONE | 비테스트 geometry 및 화면 확인 | 점선/내용 기준 불일치, 높이 증가 시 잘림 | 사용자 이미지 3/4와 동일 inset 계약 |
+| 기존 동작 | NONE | 기존 typecheck/lint/test/build | 컴포넌트 렌더/API/registry build 회귀 | 기존 테스트 및 타입 계약 |
 
 ### 의도적으로 제외하는 테스트
 
-- (중복, 구현 세부사항, 비지원 합성 입력, 프레임워크 자체 동작 등)
+CSS class 문자열을 복제하는 영구 단위 테스트, 프레임워크 탭/포털 구현을 다시 검증하는 신규 테스트는 추가하지 않는다. 전수 확인용 일회 브라우저 스크립트는 임시 경로에서 실행하고 결과만 Feature artifact 및 decisions에 보존한다.
 
 ### 검증 실행
 
-- **구현 중**:
-- **태스크 완료 전**:
-- **Feature 완료 전**:
-- **수동/UI 검증**:
-- **전체 테스트 필요 여부**: Yes | No — (이유)
-
----
+- **구현 중**: pnpm install --frozen-lockfile, 필요한 token/theme/registry 빌드 및 docs dev; 변경 파일의 lint/typecheck.
+- **태스크 완료 전**: 해당 태스크의 화면 및 geometry 점검, 문서 동기화와 commit-audit.
+- **Feature 완료 전**: 설정된 pnpm run typecheck / lint / test / build 전부 실행. build는 registry JSON과 docs 전체 route를 포함한다.
+- **수동/UI 검증**: 390/1024/1440px, light/dark의 전체 85개 Showcase 예제와 상세 Preview를 geometry/overflow로 확인한다. 같은 목록을 source review와 대조한다. 대표 화면은 실제 screenshot을 읽고, 검색/필터/탭 keyboard/팝업 및 포커스 표시를 확인한다. 실패 항목을 재검증할 때는 기존 결과 행을 갱신한다. main/inset은 모든 route에서 확인한다. 대표 스크린샷과 85개별 판정은 artifacts에 보존해 tasks/decisions에서 링크한다.
+- **전체 테스트 필요 여부**: Yes — repository workflow.featureChecks의 명시적인 완료 gate다.
 
 ## 관련 문서
 
 - Spec: [spec.md](./spec.md)
 - Decisions: [decisions.md](./decisions.md)
+
+Plan 승인: workflow-stage의 plan_approve 자동 진행 지시에 따라 승격. agentReview.plan은 disabled다.

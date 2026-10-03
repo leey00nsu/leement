@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/B5YW5WQTY5G6-docs-preview-layout`
 - **대기 중 변경 요청**: -
@@ -74,6 +74,49 @@
 > 수동 편집이 필요하면 현재 태스크 근처가 아니라 `태스크 목록`의 마지막 기존 태스크 block 아래에만 append 하세요.
 
 ---
+
+- [DONE][PRD-FR-005] T-B5YW5WQTY5G6-docs-preview-layout-01 공통 Preview 프레임과 Showcase 표면 정리
+  - Date: 2026-10-03
+  - Acceptance:
+    - Showcase 외부 border/shadow를 제거하고 85개 예제에 inset을 제공한다. 상세 Preview는 동일 inset 기준 가로·세로 점선을 갖는다.
+  - Checklist:
+    - [x] 공통 프레임, gallery와 workbench 적용 및 대표 화면 점검
+    - [x] PRD와 디자인 문서 동기화; token/theme/API 비영향 확인
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005] T-B5YW5WQTY5G6-docs-preview-layout-02 Adoption과 전체 문서 scaffold 정리
+  - Date: 2026-10-03
+  - Acceptance:
+    - 모든 문서 route가 공통 바깥 inset을 사용하며 중첩 main은 없다.
+  - Checklist:
+    - [ ] Adoption 중복 main/padding 제거와 모든 route source/geometry 조사
+    - [ ] 홈 레이아웃과 모바일 탐색 보존 확인
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-008] T-B5YW5WQTY5G6-docs-preview-layout-03 전체 85개 예제 조사와 잔여 배치 수정 및 검증
+  - Date: 2026-10-03
+  - Acceptance:
+    - 85개 항목의 Showcase/상세를 light/dark와 390/1024/1440px에서 조사하고 문제를 수정한다. 기존 전체 검사를 통과한다.
+  - Checklist:
+    - [ ] 전수 판정과 실질적인 overflow/내부 배치 문제 수정
+    - [ ] 참고 화면 screenshot, 검색/필터/탭/팝업/focus 확인
+    - [ ] typecheck lint test build 통과 및 전수 결과와 Feature docs 동기화
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
 
 ## Repository Knowledge (완료 비차단)
 

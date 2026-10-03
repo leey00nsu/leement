@@ -5,6 +5,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../registry/ui/tabs";
 import { Check, Clipboard, Code2, Eye, Files } from "lucide-react";
 import { useState, type ReactNode } from "react";
+import { PreviewFrame } from "./preview-frame";
 
 export function CopyButton({ value, label }: { value: string; label: string }) {
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
@@ -60,7 +61,7 @@ export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, child
         </TabsList>
       </div>
       <TabsContent value="preview" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
-        <div className="docs-preview-stage flex min-h-[360px] items-center justify-center bg-background p-5 sm:p-10">{children}</div>
+        <PreviewFrame>{children}</PreviewFrame>
       </TabsContent>
       <TabsContent value="example" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
         <CodePane code={exampleCode} filename={`examples/${name}.tsx`} />

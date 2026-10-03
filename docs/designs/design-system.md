@@ -80,6 +80,8 @@ Foundations의 Color, Typography, Spacing, Radius, Shadow, Motion에는 실제 r
 
 홈은 큰 제목, 짧은 설명, 주요 탐색 동작과 실제 registry 컴포넌트로 만든 화면 예제를 먼저 보여 준다. 상단은 Docs, Components, Blocks, Patterns의 큰 범주를 보여 준다. 좌측은 현재 범주의 항목을 작은 사용 분야별로 묶고 현재 항목이 보이도록 스크롤한다. 상세 문서는 제목과 소개 다음에 조작 가능한 Preview·Code·Source를 먼저 제시하고, 설치와 사용 규칙·접근성·API를 이어서 설명한다. 넓은 화면에서는 우측 목차가 본문 위치로 이동하고, 모바일에서는 같은 범주에 접근 가능한 접이식 메뉴를 쓴다. 검색은 키보드로 열고 닫을 수 있어야 한다. Kibo 비교 기록은 Feature artifact에 보존하며 사용자 탐색에 중복 coverage 메뉴를 추가하지 않는다. 화면은 Leement 이름·토큰·실제 registry source를 사용한다.
 
+문서 카탈로그 항목은 `bg-muted`의 낮은 강조 표면과 20/24px 여백으로 구분하고 바깥 border·shadow·footer 구분선을 중첩하지 않는다. 실제 예제는 `bg-background` 프리뷰 표면에 표시하며 컴포넌트 자체 border는 유지한다. PreviewFrame의 기본 inset은 상세 20/40px, gallery 16/24px이다. 가로·세로 점선과 콘텐츠 padding은 동일한 inset을 읽으며 콘텐츠가 커지면 아래 선과 프레임 높이도 함께 늘어난다. 장식선은 pointer-events를 받지 않는다. 넓은 표·타임라인·편집기는 자기 영역에서 스크롤하고 포털·focus ring을 표시 장식 때문에 자르지 않는다. 문서 바깥 inset은 RootLayout이 소유하고 페이지는 중복 main/padding을 추가하지 않는다. 본문 최대 폭·우측 목차·홈의 넓은 배치는 의도에 맞게 유지한다.
+
 ## 성숙도와 변경
 
 `experimental`: 한 프로젝트에서 출발했거나 API가 불안정하다. `candidate`: 두 사용 사례에서 같은 문제를 해결했다. `stable`: 여러 프로젝트에서 API, 접근성, 시각 규칙을 검증했다. 한 번 사용한 UI는 application에 두고, 두 번째 반복에서 candidate를, 세 번째 반복에서 design system 승격을 검토한다. 신규 variant는 유스케이스와 문서 규칙을 먼저 제시한다. 기존 variant 제거 시 changelog와 migration 메모를 작성한다.
