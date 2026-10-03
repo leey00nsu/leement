@@ -198,13 +198,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-09 보완42개 크기·변형·폼 및 결과 예제
+- [DONE][PRD-FR-008] T-LWUCR9EEMVQE-shadcn-core-completion-09 보완42개 크기·변형·폼 및 결과 예제
   - Date: 2026-10-03
   - Acceptance:
     - 보완42개 조사 행마다 실제 의미 있는 추가예제를 제공한다.
   - Checklist:
-    - [ ] 42개 조사 권고에 대응하는 원본 예제 구현
-    - [ ] 고유label/id와 지원props 및 타입/lint 확인
+    - [x] 42개 조사 권고에 대응하는 원본 예제 구현
+    - [x] 고유label/id와 지원props 및 타입/lint 확인
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -284,3 +284,5 @@ T07 검증: 실제 select-groups source를 상세 Preview와 Code가 함께 사�
 T08 검증: 우선13개 항목에15개 named 예제를 연결했다(Select3개 포함). docs typecheck 및 변경 예제/registry eslint PASS. FieldSet/Legend와 native control, menu checkbox/radio/submenu, Chart legend, null Progress, file callback/Editor HTML 결과를 구성했다. Progress null의 indicator 폭이0이어서 data-indeterminate 전체 폭+reduced-motion 지원 pulse로 보정했고 Tabs orientation을 primitive에 전달했다. 실제 조작/모바일/테마/소비자는T10에서 확인한다.
 
 T08 focused regression: source Code/core-form/media-finance/source-extension4 files25 tests PASS(일부 jsdom media pause 미구현 진단은 기존 테스트 환경의 제한).
+
+T09 검증: 보완42개에42개 named 예제를 추가했다. 우선 항목 포함55개/57예제이며 조사 목록 대조 누락/초과0. 고유useId 또는 wrapping label, 지원props를 사용했고 range Calendar의 single-only defaultValue를 제거했다. 새 예제의 코드는 formatter로 정리했다. docs typecheck, 예제 전체 및 변경 docs eslint, source Code 계약4개 PASS. 화면·조작·소비자 build는T10에서 확인한다.
