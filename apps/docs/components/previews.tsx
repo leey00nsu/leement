@@ -1,6 +1,7 @@
 "use client";
 
 import type { ComponentType } from "react";
+import DatePickerExample from "../examples/date-picker";
 import DataTableExample from "../examples/data-table";
 import HoverCardExample from "../examples/hover-card";
 import AspectRatioExample from "../examples/aspect-ratio";
@@ -105,6 +106,7 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "date-picker": DatePickerExample,
   "data-table": DataTableExample,
   "hover-card": HoverCardExample,
   "aspect-ratio": AspectRatioExample,

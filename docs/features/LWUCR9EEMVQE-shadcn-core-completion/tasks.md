@@ -123,13 +123,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-04 Calendar range와 DatePicker
+- [DONE][PRD-FR-014] T-LWUCR9EEMVQE-shadcn-core-completion-04 Calendar range와 DatePicker
   - Date: 2026-10-03
   - Acceptance:
     - Calendar single API를 유지하고 range/date constraints와 DatePicker pattern·registry·문서·focus 복귀를 제공한다.
   - Checklist:
-    - [ ] single/range source·예제·설치 metadata 및 규칙 완성
-    - [ ] date-picker 계약 테스트와 기존 날짜 회귀 확인
+    - [x] single/range source·예제·설치 metadata 및 규칙 완성
+    - [x] date-picker 계약 테스트와 기존 날짜 회귀 확인
   - Docs:
     - docs:designs/design-system.md
     - docs:prd/leement-prd.md
@@ -187,3 +187,5 @@ T01 검증: core-form 계약6개 PASS, docs typecheck 및 변경 source/docs esl
 T02 검증: core-navigation 계약5개 PASS(accordion·탐색 semantics·command 검색/disabled·Dialog Escape/focus·Glimpse hover), docs typecheck·변경 eslint·registry build PASS.
 
 T03 검증: data-table 계약4개(정렬/필터/페이지/empty·controlled 선택ID·키보드 열 표시·native/legacy Table) PASS. docs typecheck·변경 eslint·registry build PASS. mouse/모바일/테마는 T05에서 확인한다.
+
+T04 검증: date-picker 계약5개 PASS(legacy schedule/single·skip unavailable·역순 range·interior rejection/bounds·popup completion/Escape/focus·disabled). docs typecheck·변경 eslint·registry build PASS.

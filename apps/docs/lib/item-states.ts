@@ -2,6 +2,7 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+  "date-picker": "empty/selected/open/disabled/bounded/range-in-progress/complete. unavailable \ub0a0\uc9dc\ub97c \ud3ec\ud568\ud558\ub294 range\ub294 \uac70\uc808\ud558\uace0 status\ub85c \uc548\ub0b4\ud569\ub2c8\ub2e4.",
   "data-table": "default/sorted/filtered/empty/selected/hidden columns/first-last page. \ud544\ud130 \ubcc0\uacbd \uc2dc \uccab \ud398\uc774\uc9c0\ub85c \ub3cc\uc544\uac11\ub2c8\ub2e4.",
   "hover-card": "closed/open. portal\uacfc viewport \ucda9\ub3cc \ubc30\uce58\ub97c Radix\uac00 \ub2f4\ub2f9\ud569\ub2c8\ub2e4.",
   "aspect-ratio": "\uc815\uc801 layout. \ub85c\ub529 \ud45c\uc2dc\ub294 Skeleton\uc744 \ubcc4\ub3c4\ub85c \uc870\ud569\ud569\ub2c8\ub2e4.",

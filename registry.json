@@ -1984,6 +1984,28 @@
           "target": "components/patterns/data-table.tsx"
         }
       ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:component",
+      "title": "Date Picker",
+      "description": "\ud544\ub4dc \uc790\ub9ac\uc5d0\uc11c \ub2e8\uc77c \ub0a0\uc9dc \ub610\ub294 \ub0a0\uc9dc \ubc94\uc704\ub97c \uc120\ud0dd\ud569\ub2c8\ub2e4.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/calendar",
+        "@leement/button",
+        "@leement/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/patterns/date-picker.tsx",
+          "type": "registry:component",
+          "target": "components/patterns/date-picker.tsx"
+        }
+      ]
     }
   ]
 }

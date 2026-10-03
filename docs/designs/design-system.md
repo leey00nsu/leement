@@ -116,3 +116,10 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 - AdvancedDataTable pattern은 TanStack Table v8의 ColumnDef/getRowId와 client-side row model을 사용한다. 정렬·지정 열 필터·페이지·페이지 단위 선택·열 표시를 조합하고 필터 변경 시 첫 페이지로 돌아간다. 안정적인 row ID를 필수로 제공한다.
 - rowSelection/onRowSelectionChange는 controlled 사용을 지원한다. 필터에 포함되지 않는 선택 행도 유지하며 상태 문구는 필터된 행의 선택 수를 표시한다. 숨기기 메뉴는 마지막 열까지 숨겨 의미 없는 표가 되지 않도록 제한한다.
 - toolbar와 footer는 좁은 폭에서 줄바꿈하고 표만 가로 스크롤한다. 서버 조회·virtualization·전체 spreadsheet 동작은 포함하지 않으며 설치된 source에서 확장한다.
+
+### 날짜 선택과 범위 제약
+
+- Calendar는 기존 single value/defaultValue/onValueChange 및 schedule event API를 유지한다. mode=range는 DateRange(from/to?)와 range/defaultRange/onRangeChange를 사용한다. 새로운 선택은 시작일만 설정하고 두 번째 선택으로 종료일을 완성하며 역순 선택은 순서를 정규화한다.
+- min/max는 날짜 단위의 포함 경계다. Calendar.disabled는 전체 disabled 또는 날짜 predicate, DatePicker.disabled는 필드 전체, disabledDate는 개별 날짜다. 범위 안쪽에 unavailable 날짜가 있으면 완료를 거절하고 status로 안내한다. 화살표는 제외 날짜를 건너뛰고 경계를 벗어나지 않는다.
+- DatePicker는 Button/Popover/Calendar(date)를 조합한다. 접근 가능한 label과 선택 값을 trigger에 제공하고 popup이 열리면 선택 가능한 날짜로 focus를 이동한다. single 또는 range 완료 시 닫고 trigger로 복귀하며 Escape도 같은 복귀를 유지한다. 필드 id/aria-describedby/aria-invalid를 연결할 수 있다.
+- 날짜 값은 consumer의 local Date이며 시간·타임존 변환·서버 저장을 추가하지 않는다. range를 controlled로 사용하면 부분 선택도 consumer가 반영해야 한다.

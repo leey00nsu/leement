@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "../../../registry/ui/button";
-import { Calendar } from "../../../registry/ui/calendar";
+import { Calendar, type DateRange } from "../../../registry/ui/calendar";
 
 const events = [
   { id: "kickoff", title: "Project kickoff", startAt: new Date(2026, 8, 3, 12) },
@@ -15,6 +15,7 @@ const events = [
 
 export default function CalendarExample() {
   const [date, setDate] = useState(new Date(2026, 8, 14, 12));
-  const [variant, setVariant] = useState<"schedule" | "date">("schedule");
-  return <div className="w-full space-y-3"><div className="flex gap-2"><Button size="sm" variant={variant === "schedule" ? "secondary" : "ghost"} aria-pressed={variant === "schedule"} onClick={() => setVariant("schedule")}>Schedule</Button><Button size="sm" variant={variant === "date" ? "secondary" : "ghost"} aria-pressed={variant === "date"} onClick={() => setVariant("date")}>Date picker</Button></div><Calendar value={date} onValueChange={setDate} events={events} variant={variant} /></div>;
+  const [variant, setVariant] = useState<"schedule" | "date" | "range">("schedule");
+  const [range, setRange] = useState<DateRange | undefined>({from: new Date(2026, 8, 7, 12), to: new Date(2026, 8, 10, 12)});
+  return <div className="w-full space-y-3"><div className="flex flex-wrap gap-2"><Button size="sm" variant={variant === "schedule" ? "secondary" : "ghost"} aria-pressed={variant === "schedule"} onClick={() => setVariant("schedule")}>Schedule</Button><Button size="sm" variant={variant === "date" ? "secondary" : "ghost"} aria-pressed={variant === "date"} onClick={() => setVariant("date")}>Date</Button><Button size="sm" variant={variant === "range" ? "secondary" : "ghost"} aria-pressed={variant === "range"} onClick={() => setVariant("range")}>Range</Button></div>{variant === "range" ? <Calendar mode="range" range={range} onRangeChange={setRange} min={new Date(2026, 8, 1)} max={new Date(2026, 8, 30)} /> : <Calendar value={date} onValueChange={setDate} events={events} variant={variant} />}</div>;
 }

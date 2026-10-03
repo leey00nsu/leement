@@ -34,7 +34,7 @@
 - **Trace**: pnpm frozen install 완료. InputGroup은 하나의 focus/invalid 표면을 제공한다. 기본 표식16px과 label 최소40px을 예제에서 결합한다. T01 계약6개/form/label/error/controlled/disabled/keyboard가 통과했고 docs typecheck·변경 eslint·registry build가 통과했다. 화면/소비자 설치는 T05에서 확인한다.
 - **Evidence**: [기본 입력 source](../../../../registry/ui/core-form.test.tsx), [명세](./spec.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:01b114beecb9de154939c68e481ab618b96a8be71e16ca60d0406400400834c5 -->
+<!-- lee-spec-kit:workflow-sync sha256:0a98c7c9e342397c4258971e01caba9eb1ceaba918c40cb7c41b240acfb86d80 -->
 
 ## D004: Command 엔진과 보조 popup을 재사용한다 (2026-10-03)
 
@@ -47,3 +47,9 @@
 - **Decision**: 기존 DataTable 정렬 API를 유지하고 같은 ui/table에 native parts를 추가한다. 신규 data-table registry는 AdvancedDataTable과 TanStack Table v8 client-side 조합을 배포한다. 기본 UI에는 TanStack 의존성을 넣지 않는다.
 - **Trace**: row ID는 필수이며 controlled 선택/필터된 선택 수/필터 첫 페이지/마지막 열 숨기기 제한을 제공한다. 그룹 header의 selection cell은 rowSpan으로 연결한다. 단순 열 label과 display cell을 예제로 제공한다. 서버/virtual 동작은 범위 밖이다.
 - **Evidence**: [계약4개](../../../../registry/patterns/data-table.test.tsx), [v8 pagination](https://tanstack.com/table/v8/docs/guide/pagination), docs typecheck/eslint/registry build PASS.
+
+## D006: 날짜 range의 부분 선택과 제약을 명시한다 (2026-10-03)
+
+- **Decision**: 기존 Calendar single/schedule API를 유지하고 mode=range의 별도 typed props를 추가한다. 시작일 선택 뒤 두 번째 선택으로 종료를 완료하며 역순 정규화와 unavailable 내부 날짜 거절을 제공한다. DatePicker는 기존 Calendar/Button/Popover를 조합한다.
+- **Trace**: 날짜 경계는 포함이며 disabled는 Calendar에서 predicate/전체, DatePicker에서 필드 전체와 disabledDate로 구분한다. 초기 focus는 해당 popup의 Calendar ref에서 찾으며 전역 selector로 다른 popup을 선택하지 않는다. Arrow skip은 최대366 step으로 무한 반복을 피한다. min/max 밖의 월 버튼을 disabled 처리한다.
+- **Evidence**: [계약5개](../../../../registry/patterns/date-picker.test.tsx), docs typecheck/eslint/registry build PASS.
