@@ -1533,6 +1533,9 @@
           "type": "registry:lib",
           "target": "lib/leement-motion.ts"
         }
+      ],
+      "dependencies": [
+        "motion@13.1.0"
       ]
     },
     {

@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/MMUKCQ7RXWEK-motion-standardization`
 - **대기 중 변경 요청**: -
@@ -75,6 +75,111 @@
 
 ---
 
+- [DONE][PRD-FR-011] T-MMUKCQ7RXWEK-motion-standardization-01 공통 Motion 토큰·활동·control 전환 기반 정리
+  - Date: 2026-10-04
+  - Acceptance:
+    - 단위 변환·실시간 token·reduced/activity/ref cleanup이 유지되고 helper가 Motion을 실행한다.
+  - Checklist:
+    - [x] 기존 helper와 motion 테스트 수정
+    - [x] 요소 범위 전환 helper와 registry 의존 등록
+    - [x] PRD와 디자인 모션 규칙 동기화
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-011] T-MMUKCQ7RXWEK-motion-standardization-02 진입·반복·브랜드·로딩·미디어 효과 Motion 전환
+  - Date: 2026-10-04
+  - Acceptance:
+    - Reveal/Text/Rotation/Media/brand/Skeleton/Spinner/Marquee/Status/Progress/audio가 Motion으로 실행된다.
+  - Checklist:
+    - [ ] paused/reduced/offscreen/hidden lifecycle 확인
+    - [ ] theme keyframes 제거와 0.2.0 준비
+    - [ ] 기존 motion/player/control 테스트와 관련 metadata 동기화
+  - Docs:
+    - project:apps/docs/lib/items.ts
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-NFR-001] T-MMUKCQ7RXWEK-motion-standardization-03 Popup·펼침·전체 control 및 docs 전환 통일
+  - Date: 2026-10-04
+  - Acceptance:
+    - CSS animation/transition 없이 popup/panel/control/docs가 Motion으로 움직이며 포커스·키보드를 보존한다.
+  - Checklist:
+    - [ ] Dialog/Alert/Tooltip/Base UI popup/panel exit 및 자연 높이
+    - [ ] hover/state/ref/asChild/render와 Foundation 즉시 반영
+    - [ ] Sonner/Recharts 내장 효과 처리 및 전수 감사
+    - [ ] 관련 overlay/navigation/control 테스트 수정
+  - Docs:
+    - docs:designs/design-system.md
+    - project:apps/docs/lib/items.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-014] T-MMUKCQ7RXWEK-motion-standardization-04 NativeSelect 제거와 모든 보이는 선택 UI 이관
+  - Date: 2026-10-04
+  - Acceptance:
+    - NativeSelect 배포/route/source가 없고 기존 Select로 문서와 내부 선택 UI가 동일해진다.
+  - Checklist:
+    - [ ] Field와 ColorPicker/CodeBlock/Foundation/예제 선택 이관
+    - [ ] group/label/disabled/invalid/name/FormData 검증
+    - [ ] registry metadata와 생성 item 제거, PRD/디자인 규칙 갱신
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:apps/docs/lib/items.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005] T-MMUKCQ7RXWEK-motion-standardization-05 공개 설치·모션 문서와 registry 종속 배포 정비
+  - Date: 2026-10-04
+  - Acceptance:
+    - 공개 주소와 최신 모션/Select/폰트 계약이 안내되며 registry closure가 설치 가능하다.
+  - Checklist:
+    - [ ] Getting Started/README 기존 설치 설명 교체
+    - [ ] 모든 관련 component/pattern/block/Foundation/Adoption 문서와 Changelog 동기화
+    - [ ] registry 재생성과 source/dependency 테스트
+    - [ ] 게시 전 상태와 이관/버전 명시
+  - Docs:
+    - project:README.md
+    - project:apps/docs/app/getting-started/page.tsx
+    - project:apps/docs/lib/items.ts
+    - project:apps/docs/app/changelog/page.tsx
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-009] T-MMUKCQ7RXWEK-motion-standardization-06 실제 브라우저·공개/변경 소비자 설치와 전체 gate 검증
+  - Date: 2026-10-04
+  - Acceptance:
+    - 공개/변경 consumer 및 실제 모션 관찰, typecheck/lint/test/build가 통과하고 evidence가 기록된다.
+  - Checklist:
+    - [ ] 임시 소비자 namespace 설치·실행·빌드
+    - [ ] 브라우저 light/dark/mobile/desktop/reduced/no-JS/rapid-toggle/token-edit
+    - [ ] 전수 잔류 감사와 실패 수정, 전체 필수 gate
+    - [ ] spec acceptance/tasks/evidence와 marker 동기화
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -98,6 +203,8 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| pnpm exec vitest run registry/ui/motion.test.tsx | 2026-10-04 | PASS 9 tests |
+| pnpm --filter @leement/docs typecheck | 2026-10-04 | PASS |
+| pnpm exec eslint registry/lib/leement-motion.ts registry/ui/motion.test.tsx | 2026-10-04 | PASS |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.

@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 import { MediaReveal } from "../patterns/media-reveal";
 import { BrandAction } from "../patterns/brand-action";
 import { RotatingContent } from "./rotating-content";
-import { motionEasing, motionMilliseconds } from "../lib/leement-motion";
+import { motionEasing, motionMilliseconds, motionSeconds } from "../lib/leement-motion";
 import { TextReveal } from "./text-reveal";
 import { RevealContent } from "./reveal-content";
 
@@ -72,7 +72,12 @@ test("JavaScript motion reads local CSS seconds and named easing consistently", 
   element.style.setProperty("--lm-motion-easing-reveal", "ease-in-out");
   document.body.appendChild(element);
   expect(motionMilliseconds(element, "duration-reveal")).toBe(1200);
+  expect(motionSeconds(element, "duration-reveal")).toBe(1.2);
   expect(motionEasing(element)).toEqual([0.42, 0, 0.58, 1]);
+  element.style.setProperty("--lm-motion-duration-normal", "180ms");
+  element.style.setProperty("--lm-motion-easing-standard", "ease-out");
+  expect(motionSeconds(element, "duration-normal")).toBe(0.18);
+  expect(motionEasing(element, "standard")).toEqual([0, 0, 0.58, 1]);
   element.remove();
 });
 

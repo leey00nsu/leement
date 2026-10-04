@@ -1,41 +1,77 @@
 # Decisions Log
 
-기술 결정과 그 이유를 기록합니다.
-canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 실제로 채택한 대안과 선택 이유는 이 파일에 다시 남겨 Feature의 결정 이력을 유지합니다.
+<!-- lee-spec-kit:workflow-sync sha256:f7eedfdce327a1593a90b42ff45e0f66d296f2cee9732434a6b67cc13231839d -->
 
-> ADR(Architecture Decision Record)은 구현 중 내린 중요한 기술/구조 결정을 남기는 기록입니다.
-> 나중에 "왜 이렇게 만들었는지"를 추적하고, 팀 합의를 재확인하기 위해 작성합니다.
+## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
-> 형식: `DNNN: motion-standardization 결정 (2026-10-04)`
-> 결정 ID는 Feature별로 독립된 번호를 사용하며 Feature ID와 관계없이 `D001`부터 시작합니다.
+- **Context**: 사용자가 다음 Feature에서 Motion 통일, NativeSelect 제거, 공개 설치 문서 갱신을 함께 요청했다.
+- **Constraints**: lee-spec-kit의 spec_approve/implementation_approve/local_merge 승인을 구분한다. main은 base checkout으로 유지한다.
+- **Options**: 요청별 별도 Feature 또는 하나의 Feature 내 순차 태스크.
+- **Decision**: MMUKCQ7RXWEK 하나에서 조사·계약·구현·문서·소비자 검증을 추적한다.
+- **Rationale**: registry dependency와 공개 설치 계약이 모션/선택 UI 변경에 함께 영향을 받는다.
+- **Trace**: main이 clean인 상태에서 feature 등록 및 managed workspace prepare를 실행했다. 명세는 Review이며 구현은 시작하지 않았다.
+- **Evidence**: git status --short --branch 결과 main...origin/main; workflow-stage MMUKCQ7RXWEK 결과 spec/spec_write 및 implementationAllowed=false.
 
-기록 원칙:
+## D002: Motion은 실행 수단, 토큰은 정본 (2026-10-04)
 
-- 새 ADR 생성에는 `npx lee-spec-kit decision add <feature-ref> --title "..." --context "..." --decision "..." --rationale "..." --evidence "..."` 사용을 우선하세요.
-- 수동 작성도 마지막 ADR 뒤에 추가해 D001 → D002 순서를 유지하세요. 문서 안내문 앞에 삽입하거나 기존 ID를 재번호화하지 마세요. 같은 결정의 재실행·검증 결과는 해당 ADR의 Trace/Evidence를 갱신하고, 새 선택이나 범위 변경일 때만 새 ADR을 만드세요.
-- 모든 ADR은 **Decision(무엇을 선택했는가)** + **Trace(어떻게 고민했고 무엇을 확인했는가)** 를 함께 남깁니다.
-- 작성 타이밍을 고정합니다.
-  - 태스크 시작(`[TODO] -> [DOING]`): `Context/Constraints`와 `Trace(초기 가설)`를 1~3줄로 먼저 기록
-  - 태스크 완료 직전(`[DOING] -> [DONE]`): `Options/Decision/Rationale`를 최종화하고 `Trace`를 보강
-  - PR 머지 후: 실제 결과/영향을 `Trace(머지 후 확인)`에 1~2줄 추가
-- 모든 ADR에는 최소 1개 이상의 **Evidence 링크**(커밋/PR/테스트 로그 중 하나 이상)를 남깁니다.
-- 디자인 시스템 변경이나 예외를 기록할 때는 영향 받는 규칙과 범위, 예외 이유, 제거 조건, 실행 가능한 정본의 동기화 영향을 함께 남깁니다.
-
----
-
-## D001: motion-standardization 결정 (2026-10-04)
-
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
-- **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+- **Context**: 현재 Motion, CSS module transition, theme keyframes, Tailwind animate/transition, tw-animate-css가 혼재한다.
+- **Constraints**: tokens/theme의 프레임워크 독립성, source ownership, reduced motion과 기존 UI 동작을 유지한다.
+- **Options**: CSS 효과를 일부 유지하거나 시각 애니메이션을 Motion으로 통일한다.
+- **Decision**: hover/focus 등 짧은 전환도 조사/전환 범위다. 정적 CSS는 유지하고 시간에 따른 시각 보간을 Motion이 맡는다. 라이브러리 내부 효과도 조사하며 노출되는 비-Motion 애니메이션을 조용히 예외로 남기지 않는다.
+- **Rationale**: 사용자는 모든 애니메이션의 실행 방식 통일을 요청했다. 실행기를 바꾸는 것이 디자인 값을 바꾸는 이유는 아니다.
+- **Trace**: 아래 1차 조사와 Motion 공식 연동 문서를 확인했다. 설치 버전은 motion 13.1.0이다. 실제 API/브라우저 동작은 승인 뒤 구현 시 검증한다.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - 조사 명령: rg로 registry, packages/theme/build.mjs, apps/docs의 motion/react, animate-, animation, keyframes, transition, requestAnimationFrame, animate 호출을 검색했다.
+  - [Motion React](https://motion.dev/docs/react-animation), [Base UI 연동](https://motion.dev/docs/base-ui), [Radix 연동](https://motion.dev/docs/radix), [Reduced motion](https://motion.dev/docs/react-use-reduced-motion)
+
+### 1차 모션 조사
+
+| 영역 | 확인한 현재 실행 | 전환/검증 대상 |
+| --- | --- | --- |
+| registry/lib/leement-motion.ts | CSS 변수 파싱, matchMedia/IntersectionObserver/visibility observer | 토큰 연동, 실시간 편집, pause/cleanup과 Motion 실행의 일관성 |
+| RevealContent | Motion useAnimate/useInView | 기존 Motion도 공통 규칙 검증 |
+| TextReveal, RotatingContent, MediaReveal | CSS module keyframe/transition | 텍스트 stagger, 슬롯 전환, media readiness |
+| Collapsible, Accordion | Base UI 자연 높이 + CSS module transition | 자연 높이, 빠른 재토글, focus/inert, ref/render |
+| Skeleton, BrandGradientText, BrandAction, PageSkeleton | theme keyframes/Tailwind pulse | 중립/브랜드 반복, token cycle, paused/lifecycle |
+| Dialog, Tooltip, AlertDialog, Popover, DropdownMenu, Select, Sheet | animate-in/out utility 또는 opacity transition | portal 종료/재열림, focus 복귀, 중첩과 배치 |
+| Button/loading, Spinner 8종, Status, Progress, Toaster loading icon | Tailwind spin/pulse | 반복·disabled/loading·reduced motion |
+| Marquee | inline style keyframes와 animation-play-state | 끊김 없는 이동, fade/mask, hover/외부 pause |
+| AvatarStack, Tree, Switch, Tabs, ImageZoom, Slider | 위치/회전/색상/opacity/box-shadow transition | 상태·hover·keyboard와 기존 composition |
+| Input, Textarea, InputGroup, Checkbox, Toggle, Breadcrumb, ResourceRowLink, BentoGrid | 색상·경계·그림자·이동 transition | 디자인 토큰, 의미와 ref 유지 |
+| Docs 탐색/검색/gallery/workbench/editor/home/Motion preview | Tailwind transition, 직접 transitionDuration | 사이트 전체 편집과 미리보기 동기화 |
+| packages/theme/build.mjs, foundation-preview.ts | 브랜드 keyframes와 기본 transition 변수/alias | theme 독립성, 정적 styling, CSS export 이관 |
+| Sonner/Recharts 등 외부 엔진 | 내부 효과는 문자열 검색만으로 확정할 수 없음 | 실제 설정/렌더를 조사하고 필요 효과를 Motion으로 소유 |
+
+이 목록은 1차 조사다. 구현 계획에서 tracked source와 라이브러리 효과를 재확인하고 모든 항목의 처리/검증 결과를 추적한다. 미디어 재생 및 데이터 갱신 타이머는 시각 보간과 구분한다.
+
+## D003: NativeSelect와 보이는 native 선택 UI를 Select로 통일 (2026-10-04)
+
+- **Context**: NativeSelect는 registry item/route/예제 외에도 Field와 제품 규칙에 연결되어 있다. 다른 보이는 native select도 존재한다.
+- **Constraints**: Select의 group label, form value, name, disabled, Field 연결과 접근성을 유지한다. 이미 설치된 사용자 source는 자동 변경하지 않는다.
+- **Options**: NativeSelect export만 삭제하거나 내부 사용과 예제/문서까지 이관한다.
+- **Decision**: registry/ui/native-select.tsx와 배포/문서 노출을 제거하고 Field, ColorPicker, CodeBlock, Foundations, chart-series, collapsible-controlled, filter-toolbar 등의 선택 UI를 기존 Select로 이관한다.
+- **Rationale**: 하나의 공통 UI라는 요청을 실제 화면/예제에서도 충족한다.
+- **Trace**: rg로 NativeSelect, native-select, HTML select를 검색했다. PRD-FR-014와 디자인 규칙도 NativeSelect를 현행 선택으로 권장하므로 승인 후 같이 수정한다.
+- **Evidence**: registry/ui/core-form.test.tsx, registry/ui/color-picker.tsx, registry/ui/code-block.tsx, apps/docs/components/foundation-editor.tsx, apps/docs/examples/field-fieldset.tsx, apps/docs/lib/example-catalog.ts, registry.json.
+- **Consequences**: 신규 설치에서 NativeSelect는 제공하지 않는다. 기존 소비자는 Select로 수동 이관하며 숨겨진 form input 같은 접근성/폼 구현까지 제거하지 않는다.
+
+## D004: 공개 설치 설명과 문서 범위 (2026-10-04)
+
+- **Context**: README는 .tgz와 localhost가 기본이며 Getting Started에는 YOUR_HOST가 남아 있다. 공개 npm 패키지와 registry는 이미 응답한다.
+- **Constraints**: 사용자는 공개 설치 문서와 관련 모션 문서의 갱신을 요청했다. 완료된 Feature SDD는 당시 이력이다. 공개 배포 전 코드와 현재 공개 artifact를 구분한다.
+- **Options**: 문서 사이트만 갱신하거나 공개 설치 entrypoint의 관련 기존 설명을 함께 갱신한다.
+- **Decision**: Getting Started, Foundations/각 영향 항목/Adoption/Changelog, PRD/design-system과 README의 공개 설치·모션·관련 사실을 갱신한다. 과거 Feature 이력은 재작성하지 않는다. README 전체 개편이나 구현 로그 추가는 하지 않는다.
+- **Rationale**: 저장소 공개 설치 안내도 이번에 요청한 문서 범위에 속한다. 현행 가이드끼리 서로 다른 설치법을 안내하면 안 된다.
+- **Trace**:
+  - pnpm view @leement/theme version --json 결과 0.1.0.
+  - curl -fsS https://leement.leey00nsu.com/r/button.json 성공; name=button, dependency는 Radix Slot/CVA, registry dependency=@leement/utils.
+  - 현재 registry.json은 UI 79 / Pattern 15 / Block 8 / helper 3. README는 UI 64 / Pattern 13이라 관련 사실 갱신이 필요하다. NativeSelect 제거 후 수치는 다시 산출한다.
+  - 공개 응답은 게시 상태 확인이며 새 Motion 구현 설치 성공 증거는 아니다. 후속 계획에서 현재 공개 artifact와 변경 artifact를 각각 소비자 환경에서 검증한다.
+- **Evidence**: README.md의 프로젝트에 설치 절차; apps/docs/app/getting-started/page.tsx; docs/prd/leement-prd.md 공통 모션과 PRD-FR-014; 공개 호스트 응답 및 pnpm view 실행 결과.
+
+## D005: 승인과 공통 기반 구현 (2026-10-04)
+
+- **Context**: 사용자가 명세 승인 A를 응답했다. Plan/task 승인은 설정상 자동 단계다.
+- **Decision**: 승인된 6태스크를 순차 진행한다. 첫 태스크는 토큰 변환·요소 범위 Motion ref·registry dependency를 구현했다.
+- **Trace**: 기존 main의 공통 문서 상태를 바탕으로 계획했고 sharedDocumentationWarnings는 완료 Feature들의 같은 문서 변경 목록으로 확인했다. runtime/기존 선택 규칙의 나머지 변경은 후속 태스크에서 처리한다.
+- **Evidence**: tasks.md 검사 기록; motion.test.tsx 9개 PASS; docs typecheck PASS.
