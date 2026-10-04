@@ -183,6 +183,20 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-011] T-MMUKCQ7RXWEK-motion-standardization-07 상태 전환 임시 스타일 잔류 회귀 수정
+  - Date: 2026-10-04
+  - Acceptance:
+    - 연속 탐색·hover·focus·active·reduced 전환 후 원래 CSS 및 소비자 inline style이 보존된다.
+  - Checklist:
+    - [ ] useStyleMotion 종료·중단·재시작 스타일 소유와 cleanup 수정
+    - [ ] 실제 브라우저 연속 클릭 및 빠른 상태 변경 회귀 검증
+    - [ ] 기존 motion 테스트·필수 gate·registry 소비자 확인과 문서 동기화
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -195,8 +209,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록

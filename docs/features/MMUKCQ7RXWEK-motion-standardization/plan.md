@@ -21,7 +21,7 @@
 
 1. registry/lib/leement-motion.ts를 최소 확장한다. CSS duration을 seconds로 변환하고 easing 역할을 읽는다. leement:motion-change 이벤트로 Foundations 변경을 반영한다. 반복의 reduced/visibility/intersection/paused는 기존 activity 규칙을 사용한다.
 2. 반복/진입/퇴장은 Motion animate/useAnimate/motion 및 필요할 때 AnimatePresence로 직접 표현한다. public HTML props/ref는 유지한다. 기본 서버 콘텐츠는 읽을 수 있는 정적 상태로 렌더한다.
-3. 기본 control의 class/data/pseudo 상태는 기존 primitive가 계속 소유한다. 짧은 색상/경계/그림자 전환은 요소 하나에 연결된 ref helper가 CSS의 최종 상태를 읽어 Motion animate에 전달한다. 전역 DOM 검색, 새 스타일 언어, variant configuration, 별도 animation scheduler를 만들지 않는다. 요소 ref 및 DOM 의미를 보존하고 모든 listener/control을 cleanup한다.
+3. 기본 control의 class/data/pseudo 상태는 기존 primitive가 계속 소유한다. 짧은 색상/경계/그림자 전환은 요소 하나에 연결된 ref helper가 CSS의 최종 상태를 읽어 Motion animate에 전달한다. 전역 DOM 검색, 새 스타일 언어, variant configuration, 별도 animation scheduler를 만들지 않는다. 요소 ref 및 DOM 의미를 보존하고 모든 listener/control을 cleanup한다. T-07은 임시 애니메이션 style을 소비자 원본으로 다시 저장하지 않는 계약을 보완하며, 완료/중단/급속 전환과 연속 탐색 뒤 실제 CSS 복귀를 브라우저에서 관찰한다.
 4. Base UI는 공개 actionsRef/preventUnmountOnClose와 popup Motion 완료, panel keepMounted 상태를 연결한다. 작은 popup-scope context는 중첩 Base UI portal을 Radix focus scope 안에 둔다. Radix는 root의 controlled/defaultOpen/onOpenChange 계약을 보존하는 작은 context와 forceMount/AnimatePresence로 종료를 연결한다. 위치 기준과 transform 애니메이션이 충돌하지 않게 한다. 닫힘 시 inert, 포커스 복귀, 빠른 재열림을 관찰한다.
 5. theme은 정적 브랜드 표면/폰트/token/reset만 제공한다. CSS keyframes와 tw-animate-css를 제거한다. 공개 CSS-only effect의 이관을 설명한다.
 6. Sonner/Recharts/ReactCrop/Sandpack의 내장 visual interpolation도 조사한다. 공개 disable/unstyled 옵션을 사용하고 Leement가 표현하는 효과는 Motion으로 소유한다. 실제 미디어/파형 엔진은 유지한다.

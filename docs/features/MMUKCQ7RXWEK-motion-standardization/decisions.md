@@ -104,3 +104,9 @@
 - 외부 실행도 조사했다. ReactCrop은 라이브러리의 ReactCrop--no-animate class로 경계를 정적인 점선으로 표시한다. Sandpack의 장식용 cube/fade와 editor CSS 전환은 item에 한정한 animation:none/transition:none으로 차단한다. 실행·상태·재시도와 crop 조작은 유지한다. 이는 CSS 시각 보간의 잔류가 아닌 외부 효과 차단이다. 관련 item API와 디자인 규칙을 동기화했다.
 - 전체 테스트의 동시 worker 증가로 재현한 timeout을 줄이기 위해 Vitest maxWorkers=2를 설정했다. assertion이나 timeout 기준을 완화하지 않았다.
 - 실제 공개 npm/registry(0.1.0)와 미게시 feature theme/registry(0.2.0)를 별도 임시 consumer에 설치했다. 기존 leement-test와 두 원본 프로젝트는 수정하지 않았다. 원격 게시·push·배포는 실행하지 않았다.
+
+## D010: 사용자 보고에 따른 연속 상태 전환 회귀 보완 (2026-10-04)
+
+- 사용자가 왼쪽 탐색 항목 클릭 뒤 배경색이 남는 문제를 보고하고 수정을 요청했다. 구현 승인 대신 변경 요청으로 처리하고 같은 Feature에 T-07을 추가한다. T-06의 검증은 당시 범위의 기록으로 유지한다.
+- 실제 브라우저에서 aria-current는 Tree 한 항목뿐인데 Snippet/QR Code에 인라인 background-color가 남은 것을 재현했다. 공통 useStyleMotion의 임시 스타일과 소비자 원본 스타일 소유를 분리하고 완료·중단·재시작·ref cleanup을 검증한다.
+- 기존 motion 테스트와 실제 브라우저에 연속 탐색·급속 상태 변경·소비자 inline style 관찰을 보완한다. 이 회귀 수정으로 새 Feature, es-toolkit 도입, 게시·병합은 진행하지 않는다.
