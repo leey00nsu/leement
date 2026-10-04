@@ -31,7 +31,7 @@
 
 ## 파일 구조
 
-기존 registry/lib/leement-motion.ts, registry/ui 및 patterns/blocks source, packages/theme/build.mjs, apps/docs 화면·예제·metadata를 수정한다. 필요 없는 애니메이션 CSS module은 정적 규칙만 유지하거나 제거한다. 감사/브라우저 증거는 이 Feature의 artifacts/에만 보존한다.
+기존 registry/lib/leement-motion.ts, registry/ui 및 patterns/blocks source, packages/theme/build.mjs, apps/docs 화면·예제·metadata를 수정한다. T-08에서 남은 CSS Module 7개를 모두 제거한다. 정적 layout·data 상태·focus와 reduced-motion/no-JS fallback을 각 컴포넌트의 Tailwind utility 및 arbitrary media/selector variant로 통합한다. transform 기반 Motion 관찰 속성을 translate utility로 바꾸지 않으며 동일한 computed property를 유지한다. 별도 전역 CSS import를 추가하지 않는다. 감사/브라우저 증거는 이 Feature의 artifacts/에만 보존한다.
 
 ## Curated Documentation Impact
 
@@ -43,6 +43,8 @@
 - **Operational/runtime contract**: UPDATE
 - **Reason**: PRD의 CSS/JS 혼용과 NativeSelect 선택을 최신 요구로 바꾸고 공개 설치 및 모션 실행 계약을 동기화한다. 레이어 방향은 유지한다. README 수정은 사용자가 요청한 공개 설치/모션 설명 범위다.
 - **Targets**: docs:prd/leement-prd.md, project:README.md, project:apps/docs/app/getting-started/page.tsx, project:apps/docs/lib/items.ts, project:apps/docs/app/changelog/page.tsx
+
+T-08 추가 영향: 디자인 시스템 문서에 Tailwind source 스타일링과 Module 비사용 규칙을 명시한다(UPDATE). PRD/API/설치 절차/README는 변경이 없으며 추가 영향은 NONE이다. T-08 Docs에 디자인 문서를 연결한다. 기존 motion/player/navigation 테스트를 실행하고 실제 브라우저에서 computed layout·reduced/no-JS·급속 펼침/교체·파형 readiness/focus를 확인한다. registry 7개 item을 실제 CLI로 재설치하고 TypeScript/Vite build를 수행한다. 새 영구 테스트는 추가하지 않는다.
 
 ## Additional Curated Impacts
 

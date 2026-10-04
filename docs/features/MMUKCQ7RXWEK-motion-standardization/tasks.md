@@ -197,6 +197,22 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-004] T-MMUKCQ7RXWEK-motion-standardization-08 남은 CSS Module 제거와 Tailwind source 통합
+  - Date: 2026-10-04
+  - Acceptance:
+    - 모든 CSS Module 파일·import·registry metadata가 제거되고 기존 배치·모션·접근성·no-JS 대체 동작 및 소비자 설치 빌드가 유지된다.
+  - Checklist:
+    - [ ] 7개 Module의 정적 상태와 fallback을 Tailwind source로 통합
+    - [ ] registry metadata·생성물과 현행 디자인 문서 동기화
+    - [ ] 기존 테스트·필수 gate·실제 브라우저와 소비자 재설치 빌드 검증
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -209,8 +225,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록

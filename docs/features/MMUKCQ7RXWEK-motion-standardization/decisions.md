@@ -115,3 +115,10 @@
 - **근거**: [Motion animate 공식 API](https://motion.dev/docs/animate)는 mini가 HTML/SVG style을 실행하며 stop은 값을 인라인 style로 commit하고 cancel은 애니메이션을 취소한다고 설명한다. 설치된 Motion source의 NativeAnimation 및 element renderer 구현을 함께 확인했다.
 
 - **검증**: T-07 및 artifacts/style-transition-verification.json. light/dark 연속 탐색 36회, state 변경과 실제 보간, 소비자 inline/priority, reduced/unmount, Switch/Tabs/Slider를 관찰했다. 필수 gate와 새 helper 소비자 설치·빌드를 통과했다. 구현 승인은 재요청하며 별도 병합 승인은 유지한다.
+
+## D011: CSS Module 제거와 Tailwind source 통합 (2026-10-04)
+
+- 사용자가 CSS Module 도입 이유를 확인한 뒤 남은 Module을 모두 수정하는 태스크를 요청했다. 같은 Motion Feature에 T-08을 추가한다.
+- 7개 Module은 이전 CSS 모션 구현의 잔여 정적 규칙이다. layout/data-state/focus/reduced/no-JS를 컴포넌트 Tailwind source에 통합하고 Module import·파일·registry metadata를 제거한다. fallback을 생략하거나 소비자에게 별도 CSS import를 요구하지 않는다.
+- RotatingContent의 Motion ref가 관찰하는 transform/filter/opacity와 panel 높이, 미디어 layer 의미, 파형 no-JS fallback을 보존한다. CSS 애니메이션을 되살리지 않는다.
+- 디자인 문서 UPDATE를 T-08 Docs에 연결한다. PRD·public API·공개 설치 절차·README 추가 영향은 NONE이며 기존 이력 SDD는 재작성하지 않는다. 구현/병합 승인은 구분하고 원격 게시하지 않는다.
