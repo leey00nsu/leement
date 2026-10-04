@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CopyButton, ItemWorkbench } from "./item-workbench";
 import { AdditionalExamplePreview } from "./example-previews";
 import { Preview } from "./previews";
-import { items } from "../lib/items";
+import { items, motionRule } from "../lib/items";
 import { itemStates } from "../lib/item-states";
 import { getAdditionalExampleCodes, getItemCode } from "../lib/registry-source";
 
@@ -34,6 +34,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           : " Explore the preview to see supported states."),
     },
     { title: "Accessibility", id: "accessibility", body: item.accessibility },
+    { title: "Motion", id: "motion", body: motionRule },
     { title: "API", id: "api", body: item.api },
   ];
   const outline = [
@@ -116,8 +117,8 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           </h2>
           <p className="mt-3 text-sm leading-7 text-muted-foreground">
             Install the theme once, then add this editable registry source to
-            your project. Public commands work after the theme package and
-            registry are published.
+            your project using the public namespace in Getting Started. The current
+            public release is 0.1.0; see Changelog for pending 0.2.0 changes.
           </p>
           <div className="mt-5 overflow-hidden rounded-xl border border-border bg-muted/30">
             <div className="border-b border-border px-4 py-2 text-xs font-medium">

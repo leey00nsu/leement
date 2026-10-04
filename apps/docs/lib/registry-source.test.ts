@@ -58,3 +58,33 @@ describe("copyable docs example source", () => {
     }
   });
 });
+
+it("ships a complete source dependency graph without the removed native selector", async () => {
+  type Entry = { name: string; dependencies?: string[]; registryDependencies?: string[]; files: { path: string }[] };
+  const registry = JSON.parse(await readFile("registry.json", "utf8")) as { items: Entry[] };
+  const byName = new Map(registry.items.map((entry) => [entry.name, entry]));
+  expect(byName.has("native-select")).toBe(false);
+  function hasMotion(entry: Entry, visited = new Set<string>()): boolean {
+    if (visited.has(entry.name)) return false;
+    visited.add(entry.name);
+    return Boolean(entry.dependencies?.some((dependency) => /^motion(?:@|$)/.test(dependency))) ||
+      Boolean(entry.registryDependencies?.some((dependency) => {
+        const child = byName.get(dependency.replace("@leement/", ""));
+        return child && hasMotion(child, visited);
+      }));
+  }
+  for (const entry of registry.items) {
+    for (const file of entry.files) {
+      const source = await readFile(file.path, "utf8");
+      for (const match of source.matchAll(/from\s+["']@\/(?:components\/(?:ui|patterns|blocks)|lib)\/([a-z0-9-]+)["']/g)) {
+        if (match[1] && match[1] !== entry.name && byName.has(match[1])) {
+          expect(entry.registryDependencies, `${entry.name} requires ${match[1]}`).toContain(`@leement/${match[1]}`);
+        }
+      }
+      if (/from\s+["']motion(?:\/react)?["']/.test(source)) {
+        expect(hasMotion(entry), `${entry.name} requires Motion at installation`).toBe(true);
+      }
+      expect(source).not.toContain("native-select");
+    }
+  }
+});

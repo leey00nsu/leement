@@ -41,7 +41,7 @@ pnpm install --frozen-lockfile
 pnpm --filter @leement/docs dev
 ```
 
-[문서](http://localhost:3000) · [컴포넌트 미리보기](http://localhost:3000/showcase) · [Foundations](http://localhost:3000/foundations/color)
+[문서](https://leement.leey00nsu.com) · [컴포넌트 미리보기](https://leement.leey00nsu.com/showcase) · [Foundations](https://leement.leey00nsu.com/foundations/color)
 
 ## 프로젝트에 설치
 
@@ -49,16 +49,8 @@ React · Tailwind CSS v4 · shadcn 설정이 필요합니다. `components.json`�
 
 ### 1. Theme
 
-문서 서버를 실행한 뒤, Leement 루트에서 패키징합니다.
-
 ```bash
-pnpm --filter @leement/theme pack --pack-destination /tmp/leement-pack
-```
-
-사용할 프로젝트에서 설치합니다.
-
-```bash
-pnpm add /tmp/leement-pack/leement-theme-0.1.0.tgz
+pnpm add @leement/theme
 ```
 
 전역 CSS에서 Tailwind 다음에 불러옵니다.
@@ -77,7 +69,7 @@ pnpm add /tmp/leement-pack/leement-theme-0.1.0.tgz
 ```json
 {
   "registries": {
-    "@leement": "http://localhost:3000/r/{name}.json"
+    "@leement": "https://leement.leey00nsu.com/r/{name}.json"
   }
 }
 ```
@@ -100,14 +92,14 @@ export function Example() {
 
 기본 소스 경로는 `@/components/{ui,patterns,blocks}`와 `@/lib`입니다. 다른 구조를 쓰면 설치된 경로와 import를 수정하세요.
 
-npm 배포 후에는 `pnpm add @leement/theme`으로 설치하고, registry 주소를 배포한 사이트의 `/r/{name}.json`으로 바꿉니다.
+공개 패키지는 현재 0.1.0입니다. 개발 중인 0.2.0의 Motion 전환·Select 이관은 [Changelog](https://leement.leey00nsu.com/changelog)를 참고하세요.
 
 ## 주요 기능
 
 - **Foundations**: Color·Typography·Spacing·Radius·Shadow·Motion
 - **테마 편집**: 사이트 전체 즉시 반영, color picker, 브라우저 저장, 초기화, CSS 복사
-- **브랜드**: light/dark 색상, 아이콘+글자 로고, 본문 Pretendard Variable·로고 Paperlogy Bold
-- **미디어·모션**: AudioPlayer·VideoPlayer, 진입·텍스트·펼침·순환 효과, reduced motion 대응
+- **브랜드**: light/dark 색상, 아이콘+글자 로고, 본문 Pretendard Variable·로고 Paperlogy Bold·코드 D2Coding
+- **미디어·모션**: AudioPlayer·VideoPlayer, Motion 기반 진입·텍스트·펼침·순환 효과, reduced motion 대응
 
 편집한 CSS는 theme import 뒤에 적용합니다. 기본 폰트와 브랜드 색은 커스텀할 수 있습니다.
 
@@ -117,8 +109,8 @@ npm 배포 후에는 `pnpm add @leement/theme`으로 설치하고, registry 주�
 
 | 카탈로그 | 수 | 대표 항목 |
 | --- | --- | --- |
-| UI | 64 | Button, Input, Card, Dialog, Tabs, Slider, Table |
-| Patterns | 13 | PageHeader, EmptyState, FormSection, SearchField, StatCard, BrandLogo |
+| UI | 78 | Button, Input, Card, Dialog, Tabs, Slider, Table |
+| Patterns | 15 | PageHeader, EmptyState, FormSection, SearchField, StatCard, BrandLogo |
 | Blocks | 8 | SettingsSection, BentoGrid, Gantt, Kanban, Sandbox, Reel, Deck, DialogStack |
 
 문서 미리보기와 설치 소스는 같은 구현을 사용합니다.
@@ -140,7 +132,7 @@ shadcn 호환 변수는 Leement의 `--lm-*` 토큰에서 파생합니다.
 
 ## 기술 스택
 
-Next.js 16 · React 19 · TypeScript strict · Tailwind CSS v4 · Base UI · Radix · pnpm · Turborepo
+Next.js 16 · React 19 · TypeScript strict · Tailwind CSS v4 · Base UI · Radix · Motion · pnpm · Turborepo
 
 ## 프로젝트 구조
 
@@ -165,4 +157,4 @@ leement/
 
 ## 라이선스
 
-[MIT](LICENSE) · [외부 코드 고지](THIRD_PARTY_NOTICES.md) · [Pretendard OFL](packages/theme/fonts/Pretendard-OFL.txt) · [Paperlogy OFL](packages/theme/fonts/Paperlogy-OFL.txt)
+[MIT](LICENSE) · [외부 코드 고지](THIRD_PARTY_NOTICES.md) · [Pretendard OFL](packages/theme/fonts/Pretendard-OFL.txt) · [Paperlogy OFL](packages/theme/fonts/Paperlogy-OFL.txt) · [D2Coding OFL](packages/theme/fonts/D2Coding-OFL.txt)

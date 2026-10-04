@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:53b402ee18bedc3b0795718f729f36416dc73e2695f487667618779be463a6fa -->
+<!-- lee-spec-kit:workflow-sync sha256:76ad2ceafb69d171fbd7b573a2766f5d942de7af294796449f4891b6972816b2 -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -87,3 +87,9 @@
 - **Decision**: Base UI 상태 attribute에서 Motion presence와 높이를 시작하고 Radix는 controlled/uncontrolled root를 보존해 AnimatePresence 종료를 연결한다. native HTML onDrag 등은 Motion gesture와 이름이 충돌하므로 nativeProps에 전달해 기존 DOM handler를 보존한다.
 - **Trace**: Sonner의 외부 CSS 효과는 scoped transition:none/animation:none으로 비활성화하며 Motion opacity가 표현을 소유한다. 이것은 시각 보간하는 CSS transition의 잔류가 아닌 외부 실행기 차단이다. Recharts 자체 보간은 비활성화하고 ChartContainer 진입을 Motion으로 표현한다.
 - **Evidence**: tasks.md T-03 검사, typecheck/lint 및 기존 35 동작 검사 PASS. 실제 animation/focus/SSR frame 검증은 T-06에서 수행한다.
+
+## D008: 공개 문서 및 dependency closure
+
+- 공개 namespace는 https://leement.leey00nsu.com/r/{name}.json이다. README/Getting Started는 공개 npm 설치를 기본으로 한다.
+- 전체 item 페이지에 Motion 실행 규칙을 연결했고 Changelog에 0.2.0 미게시 및 Select/CSS-only 이관을 표시했다.
+- registry source dependency 감사에서 VideoPlayer → Button 누락을 수정했다. 검증: tasks.md T-05.

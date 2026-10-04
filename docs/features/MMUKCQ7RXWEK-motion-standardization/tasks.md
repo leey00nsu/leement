@@ -145,15 +145,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-MMUKCQ7RXWEK-motion-standardization-05 공개 설치·모션 문서와 registry 종속 배포 정비
+- [DONE][PRD-FR-005] T-MMUKCQ7RXWEK-motion-standardization-05 공개 설치·모션 문서와 registry 종속 배포 정비
   - Date: 2026-10-04
   - Acceptance:
     - 공개 주소와 최신 모션/Select/폰트 계약이 안내되며 registry closure가 설치 가능하다.
   - Checklist:
-    - [ ] Getting Started/README 기존 설치 설명 교체
-    - [ ] 모든 관련 component/pattern/block/Foundation/Adoption 문서와 Changelog 동기화
-    - [ ] registry 재생성과 source/dependency 테스트
-    - [ ] 게시 전 상태와 이관/버전 명시
+    - [x] Getting Started/README 기존 설치 설명 교체
+    - [x] 모든 관련 component/pattern/block/Foundation/Adoption 문서와 Changelog 동기화
+    - [x] registry 재생성과 source/dependency 테스트
+    - [x] 게시 전 상태와 이관/버전 명시
   - Docs:
     - project:README.md
     - project:apps/docs/app/getting-started/page.tsx
@@ -226,3 +226,9 @@
 
 - core-form/code-form/complex-utility: 3 files, 26 tests PASS (--maxWorkers=2).
 - docs typecheck와 이관 source lint PASS. 보이는 native select 및 NativeSelect source/registry/route 제거 확인.
+
+### T-05 검증
+
+- Registry closure/source: 5 tests PASS. VideoPlayer의 Button dependency 누락을 보완했다.
+- docs typecheck, 변경 문서 source lint, registry 재생성 PASS.
+- 공개 npm 0.1.0과 미게시 0.2.0을 구분하며 NativeSelect/CSS-only 브랜드 효과 이관 예제를 제공했다.

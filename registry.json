@@ -1077,7 +1077,8 @@
       ],
       "registryDependencies": [
         "@leement/utils",
-        "@leement/media-player-support"
+        "@leement/media-player-support",
+        "@leement/button"
       ],
       "files": [
         {
