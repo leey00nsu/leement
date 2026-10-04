@@ -22,17 +22,17 @@ Leement의 모든 시각 애니메이션을 Motion으로 실행해 새 효과를
 
 **Acceptance Criteria:**
 
-- [ ] UI·Pattern·Block·docs·theme의 애니메이션과 전환을 전수 목록화하고 각각 Motion으로 전환하거나 정적인 스타일/비시각 동작임을 근거와 함께 판정한다.
-- [ ] 진입·퇴장·펼침·회전·반복·브랜드 gradient·로딩·hover/focus/active 색상 및 위치 전환을 Motion으로 실행한다.
-- [ ] Leement가 제공하는 시각 효과에 CSS keyframes, CSS transition, Tailwind animate/transition utility, tw-animate-css 의존이 남지 않는다.
-- [ ] 외부 UI 라이브러리가 실행하는 시각 효과도 조사해 공개 설정으로 비활성화하고 필요한 효과를 Motion으로 제공한다. 조용히 제외하지 않고 실제 처리를 기록한다.
-- [ ] 기존 시각 의도·API·ref·render/asChild 조합·키보드·aria·disabled·loading·폼 의미를 보존한다. NativeSelect 제거는 US-2의 명시적 변경이다.
-- [ ] duration/easing/stagger/cycle은 기존 semantic token에서 읽는다. 명시적 component prop은 기본값보다 우선하며 reduced motion은 둘보다 우선한다.
-- [ ] Foundations의 모션 편집·CSS 복사·초기화가 실제 Motion 애니메이션과 사이트 UI에 반영된다. 반복은 변경을 반영하고 일회 진입은 Replay로 확인한다.
-- [ ] reduced motion은 반복을 멈추고 콘텐츠와 상태를 즉시 읽을 수 있게 한다. paused, 비활성 문서, 화면 밖의 반복 효과, 재개 및 unmount 정리를 검증한다.
-- [ ] Dialog 등 popup의 열림/닫힘과 포커스 복귀, 빠른 재열림, 중첩 popup, Collapsible/Accordion의 자연 높이 변화가 애니메이션에 의해 깨지지 않는다.
-- [ ] SSR/hydration과 no-JS에서 핵심 콘텐츠를 숨기지 않으며 오디오·영상 재생 동작을 장식용 모션과 분리한다.
-- [ ] 필요한 registry item이 motion 및 공유 helper를 종속 설치한다. 별도 전역 provider나 누락된 CSS import 없이 소비자 앱에서 동작한다.
+- [x] UI·Pattern·Block·docs·theme의 애니메이션과 전환을 전수 목록화하고 각각 Motion으로 전환하거나 정적인 스타일/비시각 동작임을 근거와 함께 판정한다.
+- [x] 진입·퇴장·펼침·회전·반복·브랜드 gradient·로딩·hover/focus/active 색상 및 위치 전환을 Motion으로 실행한다.
+- [x] Leement가 제공하는 시각 효과에 CSS keyframes, CSS transition, Tailwind animate/transition utility, tw-animate-css 의존이 남지 않는다.
+- [x] 외부 UI 라이브러리가 실행하는 시각 효과도 조사해 공개 설정으로 비활성화하고 필요한 효과를 Motion으로 제공한다. 조용히 제외하지 않고 실제 처리를 기록한다.
+- [x] 기존 시각 의도·API·ref·render/asChild 조합·키보드·aria·disabled·loading·폼 의미를 보존한다. NativeSelect 제거는 US-2의 명시적 변경이다.
+- [x] duration/easing/stagger/cycle은 기존 semantic token에서 읽는다. 명시적 component prop은 기본값보다 우선하며 reduced motion은 둘보다 우선한다.
+- [x] Foundations의 모션 편집·CSS 복사·초기화가 실제 Motion 애니메이션과 사이트 UI에 반영된다. 반복은 변경을 반영하고 일회 진입은 Replay로 확인한다.
+- [x] reduced motion은 반복을 멈추고 콘텐츠와 상태를 즉시 읽을 수 있게 한다. paused, 비활성 문서, 화면 밖의 반복 효과, 재개 및 unmount 정리를 검증한다.
+- [x] Dialog 등 popup의 열림/닫힘과 포커스 복귀, 빠른 재열림, 중첩 popup, Collapsible/Accordion의 자연 높이 변화가 애니메이션에 의해 깨지지 않는다.
+- [x] SSR/hydration과 no-JS에서 핵심 콘텐츠를 숨기지 않으며 오디오·영상 재생 동작을 장식용 모션과 분리한다.
+- [x] 필요한 registry item이 motion 및 공유 helper를 종속 설치한다. 별도 전역 provider나 누락된 CSS import 없이 소비자 앱에서 동작한다.
 
 ### US-2: 한 가지 기본 선택 UI
 
@@ -42,12 +42,12 @@ Leement의 모든 시각 애니메이션을 Motion으로 실행해 새 효과를
 
 **Acceptance Criteria:**
 
-- [ ] NativeSelect source·registry item·docs route·navigation·metadata·예제·의존 참조·전용 검증을 제거한다. 생성 registry JSON에도 남지 않는다.
-- [ ] Field 예제를 포함한 NativeSelect 사용처와 Leement가 소유한 보이는 HTML select를 기존 Select로 교체한다.
-- [ ] ColorPicker 형식, CodeBlock 예제, Foundations 글꼴/easing, chart/filter/collapsible 예제 선택도 같은 Select를 사용한다.
-- [ ] 옵션 group/label, disabled, invalid, 크기, controlled/default 값, name과 FormData, Field label/error 연결 및 키보드 조작을 보존한다.
-- [ ] SelectValue에 표시하는 사람용 이름과 실제 option 값을 구분하고 현재 선택값이 잘못 노출되지 않는다.
-- [ ] 제거 사실과 NativeSelect → Select 조합의 이관 예제를 공개 문서에 제공한다. 이미 설치된 소비자 소스를 자동 삭제하거나 수정하지 않는다.
+- [x] NativeSelect source·registry item·docs route·navigation·metadata·예제·의존 참조·전용 검증을 제거한다. 생성 registry JSON에도 남지 않는다.
+- [x] Field 예제를 포함한 NativeSelect 사용처와 Leement가 소유한 보이는 HTML select를 기존 Select로 교체한다.
+- [x] ColorPicker 형식, CodeBlock 예제, Foundations 글꼴/easing, chart/filter/collapsible 예제 선택도 같은 Select를 사용한다.
+- [x] 옵션 group/label, disabled, invalid, 크기, controlled/default 값, name과 FormData, Field label/error 연결 및 키보드 조작을 보존한다.
+- [x] SelectValue에 표시하는 사람용 이름과 실제 option 값을 구분하고 현재 선택값이 잘못 노출되지 않는다.
+- [x] 제거 사실과 NativeSelect → Select 조합의 이관 예제를 공개 문서에 제공한다. 이미 설치된 소비자 소스를 자동 삭제하거나 수정하지 않는다.
 
 ### US-3: 공개 주소로 바로 설치
 
@@ -57,14 +57,14 @@ Leement의 모든 시각 애니메이션을 Motion으로 실행해 새 효과를
 
 **Acceptance Criteria:**
 
-- [ ] Getting Started와 공개 설치 설명이 pnpm add @leement/theme 및 CSS import를 기본 경로로 안내한다.
-- [ ] components.json의 @leement namespace는 https://leement.leey00nsu.com/r/{name}.json을 사용한다.
-- [ ] React·Tailwind v4·shadcn 초기화, alias, theme import 순서와 preset 충돌 처리, 종속 설치, 소스 소유/수정 방식이 일관된다.
-- [ ] 실제 공개 버전과 개발 중 source의 차이를 구분한다. 아직 게시하지 않은 변경을 이미 공개 배포된 것처럼 안내하지 않는다.
-- [ ] Pretendard·Paperlogy·D2Coding 기본 폰트와 브랜드 커스텀 안내를 현재 계약과 맞춘다.
-- [ ] 로컬 .tgz/localhost/YOUR_HOST는 공개 설치 기본 절차에 남기지 않는다. 개발자용 로컬 설명이 필요하면 명확히 구분한다.
-- [ ] 격리된 빈 소비자 앱에서 문서 명령으로 namespace 설치, dependency 설치, 타입 검사·빌드와 대표 실행을 검증한다. Motion 효과까지 관찰하고 docs 성공만으로 대체하지 않는다.
-- [ ] 현재 공개 호스트 설치 smoke와 변경 registry/theme의 격리 설치 검증을 각각 기록한다. 공개 게시 완료 여부는 별도로 확인한다.
+- [x] Getting Started와 공개 설치 설명이 pnpm add @leement/theme 및 CSS import를 기본 경로로 안내한다.
+- [x] components.json의 @leement namespace는 https://leement.leey00nsu.com/r/{name}.json을 사용한다.
+- [x] React·Tailwind v4·shadcn 초기화, alias, theme import 순서와 preset 충돌 처리, 종속 설치, 소스 소유/수정 방식이 일관된다.
+- [x] 실제 공개 버전과 개발 중 source의 차이를 구분한다. 아직 게시하지 않은 변경을 이미 공개 배포된 것처럼 안내하지 않는다.
+- [x] Pretendard·Paperlogy·D2Coding 기본 폰트와 브랜드 커스텀 안내를 현재 계약과 맞춘다.
+- [x] 로컬 .tgz/localhost/YOUR_HOST는 공개 설치 기본 절차에 남기지 않는다. 개발자용 로컬 설명이 필요하면 명확히 구분한다.
+- [x] 격리된 빈 소비자 앱에서 문서 명령으로 namespace 설치, dependency 설치, 타입 검사·빌드와 대표 실행을 검증한다. Motion 효과까지 관찰하고 docs 성공만으로 대체하지 않는다.
+- [x] 현재 공개 호스트 설치 smoke와 변경 registry/theme의 격리 설치 검증을 각각 기록한다. 공개 게시 완료 여부는 별도로 확인한다.
 
 ## 기능 요구사항
 

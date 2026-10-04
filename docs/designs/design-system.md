@@ -145,3 +145,5 @@ PreviewFrame의 최소 높이/inset/가로·세로 점선은 콘텐츠가 커지
 ## Motion 실행 계약
 
 모든 시각 애니메이션과 상태 전환은 Motion으로 실행한다. Theme은 정적 스타일과 토큰을 제공하고 React/Motion runtime에 의존하지 않는다. primitive의 CSS/data/pseudo 상태가 의미의 기준이며 scoped ref helper는 그 최종 값을 Motion으로 보간한다. duration은 CSS 단위를 초로 변환하고 reduced motion은 prop보다 우선한다. 반복 효과는 visibility/offscreen/paused/unmount를 처리한다. Foundations 변경 뒤 `leement:motion-change`로 값을 다시 읽는다. 새 효과도 같은 토큰과 접근성 규칙을 사용한다.
+
+외부 시각 실행도 처리한다. Recharts 자체 보간은 끄고 chart 진입은 Motion으로, Sonner CSS 전환은 끄고 toast 표시는 Motion으로 실행한다. ReactCrop의 crop 경계와 Sandpack의 장식용 cube·fade는 정적으로 표현한다. crop 조작, 편집기·격리 실행, 실제 media 재생은 원래 엔진이 담당한다.

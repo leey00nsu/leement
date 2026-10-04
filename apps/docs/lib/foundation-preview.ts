@@ -115,7 +115,7 @@ export function validPreviewValue(mode: FoundationMode | "shared", key: string, 
     const match = /^(\d+(?:\.\d{1,3})?)(ms|s)$/.exec(value);
     if (!match) return false;
     const ms = Number(match[1]) * (match[2] === "s" ? 1000 : 1);
-    return field.kind === "cycle" ? ms >= 250 && ms <= 10000 : ms >= 0 && ms <= (field.kind === "delay" ? 1000 : 2000);
+    return field.kind === "cycle" ? ms >= 250 && ms <= (key === "--lm-motion-cycle-marquee" ? 60000 : 10000) : ms >= 0 && ms <= (field.kind === "delay" ? 1000 : 2000);
   }
   if (field.kind === "easing") {
     if (["linear", "ease", "ease-in", "ease-out", "ease-in-out"].includes(value)) return true;

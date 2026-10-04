@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "@leement/theme";
 @source "../../../registry";
-:root { scroll-behavior: smooth; }
 body { background: var(--lm-color-background-default); color: var(--lm-color-foreground-default); }
 .docs-shell { min-height: 100vh; }
 .docs-sidebar { scrollbar-width: thin; }

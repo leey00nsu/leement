@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:76ad2ceafb69d171fbd7b573a2766f5d942de7af294796449f4891b6972816b2 -->
+<!-- lee-spec-kit:workflow-sync sha256:aec3e848a3a20802600b95fa5d27539a7ff52d62c5d60b694758af0fff1c0b52 -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -93,3 +93,14 @@
 - 공개 namespace는 https://leement.leey00nsu.com/r/{name}.json이다. README/Getting Started는 공개 npm 설치를 기본으로 한다.
 - 전체 item 페이지에 Motion 실행 규칙을 연결했고 Changelog에 0.2.0 미게시 및 Select/CSS-only 이관을 표시했다.
 - registry source dependency 감사에서 VideoPlayer → Button 누락을 수정했다. 검증: tasks.md T-05.
+
+## D009: 실제 브라우저에서 찾은 실행·조합 회귀 수정 (2026-10-04)
+
+- CSS 빌드가 `.4s`처럼 축약한 시간을 0으로 읽던 파서를 수정했다. Foundations 이동 샘플의 calc 목표값은 실제 pixel 값으로 계산해 속도 편집을 관찰 가능하게 했다.
+- Base UI panel은 CSS animation 유무로 종료를 판단하므로 keepMounted와 Motion 완료를 연결했다. Popover/Menu/Sheet는 공개 preventUnmountOnClose/actionsRef로 Motion 종료 전에 사라지지 않게 하고 Select도 완료 때 unmount action을 연결한다. Submenu는 자체 종료 context를 사용한다. Sheet만 side 이동을 적용해 다른 positioner의 배치를 보존한다.
+- Radix Content에 native HTML event와 children을 명시적으로 전달했다. AlertDialog의 이전 1.1.15 내부 Presence/Slot 조합에서 종료 후 잠금이 남아 같은 Radix 계열인 1.1.23으로 맞췄다.
+- Radix Dialog/AlertDialog 안의 Base UI popup portal을 containing focus scope에 배치하는 작은 popup-scope source를 registry dependency로 제공한다. 중첩 Escape는 안쪽 popup부터 닫고 바깥 Dialog와 focus를 보존한다. 필수 전역 provider는 없다.
+- 반복 cleanup은 애니메이션이 소유한 style만 복원한다. Spinner stagger와 neutral Skeleton cycle, Marquee 두 복제 그룹의 간격을 정리했다. 전역 CSS smooth scrolling을 제거했다.
+- 외부 실행도 조사했다. ReactCrop은 라이브러리의 ReactCrop--no-animate class로 경계를 정적인 점선으로 표시한다. Sandpack의 장식용 cube/fade와 editor CSS 전환은 item에 한정한 animation:none/transition:none으로 차단한다. 실행·상태·재시도와 crop 조작은 유지한다. 이는 CSS 시각 보간의 잔류가 아닌 외부 효과 차단이다. 관련 item API와 디자인 규칙을 동기화했다.
+- 전체 테스트의 동시 worker 증가로 재현한 timeout을 줄이기 위해 Vitest maxWorkers=2를 설정했다. assertion이나 timeout 기준을 완화하지 않았다.
+- 실제 공개 npm/registry(0.1.0)와 미게시 feature theme/registry(0.2.0)를 별도 임시 consumer에 설치했다. 기존 leement-test와 두 원본 프로젝트는 수정하지 않았다. 원격 게시·push·배포는 실행하지 않았다.

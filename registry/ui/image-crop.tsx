@@ -84,7 +84,7 @@ function ImageCrop({
           aspect={aspect}
           minWidth={20}
           aria-label={`Crop ${alt}`}
-          className="max-w-full"
+          className="ReactCrop--no-animate max-w-full"
         >
           <img
             ref={image}

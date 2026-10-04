@@ -77,6 +77,8 @@ test("JavaScript motion reads local CSS seconds and named easing consistently", 
   element.style.setProperty("--lm-motion-duration-normal", "180ms");
   element.style.setProperty("--lm-motion-easing-standard", "ease-out");
   expect(motionSeconds(element, "duration-normal")).toBe(0.18);
+  element.style.setProperty("--lm-motion-duration-expand", ".4s");
+  expect(motionMilliseconds(element, "duration-expand")).toBe(400);
   expect(motionEasing(element, "standard")).toEqual([0, 0, 0.58, 1]);
   element.remove();
 });

@@ -1,10 +1,26 @@
 "use client";
+import { useContext, createContext, useRef, useCallback, useImperativeHandle } from "react";
+import { PopupContainerContext } from "@/lib/popup-scope";
 import { usePresenceMotion } from "@/lib/leement-motion";
 
 import { Popover as PopoverPrimitive } from "@base-ui/react/popover";
 import { cn } from "@/lib/utils";
 
-const Popover = PopoverPrimitive.Root;
+const ExitContext = createContext<((present: boolean) => void) | undefined>(undefined);
+function Popover<Payload>({ actionsRef, onOpenChange, ...props }: PopoverPrimitive.Root.Props<Payload>) {
+  const actions = useRef<PopoverPrimitive.Root.Actions | null>(null);
+  useImperativeHandle(actionsRef, () => ({
+    close: () => actions.current?.close(),
+    unmount: () => actions.current?.unmount(),
+  }), []);
+  const complete = useCallback((present: boolean) => {
+    if (!present) actions.current?.unmount();
+  }, []);
+  return <ExitContext.Provider value={complete}><PopoverPrimitive.Root {...props} actionsRef={actions} onOpenChange={(open, details) => {
+    onOpenChange?.(open, details);
+    if (!open && !details.isCanceled) details.preventUnmountOnClose();
+  }} /></ExitContext.Provider>;
+}
 
 function PopoverTrigger(props: PopoverPrimitive.Trigger.Props) {
   return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />;
@@ -16,12 +32,18 @@ function PopoverContent({
   className,
   side = "bottom",
   sideOffset = 6,
-  ref: presenceForwardedRef, ...props
+  ref: presenceForwardedRef,
+  ...props
 }: PopoverPrimitive.Popup.Props &
-  Pick<PopoverPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset">) {
-  const presenceRef = usePresenceMotion<HTMLDivElement>(presenceForwardedRef);
+  Pick<
+    PopoverPrimitive.Positioner.Props,
+    "align" | "alignOffset" | "side" | "sideOffset"
+  >) {
+  const container = useContext(PopupContainerContext);
+  const complete = useContext(ExitContext);
+  const presenceRef = usePresenceMotion<HTMLDivElement>(presenceForwardedRef, "fast", false, complete);
   return (
-    <PopoverPrimitive.Portal>
+    <PopoverPrimitive.Portal container={container ?? undefined}>
       <PopoverPrimitive.Positioner
         align={align}
         alignOffset={alignOffset}
@@ -29,7 +51,8 @@ function PopoverContent({
         side={side}
         sideOffset={sideOffset}
       >
-        <PopoverPrimitive.Popup ref={presenceRef}
+        <PopoverPrimitive.Popup
+          ref={presenceRef}
           className={cn(
             "origin-(--transform-origin) rounded-md border border-border bg-popover p-3 text-popover-foreground shadow-md outline-none",
             className,
@@ -43,11 +66,30 @@ function PopoverContent({
 }
 
 function PopoverTitle({ className, ...props }: PopoverPrimitive.Title.Props) {
-  return <PopoverPrimitive.Title className={cn("text-sm font-semibold", className)} {...props} />;
+  return (
+    <PopoverPrimitive.Title
+      className={cn("text-sm font-semibold", className)}
+      {...props}
+    />
+  );
 }
 
-function PopoverDescription({ className, ...props }: PopoverPrimitive.Description.Props) {
-  return <PopoverPrimitive.Description className={cn("text-xs text-muted-foreground", className)} {...props} />;
+function PopoverDescription({
+  className,
+  ...props
+}: PopoverPrimitive.Description.Props) {
+  return (
+    <PopoverPrimitive.Description
+      className={cn("text-xs text-muted-foreground", className)}
+      {...props}
+    />
+  );
 }
 
-export { Popover, PopoverContent, PopoverDescription, PopoverTitle, PopoverTrigger };
+export {
+  Popover,
+  PopoverContent,
+  PopoverDescription,
+  PopoverTitle,
+  PopoverTrigger,
+};

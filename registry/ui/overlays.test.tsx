@@ -1,6 +1,7 @@
 import { afterEach, expect, test } from "vitest";
 import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 import { Button } from "./button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "./dialog";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./dropdown-menu";
@@ -63,4 +64,19 @@ test("tooltip can be reached from a keyboard focused trigger", async () => {
   await user.tab();
   expect(document.activeElement).toBe(screen.getByRole("button", { name: "Help" }));
   await waitFor(() => expect(screen.getByRole("tooltip")).toBeTruthy());
+});
+
+test("a nested Base UI select closes before its containing Radix dialog", async () => {
+  const user = userEvent.setup();
+  render(<Dialog><DialogTrigger asChild><Button>Open nested dialog</Button></DialogTrigger><DialogContent><DialogTitle>Nested form</DialogTitle><DialogDescription>Select a role.</DialogDescription><Select items={[{ value: "member", label: "Member" }]} defaultValue="member"><SelectTrigger aria-label="Nested role"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="member">Member</SelectItem></SelectContent></Select></DialogContent></Dialog>);
+  await user.click(screen.getByRole("button", { name: "Open nested dialog" }));
+  const trigger = screen.getByRole("combobox", { name: "Nested role" });
+  await user.click(trigger);
+  await waitFor(() => expect(screen.getByRole("listbox")).toBeTruthy());
+  await user.keyboard("{Escape}");
+  await waitFor(() => expect(screen.queryByRole("listbox")).toBeNull());
+  expect(screen.getByRole("dialog", { name: "Nested form" })).toBeTruthy();
+  expect(document.activeElement).toBe(trigger);
+  await user.keyboard("{Escape}");
+  await waitFor(() => expect(screen.queryByRole("dialog")).toBeNull());
 });

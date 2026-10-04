@@ -165,15 +165,18 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-009] T-MMUKCQ7RXWEK-motion-standardization-06 실제 브라우저·공개/변경 소비자 설치와 전체 gate 검증
+- [DONE][PRD-FR-009] T-MMUKCQ7RXWEK-motion-standardization-06 실제 브라우저·공개/변경 소비자 설치와 전체 gate 검증
   - Date: 2026-10-04
   - Acceptance:
-    - 공개/변경 consumer 및 실제 모션 관찰, typecheck/lint/test/build가 통과하고 evidence가 기록된다.
+    - 공개/변경 consumer 설치·빌드·실행 PASS. 전체 typecheck/lint/test(119)/build PASS. [브라우저 증거](./artifacts/browser-verification.json)에 기록했다.
   - Checklist:
-    - [ ] 임시 소비자 namespace 설치·실행·빌드
-    - [ ] 브라우저 light/dark/mobile/desktop/reduced/no-JS/rapid-toggle/token-edit
-    - [ ] 전수 잔류 감사와 실패 수정, 전체 필수 gate
-    - [ ] spec acceptance/tasks/evidence와 marker 동기화
+    - [x] 임시 소비자 namespace 설치·실행·빌드
+    - [x] 브라우저 light/dark/mobile/desktop/reduced/no-JS/rapid-toggle/token-edit
+    - [x] 전수 잔류 감사와 실패 수정, 전체 필수 gate
+    - [x] spec acceptance/tasks/evidence와 marker 동기화
+  - Docs:
+    - project:apps/docs/lib/items.ts
+    - docs:designs/design-system.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -192,8 +195,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -203,9 +206,17 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| pnpm exec vitest run registry/ui/motion.test.tsx | 2026-10-04 | PASS 9 tests |
+| pnpm exec vitest run registry/ui/motion.test.tsx | 2026-10-04 | PASS 9 tests (T-01 checkpoint) |
 | pnpm --filter @leement/docs typecheck | 2026-10-04 | PASS |
 | pnpm exec eslint registry/lib/leement-motion.ts registry/ui/motion.test.tsx | 2026-10-04 | PASS |
+| pnpm run typecheck | 2026-10-04 | PASS |
+| pnpm run lint | 2026-10-04 | PASS |
+| pnpm run test | 2026-10-04 | PASS 19 files / 119 tests |
+| pnpm run build | 2026-10-04 | PASS tokens/theme/registry/docs |
+| pnpm registry:build | 2026-10-04 | PASS dependency closure |
+| pnpm run build (isolated public consumer) | 2026-10-04 | PASS TypeScript + Vite |
+| pnpm run build (isolated changed consumer) | 2026-10-04 | PASS all installed source TypeScript + Vite |
+
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
@@ -232,3 +243,14 @@
 - Registry closure/source: 5 tests PASS. VideoPlayer의 Button dependency 누락을 보완했다.
 - docs typecheck, 변경 문서 source lint, registry 재생성 PASS.
 - 공개 npm 0.1.0과 미게시 0.2.0을 구분하며 NativeSelect/CSS-only 브랜드 효과 이관 예제를 제공했다.
+
+### T-06 검증
+
+- [보존한 브라우저 증거](./artifacts/browser-verification.json): 101 항목 × desktop/light와 mobile/dark = 202 페이지. 404, client error, 문서 overflow, 보이는 native select 없음. 최종 popup 수정 뒤 해당 실행과 소비자 검증을 다시 수행했다.
+- 공개 npm theme 0.1.0 + public registry button/input/page-header 설치·타입 검사·빌드·실행 PASS. 변경 theme 0.2.0 + 전체 registry namespace 설치·타입 검사·빌드 PASS. Motion/helper/중첩 popup 종속 설치 확인.
+- 실제 browser: ref, FormData, 중첩 Escape와 focus, 빠른 재열림, Collapsible 내용 높이 132→312 및 급속 toggle, Accordion, 반복 pause/resume, reduced/offscreen/hidden/unmount PASS.
+- 실제 browser: Dialog/Alert/Tooltip 종료와 focus 복귀, Select/Popover/Menu/Sheet opacity exit와 controlled Popover 종료 확인. 닫힌 Select는 접근 가능 listbox가 없다. Sheet 이동과 다른 popup의 positioner 배치를 구분했다.
+- Foundations fast duration 2000ms 편집 후 geometry를 시각별로 관찰해 실제 보간 확인. CSS 복사/reset, CSS 효과가 없는 Motion toast, no-JS reveal/텍스트 및 audio/video native controls PASS.
+- owned source의 keyframes/animate/transition utility/보이는 HTML select 잔류 없음. CSS compatibility 변수와 vendor animation:none/transition:none은 정적 선언이다. ReactCrop 경계/외부 라이브러리 CSS 효과 차단 확인; 상세 처리는 D009.
+- 임시 consumer는 전체 카탈로그를 검사하는 fixture여서 Vite bundle 크기 안내가 발생했다. build 실패가 아니며 제품 앱 크기나 소비자 성능을 보장하는 측정으로 사용하지 않는다.
+- 구현 승인과 local merge 승인은 별도다. 현재 0.2.0은 미게시이며 원격 push/publish/deploy를 실행하지 않았다.

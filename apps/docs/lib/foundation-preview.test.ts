@@ -21,6 +21,8 @@ describe("Foundations preview overrides", () => {
     expect(css).not.toContain("--lm-motion-cycle-brand-surface: 0ms");
     expect(validPreviewValue("shared", "--lm-motion-cycle-brand-text", "0ms")).toBe(false);
     expect(validPreviewValue("shared", "--lm-motion-cycle-rotate", "11s")).toBe(false);
+    expect(validPreviewValue("shared", "--lm-motion-cycle-marquee", "24s")).toBe(true);
+    expect(validPreviewValue("shared", "--lm-motion-cycle-marquee", "61s")).toBe(false);
     expect(validPreviewValue("shared", "--lm-motion-easing-reveal", "cubic-bezier(2, 1, 0.36, 1)")).toBe(false);
     expect(validPreviewValue("shared", "--lm-motion-easing-reveal", "linear; } body { display:none")).toBe(false);
     expect(parsePreview(JSON.stringify({ shared: { "--lm-motion-duration-normal": "300ms" } })).shared).toEqual({ "--lm-motion-duration-normal": "300ms" });

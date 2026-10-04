@@ -1,4 +1,6 @@
 "use client";
+import { useContext, createContext, useRef, useCallback, useImperativeHandle } from "react";
+import { PopupContainerContext } from "@/lib/popup-scope";
 import { usePresenceMotion } from "@/lib/leement-motion";
 
 import { Menu as MenuPrimitive } from "@base-ui/react/menu";
@@ -6,12 +8,31 @@ import { CheckIcon, ChevronRightIcon } from "lucide-react";
 import type * as React from "react";
 import { cn } from "@/lib/utils";
 
-function DropdownMenu({ ...props }: MenuPrimitive.Root.Props) {
-  return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
+const ExitContext = createContext<((present: boolean) => void) | undefined>(undefined);
+function DropdownMenu<Payload>({ actionsRef, onOpenChange, ...props }: MenuPrimitive.Root.Props<Payload>) {
+  const actions = useRef<MenuPrimitive.Root.Actions | null>(null);
+  useImperativeHandle(actionsRef, () => ({
+    close: () => actions.current?.close(),
+    unmount: () => actions.current?.unmount(),
+  }), []);
+  const complete = useCallback((present: boolean) => {
+    if (!present) actions.current?.unmount();
+  }, []);
+  return <ExitContext.Provider value={complete}><MenuPrimitive.Root {...props} actionsRef={actions} onOpenChange={(open, details) => {
+    onOpenChange?.(open, details);
+    if (!open && !details.isCanceled) details.preventUnmountOnClose();
+  }} /></ExitContext.Provider>;
 }
 
 function DropdownMenuPortal({ ...props }: MenuPrimitive.Portal.Props) {
-  return <MenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />;
+  const container = useContext(PopupContainerContext);
+  return (
+    <MenuPrimitive.Portal
+      container={container ?? undefined}
+      data-slot="dropdown-menu-portal"
+      {...props}
+    />
+  );
 }
 
 function DropdownMenuTrigger({ ...props }: MenuPrimitive.Trigger.Props) {
@@ -24,11 +45,18 @@ function DropdownMenuContent({
   side = "bottom",
   sideOffset = 4,
   className,
-  ref: presenceForwardedRef, ...props
-}: MenuPrimitive.Popup.Props & Pick<MenuPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset">) {
-  const presenceRef = usePresenceMotion<HTMLDivElement>(presenceForwardedRef);
+  ref: presenceForwardedRef,
+  ...props
+}: MenuPrimitive.Popup.Props &
+  Pick<
+    MenuPrimitive.Positioner.Props,
+    "align" | "alignOffset" | "side" | "sideOffset"
+  >) {
+  const container = useContext(PopupContainerContext);
+  const complete = useContext(ExitContext);
+  const presenceRef = usePresenceMotion<HTMLDivElement>(presenceForwardedRef, "fast", false, complete);
   return (
-    <MenuPrimitive.Portal>
+    <MenuPrimitive.Portal container={container ?? undefined}>
       <MenuPrimitive.Positioner
         className="isolate z-50 outline-none"
         align={align}
@@ -36,7 +64,8 @@ function DropdownMenuContent({
         side={side}
         sideOffset={sideOffset}
       >
-        <MenuPrimitive.Popup ref={presenceRef}
+        <MenuPrimitive.Popup
+          ref={presenceRef}
           data-slot="dropdown-menu-content"
           className={cn(
             "z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none data-closed:overflow-hidden",
@@ -64,7 +93,10 @@ function DropdownMenuLabel({
     <MenuPrimitive.GroupLabel
       data-slot="dropdown-menu-label"
       data-inset={inset}
-      className={cn("px-1.5 py-1 text-xs font-medium text-muted-foreground data-inset:pl-7", className)}
+      className={cn(
+        "px-1.5 py-1 text-xs font-medium text-muted-foreground data-inset:pl-7",
+        className,
+      )}
       {...props}
     />
   );
@@ -93,9 +125,21 @@ function DropdownMenuItem({
   );
 }
 
-function DropdownMenuSub({ ...props }: MenuPrimitive.SubmenuRoot.Props) {
-  return <MenuPrimitive.SubmenuRoot data-slot="dropdown-menu-sub" {...props} />;
+function DropdownMenuSub({ actionsRef, onOpenChange, ...props }: MenuPrimitive.SubmenuRoot.Props) {
+  const actions = useRef<MenuPrimitive.Root.Actions | null>(null);
+  useImperativeHandle(actionsRef, () => ({
+    close: () => actions.current?.close(),
+    unmount: () => actions.current?.unmount(),
+  }), []);
+  const complete = useCallback((present: boolean) => {
+    if (!present) actions.current?.unmount();
+  }, []);
+  return <ExitContext.Provider value={complete}><MenuPrimitive.SubmenuRoot {...props} actionsRef={actions} onOpenChange={(open, details) => {
+    onOpenChange?.(open, details);
+    if (!open && !details.isCanceled) details.preventUnmountOnClose();
+  }} /></ExitContext.Provider>;
 }
+
 
 function DropdownMenuSubTrigger({
   className,
@@ -127,11 +171,12 @@ function DropdownMenuSubContent({
   side = "right",
   sideOffset = 0,
   className,
-  ref: presenceForwardedRef, ...props
+  ref: presenceForwardedRef,
+  ...props
 }: React.ComponentProps<typeof DropdownMenuContent>) {
-  const presenceRef = usePresenceMotion<HTMLDivElement>(presenceForwardedRef);
   return (
-    <DropdownMenuContent ref={presenceRef}
+    <DropdownMenuContent
+      ref={presenceForwardedRef}
       data-slot="dropdown-menu-sub-content"
       className={cn(
         "w-auto min-w-[96px] rounded-lg bg-popover p-1 text-popover-foreground shadow-lg ring-1 ring-foreground/10",
@@ -180,7 +225,12 @@ function DropdownMenuCheckboxItem({
 }
 
 function DropdownMenuRadioGroup({ ...props }: MenuPrimitive.RadioGroup.Props) {
-  return <MenuPrimitive.RadioGroup data-slot="dropdown-menu-radio-group" {...props} />;
+  return (
+    <MenuPrimitive.RadioGroup
+      data-slot="dropdown-menu-radio-group"
+      {...props}
+    />
+  );
 }
 
 function DropdownMenuRadioItem({
@@ -214,7 +264,10 @@ function DropdownMenuRadioItem({
   );
 }
 
-function DropdownMenuSeparator({ className, ...props }: MenuPrimitive.Separator.Props) {
+function DropdownMenuSeparator({
+  className,
+  ...props
+}: MenuPrimitive.Separator.Props) {
   return (
     <MenuPrimitive.Separator
       data-slot="dropdown-menu-separator"
@@ -224,7 +277,10 @@ function DropdownMenuSeparator({ className, ...props }: MenuPrimitive.Separator.
   );
 }
 
-function DropdownMenuShortcut({ className, ...props }: React.ComponentProps<"span">) {
+function DropdownMenuShortcut({
+  className,
+  ...props
+}: React.ComponentProps<"span">) {
   return (
     <span
       data-slot="dropdown-menu-shortcut"

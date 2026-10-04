@@ -118,7 +118,7 @@ function numericDetails(field: SharedField): { min: number; max: number; step: n
     case "line-height": return { min: 1, max: 2.5, step: 0.05, unit: "" };
     case "duration": return { min: 0, max: 2000, step: 10, unit: "ms" };
     case "delay": return { min: 0, max: 1000, step: 10, unit: "ms" };
-    case "cycle": return { min: 250, max: 10000, step: 50, unit: "ms" };
+    case "cycle": return { min: 250, max: field.key === "--lm-motion-cycle-marquee" ? 60000 : 10000, step: 50, unit: "ms" };
     default: throw new Error(`Not a numeric field: ${field.kind}`);
   }
 }

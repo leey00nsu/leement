@@ -1,0 +1,384 @@
+{
+  "feature": "MMUKCQ7RXWEK",
+  "date": "2026-10-04",
+  "browser": "headless installed Google Chrome via Playwright",
+  "consumers": {
+    "public": {
+      "theme": "npm @leement/theme@0.1.0",
+      "registry": "https://leement.leey00nsu.com/r/{name}.json",
+      "installed": [
+        "button",
+        "input",
+        "page-header"
+      ],
+      "typecheckBuild": "PASS"
+    },
+    "changed": {
+      "theme": "local packed @leement/theme@0.2.0 (unpublished)",
+      "registry": "feature local namespace via shadcn CLI",
+      "items": 105,
+      "files": 112,
+      "typecheckBuild": "PASS",
+      "note": "All registry sources installed; final popup/helper/crop/sandbox sources overwritten via CLI and rebuilt."
+    }
+  },
+  "pageAudit": {
+    "pages": 202,
+    "conditions": [
+      "desktop light",
+      "mobile dark"
+    ],
+    "failures": []
+  },
+  "consumerRuntime": {
+    "public": true,
+    "ref": true,
+    "form": true,
+    "nestedFocus": true,
+    "rapidDialog": true,
+    "panel": {
+      "before": 132,
+      "after": 312,
+      "rapid": true
+    },
+    "accordion": true,
+    "loop": {
+      "running": [
+        "12.5143% 50%",
+        "21.0286% 50%"
+      ],
+      "paused": [
+        "23.1429% 50%",
+        "23.1429% 50%"
+      ]
+    },
+    "reduced": true,
+    "unmount": true,
+    "mobileDark": true,
+    "errors": []
+  },
+  "foundationsAndNoJS": {
+    "editor": true,
+    "timing": [
+      35.5295,
+      161.469,
+      217
+    ],
+    "cssExport": true,
+    "reset": true,
+    "visibility": true,
+    "offscreen": true,
+    "toast": [
+      {
+        "opacity": "0.926595",
+        "animation": "none",
+        "transition": "0s"
+      }
+    ],
+    "noJS": true,
+    "errors": []
+  },
+  "vendorEffects": [
+    {
+      "path": "components/image-crop",
+      "cssAnimations": [],
+      "crop": [
+        "none",
+        "none"
+      ],
+      "sandbox": []
+    },
+    {
+      "path": "blocks/sandbox",
+      "cssAnimations": [],
+      "crop": [],
+      "sandbox": []
+    },
+    {
+      "path": "components/chart",
+      "cssAnimations": [],
+      "crop": [],
+      "sandbox": []
+    },
+    {
+      "path": "components/toast",
+      "cssAnimations": [],
+      "crop": [],
+      "sandbox": []
+    }
+  ],
+  "baseUiExit": [
+    {
+      "name": "select",
+      "frames": [
+        {
+          "opacity": "1",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "1",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "0.741111",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "0.366265",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "0.194686",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "0.0979415",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "0.0421565",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "0.012093",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "0.000569297",
+          "closed": true,
+          "style": "height: 100%; --transform-origin: 50% 50%; opacity: 1;"
+        },
+        {
+          "opacity": "0",
+          "closed": true,
+          "style": "--transform-origin: 50% 50%; opacity: 0;"
+        },
+        {
+          "opacity": "0",
+          "closed": true,
+          "style": "--transform-origin: 50% 50%; opacity: 0;"
+        },
+        {
+          "opacity": "0",
+          "closed": true,
+          "style": "--transform-origin: 50% 50%; opacity: 0;"
+        },
+        {
+          "opacity": "0",
+          "closed": true,
+          "style": "--transform-origin: 50% 50%; opacity: 0;"
+        },
+        {
+          "opacity": "0",
+          "closed": true,
+          "style": "--transform-origin: 50% 50%; opacity: 0;"
+        },
+        {
+          "opacity": "0",
+          "closed": true,
+          "style": "--transform-origin: 50% 50%; opacity: 0;"
+        }
+      ],
+      "verified": "opacity interpolates before removal or hidden state"
+    },
+    {
+      "name": "popover",
+      "frames": [
+        {
+          "opacity": "1",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.957395",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.50419",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.264096",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.137253",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.0648365",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.0238117",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.00411155",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "verified": "opacity interpolates before removal or hidden state"
+    },
+    {
+      "name": "dropdown-menu",
+      "frames": [
+        {
+          "opacity": "1",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "1",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.961601",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.512712",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.267108",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.140094",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.0661585",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.0243417",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        {
+          "opacity": "0.00437979",
+          "closed": true,
+          "style": "opacity: 1;"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "verified": "opacity interpolates before removal or hidden state"
+    },
+    {
+      "name": "sheet",
+      "frames": [
+        {
+          "opacity": "1",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: none; opacity: 1;"
+        },
+        {
+          "opacity": "0.714727",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: translateX(0.0246589px); opacity: 1;"
+        },
+        {
+          "opacity": "0.355151",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: translateX(12.8075px); opacity: 1;"
+        },
+        {
+          "opacity": "0.188747",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: translateX(26.5275px); opacity: 1;"
+        },
+        {
+          "opacity": "0.0944894",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: translateX(32.675px); opacity: 1;"
+        },
+        {
+          "opacity": "0.0399575",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: translateX(36.5637px); opacity: 1;"
+        },
+        {
+          "opacity": "0.0111629",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: translateX(38.6173px); opacity: 1;"
+        },
+        {
+          "opacity": "0.000396996",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: translateX(39.6327px); opacity: 1;"
+        },
+        {
+          "opacity": "0",
+          "closed": true,
+          "style": "--nested-dialogs: 0; transform: translateX(39.9913px); opacity: 0;"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "verified": "opacity interpolates before removal or hidden state"
+    }
+  ],
+  "controlledAndSelectHidden": {
+    "selectHidden": true,
+    "controlled": [
+      "1",
+      "1",
+      "0.897938",
+      "0.44587",
+      "0.234843",
+      "0.121652",
+      "0.0554764",
+      "0.0188831",
+      "0.00238375",
+      null,
+      null,
+      null
+    ]
+  },
+  "gates": {
+    "pnpm run typecheck": "PASS",
+    "pnpm run lint": "PASS",
+    "pnpm run test": "PASS 19 files / 119 tests",
+    "pnpm run build": "PASS"
+  },
+  "remoteActions": "No publish, push or deployment; local merge approval remains separate."
+}

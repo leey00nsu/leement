@@ -4,12 +4,24 @@ import { usePresenceMotion } from "@/lib/leement-motion";
 
 import { Dialog as SheetPrimitive } from "@base-ui/react/dialog";
 import { XIcon } from "lucide-react";
-import type * as React from "react";
+import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-function Sheet({ ...props }: SheetPrimitive.Root.Props) {
-  return <SheetPrimitive.Root data-slot="sheet" {...props} />;
+const ExitContext = React.createContext<((present: boolean) => void) | undefined>(undefined);
+function Sheet<Payload>({ actionsRef, onOpenChange, ...props }: SheetPrimitive.Root.Props<Payload>) {
+  const actions = React.useRef<SheetPrimitive.Root.Actions | null>(null);
+  React.useImperativeHandle(actionsRef, () => ({
+    close: () => actions.current?.close(),
+    unmount: () => actions.current?.unmount(),
+  }), []);
+  const complete = React.useCallback((present: boolean) => {
+    if (!present) actions.current?.unmount();
+  }, []);
+  return <ExitContext.Provider value={complete}><SheetPrimitive.Root {...props} actionsRef={actions} onOpenChange={(open, details) => {
+    onOpenChange?.(open, details);
+    if (!open && !details.isCanceled) details.preventUnmountOnClose();
+  }} /></ExitContext.Provider>;
 }
 
 function SheetTrigger({ ...props }: SheetPrimitive.Trigger.Props) {
@@ -49,7 +61,8 @@ function SheetContent({ ref: motionForwardedRef,
   side?: "top" | "right" | "bottom" | "left";
   showCloseButton?: boolean;
 }) {
-  const styleMotionRef2 = usePresenceMotion<HTMLDivElement>(motionForwardedRef);
+  const complete = React.useContext(ExitContext);
+  const styleMotionRef2 = usePresenceMotion<HTMLDivElement>(motionForwardedRef, "fast", false, complete);
 
   return (
     <SheetPortal>

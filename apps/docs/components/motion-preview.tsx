@@ -17,7 +17,7 @@ function TimingSample({ moved, speed }: { moved: boolean; speed: string }) {
     const node = ref.current;
     if (!node) return;
     const reduced = typeof matchMedia !== "function" || matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const control = animate(node, { marginLeft: moved ? "calc(100% - 1.25rem)" : "0px" }, { duration: reduced ? 0 : motionSeconds(node, `duration-${speed}`), ease: motionEasing(node, "standard") });
+    const control = animate(node, { marginLeft: moved ? Math.max(0, (node.parentElement?.clientWidth ?? 0) - node.offsetWidth - 8) : 0 }, { duration: reduced ? 0 : motionSeconds(node, `duration-${speed}`), ease: motionEasing(node, "standard") });
     return () => control.stop();
   }, [moved, speed, revision]);
   return <div ref={ref} className="size-5 rounded-sm bg-primary" />;
