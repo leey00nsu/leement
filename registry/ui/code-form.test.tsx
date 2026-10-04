@@ -26,7 +26,8 @@ test("code block switches examples and renders untrusted code as text", async ()
   const writeText = vi.spyOn(navigator.clipboard, "writeText");
   const unsafe = '<img src="x" onerror="alert(1)">';
   const { container } = render(<CodeBlock samples={[{ label: "TypeScript", filename: "app.ts", language: "typescript", code: "const value = 1;" }, { label: "HTML", filename: "index.html", language: "html", code: unsafe }]} showLineNumbers />);
-  await user.selectOptions(screen.getByRole("combobox", { name: "Code example" }), "HTML");
+  await user.click(screen.getByRole("combobox", { name: "Code example" }));
+  await user.click(await screen.findByRole("option", { name: "HTML" }));
   expect(screen.getByLabelText("html code").textContent).toBe(unsafe);
   expect(container.querySelector("img")).toBeNull();
   await user.click(screen.getByRole("button", { name: "Copy code" }));

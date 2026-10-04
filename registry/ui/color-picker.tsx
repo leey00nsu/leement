@@ -1,4 +1,6 @@
 "use client";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
@@ -106,7 +108,7 @@ function ColorPicker({ label, value, defaultValue, onValueChange, swatches = [],
       </div>
     </div>
     <div className="mt-3 flex gap-1.5">
-      <select aria-label="Color format" value={format} disabled={disabled} onChange={(event) => setFormat(event.target.value as "hex" | "rgb" | "hsl")} className="h-10 rounded-md border border-input bg-(--lm-color-surface-default) px-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><option value="hex">HEX</option><option value="rgb">RGB</option><option value="hsl">HSL</option></select>
+      <Select items={[{value:"hex",label:"HEX"},{value:"rgb",label:"RGB"},{value:"hsl",label:"HSL"}]} value={format} disabled={disabled} onValueChange={(next) => { if (next) setFormat(next as "hex" | "rgb" | "hsl"); }}><SelectTrigger aria-label="Color format" size="sm"><SelectValue /></SelectTrigger><SelectContent alignItemWithTrigger={false}><SelectItem value="hex">HEX</SelectItem><SelectItem value="rgb">RGB</SelectItem><SelectItem value="hsl">HSL</SelectItem></SelectContent></Select>
       <input id={id} type="text" value={format === "hex" ? draft : output} readOnly={format !== "hex"} disabled={disabled} onChange={(event) => setDraft(event.target.value)} onBlur={() => { if (format === "hex") { if (normalize(draft)) choose(draft); else setDraft(selected); } }} onKeyDown={(event) => { if (event.key === "Enter" && format === "hex") { event.preventDefault(); if (normalize(draft)) choose(draft); else setDraft(selected); } }} aria-invalid={format === "hex" && draft.length > 0 && !normalize(draft)} className="h-10 min-w-0 flex-1 rounded-md border border-input bg-(--lm-color-surface-default) px-2 font-mono text-xs text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-invalid:border-destructive" />
       <label className="sr-only" htmlFor={id + "-alpha"}>Opacity percentage</label><input id={id + "-alpha"} type="number" min={0} max={100} value={alpha} disabled={disabled} onChange={(event) => setChannels({ alpha: clamp(Number(event.target.value), 0, 100) / 100 })} className="h-10 w-14 rounded-md border border-input bg-(--lm-color-surface-default) px-1 text-center text-xs text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
     </div>

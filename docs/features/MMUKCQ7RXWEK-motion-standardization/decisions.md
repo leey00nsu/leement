@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:7ca12422ba4ec3553010014f3d4b8b45da036f8e747b14377cbd9e84f46b12c0 -->
+<!-- lee-spec-kit:workflow-sync sha256:53b402ee18bedc3b0795718f729f36416dc73e2695f487667618779be463a6fa -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 

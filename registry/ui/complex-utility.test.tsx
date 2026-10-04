@@ -58,7 +58,8 @@ test("color picker emits eight-digit hex for opacity and keeps alternate output 
   await user.clear(opacity);
   await user.type(opacity, "50");
   expect(onValueChange).toHaveBeenLastCalledWith("#12345680");
-  await user.selectOptions(screen.getByRole("combobox", { name: "Color format" }), "rgb");
+  await user.click(screen.getByRole("combobox", { name: "Color format" }));
+  await user.click(await screen.findByRole("option", { name: "RGB" }));
   const output = screen.getByRole("textbox", { name: "Illustration" }) as HTMLInputElement;
   expect(output.readOnly).toBe(true);
   expect(output.value).toBe("rgba(18, 52, 86, 0.5)");

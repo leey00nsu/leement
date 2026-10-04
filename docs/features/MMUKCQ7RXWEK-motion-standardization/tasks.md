@@ -127,14 +127,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-014] T-MMUKCQ7RXWEK-motion-standardization-04 NativeSelect 제거와 모든 보이는 선택 UI 이관
+- [DONE][PRD-FR-014] T-MMUKCQ7RXWEK-motion-standardization-04 NativeSelect 제거와 모든 보이는 선택 UI 이관
   - Date: 2026-10-04
   - Acceptance:
     - NativeSelect 배포/route/source가 없고 기존 Select로 문서와 내부 선택 UI가 동일해진다.
   - Checklist:
-    - [ ] Field와 ColorPicker/CodeBlock/Foundation/예제 선택 이관
-    - [ ] group/label/disabled/invalid/name/FormData 검증
-    - [ ] registry metadata와 생성 item 제거, PRD/디자인 규칙 갱신
+    - [x] Field와 ColorPicker/CodeBlock/Foundation/예제 선택 이관
+    - [x] group/label/disabled/invalid/name/FormData 검증
+    - [x] registry metadata와 생성 item 제거, PRD/디자인 규칙 갱신
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -221,3 +221,8 @@
 - changed-source lint PASS. docs typecheck PASS.
 - 동시 검사에서 일부 timeout을 재현하여 worker 수를 제한하고 동일 실패 검사를 재실행했다. Marquee 시스템 preference 검사는 matchMedia 전제를 명시했다.
 - 실제 종료 timing/focus/height/paint는 T-06에서 검사한다.
+
+### T-04 검증
+
+- core-form/code-form/complex-utility: 3 files, 26 tests PASS (--maxWorkers=2).
+- docs typecheck와 이관 source lint PASS. 보이는 native select 및 NativeSelect source/registry/route 제거 확인.

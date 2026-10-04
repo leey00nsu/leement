@@ -1,4 +1,6 @@
 "use client";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../../../registry/ui/select";
+
 
 import { useEffect, useId, useState } from "react";
 import { Button } from "../../../registry/ui/button";
@@ -136,13 +138,7 @@ function FamilyControl({ field, value }: { field: SharedField; value: string }) 
   const valid = validPreviewValue("shared", field.key, draft);
   return <div className="rounded-lg bg-background p-3">
     <label htmlFor={id} className="mb-2 block text-sm font-medium">{field.label}</label>
-    <select id={id} value={familyOptions.some((option) => option.value === value) ? value : "custom"} onChange={(event) => {
-      if (event.target.value !== "custom") setValue("shared", field.key, event.target.value);
-      else document.getElementById(`${id}-stack`)?.focus();
-    }} className="w-full min-w-0 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-      {familyOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
-      <option value="custom">Custom font stack</option>
-    </select>
+    <Select items={[...familyOptions,{value:"custom",label:"Custom font stack"}]} value={familyOptions.some((option) => option.value === value) ? value : "custom"} onValueChange={(next) => { if (next && next !== "custom") setValue("shared", field.key, next); else document.getElementById(id + "-stack")?.focus(); }}><SelectTrigger id={id} className="w-full"><SelectValue /></SelectTrigger><SelectContent alignItemWithTrigger={false}>{familyOptions.map((option) => <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>)}<SelectItem value="custom">Custom font stack</SelectItem></SelectContent></Select>
     <label htmlFor={`${id}-stack`} className="mt-3 block text-xs text-muted-foreground">{field.label} CSS stack</label>
     <Input id={`${id}-stack`} value={draft} maxLength={160} spellCheck={false} className="mt-1 font-mono text-xs" aria-invalid={touched && !valid || undefined} aria-describedby={touched && !valid ? `${id}-error` : `${id}-hint`} onChange={(event) => {
       setDraft(event.target.value);
@@ -172,9 +168,7 @@ function SharedControl({ field }: { field: SharedField }) {
     const choices = [...new Set([field.defaultValue, "none", "0 2px 8px rgb(0 0 0 / 0.08)", "0 4px 12px rgb(0 0 0 / 0.10)", "0 12px 36px rgb(0 0 0 / 0.18)"])];
     return <div className="rounded-lg bg-background p-3">
       <label htmlFor={id} className="mb-2 block text-sm font-medium capitalize">{field.label}</label>
-      <select id={id} value={value} onChange={(event) => setValue("shared", field.key, event.target.value)} className="w-full min-w-0 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-        {choices.map((choice) => <option key={choice} value={choice}>{choice === field.defaultValue ? `Default · ${choice}` : choice}</option>)}
-      </select>
+      <Select items={choices.map((choice) => ({value:choice,label:choice === field.defaultValue ? "Default · " + choice : choice}))} value={value} onValueChange={(next) => { if (next) setValue("shared", field.key, next); }}><SelectTrigger id={id} className="w-full"><SelectValue /></SelectTrigger><SelectContent alignItemWithTrigger={false}>{choices.map((choice) => <SelectItem key={choice} value={choice}>{choice === field.defaultValue ? "Default · " + choice : choice}</SelectItem>)}</SelectContent></Select>
     </div>;
   }
   const { min, max, step, unit } = numericDetails(field);

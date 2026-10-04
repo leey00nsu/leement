@@ -14,7 +14,6 @@ export const itemStates: Record<keyof typeof items, string> = {
   "accordion": "open/closed/disabled. 닫히는 panel은 inert; reduced motion에서는 height transition을 제거합니다.",
   "toggle-group": "Selected/unselected, focused, disabled and single/multiple.",
   "toggle": "Pressed, unpressed, focused and disabled.",
-  "native-select": "Selected, focused, disabled, invalid.",
   "input-group": "Empty, filled, focused, invalid, input disabled and independent button state.",
   "field": "Empty, filled, focused, invalid and disabled.",
   "radio-group": "Selected and unselected, focused, disabled.",

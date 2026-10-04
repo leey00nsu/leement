@@ -1,4 +1,6 @@
 "use client";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../../../registry/ui/select";
+
 
 import { useState } from "react";
 import { FilterGroup, FilterToggle, FilterToolbar } from "../../../registry/patterns/filter-toolbar";
@@ -25,7 +27,7 @@ export default function FilterToolbarExample() {
         <FilterToggle pressed={active} onClick={() => setActive(!active)}>Active only</FilterToggle>
         <FilterToggle pressed={admins} onClick={() => setAdmins(!admins)}>Admins</FilterToggle>
         <label className="sr-only" htmlFor="example-sort-members">Sort members</label>
-        <select id="example-sort-members" value={sort} onChange={(event) => setSort(event.target.value)} className="h-10 rounded-md border border-border bg-card px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><option value="name">Sort by name</option><option value="role">Sort by role</option></select>
+        <Select value={sort} items={[{value:"name",label:"Sort by name"},{value:"role",label:"Sort by role"}]} onValueChange={(next) => { if (next) setSort(next); }}><SelectTrigger id="example-sort-members"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="name">Sort by name</SelectItem><SelectItem value="role">Sort by role</SelectItem></SelectContent></Select>
       </FilterGroup>
     </FilterToolbar>
     <p role="status" className="text-xs text-muted-foreground">Showing {results.length} of {members.length} members</p>

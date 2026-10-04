@@ -791,7 +791,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/select"
       ],
       "files": [
         {
@@ -1148,7 +1149,8 @@
       "description": "Choose a hex color by well, text or preset.",
       "dependencies": [],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/select"
       ],
       "files": [
         {
@@ -1776,25 +1778,6 @@
           "path": "registry/ui/input-group.tsx",
           "type": "registry:ui",
           "target": "components/ui/input-group.tsx"
-        }
-      ]
-    },
-    {
-      "name": "native-select",
-      "type": "registry:ui",
-      "title": "Native Select",
-      "description": "A styled browser-native select with native form behavior.",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@leement/utils"
-      ],
-      "files": [
-        {
-          "path": "registry/ui/native-select.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/native-select.tsx"
         }
       ]
     },

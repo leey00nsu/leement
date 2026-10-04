@@ -6,9 +6,6 @@ const examples = {
   "select-groups": lazy(() => import("../examples/select-groups")),
   "select-states": lazy(() => import("../examples/select-states")),
   "select-scroll": lazy(() => import("../examples/select-scroll")),
-  "native-select-groups": lazy(
-    () => import("../examples/native-select-groups"),
-  ),
   "input-group-compositions": lazy(
     () => import("../examples/input-group-compositions"),
   ),

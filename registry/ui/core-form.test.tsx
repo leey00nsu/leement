@@ -6,7 +6,7 @@ import { Checkbox } from "./checkbox";
 import { RadioGroup, RadioGroupItem } from "./radio-group";
 import { Field, FieldLabel, FieldControl, FieldDescription, FieldError } from "./field";
 import { Input } from "./input";
-import { NativeSelect } from "./native-select";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "./select";
 import { InputGroup, InputGroupInput } from "./input-group";
 import { Toggle } from "./toggle";
 import { ToggleGroup, ToggleGroupItem } from "./toggle-group";
@@ -43,10 +43,11 @@ test("field connects label, description, error and invalid state to native Input
  const described=ids.map(id=>document.getElementById(id)?.textContent).join(" ");
  expect(described).toContain("Workspace updates");expect(described).toContain("Invalid email");
 });
-test("native select and grouped input retain labels, form values and disabled behavior", async () => {
+test("select and grouped input retain labels, form values and disabled behavior", async () => {
  const user=userEvent.setup();
- const {container}=render(<form><label>Role<NativeSelect name="role"><option value="viewer">Viewer</option><option value="editor">Editor</option></NativeSelect></label><InputGroup><InputGroupInput aria-label="Domain" name="domain" defaultValue="example.com" /></InputGroup><NativeSelect aria-label="Unavailable" name="locked" disabled><option>Locked</option></NativeSelect></form>);
- await user.selectOptions(screen.getByRole("combobox",{name:"Role"}),"editor");
+ const {container}=render(<form><label>Role<Select name="role" defaultValue="viewer" items={[{value:"viewer",label:"Viewer"},{value:"editor",label:"Editor"}]}><SelectTrigger><SelectValue /></SelectTrigger><SelectContent><SelectItem value="viewer">Viewer</SelectItem><SelectItem value="editor">Editor</SelectItem></SelectContent></Select></label><InputGroup><InputGroupInput aria-label="Domain" name="domain" defaultValue="example.com" /></InputGroup><Select name="locked" disabled defaultValue="locked" items={[{value:"locked",label:"Locked"}]}><SelectTrigger aria-label="Unavailable"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="locked">Locked</SelectItem></SelectContent></Select></form>);
+ await user.click(screen.getByRole("combobox",{name:"Role"}));
+ await user.click(await screen.findByRole("option",{name:"Editor"}));
  const values=new FormData(container.querySelector("form")!);
  expect(values.get("role")).toBe("editor");expect(values.get("domain")).toBe("example.com");expect(values.has("locked")).toBe(false);
 });

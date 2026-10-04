@@ -1,4 +1,6 @@
 "use client";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../../../registry/ui/select";
+
 import { useState } from "react";
 import { Line, LineChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import {
@@ -25,15 +27,7 @@ export default function Example() {
     <div className="w-full max-w-xl space-y-4">
       <label className="flex flex-wrap items-center gap-2 text-sm">
         Tooltip indicator
-        <select
-          className="rounded-md border border-input bg-background p-2"
-          value={indicator}
-          onChange={(e) => setIndicator(e.target.value as typeof indicator)}
-        >
-          {["dot", "line", "dashed"].map((value) => (
-            <option key={value}>{value}</option>
-          ))}
-        </select>
+        <Select items={["dot","line","dashed"].map((value) => ({value,label:value}))} value={indicator} onValueChange={(next) => { if (next) setIndicator(next as typeof indicator); }}><SelectTrigger aria-label="Tooltip indicator"><SelectValue /></SelectTrigger><SelectContent>{["dot","line","dashed"].map((value) => <SelectItem key={value} value={value}>{value}</SelectItem>)}</SelectContent></Select>
       </label>
       <p className="text-sm">April: 68 active members, 22 new members.</p>
       <ChartContainer config={config} className="h-64 w-full">

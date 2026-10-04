@@ -1,4 +1,6 @@
 "use client";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+
 
 import * as React from "react";
 import hljs from "highlight.js/lib/core";
@@ -48,7 +50,7 @@ function CodeBlock({ code = "", language = "text", filename, samples, showLineNu
     <div className="flex min-h-10 items-center gap-3 border-b border-border bg-muted px-3 py-1.5 text-xs text-muted-foreground">
       <FileCode2 aria-hidden="true" className="size-4 shrink-0" />
       <span className="min-w-0 flex-1 truncate font-medium">{current.filename ?? filename ?? current.label}</span>
-      {samples && samples.length > 1 ? <select aria-label="Code example" value={selected} onChange={(event) => { setSelected(Number(event.target.value)); setCopied(false); }} className="max-w-28 rounded-md border border-border bg-card px-1.5 py-1 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{samples.map((sample, index) => <option key={sample.label} value={index}>{sample.label}</option>)}</select> : <span className="uppercase">{current.language ?? language}</span>}
+      {samples && samples.length > 1 ? <Select items={samples.map((sample, index) => ({value: String(index), label: sample.label}))} value={String(selected)} onValueChange={(next) => { if (next !== null) { setSelected(Number(next)); setCopied(false); } }}><SelectTrigger aria-label="Code example" size="sm" className="max-w-28"><SelectValue /></SelectTrigger><SelectContent alignItemWithTrigger={false}>{samples.map((sample, index) => <SelectItem key={sample.label} value={String(index)}>{sample.label}</SelectItem>)}</SelectContent></Select> : <span className="uppercase">{current.language ?? language}</span>}
       <button type="button" onClick={copy} aria-label={copied ? "Code copied" : "Copy code"} className="inline-flex items-center gap-1 rounded-md p-1.5 hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span className="sr-only sm:not-sr-only">{copied ? "Copied" : "Copy"}</span>{copied ? <Check aria-hidden="true" className="size-3.5" /> : <Copy aria-hidden="true" className="size-3.5" />}</button>
     </div>
     <div className="flex min-w-0 text-sm leading-6">

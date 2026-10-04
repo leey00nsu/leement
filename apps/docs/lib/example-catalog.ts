@@ -33,15 +33,6 @@ export const additionalExamples: Partial<
       file: "select-scroll",
     },
   ],
-  "native-select": [
-    {
-      id: "groups",
-      title: "Grouped native options",
-      description:
-        "Native optgroups, a compact control, and an invalid field retain browser selection and form submission.",
-      file: "native-select-groups",
-    },
-  ],
   "input-group": [
     {
       id: "compositions",

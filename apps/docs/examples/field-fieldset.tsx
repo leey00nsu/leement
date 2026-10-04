@@ -1,4 +1,6 @@
 "use client";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../../../registry/ui/select";
+
 import { useId, useState } from "react";
 import {
   Field,
@@ -9,7 +11,6 @@ import {
   FieldLegend,
 } from "../../../registry/ui/field";
 import { Textarea } from "../../../registry/ui/textarea";
-import { NativeSelect } from "../../../registry/ui/native-select";
 import { Checkbox } from "../../../registry/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "../../../registry/ui/radio-group";
 import { Button } from "../../../registry/ui/button";
@@ -35,16 +36,10 @@ export default function Example() {
         </Field>
         <Field>
           <FieldLabel>Visibility</FieldLabel>
-          <FieldControl
-            name="visibility"
-            defaultValue="team"
-            render={
-              <NativeSelect>
-                <option value="team">Team</option>
-                <option value="private">Private</option>
-              </NativeSelect>
-            }
-          />
+          <Select name="visibility" defaultValue="team" items={[{value:"team",label:"Team"},{value:"private",label:"Private"}]}>
+            <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
+            <SelectContent><SelectItem value="team">Team</SelectItem><SelectItem value="private">Private</SelectItem></SelectContent>
+          </Select>
           <FieldDescription>Who can view this workspace.</FieldDescription>
         </Field>
         <fieldset className="space-y-3">

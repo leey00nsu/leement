@@ -100,7 +100,7 @@ Native HTML media event가 playback state의 정본이다. src 변경은 이전 
 
 Checkbox는 함께 제출할 독립 옵션이며 mixed 상태는 일부 선택을 뜻한다. RadioGroup은 한 값을 고르고 Choicebox는 설명을 비교하는 카드형 선택이다. Switch는 즉시 적용할 설정, Toggle/ToggleGroup은 눌린 도구 모드, FilterToggle은 결과 필터에 쓴다. 체크/라디오 표식은16px이고 label row는 최소40px로 조작 영역을 확보한다.
 
-Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/Legend는 관련 입력의 의미를 묶는다. FormSection은 여러 필드의 배치이며 Field를 대체하지 않는다. Base UI input은 Field와 자동 연결되며 Leement의 native Input/Textarea/NativeSelect는 FieldControl render로 연결하거나 id/aria-describedby/aria-invalid를 명시한다. 이름 없는 아이콘 action과 placeholder만의 라벨을 피한다. InputGroup은 앞/뒤 adornment와 입력의 focus/invalid 표면을 묶되 별도 버튼의 disabled는 앱이 전달한다. NativeSelect는 browser form 의미가 충분한 경우 우선하고 custom popup은 Select, 검색은 Combobox를 사용한다. ToggleGroup은 Base UI의 배열 값 계약을 유지하며 단일 선택에서는 multiple=false다.
+Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/Legend는 관련 입력의 의미를 묶는다. FormSection은 여러 필드의 배치이며 Field를 대체하지 않는다. Base UI input은 Field와 자동 연결되며 Leement의 native Input/Textarea는 FieldControl render로 연결하거나 id/aria-describedby/aria-invalid를 명시한다. 이름 없는 아이콘 action과 placeholder만의 라벨을 피한다. InputGroup은 앞/뒤 adornment와 입력의 focus/invalid 표면을 묶되 별도 버튼의 disabled는 앱이 전달한다. 기본 선택 UI는 Select로 통일하고 검색은 Combobox를 사용한다. Select의 name/defaultValue 또는 controlled value와 Field context 연결을 사용한다. ToggleGroup은 Base UI의 배열 값 계약을 유지하며 단일 선택에서는 multiple=false다.
 
 ### 기본 탐색과 보조 표시
 
@@ -124,7 +124,7 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 - DatePicker는 Button/Popover/Calendar(date)를 조합한다. 접근 가능한 label과 선택 값을 trigger에 제공하고 popup이 열리면 선택 가능한 날짜로 focus를 이동한다. single 또는 range 완료 시 닫고 trigger로 복귀하며 Escape도 같은 복귀를 유지한다. 필드 id/aria-describedby/aria-invalid를 연결할 수 있다.
 - 날짜 값은 consumer의 local Date이며 시간·타임존 변환·서버 저장을 추가하지 않는다. range를 controlled로 사용하면 부분 선택도 consumer가 반영해야 한다.
 
-- 신규 작은 선택 표식(Checkbox/Radio)과 NativeSelect/InputGroup 경계는 muted foreground semantic 역할을 사용해 라이트 표면에서도 식별한다. 단순 장식 border와 control 경계를 구분하며 focus ring은 불투명한 ring 역할을 사용한다. Base UI의 data-disabled도 시각 상태에 연결한다.
+- 신규 작은 선택 표식(Checkbox/Radio)과 Select/InputGroup 경계는 muted foreground semantic 역할을 사용해 라이트 표면에서도 식별한다. 단순 장식 border와 control 경계를 구분하며 focus ring은 불투명한 ring 역할을 사용한다. Base UI의 data-disabled도 시각 상태에 연결한다.
 
 ### upstream 이름과 사용 문제의 대응
 

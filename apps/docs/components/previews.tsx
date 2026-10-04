@@ -13,7 +13,6 @@ import BreadcrumbExample from "../examples/breadcrumb";
 import AccordionExample from "../examples/accordion";
 import ToggleGroupExample from "../examples/toggle-group";
 import ToggleExample from "../examples/toggle";
-import NativeSelectExample from "../examples/native-select";
 import InputGroupExample from "../examples/input-group";
 import FieldExample from "../examples/field";
 import RadioGroupExample from "../examples/radio-group";
@@ -118,7 +117,6 @@ const examples: Record<keyof typeof items, ComponentType> = {
   "accordion": AccordionExample,
   "toggle-group": ToggleGroupExample,
   "toggle": ToggleExample,
-  "native-select": NativeSelectExample,
   "input-group": InputGroupExample,
   "field": FieldExample,
   "radio-group": RadioGroupExample,

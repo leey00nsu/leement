@@ -38,7 +38,7 @@ v0.1의 8 UI·5 pattern·1 block은 초기 출시 범위이며, 최종 제공 �
 - PRD-FR-011: light/dark theme과 공용 컴포넌트가 CopySinger에서 Leesfield로 이어진 디자인 의도를 하나의 규칙으로 표현한다. 원본별 서로 다른 표면·글자·간격·반경·상태·서체 수치는 사용 맥락·가독성·접근성을 근거로 결정하고 차이를 명시한다. 두 제품의 브랜드 색은 고정된 Leement 색이 아니라 소비자 앱이 모드별로 설정하는 semantic 브랜드 역할이며 focus, data accent, 선택적 로딩 효과와 gradient에 반영된다. 일반 Skeleton은 중립이다. token/rule·theme·registry source·docs 미리보기가 같은 규칙을 표현한다. 본문 Pretendard, 로고 Paperlogy Bold(700), 코드·명령·단축키 D2Coding은 독립적인 폰트 역할이며 소비자가 각각 재정의할 수 있다. 아이콘+이름 로고는 소비자 브랜드 자산을 조합하는 registry pattern으로 제공한다.
 - PRD-FR-012: 두 제품의 격리된 통합 환경에서 공통 UI 전수 설치·import·render와 대표 실제 사용처 교체를 검증한다. 양쪽 앱의 타입 검사·빌드·핵심 상호작용에 신규 회귀가 없음을 확인하며, 모든 제공 UI/Pattern/Block은 웹 문서에서 실제 source로 미리 볼 수 있다.
 - PRD-FR-013: Docs의 Foundations에서 color, typography, spacing, radius, shadow, motion 값을 조정하면 실제 registry component 미리보기와 문서 사이트 전체 UI에 즉시 반영된다. Light/dark 색상은 분리하고 편집값은 페이지 이동·새로고침 동안 브라우저에 유지하며 초기화할 수 있다. 현재 설정에서 기본값과 달라진 값은 `@leement/theme` 뒤에 적용할 CSS로 복사할 수 있다. Typography의 본문·브랜드·mono family는 각각 선택 또는 안전한 custom family 목록으로 입력하며 실제 본문·로고·코드에 독립적으로 반영된다. 기본 폰트는 theme에 포함되고 custom 파일은 앱이 로드한다. 편집은 배포 token 원본을 변경하지 않는다.
-- PRD-FR-014: Leement는 일반 제품의 기본 입력·선택·탐색 UI와 조합 가능한 Table, 데이터/날짜 선택 패턴을 제공한다. 우선 Checkbox, RadioGroup, Field, InputGroup, NativeSelect, Toggle/ToggleGroup, Accordion, Breadcrumb, Pagination, Command, ButtonGroup, Kbd, AspectRatio, HoverCard 및 DataTable/DatePicker pattern을 보완한다. 기존 Table/Calendar/Glimpse API를 유지하고 token·접근성·문서 원본 예제·registry 종속 설치를 함께 검증한다. StatusNotice/EmptyState 같은 기존 대응은 안내로 유지하며 upstream 전체와 도메인 UI를 자동 복제하지 않는다.
+- PRD-FR-014: Leement는 일반 제품의 기본 입력·선택·탐색 UI와 조합 가능한 Table, 데이터/날짜 선택 패턴을 제공한다. 우선 Checkbox, RadioGroup, Field, InputGroup, Select, Toggle/ToggleGroup, Accordion, Breadcrumb, Pagination, Command, ButtonGroup, Kbd, AspectRatio, HoverCard 및 DataTable/DatePicker pattern을 보완한다. 기존 Table/Calendar/Glimpse API를 유지하고 token·접근성·문서 원본 예제·registry 종속 설치를 함께 검증한다. StatusNotice/EmptyState 같은 기존 대응은 안내로 유지하며 upstream 전체와 도메인 UI를 자동 복제하지 않는다.
 - PRD-NFR-004: 복합 UI에서도 Leement semantic token과 source ownership을 유지한다. 외부 라이브러리·MIT 코드의 사용 근거와 라이선스를 추적하고, 동작·접근성 검증 없이 카탈로그 수만 늘리지 않는다.
 - PRD-NFR-005: 교체 검증은 독립 데모만으로 대신하지 않는다. 기존 앱의 사전 오류와 Leement 도입 회귀를 구분하고, 제품별 wrapper/도메인 로직은 적합성 근거 없이 공용 API로 흡수하지 않는다.
 
@@ -49,3 +49,7 @@ v0.1의 8 UI·5 pattern·1 block은 초기 출시 범위이며, 최종 제공 �
 PRD-FR-011의 공통 디자인 언어는 진입·텍스트 등장·펼침·미디어 준비 전환·브랜드 강조·순환 슬롯을 포함한다. RevealContent/Collapsible/기존 브랜드 효과를 개선하고 TextReveal, MediaReveal, BrandAction, RotatingContent를 수정 가능한 registry source로 제공한다. 도메인 로직은 앱에 남기고 신규 항목은 검증 근거에 따라 experimental/candidate를 표시한다. Orb·Shader 및 그래픽·오디오 엔진은 이 범위에 포함하지 않는다.
 
 PRD-FR-013의 Motion 편집은 duration, easing, stagger, 반복 cycle을 역할별로 제공한다. 모든 시각 애니메이션과 전환은 Motion으로 실행하며 token/theme은 프레임워크에 독립적으로 값을 제공한다. Motion 기반 예제는 같은 변수를 읽고 일회 진입은 Replay로 확인한다. 기존 저장값·CSS 복사·초기화를 유지하고 reduced motion, no-JS 가독성, SSR 일치와 pause/lifecycle을 보장한다. PRD-FR-012에 따라 실제 두 제품의 대표 사용처에서 격리 검증하며 원본 앱 전체 교체와 공개 배포는 별도 결정이다.
+
+## 선택과 공개 설치
+
+기본 선택 입력은 Select로 통일하고 검색 가능한 목록은 Combobox를 사용한다. NativeSelect와 보이는 browser select 예제는 제공하지 않는다. group label, form name/value, Field 접근성과 disabled를 유지한다. 공개 설치는 npm @leement/theme 및 https://leement.leey00nsu.com/r/{name}.json namespace를 기본으로 한다. 설치된 source의 애니메이션은 Motion을 registry dependency로 설치해 실행한다.
