@@ -5,6 +5,7 @@ import type WaveSurfer from "wavesurfer.js";
 import { finiteTime, formatMediaTime, MediaPlayerControls, MediaPlayerStatus, useMediaPlayer } from "@/lib/media-player";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import { useStyleMotion } from "@/lib/leement-motion";
 import styles from "./audio-player.module.css";
 
 type AudioPlayerProps = Omit<ComponentProps<"div">, "children"> & {
@@ -22,6 +23,7 @@ function AudioPlayerInstance({ src, title, peaks, duration, brand = false, class
   const root = useRef<HTMLDivElement>(null);
   const audio = useRef<HTMLAudioElement>(null);
   const canvas = useRef<HTMLDivElement>(null);
+  const canvasMotion = useStyleMotion<HTMLDivElement>(canvas, ["opacity"], "slow");
   useImperativeHandle(forwardedRef, () => root.current!);
   const player = useMediaPlayer(audio);
   const [waveform, setWaveform] = useState<"loading" | "ready" | "fallback">(src ? "loading" : "fallback");
@@ -78,7 +80,7 @@ function AudioPlayerInstance({ src, title, peaks, duration, brand = false, class
   const enhanced = waveform === "ready" && !player.state.error;
   return <div ref={root} data-slot="audio-player" data-waveform={waveform} data-brand={brand} className={cn("w-full rounded-xl border border-border bg-card text-card-foreground", className)} {...props}>
     <div className={cn(styles.waveform, "mx-3 mt-3")} hidden={waveform === "fallback"} aria-hidden={!enhanced}>
-      <div ref={canvas} className={styles.canvas} data-ready={enhanced} role="slider" aria-label={title + " waveform"} aria-valuemin={0} aria-valuemax={player.state.duration} aria-valuenow={Math.min(player.state.time, player.state.duration)} aria-valuetext={formatMediaTime(player.state.time) + " / " + formatMediaTime(player.state.duration)} aria-busy={!enhanced} aria-disabled={!enhanced || !player.state.duration} tabIndex={enhanced && player.state.duration ? 0 : -1} onKeyDown={(event) => {
+      <div ref={canvasMotion} className={styles.canvas} data-ready={enhanced} role="slider" aria-label={title + " waveform"} aria-valuemin={0} aria-valuemax={player.state.duration} aria-valuenow={Math.min(player.state.time, player.state.duration)} aria-valuetext={formatMediaTime(player.state.time) + " / " + formatMediaTime(player.state.duration)} aria-busy={!enhanced} aria-disabled={!enhanced || !player.state.duration} tabIndex={enhanced && player.state.duration ? 0 : -1} onKeyDown={(event) => {
         if (!enhanced) return;
         const targets: Record<string, number> = { ArrowLeft: player.state.time - 5, ArrowRight: player.state.time + 5, Home: 0, End: player.state.duration };
         if (event.key in targets) { event.preventDefault(); player.seek(targets[event.key]!); }

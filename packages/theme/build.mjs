@@ -118,7 +118,6 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   .lm-brand-skeleton {
     background-image: linear-gradient(90deg, color-mix(in srgb, var(--lm-color-brand-gradient-start) 16%, var(--lm-color-background-subtle)), color-mix(in srgb, var(--lm-color-brand-gradient-middle) 32%, var(--lm-color-background-subtle)), color-mix(in srgb, var(--lm-color-brand-gradient-end) 16%, var(--lm-color-background-subtle)));
     background-size: 220% 100%;
-    animation: lm-brand-sweep var(--lm-motion-cycle-brand-surface) ease-in-out infinite alternate;
   }
   .lm-brand-gradient-text {
     background-image: linear-gradient(90deg, var(--lm-color-brand-gradient-start), var(--lm-color-brand-gradient-middle), var(--lm-color-brand-gradient-end));
@@ -126,17 +125,9 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
     background-clip: text;
     color: transparent;
   }
-  .lm-brand-gradient-text[data-animated="true"] { animation: lm-brand-sweep var(--lm-motion-cycle-brand-text) linear infinite alternate; }
-  [data-motion-paused="true"].lm-brand-skeleton, [data-motion-paused="true"].lm-brand-gradient-text { animation-play-state: paused; }
   .lm-brand-action {
     background-image: linear-gradient(90deg, color-mix(in srgb, var(--lm-color-brand-gradient-start) 12%, transparent), color-mix(in srgb, var(--lm-color-brand-gradient-middle) 18%, transparent), color-mix(in srgb, var(--lm-color-brand-gradient-end) 12%, transparent));
     background-size: 220% 100%;
-  }
-  .lm-brand-action[data-animated="true"] { animation: lm-brand-sweep var(--lm-motion-cycle-brand-surface) ease-in-out infinite alternate; }
-  .lm-brand-action[data-motion-paused="true"], .lm-brand-action:disabled, .lm-brand-action[aria-disabled="true"], .lm-brand-action[aria-busy="true"] { animation-play-state: paused; }
-  @keyframes lm-brand-sweep { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
-  @media (prefers-reduced-motion: reduce) {
-    .lm-brand-skeleton, .lm-brand-gradient-text[data-animated="true"], .lm-brand-action[data-animated="true"] { animation: none; background-position: 50% 50%; }
   }
   @media (forced-colors: active) {
     .lm-brand-gradient-text { background-image: none; color: CanvasText; }

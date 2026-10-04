@@ -92,14 +92,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-011] T-MMUKCQ7RXWEK-motion-standardization-02 진입·반복·브랜드·로딩·미디어 효과 Motion 전환
+- [DONE][PRD-FR-011] T-MMUKCQ7RXWEK-motion-standardization-02 진입·반복·브랜드·로딩·미디어 효과 Motion 전환
   - Date: 2026-10-04
   - Acceptance:
     - Reveal/Text/Rotation/Media/brand/Skeleton/Spinner/Marquee/Status/Progress/audio가 Motion으로 실행된다.
   - Checklist:
-    - [ ] paused/reduced/offscreen/hidden lifecycle 확인
-    - [ ] theme keyframes 제거와 0.2.0 준비
-    - [ ] 기존 motion/player/control 테스트와 관련 metadata 동기화
+    - [x] paused/reduced/offscreen/hidden lifecycle 확인
+    - [x] theme keyframes 제거와 0.2.0 준비
+    - [x] 기존 motion/player/control 테스트와 관련 metadata 동기화
   - Docs:
     - project:apps/docs/lib/items.ts
     - docs:designs/design-system.md
@@ -208,3 +208,9 @@
 | pnpm exec eslint registry/lib/leement-motion.ts registry/ui/motion.test.tsx | 2026-10-04 | PASS |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+### T-02 검증
+
+- motion/player/controls/button/remaining-utility 기존 검사: 5 files, 32 tests PASS.
+- theme 검사: 4 tests PASS. docs typecheck와 changed-source lint PASS.
+- 실제 프레임/pause/자연 높이 검증은 T-06 브라우저 계약에서 수행한다.

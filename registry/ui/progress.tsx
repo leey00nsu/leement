@@ -2,6 +2,8 @@
 
 import { Progress as ProgressPrimitive } from "@base-ui/react/progress";
 
+import { useRef, useState, useEffect } from "react";
+import { useMotionLoop } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 
 function Progress({ className, children, value, ...props }: ProgressPrimitive.Root.Props) {
@@ -30,11 +32,24 @@ function ProgressTrack({ className, ...props }: ProgressPrimitive.Track.Props) {
   );
 }
 
-function ProgressIndicator({ className, ...props }: ProgressPrimitive.Indicator.Props) {
+function ProgressIndicator({ className, ref: forwardedRef, ...props }: ProgressPrimitive.Indicator.Props) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [indeterminate, setIndeterminate] = useState(false);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const update = () => setIndeterminate(node.hasAttribute("data-indeterminate"));
+    const observer = new MutationObserver(update);
+    observer.observe(node, { attributes: true, attributeFilter: ["data-indeterminate"] });
+    update();
+    return () => observer.disconnect();
+  }, []);
+  useMotionLoop(ref, { opacity: [1, 0.5, 1] }, "cycle-pulse", !indeterminate);
   return (
     <ProgressPrimitive.Indicator
+      ref={(node) => { ref.current = node; if (typeof forwardedRef === "function") return forwardedRef(node); if (forwardedRef) forwardedRef.current = node; }}
       data-slot="progress-indicator"
-      className={(state) => cn("h-full bg-primary data-indeterminate:w-full data-indeterminate:animate-pulse motion-reduce:data-indeterminate:animate-none", typeof className === "function" ? className(state) : className)}
+      className={(state) => cn("h-full bg-primary data-indeterminate:w-full", typeof className === "function" ? className(state) : className)}
       {...props}
     />
   );

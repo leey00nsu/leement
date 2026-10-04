@@ -27,7 +27,7 @@
 6. Sonner/Recharts의 내장 visual interpolation도 조사한다. 공개 disable/unstyled 옵션을 사용하고 Leement가 표현하는 효과는 Motion으로 소유한다. 실제 미디어/파형 엔진은 유지한다.
 7. 보이는 native 선택 UI는 기존 Select의 Root/Trigger/Value/Content/Group/Label/Item으로 이관한다. Field, name/FormData, 현재 값의 표시 이름, disabled/invalid를 확인한다. NativeSelect item과 생성물은 제거한다.
 8. registry.json에 모든 Motion/helper 및 Select source dependencies를 반영하고 registry JSON을 재생성한다. 기존 source 소유 앱은 자동 덮어쓰지 않는다.
-9. 공개 설치 entrypoint와 현행 모션/선택 문서 전체를 수정한다. 변경 theme에는 0.2.0 버전을 사용하고 tokens의 값/API 변경이 없으면 0.1.0을 유지한다. 0.1.0 published artifact와 변경 0.2.0 local artifact를 구분하며 publish/push/deploy는 실행하지 않는다.
+9. 공개 설치 entrypoint와 현행 모션/선택 문서 전체를 수정한다. 변경 theme에는 0.2.0 버전을 사용하고 spin/pulse/marquee cycle 토큰 추가에 따라 tokens도 0.2.0으로 준비한다. 0.1.0 published artifact와 변경 0.2.0 local artifact를 구분하며 publish/push/deploy는 실행하지 않는다.
 
 ## 파일 구조
 

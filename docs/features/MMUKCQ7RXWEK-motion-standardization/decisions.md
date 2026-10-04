@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:f7eedfdce327a1593a90b42ff45e0f66d296f2cee9732434a6b67cc13231839d -->
+<!-- lee-spec-kit:workflow-sync sha256:42e6aea3fbf9fd1728a39e7a1b1c4ec7ff047969f4bdbc08d3edf59bc1e69343 -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -75,3 +75,9 @@
 - **Decision**: 승인된 6태스크를 순차 진행한다. 첫 태스크는 토큰 변환·요소 범위 Motion ref·registry dependency를 구현했다.
 - **Trace**: 기존 main의 공통 문서 상태를 바탕으로 계획했고 sharedDocumentationWarnings는 완료 Feature들의 같은 문서 변경 목록으로 확인했다. runtime/기존 선택 규칙의 나머지 변경은 후속 태스크에서 처리한다.
 - **Evidence**: tasks.md 검사 기록; motion.test.tsx 9개 PASS; docs typecheck PASS.
+
+## D006: 반복과 브랜드 효과의 실행 이전 (2026-10-04)
+
+- **Decision**: theme keyframes를 제거하고 registry source의 Motion loop로 실행한다. spin/pulse/marquee cycle을 token에 추가해 하드코딩 반복 시간을 줄였다. tokens와 theme은 0.2.0으로 준비한다. 원격 게시하지 않았다.
+- **Trace**: pause/play는 같은 Motion control을 유지하고 reduced/unmount 정리에 원래 정적 style을 복원한다. brand utility는 정적 표면을 유지한다.
+- **Evidence**: tasks.md T-02 검증, motion/player 등 32 tests와 theme 4 tests PASS.

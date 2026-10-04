@@ -15,8 +15,8 @@ beforeAll(() => {
 describe("Leement web theme contract", () => {
   it("publishes motion roles and stops effects rather than zeroing repeat cycles", () => {
     for (const role of ["duration-reveal", "duration-expand", "duration-media", "delay-stagger", "easing-reveal", "cycle-brand-text", "cycle-brand-surface", "cycle-rotate"]) expect(css).toContain(`--lm-motion-${role}:`);
-    expect(css).toContain("var(--lm-motion-cycle-brand-text)");
-    expect(css).toContain("var(--lm-motion-cycle-brand-surface)");
+    expect(css).not.toContain("@keyframes");
+    expect(css).not.toMatch(/animation\s*:/);
     expect(css).not.toContain("--lm-motion-cycle-brand-text: 0ms");
     expect(css).toContain("--lm-motion-duration-expand: 0ms");
   });

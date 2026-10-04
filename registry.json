@@ -31,7 +31,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -509,7 +510,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -1239,7 +1241,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -1333,7 +1336,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -1350,7 +1354,8 @@
       "description": "Persistent semantic state label.",
       "dependencies": [],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -1567,7 +1572,8 @@
       "description": "App-owned media loading, ready and error transition.",
       "registryDependencies": [
         "@leement/utils",
-        "@leement/skeleton"
+        "@leement/skeleton",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -1655,7 +1661,8 @@
       "registryDependencies": [
         "@leement/utils",
         "@leement/media-player-support",
-        "@leement/skeleton"
+        "@leement/skeleton",
+        "@leement/leement-motion"
       ],
       "files": [
         {

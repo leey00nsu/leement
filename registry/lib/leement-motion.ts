@@ -1,7 +1,7 @@
 "use client";
 
 import { animate, type DOMKeyframesDefinition } from "motion";
-import { useCallback, useEffect, useState, type Ref, type RefObject } from "react";
+import { useCallback, useEffect, useRef, useState, type Ref, type RefObject } from "react";
 
 // Read resolved values at the element so local consumer overrides work too.
 export function motionMilliseconds(element: Element, name: string): number {
@@ -38,6 +38,43 @@ export function useMotionRevision() {
     return () => window.removeEventListener("leement:motion-change", update);
   }, []);
   return revision;
+}
+
+export function useMotionLoop(
+  ref: RefObject<HTMLElement | SVGElement | null>,
+  keyframes: DOMKeyframesDefinition,
+  cycleRole: string,
+  paused = false,
+  seconds?: number,
+  mirror = false,
+) {
+  const revision = useMotionRevision();
+  const { active, reduced } = useMotionActivity(ref);
+  const control = useRef<ReturnType<typeof animate> | null>(null);
+  const definition = JSON.stringify(keyframes);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || reduced) return;
+    const duration = seconds ?? motionSeconds(node, cycleRole);
+    if (!Number.isFinite(duration) || duration <= 0) return;
+    const inline = node.getAttribute("style");
+    const animation = animate(node, JSON.parse(definition) as DOMKeyframesDefinition, {
+      duration, ease: "linear", repeat: Infinity, repeatType: mirror ? "reverse" : "loop",
+    });
+    animation.pause();
+    control.current = animation;
+    return () => {
+      animation.stop();
+      control.current = null;
+      if (inline === null) node.removeAttribute("style");
+      else node.setAttribute("style", inline);
+    };
+  }, [ref, definition, cycleRole, seconds, mirror, revision, reduced]);
+  useEffect(() => {
+    if (active && !paused) control.current?.play();
+    else control.current?.pause();
+  }, [active, paused, definition, cycleRole, seconds, mirror, revision, reduced]);
+  return { active: active && !paused, reduced };
 }
 
 const controlProperties = ["backgroundColor", "color", "borderColor", "boxShadow"] as const;
@@ -115,7 +152,7 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
 }
 
 // Scoped observer: no DOM scanning or required global provider.
-export function useMotionActivity(ref: RefObject<HTMLElement | null>) {
+export function useMotionActivity(ref: RefObject<HTMLElement | SVGElement | null>) {
   const [state, setState] = useState({ active: false, reduced: false });
   useEffect(() => {
     const element = ref.current;

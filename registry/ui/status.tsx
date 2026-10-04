@@ -1,4 +1,6 @@
+"use client";
 import * as React from "react";
+import { useMotionLoop } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 
 type StatusTone = "neutral" | "success" | "warning" | "danger";
@@ -16,9 +18,14 @@ function Status({ label, tone = "neutral", children, className, ...props }: Stat
   </span>;
 }
 
+function StatusPulse() {
+  const ref = React.useRef<HTMLSpanElement>(null);
+  useMotionLoop(ref, { scale: [1, 2], opacity: [0.6, 0] }, "cycle-spin");
+  return <span ref={ref} className={cn("absolute inset-0 rounded-full opacity-60", indicatorColor)} />;
+}
 function StatusIndicator({ pulse = false, className, ...props }: StatusIndicatorProps) {
   return <span data-slot="status-indicator" aria-hidden="true" className={cn("relative inline-flex size-1.5 shrink-0", className)} {...props}>
-    {pulse && <span className={cn("absolute inset-0 animate-ping rounded-full opacity-60 motion-reduce:animate-none", indicatorColor)} />}
+    {pulse && <StatusPulse />}
     <span className={cn("relative size-full rounded-full", indicatorColor)} />
   </span>;
 }

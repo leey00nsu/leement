@@ -1,5 +1,4 @@
 .root { display: grid; }
-.layer { grid-area: 1 / 1; min-width: 0; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--lm-motion-duration-media) var(--lm-motion-easing-reveal), visibility 0s var(--lm-motion-duration-media); }
-.layer[data-visible="true"] { opacity: 1; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+.layer { grid-area: 1 / 1; min-width: 0; opacity: 0; visibility: hidden; pointer-events: none; }
+.layer[data-visible="true"] { opacity: 1; visibility: visible; pointer-events: auto; }
 .root > [role="status"] { grid-area: 1 / 1; }
-@media (prefers-reduced-motion: reduce), (scripting: none) { .layer { transition: none !important; } }
