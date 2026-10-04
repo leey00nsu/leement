@@ -46,6 +46,10 @@
 
 T-08 추가 영향: 디자인 시스템 문서에 Tailwind source 스타일링과 Module 비사용 규칙을 명시한다(UPDATE). PRD/API/설치 절차/README는 변경이 없으며 추가 영향은 NONE이다. T-08 Docs에 디자인 문서를 연결한다. 기존 motion/player/navigation 테스트를 실행하고 실제 브라우저에서 computed layout·reduced/no-JS·급속 펼침/교체·파형 readiness/focus를 확인한다. registry 7개 item을 실제 CLI로 재설치하고 TypeScript/Vite build를 수행한다. 새 영구 테스트는 추가하지 않는다.
 
+T-09 추가 영향: PRD-FR-008과 디자인 문서의 Preview 조작 규칙을 UPDATE하며 T-09 Docs에 연결한다. README·npm/theme·registry runtime API 영향은 NONE이다. 공통 PreviewFrame에 Replay와 우측 resize handle을 제공한다. 단순 div width 축소로는 viewport media query가 바뀌지 않으므로 동일 예제 source를 그리는 전용 docs preview route를 iframe으로 표시한다. 전체 docs shell은 preview route에서 생략하고 theme/Foundation은 부모와 동기화한다. iframe은 가까운 화면 영역에서만 로드하고 기존 SSR/no-JS 예제를 fallback으로 유지한다. 높이는 콘텐츠 관찰로 반영하고 popup은 iframe viewport 안에서 동작한다. Replay는 iframe 내부 예제만 remount하며 width와 버튼 focus를 유지한다. Motion 적용 여부는 registry dependency graph에서 판정한다.
+
+T-09 검증: docs 조작은 브라우저 일회 검증으로 drag/touch/keyboard/min/max/window resize, 실제 sm media query와 container 재배치, 모션 Replay·reduced·media non-autoplay, popup focus, light/dark/Foundation, gallery 및 추가 예제·no-JS를 확인한다. 새 영구 테스트는 추가하지 않으며 기존 tests와 필수 typecheck/lint/test/build gate를 실행한다. iframe message의 origin/source·height payload를 확인하고 observer/listener/pointer cleanup을 검증한다.
+
 ## Additional Curated Impacts
 
 - **Assessment**: Complete

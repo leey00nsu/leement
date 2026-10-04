@@ -213,6 +213,23 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-09 모션 Replay와 반응형 Preview 폭 조절 제공
+  - Date: 2026-10-04
+  - Acceptance:
+    - 모션 예제의 우측 상단 Replay와 모든 기본·추가·Showcase Preview의 우측 resize handle이 동작하며 좁힌 폭에서 실제 media/container 반응형 규칙과 popup·theme·접근성을 보존한다.
+  - Checklist:
+    - [ ] 공통 preview Replay·pointer/keyboard resize와 실제 viewport 구현
+    - [ ] 전체 기본·추가·Showcase 예제 연결 및 문서 규칙 동기화
+    - [ ] 브라우저 drag/replay/mobile/theme/popup 및 필수 gate 검증
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -225,8 +242,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
