@@ -142,6 +142,12 @@ Showcase는 항목마다 대표 예제 하나를 사용한다. 상세 Examples�
 
 PreviewFrame의 최소 높이/inset/가로·세로 점선은 콘텐츠가 커지면 함께 늘어난다. inline popup은 frame 밖에도 읽고 조작할 수 있게 workbench 전체를 overflow-hidden으로 자르지 않는다. Code pane은 자체 scroll/rounded clipping을 소유한다. 실제 예제 source와 표시 Code는 일치해야 하며 registry public API와 디자인 token의 정렬 규칙을 바꾸지 않는다.
 
+### Preview 조작
+
+기본·추가·Showcase 프리뷰는 우측 handle을 드래그해 폭을 조절한다. 키보드 Arrow는 16px(Shift 64px), Home은 최소 폭, End는 전체 폭이다. 최소 폭은 240px이며 부모가 그보다 작으면 사용 가능한 폭이 우선한다. 각 예제의 실제 viewport에서 media query와 container query를 확인하고 콘텐츠 높이에 맞춰 프레임과 guide를 늘린다. 줄어든 영역 오른쪽은 background-subtle grid로 표시하며 코드 탭과 설치 소스는 조작 UI를 포함하지 않는다.
+
+Replay가 있는 프리뷰는 상단 60px 이상을 확보해 긴 표나 폼과 조작 버튼이 겹치지 않게 한다. Motion 의존이 있는 예제는 우측 상단 이름 있는 Replay로 현재 예제만 다시 시작한다. 폭·외부 focus·사이트 theme/Foundation은 유지하고 reduced motion과 미디어 non-autoplay를 보존한다. popup은 예제 viewport 안에서 focus/Escape를 처리한다. SSR/no-JS에서도 예제 콘텐츠는 읽을 수 있으며 문서 전용 제어를 registry API에 추가하지 않는다.
+
 ## 컴포넌트 스타일링
 
 Registry 컴포넌트의 정적 배치·색상·data 상태·focus와 reduced-motion/no-JS 대체 규칙은 Tailwind className으로 표현한다. CSS Module은 사용하지 않으며 필요한 media query와 하위 요소 선택은 해당 컴포넌트의 arbitrary variant에 둔다. 소비자에게 추가 CSS 파일 import를 요구하지 않는다. Theme의 토큰·reset·compatibility와 docs 전용 전역 스타일은 각각 기존 레이어가 소유한다. 시각 값을 시간에 따라 보간하는 동작은 Motion이 담당한다.

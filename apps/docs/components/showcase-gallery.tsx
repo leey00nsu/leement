@@ -26,7 +26,7 @@ function displayName(name: string) {
   return name.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
 }
 
-export function ShowcaseGallery() {
+export function ShowcaseGallery({ replayableNames }: { replayableNames: string[] }) {
   const styleMotionRef1 = useStyleMotion<HTMLButtonElement>(undefined);
 
   const [query, setQuery] = useState("");
@@ -80,7 +80,7 @@ export function ShowcaseGallery() {
                 </div>
                 <p className="max-w-lg text-sm leading-6 text-muted-foreground">{item.overview}</p>
               </div>
-              <PreviewFrame gallery><Preview name={name} /></PreviewFrame>
+              <PreviewFrame gallery name={name} replayable={replayableNames.includes(name)}><Preview name={name} /></PreviewFrame>
               <div className="flex min-w-0 flex-wrap items-center justify-between gap-3">
                 <code className="min-w-0 overflow-x-auto text-xs text-muted-foreground">{registryCommand(name)}</code>
                 <Link href={`/${section.id}/${name}`} className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">

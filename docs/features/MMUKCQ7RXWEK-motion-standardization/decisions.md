@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:9e7664e9b1c4daf7b8772df4709769988c8d11102608b731c9cf6a08b025d12c -->
+<!-- lee-spec-kit:workflow-sync sha256:e56d126b670d1a2941217e2a24902aa20e5d424688fcc0b40da656594f321f86 -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -132,3 +132,6 @@
 - div 폭만 좁히면 viewport breakpoint가 유지되므로 예제 source를 공유하는 docs 전용 iframe route를 사용한다. docs shell을 제외하고 콘텐츠 높이·theme/Foundation을 동기화하며 popup도 해당 viewport 안에 둔다. SSR/no-JS는 기존 inline source를 사용한다.
 - width는 pointer/touch 및 Arrow/Home/End로 조절한다. Replay는 현재 예제만 remount하고 width·handle/button focus를 유지한다. Motion 여부는 registry dependency closure로 판단하며 별도 component API를 만들지 않는다.
 - PRD와 디자인 문서를 T-09에 함께 갱신한다. registry/npm/theme/README 추가 영향은 NONE이다. 구현·병합 승인과 원격 게시 경계를 유지한다.
+
+- **결과**: 공통 PreviewFrame은 pointer capture/touch·keyboard 폭 조절, 우측 상단 Replay, lazy viewport 로딩과 SSR/no-JS fallback을 제공한다. 전용 route는 같은 예제 source를 사용하며 독립 viewport·popup을 제공하고 부모와 theme/Foundation·height를 동기화한다. message origin/source와 height 범위를 확인하고 observer/listener를 cleanup한다. 별도 registry component/provider API를 추가하지 않았다.
+- **검증**: T-09의 artifacts/interactive-preview-verification.json 및 interactive-preview.png. 전체 route·대표 UI/Pattern/Block/Showcase/추가예제, breakpoint/container·Replay·pointer/touch/keyboard·theme/Foundation·reduced/no-JS·popup·Code/Source, 필수 gate PASS. 탭은 Base UI의 기존 keep-mounted 상태를 유지해 Preview로 돌아올 때 프레임이 중복 생성되지 않는다. 구현·병합 승인을 구분하고 원격 작업은 수행하지 않는다.

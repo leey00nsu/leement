@@ -1,3 +1,4 @@
+import { hasPreviewMotion } from "../lib/preview-config";
 import Link from "next/link";
 import { CopyButton, ItemWorkbench } from "./item-workbench";
 import { AdditionalExamplePreview } from "./example-previews";
@@ -103,6 +104,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
         >
           <ItemWorkbench
             name={name}
+            replayable={hasPreviewMotion(name)}
             exampleCode={exampleCode}
             sourceCode={sourceCode}
             sourceFile={sourceFile}
@@ -156,7 +158,8 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
                   </p>
                 </div>
                 <ItemWorkbench
-                  name={`${name}-${example.id}`}
+                  name={name}
+                  replayable={hasPreviewMotion(name)}
                   exampleFile={example.file}
                   exampleCode={example.exampleCode}
                   sourceCode={sourceCode}

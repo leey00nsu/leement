@@ -42,8 +42,9 @@ function CodePane({ code, filename }: { code: string; filename: string }) {
   </div>;
 }
 
-export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, exampleFile, children }: {
+export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, exampleFile, replayable, children }: {
   name: string;
+  replayable: boolean;
   exampleCode: string;
   sourceCode: string;
   sourceFile: string;
@@ -66,7 +67,7 @@ export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, examp
         </TabsList>
       </div>
       <TabsContent value="preview" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
-        <PreviewFrame>{children}</PreviewFrame>
+        <PreviewFrame name={name} exampleFile={exampleFile} replayable={replayable}>{children}</PreviewFrame>
       </TabsContent>
       <TabsContent value="example" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
         <CodePane code={exampleCode} filename={`examples/${exampleFile ?? name}.tsx`} />

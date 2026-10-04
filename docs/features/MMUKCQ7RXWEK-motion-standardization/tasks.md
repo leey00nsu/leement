@@ -213,14 +213,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-09 모션 Replay와 반응형 Preview 폭 조절 제공
+- [DONE][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-09 모션 Replay와 반응형 Preview 폭 조절 제공
   - Date: 2026-10-04
   - Acceptance:
-    - 모션 예제의 우측 상단 Replay와 모든 기본·추가·Showcase Preview의 우측 resize handle이 동작하며 좁힌 폭에서 실제 media/container 반응형 규칙과 popup·theme·접근성을 보존한다.
+    - 101개 상세·독립 Preview 및 추가 예제 56개 route PASS. light/dark Replay·pointer/touch/keyboard resize·실제 breakpoint/container·theme/Foundation·popup·reduced/no-JS 및 필수 gate PASS. [증거](./artifacts/interactive-preview-verification.json) 참조.
   - Checklist:
-    - [ ] 공통 preview Replay·pointer/keyboard resize와 실제 viewport 구현
-    - [ ] 전체 기본·추가·Showcase 예제 연결 및 문서 규칙 동기화
-    - [ ] 브라우저 drag/replay/mobile/theme/popup 및 필수 gate 검증
+    - [x] 공통 preview Replay·pointer/keyboard resize와 실제 viewport 구현
+    - [x] 전체 기본·추가·Showcase 예제 연결 및 문서 규칙 동기화
+    - [x] 브라우저 drag/replay/mobile/theme/popup 및 필수 gate 검증
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -242,8 +242,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -318,3 +318,12 @@
 - 실제 설치 consumer light/dark에서 rotation의 blur/transform/opacity 중간 보간과 pause, TextReveal replay, RevealContent line 원점, panel 급속 토글·키보드·overflow, MediaReveal 상태·inert, audio readiness·focus-visible 2px/-2px·키보드 seek PASS. client error 없음. no-JS에서 waveform은 숨기고 native controls는 보인다.
 - 실제 shadcn CLI로 7개 item과 dependencies를 재설치하고 기존 Module 파일을 제거한 consumer TypeScript/Vite build PASS. 설치된 source만으로 Tailwind variant가 생성되어 동작한다.
 - 필수 typecheck/lint/test(19 files / 120 tests)/build 및 registry build PASS. 새 영구 테스트를 추가하지 않았다. 디자인 문서 스타일링 규칙을 갱신했다. 원격 게시나 병합은 실행하지 않았다.
+
+### T-09 검증
+
+- [브라우저/route 증거](./artifacts/interactive-preview-verification.json), [축소한 프리뷰 화면](./artifacts/interactive-preview.png). 101개 상세 페이지에서 handle과 공통 frame 존재, 독립 preview101개+추가예제56개 200, 잘못된 item/mode/file 404를 확인했다.
+- light/dark에서 pointer drag 908→608px, keyboard Home240/Arrow16/Shift64/End 전체폭, viewport375px에서 부모폭 clamp PASS. 실제 touch drag670→570px와 pointer cancel 뒤 iframe 조작 복귀 PASS.
+- 실제 sm media query에서 Reveal variants 2열278px→1열200px, FormSection container2열→1열, 자연높이1521px과 가로/세로 dashed guides PASS. Replay는 현재 예제만 remount하며 width·버튼 focus 유지, reduced motion 즉시 표시, 오디오 자동재생 없음.
+- iframe 내부 Dialog/Select focus·Escape, parent theme/Foundation CSS와 inline token 동기화, message origin/source 확인 PASS. 기본 UI·Pattern·Block·Showcase·추가 예제 적용과 Code/Source 복사 코드 유지 확인. client error 없음. no-JS에서는 기존 inline source가 읽히고 문서용 제어는 숨긴다.
+- 기존 중복 Replay 버튼3개를 공통 우측 상단 조작으로 통합했다. 예제 source와 표시 Code를 함께 갱신했다.
+- typecheck/lint/test19files120tests/build PASS. 신규 영구 테스트 NONE, 기존 테스트 및 브라우저 검증을 사용했다. token/theme/npm/registry public API 변화 없음. PRD/디자인 규칙 동기화 완료.

@@ -1,19 +1,9 @@
 "use client";
-import { useState } from "react";
 import { RevealContent } from "../../../registry/ui/reveal-content";
-import { Button } from "../../../registry/ui/button";
 export default function Example() {
-  const [replay, setReplay] = useState(0);
   return (
     <div className="w-full max-w-xl space-y-5">
-      <Button
-        size="sm"
-        variant="outline"
-        onClick={() => setReplay((v) => v + 1)}
-      >
-        Replay reveals
-      </Button>
-      <div key={replay} className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         {(
           ["default", "fade", "group", "line", "section", "stagger"] as const
         ).map((variant) => (

@@ -22,7 +22,7 @@ body { background: var(--lm-color-background-default); color: var(--lm-color-for
   align-items: center;
   justify-content: center;
   min-width: 0;
-  min-height: calc(var(--docs-preview-height) - 2 * var(--docs-preview-inset));
+  min-height: calc(var(--docs-preview-height) - var(--docs-preview-inset) - var(--docs-preview-top-inset, var(--docs-preview-inset)));
 }
 .docs-preview-guides::before,
 .docs-preview-guides::after {
@@ -36,7 +36,7 @@ body { background: var(--lm-color-background-default); color: var(--lm-color-for
   border-inline: 1px dashed var(--lm-color-border-default);
 }
 .docs-preview-guides::after {
-  inset: var(--docs-preview-inset) 0;
+  inset: var(--docs-preview-top-inset, var(--docs-preview-inset)) 0 var(--docs-preview-inset);
   border-block: 1px dashed var(--lm-color-border-default);
 }
 .docs-preview-gallery { --docs-preview-inset: 16px; --docs-preview-height: 280px; }
@@ -52,3 +52,14 @@ body:has(#leement-home) .docs-shell > main > div { max-width: none; }
 .prose-leement code { border-radius: var(--lm-radius-sm); background: var(--lm-color-background-subtle); padding: .15rem .35rem; font-size: .9em; }
 .prose-leement pre { overflow: auto; border: 1px solid var(--lm-color-border-default); border-radius: var(--lm-radius-lg); background: var(--lm-color-background-subtle); padding: 1rem; }
 .prose-leement pre code { background: transparent; padding: 0; }
+
+.docs-preview-stage {
+  background-color: var(--lm-color-background-subtle);
+  background-image: linear-gradient(to right, var(--lm-color-border-default) 1px, transparent 1px), linear-gradient(to bottom, var(--lm-color-border-default) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.docs-preview-with-replay {
+  --docs-preview-top-inset: max(60px, var(--docs-preview-inset));
+  padding-top: var(--docs-preview-top-inset);
+}

@@ -1,0 +1,93 @@
+{
+  "interaction": [
+    {
+      "theme": "light",
+      "replayOpacity": 0,
+      "widthPreserved": true,
+      "focusPreserved": true,
+      "keyboard": true,
+      "dragged": 608,
+      "fullWidth": 908,
+      "mobileClamp": true,
+      "columnsWide": "278px 278px",
+      "columnsNarrow": "200px",
+      "autoHeight": 1521,
+      "guide": {
+        "vertical": "dashed",
+        "horizontal": "dashed"
+      },
+      "formWide": "224px 580px",
+      "formNarrow": "200px",
+      "popupEscape": true,
+      "themeFoundation": true,
+      "mediaNonAutoplay": true,
+      "messageSourceChecked": true
+    },
+    {
+      "theme": "dark",
+      "replayOpacity": 0,
+      "widthPreserved": true,
+      "focusPreserved": true,
+      "keyboard": true,
+      "dragged": 608,
+      "fullWidth": 908,
+      "mobileClamp": true,
+      "columnsWide": "278px 278px",
+      "columnsNarrow": "200px",
+      "autoHeight": 1521,
+      "guide": {
+        "vertical": "dashed",
+        "horizontal": "dashed"
+      },
+      "formWide": "224px 580px",
+      "formNarrow": "200px",
+      "popupEscape": true,
+      "themeFoundation": true,
+      "mediaNonAutoplay": true,
+      "messageSourceChecked": true
+    }
+  ],
+  "surfaces": [
+    "/components/card",
+    "/components/spinner",
+    "/components/rotating-content",
+    "/components/select",
+    "/blocks/settings-section",
+    "/showcase:resize/replay"
+  ],
+  "noJS": true,
+  "invalidRoutes": [
+    "/preview/not-real/detail",
+    "/preview/button/not-real",
+    "/preview/button/detail/not-real"
+  ],
+  "errors": [],
+  "reduced": true,
+  "routeAudit": {
+    "primaryRoutes": 101,
+    "additionalRoutes": 56,
+    "mainRoutes": 101,
+    "allHandles": true,
+    "noChrome": true,
+    "errors": []
+  },
+  "touch": {
+    "touchDrag": true,
+    "from": 670,
+    "to": 570,
+    "cancelCleanup": true
+  },
+  "tabs": {
+    "codeSourcePreserved": true,
+    "tabsPreservePreview": true,
+    "oneActiveIframe": true
+  },
+  "gates": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "test": "PASS 19 files / 120 tests",
+    "build": "PASS tokens/theme/registry/docs; preview route supported",
+    "newDurableTests": "NONE: browser verification, existing contract tests only",
+    "registryApi": "unchanged"
+  }
+}
