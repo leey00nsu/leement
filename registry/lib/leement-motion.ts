@@ -1,6 +1,7 @@
 "use client";
 
 import { animate, type DOMKeyframesDefinition } from "motion";
+import { animate as animateStyles } from "motion/mini";
 import {
   useCallback,
   useEffect,
@@ -270,18 +271,25 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
       if (forwardedRef && typeof forwardedRef !== "function")
         forwardedRef.current = node;
       const names = key.split(",") as StyleProperty[];
-      const originals = Object.fromEntries(
-        names.map((name) => [name, node.style[name]]),
-      );
+      const cssName = (name: string) => name.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+      const inline = (name: StyleProperty) => ({
+        value: node.style.getPropertyValue(cssName(name)),
+        priority: node.style.getPropertyPriority(cssName(name)),
+      });
+      const originals = Object.fromEntries(names.map((name) => [name, inline(name)]));
       const read = () => {
         const style = getComputedStyle(node);
         return Object.fromEntries(names.map((name) => [name, style[name]]));
       };
       const restore = () => {
-        for (const name of names) node.style[name] = originals[name] ?? "";
+        for (const name of names) {
+          const { value, priority } = originals[name]!;
+          if (value) node.style.setProperty(cssName(name), value, priority);
+          else node.style.removeProperty(cssName(name));
+        }
       };
       let previous = read();
-      let control: ReturnType<typeof animate> | undefined;
+      let control: ReturnType<typeof animateStyles> | undefined;
       let disposed = false;
       let queued = false;
       const update = () => {
@@ -291,9 +299,9 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
           queued = false;
           if (disposed) return;
           if (!control)
-            for (const name of names) originals[name] = node.style[name];
+            for (const name of names) originals[name] = inline(name);
           const from = control ? read() : previous;
-          control?.stop();
+          control?.cancel();
           restore();
           const target = read();
           previous = target;
@@ -311,13 +319,14 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
             control = undefined;
             return;
           }
-          const next = animate(node, keyframes, {
+          const next = animateStyles(node, keyframes, {
             duration,
             ease: motionEasing(node, "standard"),
           });
           control = next;
           void next.then(() => {
             if (!disposed && control === next) {
+              next.cancel();
               restore();
               control = undefined;
             }
@@ -337,6 +346,11 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
       events.forEach((name) => node.addEventListener(name, update));
       // State attributes come from the accessible primitive, not a second state machine.
       const observer = new MutationObserver((records) => {
+        // Native animations don't write inline values until finish. Keep caller
+        // style edits made during playback, but never adopt Motion's final values.
+        if (control && control.state !== "finished" && records.some((record) => record.target === node && record.attributeName === "style")) {
+          for (const name of names) originals[name] = inline(name);
+        }
         if (records.some((record) => record.attributeName !== "style"))
           update();
       });
@@ -358,7 +372,7 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
       window.addEventListener("leement:motion-change", update);
       return () => {
         disposed = true;
-        control?.stop();
+        control?.cancel();
         restore();
         observer.disconnect();
         ancestors.forEach((element) => {

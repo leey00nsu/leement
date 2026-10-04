@@ -1,0 +1,90 @@
+{
+  "results": [
+    {
+      "case": "navigation",
+      "mode": "light",
+      "wait": 320,
+      "active": "Tree",
+      "remainingStyles": 0
+    },
+    {
+      "case": "navigation",
+      "mode": "light",
+      "wait": 25,
+      "active": "Tree",
+      "remainingStyles": 0
+    },
+    {
+      "case": "navigation",
+      "mode": "dark",
+      "wait": 320,
+      "active": "Tree",
+      "remainingStyles": 0
+    },
+    {
+      "case": "navigation",
+      "mode": "dark",
+      "wait": 25,
+      "active": "Tree",
+      "remainingStyles": 0
+    },
+    {
+      "case": "hover/active rapid toggle",
+      "midpoint": "rgb(161, 179, 216)",
+      "final": "rgb(230, 230, 230)",
+      "remainingStyles": 0
+    },
+    {
+      "case": "focus/blur",
+      "remainingShadow": 0
+    },
+    {
+      "case": "consumer inline edit during animation",
+      "color": "rgb(120, 80, 40)",
+      "priority": "important"
+    },
+    {
+      "case": "reduced motion",
+      "animations": 0
+    },
+    {
+      "case": "unmount during animation",
+      "animations": 0,
+      "remainingStyles": 0
+    }
+  ],
+  "errors": [],
+  "controls": [
+    {
+      "case": "switch translate",
+      "start": "16px",
+      "mid": "6.83158px",
+      "end": "2px",
+      "roundTrip": true
+    },
+    {
+      "case": "tabs rapid selection",
+      "names": [
+        "Code",
+        "Preview",
+        "Source",
+        "Code",
+        "Preview"
+      ],
+      "remainingStyles": 0
+    },
+    {
+      "case": "slider keyboard",
+      "initial": 35,
+      "value": 36
+    }
+  ],
+  "gates": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "test": "PASS 19 files / 120 tests",
+    "build": "PASS",
+    "consumerRegistryHelperInstall": "PASS shadcn namespace overwrite",
+    "consumerBuild": "PASS TypeScript + Vite"
+  }
+}

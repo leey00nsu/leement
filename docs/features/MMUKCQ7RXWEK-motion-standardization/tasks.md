@@ -183,14 +183,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-011] T-MMUKCQ7RXWEK-motion-standardization-07 상태 전환 임시 스타일 잔류 회귀 수정
+- [DONE][PRD-FR-011] T-MMUKCQ7RXWEK-motion-standardization-07 상태 전환 임시 스타일 잔류 회귀 수정
   - Date: 2026-10-04
   - Acceptance:
-    - 연속 탐색·hover·focus·active·reduced 전환 후 원래 CSS 및 소비자 inline style이 보존된다.
+    - 실제 브라우저 연속 탐색·hover·focus·active·reduced·unmount 및 소비자 inline edit/priority 보존 PASS. [증거](./artifacts/style-transition-verification.json) 참조.
   - Checklist:
-    - [ ] useStyleMotion 종료·중단·재시작 스타일 소유와 cleanup 수정
-    - [ ] 실제 브라우저 연속 클릭 및 빠른 상태 변경 회귀 검증
-    - [ ] 기존 motion 테스트·필수 gate·registry 소비자 확인과 문서 동기화
+    - [x] useStyleMotion 종료·중단·재시작 스타일 소유와 cleanup 수정
+    - [x] 실제 브라우저 연속 클릭 및 빠른 상태 변경 회귀 검증
+    - [x] 기존 motion 테스트·필수 gate·registry 소비자 확인과 문서 동기화
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -209,8 +209,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -220,12 +220,12 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| pnpm exec vitest run registry/ui/motion.test.tsx | 2026-10-04 | PASS 9 tests (T-01 checkpoint) |
+| pnpm exec vitest run registry/ui/motion.test.tsx | 2026-10-04 | PASS 10 tests |
 | pnpm --filter @leement/docs typecheck | 2026-10-04 | PASS |
 | pnpm exec eslint registry/lib/leement-motion.ts registry/ui/motion.test.tsx | 2026-10-04 | PASS |
 | pnpm run typecheck | 2026-10-04 | PASS |
 | pnpm run lint | 2026-10-04 | PASS |
-| pnpm run test | 2026-10-04 | PASS 19 files / 119 tests |
+| pnpm run test | 2026-10-04 | PASS 19 files / 120 tests |
 | pnpm run build | 2026-10-04 | PASS tokens/theme/registry/docs |
 | pnpm registry:build | 2026-10-04 | PASS dependency closure |
 | pnpm run build (isolated public consumer) | 2026-10-04 | PASS TypeScript + Vite |
@@ -268,3 +268,12 @@
 - owned source의 keyframes/animate/transition utility/보이는 HTML select 잔류 없음. CSS compatibility 변수와 vendor animation:none/transition:none은 정적 선언이다. ReactCrop 경계/외부 라이브러리 CSS 효과 차단 확인; 상세 처리는 D009.
 - 임시 consumer는 전체 카탈로그를 검사하는 fixture여서 Vite bundle 크기 안내가 발생했다. build 실패가 아니며 제품 앱 크기나 소비자 성능을 보장하는 측정으로 사용하지 않는다.
 - 구현 승인과 local merge 승인은 별도다. 현재 0.2.0은 미게시이며 원격 push/publish/deploy를 실행하지 않았다.
+
+### T-07 검증
+
+- 같은 Feature의 구현 승인 전 수정 요청을 받아 추가한 회귀 태스크다. 기존 T-06의 119 tests 및 페이지 감사는 당시 기록으로 유지한다. 최신 전체 검사는 120 tests PASS다.
+- [스타일 전환 브라우저 증거](./artifacts/style-transition-verification.json): 라이트/다크 × 클릭 간격 320ms/25ms로 9개 메뉴를 각각 순회(36회). 현재 항목은 Tree 한 곳이며 비활성 항목의 인라인 색/배경 및 선택 배경 잔류가 없다.
+- 독립 소비자 fixture에서 hover/active 중간 보간, 급속 toggle 후 CSS 복귀, focus/blur, 애니메이션 도중 React inline color 수정, padding/important 유지, reduced motion 및 진행 중 unmount 정리 PASS. client error 없음.
+- 실제 docs Switch의 translate 16→2px와 중간 보간/복귀, Tabs 급속 선택 후 임시 스타일 없음, Slider ArrowRight 35→36 PASS.
+- 기존 motion 테스트에 소비자 inline/priority/ref cleanup 계약을 보완했다. 전체 typecheck/lint/test/build PASS; 갱신 registry helper를 CLI로 다시 설치한 소비자 전체 source TypeScript/Vite build PASS.
+- 현행 디자인 규칙·public API·설치 계약은 유지되므로 이 회귀에 대한 추가 curated 설명 변경은 NONE이다. 원인/공식 API 선택과 검증 범위는 D010과 이 Feature 기록에 동기화했다.

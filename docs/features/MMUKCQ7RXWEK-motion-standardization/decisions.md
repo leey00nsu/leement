@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:aec3e848a3a20802600b95fa5d27539a7ff52d62c5d60b694758af0fff1c0b52 -->
+<!-- lee-spec-kit:workflow-sync sha256:8e2e4f6e6512c2bc23a15a559e48c88f3135a2e89caa09dedf39659406e94501 -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -110,3 +110,8 @@
 - 사용자가 왼쪽 탐색 항목 클릭 뒤 배경색이 남는 문제를 보고하고 수정을 요청했다. 구현 승인 대신 변경 요청으로 처리하고 같은 Feature에 T-07을 추가한다. T-06의 검증은 당시 범위의 기록으로 유지한다.
 - 실제 브라우저에서 aria-current는 Tree 한 항목뿐인데 Snippet/QR Code에 인라인 background-color가 남은 것을 재현했다. 공통 useStyleMotion의 임시 스타일과 소비자 원본 스타일 소유를 분리하고 완료·중단·재시작·ref cleanup을 검증한다.
 - 기존 motion 테스트와 실제 브라우저에 연속 탐색·급속 상태 변경·소비자 inline style 관찰을 보완한다. 이 회귀 수정으로 새 Feature, es-toolkit 도입, 게시·병합은 진행하지 않는다.
+
+- **수정**: 일반 CSS 상태 전환은 Motion 공식 `motion/mini` animate로 실행한다. 이전 hybrid animate의 element renderer가 보유하는 style 값과 예약 render를 피하고, 완료/중단/cleanup에는 cancel 후 소비자 원본 inline 값과 !important 우선순위를 복원한다. 애니메이션 도중 소비자가 바꾼 style은 MutationObserver에서 원본으로 갱신하되 Motion의 종료 값은 채택하지 않는다. 반복/presence의 hybrid Motion은 유지한다. 추가 npm 의존은 없다.
+- **근거**: [Motion animate 공식 API](https://motion.dev/docs/animate)는 mini가 HTML/SVG style을 실행하며 stop은 값을 인라인 style로 commit하고 cancel은 애니메이션을 취소한다고 설명한다. 설치된 Motion source의 NativeAnimation 및 element renderer 구현을 함께 확인했다.
+
+- **검증**: T-07 및 artifacts/style-transition-verification.json. light/dark 연속 탐색 36회, state 변경과 실제 보간, 소비자 inline/priority, reduced/unmount, Switch/Tabs/Slider를 관찰했다. 필수 gate와 새 helper 소비자 설치·빌드를 통과했다. 구현 승인은 재요청하며 별도 병합 승인은 유지한다.

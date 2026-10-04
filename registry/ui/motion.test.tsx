@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 import { MediaReveal } from "../patterns/media-reveal";
 import { BrandAction } from "../patterns/brand-action";
 import { RotatingContent } from "./rotating-content";
-import { motionEasing, motionMilliseconds, motionSeconds } from "../lib/leement-motion";
+import { motionEasing, motionMilliseconds, motionSeconds, useStyleMotion } from "../lib/leement-motion";
 import { TextReveal } from "./text-reveal";
 import { RevealContent } from "./reveal-content";
 
@@ -136,4 +136,29 @@ test("reveal content observes its real element with either kind of consumer ref"
   expect(objectRef.current).toBeNull();
   expect(callbackRef).toHaveBeenCalledWith(null);
   expect(disconnect).toHaveBeenCalled();
+});
+
+
+test("style transitions preserve caller inline styles, priority and ref cleanup under reduced motion", async () => {
+  vi.stubGlobal("matchMedia", () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+  const callerRef = createRef<HTMLButtonElement>();
+  function Control({ selected }: { selected: boolean }) {
+    const ref = useStyleMotion(callerRef);
+    return <button ref={ref} aria-pressed={selected} style={{ color: "rgb(12, 34, 56)", padding: 12 }}>Styled action</button>;
+  }
+  const view = render(<Control selected={false} />);
+  const node = screen.getByRole("button", { name: "Styled action" });
+  expect(callerRef.current).toBe(node);
+  node.style.setProperty("background-color", "rgb(40, 50, 60)", "important");
+  for (const selected of [true, false, true, false]) {
+    await act(async () => { view.rerender(<Control selected={selected} />); fireEvent.focus(node); fireEvent.blur(node); });
+  }
+  expect(node.style.color).toBe("rgb(12, 34, 56)");
+  expect(node.style.getPropertyValue("background-color")).toBe("rgb(40, 50, 60)");
+  expect(node.style.getPropertyPriority("background-color")).toBe("important");
+  expect(node.style.padding).toBe("12px");
+  view.unmount();
+  expect(callerRef.current).toBeNull();
+  expect(node.style.color).toBe("rgb(12, 34, 56)");
+  expect(node.style.getPropertyPriority("background-color")).toBe("important");
 });
