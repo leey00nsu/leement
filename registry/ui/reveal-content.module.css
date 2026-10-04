@@ -1,7 +1,0 @@
-.root [data-reveal-line] { transform-origin: center; }
-@media (prefers-reduced-motion: reduce), (scripting: none) {
-  .root, .root [data-reveal-item], .root [data-reveal-media], .root [data-reveal-line] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}

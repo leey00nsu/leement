@@ -5,7 +5,6 @@ import { motion, useAnimate, useInView } from "motion/react";
 import { useEffect, useImperativeHandle } from "react";
 import { motionEasing, motionMilliseconds, useMotionActivity } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
-import styles from "./reveal-content.module.css";
 
 type RevealContentProps = HTMLMotionProps<"div"> & {
   delay?: number;
@@ -49,7 +48,12 @@ function RevealContent({ className, delay = 0, distance, duration, fromOpacity, 
     }
     return () => controls.forEach((control) => control.stop());
   }, [animate, delay, distance, duration, fromOpacity, inView, reduced, scope, variant]);
-  return <motion.div initial={false} ref={scope} data-slot="reveal-content" data-reveal-variant={variant} className={cn(styles.root, className)} {...props} />;
+  return <motion.div initial={false} ref={scope} data-slot="reveal-content" data-reveal-variant={variant} className={cn(
+    "[&_[data-reveal-line]]:origin-center",
+    "motion-reduce:opacity-100! motion-reduce:transform-none! motion-reduce:[&_:is([data-reveal-item],[data-reveal-media],[data-reveal-line])]:opacity-100! motion-reduce:[&_:is([data-reveal-item],[data-reveal-media],[data-reveal-line])]:transform-none!",
+    "[@media(scripting:none)]:opacity-100! [@media(scripting:none)]:transform-none! [@media(scripting:none)]:[&_:is([data-reveal-item],[data-reveal-media],[data-reveal-line])]:opacity-100! [@media(scripting:none)]:[&_:is([data-reveal-item],[data-reveal-media],[data-reveal-line])]:transform-none!",
+    className,
+  )} {...props} />;
 }
 export { RevealContent };
 export type { RevealContentProps };

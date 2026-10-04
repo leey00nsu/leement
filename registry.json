@@ -412,11 +412,6 @@
           "path": "registry/ui/reveal-content.tsx",
           "type": "registry:ui",
           "target": "components/ui/reveal-content.tsx"
-        },
-        {
-          "path": "registry/ui/reveal-content.module.css",
-          "type": "registry:file",
-          "target": "components/ui/reveal-content.module.css"
         }
       ]
     },
@@ -511,11 +506,6 @@
           "path": "registry/ui/collapsible.tsx",
           "type": "registry:ui",
           "target": "components/ui/collapsible.tsx"
-        },
-        {
-          "path": "registry/ui/collapsible.module.css",
-          "type": "registry:file",
-          "target": "components/ui/collapsible.module.css"
         }
       ]
     },
@@ -1587,11 +1577,6 @@
           "path": "registry/ui/text-reveal.tsx",
           "type": "registry:ui",
           "target": "components/ui/text-reveal.tsx"
-        },
-        {
-          "path": "registry/ui/text-reveal.module.css",
-          "type": "registry:file",
-          "target": "components/ui/text-reveal.module.css"
         }
       ]
     },
@@ -1610,11 +1595,6 @@
           "path": "registry/patterns/media-reveal.tsx",
           "type": "registry:component",
           "target": "components/patterns/media-reveal.tsx"
-        },
-        {
-          "path": "registry/patterns/media-reveal.module.css",
-          "type": "registry:file",
-          "target": "components/patterns/media-reveal.module.css"
         }
       ]
     },
@@ -1651,11 +1631,6 @@
           "path": "registry/ui/rotating-content.tsx",
           "type": "registry:ui",
           "target": "components/ui/rotating-content.tsx"
-        },
-        {
-          "path": "registry/ui/rotating-content.module.css",
-          "type": "registry:file",
-          "target": "components/ui/rotating-content.module.css"
         }
       ]
     },
@@ -1699,11 +1674,6 @@
           "path": "registry/ui/audio-player.tsx",
           "type": "registry:ui",
           "target": "components/ui/audio-player.tsx"
-        },
-        {
-          "path": "registry/ui/audio-player.module.css",
-          "type": "registry:ui",
-          "target": "components/ui/audio-player.module.css"
         }
       ]
     },
@@ -1845,11 +1815,6 @@
           "path": "registry/ui/accordion.tsx",
           "type": "registry:ui",
           "target": "components/ui/accordion.tsx"
-        },
-        {
-          "path": "registry/ui/accordion.module.css",
-          "type": "registry:file",
-          "target": "components/ui/accordion.module.css"
         }
       ]
     },

@@ -197,14 +197,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-004] T-MMUKCQ7RXWEK-motion-standardization-08 남은 CSS Module 제거와 Tailwind source 통합
+- [DONE][PRD-FR-004] T-MMUKCQ7RXWEK-motion-standardization-08 남은 CSS Module 제거와 Tailwind source 통합
   - Date: 2026-10-04
   - Acceptance:
-    - 모든 CSS Module 파일·import·registry metadata가 제거되고 기존 배치·모션·접근성·no-JS 대체 동작 및 소비자 설치 빌드가 유지된다.
+    - CSS Module 7개와 import/배포 metadata 잔류 없음. 14개 변경 전후 스타일 비교, light/dark 소비자 모션·키보드, reduced/no-JS와 실제 registry 설치·타입·빌드 PASS. [증거](./artifacts/css-module-removal-verification.json) 참조.
   - Checklist:
-    - [ ] 7개 Module의 정적 상태와 fallback을 Tailwind source로 통합
-    - [ ] registry metadata·생성물과 현행 디자인 문서 동기화
-    - [ ] 기존 테스트·필수 gate·실제 브라우저와 소비자 재설치 빌드 검증
+    - [x] 7개 Module의 정적 상태와 fallback을 Tailwind source로 통합
+    - [x] registry metadata·생성물과 현행 디자인 문서 동기화
+    - [x] 기존 테스트·필수 gate·실제 브라우저와 소비자 재설치 빌드 검증
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -
@@ -225,8 +225,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -293,3 +293,11 @@
 - 실제 docs Switch의 translate 16→2px와 중간 보간/복귀, Tabs 급속 선택 후 임시 스타일 없음, Slider ArrowRight 35→36 PASS.
 - 기존 motion 테스트에 소비자 inline/priority/ref cleanup 계약을 보완했다. 전체 typecheck/lint/test/build PASS; 갱신 registry helper를 CLI로 다시 설치한 소비자 전체 source TypeScript/Vite build PASS.
 - 현행 디자인 규칙·public API·설치 계약은 유지되므로 이 회귀에 대한 추가 curated 설명 변경은 NONE이다. 원인/공식 API 선택과 검증 범위는 D010과 이 Feature 기록에 동기화했다.
+
+### T-08 검증
+
+- source/registry metadata/생성 JSON/설치 consumer에 CSS Module 파일과 import가 남지 않는다. 정적 배치와 접근성 fallback은 컴포넌트 Tailwind source에 있다. theme/docs 전역 CSS는 기존 레이어를 유지한다.
+- [브라우저 증거](./artifacts/css-module-removal-verification.json): reduced/no-JS × 7개 항목의 변경 전후 computed style 14사례가 동일하다. 추가로 inline opacity/transform/filter가 있어도 reduced/no-JS fallback이 우선함을 확인했다.
+- 실제 설치 consumer light/dark에서 rotation의 blur/transform/opacity 중간 보간과 pause, TextReveal replay, RevealContent line 원점, panel 급속 토글·키보드·overflow, MediaReveal 상태·inert, audio readiness·focus-visible 2px/-2px·키보드 seek PASS. client error 없음. no-JS에서 waveform은 숨기고 native controls는 보인다.
+- 실제 shadcn CLI로 7개 item과 dependencies를 재설치하고 기존 Module 파일을 제거한 consumer TypeScript/Vite build PASS. 설치된 source만으로 Tailwind variant가 생성되어 동작한다.
+- 필수 typecheck/lint/test(19 files / 120 tests)/build 및 registry build PASS. 새 영구 테스트를 추가하지 않았다. 디자인 문서 스타일링 규칙을 갱신했다. 원격 게시나 병합은 실행하지 않았다.

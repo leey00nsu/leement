@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import { usePresenceMotion } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
-import styles from "./collapsible.module.css";
 
 import { Collapsible as CollapsiblePrimitive } from "@base-ui/react/collapsible";
 
@@ -38,7 +37,7 @@ function CollapsibleContent({
       data-slot="collapsible-content"
       className={(state) =>
         cn(
-          styles.panel,
+          "h-auto overflow-clip",
           typeof className === "function" ? className(state) : className,
         )
       }

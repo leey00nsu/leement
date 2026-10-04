@@ -6,7 +6,6 @@ import { finiteTime, formatMediaTime, MediaPlayerControls, MediaPlayerStatus, us
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { useStyleMotion } from "@/lib/leement-motion";
-import styles from "./audio-player.module.css";
 
 type AudioPlayerProps = Omit<ComponentProps<"div">, "children"> & {
   src: string;
@@ -79,8 +78,8 @@ function AudioPlayerInstance({ src, title, peaks, duration, brand = false, class
 
   const enhanced = waveform === "ready" && !player.state.error;
   return <div ref={root} data-slot="audio-player" data-waveform={waveform} data-brand={brand} className={cn("w-full rounded-xl border border-border bg-card text-card-foreground", className)} {...props}>
-    <div className={cn(styles.waveform, "mx-3 mt-3")} hidden={waveform === "fallback"} aria-hidden={!enhanced}>
-      <div ref={canvasMotion} className={styles.canvas} data-ready={enhanced} role="slider" aria-label={title + " waveform"} aria-valuemin={0} aria-valuemax={player.state.duration} aria-valuenow={Math.min(player.state.time, player.state.duration)} aria-valuetext={formatMediaTime(player.state.time) + " / " + formatMediaTime(player.state.duration)} aria-busy={!enhanced} aria-disabled={!enhanced || !player.state.duration} tabIndex={enhanced && player.state.duration ? 0 : -1} onKeyDown={(event) => {
+    <div className="relative mx-3 mt-3 min-h-[72px] overflow-hidden rounded-[var(--lm-radius-md)] [@media(scripting:none)]:hidden" hidden={waveform === "fallback"} aria-hidden={!enhanced}>
+      <div ref={canvasMotion} className="min-h-[72px] opacity-0 data-[ready=true]:opacity-100 focus-visible:outline-2 focus-visible:outline-[var(--lm-color-focus-ring)] focus-visible:-outline-offset-2" data-ready={enhanced} role="slider" aria-label={title + " waveform"} aria-valuemin={0} aria-valuemax={player.state.duration} aria-valuenow={Math.min(player.state.time, player.state.duration)} aria-valuetext={formatMediaTime(player.state.time) + " / " + formatMediaTime(player.state.duration)} aria-busy={!enhanced} aria-disabled={!enhanced || !player.state.duration} tabIndex={enhanced && player.state.duration ? 0 : -1} onKeyDown={(event) => {
         if (!enhanced) return;
         const targets: Record<string, number> = { ArrowLeft: player.state.time - 5, ArrowRight: player.state.time + 5, Home: 0, End: player.state.duration };
         if (event.key in targets) { event.preventDefault(); player.seek(targets[event.key]!); }

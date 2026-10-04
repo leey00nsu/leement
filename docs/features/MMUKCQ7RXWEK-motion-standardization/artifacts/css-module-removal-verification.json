@@ -1,0 +1,236 @@
+{
+  "fallbackComparison": {
+    "cases": 14,
+    "identical": true
+  },
+  "consumer": [
+    {
+      "scheme": "light",
+      "rotation": {
+        "state": {
+          "index": "0",
+          "display": "grid",
+          "items": [
+            {
+              "current": "true",
+              "opacity": "1",
+              "transform": "none",
+              "filter": "none",
+              "area": "1 / 1"
+            },
+            {
+              "current": "false",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6)",
+              "filter": "blur(4px)",
+              "area": "1 / 1"
+            },
+            {
+              "current": "false",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6)",
+              "filter": "blur(4px)",
+              "area": "1 / 1"
+            }
+          ]
+        },
+        "intermediate": {
+          "opacity": 0.520097,
+          "transform": "matrix(1, 0, 0, 1, 0, 2.87942)",
+          "filter": "blur(1.91961px)",
+          "animations": 3
+        }
+      },
+      "text": {
+        "display": "inline-block",
+        "opacity": 0.384609,
+        "animations": 2
+      },
+      "reveal": {
+        "opacity": "1",
+        "items": [
+          {
+            "opacity": "1",
+            "origin": "256px 12px"
+          },
+          {
+            "opacity": "1",
+            "origin": "256px 12px"
+          },
+          {
+            "opacity": "1",
+            "origin": "20px 10px"
+          }
+        ]
+      },
+      "collapsible": {
+        "intermediateHeight": 63.140625,
+        "rapidToggle": true,
+        "keyboard": true
+      },
+      "accordion": true,
+      "mediaStates": true,
+      "audio": {
+        "focus": {
+          "minHeight": "72px",
+          "opacity": "1",
+          "outlineWidth": "2px",
+          "outlineStyle": "solid",
+          "offset": "-2px"
+        },
+        "keyboardSeek": true
+      },
+      "errors": []
+    },
+    {
+      "scheme": "dark",
+      "rotation": {
+        "state": {
+          "index": "0",
+          "display": "grid",
+          "items": [
+            {
+              "current": "true",
+              "opacity": "1",
+              "transform": "none",
+              "filter": "none",
+              "area": "1 / 1"
+            },
+            {
+              "current": "false",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6)",
+              "filter": "blur(4px)",
+              "area": "1 / 1"
+            },
+            {
+              "current": "false",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6)",
+              "filter": "blur(4px)",
+              "area": "1 / 1"
+            }
+          ]
+        },
+        "intermediate": {
+          "opacity": 0.519813,
+          "transform": "matrix(1, 0, 0, 1, 0, 2.88112)",
+          "filter": "blur(1.92075px)",
+          "animations": 3
+        }
+      },
+      "text": {
+        "display": "inline-block",
+        "opacity": 0.298389,
+        "animations": 2
+      },
+      "reveal": {
+        "opacity": "1",
+        "items": [
+          {
+            "opacity": "1",
+            "origin": "256px 12px"
+          },
+          {
+            "opacity": "1",
+            "origin": "256px 12px"
+          },
+          {
+            "opacity": "1",
+            "origin": "20px 10px"
+          }
+        ]
+      },
+      "collapsible": {
+        "intermediateHeight": 65.6875,
+        "rapidToggle": true,
+        "keyboard": true
+      },
+      "accordion": true,
+      "mediaStates": true,
+      "audio": {
+        "focus": {
+          "minHeight": "72px",
+          "opacity": "1",
+          "outlineWidth": "2px",
+          "outlineStyle": "solid",
+          "offset": "-2px"
+        },
+        "keyboardSeek": true
+      },
+      "errors": []
+    }
+  ],
+  "fallback": [
+    {
+      "mode": "reduced",
+      "reveal": [
+        {
+          "opacity": "1",
+          "transform": "none",
+          "origin": "199.125px 75px"
+        },
+        {
+          "opacity": "1",
+          "transform": "none",
+          "origin": "20px 10px"
+        },
+        {
+          "opacity": "1",
+          "transform": "none",
+          "origin": "20px 10px"
+        },
+        {
+          "opacity": "1",
+          "transform": "none",
+          "origin": "20px 10px"
+        }
+      ],
+      "text": {
+        "opacity": "1",
+        "filter": "none",
+        "transform": "none"
+      }
+    },
+    {
+      "mode": "nojs",
+      "reveal": [
+        {
+          "opacity": "1",
+          "transform": "none",
+          "origin": "199.125px 75px"
+        },
+        {
+          "opacity": "1",
+          "transform": "none",
+          "origin": "20px 10px"
+        },
+        {
+          "opacity": "1",
+          "transform": "none",
+          "origin": "20px 10px"
+        },
+        {
+          "opacity": "1",
+          "transform": "none",
+          "origin": "20px 10px"
+        }
+      ],
+      "text": {
+        "opacity": "1",
+        "filter": "none",
+        "transform": "none"
+      },
+      "audioNative": true
+    }
+  ],
+  "gates": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "test": "PASS 19 files / 120 tests",
+    "build": "PASS tokens/theme/registry/docs",
+    "consumerInstall": "PASS actual shadcn CLI 7 items with dependency closure",
+    "consumerBuild": "PASS TypeScript + Vite, old Module files removed",
+    "staticAudit": "PASS no Module source/import/metadata/generated/installed files"
+  }
+}

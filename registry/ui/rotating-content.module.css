@@ -1,4 +1,0 @@
-.slot { display: inline-grid; min-width: 0; }
-.item { grid-area: 1 / 1; opacity: 0; transform: translateY(6px); filter: blur(4px); }
-.item[data-current="true"] { opacity: 1; transform: none; filter: none; }
-@media (prefers-reduced-motion: reduce), (scripting: none) { .item { filter: none !important; transform: none !important; } }

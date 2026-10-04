@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:8e2e4f6e6512c2bc23a15a559e48c88f3135a2e89caa09dedf39659406e94501 -->
+<!-- lee-spec-kit:workflow-sync sha256:9e7664e9b1c4daf7b8772df4709769988c8d11102608b731c9cf6a08b025d12c -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -122,3 +122,6 @@
 - 7개 Module은 이전 CSS 모션 구현의 잔여 정적 규칙이다. layout/data-state/focus/reduced/no-JS를 컴포넌트 Tailwind source에 통합하고 Module import·파일·registry metadata를 제거한다. fallback을 생략하거나 소비자에게 별도 CSS import를 요구하지 않는다.
 - RotatingContent의 Motion ref가 관찰하는 transform/filter/opacity와 panel 높이, 미디어 layer 의미, 파형 no-JS fallback을 보존한다. CSS 애니메이션을 되살리지 않는다.
 - 디자인 문서 UPDATE를 T-08 Docs에 연결한다. PRD·public API·공개 설치 절차·README 추가 영향은 NONE이며 기존 이력 SDD는 재작성하지 않는다. 구현/병합 승인은 구분하고 원격 게시하지 않는다.
+
+- **결과**: 7개 Module을 삭제하고 layout/data/focus/fallback을 Tailwind에 통합했다. Rotation의 y 위치는 CSS transform arbitrary utility를 유지해 기존 Motion 관찰 속성과 일치한다. reduced/no-JS utility는 important로 Motion inline 값보다 우선한다. registry JSON에서 CSS file 항목을 제거했다.
+- **검증**: T-08과 artifacts/css-module-removal-verification.json. 14개 변경 전후 스타일 동일, light/dark 실제 소비자 및 no-JS/reduced·모션 보간·focus/seek PASS, 120 tests 및 필수 gate PASS. 기존 소비자의 사용되지 않는 CSS 파일은 CLI가 자동 삭제하지 않지만 새 source는 이를 import하지 않는다. 임시 consumer에서는 이를 실제 삭제한 상태로 검증했다.

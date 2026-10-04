@@ -4,7 +4,6 @@ import { Accordion as Primitive } from "@base-ui/react/accordion";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePresenceMotion, useStyleMotion } from "@/lib/leement-motion";
-import styles from "./accordion.module.css";
 
 const Accordion = Primitive.Root;
 function AccordionItem({ className, ...props }: Primitive.Item.Props) {
@@ -70,7 +69,7 @@ function AccordionContent({
       ref={ref}
       className={(state) =>
         cn(
-          styles.panel,
+          "h-auto overflow-clip",
           typeof className === "function" ? className(state) : className,
         )
       }

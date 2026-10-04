@@ -142,6 +142,10 @@ Showcase는 항목마다 대표 예제 하나를 사용한다. 상세 Examples�
 
 PreviewFrame의 최소 높이/inset/가로·세로 점선은 콘텐츠가 커지면 함께 늘어난다. inline popup은 frame 밖에도 읽고 조작할 수 있게 workbench 전체를 overflow-hidden으로 자르지 않는다. Code pane은 자체 scroll/rounded clipping을 소유한다. 실제 예제 source와 표시 Code는 일치해야 하며 registry public API와 디자인 token의 정렬 규칙을 바꾸지 않는다.
 
+## 컴포넌트 스타일링
+
+Registry 컴포넌트의 정적 배치·색상·data 상태·focus와 reduced-motion/no-JS 대체 규칙은 Tailwind className으로 표현한다. CSS Module은 사용하지 않으며 필요한 media query와 하위 요소 선택은 해당 컴포넌트의 arbitrary variant에 둔다. 소비자에게 추가 CSS 파일 import를 요구하지 않는다. Theme의 토큰·reset·compatibility와 docs 전용 전역 스타일은 각각 기존 레이어가 소유한다. 시각 값을 시간에 따라 보간하는 동작은 Motion이 담당한다.
+
 ## Motion 실행 계약
 
 모든 시각 애니메이션과 상태 전환은 Motion으로 실행한다. Theme은 정적 스타일과 토큰을 제공하고 React/Motion runtime에 의존하지 않는다. primitive의 CSS/data/pseudo 상태가 의미의 기준이며 scoped ref helper는 그 최종 값을 Motion으로 보간한다. duration은 CSS 단위를 초로 변환하고 reduced motion은 prop보다 우선한다. 반복 효과는 visibility/offscreen/paused/unmount를 처리한다. Foundations 변경 뒤 `leement:motion-change`로 값을 다시 읽는다. 새 효과도 같은 토큰과 접근성 규칙을 사용한다.
