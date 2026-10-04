@@ -4,6 +4,7 @@ import * as React from "react";
 import type { TooltipValueType } from "recharts";
 import * as RechartsPrimitive from "recharts";
 
+import { usePresenceMotion } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 
 // Format: { THEME_NAME: CSS_SELECTOR }
@@ -37,6 +38,7 @@ function useChart() {
 }
 
 function ChartContainer({
+  ref: forwardedRef,
   id,
   className,
   children,
@@ -51,12 +53,13 @@ function ChartContainer({
     height: number;
   };
 }) {
+  const motionRef = usePresenceMotion<HTMLDivElement>(forwardedRef, "slow");
   const uniqueId = React.useId();
   const chartId = `chart-${(id ?? uniqueId).replace(/[^a-zA-Z0-9_-]/g, "")}`;
 
   return (
     <ChartContext.Provider value={{ config }}>
-      <div
+      <div ref={motionRef}
         data-slot="chart"
         data-chart={chartId}
         className={cn(
@@ -104,7 +107,9 @@ ${colorConfig
   );
 };
 
-const ChartTooltip = RechartsPrimitive.Tooltip;
+function ChartTooltip(props: React.ComponentProps<typeof RechartsPrimitive.Tooltip>) {
+  return <RechartsPrimitive.Tooltip {...props} isAnimationActive={false} />;
+}
 
 function ChartTooltipContent({
   active,

@@ -13,7 +13,7 @@ import { Glimpse } from "./glimpse";
 import { Marquee } from "./marquee";
 
 afterEach(cleanup);
-afterEach(() => vi.restoreAllMocks());
+afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
 test("announcement link and dismissal remain separate controls", async () => {
   const user = userEvent.setup();
@@ -124,6 +124,7 @@ test("glimpse preserves a usable destination link and opens a preview", async ()
 });
 
 test("marquee pause control changes state and hides duplicate content", async () => {
+  vi.stubGlobal("matchMedia", () => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
   const user = userEvent.setup();
   render(<Marquee label="Items" items={["Alpha", "Beta"]} />);
   await user.click(screen.getByRole("button", { name: "Pause marquee" }));

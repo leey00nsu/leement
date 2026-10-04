@@ -1,4 +1,6 @@
 "use client";
+import { useStyleMotion } from "@/lib/leement-motion";
+
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { Search, X } from "lucide-react";
@@ -9,6 +11,8 @@ import { navigation } from "../lib/docs";
 const allLinks = navigation.flatMap(group => group.sections.flatMap(section => section.items.map(item => ({ ...item, group: section.title ?? group.title }))));
 
 export function DocsSearch() {
+  const styleMotionRef1 = useStyleMotion<HTMLButtonElement>(undefined);
+
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   useEffect(() => {
@@ -24,7 +28,7 @@ export function DocsSearch() {
   const results = useMemo(() => allLinks.filter(item => `${item.label} ${item.group}`.toLowerCase().includes(query.toLowerCase())).slice(0, 20), [query]);
 
   return <Dialog.Root open={open} onOpenChange={value => { setOpen(value); if (!value) setQuery(""); }}>
-    <Dialog.Trigger className="inline-flex h-9 min-w-9 items-center gap-2 rounded-lg border border-border bg-muted/50 px-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:min-w-40 sm:justify-between" aria-label="Search documentation">
+    <Dialog.Trigger ref={styleMotionRef1} className="inline-flex h-9 min-w-9 items-center gap-2 rounded-lg border border-border bg-muted/50 px-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:min-w-40 sm:justify-between" aria-label="Search documentation">
       <span className="inline-flex items-center gap-2"><Search aria-hidden="true" size={15} /><span className="hidden sm:inline">Search...</span></span>
       <kbd className="hidden rounded border border-border px-1 text-[11px] sm:inline">⌘ K</kbd>
     </Dialog.Trigger>

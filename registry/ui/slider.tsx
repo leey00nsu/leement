@@ -1,8 +1,12 @@
+"use client";
+import { useStyleMotion } from "@/lib/leement-motion";
 import { Slider as SliderPrimitive } from "@base-ui/react/slider";
 
 import { cn } from "@/lib/utils";
 
 function Slider({ className, defaultValue, value, min = 0, max = 100, "aria-label": ariaLabel, ...props }: SliderPrimitive.Root.Props) {
+  const styleMotionRef1 = useStyleMotion<HTMLDivElement>(undefined, ["translate", "backgroundColor"]);
+
   const _values = Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min];
 
   return (
@@ -28,12 +32,12 @@ function Slider({ className, defaultValue, value, min = 0, max = 100, "aria-labe
           />
         </SliderPrimitive.Track>
         {Array.from({ length: _values.length }, (_, index) => (
-          <SliderPrimitive.Thumb
+          <SliderPrimitive.Thumb ref={styleMotionRef1}
             data-slot="slider-thumb"
             key={index}
             index={index}
             aria-label={ariaLabel && _values.length > 1 ? `${ariaLabel} ${index === 0 ? "minimum" : "maximum"}` : ariaLabel}
-            className="relative block size-4 shrink-0 rounded-full border border-ring bg-background ring-ring/50 transition-[color,box-shadow] select-none after:absolute after:-inset-2 hover:ring-3 focus-visible:ring-3 focus-visible:outline-hidden active:ring-3 disabled:pointer-events-none disabled:opacity-50"
+            className="relative block size-4 shrink-0 rounded-full border border-ring bg-background ring-ring/50 select-none after:absolute after:-inset-2 hover:ring-3 focus-visible:ring-3 focus-visible:outline-hidden active:ring-3 disabled:pointer-events-none disabled:opacity-50"
           />
         ))}
       </SliderPrimitive.Control>

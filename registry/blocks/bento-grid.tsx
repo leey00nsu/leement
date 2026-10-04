@@ -1,3 +1,5 @@
+"use client";
+import { useStyleMotion } from "@/lib/leement-motion";
 import { useId, type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -7,7 +9,7 @@ function BentoGrid({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return <div className={cn("grid grid-cols-1 gap-3 md:grid-cols-6", className)} {...props} />;
 }
 
-function BentoGridItem({
+function BentoGridItem({ 
   children,
   className,
   eyebrow,
@@ -18,12 +20,14 @@ function BentoGridItem({
   eyebrow?: ReactNode;
   title: ReactNode;
 }) {
+  const styleMotionRef1 = useStyleMotion<HTMLDivElement>(undefined, ["translate", "borderColor", "boxShadow"]);
+
   const titleId = useId();
   return (
-    <article
+    <article ref={styleMotionRef1}
       aria-labelledby={titleId}
       className={cn(
-        "group/bento relative flex min-h-64 flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground transition-[border-color,box-shadow,transform] duration-(--lm-motion-duration-normal) focus-within:border-ring hover:-translate-y-0.5 hover:border-ring/50 hover:shadow-md motion-reduce:transform-none",
+        "group/bento relative flex min-h-64 flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground focus-within:border-ring hover:-translate-y-0.5 hover:border-ring/50 hover:shadow-md motion-reduce:transform-none",
         className,
       )}
       {...props}

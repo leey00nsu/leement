@@ -13,7 +13,7 @@ export default function ChartExample() {
   return <div className="w-full space-y-3" role="img" aria-label="Monthly visits from January to June: 42, 56, 49, 68, 74, 83">
     <div><p className="text-sm text-muted-foreground">Monthly visits</p><p className="text-2xl font-semibold tabular-nums">83k <span className="text-sm font-normal text-muted-foreground">in June</span></p></div>
     <ChartContainer config={config} className="h-64 w-full">
-      <BarChart data={data} accessibilityLayer margin={{ left: 4, right: 4 }}><CartesianGrid vertical={false} /><XAxis dataKey="month" tickLine={false} axisLine={false} /><YAxis tickLine={false} axisLine={false} width={28} /><ChartTooltip content={<ChartTooltipContent />} /><Bar dataKey="visits" fill="var(--color-visits)" radius={[4, 4, 0, 0]} /></BarChart>
+      <BarChart data={data} accessibilityLayer margin={{ left: 4, right: 4 }}><CartesianGrid vertical={false} /><XAxis dataKey="month" tickLine={false} axisLine={false} /><YAxis tickLine={false} axisLine={false} width={28} /><ChartTooltip content={<ChartTooltipContent />} /><Bar isAnimationActive={false} dataKey="visits" fill="var(--color-visits)" radius={[4, 4, 0, 0]} /></BarChart>
     </ChartContainer>
   </div>;
 }

@@ -1,4 +1,5 @@
 "use client";
+import { usePresenceMotion } from "@/lib/leement-motion";
 
 import { Menu as MenuPrimitive } from "@base-ui/react/menu";
 import { CheckIcon, ChevronRightIcon } from "lucide-react";
@@ -23,8 +24,9 @@ function DropdownMenuContent({
   side = "bottom",
   sideOffset = 4,
   className,
-  ...props
+  ref: presenceForwardedRef, ...props
 }: MenuPrimitive.Popup.Props & Pick<MenuPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset">) {
+  const presenceRef = usePresenceMotion<HTMLDivElement>(presenceForwardedRef);
   return (
     <MenuPrimitive.Portal>
       <MenuPrimitive.Positioner
@@ -34,10 +36,10 @@ function DropdownMenuContent({
         side={side}
         sideOffset={sideOffset}
       >
-        <MenuPrimitive.Popup
+        <MenuPrimitive.Popup ref={presenceRef}
           data-slot="dropdown-menu-content"
           className={cn(
-            "z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md duration-(--lm-motion-duration-fast) ease-(--lm-motion-easing-standard) outline-none data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0 motion-reduce:data-open:animate-none motion-reduce:data-closed:animate-none",
+            "z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none data-closed:overflow-hidden",
             className,
           )}
           {...props}
@@ -125,13 +127,14 @@ function DropdownMenuSubContent({
   side = "right",
   sideOffset = 0,
   className,
-  ...props
+  ref: presenceForwardedRef, ...props
 }: React.ComponentProps<typeof DropdownMenuContent>) {
+  const presenceRef = usePresenceMotion<HTMLDivElement>(presenceForwardedRef);
   return (
-    <DropdownMenuContent
+    <DropdownMenuContent ref={presenceRef}
       data-slot="dropdown-menu-sub-content"
       className={cn(
-        "w-auto min-w-[96px] rounded-lg bg-popover p-1 text-popover-foreground shadow-lg ring-1 ring-foreground/10 duration-(--lm-motion-duration-fast) ease-(--lm-motion-easing-standard) data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 motion-reduce:data-open:animate-none motion-reduce:data-closed:animate-none",
+        "w-auto min-w-[96px] rounded-lg bg-popover p-1 text-popover-foreground shadow-lg ring-1 ring-foreground/10",
         className,
       )}
       align={align}

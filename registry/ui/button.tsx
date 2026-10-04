@@ -2,11 +2,11 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useMotionLoop } from "@/lib/leement-motion";
+import { useMotionLoop, useStyleMotion } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md border text-sm font-medium transition-colors duration-(--lm-motion-duration-normal) focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md border text-sm font-medium focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   { variants: {
     variant: {
       primary: "border-transparent bg-primary text-primary-foreground hover:bg-(--lm-color-action-primary-hover)",
@@ -25,9 +25,10 @@ function ButtonLoading() {
   useMotionLoop(ref, { rotate: [0, 360] }, "cycle-spin");
   return <span ref={ref} aria-hidden="true" className="size-4 rounded-full border-2 border-current border-r-transparent" />;
 }
-function Button({ className, variant, size, asChild = false, loading = false, disabled, children, onClick, tabIndex, ...props }: ButtonProps) {
+function Button({ ref: forwardedRef, className, variant, size, asChild = false, loading = false, disabled, children, onClick, tabIndex, ...props }: ButtonProps) {
+  const motionRef = useStyleMotion<HTMLButtonElement>(forwardedRef);
   const Component = asChild ? Slot : "button";
-  return <Component data-slot="button" className={cn(buttonVariants({ variant, size, className }))} disabled={!asChild ? disabled || loading : undefined} aria-disabled={asChild && (disabled || loading) ? true : undefined} aria-busy={loading || undefined} tabIndex={asChild && (disabled || loading) ? -1 : tabIndex} onClick={(event) => { if (disabled || loading) { event.preventDefault(); return; } onClick?.(event); }} {...props}>
+  return <Component ref={motionRef} data-slot="button" className={cn(buttonVariants({ variant, size, className }))} disabled={!asChild ? disabled || loading : undefined} aria-disabled={asChild && (disabled || loading) ? true : undefined} aria-busy={loading || undefined} tabIndex={asChild && (disabled || loading) ? -1 : tabIndex} onClick={(event) => { if (disabled || loading) { event.preventDefault(); return; } onClick?.(event); }} {...props}>
     {loading && !asChild ? <><ButtonLoading />{children}</> : children}
   </Component>;
 }

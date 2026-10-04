@@ -1,4 +1,6 @@
 "use client";
+import { useStyleMotion } from "@/lib/leement-motion";
+
 
 // The Preview / Code / Source arrangement adapts Kibo UI's MIT-licensed docs preview.
 // The full notice is preserved in licenses/kibo-license.md.
@@ -8,6 +10,8 @@ import { useState, type ReactNode } from "react";
 import { PreviewFrame } from "./preview-frame";
 
 export function CopyButton({ value, label }: { value: string; label: string }) {
+  const styleMotionRef1 = useStyleMotion<HTMLButtonElement>(undefined);
+
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
 
   async function copy() {
@@ -20,7 +24,7 @@ export function CopyButton({ value, label }: { value: string; label: string }) {
   }
 
   return <>
-    <button type="button" onClick={copy} className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-xs font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label={label}>
+    <button ref={styleMotionRef1} type="button" onClick={copy} className="inline-flex shrink-0 items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-xs font-medium text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label={label}>
       {status === "copied" ? <Check aria-hidden="true" size={14} /> : <Clipboard aria-hidden="true" size={14} />}
       {status === "copied" ? "Copied" : status === "failed" ? "Select to copy" : "Copy"}
     </button>

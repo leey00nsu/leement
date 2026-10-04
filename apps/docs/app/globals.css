@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 @import "@leement/theme";
 @source "../../../registry";
 :root { scroll-behavior: smooth; }

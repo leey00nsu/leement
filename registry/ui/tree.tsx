@@ -1,4 +1,6 @@
 "use client";
+import { useStyleMotion } from "@/lib/leement-motion";
+
 
 import * as React from "react";
 import { ChevronRight, File } from "lucide-react";
@@ -17,6 +19,8 @@ type TreeProps = Omit<React.ComponentProps<"div">, "onSelect" | "defaultValue"> 
 };
 
 function Tree({ label, nodes, selectedId, defaultSelectedId, onSelect, expandedIds, defaultExpandedIds = [], onExpandedChange, className, ...props }: TreeProps) {
+  const styleMotionRef1 = useStyleMotion<SVGSVGElement>(undefined, ["rotate"]);
+
   const [internalSelected, setInternalSelected] = React.useState(defaultSelectedId);
   const [internalExpanded, setInternalExpanded] = React.useState(defaultExpandedIds);
   const [focusedId, setFocusedId] = React.useState(defaultSelectedId ?? nodes[0]?.id);
@@ -45,7 +49,7 @@ function Tree({ label, nodes, selectedId, defaultSelectedId, onSelect, expandedI
     else if (event.key === "Enter" || event.key === " ") { event.preventDefault(); choose(node); }
   }
   return <div data-slot="tree" role="tree" aria-label={label} className={cn("w-full rounded-xl border border-border bg-card p-2 text-card-foreground", className)} {...props}>
-    {visible.map(({ node, depth }, index) => <div key={node.id} ref={(element) => { if (element) refs.current.set(node.id, element); else refs.current.delete(node.id); }} role="treeitem" aria-level={depth + 1} aria-expanded={node.children?.length ? expanded.includes(node.id) : undefined} aria-selected={selected === node.id} aria-disabled={node.disabled} tabIndex={node.disabled ? -1 : focusedId === node.id || (!focusedId && index === 0) ? 0 : -1} onFocus={() => setFocusedId(node.id)} onKeyDown={(event) => handleKey(event, index)} onClick={() => { if (node.disabled) return; choose(node); if (node.children?.length) changeExpanded(node.id); }} className={cn("flex min-h-9 cursor-pointer items-center gap-2 rounded-md py-1.5 pr-2 text-sm hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", selected === node.id && "bg-primary/10 text-primary", node.disabled && "cursor-not-allowed opacity-50")} style={{ paddingInlineStart: `${8 + depth * 20}px` }}><span aria-hidden="true" className="flex size-4 items-center justify-center">{node.children?.length ? <ChevronRight className={cn("size-4 transition-transform motion-reduce:transition-none", expanded.includes(node.id) && "rotate-90")} /> : <File className="size-3.5" />}</span>{node.label}</div>)}
+    {visible.map(({ node, depth }, index) => <div key={node.id} ref={(element) => { if (element) refs.current.set(node.id, element); else refs.current.delete(node.id); }} role="treeitem" aria-level={depth + 1} aria-expanded={node.children?.length ? expanded.includes(node.id) : undefined} aria-selected={selected === node.id} aria-disabled={node.disabled} tabIndex={node.disabled ? -1 : focusedId === node.id || (!focusedId && index === 0) ? 0 : -1} onFocus={() => setFocusedId(node.id)} onKeyDown={(event) => handleKey(event, index)} onClick={() => { if (node.disabled) return; choose(node); if (node.children?.length) changeExpanded(node.id); }} className={cn("flex min-h-9 cursor-pointer items-center gap-2 rounded-md py-1.5 pr-2 text-sm hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", selected === node.id && "bg-primary/10 text-primary", node.disabled && "cursor-not-allowed opacity-50")} style={{ paddingInlineStart: `${8 + depth * 20}px` }}><span aria-hidden="true" className="flex size-4 items-center justify-center">{node.children?.length ? <ChevronRight ref={styleMotionRef1} className={cn("size-4", expanded.includes(node.id) && "rotate-90")} /> : <File className="size-3.5" />}</span>{node.label}</div>)}
     {visible.length === 0 && <p className="px-2 py-3 text-sm text-muted-foreground">No items</p>}
   </div>;
 }

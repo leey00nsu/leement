@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:42e6aea3fbf9fd1728a39e7a1b1c4ec7ff047969f4bdbc08d3edf59bc1e69343 -->
+<!-- lee-spec-kit:workflow-sync sha256:7ca12422ba4ec3553010014f3d4b8b45da036f8e747b14377cbd9e84f46b12c0 -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -81,3 +81,9 @@
 - **Decision**: theme keyframes를 제거하고 registry source의 Motion loop로 실행한다. spin/pulse/marquee cycle을 token에 추가해 하드코딩 반복 시간을 줄였다. tokens와 theme은 0.2.0으로 준비한다. 원격 게시하지 않았다.
 - **Trace**: pause/play는 같은 Motion control을 유지하고 reduced/unmount 정리에 원래 정적 style을 복원한다. brand utility는 정적 표면을 유지한다.
 - **Evidence**: tasks.md T-02 검증, motion/player 등 32 tests와 theme 4 tests PASS.
+
+## D007: primitive 상태와 Motion의 연결 (2026-10-04)
+
+- **Decision**: Base UI 상태 attribute에서 Motion presence와 높이를 시작하고 Radix는 controlled/uncontrolled root를 보존해 AnimatePresence 종료를 연결한다. native HTML onDrag 등은 Motion gesture와 이름이 충돌하므로 nativeProps에 전달해 기존 DOM handler를 보존한다.
+- **Trace**: Sonner의 외부 CSS 효과는 scoped transition:none/animation:none으로 비활성화하며 Motion opacity가 표현을 소유한다. 이것은 시각 보간하는 CSS transition의 잔류가 아닌 외부 실행기 차단이다. Recharts 자체 보간은 비활성화하고 ChartContainer 진입을 Motion으로 표현한다.
+- **Evidence**: tasks.md T-03 검사, typecheck/lint 및 기존 35 동작 검사 PASS. 실제 animation/focus/SSR frame 검증은 T-06에서 수행한다.

@@ -1,3 +1,5 @@
+"use client";
+import { useStyleMotion } from "@/lib/leement-motion";
 import Link from "next/link";
 import { ArrowRight, Github } from "lucide-react";
 import { Button } from "../../../registry/ui/button";
@@ -8,6 +10,10 @@ import { Skeleton } from "../../../registry/ui/skeleton";
 import { BrandGradientText } from "../../../registry/ui/brand-gradient-text";
 
 export default function Home() {
+  const styleMotionRef1 = useStyleMotion<HTMLAnchorElement>(undefined);
+  const styleMotionRef2 = useStyleMotion<HTMLAnchorElement>(undefined);
+  const styleMotionRef3 = useStyleMotion<HTMLAnchorElement>(undefined);
+
   return <div id="leement-home" className="pb-24">
     <section className="mx-auto max-w-6xl px-5 pt-24 text-center sm:px-8 sm:pt-32">
       <h1 className="text-[clamp(3rem,7vw,6.25rem)] font-semibold leading-[1.08] tracking-[-.055em] text-balance">
@@ -41,9 +47,9 @@ export default function Home() {
     <section className="mx-auto mt-20 max-w-6xl px-5 sm:px-8">
       <div className="flex flex-wrap items-end justify-between gap-4"><div><h2 className="text-3xl font-semibold tracking-tight">Functional and composable</h2><p className="mt-3 max-w-2xl text-muted-foreground">Pick a primitive, build a pattern, or start with a block. Every example uses the source distributed by the registry.</p></div><Link href="/showcase" className="inline-flex items-center gap-2 text-sm font-medium text-[var(--lm-color-brand-text)] hover:underline">Explore the catalog <ArrowRight aria-hidden="true" size={16} /></Link></div>
       <div className="mt-8 grid gap-4 md:grid-cols-3">
-        <Link href="/foundations/color" className="rounded-2xl bg-muted p-5 [&>p]:text-foreground transition-colors hover:bg-muted/70 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><p className="text-xs text-muted-foreground">01 · Foundations</p><h3 className="mt-5 text-xl font-semibold">Your brand, one theme</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Override semantic color roles in light and dark without forking component source.</p></Link>
-        <Link href="/components/button" className="rounded-2xl bg-muted p-5 [&>p]:text-foreground transition-colors hover:bg-muted/70 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><p className="text-xs text-muted-foreground">02 · Components</p><h3 className="mt-5 text-xl font-semibold">Editable UI</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Install only the controls you need and keep their source in your application.</p></Link>
-        <Link href="/patterns/page-header" className="rounded-2xl bg-muted p-5 [&>p]:text-foreground transition-colors hover:bg-muted/70 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><p className="text-xs text-muted-foreground">03 · Patterns</p><h3 className="mt-5 text-xl font-semibold">Product structure</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Compose repeatable page problems from the same accessible building blocks.</p></Link>
+        <Link ref={styleMotionRef1} href="/foundations/color" className="rounded-2xl bg-muted p-5 [&>p]:text-foreground hover:bg-muted/70 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><p className="text-xs text-muted-foreground">01 · Foundations</p><h3 className="mt-5 text-xl font-semibold">Your brand, one theme</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Override semantic color roles in light and dark without forking component source.</p></Link>
+        <Link ref={styleMotionRef2} href="/components/button" className="rounded-2xl bg-muted p-5 [&>p]:text-foreground hover:bg-muted/70 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><p className="text-xs text-muted-foreground">02 · Components</p><h3 className="mt-5 text-xl font-semibold">Editable UI</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Install only the controls you need and keep their source in your application.</p></Link>
+        <Link ref={styleMotionRef3} href="/patterns/page-header" className="rounded-2xl bg-muted p-5 [&>p]:text-foreground hover:bg-muted/70 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><p className="text-xs text-muted-foreground">03 · Patterns</p><h3 className="mt-5 text-xl font-semibold">Product structure</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Compose repeatable page problems from the same accessible building blocks.</p></Link>
       </div>
     </section>
 

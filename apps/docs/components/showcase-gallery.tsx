@@ -1,4 +1,6 @@
 "use client";
+import { useStyleMotion } from "@/lib/leement-motion";
+
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -25,6 +27,8 @@ function displayName(name: string) {
 }
 
 export function ShowcaseGallery() {
+  const styleMotionRef1 = useStyleMotion<HTMLButtonElement>(undefined);
+
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<Category>("All");
   const normalizedQuery = query.trim().toLowerCase();
@@ -42,7 +46,7 @@ export function ShowcaseGallery() {
           <SearchField id="item-search" aria-label="Search components, patterns, and blocks" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search components and patterns..." />
         </div>
         <div role="group" aria-label="Filter by type" className="flex flex-wrap gap-1.5">
-          {categories.map((option) => <button key={option} type="button" aria-pressed={category === option} onClick={() => setCategory(option)} className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-pressed:bg-primary aria-pressed:text-primary-foreground">
+          {categories.map((option) => <button ref={styleMotionRef1} key={option} type="button" aria-pressed={category === option} onClick={() => setCategory(option)} className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-pressed:bg-primary aria-pressed:text-primary-foreground">
             {option === "All" ? "All" : `${option}s`}
           </button>)}
         </div>

@@ -109,15 +109,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-NFR-001] T-MMUKCQ7RXWEK-motion-standardization-03 Popup·펼침·전체 control 및 docs 전환 통일
+- [DONE][PRD-NFR-001] T-MMUKCQ7RXWEK-motion-standardization-03 Popup·펼침·전체 control 및 docs 전환 통일
   - Date: 2026-10-04
   - Acceptance:
     - CSS animation/transition 없이 popup/panel/control/docs가 Motion으로 움직이며 포커스·키보드를 보존한다.
   - Checklist:
-    - [ ] Dialog/Alert/Tooltip/Base UI popup/panel exit 및 자연 높이
-    - [ ] hover/state/ref/asChild/render와 Foundation 즉시 반영
-    - [ ] Sonner/Recharts 내장 효과 처리 및 전수 감사
-    - [ ] 관련 overlay/navigation/control 테스트 수정
+    - [x] Dialog/Alert/Tooltip/Base UI popup/panel exit 및 자연 높이
+    - [x] hover/state/ref/asChild/render와 Foundation 즉시 반영
+    - [x] Sonner/Recharts 내장 효과 처리 및 전수 감사
+    - [x] 관련 overlay/navigation/control 테스트 수정
   - Docs:
     - docs:designs/design-system.md
     - project:apps/docs/lib/items.ts
@@ -214,3 +214,10 @@
 - motion/player/controls/button/remaining-utility 기존 검사: 5 files, 32 tests PASS.
 - theme 검사: 4 tests PASS. docs typecheck와 changed-source lint PASS.
 - 실제 프레임/pause/자연 높이 검증은 T-06 브라우저 계약에서 수행한다.
+
+### T-03 검증
+
+- overlays 기존 검사 5 tests PASS; navigation/controls/complex-utility/motion 30 tests PASS (--maxWorkers=2).
+- changed-source lint PASS. docs typecheck PASS.
+- 동시 검사에서 일부 timeout을 재현하여 worker 수를 제한하고 동일 실패 검사를 재실행했다. Marquee 시스템 preference 검사는 matchMedia 전제를 명시했다.
+- 실제 종료 timing/focus/height/paint는 T-06에서 검사한다.

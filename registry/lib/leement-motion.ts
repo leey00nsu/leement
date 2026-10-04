@@ -77,6 +77,57 @@ export function useMotionLoop(
   return { active: active && !paused, reduced };
 }
 
+// Base UI keeps the panel/popup mounted while its native animations are running.
+export function usePresenceMotion<T extends HTMLElement>(
+  forwardedRef?: Ref<T>,
+  role = "fast",
+  panel = false,
+) {
+  return useCallback((node: T | null) => {
+    if (!node) return;
+    const externalCleanup = typeof forwardedRef === "function" ? forwardedRef(node) : undefined;
+    if (forwardedRef && typeof forwardedRef !== "function") forwardedRef.current = node;
+    let control: ReturnType<typeof animate> | undefined;
+    let lastOpen: boolean | undefined;
+    let disposed = false;
+    const update = () => {
+      const open = !node.hasAttribute("data-closed") && node.dataset.state !== "closed";
+      if (open === lastOpen) return;
+      const first = lastOpen === undefined;
+      const height = first ? 0 : node.getBoundingClientRect().height;
+      control?.stop();
+      lastOpen = open;
+      const reduced = typeof matchMedia !== "function" || matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const duration = reduced ? 0 : motionSeconds(node, `duration-${role}`);
+      const frames: DOMKeyframesDefinition = { opacity: open ? [first ? 0 : Number(getComputedStyle(node).opacity), 1] : [Number(getComputedStyle(node).opacity), 0] };
+      if (panel) {
+        node.style.height = "auto";
+        const natural = node.scrollHeight;
+        frames.height = [height, open ? natural : 0];
+        node.toggleAttribute("inert", !open);
+      }
+      const next = animate(node, frames, { duration, ease: motionEasing(node, panel ? "reveal" : "standard") });
+      control = next;
+      void next.then(() => {
+        if (disposed || control !== next) return;
+        if (panel && open) node.style.height = "auto";
+        node.style.opacity = open ? "1" : "0";
+      });
+    };
+    const observer = new MutationObserver(update);
+    observer.observe(node, { attributes: true, attributeFilter: ["data-open", "data-closed", "data-state"] });
+    update();
+    return () => {
+      disposed = true;
+      observer.disconnect();
+      control?.stop();
+      if (typeof externalCleanup === "function") externalCleanup();
+      else if (typeof forwardedRef === "function") forwardedRef(null);
+      else if (forwardedRef) forwardedRef.current = null;
+    };
+  }, [forwardedRef, role, panel]);
+}
+
 const controlProperties = ["backgroundColor", "color", "borderColor", "boxShadow"] as const;
 type StyleProperty = (typeof controlProperties)[number] | "opacity" | "transform" | "translate" | "rotate" | "scale" | "filter" | "marginLeft";
 
@@ -126,13 +177,19 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
         });
       });
     };
-    const events = ["pointerenter", "pointerleave", "pointerdown", "pointerup", "focus", "blur"];
+    const events = ["pointerenter", "pointerleave", "pointerdown", "pointerup", "focus", "blur", "focusin", "focusout"];
     events.forEach((name) => node.addEventListener(name, update));
     // State attributes come from the accessible primitive, not a second state machine.
     const observer = new MutationObserver((records) => {
       if (records.some((record) => record.attributeName !== "style")) update();
     });
     observer.observe(node, { attributes: true });
+    const ancestors = [node.parentElement, node.parentElement?.parentElement].filter((element): element is HTMLElement => Boolean(element));
+    ancestors.forEach((element) => {
+      observer.observe(element, { attributes: true });
+      element.addEventListener("pointerenter", update);
+      element.addEventListener("pointerleave", update);
+    });
     const preference = typeof matchMedia === "function" ? matchMedia("(prefers-reduced-motion: reduce)") : null;
     preference?.addEventListener("change", update);
     window.addEventListener("leement:motion-change", update);
@@ -141,6 +198,10 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
       control?.stop();
       restore();
       observer.disconnect();
+      ancestors.forEach((element) => {
+        element.removeEventListener("pointerenter", update);
+        element.removeEventListener("pointerleave", update);
+      });
       events.forEach((name) => node.removeEventListener(name, update));
       preference?.removeEventListener("change", update);
       window.removeEventListener("leement:motion-change", update);

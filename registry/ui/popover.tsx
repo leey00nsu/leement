@@ -1,4 +1,5 @@
 "use client";
+import { usePresenceMotion } from "@/lib/leement-motion";
 
 import { Popover as PopoverPrimitive } from "@base-ui/react/popover";
 import { cn } from "@/lib/utils";
@@ -15,9 +16,10 @@ function PopoverContent({
   className,
   side = "bottom",
   sideOffset = 6,
-  ...props
+  ref: presenceForwardedRef, ...props
 }: PopoverPrimitive.Popup.Props &
   Pick<PopoverPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset">) {
+  const presenceRef = usePresenceMotion<HTMLDivElement>(presenceForwardedRef);
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Positioner
@@ -27,9 +29,9 @@ function PopoverContent({
         side={side}
         sideOffset={sideOffset}
       >
-        <PopoverPrimitive.Popup
+        <PopoverPrimitive.Popup ref={presenceRef}
           className={cn(
-            "origin-(--transform-origin) rounded-md border border-border bg-popover p-3 text-popover-foreground shadow-md outline-none duration-(--lm-motion-duration-fast) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0 motion-reduce:data-open:animate-none motion-reduce:data-closed:animate-none",
+            "origin-(--transform-origin) rounded-md border border-border bg-popover p-3 text-popover-foreground shadow-md outline-none",
             className,
           )}
           data-slot="popover-content"

@@ -1,4 +1,7 @@
-import { Children, type ReactNode, type ComponentProps } from "react";
+"use client";
+import { useRef, useEffect, Children, type ReactNode, type ComponentProps } from "react";
+import { animate as motionAnimate } from "motion";
+import { motionSeconds, motionEasing } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 
 /*
@@ -25,14 +28,30 @@ export const AvatarStack = ({
   className,
   animate = false,
   size = 40,
+  ref: forwardedRef,
   ...props
-}: AvatarStackProps) => (
-  <div
+}: AvatarStackProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || !animate) return;
+    const controls: ReturnType<typeof import("motion").animate>[] = [];
+    const move = (expanded: boolean) => {
+      controls.splice(0).forEach((control) => control.stop());
+      const reduced = typeof matchMedia !== "function" || matchMedia("(prefers-reduced-motion: reduce)").matches;
+      Array.from(node.children).forEach((child, index) => { if (index) controls.push(motionAnimate(child as HTMLElement, { marginLeft: expanded ? 0 : -4 }, { duration: reduced ? 0 : motionSeconds(node, "duration-normal"), ease: motionEasing(node, "standard") })); });
+    };
+    const enter = () => move(true), leave = () => move(false);
+    node.addEventListener("pointerenter", enter); node.addEventListener("pointerleave", leave);
+    return () => { controls.forEach((control) => control.stop()); node.removeEventListener("pointerenter", enter); node.removeEventListener("pointerleave", leave); };
+  }, [animate]);
+  return (
+  <div ref={(node) => { ref.current = node; if (typeof forwardedRef === "function") return forwardedRef(node); if (forwardedRef) forwardedRef.current = node; }}
     data-slot="avatar-stack"
     role="group"
     className={cn(
       "-space-x-1 flex items-center",
-      animate && "hover:space-x-0 [&>*]:transition-all",
+
       className
     )}
     {...props}
@@ -63,3 +82,4 @@ export const AvatarStack = ({
     })}
   </div>
 );
+};
