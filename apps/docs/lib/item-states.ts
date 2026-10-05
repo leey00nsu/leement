@@ -2,6 +2,11 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+  "sidebar": "Controlled state; see Examples.",
+  "message": "Controlled state; see Examples.",
+  "message-scroller": "Controlled state; see Examples.",
+  "questionnaire": "Controlled state; see Examples.",
+
   "carousel": "Controlled interaction; see Examples.",
   "context-menu": "Controlled interaction; see Examples.",
   "drawer": "Controlled interaction; see Examples.",

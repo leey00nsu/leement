@@ -13,6 +13,10 @@ import MenubarExample from "../examples/menubar";
 import NavigationMenuExample from "../examples/navigation-menu";
 import ResizableExample from "../examples/resizable";
 import ScrollAreaExample from "../examples/scroll-area";
+import SidebarExample from "../examples/sidebar";
+import MessageExample from "../examples/message";
+import MessageScrollerExample from "../examples/message-scroller";
+import QuestionnaireExample from "../examples/questionnaire";
 import type { ComponentType } from "react";
 import DatePickerExample from "../examples/date-picker";
 import DataTableExample from "../examples/data-table";
@@ -118,6 +122,11 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "sidebar": SidebarExample,
+  "message": MessageExample,
+  "message-scroller": MessageScrollerExample,
+  "questionnaire": QuestionnaireExample,
+
   "carousel": CarouselExample,
   "context-menu": ContextMenuExample,
   "drawer": DrawerExample,

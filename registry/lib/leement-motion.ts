@@ -253,7 +253,11 @@ type StyleProperty =
   | "rotate"
   | "scale"
   | "filter"
-  | "marginLeft";
+  | "marginLeft"
+  | "width"
+  | "height"
+  | "left"
+  | "right";
 
 // CSS still defines the primitive's semantic states. Motion interpolates their resolved values.
 // This ref attaches to one real element, including render/asChild consumers; it adds no DOM.

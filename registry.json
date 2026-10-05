@@ -2350,6 +2350,133 @@
           "target": "licenses/leement/shadcn-license.md"
         }
       ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Mobile breakpoint",
+      "description": "Native viewport breakpoint for Sidebar.",
+      "files": [
+        {
+          "path": "registry/hooks/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "hooks/use-mobile.ts"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Leement sidebar component.",
+      "dependencies": [
+        "lucide-react",
+        "@base-ui/react@1.7.0",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/use-mobile",
+        "@leement/button",
+        "@leement/input",
+        "@leement/separator",
+        "@leement/sheet",
+        "@leement/skeleton",
+        "@leement/tooltip",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sidebar.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Leement message component.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/message.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/message.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "Leement message-scroller component.",
+      "dependencies": [
+        "lucide-react",
+        "@shadcn/react@0.3.1",
+        "motion@13.1.0"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/message-scroller.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/message-scroller.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "Leement questionnaire component.",
+      "dependencies": [
+        "lucide-react",
+        "@shadcn/react@0.3.1",
+        "motion@13.1.0"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/questionnaire.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/questionnaire.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
     }
   ]
 }

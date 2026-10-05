@@ -2,6 +2,7 @@ import { defineConfig } from "vitest/config";
 import { fileURLToPath } from "node:url";
 export default defineConfig({
   resolve: { alias: {
+    "@/hooks": fileURLToPath(new URL("./registry/hooks", import.meta.url)),
     "@/components/ui": fileURLToPath(new URL("./registry/ui", import.meta.url)),
     "@/components/patterns": fileURLToPath(new URL("./registry/patterns", import.meta.url)),
     "@/lib/popup-scope": fileURLToPath(new URL("./registry/lib/popup-scope.ts", import.meta.url)),

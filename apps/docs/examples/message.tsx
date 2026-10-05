@@ -1,0 +1,4 @@
+"use client";
+import { MessageGroup, Message, MessageAvatar, MessageContent, MessageHeader, MessageFooter } from "../../../registry/ui/message";
+import { Bubble } from "../../../registry/ui/bubble";
+export default function MessageExample(){return <MessageGroup className="w-full max-w-sm"><Message><MessageAvatar><span className="flex size-8 items-center justify-center text-xs">LM</span></MessageAvatar><MessageContent><MessageHeader>Leement</MessageHeader><Bubble>Own the source. Keep your product data in your app.</Bubble><MessageFooter>10:30 AM</MessageFooter></MessageContent></Message><Message align="end"><MessageContent><MessageHeader>You</MessageHeader><Bubble variant="tinted">I can customize every part.</Bubble><MessageFooter>Delivered</MessageFooter></MessageContent></Message></MessageGroup>;}

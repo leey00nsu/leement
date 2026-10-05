@@ -26,6 +26,9 @@
       ],
       "@/lib/popup-scope": [
         "../../registry/lib/popup-scope"
+      ],
+      "@/hooks/*": [
+        "../../registry/hooks/*"
       ]
     },
     "allowJs": true

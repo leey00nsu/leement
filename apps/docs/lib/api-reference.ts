@@ -1,3 +1,4 @@
+import { complexApiReferences } from "./api-complex";
 import { navigationApiReferences } from "./api-navigation";
 import { contentApiReferences } from "./api-content";
 import type { items } from "./items";
@@ -23,6 +24,7 @@ export type ApiReference = {
 
 /** Leement-owned API. Primitive documentation does not replace this contract. */
 export const apiReferences: Partial<Record<keyof typeof items, ApiReference>> = {
+  ...complexApiReferences,
   ...contentApiReferences,
   ...navigationApiReferences,
   button: {

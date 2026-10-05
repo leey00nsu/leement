@@ -1,0 +1,7 @@
+"use client";
+import { useState } from "react";
+import { MessageScrollerProvider, MessageScroller, MessageScrollerViewport, MessageScrollerContent, MessageScrollerItem, MessageScrollerButton } from "../../../registry/ui/message-scroller";
+import { Message, MessageContent, MessageHeader } from "../../../registry/ui/message";
+import { Bubble } from "../../../registry/ui/bubble";
+import { Button } from "../../../registry/ui/button";
+export default function MessageScrollerExample(){const [messages,setMessages]=useState(Array.from({length:12},(_,index)=>({id:`message-${index}`,text:`Message ${index+1}: Your application owns the conversation data.`})));return <MessageScrollerProvider autoScroll defaultScrollPosition="end"><div className="w-full max-w-sm space-y-3"><MessageScroller className="h-72 rounded-lg border"><MessageScrollerViewport><MessageScrollerContent className="p-4">{messages.map((message,index)=><MessageScrollerItem key={message.id} messageId={message.id}><Message align={index%2?"end":"start"}><MessageContent><MessageHeader>{index%2?"You":"Leement"}</MessageHeader><Bubble>{message.text}</Bubble></MessageContent></Message></MessageScrollerItem>)}</MessageScrollerContent></MessageScrollerViewport><MessageScrollerButton /></MessageScroller><Button variant="outline" onClick={()=>setMessages(current=>[...current,{id:`message-${current.length}`,text:`Message ${current.length+1}: Added without losing your reading position.`}])}>Add message</Button></div></MessageScrollerProvider>;}
