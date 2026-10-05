@@ -243,12 +243,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-009] T-ASDHZYC4MRGK-docs-reference-parity-13 전체 대응·설치·UI 회귀 검증과 문서 동기화
+- [DONE][PRD-FR-009] T-ASDHZYC4MRGK-docs-reference-parity-13 전체 대응·설치·UI 회귀 검증과 문서 동기화
   - Date: 2026-10-05
   - Acceptance:
     - 63개 Base, Kibo 공개28 Blocks, Charts70에 누락없는 기능/예제/API 대응 및 실제 consumer 설치·빌드 증거가 있고 필수 전체 checks를 통과한다.
   - Checklist:
-    - [ ] registry graph/API/source 일치와 independent consumer·light-dark/240-390-full/keyboard/RTL/Preview px-replay를 확인하고 curated docs와 마지막 sync marker를 갱신한다.
+    - [x] registry graph/API/source 일치와 independent consumer·light-dark/240-390-full/keyboard/RTL/Preview px-replay를 확인하고 curated docs와 마지막 sync marker를 갱신한다. data-series token/theme compatibility, 공통 UI/API/단일 workbench와 design-system 영향·검증을 함께 확인한다.
+  - Verification: 고정 Base63/456 contexts/453 source·Kibo28·Charts70 및 문서146의 API 검증. production registry에서161 direct namespaces를 실제 CLI로 재설치하고 consumer strict/lazy Vite build PASS. 전체 typecheck/lint/test706/build PASS, feature-audit PASS. 실제 native mouse390/240-full/dark-light/Replay0→1/RTL/Escape/media/Foundations series 변경·복원 확인. D018과 보존 screenshot 참조.
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -271,8 +272,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -282,6 +283,13 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm run typecheck` | 2026-10-05 | PASS — 5 workspace tasks |
+| `pnpm run lint` | 2026-10-05 | PASS — workspace + registry |
+| `pnpm run test` | 2026-10-05 | PASS — 32 files / 706 tests |
+| `pnpm run build` | 2026-10-05 | PASS — tokens/theme/registry/Next production |
+| `consumer: shadcn add --yes --overwrite` | 2026-10-05 | PASS — final production registry161 direct namespaces, transitive source/dependencies |
+| `consumer: pnpm exec tsc --noEmit` | 2026-10-05 | PASS — final installed source and examples |
+| `consumer: pnpm build` | 2026-10-05 | PASS — lazy recipes/examples + refreshed0.2 theme |
+| `npx lee-spec-kit feature-audit --enforce --json` | 2026-10-05 | PASS — no violations |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.

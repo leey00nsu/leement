@@ -38,10 +38,10 @@
 
 **Acceptance Criteria:**
 
-- [ ] 모든 기존 component/pattern/block 상세의 반복적인 When to use, When not to use, Anatomy, Variants, Sizes, States, Accessibility, Motion, API 문단과 대응 목차를 제거한다.
-- [ ] Overview/Preview → Installation → Usage → Examples → API Reference 순서로 읽는다. 필요한 composition은 Usage에서 설명한다.
-- [ ] 필수 label/focus, controlled state, disabled/loading, portal, reduced motion 등 항목 고유 제약은 관련 Usage/예제/API note에 남긴다.
-- [ ] Foundations의 디자인 규칙과 편집 기능을 유지한다.
+- [x] 모든 기존 component/pattern/block 상세의 반복적인 When to use, When not to use, Anatomy, Variants, Sizes, States, Accessibility, Motion, API 문단과 대응 목차를 제거한다.
+- [x] Overview/Preview → Installation → Usage → Examples → API Reference 순서로 읽는다. 필요한 composition은 Usage에서 설명한다.
+- [x] 필수 label/focus, controlled state, disabled/loading, portal, reduced motion 등 항목 고유 제약은 관련 Usage/예제/API note에 남긴다.
+- [x] Foundations의 디자인 규칙과 편집 기능을 유지한다.
 
 ### US-2: shadcn Base의 모든 사용 사례를 Leement에서도 사용한다
 
@@ -51,12 +51,12 @@
 
 **Acceptance Criteria:**
 
-- [ ] 63개 문서의 Preview 참조와 inline 사용법·조합에 대응 항목이 있고 누락은 0이다. 중복 upstream 예제는 재사용할 수 있지만 각각의 사용 맥락을 찾을 수 있다.
-- [ ] Attachment, Bubble, Carousel, ContextMenu, Direction, Drawer, InputOTP, Item, Marker, Menubar, MessageScroller, Message, NavigationMenu, Questionnaire, Resizable, ScrollArea, Sidebar를 설치 가능한 source로 보완한다.
-- [ ] 기존 Alert→StatusNotice, Empty→EmptyState, DatePicker/DataTable pattern은 이름만으로 완료 처리하지 않고 compound 구조·동작·예제로 동등성을 검증한다.
-- [ ] API Reference에 public part/export별 설명, prop/type/default/required/동작, variant/size, controlled/uncontrolled와 주요 event 계약을 표시한다. upstream이 설명한 hook/provider/composition도 빠뜨리지 않는다.
-- [ ] primitive 세부사항은 실제 라이브러리의 정확한 공식 API로 연결한다. Base UI 기반은 Base UI로, Recharts 등은 해당 공식 문서로 연결한다. unsupported prop을 문서로만 약속하지 않는다.
-- [ ] 예제는 registry 원본을 사용하며 표시 코드와 실행 코드가 일치한다. 복사한 코드를 consumer 프로젝트에서 사용할 수 있다.
+- [x] 63개 문서의 Preview 참조와 inline 사용법·조합에 대응 항목이 있고 누락은 0이다. 중복 upstream 예제는 재사용할 수 있지만 각각의 사용 맥락을 찾을 수 있다.
+- [x] Attachment, Bubble, Carousel, ContextMenu, Direction, Drawer, InputOTP, Item, Marker, Menubar, MessageScroller, Message, NavigationMenu, Questionnaire, Resizable, ScrollArea, Sidebar를 설치 가능한 source로 보완한다.
+- [x] 기존 Alert→StatusNotice, Empty→EmptyState, DatePicker/DataTable pattern은 이름만으로 완료 처리하지 않고 compound 구조·동작·예제로 동등성을 검증한다.
+- [x] API Reference에 public part/export별 설명, prop/type/default/required/동작, variant/size, controlled/uncontrolled와 주요 event 계약을 표시한다. upstream이 설명한 hook/provider/composition도 빠뜨리지 않는다.
+- [x] primitive 세부사항은 실제 라이브러리의 정확한 공식 API로 연결한다. Base UI 기반은 Base UI로, Recharts 등은 해당 공식 문서로 연결한다. unsupported prop을 문서로만 약속하지 않는다.
+- [x] 예제는 registry 원본을 사용하며 표시 코드와 실행 코드가 일치한다. 복사한 코드를 consumer 프로젝트에서 사용할 수 있다.
 
 ### US-3: 공개 Blocks를 실제 화면에 사용한다
 
@@ -66,12 +66,12 @@
 
 **Acceptance Criteria:**
 
-- [ ] Applications: Codebase, Collaborative Canvas, Roadmap의 3개를 제공한다.
-- [ ] Websites: About, Awards, Blog, Blog Post, Careers, Case Studies, Case Study, Changelog, Code Example, Community, Compare, Compliance, Contact, CTA, Download, Experience, FAQ, Feature, Footer, Form, Hero, Pricing, Stats, Team, Testimonial의 25개를 제공한다.
-- [ ] 각 block은 동등한 핵심 구성과 상호작용, 실제 source/설치 명령, registry dependency, 앱 데이터로 교체할 수 있는 props/composition 계약을 가진다.
-- [ ] 폼 제출·파일/코드 선택·필터/탭·canvas 조작 등 실제 동작을 검증한다. 이름만 바꾼 Card나 정적 placeholder는 완료로 세지 않는다.
-- [ ] 인증·저장·네트워크 협업 backend는 앱 책임이며 데모 시뮬레이션과 실제 연동 경계를 명시한다. 서버 없는 예제를 실제 서버 연결로 설명하지 않는다.
-- [ ] 기존 Blocks/Patterns를 유지하고 한 항목을 여러 분류에 중복 등록해 수를 늘리지 않는다.
+- [x] Applications: Codebase, Collaborative Canvas, Roadmap의 3개를 제공한다.
+- [x] Websites: About, Awards, Blog, Blog Post, Careers, Case Studies, Case Study, Changelog, Code Example, Community, Compare, Compliance, Contact, CTA, Download, Experience, FAQ, Feature, Footer, Form, Hero, Pricing, Stats, Team, Testimonial의 25개를 제공한다.
+- [x] 각 block은 동등한 핵심 구성과 상호작용, 실제 source/설치 명령, registry dependency, 앱 데이터로 교체할 수 있는 props/composition 계약을 가진다.
+- [x] 폼 제출·파일/코드 선택·필터/탭·canvas 조작 등 실제 동작을 검증한다. 이름만 바꾼 Card나 정적 placeholder는 완료로 세지 않는다.
+- [x] 인증·저장·네트워크 협업 backend는 앱 책임이며 데모 시뮬레이션과 실제 연동 경계를 명시한다. 서버 없는 예제를 실제 서버 연결로 설명하지 않는다.
+- [x] 기존 Blocks/Patterns를 유지하고 한 항목을 여러 분류에 중복 등록해 수를 늘리지 않는다.
 
 ### US-4: Charts를 탐색하고 설치한다
 
@@ -81,12 +81,12 @@
 
 **Acceptance Criteria:**
 
-- [ ] desktop/mobile 상단 Charts, 분류 탐색, 검색, 직접 링크와 active 상태를 제공한다.
-- [ ] Area 10, Bar 10, Line 10, Pie 11, Radar 14, Radial 6, Tooltips 9의 70개 recipe 전부에 실제 차트·코드·설치 경험을 제공한다.
-- [ ] 기존 Components의 Chart는 공통 primitive API 문서로 유지한다. recipe 탐색은 Charts에 둔다.
-- [ ] recipe의 registry 설치에서 Chart/Card 등 필요한 source와 Recharts dependency를 함께 받는다.
-- [ ] 데이터 범위 전환·series 선택·tooltip·legend·축/label/stack/donut/radar/radial 등 baseline의 고유 동작을 유지한다.
-- [ ] 반응형, dark/light, Foundations 색/폰트/모션 변경, 접근 가능한 데이터 설명과 정적 데이터 fallback을 지원한다.
+- [x] desktop/mobile 상단 Charts, 분류 탐색, 검색, 직접 링크와 active 상태를 제공한다.
+- [x] Area 10, Bar 10, Line 10, Pie 11, Radar 14, Radial 6, Tooltips 9의 70개 recipe 전부에 실제 차트·코드·설치 경험을 제공한다.
+- [x] 기존 Components의 Chart는 공통 primitive API 문서로 유지한다. recipe 탐색은 Charts에 둔다.
+- [x] recipe의 registry 설치에서 Chart/Card 등 필요한 source와 Recharts dependency를 함께 받는다.
+- [x] 데이터 범위 전환·series 선택·tooltip·legend·축/label/stack/donut/radar/radial 등 baseline의 고유 동작을 유지한다.
+- [x] 반응형, dark/light, Foundations 색/폰트/모션 변경, 접근 가능한 데이터 설명과 정적 데이터 fallback을 지원한다.
 
 ## 기능 요구사항
 

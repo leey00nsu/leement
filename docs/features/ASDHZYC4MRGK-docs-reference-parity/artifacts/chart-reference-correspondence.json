@@ -771,5 +771,11 @@
       "route": "/charts/tooltip/chart-tooltip-label-none",
       "registrySource": "registry/blocks/charts/chart-tooltip-label-none.tsx"
     }
-  ]
+  ],
+  "verification": {
+    "recipeSSR": 70,
+    "interactionAndFallbackTests": 5,
+    "consumer": "70 CLI recipes and their declared dependency graph; strict TypeScript and Vite lazy build",
+    "browser": "Seven representative categories at 240px; native pointer resize to390px; full viewport; light/dark series, filter/search, Replay; native keyboard Tooltip; Foundations data-series override to #125fd5 propagated to the actual chart and restored."
+  }
 }

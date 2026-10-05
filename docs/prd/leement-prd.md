@@ -42,7 +42,7 @@ v0.1의 8 UI·5 pattern·1 block은 초기 출시 범위이며, 최종 제공 �
 - PRD-NFR-004: 복합 UI에서도 Leement semantic token과 source ownership을 유지한다. 외부 라이브러리·MIT 코드의 사용 근거와 라이선스를 추적하고, 동작·접근성 검증 없이 카탈로그 수만 늘리지 않는다.
 - PRD-NFR-005: 교체 검증은 독립 데모만으로 대신하지 않는다. 기존 앱의 사전 오류와 Leement 도입 회귀를 구분하고, 제품별 wrapper/도메인 로직은 적합성 근거 없이 공용 API로 흡수하지 않는다.
 
-현재 registry는 SettingsSection을 포함한 8개 block을 제공한다. 다음 확장 목표는 아래 공개 기준의 전체 사용 사례 대응이며, 신규 항목은 검증 근거에 따라 experimental/candidate로 제공한다. 반복 사용이 검증되기 전 stable로 승격하지 않는다.
+현재 문서는 Components95/Patterns15/Blocks36 및 Charts70 recipe를 제공한다. Blocks36은 기존8개와 고정 Kibo 공개28개이며 Chart recipe는 같은 registry:block 레이어에서 별도 탐색한다. 아래 공개 기준의 전체 사용 사례에 대응하며, 신규 항목은 검증 근거에 따라 experimental/candidate로 제공한다. 반복 사용이 검증되기 전 stable로 승격하지 않는다.
 
 - PRD-FR-015: Component/Pattern/Block 상세는 Overview/Preview, Installation, Usage, Examples, API Reference 중심으로 제공한다. 반복적인 When to use/When not to use/Anatomy/Variants/Sizes/States/Accessibility/Motion 문단은 제거하되 필수 접근성·동작 제약과 composition은 관련 예제·API 설명에 남긴다. 2026-10-05 shadcn Base commit `295a1f114a138f23b5dfee0e0c6812394dfeb90c`의 64개 문서 중 NativeSelect를 제외한 63개에 모든 Preview 및 inline 사용 사례와 상세 API를 대응시킨다. 부족한 실제 public part/API 기능도 보완하고 primitive의 추가 정보는 실제 사용 라이브러리 공식 문서로 연결한다. 제외 없는 100% 호환이나 미구현 prop을 약속하지 않는다.
 - PRD-FR-016: Kibo commit `3d63cdb15b79d972e3dc38a10997987672f9b263`의 공개 Blocks 28개(Applications 3, Websites 25) 전체를 실제 registry source·dependency·동작 예제로 제공한다. count나 이름만 같은 placeholder는 인정하지 않는다. 서버 협업·인증·저장은 앱 책임이며 실제 데이터/서비스 연결 계약과 데모 범위를 명시한다. premium 제품은 제외한다.
