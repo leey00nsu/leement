@@ -174,12 +174,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-08 Kibo Applications 3개 block 구현
+- [DONE][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-08 Kibo Applications 3개 block 구현
   - Date: 2026-10-05
   - Acceptance:
     - Codebase/CollaborativeCanvas/Roadmap의 실제 데이터 교체와 상호작용·registry 설치·프리뷰를 제공한다.
   - Checklist:
-    - [ ] 앱 callback·데모/backend 경계를 문서화하고 file/code 선택·canvas 조작·roadmap 변경 및 consumer 설치를 검증한다.
+    - [x] 앱 callback·데모/backend 경계를 문서화하고 file/code 선택·canvas 조작·roadmap 변경 및 consumer 설치를 검증한다.
+  - Verification: strict typecheck/focused lint/registry build/diff, Applications 7 + 기존 collaboration 6 + graph/source 5 = 18 tests PASS. 독립 consumer에 3개 registry 항목 설치·strict/Vite lazy build PASS. Browser에서 Codebase 파일/코드 동기화, Canvas 30→32% 키보드 이동·simulation 시작/중지, Roadmap Table 전환 확인. Codebase/Roadmap Home→240px에서 iframe240/root200/documentScroll240 확인. [공개 block 대응](./artifacts/block-reference-correspondence.json).
   - Docs:
     - project:THIRD_PARTY_NOTICES.md
   - Review Evidence: -

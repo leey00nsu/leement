@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:164ea0727cf57269d025e841d83d3c093d1b7d6bc0a5bb96f969a5ba3ad32859 -->
+<!-- lee-spec-kit:workflow-sync sha256:af8877b5d3de407df1dfd7817dac9ed920d66fe1fcd0a061f454862deb856c63 -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -112,3 +112,10 @@
 - **Consequences**: 추가 component parts도 설치 source에 포함되며 문서 전용 API로만 약속하지 않는다. 종합 light/dark/RTL/폭·모든 public Blocks/Charts/전체 build는 task 13에서 확인한다. README는 D004에 따라 변경하지 않는다.
 
 - **Consumer refresh**: 최종 Field/Sidebar/DataTable source를 CLI로 재설치하고 실제 docs의 toConsumerExampleCode와 같은 상대경로 변환으로 453 source를 다시 복사했다. 잘못된 임시 복사 스크립트와 누락된 vite/client 타입 선언으로 발생한 첫 재검사 실패를 수정한 뒤 최종 독립 소비자 strict/lazy build를 확인했다. 프로젝트 실행 source의 결함으로 기록하지 않는다.
+
+## D013 — 공개 Applications 블록 3개
+
+- **Decision**: Codebase는 Tree와 CodeBlock, file Select를 같은 선택에 연결한다. CollaborativeCanvas는 AvatarStack/Cursor 조합에 percent 좌표의 앱 소유 objects/presence와 pointer/keyboard 변경 callback을 제공한다. Roadmap은 같은 controlled features를 Gantt/Calendar/List/Kanban/Table에 연결하며 status/order/date 변경, 필터, 메타데이터, local editor, context/visible actions, milestone와 앱 add-feature callback을 제공한다. primitive의 빈 기능을 문서 API만으로 약속하지 않는다.
+- **Trace**: fixed public Kibo example을 검토하고 기존 Leement primitive로 조합했다. upstream demo의 외부 이미지/브랜드/랜덤 faker는 앱 소유 data와 중립 예제로 바꿨고 서버 서비스는 추가하지 않았다. 세 블록은 experimental이며 실제 설치 source에 Kibo MIT 전문을 포함한다. CSS animation 대신 Motion을 사용하며 position helper에 top 속성만 추가했다. 새 canonical example은 lazy import이고 기존 단일 iframe/replay/resize runtime을 사용한다.
+- **Evidence**: [Block 대응 자료](./artifacts/block-reference-correspondence.json). 18 integration/graph tests, docs strict typecheck/focused ESLint/registry build/diff PASS; 3 registry CLI 설치와 독립 consumer strict/Vite lazy build PASS. Browser Codebase 선택→코드/selector 동기화, Canvas 키보드 30→32%와 simulation 시작/정지, Roadmap Table 전환 PASS. Home handle에서 Codebase/Roadmap iframe240/root200/documentScroll240을 확인했다. Calendar/table/timeline의 넓은 자료는 내부 scroll을 유지한다.
+- **Verification limits**: 처음 브라우저 확인은 종료된 dev server와 잘못된 preview URL(`/detail` 누락) 때문에 실패했으며 복구 후 검증했다. Aside가 setViewportSize를 제공하지 않아 실제 문서 resize handle로 폭을 검증했다. Canvas ref 교체/공백 role-selector transport 오류는 fresh snapshot ref로 해결했다. 개발 화면의 hydration 경고는 html에 browser extension이 주입한 data-locator-client-url 차이였고 component 내부 mismatch 근거는 없었다; 이를 숨기기 위한 앱 코드 변경은 하지 않았다. 전체 Feature checks/세부 visual/RTL/나머지 Blocks/Charts는 task 13이다.

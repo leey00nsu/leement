@@ -1,0 +1,86 @@
+[
+  {
+    "upstream": {
+      "name": "codebase",
+      "source": "apps/docs/content/blocks/codebase.mdx",
+      "example": "apps/docs/examples/codebase.tsx",
+      "exampleExists": true,
+      "installer": "codebase",
+      "dependencies": [
+        "/components/tree",
+        "/components/code-block"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/codebase.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/codebase"
+    },
+    "registryItem": "codebase",
+    "route": "/blocks/codebase",
+    "source": "registry/blocks/codebase.tsx",
+    "example": "apps/docs/examples/codebase.tsx",
+    "contracts": [
+      "keyboard file tree",
+      "synchronized file selector",
+      "highlighted code and clipboard",
+      "controlled selection and empty files"
+    ],
+    "verification": "18 integration/graph tests; docs strict typecheck/focused lint/registry build; actual shadcn CLI consumer install and strict/Vite lazy build; browser selection/movement/views and 240px geometry."
+  },
+  {
+    "upstream": {
+      "name": "collaborative-canvas",
+      "source": "apps/docs/content/blocks/collaborative-canvas.mdx",
+      "example": "apps/docs/examples/collaborative-canvas.tsx",
+      "exampleExists": true,
+      "installer": "collaborative-canvas",
+      "dependencies": [
+        "/components/avatar-stack",
+        "/components/cursor"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/collaborative-canvas.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/collaborative-canvas"
+    },
+    "registryItem": "collaborative-canvas",
+    "route": "/blocks/collaborative-canvas",
+    "source": "registry/blocks/collaborative-canvas.tsx",
+    "example": "apps/docs/examples/collaborative-canvas.tsx",
+    "contracts": [
+      "participant avatars and cursor messages",
+      "Motion cursor positions",
+      "controlled pointer/keyboard object movement",
+      "app cursor callback and local simulation boundary"
+    ],
+    "verification": "18 integration/graph tests; docs strict typecheck/focused lint/registry build; actual shadcn CLI consumer install and strict/Vite lazy build; browser selection/movement/views and 240px geometry."
+  },
+  {
+    "upstream": {
+      "name": "roadmap",
+      "source": "apps/docs/content/blocks/roadmap.mdx",
+      "example": "apps/docs/examples/roadmap.tsx",
+      "exampleExists": true,
+      "installer": "roadmap",
+      "dependencies": [
+        "/components/gantt",
+        "/components/calendar",
+        "/components/list",
+        "/components/kanban",
+        "/components/table"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/roadmap.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/roadmap"
+    },
+    "registryItem": "roadmap",
+    "route": "/blocks/roadmap",
+    "source": "registry/blocks/roadmap.tsx",
+    "example": "apps/docs/examples/roadmap.tsx",
+    "contracts": [
+      "shared controlled data across five views",
+      "date range and timeline keyboard move/resize",
+      "calendar event selection",
+      "status/order changes through list and kanban",
+      "sortable metadata table",
+      "view/copy/remove actions and context menus",
+      "milestone create/remove and app add-feature callback"
+    ],
+    "verification": "18 integration/graph tests; docs strict typecheck/focused lint/registry build; actual shadcn CLI consumer install and strict/Vite lazy build; browser selection/movement/views and 240px geometry."
+  }
+]
