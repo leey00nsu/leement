@@ -1,0 +1,3 @@
+"use client";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "../../../registry/ui/carousel";
+export default function CarouselExample() { return <div className="w-full max-w-sm px-12"><Carousel aria-label="Featured projects" className="w-full"><CarouselContent>{["Design tokens", "Product patterns", "Editable source", "Accessible UI", "Motion"].map((title,index)=><CarouselItem key={title}><div className="flex aspect-square flex-col items-center justify-center gap-3 rounded-lg bg-muted p-8"><span className="text-4xl font-semibold">{index+1}</span><span>{title}</span></div></CarouselItem>)}</CarouselContent><CarouselPrevious /><CarouselNext /></Carousel></div>; }

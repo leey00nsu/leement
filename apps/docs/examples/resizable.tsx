@@ -1,0 +1,4 @@
+"use client";
+import { useState } from "react";
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "../../../registry/ui/resizable";
+export default function ResizableExample(){const [sizes,setSizes]=useState("Drag or use arrow keys on the handle.");return <div className="w-full max-w-lg space-y-3"><ResizablePanelGroup orientation="horizontal" className="h-52 rounded-lg border" onLayoutChanged={layout=>setSizes(Object.values(layout).map(value=>Math.round(value)+"%").join(" / "))}><ResizablePanel id="navigation" defaultSize="35%" minSize="20%"><div className="flex h-full items-center justify-center p-4">Navigation</div></ResizablePanel><ResizableHandle withHandle aria-label="Resize navigation" /><ResizablePanel id="content" minSize="20%"><div className="flex h-full items-center justify-center p-4">Content</div></ResizablePanel></ResizablePanelGroup><p role="status" className="text-sm text-muted-foreground">{sizes}</p></div>;}

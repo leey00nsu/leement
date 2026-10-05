@@ -84,6 +84,21 @@ export function PreviewFrame({ name, exampleFile, replayable = false, gallery = 
     return () => observer.disconnect();
   }, [active]);
 
+  function replay() {
+    const element = iframe.current;
+    const target = element?.contentWindow;
+    if (!element || !target) return;
+    let inPreview = false;
+    try { inPreview = target.location.pathname === new URL(previewUrl, window.location.origin).pathname; }
+    catch { /* An example may have followed a link to another origin. */ }
+    if (!inPreview) {
+      setReady(false);
+      element.src = previewUrl;
+      return;
+    }
+    target.postMessage({ type: "leement-preview:replay" }, window.location.origin);
+  }
+
   function changeWidth(value: number) {
     setWidth(Math.max(minimum, Math.min(available, value)));
   }
@@ -112,7 +127,7 @@ export function PreviewFrame({ name, exampleFile, replayable = false, gallery = 
       {replayable && <Button type="button" variant="outline" size="icon-sm" disabled={!ready}
         className="absolute right-3 top-3 z-10 bg-background [@media(scripting:none)]:hidden"
         aria-label={`Replay ${label} preview`} title="Replay animation"
-        onClick={() => iframe.current?.contentWindow?.postMessage({ type: "leement-preview:replay" }, window.location.origin)}>
+        onClick={replay}>
         <RotateCcw aria-hidden="true" className="size-4" />
       </Button>}
       <button type="button" role="separator" aria-orientation="vertical" aria-label={`${label} preview width`}

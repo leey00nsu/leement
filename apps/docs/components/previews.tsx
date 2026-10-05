@@ -6,6 +6,13 @@ import DirectionExample from "../examples/direction";
 import InputOtpExample from "../examples/input-otp";
 import ItemExample from "../examples/item";
 import MarkerExample from "../examples/marker";
+import CarouselExample from "../examples/carousel";
+import ContextMenuExample from "../examples/context-menu";
+import DrawerExample from "../examples/drawer";
+import MenubarExample from "../examples/menubar";
+import NavigationMenuExample from "../examples/navigation-menu";
+import ResizableExample from "../examples/resizable";
+import ScrollAreaExample from "../examples/scroll-area";
 import type { ComponentType } from "react";
 import DatePickerExample from "../examples/date-picker";
 import DataTableExample from "../examples/data-table";
@@ -111,6 +118,14 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "carousel": CarouselExample,
+  "context-menu": ContextMenuExample,
+  "drawer": DrawerExample,
+  "menubar": MenubarExample,
+  "navigation-menu": NavigationMenuExample,
+  "resizable": ResizableExample,
+  "scroll-area": ScrollAreaExample,
+
   "attachment": AttachmentExample,
   "bubble": BubbleExample,
   "direction": DirectionExample,

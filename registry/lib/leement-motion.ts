@@ -298,6 +298,17 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
         queueMicrotask(() => {
           queued = false;
           if (disposed) return;
+          if (node.hasAttribute("data-swiping")) {
+            // Pointer-driven movement is direct; save its live position for the
+            // Motion transition when the gesture ends.
+            if (control) {
+              control.cancel();
+              restore();
+              control = undefined;
+            }
+            previous = read();
+            return;
+          }
           if (!control)
             for (const name of names) originals[name] = inline(name);
           const from = control ? read() : previous;
@@ -351,7 +362,7 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
         if (control && control.state !== "finished" && records.some((record) => record.target === node && record.attributeName === "style")) {
           for (const name of names) originals[name] = inline(name);
         }
-        if (records.some((record) => record.attributeName !== "style"))
+        if (node.hasAttribute("data-swiping") || records.some((record) => record.attributeName !== "style"))
           update();
       });
       observer.observe(node, { attributes: true });

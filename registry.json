@@ -2166,6 +2166,190 @@
           "target": "licenses/leement/shadcn-license.md"
         }
       ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Leement carousel component.",
+      "dependencies": [
+        "embla-carousel-react@8.6.0",
+        "lucide-react",
+        "motion@13.1.0"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/carousel.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Leement context-menu component.",
+      "dependencies": [
+        "@base-ui/react@1.7.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/leement-motion",
+        "@leement/popup-scope"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/context-menu.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Leement drawer component.",
+      "dependencies": [
+        "@base-ui/react@1.7.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/leement-motion",
+        "@leement/popup-scope"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/drawer.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/drawer.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Leement menubar component.",
+      "dependencies": [
+        "@base-ui/react@1.7.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/menubar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/menubar.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Leement navigation-menu component.",
+      "dependencies": [
+        "@base-ui/react@1.7.0",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/leement-motion",
+        "@leement/popup-scope"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/navigation-menu.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Leement resizable component.",
+      "dependencies": [
+        "react-resizable-panels@4.12.0"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/resizable.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/resizable.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Leement scroll-area component.",
+      "dependencies": [
+        "@base-ui/react@1.7.0"
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/scroll-area.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
     }
   ]
 }
