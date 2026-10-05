@@ -2,6 +2,15 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+"compare": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
+"compliance": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
+"contact": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
+"cta": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
+"download": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
+"experience": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
+"faq": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
+"form": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
+
 "about": "Content and links are supplied by your application. Examples use local demonstration data.",
 "awards": "Content and links are supplied by your application. Examples use local demonstration data.",
 "blog": "Content and links are supplied by your application. Examples use local demonstration data.",

@@ -2836,6 +2836,166 @@
       "dependencies": [
         "lucide-react"
       ]
+    },
+    {
+      "name": "compare",
+      "type": "registry:block",
+      "title": "Compare",
+      "description": "Feature comparison table with accessible explanations.",
+      "files": [
+        {
+          "path": "registry/blocks/compare.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/compare.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/table",
+        "@leement/tooltip"
+      ]
+    },
+    {
+      "name": "compliance",
+      "type": "registry:block",
+      "title": "Compliance",
+      "description": "Application-supplied security practices and badge presentation.",
+      "files": [
+        {
+          "path": "registry/blocks/compliance.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/compliance.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/badge"
+      ]
+    },
+    {
+      "name": "contact",
+      "type": "registry:block",
+      "title": "Contact",
+      "description": "Contact details and an application-owned submission form.",
+      "files": [
+        {
+          "path": "registry/blocks/contact.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/contact.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/button",
+        "@leement/input",
+        "@leement/label",
+        "@leement/textarea",
+        "@leement/utils"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "cta",
+      "type": "registry:block",
+      "title": "CTA",
+      "description": "A focused call-to-action with editable links.",
+      "files": [
+        {
+          "path": "registry/blocks/cta.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/cta.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button"
+      ]
+    },
+    {
+      "name": "download",
+      "type": "registry:block",
+      "title": "Download",
+      "description": "Platform downloads with application destinations.",
+      "files": [
+        {
+          "path": "registry/blocks/download.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/download.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/button",
+        "@leement/utils"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "experience",
+      "type": "registry:block",
+      "title": "Experience",
+      "description": "Career timeline and resume destination.",
+      "files": [
+        {
+          "path": "registry/blocks/experience.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/experience.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "faq",
+      "type": "registry:block",
+      "title": "FAQ",
+      "description": "Keyboard-accessible questions and answers.",
+      "files": [
+        {
+          "path": "registry/blocks/faq.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/faq.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/accordion"
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:block",
+      "title": "Form",
+      "description": "Compose event type, venue, date, tags, images and submission.",
+      "files": [
+        {
+          "path": "registry/blocks/form.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/form.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/button",
+        "@leement/input",
+        "@leement/label",
+        "@leement/textarea",
+        "@leement/choicebox",
+        "@leement/combobox",
+        "@leement/mini-calendar",
+        "@leement/tags",
+        "@leement/dropzone",
+        "@leement/utils"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
     }
   ]
 }
