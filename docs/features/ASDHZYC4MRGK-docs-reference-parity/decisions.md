@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:af8877b5d3de407df1dfd7817dac9ed920d66fe1fcd0a061f454862deb856c63 -->
+<!-- lee-spec-kit:workflow-sync sha256:87f351d24ba114a1e1806488d2f9d315c685280fe838c29f4d50c73b076f780e -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -119,3 +119,10 @@
 - **Trace**: fixed public Kibo example을 검토하고 기존 Leement primitive로 조합했다. upstream demo의 외부 이미지/브랜드/랜덤 faker는 앱 소유 data와 중립 예제로 바꿨고 서버 서비스는 추가하지 않았다. 세 블록은 experimental이며 실제 설치 source에 Kibo MIT 전문을 포함한다. CSS animation 대신 Motion을 사용하며 position helper에 top 속성만 추가했다. 새 canonical example은 lazy import이고 기존 단일 iframe/replay/resize runtime을 사용한다.
 - **Evidence**: [Block 대응 자료](./artifacts/block-reference-correspondence.json). 18 integration/graph tests, docs strict typecheck/focused ESLint/registry build/diff PASS; 3 registry CLI 설치와 독립 consumer strict/Vite lazy build PASS. Browser Codebase 선택→코드/selector 동기화, Canvas 키보드 30→32%와 simulation 시작/정지, Roadmap Table 전환 PASS. Home handle에서 Codebase/Roadmap iframe240/root200/documentScroll240을 확인했다. Calendar/table/timeline의 넓은 자료는 내부 scroll을 유지한다.
 - **Verification limits**: 처음 브라우저 확인은 종료된 dev server와 잘못된 preview URL(`/detail` 누락) 때문에 실패했으며 복구 후 검증했다. Aside가 setViewportSize를 제공하지 않아 실제 문서 resize handle로 폭을 검증했다. Canvas ref 교체/공백 role-selector transport 오류는 fresh snapshot ref로 해결했다. 개발 화면의 hydration 경고는 html에 browser extension이 주입한 data-locator-client-url 차이였고 component 내부 mismatch 근거는 없었다; 이를 숨기기 위한 앱 코드 변경은 하지 않았다. 전체 Feature checks/세부 visual/RTL/나머지 Blocks/Charts는 task 13이다.
+
+## D014 — 콘텐츠·정보 Websites 블록 10개
+
+- **Decision**: About/Awards/Blog/BlogPost/Careers/CaseStudies/CaseStudy/Changelog/CodeExample/Community를 실제 설치 source, canonical 실행 예제, public props/types/API와 연결했다. Kibo의 공개 구성과 MIT 전문은 보존하고 외부 서비스·이미지는 중립 data 및 앱 소유 링크로 바꿨다. BlogPost와 CaseStudy의 children은 앱 기사 본문을 표현한다. 임의 성공 backend는 제공하지 않는다.
+- **Trace**: CodeExample은 JavaScript/Python/Go/Ruby의 실제 source와 controlled/uncontrolled tab/copy를 연결했다. CodeBlock은 세 언어 highlight 모듈만 추가했다. 목록의 empty 상태, breakout/collection optional action 및 community keyboard focus를 보완했다. native table/code의 넓은 내용은 내부 스크롤을 사용한다.
+- **Evidence**: [공개 block 대응 자료](./artifacts/block-reference-correspondence.json). 콘텐츠 6 + Applications 7 + registry 5 = 18 tests PASS; strict docs typecheck/focused lint/registry build/diff PASS. 10개 namespace의 실제 shadcn CLI 설치와 독립 strict/Vite lazy build PASS. 실제 browser의 Python tab 전환, About/BlogPost/Changelog/CaseStudy/CodeExample의 iframe240/root200/documentScroll240을 확인했다.
+- **Fixes and limits**: 첫 consumer copy는 잘못된 작업 디렉터리 때문에 실패하여 절대 source 경로로 복구했다. 최초 About는 flex child의 intrinsic image 폭으로 overflow가 발생했고 full-width/min-width 및 grid columns를 명시해 수정했다. 첫 복합 slug handle locator 실패는 snapshot에서 새 ref를 얻어 복구했다. aggregate consumer bundle 크기/use-client 경고는 기존 검증 fixture 특성으로 남기며 build 실패로 간주하지 않는다. 전체 light/dark/RTL/모든 route와 잔여 Blocks/Charts는 task13에서 확인한다. README는 D004에 따라 변경하지 않는다.

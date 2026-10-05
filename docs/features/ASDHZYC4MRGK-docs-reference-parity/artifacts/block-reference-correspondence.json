@@ -82,5 +82,222 @@
       "milestone create/remove and app add-feature callback"
     ],
     "verification": "18 integration/graph tests; docs strict typecheck/focused lint/registry build; actual shadcn CLI consumer install and strict/Vite lazy build; browser selection/movement/views and 240px geometry."
+  },
+  {
+    "upstream": {
+      "name": "about",
+      "source": "apps/docs/content/blocks/about.mdx",
+      "example": "apps/docs/examples/about.tsx",
+      "exampleExists": true,
+      "installer": "about",
+      "dependencies": [
+        "/components/marquee"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/about.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/about"
+    },
+    "registryItem": "about",
+    "route": "/blocks/about",
+    "source": "registry/blocks/about.tsx",
+    "example": "apps/docs/examples/about.tsx",
+    "contracts": [
+      "editable media, mission and content sections",
+      "partner Motion marquee",
+      "achievement records and optional actions"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "awards",
+      "source": "apps/docs/content/blocks/awards.mdx",
+      "example": "apps/docs/examples/awards.tsx",
+      "exampleExists": true,
+      "installer": "awards",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/awards.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/awards"
+    },
+    "registryItem": "awards",
+    "route": "/blocks/awards",
+    "source": "registry/blocks/awards.tsx",
+    "example": "apps/docs/examples/awards.tsx",
+    "contracts": [
+      "native award table and destinations",
+      "empty collection status"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "blog",
+      "source": "apps/docs/content/blocks/blog.mdx",
+      "example": "apps/docs/examples/blog.tsx",
+      "exampleExists": true,
+      "installer": "blog",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/blog.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/blog"
+    },
+    "registryItem": "blog",
+    "route": "/blocks/blog",
+    "source": "registry/blocks/blog.tsx",
+    "example": "apps/docs/examples/blog.tsx",
+    "contracts": [
+      "article metadata and summary links",
+      "optional collection action and empty status"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "blogpost",
+      "source": "apps/docs/content/blocks/blogpost.mdx",
+      "example": "apps/docs/examples/blogpost.tsx",
+      "exampleExists": true,
+      "installer": "blogpost",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/blogpost.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/blogpost"
+    },
+    "registryItem": "blog-post",
+    "route": "/blocks/blog-post",
+    "source": "registry/blocks/blog-post.tsx",
+    "example": "apps/docs/examples/blog-post.tsx",
+    "contracts": [
+      "editable author/publication header",
+      "application-owned article body",
+      "native rich content and time semantics"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "careers",
+      "source": "apps/docs/content/blocks/careers.mdx",
+      "example": "apps/docs/examples/careers.tsx",
+      "exampleExists": true,
+      "installer": "careers",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/careers.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/careers"
+    },
+    "registryItem": "careers",
+    "route": "/blocks/careers",
+    "source": "registry/blocks/careers.tsx",
+    "example": "apps/docs/examples/careers.tsx",
+    "contracts": [
+      "categorized openings and application destinations",
+      "empty opening status"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "case-studies",
+      "source": "apps/docs/content/blocks/case-studies.mdx",
+      "example": "apps/docs/examples/case-studies.tsx",
+      "exampleExists": true,
+      "installer": "case-studies",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/case-studies.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/case-studies"
+    },
+    "registryItem": "case-studies",
+    "route": "/blocks/case-studies",
+    "source": "registry/blocks/case-studies.tsx",
+    "example": "apps/docs/examples/case-studies.tsx",
+    "contracts": [
+      "quotes/person/role/media and company metadata",
+      "outcome metrics and case study destinations"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "case-study",
+      "source": "apps/docs/content/blocks/case-study.mdx",
+      "example": "apps/docs/examples/case-study.tsx",
+      "exampleExists": true,
+      "installer": "case-study",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/case-study.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/case-study"
+    },
+    "registryItem": "case-study",
+    "route": "/blocks/case-study",
+    "source": "registry/blocks/case-study.tsx",
+    "example": "apps/docs/examples/case-study.tsx",
+    "contracts": [
+      "editorial article children",
+      "company details and website/topics"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "changelog",
+      "source": "apps/docs/content/blocks/changelog.mdx",
+      "example": "apps/docs/examples/changelog.tsx",
+      "exampleExists": true,
+      "installer": "changelog",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/changelog.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/changelog"
+    },
+    "registryItem": "changelog",
+    "route": "/blocks/changelog",
+    "source": "registry/blocks/changelog.tsx",
+    "example": "apps/docs/examples/changelog.tsx",
+    "contracts": [
+      "version/date timeline",
+      "release lists, media and actions",
+      "empty updates status"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "code-example",
+      "source": "apps/docs/content/blocks/code-example.mdx",
+      "example": "apps/docs/examples/code-example.tsx",
+      "exampleExists": true,
+      "installer": "code-example",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/code-example.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/code-example"
+    },
+    "registryItem": "code-example",
+    "route": "/blocks/code-example",
+    "source": "registry/blocks/code-example.tsx",
+    "example": "apps/docs/examples/code-example.tsx",
+    "contracts": [
+      "four actual code languages and highlighting",
+      "controlled and keyboard tab selection",
+      "literal clipboard source and empty data"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "community",
+      "source": "apps/docs/content/blocks/community.mdx",
+      "example": "apps/docs/examples/community.tsx",
+      "exampleExists": true,
+      "installer": "community",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/community.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/community"
+    },
+    "registryItem": "community",
+    "route": "/blocks/community",
+    "source": "registry/blocks/community.tsx",
+    "example": "apps/docs/examples/community.tsx",
+    "contracts": [
+      "named channel links and application icons",
+      "Motion hover/focus arrow",
+      "empty collection status"
+    ],
+    "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
   }
 ]

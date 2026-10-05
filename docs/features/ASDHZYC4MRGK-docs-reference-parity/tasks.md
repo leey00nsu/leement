@@ -189,12 +189,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-09 Kibo 콘텐츠·정보 Websites 10개 block 구현
+- [DONE][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-09 Kibo 콘텐츠·정보 Websites 10개 block 구현
   - Date: 2026-10-05
   - Acceptance:
     - About/Awards/Blog/BlogPost/Careers/CaseStudies/CaseStudy/Changelog/CodeExample/Community의 핵심 UI를 source로 제공한다.
   - Checklist:
-    - [ ] 실제 내용·링크·필터/목록 상태를 구성하며 props/composition·token·반응형·dependency·실제 source 예제를 연결한다.
+    - [x] 실제 내용·링크·필터/목록 상태를 구성하며 props/composition·token·반응형·dependency·실제 source 예제를 연결한다.
+  - Verification: 콘텐츠 6 + Applications 7 + registry 5 = 18 tests PASS; docs strict typecheck/focused lint/registry build/diff PASS. 10개 registry CLI 설치·독립 strict/Vite lazy build PASS. Python tab 및 대표 5개 block iframe240/root200/documentScroll240 확인. [공개 대응 자료](./artifacts/block-reference-correspondence.json).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
