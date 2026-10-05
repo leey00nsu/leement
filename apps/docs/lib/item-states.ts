@@ -2,6 +2,13 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+  "attachment": "Static content and app-controlled interaction; see Usage and Examples.",
+  "bubble": "Static content and app-controlled interaction; see Usage and Examples.",
+  "direction": "Static content and app-controlled interaction; see Usage and Examples.",
+  "input-otp": "Static content and app-controlled interaction; see Usage and Examples.",
+  "item": "Static content and app-controlled interaction; see Usage and Examples.",
+  "marker": "Static content and app-controlled interaction; see Usage and Examples.",
+
   "date-picker": "empty/selected/open/disabled/bounded/range-in-progress/complete. unavailable 날짜를 포함하는 range는 거절하고 status로 안내합니다.",
   "data-table": "default/sorted/filtered/empty/selected/hidden columns/first-last page. 필터 변경 시 첫 페이지로 돌아갑니다.",
   "hover-card": "closed/open. portal과 viewport 충돌 배치를 Radix가 담당합니다.",

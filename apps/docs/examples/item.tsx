@@ -1,0 +1,5 @@
+"use client";
+import { FileText, ArrowUpRight } from "lucide-react";
+import { Item, ItemGroup, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemSeparator } from "../../../registry/ui/item";
+import { Button } from "../../../registry/ui/button";
+export default function ItemExample() { return <ItemGroup className="w-full max-w-md" aria-label="Documents"><Item variant="outline" role="listitem"><ItemMedia variant="icon"><FileText aria-hidden="true" /></ItemMedia><ItemContent><ItemTitle>Design guidelines</ItemTitle><ItemDescription>Shared rules for product UI.</ItemDescription></ItemContent><ItemActions><Button variant="ghost" size="icon-sm" aria-label="Open design guidelines" asChild><a href="/foundations/color"><ArrowUpRight aria-hidden="true" /></a></Button></ItemActions></Item><ItemSeparator /><Item render={<a href="/getting-started" role="listitem" />} variant="muted"><ItemContent><ItemTitle>Get started</ItemTitle><ItemDescription>Install the theme and editable component source.</ItemDescription></ItemContent></Item></ItemGroup>; }

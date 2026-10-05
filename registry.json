@@ -2012,6 +2012,160 @@
           "target": "lib/popup-scope.ts"
         }
       ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "Leement attachment component.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/attachment.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/attachment.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Leement bubble component.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/bubble.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/bubble.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "Leement direction component.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/direction.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/direction.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input Otp",
+      "description": "Leement input-otp component.",
+      "dependencies": [
+        "input-otp@1.4.2",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/input-otp.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input-otp.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "Leement item component.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/separator",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/item.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/item.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Leement marker component.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/marker.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/marker.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
+        }
+      ]
     }
   ]
 }

@@ -39,6 +39,7 @@
     "eslint": "^9.39.0",
     "eslint-config-next": "^16.0.0",
     "highlight.js": "^11.12.0",
+    "input-otp": "1.4.2",
     "jsdom": "^27.0.0",
     "lucide-react": "^0.562.0",
     "motion": "13.1.0",

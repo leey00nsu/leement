@@ -1,5 +1,11 @@
 "use client";
 
+import AttachmentExample from "../examples/attachment";
+import BubbleExample from "../examples/bubble";
+import DirectionExample from "../examples/direction";
+import InputOtpExample from "../examples/input-otp";
+import ItemExample from "../examples/item";
+import MarkerExample from "../examples/marker";
 import type { ComponentType } from "react";
 import DatePickerExample from "../examples/date-picker";
 import DataTableExample from "../examples/data-table";
@@ -105,6 +111,13 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "attachment": AttachmentExample,
+  "bubble": BubbleExample,
+  "direction": DirectionExample,
+  "input-otp": InputOtpExample,
+  "item": ItemExample,
+  "marker": MarkerExample,
+
   "date-picker": DatePickerExample,
   "data-table": DataTableExample,
   "hover-card": HoverCardExample,

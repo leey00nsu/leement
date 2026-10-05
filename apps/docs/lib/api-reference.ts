@@ -1,3 +1,4 @@
+import { contentApiReferences } from "./api-content";
 import type { items } from "./items";
 
 export type ApiProp = {
@@ -21,6 +22,7 @@ export type ApiReference = {
 
 /** Leement-owned API. Primitive documentation does not replace this contract. */
 export const apiReferences: Partial<Record<keyof typeof items, ApiReference>> = {
+  ...contentApiReferences,
   button: {
     links: [{ label: "Native button attributes (MDN)", href: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button" }],
     usage: 'import { Button } from "@/components/ui/button";\n\n<Button variant="primary">Save changes</Button>',
