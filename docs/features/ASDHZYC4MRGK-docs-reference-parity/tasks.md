@@ -120,14 +120,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-04 Sidebar·Message·MessageScroller·Questionnaire 보완
+- [DONE][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-04 Sidebar·Message·MessageScroller·Questionnaire 보완
   - Date: 2026-10-05
   - Acceptance:
     - 4개 복합 component의 provider/hooks/parts/state와 baseline 사용법을 제공한다.
   - Checklist:
-    - [ ] 단계 이동·validation·scroll·sidebar controlled/mobile/shortcut/RTL을 검증하고 source/예제/API/route를 연결한다.
+    - [x] 단계 이동·validation·scroll·sidebar controlled/mobile/shortcut/RTL을 검증하고 source/예제/API/route를 연결한다.
   - Docs:
     - project:THIRD_PARTY_NOTICES.md
+  - Verification: docs strict typecheck/focused ESLint/registry build PASS; 5 composition/reader-intent integration tests and existing Motion 10 tests PASS. Independent consumer namespace installation and tsc/Vite build PASS. Four real source previews, Sidebar desktop/mobile240/Escape, Questionnaire native step interaction and wrapped240 buttons, MessageScroller reader0px preservation and Motion jump892/892 verified (D009).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

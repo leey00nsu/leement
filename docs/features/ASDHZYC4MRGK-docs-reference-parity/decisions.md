@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:9fbed6f76ed174a73697f49e2c65ce830318713df00db6e877c7cdfaea7a6041 -->
+<!-- lee-spec-kit:workflow-sync sha256:cc08a03db6f9bc10c68ff4ab1e9d8e7174166e7ac9c7bcf4ebae6276071547a1 -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -79,3 +79,11 @@
 - **Decision**: 고정 shadcn source의 Base UI ContextMenu/Drawer/Menubar/NavigationMenu/ScrollArea, Embla layout API와 resizable-panels v4를 Leement source로 제공한다. 실제 설치된 public 타입과 wrapper 기본값으로 API 표를 작성하며 upstream 전용 cn stylesheet와 IconPlaceholder를 제거한다.
 - **Trace**: Carousel의 Embla duration을 0으로 고정하고 programmatic scrollTo/Next/Prev를 Motion으로 연결했다. 방향·RTL에 맞는 키보드 조작과 editable target 예외를 유지한다. Drawer는 Base swipe 변수를 유지하고 Motion 전환 중 포인터 움직임을 직접 반영한다. Root/submenu별 닫힘 callback을 분리했다. NavigationMenu는 actionsRef로 manual unmount를 선택한다. ContextMenu의 설치된 타입에 빠진 optional preventUnmountOnClose는 runtime feature detection으로 확인하고, Shift+F10/ContextMenu key에서 primitive contextmenu event로 연결한다. ScrollArea는 overflow가 있을 때만 viewport를 Tab 순서에 넣는 primitive 정책을 유지한다.
 - **Evidence**: strict typecheck/registry build/focused lint, 기존 Motion/content 15 tests와 신규 keyboard/controlled 6 tests PASS. 기존 overlay/registry-source를 함께 실행한 27 tests PASS. 독립 consumer에서 7개 namespace와 예제 strict/Vite build PASS. 7개 browser 검증 진행 중. NavigationMenu 실제 링크로 iframe이 이동한 뒤 Replay가 메시지만 보내 복구하지 못하는 기존 문제를 확인해, 이동했을 때만 동일 iframe src를 원래 preview로 복구하도록 수정했다. 정상 preview의 Replay는 기존 single-runtime 메시지 방식을 유지한다. Aside 0fGXgi867CJg6d6d에서 7개 실행/API·키보드·pointer·scroll 조작 확인. 발견한 240px Carousel/ContextMenu/NavigationMenu 잘림을 수정했고 직접 Aside REPL에서 viewport/scrollWidth 240/240, arrows 20..56/184..220, context trigger 20..220, nav popup link 17..223 및 전체 description 확인. 실제 링크 이동 후 Replay가 동일 iframe을 preview route로 복구하는 것도 확인했다. className(state) callback을 styled primitive에 전달하여 public type와 동작을 일치시켰다.
+
+## D009 — Sidebar·메시지·설문 composition
+
+- **Decision**: Sidebar는 Base useRender/native composition, Message는 native layout, MessageScroller/Questionnaire는 고정 shadcn source와 MIT @shadcn/react 0.3.1 primitive로 제공한다. transport·AI SDK·저장은 consumer 책임이다. Sidebar의 폭/위치 변화와 Questionnaire control 상태는 Motion helper에 연결한다.
+- **Trace**: MessageScroller의 native smooth 명령을 instant 목표 계산 + Motion 보간으로 바꾸고, wheel/touch/scroll key/pointer 입력은 보간을 취소한다. primitive의 anchor/prepend/reader-intent 상태는 보존한다. 문서 Sidebar는 bounded shell로 만들어 viewport-height iframe의 높이 피드백을 피한다. 현재 Tooltip의 Radix asChild composition을 보존하며 Base 대응 보완은 task 06에서 진행한다. 새 hook alias와 registry:hook dependency를 구성했다. API 표는 설치된 0.3.1 타입과 실제 wrapper 기본값으로 작성했다.
+- **Evidence**: strict docs typecheck, focused ESLint, registry build PASS. 신규 controlled Sidebar/링크/shortcut·Message semantics·Questionnaire required/previous/FormData·MessageScroller region/log/command/inactive-button 4 integration tests 및 기존 Motion 10 tests PASS. 브라우저/independent consumer 검증은 아래 기록처럼 완료했다. JSDOM에 없는 scrollTo는 테스트 환경에 native instant mock으로 제공했으며 실제 scroll geometry 검증과 구분한다.
+
+- **Browser findings/resolution**: 실제 초기 하단 위치(802px)를 확인한 뒤 Home→0px→메시지 추가에서 raw primitive가 다시 하단으로 따라가는 race를 재현했다. 사용자 입력 시 provider autoScroll을 잠시 끄는 gate를 추가하고 직접 하단으로 내려가거나 end command에서 다시 켠다. 후속 실브라우저에서 802→0→추가 후0 유지→jump 892/892 확인. 위치 계산·anchor/prepend 복원은 그대로 primitive 책임이며 Motion은 보간만 담당한다. 동일 동작의 geometry-aware integration test도 추가했다. 240px Questionnaire 중간 단계 버튼 겹침은 flex-wrap으로 바꾸어 Previous 20..109 / Skip158..220 첫 줄, Next156..220 다음 줄로 확인했다. Sidebar desktop collapse 및 mobile240 dialog/Escape, 각 canonical source preview와 scrollWidth240/240 확인. 접힌 Sidebar 예제에도 명시적인 navigation aria-label을 제공한다.
