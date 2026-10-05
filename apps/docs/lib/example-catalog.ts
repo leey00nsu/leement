@@ -34,6 +34,7 @@ export const additionalExamples: Partial<
     },
   ],
   "input-group": [
+    {"id": "base-block-end", "title": "Block End", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-input-group-block-end"},
     {
       id: "compositions",
       title: "Search, units and multiline",
@@ -43,6 +44,7 @@ export const additionalExamples: Partial<
     },
   ],
   field: [
+    {"id": "base-responsive", "title": "Responsive", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-field-responsive"},
     {
       id: "fieldset",
       title: "Related fields and form values",
@@ -97,6 +99,8 @@ export const additionalExamples: Partial<
     },
   ],
   avatar: [
+    {"id": "base-group-count", "title": "Group Count", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-avatar-group-count"},
+    {"id": "base-size", "title": "Size", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-avatar-size"},
     {
       id: "images",
       title: "Images, fallback and sizes",
@@ -160,6 +164,7 @@ export const additionalExamples: Partial<
     },
   ],
   "toggle-group": [
+    {"id": "base-spacing", "title": "Spacing", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-toggle-group-spacing"},
     {
       id: "vertical",
       title: "Vertical controlled selection",
@@ -214,6 +219,7 @@ export const additionalExamples: Partial<
     },
   ],
   button: [
+    {"id": "base-render", "title": "Render", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-button-render"},
     {
       id: "sizes",
       title: "Sizes, icon names and links",
@@ -403,6 +409,8 @@ export const additionalExamples: Partial<
     },
   ],
   combobox: [
+    {"id": "base-clear", "title": "Clear", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-combobox-clear"},
+    {"id": "base-multiple", "title": "Multiple", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-combobox-multiple"},
     {
       id: "controlled",
       title: "Controlled assignment and disabled field",

@@ -148,11 +148,12 @@ function Spinner({
       aria-label={label}
       className={cn(
         "inline-flex shrink-0 items-center text-primary",
+        sizeClass[size],
         className,
       )}
       {...props}
     >
-      <span aria-hidden="true" className={cn("block", sizeClass[size])}>
+      <span aria-hidden="true" className="block size-full">
         <SpinnerGlyph variant={variant} />
       </span>
       <span className="sr-only">{label}</span>

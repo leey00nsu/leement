@@ -28,7 +28,8 @@
       "description": "Leement button component.",
       "dependencies": [
         "@radix-ui/react-slot",
-        "class-variance-authority"
+        "class-variance-authority",
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -47,7 +48,9 @@
       "type": "registry:ui",
       "title": "Input",
       "description": "Leement input component.",
-      "dependencies": [],
+      "dependencies": [
+        "@base-ui/react@1.7.0"
+      ],
       "registryDependencies": [
         "@leement/utils",
         "@leement/leement-motion"
@@ -101,7 +104,7 @@
       "title": "Select",
       "description": "Accessible single choice menu.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -123,7 +126,7 @@
       "title": "Switch",
       "description": "Accessible on or off control.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -143,7 +146,7 @@
       "title": "Tabs",
       "description": "Accessible views within one section.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "class-variance-authority"
       ],
       "registryDependencies": [
@@ -181,10 +184,12 @@
       "title": "Badge",
       "description": "Leement badge component.",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -241,7 +246,7 @@
       "title": "Dropdown Menu",
       "description": "Accessible action menu.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -263,7 +268,7 @@
       "title": "Popover",
       "description": "Contextual floating content.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -284,7 +289,7 @@
       "title": "Sheet",
       "description": "Accessible edge panel.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -495,7 +500,7 @@
       "title": "Collapsible",
       "description": "Accessible disclosure content.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -515,7 +520,7 @@
       "title": "Progress",
       "description": "Accessible task completion progress.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -535,7 +540,7 @@
       "title": "Slider",
       "description": "Accessible single or range value control.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -576,7 +581,7 @@
       "title": "Avatar",
       "description": "Image or initials for a person or entity.",
       "dependencies": [
-        "@radix-ui/react-avatar"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils"
@@ -586,6 +591,11 @@
           "path": "registry/ui/avatar.tsx",
           "type": "registry:ui",
           "target": "components/ui/avatar.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -875,16 +885,26 @@
       "title": "Combobox",
       "description": "Search and choose one option.",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion",
+        "@leement/button",
+        "@leement/input-group",
+        "@leement/popup-scope"
       ],
       "files": [
         {
           "path": "registry/ui/combobox.tsx",
           "type": "registry:ui",
           "target": "components/ui/combobox.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -1683,7 +1703,7 @@
       "title": "Checkbox",
       "description": "Select independent options, including a mixed parent state.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -1704,10 +1724,11 @@
       "title": "Radio Group",
       "description": "Choose one option from a visible set.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -1723,10 +1744,11 @@
       "title": "Field",
       "description": "Connect a form control with its label, help and validation feedback.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/separator"
       ],
       "files": [
         {
@@ -1754,6 +1776,11 @@
           "path": "registry/ui/input-group.tsx",
           "type": "registry:ui",
           "target": "components/ui/input-group.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -1763,7 +1790,8 @@
       "title": "Toggle",
       "description": "Turn a mode or formatting option on and off.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -1783,11 +1811,12 @@
       "title": "Toggle Group",
       "description": "Choose one or more related pressed options.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils",
-        "@leement/toggle"
+        "@leement/toggle",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -1803,7 +1832,7 @@
       "title": "Accordion",
       "description": "\uad00\ub828 \uc815\ubcf4\ub97c \uc811\uace0 \ud3bc\uce58\ub294 \uc9c8\ubb38\u00b7\uc124\uc815 \ubaa9\ub85d\uc785\ub2c8\ub2e4.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -1886,10 +1915,14 @@
       "type": "registry:ui",
       "title": "Button Group",
       "description": "\uc11c\ub85c \uad00\ub828\ub41c \ubc84\ud2bc\uc758 \uacbd\uacc4\ub97c \uc5f0\uacb0\ud569\ub2c8\ub2e4.",
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority",
+        "@base-ui/react@1.7.0"
+      ],
       "registryDependencies": [
         "@leement/utils",
-        "@leement/button"
+        "@leement/button",
+        "@leement/separator"
       ],
       "files": [
         {
@@ -2019,7 +2052,7 @@
       "title": "Attachment",
       "description": "Leement attachment component.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "class-variance-authority"
       ],
       "registryDependencies": [
@@ -2046,7 +2079,7 @@
       "title": "Bubble",
       "description": "Leement bubble component.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "class-variance-authority"
       ],
       "registryDependencies": [
@@ -2072,7 +2105,7 @@
       "title": "Direction",
       "description": "Leement direction component.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [],
       "files": [
@@ -2120,7 +2153,7 @@
       "title": "Item",
       "description": "Leement item component.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "class-variance-authority"
       ],
       "registryDependencies": [
@@ -2147,7 +2180,7 @@
       "title": "Marker",
       "description": "Leement marker component.",
       "dependencies": [
-        "@base-ui/react",
+        "@base-ui/react@1.7.0",
         "class-variance-authority"
       ],
       "registryDependencies": [

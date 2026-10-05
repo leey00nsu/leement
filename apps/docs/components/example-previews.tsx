@@ -3,6 +3,15 @@
 import { lazy, Suspense } from "react";
 
 const examples = {
+  "base-button-render": lazy(() => import("../examples/base-button-render")),
+  "base-avatar-size": lazy(() => import("../examples/base-avatar-size")),
+  "base-avatar-group-count": lazy(() => import("../examples/base-avatar-group-count")),
+  "base-combobox-multiple": lazy(() => import("../examples/base-combobox-multiple")),
+  "base-combobox-clear": lazy(() => import("../examples/base-combobox-clear")),
+  "base-input-group-block-end": lazy(() => import("../examples/base-input-group-block-end")),
+  "base-field-responsive": lazy(() => import("../examples/base-field-responsive")),
+  "base-toggle-group-spacing": lazy(() => import("../examples/base-toggle-group-spacing")),
+
   "select-groups": lazy(() => import("../examples/select-groups")),
   "select-states": lazy(() => import("../examples/select-states")),
   "select-scroll": lazy(() => import("../examples/select-scroll")),
