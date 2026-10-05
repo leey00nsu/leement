@@ -85,7 +85,7 @@ const ACTIVE_INDEX = 2;
 
 export function ChartBarActive() {
   return (
-    <Card className="w-full min-w-0 max-w-2xl w-full min-w-0 max-w-2xl">
+    <Card className="w-full min-w-0 max-w-2xl">
       <CardHeader>
         <CardTitle>Bar Chart - Active</CardTitle>
         <CardDescription>January - June 2024</CardDescription>

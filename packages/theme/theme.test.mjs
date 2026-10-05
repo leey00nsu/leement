@@ -30,6 +30,13 @@ describe("Leement web theme contract", () => {
   });
 
   it("derives shadcn names from Leement roles and supports existing dark-class apps", () => {
+    for (const n of [1, 2, 3, 4, 5]) {
+      expect(css).toContain(`--chart-${n}: var(--lm-color-data-series${n})`);
+      expect(css).toContain(`--color-chart-${n}: var(--chart-${n})`);
+      const tokens = JSON.parse(readFileSync(resolve("packages/tokens/src/tokens.json"), "utf8"));
+      expect(tokens.semantic.light.color.data[`series${n}`]).toBeTruthy();
+      expect(tokens.semantic.dark.color.data[`series${n}`]).toBeTruthy();
+    }
     expect(css).toContain("--background: var(--lm-color-background-default)");
     expect(css).toContain("--success: var(--lm-color-status-success)");
     expect(css).toContain("--muted: var(--lm-color-surface-muted)");

@@ -86,9 +86,10 @@ export async function ChartRecipePage({ name }: { name: ChartName }) {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Installation</h2>
         <p className="text-sm leading-7 text-muted-foreground">
-          Install the theme first. This command installs the recipe, Chart,
-          Card, accessible data table, any required controls, and Recharts. The
-          source belongs to your project.
+          These recipes target the pending 0.2.0 theme. Install the theme first.
+          This command installs the recipe, Chart, Card, accessible data table,
+          any required controls, and Recharts. The source belongs to your
+          project.
         </p>
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg bg-muted p-4">
           <code className="min-w-0 overflow-x-auto text-xs">{command}</code>

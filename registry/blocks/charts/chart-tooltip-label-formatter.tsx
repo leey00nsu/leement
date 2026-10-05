@@ -66,7 +66,7 @@ const chartConfig = {
 
 export function ChartTooltipLabelFormatter() {
   return (
-    <Card className="w-full min-w-0 max-w-2xl w-full min-w-0 max-w-2xl">
+    <Card className="w-full min-w-0 max-w-2xl">
       <CardHeader>
         <CardTitle>Tooltip - Label Formatter</CardTitle>
         <CardDescription>Tooltip with label formatter.</CardDescription>

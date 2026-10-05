@@ -6,7 +6,7 @@ import { Github } from "lucide-react";
 import "./globals.css";
 import { DocsNavigation } from "../components/docs-navigation";
 import { DocsSearch } from "../components/docs-search";
-import { DocsTopNavigation } from "../components/docs-top-navigation";
+import { DocsTopNavigation, DocsMobileNavigation } from "../components/docs-top-navigation";
 import { FoundationPreviewProvider } from "../components/foundation-preview-provider";
 import { DocsShell } from "../components/docs-shell";
 import { ThemeToggle } from "../components/theme-toggle";
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </header>} sidebar={<aside className="docs-sidebar border-b border-border bg-background px-5 py-5 md:sticky md:top-16 md:h-[calc(100vh-4rem)] md:overflow-y-auto md:border-b-0 md:border-r md:px-4 md:py-7">
           <details className="md:hidden">
             <summary className="cursor-pointer rounded-lg border border-border px-3 py-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Browse documentation</summary>
-            <div className="mt-5"><nav aria-label="Mobile sections" className="mb-5 grid grid-cols-2 gap-2 text-sm"><Link href="/getting-started" className="rounded-lg border border-border p-2">Docs</Link><Link href="/components/button" className="rounded-lg border border-border p-2">Components</Link><Link href="/blocks/settings-section" className="rounded-lg border border-border p-2">Blocks</Link><Link href="/patterns/page-header" className="rounded-lg border border-border p-2">Patterns</Link><Link href="/charts" className="rounded-lg border border-border p-2">Charts</Link></nav><div className="max-h-[55vh] overflow-y-auto"><DocsNavigation label="Mobile documentation" /></div></div>
+            <div className="mt-5"><DocsMobileNavigation /><div className="max-h-[55vh] overflow-y-auto"><DocsNavigation label="Mobile documentation" /></div></div>
           </details>
           <div className="hidden md:block"><DocsNavigation label="Documentation" /></div>
         </aside>}>

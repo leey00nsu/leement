@@ -37,6 +37,12 @@ const compatibility = `  /* shadcn compatibility: aliases only */
   --warning-foreground: var(--lm-color-status-warning-foreground);
   --data-accent: var(--lm-color-data-accent);
   --data-accent-foreground: var(--lm-color-data-accent-foreground);
+  --chart-1: var(--lm-color-data-series1);
+  --chart-2: var(--lm-color-data-series2);
+  --chart-3: var(--lm-color-data-series3);
+  --chart-4: var(--lm-color-data-series4);
+  --chart-5: var(--lm-color-data-series5);
+
   --border: var(--lm-color-border-default);
   --input: var(--lm-color-border-default);
   --ring: var(--lm-color-focus-ring);
@@ -91,6 +97,11 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   --color-background: var(--background); --color-foreground: var(--foreground);
   --color-card: var(--card); --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover); --color-popover-foreground: var(--popover-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
   --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground);

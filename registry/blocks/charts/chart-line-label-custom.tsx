@@ -83,7 +83,7 @@ const chartConfig = {
 
 export function ChartLineLabelCustom() {
   return (
-    <Card className="w-full min-w-0 max-w-2xl w-full min-w-0 max-w-2xl">
+    <Card className="w-full min-w-0 max-w-2xl">
       <CardHeader>
         <CardTitle>Line Chart - Custom Label</CardTitle>
         <CardDescription>January - June 2024</CardDescription>

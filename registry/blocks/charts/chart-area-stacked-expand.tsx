@@ -72,7 +72,7 @@ const chartConfig = {
 
 export function ChartAreaStackedExpand() {
   return (
-    <Card className="w-full min-w-0 max-w-2xl w-full min-w-0 max-w-2xl">
+    <Card className="w-full min-w-0 max-w-2xl">
       <CardHeader>
         <CardTitle>Area Chart - Stacked Expanded</CardTitle>
         <CardDescription>

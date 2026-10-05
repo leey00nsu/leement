@@ -70,7 +70,7 @@ const chartConfig = {
 export function ChartAreaGradient() {
   const gradientId = React.useId().replace(/[^a-zA-Z0-9_-]/g, "");
   return (
-    <Card className="w-full min-w-0 max-w-2xl w-full min-w-0 max-w-2xl">
+    <Card className="w-full min-w-0 max-w-2xl">
       <CardHeader>
         <CardTitle>Area Chart - Gradient</CardTitle>
         <CardDescription>

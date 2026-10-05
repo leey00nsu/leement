@@ -19,7 +19,7 @@ const plans:PricingPlan[]=[{id:"pro",name:"Pro",price:{monthly:90,yearly:75},des
 test("pricing period changes visible prices and passes the selected period to the app action",async()=>{
  const user=userEvent.setup();const select=vi.fn();render(<Pricing plans={plans} onPlanSelect={select}/>);
  await user.click(screen.getByRole("tab",{name:"Yearly"}));
- expect(screen.getByRole("tab",{name:"Yearly"}).getAttribute("aria-selected")).toBe("true");expect(screen.getByText("$75")).toBeTruthy();
+ expect(screen.getByRole("tab",{name:"Yearly"}).getAttribute("aria-selected")).toBe("true");expect(screen.getAllByText("$75").filter(price => price.getAttribute("aria-hidden") !== "true")).toHaveLength(1);
  await user.click(screen.getByRole("button",{name:"Select Pro"}));expect(select).toHaveBeenCalledWith(plans[0],"yearly");await user.click(screen.getByRole("button",{name:"Select Locked"}));expect(select).toHaveBeenCalledTimes(1);
 });
 

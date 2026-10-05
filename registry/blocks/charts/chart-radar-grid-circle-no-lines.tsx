@@ -64,7 +64,7 @@ const chartConfig = {
 
 export function ChartRadarGridCircleNoLines() {
   return (
-    <Card className="w-full min-w-0 max-w-2xl w-full min-w-0 max-w-2xl">
+    <Card className="w-full min-w-0 max-w-2xl">
       <CardHeader className="items-center pb-4">
         <CardTitle>Radar Chart - Grid Circle - No lines</CardTitle>
         <CardDescription>
