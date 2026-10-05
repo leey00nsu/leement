@@ -142,3 +142,9 @@
 - T-09의 ready 이전 inline fallback과 iframe 예제가 각각 mount되는 구조를 확인했다. 예제는 iframe 안에서만 실행하고 no-JS에서도 같은 preview route를 사용한다. 폭 표시는 frame border를 제외한 실제 viewport를 기준으로 한다. 세부 재현·수정 검증 결과는 T-10에서 기록한다.
 
 D013 결과: 느린 로딩에서 부모 inline 예제가 먼저 Motion으로 실행되고 iframe 예제가 뒤이어 실행됨을 재현했다. 부모 예제 mount를 제거하고 로딩 안내 + 단일 iframe 실행으로 수정했다. no-JS용 iframe은 스크립트가 없는 경우에만 표시된다. px 표시는 iframe clientWidth를 관찰해 gallery border2px를 제외한다. light/dark 및 production 초기 진입·Replay, 키보드/drag/부모 resize·추가예제·gallery·no-JS를 확인했으며 T-10 evidence에 연결했다.
+
+## D014: Components 내부 Animations 분류
+
+- 사용자 요청(2026-10-05)과 위치 선택: 독립 상단 탭 대신 Components 좌측 분류로 제공한다. 같은 Feature T-11의 수정 요청으로 수용한다.
+- 시각 효과 자체가 목적인 BrandGradientText/TextReveal/RotatingContent/RevealContent/Marquee를 Animations로 묶는다. Spinner/Skeleton/Status는 feedback이고 MediaReveal은 loading/ready/error 상태, BrandAction은 Button 조합이므로 기존 책임 분류를 유지한다. Motion dependency 유무는 분류 기준이 아니다.
+- docs.ts에서 삭제된 Native Select를 가리키는 오래된 탐색 링크도 발견했다. 같은 Feature US-2의 제거 계약에 따라 링크만 정리한다. URL·registry 레이어·API·컴포넌트 구현은 변경하지 않는다. README 추가 영향 NONE.

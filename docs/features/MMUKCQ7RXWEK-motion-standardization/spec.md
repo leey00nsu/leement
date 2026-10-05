@@ -74,6 +74,10 @@ Leement의 모든 시각 애니메이션을 Motion으로 실행해 새 효과를
 - [x] 모든 UI·Pattern·Block의 기본·추가·Showcase Preview에 우측 handle을 제공한다. pointer/touch drag 및 keyboard로 폭을 조절하고 실제 viewport media query와 container query가 적용된다.
 - [x] 좁은 viewport·부모 크기 변경에서 프레임은 사용 가능한 폭을 넘지 않는다. 예제의 popup, 테마·Foundations 동기화, 중심 배치·자동 높이·가로세로 guide와 Code/Source를 보존한다.
 
+### US-5: 목적에 따른 애니메이션 탐색
+
+- [ ] Components 좌측 Animations에 Brand Gradient Text, Text Reveal, Rotating Content, Reveal Content, Marquee를 모으고 기존 분류에 중복 노출하지 않는다. 검색 결과도 같은 분류를 쓴다. 기존 URL·registry UI 레이어·설치 API·미리보기 동작을 유지한다.
+
 ## 기능 요구사항
 
 ### FR-1: 모든 모션의 단일 실행 수단

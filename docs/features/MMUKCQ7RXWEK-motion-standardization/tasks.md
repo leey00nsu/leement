@@ -248,6 +248,24 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-11 Components의 Animations 탐색 분류 정리
+  - Date: 2026-10-05
+  - Acceptance:
+    - Components 좌측 Animations에 Brand Gradient Text·Text Reveal·Rotating Content·Reveal Content·Marquee를 중복 없이 표시하고 검색 결과도 Animations로 분류한다.
+    - 기존 route·registry type·설치 명령·Preview/Replay를 유지하고 존재하지 않는 Native Select 탐색 링크는 노출하지 않는다.
+  - Checklist:
+    - [ ] 목적 기준 분류와 navigation 링크 정합성 확인
+    - [ ] 데스크톱·모바일 탐색과 검색·5개 route·Preview browser 검증 및 typecheck/lint/build
+    - [ ] PRD·디자인 규칙·Feature 문서 동기화 및 task checkpoint
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생

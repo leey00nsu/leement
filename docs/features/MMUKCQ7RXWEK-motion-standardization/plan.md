@@ -107,3 +107,5 @@ Motion/Radix/Base UI 라이브러리 내부 알고리즘을 재구현한 테스�
 - Decisions: [decisions.md](./decisions.md)
 
 T-10 사용자 후속 요청: 공통 PreviewFrame에 실제 iframe viewport의 px 표시를 추가한다. 초기 임시 예제와 iframe 예제가 각각 mount하는 경로를 조사하고 예제 실행은 iframe에만 둔다. no-JS는 동일 preview route를 여는 iframe으로 읽을 수 있게 유지한다. PRD-FR-008·디자인 Preview 조작 규칙 UPDATE를 T-10 Docs에 연결한다. README·registry API·npm/theme 영향은 NONE이다. 새 영구 테스트 NONE; 실제 브라우저에서 느린 iframe 로딩·초기 진입·Replay 단일 재시작, 폭 표시와 pointer/keyboard/부모 resize, light/dark·no-JS를 확인하고 docs typecheck/lint를 실행한다.
+
+T-11 추가 영향: 사용자가 Animations 위치를 Components 좌측 분류로 선택했다. docs.ts의 Styling/Other에서 시각 효과 자체가 목적인 5개 항목을 Animations에 모은다. Feedback(Spinner/Skeleton), 상태 pattern(MediaReveal/BrandAction), 기능 control/popup은 기존 분류를 유지한다. 검색은 공통 navigation을 사용하므로 같은 section 제목을 표시한다. 현행 카탈로그에 없는 Native Select 탐색 링크는 기존 US-2 제거 계약에 맞춰 정리한다. PRD-FR-008·디자인 탐색 규칙 UPDATE를 T-11 Docs에 연결한다. registry/type/route/npm/theme/README는 영향 NONE이다. 새 영구 테스트 NONE; desktop/mobile sidebar, 검색, 5 route/Preview, navigation 중복·존재 여부를 일회 검증하며 featureChecks를 수행한다.
