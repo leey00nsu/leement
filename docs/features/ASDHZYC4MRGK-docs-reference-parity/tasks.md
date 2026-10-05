@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/ASDHZYC4MRGK-docs-reference-parity`
 - **대기 중 변경 요청**: -
@@ -74,6 +74,179 @@
 > 수동 편집이 필요하면 현재 태스크 근처가 아니라 `태스크 목록`의 마지막 기존 태스크 block 아래에만 append 하세요.
 
 ---
+
+- [DONE][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-01 상세 문서를 Usage·Examples·API Reference 중심으로 정리
+  - Date: 2026-10-05
+  - Acceptance:
+    - 기존 101개 item의 반복 9문단/목차를 제거하고 Usage/API 표·링크 구조와 필수 항목 고유 제약을 제공한다.
+  - Checklist:
+    - [x] ItemPage와 구조화 API 표시·Usage 복사, 기존 Preview/Examples/Installation를 연결하고 typecheck한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+  - Verification: pnpm typecheck PASS; docs focused ESLint PASS; git diff --check PASS. Aside browser session 0Br37unKWM3B7lyW: Button/Input/Card 목차·API 표·단일 iframe·240/833px keyboard 및 683/773px drag 일치 PASS.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-02 신규 콘텐츠·입력 컴포넌트와 실제 예제 추가
+  - Date: 2026-10-05
+  - Acceptance:
+    - Attachment/Bubble/Direction/InputOTP/Item/Marker의 동작·타입·문서·registry 설치를 제공한다.
+  - Checklist:
+    - [ ] baseline API/예제와 비교하고 semantic/Motion, render/disabled/controlled 입력 계약 및 consumer imports를 검증한다.
+  - Docs:
+    - project:THIRD_PARTY_NOTICES.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-03 신규 탐색·overlay 컴포넌트와 실제 예제 추가
+  - Date: 2026-10-05
+  - Acceptance:
+    - Carousel/ContextMenu/Drawer/Menubar/NavigationMenu/Resizable/ScrollArea의 공개 source와 keyboard/controlled 계약을 제공한다.
+  - Checklist:
+    - [ ] Base UI/외부 primitive와 Motion으로 구현하고 focus/키보드/RTL/disabled 및 registry dependency를 검증한다.
+  - Docs:
+    - project:THIRD_PARTY_NOTICES.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-04 Sidebar·Message·MessageScroller·Questionnaire 보완
+  - Date: 2026-10-05
+  - Acceptance:
+    - 4개 복합 component의 provider/hooks/parts/state와 baseline 사용법을 제공한다.
+  - Checklist:
+    - [ ] 단계 이동·validation·scroll·sidebar controlled/mobile/shortcut/RTL을 검증하고 source/예제/API/route를 연결한다.
+  - Docs:
+    - project:THIRD_PARTY_NOTICES.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-05 기존 콘텐츠·입력·선택 API와 예제의 Base 대응 보완
+  - Date: 2026-10-05
+  - Acceptance:
+    - Button/Input/Card/Avatar/Badge/Field/InputGroup/Checkbox/RadioGroup/Select/Combobox 및 관련 기본 component의 baseline parts·props·예제 누락을 해결한다.
+  - Checklist:
+    - [ ] 기존 API를 확인해 최소 확장/명시적 이전을 제공하고 render/variant/disabled/keyboard 테스트와 dependency를 맞춘다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-06 기존 overlay·탐색·data API와 Base 대응 보완
+  - Date: 2026-10-05
+  - Acceptance:
+    - Dialog/AlertDialog/Tooltip/HoverCard/Popover/Sheet/Menu/Accordion/Tabs/Table/Calendar/DatePicker/DataTable/Chart 등 나머지 baseline 항목을 보완한다.
+  - Checklist:
+    - [ ] fixed source API/예제 비교, popup focus/controlled/RTL/표·날짜 동작 및 기존 consumer 회귀를 검증한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-07 63개 Base 문서의 전체 예제·inline 사용법·API Reference 연결
+  - Date: 2026-10-05
+  - Acceptance:
+    - 456 preview 참조/453 고유 ID와 inline composition/recipe/API에 실제 source·설치·문서 대응이 있으며 NativeSelect 제외만 남는다.
+  - Checklist:
+    - [ ] 모든 예제를 실제 source와 alias로 실행하고 각 public part/props/default/event/공식 링크를 검증해 coverage 자료에 연결한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-08 Kibo Applications 3개 block 구현
+  - Date: 2026-10-05
+  - Acceptance:
+    - Codebase/CollaborativeCanvas/Roadmap의 실제 데이터 교체와 상호작용·registry 설치·프리뷰를 제공한다.
+  - Checklist:
+    - [ ] 앱 callback·데모/backend 경계를 문서화하고 file/code 선택·canvas 조작·roadmap 변경 및 consumer 설치를 검증한다.
+  - Docs:
+    - project:THIRD_PARTY_NOTICES.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-09 Kibo 콘텐츠·정보 Websites 10개 block 구현
+  - Date: 2026-10-05
+  - Acceptance:
+    - About/Awards/Blog/BlogPost/Careers/CaseStudies/CaseStudy/Changelog/CodeExample/Community의 핵심 UI를 source로 제공한다.
+  - Checklist:
+    - [ ] 실제 내용·링크·필터/목록 상태를 구성하며 props/composition·token·반응형·dependency·실제 source 예제를 연결한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-10 Kibo 전환·입력 Websites 8개 block 구현
+  - Date: 2026-10-05
+  - Acceptance:
+    - Compare/Compliance/Contact/CTA/Download/Experience/FAQ/Form의 source와 해당 상호작용을 제공한다.
+  - Checklist:
+    - [ ] 비교·문의/폼 제출 callback·FAQ 키보드 조작과 empty/error/disabled, 실제 preview 및 종속 설치를 검증한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-11 Kibo 마케팅 Websites 7개 block 구현
+  - Date: 2026-10-05
+  - Acceptance:
+    - Feature/Footer/Hero/Pricing/Stats/Team/Testimonial의 실제 조합·앱 데이터 교체·설치 source를 제공한다.
+  - Checklist:
+    - [ ] pricing 선택/기간·carousel/video·link 등 핵심 동작과 semantic/light-dark/반응형을 검증하며 28개 block 기준표를 완성한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-017] T-ASDHZYC4MRGK-docs-reference-parity-12 Charts 상단 탐색과 7분류 70개 설치 recipe 추가
+  - Date: 2026-10-05
+  - Acceptance:
+    - desktop/mobile Charts, category/search/direct routes와 모든 chart recipe가 동작한다.
+  - Checklist:
+    - [ ] 원본 recipe를 Recharts/Motion/token source로 제공하고 tooltip/legend/filter/series/접근성·data fallback·lazy preview·dependency를 검증한다.
+  - Docs:
+    - project:THIRD_PARTY_NOTICES.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-009] T-ASDHZYC4MRGK-docs-reference-parity-13 전체 대응·설치·UI 회귀 검증과 문서 동기화
+  - Date: 2026-10-05
+  - Acceptance:
+    - 63개 Base, Kibo 공개28 Blocks, Charts70에 누락없는 기능/예제/API 대응 및 실제 consumer 설치·빌드 증거가 있고 필수 전체 checks를 통과한다.
+  - Checklist:
+    - [ ] registry graph/API/source 일치와 independent consumer·light-dark/240-390-full/keyboard/RTL/Preview px-replay를 확인하고 curated docs와 마지막 sync marker를 갱신한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:THIRD_PARTY_NOTICES.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
 
 ## Repository Knowledge (완료 비차단)
 

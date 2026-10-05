@@ -1,0 +1,3002 @@
+{
+  "capturedAt": "2026-10-05",
+  "upstreamCommits": {
+    "shadcn": "295a1f114a138f23b5dfee0e0c6812394dfeb90c",
+    "kibo": "3d63cdb15b79d972e3dc38a10997987672f9b263"
+  },
+  "shadcnBaseDocs": [
+    {
+      "name": "accordion",
+      "source": "apps/v4/content/docs/components/base/accordion.mdx",
+      "examples": [
+        "accordion-demo",
+        "accordion-basic",
+        "accordion-multiple",
+        "accordion-disabled",
+        "accordion-borders",
+        "accordion-card",
+        "accordion-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Multiple",
+        "Disabled",
+        "Borders",
+        "Card",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/accordion",
+        "https://base-ui.com/react/components/accordion#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/accordion.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "alert-dialog",
+      "source": "apps/v4/content/docs/components/base/alert-dialog.mdx",
+      "examples": [
+        "alert-dialog-demo",
+        "alert-dialog-basic",
+        "alert-dialog-small",
+        "alert-dialog-media",
+        "alert-dialog-small-media",
+        "alert-dialog-destructive",
+        "alert-dialog-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Small",
+        "Media",
+        "Small with Media",
+        "Destructive",
+        "RTL",
+        "API Reference",
+        "size"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/alert-dialog",
+        "https://base-ui.com/react/components/alert-dialog#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/alert-dialog.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 1
+    },
+    {
+      "name": "alert",
+      "source": "apps/v4/content/docs/components/base/alert.mdx",
+      "examples": [
+        "alert-demo",
+        "alert-basic",
+        "alert-destructive",
+        "alert-action",
+        "alert-colors",
+        "alert-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Destructive",
+        "Action",
+        "Custom Colors",
+        "RTL",
+        "API Reference",
+        "Alert",
+        "AlertTitle",
+        "AlertDescription",
+        "AlertAction"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/alert.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 4
+    },
+    {
+      "name": "aspect-ratio",
+      "source": "apps/v4/content/docs/components/base/aspect-ratio.mdx",
+      "examples": [
+        "aspect-ratio-demo",
+        "aspect-ratio-square",
+        "aspect-ratio-portrait",
+        "aspect-ratio-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Square",
+        "Portrait",
+        "RTL",
+        "API Reference",
+        "AspectRatio"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/aspect-ratio#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/aspect-ratio.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 1
+    },
+    {
+      "name": "attachment",
+      "source": "apps/v4/content/docs/components/base/attachment.mdx",
+      "examples": [
+        "attachment-demo",
+        "attachment-image",
+        "attachment-states",
+        "attachment-sizes",
+        "attachment-group",
+        "attachment-trigger"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Features",
+        "Image",
+        "States",
+        "Sizes",
+        "Group",
+        "Trigger",
+        "Accessibility",
+        "Label icon-only actions",
+        "Label the trigger",
+        "Keyboard scrolling",
+        "Meaning beyond color",
+        "API Reference",
+        "Attachment",
+        "AttachmentMedia",
+        "AttachmentContent",
+        "AttachmentTitle",
+        "AttachmentDescription",
+        "AttachmentActions",
+        "AttachmentAction",
+        "AttachmentTrigger",
+        "AttachmentGroup"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/attachment.mdx",
+      "fencedCodeBlockCount": 9,
+      "apiTableCount": 9
+    },
+    {
+      "name": "avatar",
+      "source": "apps/v4/content/docs/components/base/avatar.mdx",
+      "examples": [
+        "avatar-demo",
+        "avatar-basic",
+        "avatar-badge",
+        "avatar-badge-icon",
+        "avatar-group",
+        "avatar-group-count",
+        "avatar-group-count-icon",
+        "avatar-size",
+        "avatar-dropdown",
+        "avatar-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Badge",
+        "Badge with Icon",
+        "Avatar Group",
+        "Avatar Group Count",
+        "Avatar Group with Icon",
+        "Sizes",
+        "Dropdown",
+        "RTL",
+        "API Reference",
+        "Avatar",
+        "AvatarImage",
+        "AvatarFallback",
+        "AvatarBadge",
+        "AvatarGroup",
+        "AvatarGroupCount"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/avatar",
+        "https://base-ui.com/react/components/avatar#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/avatar.mdx",
+      "fencedCodeBlockCount": 7,
+      "apiTableCount": 6
+    },
+    {
+      "name": "badge",
+      "source": "apps/v4/content/docs/components/base/badge.mdx",
+      "examples": [
+        "badge-demo",
+        "badge-variants",
+        "badge-icon",
+        "badge-spinner",
+        "badge-link",
+        "badge-colors",
+        "badge-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Variants",
+        "With Icon",
+        "With Spinner",
+        "Link",
+        "Custom Colors",
+        "RTL",
+        "API Reference",
+        "Badge"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/badge.mdx",
+      "fencedCodeBlockCount": 3,
+      "apiTableCount": 1
+    },
+    {
+      "name": "breadcrumb",
+      "source": "apps/v4/content/docs/components/base/breadcrumb.mdx",
+      "examples": [
+        "breadcrumb-demo",
+        "breadcrumb-basic",
+        "breadcrumb-separator",
+        "breadcrumb-dropdown",
+        "breadcrumb-ellipsis",
+        "breadcrumb-link",
+        "breadcrumb-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Custom separator",
+        "Dropdown",
+        "Collapsed",
+        "Link component",
+        "RTL",
+        "API Reference",
+        "Breadcrumb",
+        "BreadcrumbList",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator",
+        "BreadcrumbEllipsis"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/breadcrumb.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 7
+    },
+    {
+      "name": "bubble",
+      "source": "apps/v4/content/docs/components/base/bubble.mdx",
+      "examples": [
+        "bubble-demo",
+        "bubble-variants",
+        "bubble-alignment",
+        "bubble-group-demo",
+        "bubble-link-button",
+        "bubble-reactions",
+        "bubble-collapsible",
+        "bubble-tooltip",
+        "bubble-popover"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Features",
+        "Variants",
+        "Alignment",
+        "Bubble Group",
+        "Links and Buttons",
+        "Reactions",
+        "Show More / Collapsible",
+        "Tooltip",
+        "Popover",
+        "Accessibility",
+        "Labeling Reactions",
+        "Interactive Bubbles",
+        "Meaning Beyond Color",
+        "API Reference",
+        "Bubble",
+        "BubbleContent",
+        "BubbleReactions",
+        "BubbleGroup"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/bubble.mdx",
+      "fencedCodeBlockCount": 10,
+      "apiTableCount": 6
+    },
+    {
+      "name": "button-group",
+      "source": "apps/v4/content/docs/components/base/button-group.mdx",
+      "examples": [
+        "button-group-demo",
+        "button-group-orientation",
+        "button-group-size",
+        "button-group-nested",
+        "button-group-separator",
+        "button-group-split",
+        "button-group-input",
+        "button-group-input-group",
+        "button-group-dropdown",
+        "button-group-select",
+        "button-group-popover",
+        "button-group-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Accessibility",
+        "ButtonGroup vs ToggleGroup",
+        "Orientation",
+        "Size",
+        "Nested",
+        "Separator",
+        "Split",
+        "Input",
+        "Input Group",
+        "Dropdown Menu",
+        "Select",
+        "Popover",
+        "RTL",
+        "API Reference",
+        "ButtonGroup",
+        "ButtonGroupSeparator",
+        "ButtonGroupText"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/button-group.mdx",
+      "fencedCodeBlockCount": 11,
+      "apiTableCount": 3
+    },
+    {
+      "name": "button",
+      "source": "apps/v4/content/docs/components/base/button.mdx",
+      "examples": [
+        "button-demo",
+        "button-size",
+        "button-default",
+        "button-outline",
+        "button-secondary",
+        "button-ghost",
+        "button-destructive",
+        "button-link",
+        "button-icon",
+        "button-with-icon",
+        "button-rounded",
+        "button-spinner",
+        "button-group-demo",
+        "button-render",
+        "button-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Cursor",
+        "Size",
+        "Default",
+        "Outline",
+        "Secondary",
+        "Ghost",
+        "Destructive",
+        "Link",
+        "Icon",
+        "With Icon",
+        "Rounded",
+        "Spinner",
+        "Button Group",
+        "As Link",
+        "RTL",
+        "API Reference",
+        "Button"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/button.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 1
+    },
+    {
+      "name": "calendar",
+      "source": "apps/v4/content/docs/components/base/calendar.mdx",
+      "examples": [
+        "calendar-demo",
+        "calendar-hijri",
+        "calendar-basic",
+        "calendar-range",
+        "calendar-caption",
+        "calendar-presets",
+        "calendar-time",
+        "calendar-booked-dates",
+        "calendar-custom-days",
+        "calendar-week-numbers",
+        "calendar-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "About",
+        "Date Picker",
+        "Persian / Hijri / Jalali Calendar",
+        "Selected Date (With TimeZone)",
+        "Basic",
+        "Range Calendar",
+        "Month and Year Selector",
+        "Presets",
+        "Date and Time Picker",
+        "Booked dates",
+        "Custom Cell Size",
+        "Week Numbers",
+        "RTL",
+        "API Reference",
+        "Changelog",
+        "RTL Support"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/calendar.mdx",
+      "fencedCodeBlockCount": 17,
+      "apiTableCount": 0
+    },
+    {
+      "name": "card",
+      "source": "apps/v4/content/docs/components/base/card.mdx",
+      "examples": [
+        "card-demo",
+        "card-small",
+        "card-spacing",
+        "card-edge-to-edge",
+        "card-image",
+        "card-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Size",
+        "Spacing",
+        "Image",
+        "RTL",
+        "API Reference",
+        "Card",
+        "CardHeader",
+        "CardTitle",
+        "CardDescription",
+        "CardAction",
+        "CardContent",
+        "CardFooter",
+        "Changelog",
+        "Spacing Variable"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/card.mdx",
+      "fencedCodeBlockCount": 9,
+      "apiTableCount": 7
+    },
+    {
+      "name": "carousel",
+      "source": "apps/v4/content/docs/components/base/carousel.mdx",
+      "examples": [
+        "carousel-demo",
+        "carousel-size",
+        "carousel-spacing",
+        "carousel-orientation",
+        "carousel-api",
+        "carousel-plugin",
+        "carousel-rtl"
+      ],
+      "headings": [
+        "About",
+        "Installation",
+        "Usage",
+        "Composition",
+        "Sizes",
+        "Spacing",
+        "Orientation",
+        "Options",
+        "API",
+        "Events",
+        "Plugins",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/carousel.mdx",
+      "fencedCodeBlockCount": 15,
+      "apiTableCount": 0
+    },
+    {
+      "name": "chart",
+      "source": "apps/v4/content/docs/components/base/chart.mdx",
+      "examples": [
+        "chart-demo",
+        "chart-example",
+        "chart-example-grid",
+        "chart-example-axis",
+        "chart-example-tooltip",
+        "chart-example-legend",
+        "chart-tooltip",
+        "chart-rtl"
+      ],
+      "headings": [
+        "Component",
+        "Updating to Recharts v3",
+        "Installation",
+        "Your First Chart",
+        "Add a Grid",
+        "Add an Axis",
+        "Add Tooltip",
+        "Add Legend",
+        "Chart Config",
+        "Theming",
+        "CSS Variables",
+        "hex, hsl or oklch",
+        "Using Colors",
+        "Components",
+        "Chart Data",
+        "Tailwind",
+        "Tooltip",
+        "Props",
+        "Colors",
+        "Custom",
+        "Legend",
+        "Colors",
+        "Custom",
+        "Accessibility",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/chart.mdx",
+      "fencedCodeBlockCount": 30,
+      "apiTableCount": 1
+    },
+    {
+      "name": "checkbox",
+      "source": "apps/v4/content/docs/components/base/checkbox.mdx",
+      "examples": [
+        "checkbox-demo",
+        "checkbox-invalid",
+        "checkbox-basic",
+        "checkbox-description",
+        "checkbox-disabled",
+        "checkbox-group",
+        "checkbox-table",
+        "checkbox-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Checked State",
+        "Invalid State",
+        "Basic",
+        "Description",
+        "Disabled",
+        "Group",
+        "Table",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/checkbox",
+        "https://base-ui.com/react/components/checkbox#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/checkbox.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "collapsible",
+      "source": "apps/v4/content/docs/components/base/collapsible.mdx",
+      "examples": [
+        "collapsible-demo",
+        "collapsible-basic",
+        "collapsible-settings",
+        "collapsible-file-tree",
+        "collapsible-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Controlled State",
+        "Basic",
+        "Settings Panel",
+        "File Tree",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/collapsible",
+        "https://base-ui.com/react/components/collapsible#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/collapsible.mdx",
+      "fencedCodeBlockCount": 6,
+      "apiTableCount": 0
+    },
+    {
+      "name": "combobox",
+      "source": "apps/v4/content/docs/components/base/combobox.mdx",
+      "examples": [
+        "combobox-demo",
+        "combobox-basic",
+        "combobox-multiple",
+        "combobox-clear",
+        "combobox-groups",
+        "combobox-custom",
+        "combobox-invalid",
+        "combobox-disabled",
+        "combobox-auto-highlight",
+        "combobox-popup",
+        "combobox-input-group",
+        "combobox-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Simple",
+        "With chips",
+        "With groups and collection",
+        "Custom Items",
+        "Multiple Selection",
+        "Basic",
+        "Multiple",
+        "Clear Button",
+        "Groups",
+        "Custom Items",
+        "Invalid",
+        "Disabled",
+        "Auto Highlight",
+        "Popup",
+        "Input Group",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/combobox",
+        "https://base-ui.com/react/components/combobox#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/combobox.mdx",
+      "fencedCodeBlockCount": 9,
+      "apiTableCount": 0
+    },
+    {
+      "name": "command",
+      "source": "apps/v4/content/docs/components/base/command.mdx",
+      "examples": [
+        "command-demo",
+        "command-basic",
+        "command-shortcuts",
+        "command-groups",
+        "command-scrollable",
+        "command-rtl"
+      ],
+      "headings": [
+        "About",
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Shortcuts",
+        "Groups",
+        "Scrollable",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/command.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "context-menu",
+      "source": "apps/v4/content/docs/components/base/context-menu.mdx",
+      "examples": [
+        "context-menu-demo",
+        "context-menu-basic",
+        "context-menu-submenu",
+        "context-menu-shortcuts",
+        "context-menu-groups",
+        "context-menu-icons",
+        "context-menu-checkboxes",
+        "context-menu-radio",
+        "context-menu-destructive",
+        "context-menu-sides",
+        "context-menu-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Submenu",
+        "Shortcuts",
+        "Groups",
+        "Icons",
+        "Checkboxes",
+        "Radio",
+        "Destructive",
+        "Sides",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/context-menu",
+        "https://base-ui.com/react/components/context-menu#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/context-menu.mdx",
+      "fencedCodeBlockCount": 6,
+      "apiTableCount": 0
+    },
+    {
+      "name": "data-table",
+      "source": "apps/v4/content/docs/components/base/data-table.mdx",
+      "examples": [
+        "data-table-demo",
+        "data-table-rtl"
+      ],
+      "headings": [
+        "Introduction",
+        "Table of Contents",
+        "Installation",
+        "Prerequisites",
+        "Project Structure",
+        "Set up Table Features",
+        "Basic Table",
+        "Column Definitions",
+        "`<DataTable />` component",
+        "Render the table",
+        "Cell Formatting",
+        "Update columns definition",
+        "Row Actions",
+        "Update columns definition",
+        "Pagination",
+        "Pagination is already enabled",
+        "Add pagination controls",
+        "Sorting",
+        "Update `<DataTable>`",
+        "Make header cell sortable",
+        "Filtering",
+        "Update `<DataTable>`",
+        "Visibility",
+        "Update `<DataTable>`",
+        "Row Selection",
+        "Update column definitions",
+        "Update `<DataTable>`",
+        "Show selected rows",
+        "Reusable Components",
+        "Column header",
+        "Pagination",
+        "Column toggle",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/data-table.mdx",
+      "fencedCodeBlockCount": 21,
+      "apiTableCount": 0
+    },
+    {
+      "name": "date-picker",
+      "source": "apps/v4/content/docs/components/base/date-picker.mdx",
+      "examples": [
+        "date-picker-demo",
+        "date-picker-basic",
+        "date-picker-range",
+        "date-picker-dob",
+        "date-picker-input",
+        "date-picker-time",
+        "date-picker-natural-language",
+        "date-picker-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Range Picker",
+        "Date of Birth",
+        "Input",
+        "Time Picker",
+        "Natural Language Picker",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/date-picker.mdx",
+      "fencedCodeBlockCount": 2,
+      "apiTableCount": 0
+    },
+    {
+      "name": "dialog",
+      "source": "apps/v4/content/docs/components/base/dialog.mdx",
+      "examples": [
+        "dialog-demo",
+        "dialog-close-button",
+        "dialog-no-close-button",
+        "dialog-sticky-footer",
+        "dialog-scrollable-content",
+        "dialog-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Custom Close Button",
+        "No Close Button",
+        "Sticky Footer",
+        "Scrollable Content",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/dialog",
+        "https://base-ui.com/react/components/dialog#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/dialog.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "direction",
+      "source": "apps/v4/content/docs/components/base/direction.mdx",
+      "examples": [
+        "card-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "useDirection"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [
+        "https://base-ui.com/react/utils/direction-provider",
+        "https://base-ui.com/react/utils/direction-provider#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/direction.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "drawer",
+      "source": "apps/v4/content/docs/components/base/drawer.mdx",
+      "examples": [
+        "drawer-demo",
+        "drawer-sides",
+        "drawer-swipe-handle",
+        "drawer-nested",
+        "drawer-non-modal",
+        "drawer-snap-points",
+        "drawer-dialog"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Custom Sizes",
+        "Styling",
+        "Position",
+        "Swipe Handle",
+        "Nested",
+        "Non Modal",
+        "Snap Points",
+        "Responsive",
+        "Migrating from Vaul",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/drawer",
+        "https://base-ui.com/react/components/drawer#api-reference",
+        "https://base-ui.com/react/overview/quick-start#ios-26-safari"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/drawer.mdx",
+      "fencedCodeBlockCount": 20,
+      "apiTableCount": 2
+    },
+    {
+      "name": "dropdown-menu",
+      "source": "apps/v4/content/docs/components/base/dropdown-menu.mdx",
+      "examples": [
+        "dropdown-menu-demo",
+        "dropdown-menu-basic",
+        "dropdown-menu-submenu",
+        "dropdown-menu-shortcuts",
+        "dropdown-menu-icons",
+        "dropdown-menu-checkboxes",
+        "dropdown-menu-checkboxes-icons",
+        "dropdown-menu-radio-group",
+        "dropdown-menu-radio-icons",
+        "dropdown-menu-destructive",
+        "dropdown-menu-avatar",
+        "dropdown-menu-complex",
+        "dropdown-menu-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Submenu",
+        "Shortcuts",
+        "Icons",
+        "Checkboxes",
+        "Checkboxes Icons",
+        "Radio Group",
+        "Radio Icons",
+        "Destructive",
+        "Avatar",
+        "Complex",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/menu",
+        "https://base-ui.com/react/components/menu#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/dropdown-menu.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "empty",
+      "source": "apps/v4/content/docs/components/base/empty.mdx",
+      "examples": [
+        "empty-demo",
+        "empty-outline",
+        "empty-background",
+        "empty-avatar",
+        "empty-avatar-group",
+        "empty-input-group",
+        "empty-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Outline",
+        "Background",
+        "Avatar",
+        "Avatar Group",
+        "InputGroup",
+        "RTL",
+        "API Reference",
+        "Empty",
+        "EmptyHeader",
+        "EmptyMedia",
+        "EmptyTitle",
+        "EmptyDescription",
+        "EmptyContent"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/empty.mdx",
+      "fencedCodeBlockCount": 11,
+      "apiTableCount": 6
+    },
+    {
+      "name": "field",
+      "source": "apps/v4/content/docs/components/base/field.mdx",
+      "examples": [
+        "field-demo",
+        "field-input",
+        "field-textarea",
+        "field-select",
+        "field-slider",
+        "field-fieldset",
+        "field-checkbox",
+        "field-radio",
+        "field-switch",
+        "field-choice-card",
+        "field-group",
+        "field-rtl",
+        "field-responsive"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Field",
+        "FieldGroup",
+        "FieldSet",
+        "Anatomy",
+        "Form",
+        "Input",
+        "Textarea",
+        "Select",
+        "Slider",
+        "Fieldset",
+        "Checkbox",
+        "Radio",
+        "Switch",
+        "Choice Card",
+        "Field Group",
+        "RTL",
+        "Responsive Layout",
+        "Validation and Errors",
+        "Accessibility",
+        "API Reference",
+        "FieldSet",
+        "FieldLegend",
+        "FieldGroup",
+        "Field",
+        "FieldContent",
+        "FieldLabel",
+        "FieldTitle",
+        "FieldDescription",
+        "FieldSeparator",
+        "FieldError"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/field.mdx",
+      "fencedCodeBlockCount": 18,
+      "apiTableCount": 10
+    },
+    {
+      "name": "hover-card",
+      "source": "apps/v4/content/docs/components/base/hover-card.mdx",
+      "examples": [
+        "hover-card-demo",
+        "hover-card-sides",
+        "hover-card-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Trigger Delays",
+        "Positioning",
+        "Basic",
+        "Sides",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/hover-card",
+        "https://base-ui.com/react/components/hover-card#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/hover-card.mdx",
+      "fencedCodeBlockCount": 7,
+      "apiTableCount": 0
+    },
+    {
+      "name": "input-group",
+      "source": "apps/v4/content/docs/components/base/input-group.mdx",
+      "examples": [
+        "input-group-demo",
+        "input-group-inline-start",
+        "input-group-inline-end",
+        "input-group-block-start",
+        "input-group-block-end",
+        "input-group-icon",
+        "input-group-text",
+        "input-group-button",
+        "input-group-kbd",
+        "input-group-dropdown",
+        "input-group-spinner",
+        "input-group-textarea",
+        "input-group-custom",
+        "input-group-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Align",
+        "inline-start",
+        "inline-end",
+        "block-start",
+        "block-end",
+        "Icon",
+        "Text",
+        "Button",
+        "Kbd",
+        "Dropdown",
+        "Spinner",
+        "Textarea",
+        "Custom Input",
+        "RTL",
+        "API Reference",
+        "InputGroup",
+        "InputGroupAddon",
+        "InputGroupButton",
+        "InputGroupInput",
+        "InputGroupTextarea"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/input-group.mdx",
+      "fencedCodeBlockCount": 10,
+      "apiTableCount": 5
+    },
+    {
+      "name": "input-otp",
+      "source": "apps/v4/content/docs/components/base/input-otp.mdx",
+      "examples": [
+        "input-otp-demo",
+        "input-otp-pattern",
+        "input-otp-separator",
+        "input-otp-disabled",
+        "input-otp-controlled",
+        "input-otp-invalid",
+        "input-otp-four-digits",
+        "input-otp-alphanumeric",
+        "input-otp-form",
+        "input-otp-rtl"
+      ],
+      "headings": [
+        "About",
+        "Installation",
+        "Usage",
+        "Composition",
+        "Pattern",
+        "Separator",
+        "Disabled",
+        "Controlled",
+        "Invalid",
+        "Four Digits",
+        "Alphanumeric",
+        "Form",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/input-otp.mdx",
+      "fencedCodeBlockCount": 6,
+      "apiTableCount": 0
+    },
+    {
+      "name": "input",
+      "source": "apps/v4/content/docs/components/base/input.mdx",
+      "examples": [
+        "input-demo",
+        "input-basic",
+        "input-field",
+        "input-fieldgroup",
+        "input-disabled",
+        "input-invalid",
+        "input-file",
+        "input-inline",
+        "input-grid",
+        "input-required",
+        "input-badge",
+        "input-input-group",
+        "input-button-group",
+        "input-form",
+        "input-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Basic",
+        "Field",
+        "Field Group",
+        "Disabled",
+        "Invalid",
+        "File",
+        "Inline",
+        "Grid",
+        "Required",
+        "Badge",
+        "Input Group",
+        "Button Group",
+        "Form",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/input.mdx",
+      "fencedCodeBlockCount": 3,
+      "apiTableCount": 0
+    },
+    {
+      "name": "item",
+      "source": "apps/v4/content/docs/components/base/item.mdx",
+      "examples": [
+        "item-demo",
+        "item-variant",
+        "item-size",
+        "item-icon",
+        "item-avatar",
+        "item-image",
+        "item-group",
+        "item-header",
+        "item-link",
+        "item-dropdown",
+        "item-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Item vs Field",
+        "Variant",
+        "Size",
+        "Icon",
+        "Avatar",
+        "Image",
+        "Group",
+        "Header",
+        "Link",
+        "Dropdown",
+        "RTL",
+        "API Reference",
+        "Item",
+        "ItemGroup",
+        "ItemSeparator",
+        "ItemMedia",
+        "ItemContent",
+        "ItemTitle",
+        "ItemDescription",
+        "ItemActions",
+        "ItemHeader",
+        "ItemFooter"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/item.mdx",
+      "fencedCodeBlockCount": 15,
+      "apiTableCount": 2
+    },
+    {
+      "name": "kbd",
+      "source": "apps/v4/content/docs/components/base/kbd.mdx",
+      "examples": [
+        "kbd-demo",
+        "kbd-group",
+        "kbd-button",
+        "kbd-tooltip",
+        "kbd-input-group",
+        "kbd-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Group",
+        "Button",
+        "Tooltip",
+        "Input Group",
+        "RTL",
+        "API Reference",
+        "Kbd",
+        "KbdGroup"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/kbd.mdx",
+      "fencedCodeBlockCount": 6,
+      "apiTableCount": 2
+    },
+    {
+      "name": "label",
+      "source": "apps/v4/content/docs/components/base/label.mdx",
+      "examples": [
+        "label-demo",
+        "field-demo",
+        "label-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Label in Field",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/label",
+        "https://base-ui.com/react/components/label#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/label.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "marker",
+      "source": "apps/v4/content/docs/components/base/marker.mdx",
+      "examples": [
+        "marker-demo",
+        "marker-variants",
+        "marker-status",
+        "marker-shimmer",
+        "marker-separator",
+        "marker-border",
+        "marker-icon",
+        "marker-link-button"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Features",
+        "Variants",
+        "Status",
+        "Shimmer",
+        "Separator",
+        "Border",
+        "With Icon",
+        "Links and Buttons",
+        "Accessibility",
+        "Status and Progress",
+        "Labeled Separators",
+        "Bordered Markers",
+        "Decorative Icons",
+        "Interactive Markers",
+        "API Reference",
+        "Marker",
+        "MarkerIcon",
+        "MarkerContent"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/marker.mdx",
+      "fencedCodeBlockCount": 10,
+      "apiTableCount": 4
+    },
+    {
+      "name": "menubar",
+      "source": "apps/v4/content/docs/components/base/menubar.mdx",
+      "examples": [
+        "menubar-demo",
+        "menubar-checkbox",
+        "menubar-radio",
+        "menubar-submenu",
+        "menubar-icons",
+        "menubar-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Checkbox",
+        "Radio",
+        "Submenu",
+        "With Icons",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/menubar",
+        "https://base-ui.com/react/components/menubar#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/menubar.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "message-scroller",
+      "source": "apps/v4/content/docs/components/base/message-scroller.mdx",
+      "examples": [
+        "message-scroller-demo",
+        "message-scroller-anchoring",
+        "message-scroller-group-chat",
+        "message-scroller-previous-context",
+        "message-scroller-streaming",
+        "message-scroller-opening-position",
+        "message-scroller-load-history",
+        "message-scroller-animation",
+        "message-scroller-commands",
+        "message-scroller-visibility",
+        "message-scroller-scrollable"
+      ],
+      "headings": [
+        "What Makes a Great Streaming Chat Experience",
+        "MessageScroller",
+        "Installation",
+        "Usage",
+        "Composition",
+        "Core Concepts",
+        "Anchoring Turns",
+        "Group Chat",
+        "Keeping Context Visible",
+        "Following the Live Edge",
+        "Opening Saved Threads",
+        "Avoiding a Flash on Reload",
+        "Loading Earlier Messages",
+        "Animating New Messages",
+        "Jumping to Messages",
+        "Tracking the Reader's Position",
+        "Reading Scroll State",
+        "Performance",
+        "Virtualization",
+        "Accessibility",
+        "Unstyled",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/message-scroller.mdx",
+      "fencedCodeBlockCount": 21,
+      "apiTableCount": 0
+    },
+    {
+      "name": "message",
+      "source": "apps/v4/content/docs/components/base/message.mdx",
+      "examples": [
+        "message-demo",
+        "message-avatar",
+        "message-group",
+        "message-header-footer",
+        "message-actions",
+        "message-attachment"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Features",
+        "Avatar",
+        "Group",
+        "Header and Footer",
+        "Actions",
+        "Attachment",
+        "Accessibility",
+        "Label icon-only actions",
+        "Status updates",
+        "API Reference",
+        "Message",
+        "MessageGroup",
+        "MessageAvatar",
+        "MessageContent",
+        "MessageHeader",
+        "MessageFooter"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/message.mdx",
+      "fencedCodeBlockCount": 7,
+      "apiTableCount": 7
+    },
+    {
+      "name": "native-select",
+      "source": "apps/v4/content/docs/components/base/native-select.mdx",
+      "examples": [
+        "native-select-demo",
+        "native-select-groups",
+        "native-select-disabled",
+        "native-select-invalid",
+        "native-select-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Simple",
+        "With groups",
+        "Groups",
+        "Disabled",
+        "Invalid",
+        "Native Select vs Select",
+        "RTL",
+        "API Reference",
+        "NativeSelect",
+        "NativeSelectOption",
+        "NativeSelectOptGroup"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/native-select.mdx",
+      "fencedCodeBlockCount": 7,
+      "apiTableCount": 2
+    },
+    {
+      "name": "navigation-menu",
+      "source": "apps/v4/content/docs/components/base/navigation-menu.mdx",
+      "examples": [
+        "navigation-menu-demo",
+        "navigation-menu-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Link Component",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/navigation-menu",
+        "https://base-ui.com/react/components/navigation-menu#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/navigation-menu.mdx",
+      "fencedCodeBlockCount": 6,
+      "apiTableCount": 0
+    },
+    {
+      "name": "pagination",
+      "source": "apps/v4/content/docs/components/base/pagination.mdx",
+      "examples": [
+        "pagination-demo",
+        "pagination-simple",
+        "pagination-icons-only",
+        "pagination-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Simple",
+        "Icons Only",
+        "Next.js",
+        "RTL",
+        "Changelog",
+        "RTL Support"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/pagination.mdx",
+      "fencedCodeBlockCount": 7,
+      "apiTableCount": 0
+    },
+    {
+      "name": "popover",
+      "source": "apps/v4/content/docs/components/base/popover.mdx",
+      "examples": [
+        "popover-demo",
+        "popover-basic",
+        "popover-alignments",
+        "popover-form",
+        "popover-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Basic",
+        "Align",
+        "With Form",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/popover",
+        "https://base-ui.com/react/components/popover#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/popover.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "progress",
+      "source": "apps/v4/content/docs/components/base/progress.mdx",
+      "examples": [
+        "progress-demo",
+        "progress-label",
+        "progress-controlled",
+        "progress-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "With label and value",
+        "Label",
+        "Controlled",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/progress",
+        "https://base-ui.com/react/components/progress#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/progress.mdx",
+      "fencedCodeBlockCount": 6,
+      "apiTableCount": 0
+    },
+    {
+      "name": "questionnaire",
+      "source": "apps/v4/content/docs/components/base/questionnaire.mdx",
+      "examples": [
+        "questionnaire-demo",
+        "questionnaire-multiple",
+        "questionnaire-freeform",
+        "questionnaire-skip",
+        "questionnaire-shortcuts",
+        "questionnaire-validation",
+        "questionnaire-controlled",
+        "questionnaire-resume",
+        "questionnaire-conditional",
+        "questionnaire-navigation-state",
+        "questionnaire-progress",
+        "questionnaire-animated",
+        "questionnaire-card",
+        "questionnaire-dialog"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Server Rendering",
+        "Multiple Selection",
+        "Freeform Answer",
+        "Explicit Skip",
+        "Shortcuts",
+        "Custom Validation",
+        "Controlled",
+        "Resume",
+        "Conditional Items",
+        "Navigation State",
+        "Custom Progress",
+        "Animated Items",
+        "Card",
+        "Dialog",
+        "Accessibility",
+        "Unstyled",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/questionnaire.mdx",
+      "fencedCodeBlockCount": 7,
+      "apiTableCount": 0
+    },
+    {
+      "name": "radio-group",
+      "source": "apps/v4/content/docs/components/base/radio-group.mdx",
+      "examples": [
+        "radio-group-demo",
+        "radio-group-description",
+        "radio-group-choice-card",
+        "radio-group-fieldset",
+        "radio-group-disabled",
+        "radio-group-invalid",
+        "radio-group-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Description",
+        "Choice Card",
+        "Fieldset",
+        "Disabled",
+        "Invalid",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/radio-group",
+        "https://base-ui.com/react/components/radio-group#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/radio-group.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "resizable",
+      "source": "apps/v4/content/docs/components/base/resizable.mdx",
+      "examples": [
+        "resizable-demo",
+        "resizable-vertical",
+        "resizable-handle",
+        "resizable-rtl"
+      ],
+      "headings": [
+        "About",
+        "Installation",
+        "Usage",
+        "Composition",
+        "Vertical",
+        "Handle",
+        "RTL",
+        "API Reference",
+        "Changelog",
+        "2025-02-02 `react-resizable-panels` v4"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/resizable.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 1
+    },
+    {
+      "name": "scroll-area",
+      "source": "apps/v4/content/docs/components/base/scroll-area.mdx",
+      "examples": [
+        "scroll-area-demo",
+        "scroll-area-horizontal-demo",
+        "scroll-area-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Horizontal",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/scroll-area",
+        "https://base-ui.com/react/components/scroll-area#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/scroll-area.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "select",
+      "source": "apps/v4/content/docs/components/base/select.mdx",
+      "examples": [
+        "select-demo",
+        "select-align-item",
+        "select-groups",
+        "select-scrollable",
+        "select-disabled",
+        "select-invalid",
+        "select-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Align Item With Trigger",
+        "Groups",
+        "Scrollable",
+        "Disabled",
+        "Invalid",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/select",
+        "https://base-ui.com/react/components/select#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/select.mdx",
+      "fencedCodeBlockCount": 6,
+      "apiTableCount": 0
+    },
+    {
+      "name": "separator",
+      "source": "apps/v4/content/docs/components/base/separator.mdx",
+      "examples": [
+        "separator-demo",
+        "separator-vertical",
+        "separator-menu",
+        "separator-list",
+        "separator-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Vertical",
+        "Menu",
+        "List",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/separator",
+        "https://base-ui.com/react/components/separator#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/separator.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 0
+    },
+    {
+      "name": "sheet",
+      "source": "apps/v4/content/docs/components/base/sheet.mdx",
+      "examples": [
+        "sheet-demo",
+        "sheet-side",
+        "sheet-no-close-button",
+        "sheet-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Side",
+        "No Close Button",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/dialog",
+        "https://base-ui.com/react/components/dialog#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/sheet.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "sidebar",
+      "source": "apps/v4/content/docs/components/base/sidebar.mdx",
+      "examples": [
+        "sidebar-demo"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Structure",
+        "SidebarProvider",
+        "Props",
+        "Width",
+        "Keyboard Shortcut",
+        "Sidebar",
+        "Props",
+        "useSidebar",
+        "SidebarHeader",
+        "SidebarFooter",
+        "SidebarContent",
+        "SidebarGroup",
+        "SidebarMenu",
+        "SidebarMenuButton",
+        "SidebarMenuAction",
+        "SidebarMenuSub",
+        "SidebarMenuBadge",
+        "SidebarMenuSkeleton",
+        "SidebarTrigger",
+        "SidebarRail",
+        "Controlled Sidebar",
+        "Theming",
+        "Styling",
+        "RTL",
+        "Changelog",
+        "RTL Support"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/sidebar.mdx",
+      "fencedCodeBlockCount": 33,
+      "apiTableCount": 4
+    },
+    {
+      "name": "skeleton",
+      "source": "apps/v4/content/docs/components/base/skeleton.mdx",
+      "examples": [
+        "skeleton-demo",
+        "skeleton-avatar",
+        "skeleton-card",
+        "skeleton-text",
+        "skeleton-form",
+        "skeleton-table",
+        "skeleton-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Avatar",
+        "Card",
+        "Text",
+        "Form",
+        "Table",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/skeleton.mdx",
+      "fencedCodeBlockCount": 3,
+      "apiTableCount": 0
+    },
+    {
+      "name": "slider",
+      "source": "apps/v4/content/docs/components/base/slider.mdx",
+      "examples": [
+        "slider-demo",
+        "slider-range",
+        "slider-multiple",
+        "slider-vertical",
+        "slider-controlled",
+        "slider-disabled",
+        "slider-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Range",
+        "Multiple Thumbs",
+        "Vertical",
+        "Controlled",
+        "Disabled",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/slider",
+        "https://base-ui.com/react/components/slider#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/slider.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 0
+    },
+    {
+      "name": "spinner",
+      "source": "apps/v4/content/docs/components/base/spinner.mdx",
+      "examples": [
+        "spinner-demo",
+        "spinner-custom",
+        "spinner-size",
+        "spinner-button",
+        "spinner-badge",
+        "spinner-input-group",
+        "spinner-empty",
+        "spinner-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Customization",
+        "Size",
+        "Button",
+        "Badge",
+        "Input Group",
+        "Empty",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/spinner.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 0
+    },
+    {
+      "name": "switch",
+      "source": "apps/v4/content/docs/components/base/switch.mdx",
+      "examples": [
+        "switch-demo",
+        "switch-description",
+        "switch-choice-card",
+        "switch-disabled",
+        "switch-invalid",
+        "switch-sizes",
+        "switch-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Description",
+        "Choice Card",
+        "Disabled",
+        "Invalid",
+        "Size",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/switch",
+        "https://base-ui.com/react/components/switch#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/switch.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 0
+    },
+    {
+      "name": "table",
+      "source": "apps/v4/content/docs/components/base/table.mdx",
+      "examples": [
+        "table-demo",
+        "table-footer",
+        "table-actions",
+        "table-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Footer",
+        "Actions",
+        "Data Table",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/table.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 0
+    },
+    {
+      "name": "tabs",
+      "source": "apps/v4/content/docs/components/base/tabs.mdx",
+      "examples": [
+        "tabs-demo",
+        "tabs-line",
+        "tabs-vertical",
+        "tabs-disabled",
+        "tabs-icons",
+        "tabs-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Line",
+        "Vertical",
+        "Disabled",
+        "Icons",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/tabs",
+        "https://base-ui.com/react/components/tabs#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/tabs.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "textarea",
+      "source": "apps/v4/content/docs/components/base/textarea.mdx",
+      "examples": [
+        "textarea-demo",
+        "textarea-field",
+        "textarea-disabled",
+        "textarea-invalid",
+        "textarea-button",
+        "textarea-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Field",
+        "Disabled",
+        "Invalid",
+        "Button",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/textarea.mdx",
+      "fencedCodeBlockCount": 3,
+      "apiTableCount": 0
+    },
+    {
+      "name": "toast",
+      "source": "apps/v4/content/docs/components/base/toast.mdx",
+      "examples": [
+        "toast-demo",
+        "toast-types",
+        "toast-promise"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Types",
+        "Action",
+        "Promise",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/toast",
+        "https://base-ui.com/react/components/toast#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/toast.mdx",
+      "fencedCodeBlockCount": 7,
+      "apiTableCount": 0
+    },
+    {
+      "name": "toggle-group",
+      "source": "apps/v4/content/docs/components/base/toggle-group.mdx",
+      "examples": [
+        "toggle-group-demo",
+        "toggle-group-outline",
+        "toggle-group-sizes",
+        "toggle-group-spacing",
+        "toggle-group-vertical",
+        "toggle-group-disabled",
+        "toggle-group-font-weight-selector",
+        "toggle-group-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Outline",
+        "Size",
+        "Spacing",
+        "Vertical",
+        "Disabled",
+        "Custom",
+        "RTL",
+        "API Reference",
+        "Changelog",
+        "2026-05-17 Default Spacing"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/toggle-group",
+        "https://base-ui.com/react/components/toggle-group#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/toggle-group.mdx",
+      "fencedCodeBlockCount": 5,
+      "apiTableCount": 0
+    },
+    {
+      "name": "toggle",
+      "source": "apps/v4/content/docs/components/base/toggle.mdx",
+      "examples": [
+        "toggle-demo",
+        "toggle-outline",
+        "toggle-text",
+        "toggle-sizes",
+        "toggle-disabled",
+        "toggle-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Outline",
+        "With Text",
+        "Size",
+        "Disabled",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/toggle",
+        "https://base-ui.com/react/components/toggle#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/toggle.mdx",
+      "fencedCodeBlockCount": 4,
+      "apiTableCount": 0
+    },
+    {
+      "name": "tooltip",
+      "source": "apps/v4/content/docs/components/base/tooltip.mdx",
+      "examples": [
+        "tooltip-demo",
+        "tooltip-sides",
+        "tooltip-keyboard",
+        "tooltip-disabled",
+        "tooltip-rtl"
+      ],
+      "headings": [
+        "Installation",
+        "Usage",
+        "Composition",
+        "Side",
+        "With Keyboard Shortcut",
+        "Disabled Button",
+        "RTL",
+        "API Reference"
+      ],
+      "apiReference": true,
+      "primitiveLinks": [
+        "https://base-ui.com/react/components/tooltip",
+        "https://base-ui.com/react/components/tooltip#api-reference"
+      ],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/tooltip.mdx",
+      "fencedCodeBlockCount": 7,
+      "apiTableCount": 0
+    },
+    {
+      "name": "typography",
+      "source": "apps/v4/content/docs/components/base/typography.mdx",
+      "examples": [
+        "typography-demo",
+        "typography-h1",
+        "typography-h2",
+        "typography-h3",
+        "typography-h4",
+        "typography-p",
+        "typography-blockquote",
+        "typography-table",
+        "typography-list",
+        "typography-inline-code",
+        "typography-lead",
+        "typography-large",
+        "typography-small",
+        "typography-muted",
+        "typography-rtl"
+      ],
+      "headings": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "p",
+        "blockquote",
+        "table",
+        "list",
+        "Inline code",
+        "Lead",
+        "Large",
+        "Small",
+        "Muted",
+        "RTL"
+      ],
+      "apiReference": false,
+      "primitiveLinks": [],
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/content/docs/components/base/typography.mdx",
+      "fencedCodeBlockCount": 0,
+      "apiTableCount": 0
+    }
+  ],
+  "kiboBlocks": [
+    {
+      "name": "about",
+      "source": "apps/docs/content/blocks/about.mdx",
+      "example": "apps/docs/examples/about.tsx",
+      "exampleExists": true,
+      "installer": "about",
+      "dependencies": [
+        "/components/marquee"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/about.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/about"
+    },
+    {
+      "name": "awards",
+      "source": "apps/docs/content/blocks/awards.mdx",
+      "example": "apps/docs/examples/awards.tsx",
+      "exampleExists": true,
+      "installer": "awards",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/awards.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/awards"
+    },
+    {
+      "name": "blog",
+      "source": "apps/docs/content/blocks/blog.mdx",
+      "example": "apps/docs/examples/blog.tsx",
+      "exampleExists": true,
+      "installer": "blog",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/blog.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/blog"
+    },
+    {
+      "name": "blogpost",
+      "source": "apps/docs/content/blocks/blogpost.mdx",
+      "example": "apps/docs/examples/blogpost.tsx",
+      "exampleExists": true,
+      "installer": "blogpost",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/blogpost.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/blogpost"
+    },
+    {
+      "name": "careers",
+      "source": "apps/docs/content/blocks/careers.mdx",
+      "example": "apps/docs/examples/careers.tsx",
+      "exampleExists": true,
+      "installer": "careers",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/careers.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/careers"
+    },
+    {
+      "name": "case-studies",
+      "source": "apps/docs/content/blocks/case-studies.mdx",
+      "example": "apps/docs/examples/case-studies.tsx",
+      "exampleExists": true,
+      "installer": "case-studies",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/case-studies.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/case-studies"
+    },
+    {
+      "name": "case-study",
+      "source": "apps/docs/content/blocks/case-study.mdx",
+      "example": "apps/docs/examples/case-study.tsx",
+      "exampleExists": true,
+      "installer": "case-study",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/case-study.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/case-study"
+    },
+    {
+      "name": "changelog",
+      "source": "apps/docs/content/blocks/changelog.mdx",
+      "example": "apps/docs/examples/changelog.tsx",
+      "exampleExists": true,
+      "installer": "changelog",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/changelog.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/changelog"
+    },
+    {
+      "name": "code-example",
+      "source": "apps/docs/content/blocks/code-example.mdx",
+      "example": "apps/docs/examples/code-example.tsx",
+      "exampleExists": true,
+      "installer": "code-example",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/code-example.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/code-example"
+    },
+    {
+      "name": "codebase",
+      "source": "apps/docs/content/blocks/codebase.mdx",
+      "example": "apps/docs/examples/codebase.tsx",
+      "exampleExists": true,
+      "installer": "codebase",
+      "dependencies": [
+        "/components/tree",
+        "/components/code-block"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/codebase.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/codebase"
+    },
+    {
+      "name": "collaborative-canvas",
+      "source": "apps/docs/content/blocks/collaborative-canvas.mdx",
+      "example": "apps/docs/examples/collaborative-canvas.tsx",
+      "exampleExists": true,
+      "installer": "collaborative-canvas",
+      "dependencies": [
+        "/components/avatar-stack",
+        "/components/cursor"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/collaborative-canvas.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/collaborative-canvas"
+    },
+    {
+      "name": "community",
+      "source": "apps/docs/content/blocks/community.mdx",
+      "example": "apps/docs/examples/community.tsx",
+      "exampleExists": true,
+      "installer": "community",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/community.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/community"
+    },
+    {
+      "name": "compare",
+      "source": "apps/docs/content/blocks/compare.mdx",
+      "example": "apps/docs/examples/compare.tsx",
+      "exampleExists": true,
+      "installer": "compare",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/compare.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/compare"
+    },
+    {
+      "name": "compliance",
+      "source": "apps/docs/content/blocks/compliance.mdx",
+      "example": "apps/docs/examples/compliance.tsx",
+      "exampleExists": true,
+      "installer": "compliance",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/compliance.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/compliance"
+    },
+    {
+      "name": "contact",
+      "source": "apps/docs/content/blocks/contact.mdx",
+      "example": "apps/docs/examples/contact.tsx",
+      "exampleExists": true,
+      "installer": "contact",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/contact.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/contact"
+    },
+    {
+      "name": "cta",
+      "source": "apps/docs/content/blocks/cta.mdx",
+      "example": "apps/docs/examples/cta.tsx",
+      "exampleExists": true,
+      "installer": "cta",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/cta.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/cta"
+    },
+    {
+      "name": "download",
+      "source": "apps/docs/content/blocks/download.mdx",
+      "example": "apps/docs/examples/download.tsx",
+      "exampleExists": true,
+      "installer": "download",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/download.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/download"
+    },
+    {
+      "name": "experience",
+      "source": "apps/docs/content/blocks/experience.mdx",
+      "example": "apps/docs/examples/experience.tsx",
+      "exampleExists": true,
+      "installer": "experience",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/experience.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/experience"
+    },
+    {
+      "name": "faq",
+      "source": "apps/docs/content/blocks/faq.mdx",
+      "example": "apps/docs/examples/faq.tsx",
+      "exampleExists": true,
+      "installer": "faq",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/faq.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/faq"
+    },
+    {
+      "name": "feature",
+      "source": "apps/docs/content/blocks/feature.mdx",
+      "example": "apps/docs/examples/feature.tsx",
+      "exampleExists": true,
+      "installer": "feature",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/feature.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/feature"
+    },
+    {
+      "name": "footer",
+      "source": "apps/docs/content/blocks/footer.mdx",
+      "example": "apps/docs/examples/footer.tsx",
+      "exampleExists": true,
+      "installer": "footer",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/footer.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/footer"
+    },
+    {
+      "name": "form",
+      "source": "apps/docs/content/blocks/form.mdx",
+      "example": "apps/docs/examples/form.tsx",
+      "exampleExists": true,
+      "installer": "form",
+      "dependencies": [
+        "/components/choicebox",
+        "/components/combobox",
+        "/components/dropzone",
+        "/components/mini-calendar",
+        "/components/tags"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/form.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/form"
+    },
+    {
+      "name": "hero",
+      "source": "apps/docs/content/blocks/hero.mdx",
+      "example": "apps/docs/examples/hero.tsx",
+      "exampleExists": true,
+      "installer": "hero",
+      "dependencies": [
+        "/components/announcement",
+        "/components/marquee",
+        "/components/video-player"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/hero.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/hero"
+    },
+    {
+      "name": "pricing",
+      "source": "apps/docs/content/blocks/pricing.mdx",
+      "example": "apps/docs/examples/pricing.tsx",
+      "exampleExists": true,
+      "installer": "pricing",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/pricing.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/pricing"
+    },
+    {
+      "name": "roadmap",
+      "source": "apps/docs/content/blocks/roadmap.mdx",
+      "example": "apps/docs/examples/roadmap.tsx",
+      "exampleExists": true,
+      "installer": "roadmap",
+      "dependencies": [
+        "/components/gantt",
+        "/components/calendar",
+        "/components/list",
+        "/components/kanban",
+        "/components/table"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/roadmap.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/roadmap"
+    },
+    {
+      "name": "stats",
+      "source": "apps/docs/content/blocks/stats.mdx",
+      "example": "apps/docs/examples/stats.tsx",
+      "exampleExists": true,
+      "installer": "stats",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/stats.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/stats"
+    },
+    {
+      "name": "team",
+      "source": "apps/docs/content/blocks/team.mdx",
+      "example": "apps/docs/examples/team.tsx",
+      "exampleExists": true,
+      "installer": "team",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/team.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/team"
+    },
+    {
+      "name": "testimonial",
+      "source": "apps/docs/content/blocks/testimonial.mdx",
+      "example": "apps/docs/examples/testimonial.tsx",
+      "exampleExists": true,
+      "installer": "testimonial",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/testimonial.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/testimonial"
+    }
+  ],
+  "charts": [
+    {
+      "name": "chart-area-axes",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-axes.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-axes.tsx"
+    },
+    {
+      "name": "chart-area-default",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-default.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-default.tsx"
+    },
+    {
+      "name": "chart-area-gradient",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-gradient.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-gradient.tsx"
+    },
+    {
+      "name": "chart-area-icons",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-icons.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-icons.tsx"
+    },
+    {
+      "name": "chart-area-interactive",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-interactive.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-interactive.tsx"
+    },
+    {
+      "name": "chart-area-legend",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-legend.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-legend.tsx"
+    },
+    {
+      "name": "chart-area-linear",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-linear.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-linear.tsx"
+    },
+    {
+      "name": "chart-area-stacked-expand",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-stacked-expand.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-stacked-expand.tsx"
+    },
+    {
+      "name": "chart-area-stacked",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-stacked.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-stacked.tsx"
+    },
+    {
+      "name": "chart-area-step",
+      "category": "area",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-area-step.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-area-step.tsx"
+    },
+    {
+      "name": "chart-bar-active",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-active.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-active.tsx"
+    },
+    {
+      "name": "chart-bar-default",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-default.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-default.tsx"
+    },
+    {
+      "name": "chart-bar-horizontal",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-horizontal.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-horizontal.tsx"
+    },
+    {
+      "name": "chart-bar-interactive",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-interactive.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-interactive.tsx"
+    },
+    {
+      "name": "chart-bar-label-custom",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-label-custom.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-label-custom.tsx"
+    },
+    {
+      "name": "chart-bar-label",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-label.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-label.tsx"
+    },
+    {
+      "name": "chart-bar-mixed",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-mixed.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-mixed.tsx"
+    },
+    {
+      "name": "chart-bar-multiple",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-multiple.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-multiple.tsx"
+    },
+    {
+      "name": "chart-bar-negative",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-negative.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-negative.tsx"
+    },
+    {
+      "name": "chart-bar-stacked",
+      "category": "bar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-bar-stacked.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-bar-stacked.tsx"
+    },
+    {
+      "name": "chart-line-default",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-default.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-default.tsx"
+    },
+    {
+      "name": "chart-line-dots-colors",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-dots-colors.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-dots-colors.tsx"
+    },
+    {
+      "name": "chart-line-dots-custom",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-dots-custom.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-dots-custom.tsx"
+    },
+    {
+      "name": "chart-line-dots",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-dots.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-dots.tsx"
+    },
+    {
+      "name": "chart-line-interactive",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-interactive.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-interactive.tsx"
+    },
+    {
+      "name": "chart-line-label-custom",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-label-custom.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-label-custom.tsx"
+    },
+    {
+      "name": "chart-line-label",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-label.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-label.tsx"
+    },
+    {
+      "name": "chart-line-linear",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-linear.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-linear.tsx"
+    },
+    {
+      "name": "chart-line-multiple",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-multiple.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-multiple.tsx"
+    },
+    {
+      "name": "chart-line-step",
+      "category": "line",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-line-step.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-line-step.tsx"
+    },
+    {
+      "name": "chart-pie-donut-active",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-donut-active.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-donut-active.tsx"
+    },
+    {
+      "name": "chart-pie-donut-text",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-donut-text.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-donut-text.tsx"
+    },
+    {
+      "name": "chart-pie-donut",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-donut.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-donut.tsx"
+    },
+    {
+      "name": "chart-pie-interactive",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-interactive.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-interactive.tsx"
+    },
+    {
+      "name": "chart-pie-label-custom",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-label-custom.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-label-custom.tsx"
+    },
+    {
+      "name": "chart-pie-label-list",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-label-list.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-label-list.tsx"
+    },
+    {
+      "name": "chart-pie-label",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-label.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-label.tsx"
+    },
+    {
+      "name": "chart-pie-legend",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-legend.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-legend.tsx"
+    },
+    {
+      "name": "chart-pie-separator-none",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-separator-none.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-separator-none.tsx"
+    },
+    {
+      "name": "chart-pie-simple",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-simple.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-simple.tsx"
+    },
+    {
+      "name": "chart-pie-stacked",
+      "category": "pie",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-pie-stacked.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-pie-stacked.tsx"
+    },
+    {
+      "name": "chart-radar-default",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-default.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-default.tsx"
+    },
+    {
+      "name": "chart-radar-dots",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-dots.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-dots.tsx"
+    },
+    {
+      "name": "chart-radar-grid-circle-fill",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-grid-circle-fill.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-grid-circle-fill.tsx"
+    },
+    {
+      "name": "chart-radar-grid-circle-no-lines",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-grid-circle-no-lines.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-grid-circle-no-lines.tsx"
+    },
+    {
+      "name": "chart-radar-grid-circle",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-grid-circle.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-grid-circle.tsx"
+    },
+    {
+      "name": "chart-radar-grid-custom",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-grid-custom.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-grid-custom.tsx"
+    },
+    {
+      "name": "chart-radar-grid-fill",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-grid-fill.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-grid-fill.tsx"
+    },
+    {
+      "name": "chart-radar-grid-none",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-grid-none.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-grid-none.tsx"
+    },
+    {
+      "name": "chart-radar-icons",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-icons.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-icons.tsx"
+    },
+    {
+      "name": "chart-radar-label-custom",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-label-custom.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-label-custom.tsx"
+    },
+    {
+      "name": "chart-radar-legend",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-legend.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-legend.tsx"
+    },
+    {
+      "name": "chart-radar-lines-only",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-lines-only.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-lines-only.tsx"
+    },
+    {
+      "name": "chart-radar-multiple",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-multiple.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-multiple.tsx"
+    },
+    {
+      "name": "chart-radar-radius",
+      "category": "radar",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radar-radius.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radar-radius.tsx"
+    },
+    {
+      "name": "chart-radial-grid",
+      "category": "radial",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radial-grid.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radial-grid.tsx"
+    },
+    {
+      "name": "chart-radial-label",
+      "category": "radial",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radial-label.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radial-label.tsx"
+    },
+    {
+      "name": "chart-radial-shape",
+      "category": "radial",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radial-shape.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radial-shape.tsx"
+    },
+    {
+      "name": "chart-radial-simple",
+      "category": "radial",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radial-simple.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radial-simple.tsx"
+    },
+    {
+      "name": "chart-radial-stacked",
+      "category": "radial",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radial-stacked.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radial-stacked.tsx"
+    },
+    {
+      "name": "chart-radial-text",
+      "category": "radial",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-radial-text.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-radial-text.tsx"
+    },
+    {
+      "name": "chart-tooltip-advanced",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-advanced.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-advanced.tsx"
+    },
+    {
+      "name": "chart-tooltip-default",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-default.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-default.tsx"
+    },
+    {
+      "name": "chart-tooltip-formatter",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-formatter.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-formatter.tsx"
+    },
+    {
+      "name": "chart-tooltip-icons",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-icons.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-icons.tsx"
+    },
+    {
+      "name": "chart-tooltip-indicator-line",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-indicator-line.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-indicator-line.tsx"
+    },
+    {
+      "name": "chart-tooltip-indicator-none",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-indicator-none.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-indicator-none.tsx"
+    },
+    {
+      "name": "chart-tooltip-label-custom",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-label-custom.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-label-custom.tsx"
+    },
+    {
+      "name": "chart-tooltip-label-formatter",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-label-formatter.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-label-formatter.tsx"
+    },
+    {
+      "name": "chart-tooltip-label-none",
+      "category": "tooltip",
+      "source": "apps/v4/registry/new-york-v4/charts/chart-tooltip-label-none.tsx",
+      "sourceUrl": "https://github.com/shadcn-ui/ui/blob/295a1f114a138f23b5dfee0e0c6812394dfeb90c/apps/v4/registry/new-york-v4/charts/chart-tooltip-label-none.tsx"
+    }
+  ],
+  "scopeExceptions": [
+    {
+      "name": "native-select",
+      "reason": "사용자 기존 지시: NativeSelect를 제거하고 Select / Combobox로 통일한다.",
+      "replacement": "select"
+    }
+  ],
+  "counts": {
+    "shadcnBasePages": 64,
+    "inScopeBasePages": 63,
+    "inScopePreviewReferences": 456,
+    "inScopeUniquePreviewIds": 453,
+    "kiboPublicBlocks": 28,
+    "chartRecipes": 70,
+    "chartCategories": 7
+  }
+}

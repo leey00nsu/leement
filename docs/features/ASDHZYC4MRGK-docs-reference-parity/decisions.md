@@ -1,41 +1,69 @@
 # Decisions Log
 
-기술 결정과 그 이유를 기록합니다.
-canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 실제로 채택한 대안과 선택 이유는 이 파일에 다시 남겨 Feature의 결정 이력을 유지합니다.
+## D001: 예제·API 중심 문서와 고정 upstream 기준 (2026-10-05)
 
-> ADR(Architecture Decision Record)은 구현 중 내린 중요한 기술/구조 결정을 남기는 기록입니다.
-> 나중에 "왜 이렇게 만들었는지"를 추적하고, 팀 합의를 재확인하기 위해 작성합니다.
-
-> 형식: `DNNN: docs-reference-parity 결정 (2026-10-05)`
-> 결정 ID는 Feature별로 독립된 번호를 사용하며 Feature ID와 관계없이 `D001`부터 시작합니다.
-
-기록 원칙:
-
-- 새 ADR 생성에는 `npx lee-spec-kit decision add <feature-ref> --title "..." --context "..." --decision "..." --rationale "..." --evidence "..."` 사용을 우선하세요.
-- 수동 작성도 마지막 ADR 뒤에 추가해 D001 → D002 순서를 유지하세요. 문서 안내문 앞에 삽입하거나 기존 ID를 재번호화하지 마세요. 같은 결정의 재실행·검증 결과는 해당 ADR의 Trace/Evidence를 갱신하고, 새 선택이나 범위 변경일 때만 새 ADR을 만드세요.
-- 모든 ADR은 **Decision(무엇을 선택했는가)** + **Trace(어떻게 고민했고 무엇을 확인했는가)** 를 함께 남깁니다.
-- 작성 타이밍을 고정합니다.
-  - 태스크 시작(`[TODO] -> [DOING]`): `Context/Constraints`와 `Trace(초기 가설)`를 1~3줄로 먼저 기록
-  - 태스크 완료 직전(`[DOING] -> [DONE]`): `Options/Decision/Rationale`를 최종화하고 `Trace`를 보강
-  - PR 머지 후: 실제 결과/영향을 `Trace(머지 후 확인)`에 1~2줄 추가
-- 모든 ADR에는 최소 1개 이상의 **Evidence 링크**(커밋/PR/테스트 로그 중 하나 이상)를 남깁니다.
-- 디자인 시스템 변경이나 예외를 기록할 때는 영향 받는 규칙과 범위, 예외 이유, 제거 조건, 실행 가능한 정본의 동기화 영향을 함께 남깁니다.
-
----
-
-## D001: docs-reference-parity 결정 (2026-10-05)
-
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: 사용자가 반복 문단 제거, shadcn Base 예제/API 전체 대응, Kibo Blocks 전체 대응, Charts 탐색을 새 Feature로 요청했다.
+- **Constraints**: 디자인 정본은 Leement token/rule이며 source ownership·Motion·Preview/Foundation 계약을 유지한다. spec 승인 전 구현하지 않는다.
+- **Options**: 문서 템플릿만 정리 / 현재 컴포넌트 일부만 보완 / 고정된 공개 기준의 모든 사용 사례·API·Blocks·Charts를 실제 구현까지 보완.
+- **Decision**: 세 번째 범위를 명세 승인 대상으로 준비한다. Overview/Preview → Installation → Usage → Examples → API Reference로 문서를 정리한다. 고유 접근성·사용 규칙은 해당 예제/API에 남긴다.
+- **Rationale**: 기존 문서 설명은 반복적이고 예제와 API는 실제로 부족하다. 항목 수가 아닌 사용 가능한 source와 사용 사례를 완료 기준으로 삼는다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+  - `item-page.tsx`는 모든 항목에 9개 문단과 같은 목차를 출력하고 API는 단일 문장이다.
+  - shadcn Base 문서 64개를 고정 commit에서 모두 읽어 Preview ID/headings/API 표/공식 primitive 링크를 수집했다. NativeSelect 제외 63개는 Preview 참조 456건, 고유 ID 453개다. inline code와 Sidebar/DataTable의 상세 조합은 별도 대응 대상이므로 이 숫자만으로 완료를 판정하지 않는다.
+  - Kibo의 Blocks 문서 28개는 각각 공개 `apps/docs/examples/<name>.tsx`가 존재한다. 공개 카탈로그에는 각 페이지 하나의 대표 예제가 있다. premium Shadcnblocks 광고 링크는 범위에서 제외한다.
+  - shadcn Charts registry의 70개 source를 7개 분류로 고정했다. upstream commit을 실제 commits/main 응답과 확인했다.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - **Test/Log**: [고정 기준 목록과 항목별 출처](./artifacts/reference-baseline.json).
+  - **Code**: [문서 템플릿](../../../apps/docs/components/item-page.tsx), [현재 탐색](../../../apps/docs/lib/docs.ts).
+- **Consequences**: 기존 컴포넌트의 API/parts 보완과 신규 컴포넌트·block·chart recipe가 필요한 큰 Feature다. 승인 후 순차 task로 나누며 일부 목록을 나중 작업으로 미뤄 전체 대응을 완료했다고 보고하지 않는다.
+
+## D002: NativeSelect 제외와 기존 기능 유지 (2026-10-05)
+
+- **Context**: 이번 요청은 shadcn 100% 대응이지만 사용자는 이전에 NativeSelect 제거·Select 통일을 명시했다.
+- **Constraints**: 이전 명시적 제거 지시를 조용히 뒤집지 않는다.
+- **Options**: NativeSelect 재도입 / 미지원 사실 숨김 / 제외를 명시하고 나머지 전체 대응.
+- **Decision**: NativeSelect 한 페이지·5개 예제를 제외한다. 다른 예제의 보이는 native select는 Select/Combobox로 표현한다. API와 사용법은 실제 Leement 계약으로 설명한다.
+- **Rationale**: 공통 UI를 유지하면서 기존 사용자 결정을 지킬 수 있다.
+- **Trace**: PRD의 ‘선택과 공개 설치’에 NativeSelect/browser select 예제를 제공하지 않는다는 계약이 존재한다. 제외는 baseline/spec에 명시되어 승인 시 검토 가능하다. 사용자 변경 지시가 오면 이 결정과 범위 모두 갱신한다.
+- **Evidence**:
+  - **Test/Log**: [baseline의 scopeExceptions](./artifacts/reference-baseline.json).
+  - **PRD**: [선택과 공개 설치 및 FR-015](../../prd/leement-prd.md).
+- **Consequences**: ‘NativeSelect 제외 기준 전체 대응’으로 표현하며 제외 없는 shadcn 100% 호환을 주장하지 않는다. 기존 Animations/Patterns/Blocks, Preview handle/px/Replay, Foundation 편집을 유지한다.
+
+## D003: Base UI와 실제 source의 차이 (2026-10-05)
+
+- **Context**: 사용자는 Leement를 shadcn Base UI 기반으로 이해하지만 기존 source 일부는 Radix다.
+- **Constraints**: primitive 링크와 public API는 실제 구현 및 설치 버전에 맞아야 한다.
+- **Options**: Base UI 링크만 추가 / 실제 기반을 구분하고 대응에 필요한 primitive/API를 함께 보완.
+- **Decision**: 실제 기반을 확인하고 필요한 source·타입·동작·예제를 보완한다. Base UI primitive는 Base UI 공식 API로 연결하고, 별도 라이브러리 기반 기능은 해당 공식 API로 연결한다.
+- **Rationale**: Avatar Badge/Group/size처럼 실제 export/prop이 없는 기능을 문서만으로 지원할 수 없다.
+- **Trace**: `registry/ui/avatar.tsx`는 `@radix-ui/react-avatar`를 쓰며 Avatar/Image/Fallback만 export한다. upstream Base Avatar에는 Badge/Group/GroupCount 및 size API가 있다. 현재 Base UI 1.7.0과 live 공식 문서 버전의 차이도 구현 단계에서 확인한다.
+- **Evidence**:
+  - **Code**: [Avatar source](../../../registry/ui/avatar.tsx).
+  - **Test/Log**: [Avatar 기준 예제·출처](./artifacts/reference-baseline.json).
+- **Consequences**: Base UI로 이미 완전히 통일됐다고 설명하지 않는다. 변경하는 API의 소비자 영향과 이전 안내를 같은 task에서 검증한다.
+
+## D004: README 보호와 후속 문서 동기화 (2026-10-05)
+
+- **Context**: 카탈로그가 늘어나면 기존 README의 제공 목록도 새 범위와 차이가 생긴다.
+- **Constraints**: 사용자는 이번 Feature에서 README 수정을 요청하지 않았고 AGENTS는 명시적 요청 없는 README 수정을 금지한다.
+- **Decision**: README는 수정하지 않는다. PRD의 FR-014 범위와 block 목표를 새 의도에 맞춰 갱신하고 FR-015/016/017을 정의했다. `docs/designs/design-system.md`의 기존 제공 개수·upstream 대응·문서 예제 규칙은 승인 후 task Docs에서 갱신한다.
+- **Rationale**: 요구사항은 PRD, 이번 범위는 Feature SDD, 실행 계약은 코드, 장기 디자인 규칙은 design-system 문서가 소유한다.
+- **Trace**: README의 제공 목록과 `docs/designs/design-system.md`의 과거 UI79/Pattern15/Block8 및 예제 규칙을 확인했다. README는 신규 항목 추가 시 불완전해질 수 있으나 수정 권한이 없어 이번 scope에서 보류한다. 나머지 curated 영향은 Plan에서 명시적으로 평가하고 task에 연결한다.
+- **Evidence**:
+  - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
+  - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
+
+<!-- lee-spec-kit:workflow-sync sha256:714b6a031ed00f4100c496462c88fa996ca99dbdb4ed9d2ab02b51581198dd75 -->
+
+## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
+
+- **Decision**: 사용자 `A`로 spec를 Approved로 승격했다. 현재 config에서 Plan/Tasks 승인과 agentReview/agentExecution이 disabled이므로 별도 승인이나 위임 없이 계획과 13개 순차 task를 준비했다.
+- **Trace**: workflow-stage는 spec_approve → plan_write → plan_approve(approvalRequired=false) → tasks_write를 반환했다. 전체 source ownership·NativeSelect 제외·Motion·Preview 계약을 Plan/Verification Contract에 연결했다. main의 최신 통합 tip을 base로 PRD/design-system/THIRD_PARTY_NOTICES를 읽었고, historical Feature sharedDocumentationWarnings와 현재 요구사항은 충돌하지 않는다. 이전 Feature 문서를 수정하지 않는다.
+- **Evidence**: [승인 명세](./spec.md), [계획/검증 계약](./plan.md), [태스크](./tasks.md). 사용자 명세 승인 응답 `A` (2026-10-05).
+
+## D006: 첫 문서 task 검증 (2026-10-05)
+
+- **Decision**: 공통 ItemPage에서 반복 9문단/목차를 제거했다. Usage는 소비자 alias 코드와 필요한 접근성 설명을 제공하고 API Reference는 public part별 prop/type/default/required/description 및 공식 링크를 표시한다. Button/Input/Card의 실제 API를 먼저 명시했다. 나머지 public parts/API 상세는 후속 task 02~07의 구현과 함께 채운다.
+- **Trace**: pnpm typecheck(5 tasks), docs focused ESLint, git diff --check PASS. 브라우저 세 페이지에서 제거한 heading이 없고 새 목차·API 표가 나타남을 확인했다. Preview main에 iframe 하나이며 inline 복사본이 없다. Arrow 16px, Home 240px, End 833px 및 mouse drag 683/773px가 실제 iframe 폭·px와 맞는다. request event counting은 Aside transport 한계로 미검증이며 단일 runtime DOM 관찰과 구분한다. 기존 lazy Examples는 viewport 진입 후 로드된다.
+- **Evidence**: Aside read-only session `0Br37unKWM3B7lyW`의 최종 관찰 결과. [ItemPage](../../../apps/docs/components/item-page.tsx), [API metadata](../../../apps/docs/lib/api-reference.ts), task 01 검증 기록.
