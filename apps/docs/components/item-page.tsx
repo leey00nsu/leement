@@ -1,8 +1,9 @@
 import { hasPreviewMotion } from "../lib/preview-config";
 import Link from "next/link";
 import { CopyButton, ItemWorkbench } from "./item-workbench";
-import { items, motionRule } from "../lib/items";
-import { itemStates } from "../lib/item-states";
+import { items } from "../lib/items";
+import { apiReferences } from "../lib/api-reference";
+import { ApiReference } from "./api-reference";
 import { getAdditionalExampleCodes, getItemCode } from "../lib/registry-source";
 
 function displayName(name: string) {
@@ -17,28 +18,12 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
   const { exampleCode, sourceCode, sourceFile } = await getItemCode(name);
   const examples = await getAdditionalExampleCodes(name);
   const command = `npx shadcn@latest add @leement/${name}`;
-  const sections = [
-    { title: "When to use", id: "when-to-use", body: item.use },
-    { title: "When not to use", id: "when-not-to-use", body: item.avoid },
-    { title: "Anatomy", id: "anatomy", body: item.anatomy },
-    { title: "Variants", id: "variants", body: item.variants },
-    { title: "Sizes", id: "sizes", body: item.sizes },
-    {
-      title: "States",
-      id: "states",
-      body:
-        itemStates[name] +
-        (examples.length
-          ? " Explore the preview and examples to see supported states."
-          : " Explore the preview to see supported states."),
-    },
-    { title: "Accessibility", id: "accessibility", body: item.accessibility },
-    { title: "Motion", id: "motion", body: motionRule },
-    { title: "API", id: "api", body: item.api },
-  ];
+  const reference = apiReferences[name];
+  const usageCode = reference?.usage ?? exampleCode;
   const outline = [
     { title: "Preview", id: "preview" },
     { title: "Installation", id: "installation" },
+    { title: "Usage", id: "usage" },
     ...(examples.length
       ? [
           { title: "Examples", id: "examples" },
@@ -48,7 +33,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           })),
         ]
       : []),
-    ...sections.map(({ title, id }) => ({ title, id })),
+    { title: "API Reference", id: "api-reference" },
   ];
 
   return (
@@ -138,6 +123,18 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           </Link>
         </section>
 
+        <section id="usage" className="mt-12 scroll-mt-24 space-y-4">
+          <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
+          <div className="min-w-0 overflow-hidden rounded-xl border border-border">
+            <div className="flex items-center justify-between gap-3 border-b border-border bg-muted/40 px-4 py-2.5">
+              <span className="font-mono text-xs text-muted-foreground">Basic usage</span>
+              <CopyButton value={usageCode} label={`Copy usage for ${name}`} />
+            </div>
+            <pre className="max-h-[28rem] overflow-auto p-5 text-[13px] leading-6"><code>{usageCode}</code></pre>
+          </div>
+          <p className="text-sm leading-7 text-muted-foreground">{item.accessibility}</p>
+        </section>
+
         {examples.length > 0 && (
           <section id="examples" className="mt-12 scroll-mt-24 space-y-8">
             <h2 className="text-2xl font-semibold tracking-tight">Examples</h2>
@@ -175,18 +172,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           </section>
         )}
 
-        <div className="mt-12 space-y-9 border-t border-border pt-10">
-          {sections.map((section) => (
-            <section key={section.id} id={section.id} className="scroll-mt-24">
-              <h2 className="text-xl font-semibold tracking-tight">
-                {section.title}
-              </h2>
-              <p className="mt-3 break-words text-sm leading-7 text-muted-foreground">
-                {section.body}
-              </p>
-            </section>
-          ))}
-        </div>
+        <ApiReference reference={reference} summary={item.api} />
       </article>
 
       <aside aria-label="On this page" className="hidden xl:block">
