@@ -148,12 +148,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-06 기존 overlay·탐색·data API와 Base 대응 보완
+- [DONE][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-06 기존 overlay·탐색·data API와 Base 대응 보완
   - Date: 2026-10-05
   - Acceptance:
     - Dialog/AlertDialog/Tooltip/HoverCard/Popover/Sheet/Menu/Accordion/Tabs/Table/Calendar/DatePicker/DataTable/Chart 등 나머지 baseline 항목을 보완한다.
   - Checklist:
-    - [ ] fixed source API/예제 비교, popup focus/controlled/RTL/표·날짜 동작 및 기존 consumer 회귀를 검증한다.
+    - [x] fixed source API/예제 비교, popup focus/controlled/RTL/표·날짜 동작 및 기존 consumer 회귀를 검증한다.
+  - Verification: strict docs typecheck/focused ESLint/diff/registry build PASS; new parity + existing focused contracts 47 tests PASS, registry-source + final parity 10 tests PASS. Independent 12 namespaces/transitive source and 6 fixed overlay/calendar/toast examples strict/Vite build PASS. Browser Dialog/Escape, caption month select and Toast focus/close confirmed. Canonical Calendar at240 viewport renders a200px shell with198px scrollWidth; nested schedule grid keeps its own scrolling. Full 453-example connection remains task07.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

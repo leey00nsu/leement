@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:3739db19987faeea3ed402a1dab59bf23ca0b33e5bcd14b50a8fa4c3f66b78b8 -->
+<!-- lee-spec-kit:workflow-sync sha256:dafe66374ac3448f9f6c74d2cc86f5e632e91d888585f18ecb6a932be0467a7c -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -93,3 +93,12 @@
 - **Decision**: Button/Input/Avatar를 실제 Base UI primitive와 연결하며 Leement의 기존 control 높이와 semantic 색상을 유지한다. Button primary 기본값과 asChild/loading, Combobox options+label shorthand, Base Field의 validation/FieldControl은 보존한다. 신규 render/link/icon-xs/icon-lg, Avatar Badge/Group/Count/size, Field Content/Title/Separator/orientation/errors, InputGroup align/Text, ToggleGroup variant/size/spacing 및 ButtonGroup Text/Separator/class recipe를 제공한다.
 - **Trace**: 고정 source의 nova @apply를 source Tailwind로 펼쳤고 animation class는 제거했다. InputGroup·Radio·Combobox control 상태는 기존 Motion helper로 전달한다. styled Base parts의 className(state)을 보존하고 icon-only Combobox trigger/clear에 이름을 제공한다. Spinner className 크기가 실제 내부 glyph에 적용되도록 수정한다. Spinner는 Leement의 기존 status span/다중 variant를 유지하며 shadcn SVG root와의 차이를 API note에 명시한다. Base 의존성은 검증한 1.7.0으로 registry graph에서 고정했다.
 - **Evidence**: 신규 API에 대한 8개 고정 Base 예제를 연결했고, 실제 설치 타입에서 20개 기본 component의 public part/props/default/event를 추출·검토해 API 표를 작성했다. 기존 core/content/navigation/message 통합 35 tests PASS. 신규 composition·error·multiple/clear·chip removal 5 integration tests PASS. 독립 consumer에 11개 관련 registry item과 8개 Base 예제를 설치·복사 후 strict/Vite build PASS. 실제 browser에서 Avatar sizes/InputGroup block-end/Combobox multiple-clear 실행, Next.js+Astro 선택→Escape→Next.js 삭제 후 Astro 유지 확인. 삭제 action의 이름 누락을 발견해 항목별 Remove label을 추가했다. 나머지 고정 예제 전체 연결은 task 07이다.
+
+## D011 — 기존 overlay·날짜·알림 API 보완
+
+- **Decision**: Dialog/AlertDialog/Tooltip/HoverCard를 Base UI로 옮기고 Motion exit retention·modal subtree portal을 연결한다. legacy asChild/delay 편의 API는 유지하고 AlertDialog Media/size, DialogFooter close, PopoverHeader 및 Sheet Portal/Overlay를 공개한다. 상태 className callback도 보존한다.
+- **Trace**: 설치된 Base UI 1.7 Tooltip popup에서 tooltip role/description 연결이 생성되지 않는 것을 통합 테스트로 발견했다. Leement에서 popup id와 aria-describedby를 연결하며 keyboard focus와 실제 role을 검증한다. Calendar는 고정 upstream과 맞는 DayPicker 9.14.0 API를 추가하고 기존 schedule/value/range API를 명확히 구분한다. 보이는 caption select는 Leement Select다. native CSS month animation을 끄고 animate 요청은 Motion fade로 처리한다. 한국어 브라우저와 서버 간 default locale 차이가 hydration 문제를 만들지 않도록 기본 dropdown formatter를 en-US로 고정한다.
+- **Trace**: Toast는 Base UI compound parts/provider/manager를 제공하며 기존 간단 호출은 동일 manager의 편의 API로 연결한다. Sonner 전용 전체 옵션과의 차이를 API note에 설명한다. Alert·Empty compound source도 기존 status-notice/empty-state item에 추가한다. Slider는 thumb별 Motion ref를 만들고 드래그 위치를 즉시 반영한다.
+- **Evidence**: 신규 DayPicker multiple/disabled·caption Select·Alert cancel/loading·Toast promise/update/action·Breadcrumb render/ref 5 tests와 기존 overlay/date/table/controls를 합친 25 tests PASS. strict typecheck PASS. public 25개 API 그룹은 실제 설치 타입과 source로 작성했다. 브라우저/consumer 검증 진행 중이며, 첫 caption browser 선택은 브라우저 locale의 옵션명이 2월이라 영문 Feb locator가 실패한 관찰을 성공으로 기록하지 않는다.
+
+- **Final verification**: 관련 overlay/date/table/controls/Motion/navigation 47 tests, registry-source + 새 composition 10 tests PASS. focused lint/strict typecheck/diff/registry build PASS. 독립 consumer의 두 번째 build에서 누락된 예제 외부 date-fns와 Popover 설치를 확인해 Calendar registry에 date-fns를 선언하고 필요한 Popover를 설치한 후 strict/Vite build PASS. registry Calendar Motion dependency도 직접 선언했다. 브라우저에서 Dialog Share→Escape, caption Feb 선택→February grid, Toast Success→알림 focus→Close→제거 확인. Base Toast가 focus 전 action을 aria-hidden으로 두는 정책은 유지한다. canonical Calendar width240/내부shell200/scrollWidth198 확인; 일정 grid만 자체 가로 스크롤한다. Toast는 실제 Base API를 두 프로젝트에서 검증하기 전 experimental로 표시한다. 후속 전체 예제 대응·light/dark/RTL/consumer 종합 확인은 task07/13이다.
