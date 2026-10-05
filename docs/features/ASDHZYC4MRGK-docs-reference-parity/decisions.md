@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:714b6a031ed00f4100c496462c88fa996ca99dbdb4ed9d2ab02b51581198dd75 -->
+<!-- lee-spec-kit:workflow-sync sha256:0a68d895d871874c628ff4b5152ad612b898c2b10319a907d8621c4da26510e7 -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -67,3 +67,9 @@
 - **Decision**: 공통 ItemPage에서 반복 9문단/목차를 제거했다. Usage는 소비자 alias 코드와 필요한 접근성 설명을 제공하고 API Reference는 public part별 prop/type/default/required/description 및 공식 링크를 표시한다. Button/Input/Card의 실제 API를 먼저 명시했다. 나머지 public parts/API 상세는 후속 task 02~07의 구현과 함께 채운다.
 - **Trace**: pnpm typecheck(5 tasks), docs focused ESLint, git diff --check PASS. 브라우저 세 페이지에서 제거한 heading이 없고 새 목차·API 표가 나타남을 확인했다. Preview main에 iframe 하나이며 inline 복사본이 없다. Arrow 16px, Home 240px, End 833px 및 mouse drag 683/773px가 실제 iframe 폭·px와 맞는다. request event counting은 Aside transport 한계로 미검증이며 단일 runtime DOM 관찰과 구분한다. 기존 lazy Examples는 viewport 진입 후 로드된다.
 - **Evidence**: Aside read-only session `0Br37unKWM3B7lyW`의 최종 관찰 결과. [ItemPage](../../../apps/docs/components/item-page.tsx), [API metadata](../../../apps/docs/lib/api-reference.ts), task 01 검증 기록.
+
+## D007: 신규 콘텐츠·입력 source 채택 (2026-10-05)
+
+- **Context/Constraints**: task 02는 Attachment/Bubble/Direction/InputOTP/Item/Marker의 실제 parts와 composition을 제공한다. 고정 shadcn Base source를 검토하고 Leement semantic/spacing/Motion으로 적응한다. CSS module·upstream 전용 cn stylesheet/Next import는 설치 source에 남기지 않는다.
+- **Trace**: pinned Base source와 nova style의 정적 @apply 규칙을 읽었다. temporary 변환으로 실제 Tailwind class를 source에 펼치며 dynamic 애니메이션은 Motion helper로 바꾼다. OTP는 upstream과 같은 input-otp 1.4.2로 native single-field/paste/form behavior를 유지한다. third-party license를 보존한다.
+- **Evidence**: [고정 기준](./artifacts/reference-baseline.json), [계획](./plan.md), [notice](../../../THIRD_PARTY_NOTICES.md). 6개 source의 strict typecheck/focused ESLint, registry build, controlled/disabled OTP·native FormData·polymorphic ref·keyboard 등 5 integration tests와 registry-source 5 tests PASS. Aside session bJX49gOxpzdgNACK에서 6개 iframe/API 및 파일 삭제/반응 toggle/방향 변경/OTP 입력 PASS. 설치 consumer는 `/tmp/leement-reference-consumer`에서 namespace 6개 및 docs 조합용 Select/Label 설치 후 strict/Vite build PASS. Vite는 일반 use-client directive 경고를 표시하지만 설치 source 타입/빌드에는 실패가 없다. Direction API의 실제 optional/default ltr를 설치된 Base UI 타입으로 확인했다.

@@ -90,12 +90,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-02 신규 콘텐츠·입력 컴포넌트와 실제 예제 추가
+- [DONE][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-02 신규 콘텐츠·입력 컴포넌트와 실제 예제 추가
   - Date: 2026-10-05
   - Acceptance:
     - Attachment/Bubble/Direction/InputOTP/Item/Marker의 동작·타입·문서·registry 설치를 제공한다.
   - Checklist:
-    - [ ] baseline API/예제와 비교하고 semantic/Motion, render/disabled/controlled 입력 계약 및 consumer imports를 검증한다.
+    - [x] baseline API/예제와 비교하고 semantic/Motion, render/disabled/controlled 입력 계약 및 consumer imports를 검증한다.
+  - Verification: docs strict typecheck/focused ESLint PASS; content-input 5 tests + registry-source 5 tests PASS; registry build PASS. Aside bJX49gOxpzdgNACK의 6개 preview/API 및 controlled 조작 PASS. `/tmp/leement-reference-consumer`에서 shadcn namespace 설치(6개 + 예제용 Select/Label), tsc/Vite build PASS.
   - Docs:
     - project:THIRD_PARTY_NOTICES.md
   - Review Evidence: -
