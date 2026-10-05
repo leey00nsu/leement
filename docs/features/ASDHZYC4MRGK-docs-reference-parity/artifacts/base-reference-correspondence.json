@@ -1,0 +1,3524 @@
+{
+  "baseline": "reference-baseline.json",
+  "shadcnCommit": "295a1f114a138f23b5dfee0e0c6812394dfeb90c",
+  "pages": 63,
+  "previewReferences": 456,
+  "uniqueExamples": 453,
+  "scopeException": "NativeSelect and its five previews remain excluded.",
+  "correspondence": [
+    {
+      "upstreamPage": "accordion",
+      "upstreamExample": "accordion-demo",
+      "item": "accordion",
+      "file": "base-accordion-demo"
+    },
+    {
+      "upstreamPage": "accordion",
+      "upstreamExample": "accordion-basic",
+      "item": "accordion",
+      "file": "base-accordion-basic"
+    },
+    {
+      "upstreamPage": "accordion",
+      "upstreamExample": "accordion-multiple",
+      "item": "accordion",
+      "file": "base-accordion-multiple"
+    },
+    {
+      "upstreamPage": "accordion",
+      "upstreamExample": "accordion-disabled",
+      "item": "accordion",
+      "file": "base-accordion-disabled"
+    },
+    {
+      "upstreamPage": "accordion",
+      "upstreamExample": "accordion-borders",
+      "item": "accordion",
+      "file": "base-accordion-borders"
+    },
+    {
+      "upstreamPage": "accordion",
+      "upstreamExample": "accordion-card",
+      "item": "accordion",
+      "file": "base-accordion-card"
+    },
+    {
+      "upstreamPage": "accordion",
+      "upstreamExample": "accordion-rtl",
+      "item": "accordion",
+      "file": "base-accordion-rtl"
+    },
+    {
+      "upstreamPage": "alert-dialog",
+      "upstreamExample": "alert-dialog-demo",
+      "item": "alert-dialog",
+      "file": "base-alert-dialog-demo"
+    },
+    {
+      "upstreamPage": "alert-dialog",
+      "upstreamExample": "alert-dialog-basic",
+      "item": "alert-dialog",
+      "file": "base-alert-dialog-basic"
+    },
+    {
+      "upstreamPage": "alert-dialog",
+      "upstreamExample": "alert-dialog-small",
+      "item": "alert-dialog",
+      "file": "base-alert-dialog-small"
+    },
+    {
+      "upstreamPage": "alert-dialog",
+      "upstreamExample": "alert-dialog-media",
+      "item": "alert-dialog",
+      "file": "base-alert-dialog-media"
+    },
+    {
+      "upstreamPage": "alert-dialog",
+      "upstreamExample": "alert-dialog-small-media",
+      "item": "alert-dialog",
+      "file": "base-alert-dialog-small-media"
+    },
+    {
+      "upstreamPage": "alert-dialog",
+      "upstreamExample": "alert-dialog-destructive",
+      "item": "alert-dialog",
+      "file": "base-alert-dialog-destructive"
+    },
+    {
+      "upstreamPage": "alert-dialog",
+      "upstreamExample": "alert-dialog-rtl",
+      "item": "alert-dialog",
+      "file": "base-alert-dialog-rtl"
+    },
+    {
+      "upstreamPage": "alert",
+      "upstreamExample": "alert-demo",
+      "item": "status-notice",
+      "file": "base-alert-demo"
+    },
+    {
+      "upstreamPage": "alert",
+      "upstreamExample": "alert-basic",
+      "item": "status-notice",
+      "file": "base-alert-basic"
+    },
+    {
+      "upstreamPage": "alert",
+      "upstreamExample": "alert-destructive",
+      "item": "status-notice",
+      "file": "base-alert-destructive"
+    },
+    {
+      "upstreamPage": "alert",
+      "upstreamExample": "alert-action",
+      "item": "status-notice",
+      "file": "base-alert-action"
+    },
+    {
+      "upstreamPage": "alert",
+      "upstreamExample": "alert-colors",
+      "item": "status-notice",
+      "file": "base-alert-colors"
+    },
+    {
+      "upstreamPage": "alert",
+      "upstreamExample": "alert-rtl",
+      "item": "status-notice",
+      "file": "base-alert-rtl"
+    },
+    {
+      "upstreamPage": "aspect-ratio",
+      "upstreamExample": "aspect-ratio-demo",
+      "item": "aspect-ratio",
+      "file": "base-aspect-ratio-demo"
+    },
+    {
+      "upstreamPage": "aspect-ratio",
+      "upstreamExample": "aspect-ratio-square",
+      "item": "aspect-ratio",
+      "file": "base-aspect-ratio-square"
+    },
+    {
+      "upstreamPage": "aspect-ratio",
+      "upstreamExample": "aspect-ratio-portrait",
+      "item": "aspect-ratio",
+      "file": "base-aspect-ratio-portrait"
+    },
+    {
+      "upstreamPage": "aspect-ratio",
+      "upstreamExample": "aspect-ratio-rtl",
+      "item": "aspect-ratio",
+      "file": "base-aspect-ratio-rtl"
+    },
+    {
+      "upstreamPage": "attachment",
+      "upstreamExample": "attachment-demo",
+      "item": "attachment",
+      "file": "base-attachment-demo"
+    },
+    {
+      "upstreamPage": "attachment",
+      "upstreamExample": "attachment-image",
+      "item": "attachment",
+      "file": "base-attachment-image"
+    },
+    {
+      "upstreamPage": "attachment",
+      "upstreamExample": "attachment-states",
+      "item": "attachment",
+      "file": "base-attachment-states"
+    },
+    {
+      "upstreamPage": "attachment",
+      "upstreamExample": "attachment-sizes",
+      "item": "attachment",
+      "file": "base-attachment-sizes"
+    },
+    {
+      "upstreamPage": "attachment",
+      "upstreamExample": "attachment-group",
+      "item": "attachment",
+      "file": "base-attachment-group"
+    },
+    {
+      "upstreamPage": "attachment",
+      "upstreamExample": "attachment-trigger",
+      "item": "attachment",
+      "file": "base-attachment-trigger"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-demo",
+      "item": "avatar",
+      "file": "base-avatar-demo"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-basic",
+      "item": "avatar",
+      "file": "base-avatar-basic"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-badge",
+      "item": "avatar",
+      "file": "base-avatar-badge"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-badge-icon",
+      "item": "avatar",
+      "file": "base-avatar-badge-icon"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-group",
+      "item": "avatar",
+      "file": "base-avatar-group"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-group-count",
+      "item": "avatar",
+      "file": "base-avatar-group-count"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-group-count-icon",
+      "item": "avatar",
+      "file": "base-avatar-group-count-icon"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-size",
+      "item": "avatar",
+      "file": "base-avatar-size"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-dropdown",
+      "item": "avatar",
+      "file": "base-avatar-dropdown"
+    },
+    {
+      "upstreamPage": "avatar",
+      "upstreamExample": "avatar-rtl",
+      "item": "avatar",
+      "file": "base-avatar-rtl"
+    },
+    {
+      "upstreamPage": "badge",
+      "upstreamExample": "badge-demo",
+      "item": "badge",
+      "file": "base-badge-demo"
+    },
+    {
+      "upstreamPage": "badge",
+      "upstreamExample": "badge-variants",
+      "item": "badge",
+      "file": "base-badge-variants"
+    },
+    {
+      "upstreamPage": "badge",
+      "upstreamExample": "badge-icon",
+      "item": "badge",
+      "file": "base-badge-icon"
+    },
+    {
+      "upstreamPage": "badge",
+      "upstreamExample": "badge-spinner",
+      "item": "badge",
+      "file": "base-badge-spinner"
+    },
+    {
+      "upstreamPage": "badge",
+      "upstreamExample": "badge-link",
+      "item": "badge",
+      "file": "base-badge-link"
+    },
+    {
+      "upstreamPage": "badge",
+      "upstreamExample": "badge-colors",
+      "item": "badge",
+      "file": "base-badge-colors"
+    },
+    {
+      "upstreamPage": "badge",
+      "upstreamExample": "badge-rtl",
+      "item": "badge",
+      "file": "base-badge-rtl"
+    },
+    {
+      "upstreamPage": "breadcrumb",
+      "upstreamExample": "breadcrumb-demo",
+      "item": "breadcrumb",
+      "file": "base-breadcrumb-demo"
+    },
+    {
+      "upstreamPage": "breadcrumb",
+      "upstreamExample": "breadcrumb-basic",
+      "item": "breadcrumb",
+      "file": "base-breadcrumb-basic"
+    },
+    {
+      "upstreamPage": "breadcrumb",
+      "upstreamExample": "breadcrumb-separator",
+      "item": "breadcrumb",
+      "file": "base-breadcrumb-separator"
+    },
+    {
+      "upstreamPage": "breadcrumb",
+      "upstreamExample": "breadcrumb-dropdown",
+      "item": "breadcrumb",
+      "file": "base-breadcrumb-dropdown"
+    },
+    {
+      "upstreamPage": "breadcrumb",
+      "upstreamExample": "breadcrumb-ellipsis",
+      "item": "breadcrumb",
+      "file": "base-breadcrumb-ellipsis"
+    },
+    {
+      "upstreamPage": "breadcrumb",
+      "upstreamExample": "breadcrumb-link",
+      "item": "breadcrumb",
+      "file": "base-breadcrumb-link"
+    },
+    {
+      "upstreamPage": "breadcrumb",
+      "upstreamExample": "breadcrumb-rtl",
+      "item": "breadcrumb",
+      "file": "base-breadcrumb-rtl"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-demo",
+      "item": "bubble",
+      "file": "base-bubble-demo"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-variants",
+      "item": "bubble",
+      "file": "base-bubble-variants"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-alignment",
+      "item": "bubble",
+      "file": "base-bubble-alignment"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-group-demo",
+      "item": "bubble",
+      "file": "base-bubble-group-demo"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-link-button",
+      "item": "bubble",
+      "file": "base-bubble-link-button"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-reactions",
+      "item": "bubble",
+      "file": "base-bubble-reactions"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-collapsible",
+      "item": "bubble",
+      "file": "base-bubble-collapsible"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-tooltip",
+      "item": "bubble",
+      "file": "base-bubble-tooltip"
+    },
+    {
+      "upstreamPage": "bubble",
+      "upstreamExample": "bubble-popover",
+      "item": "bubble",
+      "file": "base-bubble-popover"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-demo",
+      "item": "button-group",
+      "file": "base-button-group-demo"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-orientation",
+      "item": "button-group",
+      "file": "base-button-group-orientation"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-size",
+      "item": "button-group",
+      "file": "base-button-group-size"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-nested",
+      "item": "button-group",
+      "file": "base-button-group-nested"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-separator",
+      "item": "button-group",
+      "file": "base-button-group-separator"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-split",
+      "item": "button-group",
+      "file": "base-button-group-split"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-input",
+      "item": "button-group",
+      "file": "base-button-group-input"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-input-group",
+      "item": "button-group",
+      "file": "base-button-group-input-group"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-dropdown",
+      "item": "button-group",
+      "file": "base-button-group-dropdown"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-select",
+      "item": "button-group",
+      "file": "base-button-group-select"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-popover",
+      "item": "button-group",
+      "file": "base-button-group-popover"
+    },
+    {
+      "upstreamPage": "button-group",
+      "upstreamExample": "button-group-rtl",
+      "item": "button-group",
+      "file": "base-button-group-rtl"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-demo",
+      "item": "button",
+      "file": "base-button-demo"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-size",
+      "item": "button",
+      "file": "base-button-size"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-default",
+      "item": "button",
+      "file": "base-button-default"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-outline",
+      "item": "button",
+      "file": "base-button-outline"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-secondary",
+      "item": "button",
+      "file": "base-button-secondary"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-ghost",
+      "item": "button",
+      "file": "base-button-ghost"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-destructive",
+      "item": "button",
+      "file": "base-button-destructive"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-link",
+      "item": "button",
+      "file": "base-button-link"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-icon",
+      "item": "button",
+      "file": "base-button-icon"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-with-icon",
+      "item": "button",
+      "file": "base-button-with-icon"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-rounded",
+      "item": "button",
+      "file": "base-button-rounded"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-spinner",
+      "item": "button",
+      "file": "base-button-spinner"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-group-demo",
+      "item": "button",
+      "file": "base-button-group-demo"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-render",
+      "item": "button",
+      "file": "base-button-render"
+    },
+    {
+      "upstreamPage": "button",
+      "upstreamExample": "button-rtl",
+      "item": "button",
+      "file": "base-button-rtl"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-demo",
+      "item": "calendar",
+      "file": "base-calendar-demo"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-hijri",
+      "item": "calendar",
+      "file": "base-calendar-hijri"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-basic",
+      "item": "calendar",
+      "file": "base-calendar-basic"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-range",
+      "item": "calendar",
+      "file": "base-calendar-range"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-caption",
+      "item": "calendar",
+      "file": "base-calendar-caption"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-presets",
+      "item": "calendar",
+      "file": "base-calendar-presets"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-time",
+      "item": "calendar",
+      "file": "base-calendar-time"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-booked-dates",
+      "item": "calendar",
+      "file": "base-calendar-booked-dates"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-custom-days",
+      "item": "calendar",
+      "file": "base-calendar-custom-days"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-week-numbers",
+      "item": "calendar",
+      "file": "base-calendar-week-numbers"
+    },
+    {
+      "upstreamPage": "calendar",
+      "upstreamExample": "calendar-rtl",
+      "item": "calendar",
+      "file": "base-calendar-rtl"
+    },
+    {
+      "upstreamPage": "card",
+      "upstreamExample": "card-demo",
+      "item": "card",
+      "file": "base-card-demo"
+    },
+    {
+      "upstreamPage": "card",
+      "upstreamExample": "card-small",
+      "item": "card",
+      "file": "base-card-small"
+    },
+    {
+      "upstreamPage": "card",
+      "upstreamExample": "card-spacing",
+      "item": "card",
+      "file": "base-card-spacing"
+    },
+    {
+      "upstreamPage": "card",
+      "upstreamExample": "card-edge-to-edge",
+      "item": "card",
+      "file": "base-card-edge-to-edge"
+    },
+    {
+      "upstreamPage": "card",
+      "upstreamExample": "card-image",
+      "item": "card",
+      "file": "base-card-image"
+    },
+    {
+      "upstreamPage": "card",
+      "upstreamExample": "card-rtl",
+      "item": "card",
+      "file": "base-card-rtl"
+    },
+    {
+      "upstreamPage": "carousel",
+      "upstreamExample": "carousel-demo",
+      "item": "carousel",
+      "file": "base-carousel-demo"
+    },
+    {
+      "upstreamPage": "carousel",
+      "upstreamExample": "carousel-size",
+      "item": "carousel",
+      "file": "base-carousel-size"
+    },
+    {
+      "upstreamPage": "carousel",
+      "upstreamExample": "carousel-spacing",
+      "item": "carousel",
+      "file": "base-carousel-spacing"
+    },
+    {
+      "upstreamPage": "carousel",
+      "upstreamExample": "carousel-orientation",
+      "item": "carousel",
+      "file": "base-carousel-orientation"
+    },
+    {
+      "upstreamPage": "carousel",
+      "upstreamExample": "carousel-api",
+      "item": "carousel",
+      "file": "base-carousel-api"
+    },
+    {
+      "upstreamPage": "carousel",
+      "upstreamExample": "carousel-plugin",
+      "item": "carousel",
+      "file": "base-carousel-plugin"
+    },
+    {
+      "upstreamPage": "carousel",
+      "upstreamExample": "carousel-rtl",
+      "item": "carousel",
+      "file": "base-carousel-rtl"
+    },
+    {
+      "upstreamPage": "chart",
+      "upstreamExample": "chart-demo",
+      "item": "chart",
+      "file": "base-chart-demo"
+    },
+    {
+      "upstreamPage": "chart",
+      "upstreamExample": "chart-example",
+      "item": "chart",
+      "file": "base-chart-example"
+    },
+    {
+      "upstreamPage": "chart",
+      "upstreamExample": "chart-example-grid",
+      "item": "chart",
+      "file": "base-chart-example-grid"
+    },
+    {
+      "upstreamPage": "chart",
+      "upstreamExample": "chart-example-axis",
+      "item": "chart",
+      "file": "base-chart-example-axis"
+    },
+    {
+      "upstreamPage": "chart",
+      "upstreamExample": "chart-example-tooltip",
+      "item": "chart",
+      "file": "base-chart-example-tooltip"
+    },
+    {
+      "upstreamPage": "chart",
+      "upstreamExample": "chart-example-legend",
+      "item": "chart",
+      "file": "base-chart-example-legend"
+    },
+    {
+      "upstreamPage": "chart",
+      "upstreamExample": "chart-tooltip",
+      "item": "chart",
+      "file": "base-chart-tooltip"
+    },
+    {
+      "upstreamPage": "chart",
+      "upstreamExample": "chart-rtl",
+      "item": "chart",
+      "file": "base-chart-rtl"
+    },
+    {
+      "upstreamPage": "checkbox",
+      "upstreamExample": "checkbox-demo",
+      "item": "checkbox",
+      "file": "base-checkbox-demo"
+    },
+    {
+      "upstreamPage": "checkbox",
+      "upstreamExample": "checkbox-invalid",
+      "item": "checkbox",
+      "file": "base-checkbox-invalid"
+    },
+    {
+      "upstreamPage": "checkbox",
+      "upstreamExample": "checkbox-basic",
+      "item": "checkbox",
+      "file": "base-checkbox-basic"
+    },
+    {
+      "upstreamPage": "checkbox",
+      "upstreamExample": "checkbox-description",
+      "item": "checkbox",
+      "file": "base-checkbox-description"
+    },
+    {
+      "upstreamPage": "checkbox",
+      "upstreamExample": "checkbox-disabled",
+      "item": "checkbox",
+      "file": "base-checkbox-disabled"
+    },
+    {
+      "upstreamPage": "checkbox",
+      "upstreamExample": "checkbox-group",
+      "item": "checkbox",
+      "file": "base-checkbox-group"
+    },
+    {
+      "upstreamPage": "checkbox",
+      "upstreamExample": "checkbox-table",
+      "item": "checkbox",
+      "file": "base-checkbox-table"
+    },
+    {
+      "upstreamPage": "checkbox",
+      "upstreamExample": "checkbox-rtl",
+      "item": "checkbox",
+      "file": "base-checkbox-rtl"
+    },
+    {
+      "upstreamPage": "collapsible",
+      "upstreamExample": "collapsible-demo",
+      "item": "collapsible",
+      "file": "base-collapsible-demo"
+    },
+    {
+      "upstreamPage": "collapsible",
+      "upstreamExample": "collapsible-basic",
+      "item": "collapsible",
+      "file": "base-collapsible-basic"
+    },
+    {
+      "upstreamPage": "collapsible",
+      "upstreamExample": "collapsible-settings",
+      "item": "collapsible",
+      "file": "base-collapsible-settings"
+    },
+    {
+      "upstreamPage": "collapsible",
+      "upstreamExample": "collapsible-file-tree",
+      "item": "collapsible",
+      "file": "base-collapsible-file-tree"
+    },
+    {
+      "upstreamPage": "collapsible",
+      "upstreamExample": "collapsible-rtl",
+      "item": "collapsible",
+      "file": "base-collapsible-rtl"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-demo",
+      "item": "combobox",
+      "file": "base-combobox-demo"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-basic",
+      "item": "combobox",
+      "file": "base-combobox-basic"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-multiple",
+      "item": "combobox",
+      "file": "base-combobox-multiple"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-clear",
+      "item": "combobox",
+      "file": "base-combobox-clear"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-groups",
+      "item": "combobox",
+      "file": "base-combobox-groups"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-custom",
+      "item": "combobox",
+      "file": "base-combobox-custom"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-invalid",
+      "item": "combobox",
+      "file": "base-combobox-invalid"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-disabled",
+      "item": "combobox",
+      "file": "base-combobox-disabled"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-auto-highlight",
+      "item": "combobox",
+      "file": "base-combobox-auto-highlight"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-popup",
+      "item": "combobox",
+      "file": "base-combobox-popup"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-input-group",
+      "item": "combobox",
+      "file": "base-combobox-input-group"
+    },
+    {
+      "upstreamPage": "combobox",
+      "upstreamExample": "combobox-rtl",
+      "item": "combobox",
+      "file": "base-combobox-rtl"
+    },
+    {
+      "upstreamPage": "command",
+      "upstreamExample": "command-demo",
+      "item": "command",
+      "file": "base-command-demo"
+    },
+    {
+      "upstreamPage": "command",
+      "upstreamExample": "command-basic",
+      "item": "command",
+      "file": "base-command-basic"
+    },
+    {
+      "upstreamPage": "command",
+      "upstreamExample": "command-shortcuts",
+      "item": "command",
+      "file": "base-command-shortcuts"
+    },
+    {
+      "upstreamPage": "command",
+      "upstreamExample": "command-groups",
+      "item": "command",
+      "file": "base-command-groups"
+    },
+    {
+      "upstreamPage": "command",
+      "upstreamExample": "command-scrollable",
+      "item": "command",
+      "file": "base-command-scrollable"
+    },
+    {
+      "upstreamPage": "command",
+      "upstreamExample": "command-rtl",
+      "item": "command",
+      "file": "base-command-rtl"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-demo",
+      "item": "context-menu",
+      "file": "base-context-menu-demo"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-basic",
+      "item": "context-menu",
+      "file": "base-context-menu-basic"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-submenu",
+      "item": "context-menu",
+      "file": "base-context-menu-submenu"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-shortcuts",
+      "item": "context-menu",
+      "file": "base-context-menu-shortcuts"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-groups",
+      "item": "context-menu",
+      "file": "base-context-menu-groups"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-icons",
+      "item": "context-menu",
+      "file": "base-context-menu-icons"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-checkboxes",
+      "item": "context-menu",
+      "file": "base-context-menu-checkboxes"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-radio",
+      "item": "context-menu",
+      "file": "base-context-menu-radio"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-destructive",
+      "item": "context-menu",
+      "file": "base-context-menu-destructive"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-sides",
+      "item": "context-menu",
+      "file": "base-context-menu-sides"
+    },
+    {
+      "upstreamPage": "context-menu",
+      "upstreamExample": "context-menu-rtl",
+      "item": "context-menu",
+      "file": "base-context-menu-rtl"
+    },
+    {
+      "upstreamPage": "data-table",
+      "upstreamExample": "data-table-demo",
+      "item": "data-table",
+      "file": "base-data-table-demo"
+    },
+    {
+      "upstreamPage": "data-table",
+      "upstreamExample": "data-table-rtl",
+      "item": "data-table",
+      "file": "base-data-table-rtl"
+    },
+    {
+      "upstreamPage": "date-picker",
+      "upstreamExample": "date-picker-demo",
+      "item": "date-picker",
+      "file": "base-date-picker-demo"
+    },
+    {
+      "upstreamPage": "date-picker",
+      "upstreamExample": "date-picker-basic",
+      "item": "date-picker",
+      "file": "base-date-picker-basic"
+    },
+    {
+      "upstreamPage": "date-picker",
+      "upstreamExample": "date-picker-range",
+      "item": "date-picker",
+      "file": "base-date-picker-range"
+    },
+    {
+      "upstreamPage": "date-picker",
+      "upstreamExample": "date-picker-dob",
+      "item": "date-picker",
+      "file": "base-date-picker-dob"
+    },
+    {
+      "upstreamPage": "date-picker",
+      "upstreamExample": "date-picker-input",
+      "item": "date-picker",
+      "file": "base-date-picker-input"
+    },
+    {
+      "upstreamPage": "date-picker",
+      "upstreamExample": "date-picker-time",
+      "item": "date-picker",
+      "file": "base-date-picker-time"
+    },
+    {
+      "upstreamPage": "date-picker",
+      "upstreamExample": "date-picker-natural-language",
+      "item": "date-picker",
+      "file": "base-date-picker-natural-language"
+    },
+    {
+      "upstreamPage": "date-picker",
+      "upstreamExample": "date-picker-rtl",
+      "item": "date-picker",
+      "file": "base-date-picker-rtl"
+    },
+    {
+      "upstreamPage": "dialog",
+      "upstreamExample": "dialog-demo",
+      "item": "dialog",
+      "file": "base-dialog-demo"
+    },
+    {
+      "upstreamPage": "dialog",
+      "upstreamExample": "dialog-close-button",
+      "item": "dialog",
+      "file": "base-dialog-close-button"
+    },
+    {
+      "upstreamPage": "dialog",
+      "upstreamExample": "dialog-no-close-button",
+      "item": "dialog",
+      "file": "base-dialog-no-close-button"
+    },
+    {
+      "upstreamPage": "dialog",
+      "upstreamExample": "dialog-sticky-footer",
+      "item": "dialog",
+      "file": "base-dialog-sticky-footer"
+    },
+    {
+      "upstreamPage": "dialog",
+      "upstreamExample": "dialog-scrollable-content",
+      "item": "dialog",
+      "file": "base-dialog-scrollable-content"
+    },
+    {
+      "upstreamPage": "dialog",
+      "upstreamExample": "dialog-rtl",
+      "item": "dialog",
+      "file": "base-dialog-rtl"
+    },
+    {
+      "upstreamPage": "direction",
+      "upstreamExample": "card-rtl",
+      "item": "direction",
+      "file": "base-card-rtl"
+    },
+    {
+      "upstreamPage": "drawer",
+      "upstreamExample": "drawer-demo",
+      "item": "drawer",
+      "file": "base-drawer-demo"
+    },
+    {
+      "upstreamPage": "drawer",
+      "upstreamExample": "drawer-sides",
+      "item": "drawer",
+      "file": "base-drawer-sides"
+    },
+    {
+      "upstreamPage": "drawer",
+      "upstreamExample": "drawer-swipe-handle",
+      "item": "drawer",
+      "file": "base-drawer-swipe-handle"
+    },
+    {
+      "upstreamPage": "drawer",
+      "upstreamExample": "drawer-nested",
+      "item": "drawer",
+      "file": "base-drawer-nested"
+    },
+    {
+      "upstreamPage": "drawer",
+      "upstreamExample": "drawer-non-modal",
+      "item": "drawer",
+      "file": "base-drawer-non-modal"
+    },
+    {
+      "upstreamPage": "drawer",
+      "upstreamExample": "drawer-snap-points",
+      "item": "drawer",
+      "file": "base-drawer-snap-points"
+    },
+    {
+      "upstreamPage": "drawer",
+      "upstreamExample": "drawer-dialog",
+      "item": "drawer",
+      "file": "base-drawer-dialog"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-demo",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-demo"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-basic",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-basic"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-submenu",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-submenu"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-shortcuts",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-shortcuts"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-icons",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-icons"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-checkboxes",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-checkboxes"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-checkboxes-icons",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-checkboxes-icons"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-radio-group",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-radio-group"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-radio-icons",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-radio-icons"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-destructive",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-destructive"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-avatar",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-avatar"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-complex",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-complex"
+    },
+    {
+      "upstreamPage": "dropdown-menu",
+      "upstreamExample": "dropdown-menu-rtl",
+      "item": "dropdown-menu",
+      "file": "base-dropdown-menu-rtl"
+    },
+    {
+      "upstreamPage": "empty",
+      "upstreamExample": "empty-demo",
+      "item": "empty-state",
+      "file": "base-empty-demo"
+    },
+    {
+      "upstreamPage": "empty",
+      "upstreamExample": "empty-outline",
+      "item": "empty-state",
+      "file": "base-empty-outline"
+    },
+    {
+      "upstreamPage": "empty",
+      "upstreamExample": "empty-background",
+      "item": "empty-state",
+      "file": "base-empty-background"
+    },
+    {
+      "upstreamPage": "empty",
+      "upstreamExample": "empty-avatar",
+      "item": "empty-state",
+      "file": "base-empty-avatar"
+    },
+    {
+      "upstreamPage": "empty",
+      "upstreamExample": "empty-avatar-group",
+      "item": "empty-state",
+      "file": "base-empty-avatar-group"
+    },
+    {
+      "upstreamPage": "empty",
+      "upstreamExample": "empty-input-group",
+      "item": "empty-state",
+      "file": "base-empty-input-group"
+    },
+    {
+      "upstreamPage": "empty",
+      "upstreamExample": "empty-rtl",
+      "item": "empty-state",
+      "file": "base-empty-rtl"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-demo",
+      "item": "field",
+      "file": "base-field-demo"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-input",
+      "item": "field",
+      "file": "base-field-input"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-textarea",
+      "item": "field",
+      "file": "base-field-textarea"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-select",
+      "item": "field",
+      "file": "base-field-select"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-slider",
+      "item": "field",
+      "file": "base-field-slider"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-fieldset",
+      "item": "field",
+      "file": "base-field-fieldset"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-checkbox",
+      "item": "field",
+      "file": "base-field-checkbox"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-radio",
+      "item": "field",
+      "file": "base-field-radio"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-switch",
+      "item": "field",
+      "file": "base-field-switch"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-choice-card",
+      "item": "field",
+      "file": "base-field-choice-card"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-group",
+      "item": "field",
+      "file": "base-field-group"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-rtl",
+      "item": "field",
+      "file": "base-field-rtl"
+    },
+    {
+      "upstreamPage": "field",
+      "upstreamExample": "field-responsive",
+      "item": "field",
+      "file": "base-field-responsive"
+    },
+    {
+      "upstreamPage": "hover-card",
+      "upstreamExample": "hover-card-demo",
+      "item": "hover-card",
+      "file": "base-hover-card-demo"
+    },
+    {
+      "upstreamPage": "hover-card",
+      "upstreamExample": "hover-card-sides",
+      "item": "hover-card",
+      "file": "base-hover-card-sides"
+    },
+    {
+      "upstreamPage": "hover-card",
+      "upstreamExample": "hover-card-rtl",
+      "item": "hover-card",
+      "file": "base-hover-card-rtl"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-demo",
+      "item": "input-group",
+      "file": "base-input-group-demo"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-inline-start",
+      "item": "input-group",
+      "file": "base-input-group-inline-start"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-inline-end",
+      "item": "input-group",
+      "file": "base-input-group-inline-end"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-block-start",
+      "item": "input-group",
+      "file": "base-input-group-block-start"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-block-end",
+      "item": "input-group",
+      "file": "base-input-group-block-end"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-icon",
+      "item": "input-group",
+      "file": "base-input-group-icon"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-text",
+      "item": "input-group",
+      "file": "base-input-group-text"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-button",
+      "item": "input-group",
+      "file": "base-input-group-button"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-kbd",
+      "item": "input-group",
+      "file": "base-input-group-kbd"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-dropdown",
+      "item": "input-group",
+      "file": "base-input-group-dropdown"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-spinner",
+      "item": "input-group",
+      "file": "base-input-group-spinner"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-textarea",
+      "item": "input-group",
+      "file": "base-input-group-textarea"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-custom",
+      "item": "input-group",
+      "file": "base-input-group-custom"
+    },
+    {
+      "upstreamPage": "input-group",
+      "upstreamExample": "input-group-rtl",
+      "item": "input-group",
+      "file": "base-input-group-rtl"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-demo",
+      "item": "input-otp",
+      "file": "base-input-otp-demo"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-pattern",
+      "item": "input-otp",
+      "file": "base-input-otp-pattern"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-separator",
+      "item": "input-otp",
+      "file": "base-input-otp-separator"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-disabled",
+      "item": "input-otp",
+      "file": "base-input-otp-disabled"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-controlled",
+      "item": "input-otp",
+      "file": "base-input-otp-controlled"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-invalid",
+      "item": "input-otp",
+      "file": "base-input-otp-invalid"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-four-digits",
+      "item": "input-otp",
+      "file": "base-input-otp-four-digits"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-alphanumeric",
+      "item": "input-otp",
+      "file": "base-input-otp-alphanumeric"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-form",
+      "item": "input-otp",
+      "file": "base-input-otp-form"
+    },
+    {
+      "upstreamPage": "input-otp",
+      "upstreamExample": "input-otp-rtl",
+      "item": "input-otp",
+      "file": "base-input-otp-rtl"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-demo",
+      "item": "input",
+      "file": "base-input-demo"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-basic",
+      "item": "input",
+      "file": "base-input-basic"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-field",
+      "item": "input",
+      "file": "base-input-field"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-fieldgroup",
+      "item": "input",
+      "file": "base-input-fieldgroup"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-disabled",
+      "item": "input",
+      "file": "base-input-disabled"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-invalid",
+      "item": "input",
+      "file": "base-input-invalid"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-file",
+      "item": "input",
+      "file": "base-input-file"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-inline",
+      "item": "input",
+      "file": "base-input-inline"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-grid",
+      "item": "input",
+      "file": "base-input-grid"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-required",
+      "item": "input",
+      "file": "base-input-required"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-badge",
+      "item": "input",
+      "file": "base-input-badge"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-input-group",
+      "item": "input",
+      "file": "base-input-input-group"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-button-group",
+      "item": "input",
+      "file": "base-input-button-group"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-form",
+      "item": "input",
+      "file": "base-input-form"
+    },
+    {
+      "upstreamPage": "input",
+      "upstreamExample": "input-rtl",
+      "item": "input",
+      "file": "base-input-rtl"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-demo",
+      "item": "item",
+      "file": "base-item-demo"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-variant",
+      "item": "item",
+      "file": "base-item-variant"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-size",
+      "item": "item",
+      "file": "base-item-size"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-icon",
+      "item": "item",
+      "file": "base-item-icon"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-avatar",
+      "item": "item",
+      "file": "base-item-avatar"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-image",
+      "item": "item",
+      "file": "base-item-image"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-group",
+      "item": "item",
+      "file": "base-item-group"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-header",
+      "item": "item",
+      "file": "base-item-header"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-link",
+      "item": "item",
+      "file": "base-item-link"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-dropdown",
+      "item": "item",
+      "file": "base-item-dropdown"
+    },
+    {
+      "upstreamPage": "item",
+      "upstreamExample": "item-rtl",
+      "item": "item",
+      "file": "base-item-rtl"
+    },
+    {
+      "upstreamPage": "kbd",
+      "upstreamExample": "kbd-demo",
+      "item": "kbd",
+      "file": "base-kbd-demo"
+    },
+    {
+      "upstreamPage": "kbd",
+      "upstreamExample": "kbd-group",
+      "item": "kbd",
+      "file": "base-kbd-group"
+    },
+    {
+      "upstreamPage": "kbd",
+      "upstreamExample": "kbd-button",
+      "item": "kbd",
+      "file": "base-kbd-button"
+    },
+    {
+      "upstreamPage": "kbd",
+      "upstreamExample": "kbd-tooltip",
+      "item": "kbd",
+      "file": "base-kbd-tooltip"
+    },
+    {
+      "upstreamPage": "kbd",
+      "upstreamExample": "kbd-input-group",
+      "item": "kbd",
+      "file": "base-kbd-input-group"
+    },
+    {
+      "upstreamPage": "kbd",
+      "upstreamExample": "kbd-rtl",
+      "item": "kbd",
+      "file": "base-kbd-rtl"
+    },
+    {
+      "upstreamPage": "label",
+      "upstreamExample": "label-demo",
+      "item": "label",
+      "file": "base-label-demo"
+    },
+    {
+      "upstreamPage": "label",
+      "upstreamExample": "field-demo",
+      "item": "label",
+      "file": "base-field-demo"
+    },
+    {
+      "upstreamPage": "label",
+      "upstreamExample": "label-rtl",
+      "item": "label",
+      "file": "base-label-rtl"
+    },
+    {
+      "upstreamPage": "marker",
+      "upstreamExample": "marker-demo",
+      "item": "marker",
+      "file": "base-marker-demo"
+    },
+    {
+      "upstreamPage": "marker",
+      "upstreamExample": "marker-variants",
+      "item": "marker",
+      "file": "base-marker-variants"
+    },
+    {
+      "upstreamPage": "marker",
+      "upstreamExample": "marker-status",
+      "item": "marker",
+      "file": "base-marker-status"
+    },
+    {
+      "upstreamPage": "marker",
+      "upstreamExample": "marker-shimmer",
+      "item": "marker",
+      "file": "base-marker-shimmer"
+    },
+    {
+      "upstreamPage": "marker",
+      "upstreamExample": "marker-separator",
+      "item": "marker",
+      "file": "base-marker-separator"
+    },
+    {
+      "upstreamPage": "marker",
+      "upstreamExample": "marker-border",
+      "item": "marker",
+      "file": "base-marker-border"
+    },
+    {
+      "upstreamPage": "marker",
+      "upstreamExample": "marker-icon",
+      "item": "marker",
+      "file": "base-marker-icon"
+    },
+    {
+      "upstreamPage": "marker",
+      "upstreamExample": "marker-link-button",
+      "item": "marker",
+      "file": "base-marker-link-button"
+    },
+    {
+      "upstreamPage": "menubar",
+      "upstreamExample": "menubar-demo",
+      "item": "menubar",
+      "file": "base-menubar-demo"
+    },
+    {
+      "upstreamPage": "menubar",
+      "upstreamExample": "menubar-checkbox",
+      "item": "menubar",
+      "file": "base-menubar-checkbox"
+    },
+    {
+      "upstreamPage": "menubar",
+      "upstreamExample": "menubar-radio",
+      "item": "menubar",
+      "file": "base-menubar-radio"
+    },
+    {
+      "upstreamPage": "menubar",
+      "upstreamExample": "menubar-submenu",
+      "item": "menubar",
+      "file": "base-menubar-submenu"
+    },
+    {
+      "upstreamPage": "menubar",
+      "upstreamExample": "menubar-icons",
+      "item": "menubar",
+      "file": "base-menubar-icons"
+    },
+    {
+      "upstreamPage": "menubar",
+      "upstreamExample": "menubar-rtl",
+      "item": "menubar",
+      "file": "base-menubar-rtl"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-demo",
+      "item": "message-scroller",
+      "file": "base-message-scroller-demo"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-anchoring",
+      "item": "message-scroller",
+      "file": "base-message-scroller-anchoring"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-group-chat",
+      "item": "message-scroller",
+      "file": "base-message-scroller-group-chat"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-previous-context",
+      "item": "message-scroller",
+      "file": "base-message-scroller-previous-context"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-streaming",
+      "item": "message-scroller",
+      "file": "base-message-scroller-streaming"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-opening-position",
+      "item": "message-scroller",
+      "file": "base-message-scroller-opening-position"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-load-history",
+      "item": "message-scroller",
+      "file": "base-message-scroller-load-history"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-animation",
+      "item": "message-scroller",
+      "file": "base-message-scroller-animation"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-commands",
+      "item": "message-scroller",
+      "file": "base-message-scroller-commands"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-visibility",
+      "item": "message-scroller",
+      "file": "base-message-scroller-visibility"
+    },
+    {
+      "upstreamPage": "message-scroller",
+      "upstreamExample": "message-scroller-scrollable",
+      "item": "message-scroller",
+      "file": "base-message-scroller-scrollable"
+    },
+    {
+      "upstreamPage": "message",
+      "upstreamExample": "message-demo",
+      "item": "message",
+      "file": "base-message-demo"
+    },
+    {
+      "upstreamPage": "message",
+      "upstreamExample": "message-avatar",
+      "item": "message",
+      "file": "base-message-avatar"
+    },
+    {
+      "upstreamPage": "message",
+      "upstreamExample": "message-group",
+      "item": "message",
+      "file": "base-message-group"
+    },
+    {
+      "upstreamPage": "message",
+      "upstreamExample": "message-header-footer",
+      "item": "message",
+      "file": "base-message-header-footer"
+    },
+    {
+      "upstreamPage": "message",
+      "upstreamExample": "message-actions",
+      "item": "message",
+      "file": "base-message-actions"
+    },
+    {
+      "upstreamPage": "message",
+      "upstreamExample": "message-attachment",
+      "item": "message",
+      "file": "base-message-attachment"
+    },
+    {
+      "upstreamPage": "navigation-menu",
+      "upstreamExample": "navigation-menu-demo",
+      "item": "navigation-menu",
+      "file": "base-navigation-menu-demo"
+    },
+    {
+      "upstreamPage": "navigation-menu",
+      "upstreamExample": "navigation-menu-rtl",
+      "item": "navigation-menu",
+      "file": "base-navigation-menu-rtl"
+    },
+    {
+      "upstreamPage": "pagination",
+      "upstreamExample": "pagination-demo",
+      "item": "pagination",
+      "file": "base-pagination-demo"
+    },
+    {
+      "upstreamPage": "pagination",
+      "upstreamExample": "pagination-simple",
+      "item": "pagination",
+      "file": "base-pagination-simple"
+    },
+    {
+      "upstreamPage": "pagination",
+      "upstreamExample": "pagination-icons-only",
+      "item": "pagination",
+      "file": "base-pagination-icons-only"
+    },
+    {
+      "upstreamPage": "pagination",
+      "upstreamExample": "pagination-rtl",
+      "item": "pagination",
+      "file": "base-pagination-rtl"
+    },
+    {
+      "upstreamPage": "popover",
+      "upstreamExample": "popover-demo",
+      "item": "popover",
+      "file": "base-popover-demo"
+    },
+    {
+      "upstreamPage": "popover",
+      "upstreamExample": "popover-basic",
+      "item": "popover",
+      "file": "base-popover-basic"
+    },
+    {
+      "upstreamPage": "popover",
+      "upstreamExample": "popover-alignments",
+      "item": "popover",
+      "file": "base-popover-alignments"
+    },
+    {
+      "upstreamPage": "popover",
+      "upstreamExample": "popover-form",
+      "item": "popover",
+      "file": "base-popover-form"
+    },
+    {
+      "upstreamPage": "popover",
+      "upstreamExample": "popover-rtl",
+      "item": "popover",
+      "file": "base-popover-rtl"
+    },
+    {
+      "upstreamPage": "progress",
+      "upstreamExample": "progress-demo",
+      "item": "progress",
+      "file": "base-progress-demo"
+    },
+    {
+      "upstreamPage": "progress",
+      "upstreamExample": "progress-label",
+      "item": "progress",
+      "file": "base-progress-label"
+    },
+    {
+      "upstreamPage": "progress",
+      "upstreamExample": "progress-controlled",
+      "item": "progress",
+      "file": "base-progress-controlled"
+    },
+    {
+      "upstreamPage": "progress",
+      "upstreamExample": "progress-rtl",
+      "item": "progress",
+      "file": "base-progress-rtl"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-demo",
+      "item": "questionnaire",
+      "file": "base-questionnaire-demo"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-multiple",
+      "item": "questionnaire",
+      "file": "base-questionnaire-multiple"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-freeform",
+      "item": "questionnaire",
+      "file": "base-questionnaire-freeform"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-skip",
+      "item": "questionnaire",
+      "file": "base-questionnaire-skip"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-shortcuts",
+      "item": "questionnaire",
+      "file": "base-questionnaire-shortcuts"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-validation",
+      "item": "questionnaire",
+      "file": "base-questionnaire-validation"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-controlled",
+      "item": "questionnaire",
+      "file": "base-questionnaire-controlled"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-resume",
+      "item": "questionnaire",
+      "file": "base-questionnaire-resume"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-conditional",
+      "item": "questionnaire",
+      "file": "base-questionnaire-conditional"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-navigation-state",
+      "item": "questionnaire",
+      "file": "base-questionnaire-navigation-state"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-progress",
+      "item": "questionnaire",
+      "file": "base-questionnaire-progress"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-animated",
+      "item": "questionnaire",
+      "file": "base-questionnaire-animated"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-card",
+      "item": "questionnaire",
+      "file": "base-questionnaire-card"
+    },
+    {
+      "upstreamPage": "questionnaire",
+      "upstreamExample": "questionnaire-dialog",
+      "item": "questionnaire",
+      "file": "base-questionnaire-dialog"
+    },
+    {
+      "upstreamPage": "radio-group",
+      "upstreamExample": "radio-group-demo",
+      "item": "radio-group",
+      "file": "base-radio-group-demo"
+    },
+    {
+      "upstreamPage": "radio-group",
+      "upstreamExample": "radio-group-description",
+      "item": "radio-group",
+      "file": "base-radio-group-description"
+    },
+    {
+      "upstreamPage": "radio-group",
+      "upstreamExample": "radio-group-choice-card",
+      "item": "radio-group",
+      "file": "base-radio-group-choice-card"
+    },
+    {
+      "upstreamPage": "radio-group",
+      "upstreamExample": "radio-group-fieldset",
+      "item": "radio-group",
+      "file": "base-radio-group-fieldset"
+    },
+    {
+      "upstreamPage": "radio-group",
+      "upstreamExample": "radio-group-disabled",
+      "item": "radio-group",
+      "file": "base-radio-group-disabled"
+    },
+    {
+      "upstreamPage": "radio-group",
+      "upstreamExample": "radio-group-invalid",
+      "item": "radio-group",
+      "file": "base-radio-group-invalid"
+    },
+    {
+      "upstreamPage": "radio-group",
+      "upstreamExample": "radio-group-rtl",
+      "item": "radio-group",
+      "file": "base-radio-group-rtl"
+    },
+    {
+      "upstreamPage": "resizable",
+      "upstreamExample": "resizable-demo",
+      "item": "resizable",
+      "file": "base-resizable-demo"
+    },
+    {
+      "upstreamPage": "resizable",
+      "upstreamExample": "resizable-vertical",
+      "item": "resizable",
+      "file": "base-resizable-vertical"
+    },
+    {
+      "upstreamPage": "resizable",
+      "upstreamExample": "resizable-handle",
+      "item": "resizable",
+      "file": "base-resizable-handle"
+    },
+    {
+      "upstreamPage": "resizable",
+      "upstreamExample": "resizable-rtl",
+      "item": "resizable",
+      "file": "base-resizable-rtl"
+    },
+    {
+      "upstreamPage": "scroll-area",
+      "upstreamExample": "scroll-area-demo",
+      "item": "scroll-area",
+      "file": "base-scroll-area-demo"
+    },
+    {
+      "upstreamPage": "scroll-area",
+      "upstreamExample": "scroll-area-horizontal-demo",
+      "item": "scroll-area",
+      "file": "base-scroll-area-horizontal-demo"
+    },
+    {
+      "upstreamPage": "scroll-area",
+      "upstreamExample": "scroll-area-rtl",
+      "item": "scroll-area",
+      "file": "base-scroll-area-rtl"
+    },
+    {
+      "upstreamPage": "select",
+      "upstreamExample": "select-demo",
+      "item": "select",
+      "file": "base-select-demo"
+    },
+    {
+      "upstreamPage": "select",
+      "upstreamExample": "select-align-item",
+      "item": "select",
+      "file": "base-select-align-item"
+    },
+    {
+      "upstreamPage": "select",
+      "upstreamExample": "select-groups",
+      "item": "select",
+      "file": "base-select-groups"
+    },
+    {
+      "upstreamPage": "select",
+      "upstreamExample": "select-scrollable",
+      "item": "select",
+      "file": "base-select-scrollable"
+    },
+    {
+      "upstreamPage": "select",
+      "upstreamExample": "select-disabled",
+      "item": "select",
+      "file": "base-select-disabled"
+    },
+    {
+      "upstreamPage": "select",
+      "upstreamExample": "select-invalid",
+      "item": "select",
+      "file": "base-select-invalid"
+    },
+    {
+      "upstreamPage": "select",
+      "upstreamExample": "select-rtl",
+      "item": "select",
+      "file": "base-select-rtl"
+    },
+    {
+      "upstreamPage": "separator",
+      "upstreamExample": "separator-demo",
+      "item": "separator",
+      "file": "base-separator-demo"
+    },
+    {
+      "upstreamPage": "separator",
+      "upstreamExample": "separator-vertical",
+      "item": "separator",
+      "file": "base-separator-vertical"
+    },
+    {
+      "upstreamPage": "separator",
+      "upstreamExample": "separator-menu",
+      "item": "separator",
+      "file": "base-separator-menu"
+    },
+    {
+      "upstreamPage": "separator",
+      "upstreamExample": "separator-list",
+      "item": "separator",
+      "file": "base-separator-list"
+    },
+    {
+      "upstreamPage": "separator",
+      "upstreamExample": "separator-rtl",
+      "item": "separator",
+      "file": "base-separator-rtl"
+    },
+    {
+      "upstreamPage": "sheet",
+      "upstreamExample": "sheet-demo",
+      "item": "sheet",
+      "file": "base-sheet-demo"
+    },
+    {
+      "upstreamPage": "sheet",
+      "upstreamExample": "sheet-side",
+      "item": "sheet",
+      "file": "base-sheet-side"
+    },
+    {
+      "upstreamPage": "sheet",
+      "upstreamExample": "sheet-no-close-button",
+      "item": "sheet",
+      "file": "base-sheet-no-close-button"
+    },
+    {
+      "upstreamPage": "sheet",
+      "upstreamExample": "sheet-rtl",
+      "item": "sheet",
+      "file": "base-sheet-rtl"
+    },
+    {
+      "upstreamPage": "sidebar",
+      "upstreamExample": "sidebar-demo",
+      "item": "sidebar",
+      "file": "base-sidebar-demo"
+    },
+    {
+      "upstreamPage": "skeleton",
+      "upstreamExample": "skeleton-demo",
+      "item": "skeleton",
+      "file": "base-skeleton-demo"
+    },
+    {
+      "upstreamPage": "skeleton",
+      "upstreamExample": "skeleton-avatar",
+      "item": "skeleton",
+      "file": "base-skeleton-avatar"
+    },
+    {
+      "upstreamPage": "skeleton",
+      "upstreamExample": "skeleton-card",
+      "item": "skeleton",
+      "file": "base-skeleton-card"
+    },
+    {
+      "upstreamPage": "skeleton",
+      "upstreamExample": "skeleton-text",
+      "item": "skeleton",
+      "file": "base-skeleton-text"
+    },
+    {
+      "upstreamPage": "skeleton",
+      "upstreamExample": "skeleton-form",
+      "item": "skeleton",
+      "file": "base-skeleton-form"
+    },
+    {
+      "upstreamPage": "skeleton",
+      "upstreamExample": "skeleton-table",
+      "item": "skeleton",
+      "file": "base-skeleton-table"
+    },
+    {
+      "upstreamPage": "skeleton",
+      "upstreamExample": "skeleton-rtl",
+      "item": "skeleton",
+      "file": "base-skeleton-rtl"
+    },
+    {
+      "upstreamPage": "slider",
+      "upstreamExample": "slider-demo",
+      "item": "slider",
+      "file": "base-slider-demo"
+    },
+    {
+      "upstreamPage": "slider",
+      "upstreamExample": "slider-range",
+      "item": "slider",
+      "file": "base-slider-range"
+    },
+    {
+      "upstreamPage": "slider",
+      "upstreamExample": "slider-multiple",
+      "item": "slider",
+      "file": "base-slider-multiple"
+    },
+    {
+      "upstreamPage": "slider",
+      "upstreamExample": "slider-vertical",
+      "item": "slider",
+      "file": "base-slider-vertical"
+    },
+    {
+      "upstreamPage": "slider",
+      "upstreamExample": "slider-controlled",
+      "item": "slider",
+      "file": "base-slider-controlled"
+    },
+    {
+      "upstreamPage": "slider",
+      "upstreamExample": "slider-disabled",
+      "item": "slider",
+      "file": "base-slider-disabled"
+    },
+    {
+      "upstreamPage": "slider",
+      "upstreamExample": "slider-rtl",
+      "item": "slider",
+      "file": "base-slider-rtl"
+    },
+    {
+      "upstreamPage": "spinner",
+      "upstreamExample": "spinner-demo",
+      "item": "spinner",
+      "file": "base-spinner-demo"
+    },
+    {
+      "upstreamPage": "spinner",
+      "upstreamExample": "spinner-custom",
+      "item": "spinner",
+      "file": "base-spinner-custom"
+    },
+    {
+      "upstreamPage": "spinner",
+      "upstreamExample": "spinner-size",
+      "item": "spinner",
+      "file": "base-spinner-size"
+    },
+    {
+      "upstreamPage": "spinner",
+      "upstreamExample": "spinner-button",
+      "item": "spinner",
+      "file": "base-spinner-button"
+    },
+    {
+      "upstreamPage": "spinner",
+      "upstreamExample": "spinner-badge",
+      "item": "spinner",
+      "file": "base-spinner-badge"
+    },
+    {
+      "upstreamPage": "spinner",
+      "upstreamExample": "spinner-input-group",
+      "item": "spinner",
+      "file": "base-spinner-input-group"
+    },
+    {
+      "upstreamPage": "spinner",
+      "upstreamExample": "spinner-empty",
+      "item": "spinner",
+      "file": "base-spinner-empty"
+    },
+    {
+      "upstreamPage": "spinner",
+      "upstreamExample": "spinner-rtl",
+      "item": "spinner",
+      "file": "base-spinner-rtl"
+    },
+    {
+      "upstreamPage": "switch",
+      "upstreamExample": "switch-demo",
+      "item": "switch",
+      "file": "base-switch-demo"
+    },
+    {
+      "upstreamPage": "switch",
+      "upstreamExample": "switch-description",
+      "item": "switch",
+      "file": "base-switch-description"
+    },
+    {
+      "upstreamPage": "switch",
+      "upstreamExample": "switch-choice-card",
+      "item": "switch",
+      "file": "base-switch-choice-card"
+    },
+    {
+      "upstreamPage": "switch",
+      "upstreamExample": "switch-disabled",
+      "item": "switch",
+      "file": "base-switch-disabled"
+    },
+    {
+      "upstreamPage": "switch",
+      "upstreamExample": "switch-invalid",
+      "item": "switch",
+      "file": "base-switch-invalid"
+    },
+    {
+      "upstreamPage": "switch",
+      "upstreamExample": "switch-sizes",
+      "item": "switch",
+      "file": "base-switch-sizes"
+    },
+    {
+      "upstreamPage": "switch",
+      "upstreamExample": "switch-rtl",
+      "item": "switch",
+      "file": "base-switch-rtl"
+    },
+    {
+      "upstreamPage": "table",
+      "upstreamExample": "table-demo",
+      "item": "table",
+      "file": "base-table-demo"
+    },
+    {
+      "upstreamPage": "table",
+      "upstreamExample": "table-footer",
+      "item": "table",
+      "file": "base-table-footer"
+    },
+    {
+      "upstreamPage": "table",
+      "upstreamExample": "table-actions",
+      "item": "table",
+      "file": "base-table-actions"
+    },
+    {
+      "upstreamPage": "table",
+      "upstreamExample": "table-rtl",
+      "item": "table",
+      "file": "base-table-rtl"
+    },
+    {
+      "upstreamPage": "tabs",
+      "upstreamExample": "tabs-demo",
+      "item": "tabs",
+      "file": "base-tabs-demo"
+    },
+    {
+      "upstreamPage": "tabs",
+      "upstreamExample": "tabs-line",
+      "item": "tabs",
+      "file": "base-tabs-line"
+    },
+    {
+      "upstreamPage": "tabs",
+      "upstreamExample": "tabs-vertical",
+      "item": "tabs",
+      "file": "base-tabs-vertical"
+    },
+    {
+      "upstreamPage": "tabs",
+      "upstreamExample": "tabs-disabled",
+      "item": "tabs",
+      "file": "base-tabs-disabled"
+    },
+    {
+      "upstreamPage": "tabs",
+      "upstreamExample": "tabs-icons",
+      "item": "tabs",
+      "file": "base-tabs-icons"
+    },
+    {
+      "upstreamPage": "tabs",
+      "upstreamExample": "tabs-rtl",
+      "item": "tabs",
+      "file": "base-tabs-rtl"
+    },
+    {
+      "upstreamPage": "textarea",
+      "upstreamExample": "textarea-demo",
+      "item": "textarea",
+      "file": "base-textarea-demo"
+    },
+    {
+      "upstreamPage": "textarea",
+      "upstreamExample": "textarea-field",
+      "item": "textarea",
+      "file": "base-textarea-field"
+    },
+    {
+      "upstreamPage": "textarea",
+      "upstreamExample": "textarea-disabled",
+      "item": "textarea",
+      "file": "base-textarea-disabled"
+    },
+    {
+      "upstreamPage": "textarea",
+      "upstreamExample": "textarea-invalid",
+      "item": "textarea",
+      "file": "base-textarea-invalid"
+    },
+    {
+      "upstreamPage": "textarea",
+      "upstreamExample": "textarea-button",
+      "item": "textarea",
+      "file": "base-textarea-button"
+    },
+    {
+      "upstreamPage": "textarea",
+      "upstreamExample": "textarea-rtl",
+      "item": "textarea",
+      "file": "base-textarea-rtl"
+    },
+    {
+      "upstreamPage": "toast",
+      "upstreamExample": "toast-demo",
+      "item": "toast",
+      "file": "base-toast-demo"
+    },
+    {
+      "upstreamPage": "toast",
+      "upstreamExample": "toast-types",
+      "item": "toast",
+      "file": "base-toast-types"
+    },
+    {
+      "upstreamPage": "toast",
+      "upstreamExample": "toast-promise",
+      "item": "toast",
+      "file": "base-toast-promise"
+    },
+    {
+      "upstreamPage": "toggle-group",
+      "upstreamExample": "toggle-group-demo",
+      "item": "toggle-group",
+      "file": "base-toggle-group-demo"
+    },
+    {
+      "upstreamPage": "toggle-group",
+      "upstreamExample": "toggle-group-outline",
+      "item": "toggle-group",
+      "file": "base-toggle-group-outline"
+    },
+    {
+      "upstreamPage": "toggle-group",
+      "upstreamExample": "toggle-group-sizes",
+      "item": "toggle-group",
+      "file": "base-toggle-group-sizes"
+    },
+    {
+      "upstreamPage": "toggle-group",
+      "upstreamExample": "toggle-group-spacing",
+      "item": "toggle-group",
+      "file": "base-toggle-group-spacing"
+    },
+    {
+      "upstreamPage": "toggle-group",
+      "upstreamExample": "toggle-group-vertical",
+      "item": "toggle-group",
+      "file": "base-toggle-group-vertical"
+    },
+    {
+      "upstreamPage": "toggle-group",
+      "upstreamExample": "toggle-group-disabled",
+      "item": "toggle-group",
+      "file": "base-toggle-group-disabled"
+    },
+    {
+      "upstreamPage": "toggle-group",
+      "upstreamExample": "toggle-group-font-weight-selector",
+      "item": "toggle-group",
+      "file": "base-toggle-group-font-weight-selector"
+    },
+    {
+      "upstreamPage": "toggle-group",
+      "upstreamExample": "toggle-group-rtl",
+      "item": "toggle-group",
+      "file": "base-toggle-group-rtl"
+    },
+    {
+      "upstreamPage": "toggle",
+      "upstreamExample": "toggle-demo",
+      "item": "toggle",
+      "file": "base-toggle-demo"
+    },
+    {
+      "upstreamPage": "toggle",
+      "upstreamExample": "toggle-outline",
+      "item": "toggle",
+      "file": "base-toggle-outline"
+    },
+    {
+      "upstreamPage": "toggle",
+      "upstreamExample": "toggle-text",
+      "item": "toggle",
+      "file": "base-toggle-text"
+    },
+    {
+      "upstreamPage": "toggle",
+      "upstreamExample": "toggle-sizes",
+      "item": "toggle",
+      "file": "base-toggle-sizes"
+    },
+    {
+      "upstreamPage": "toggle",
+      "upstreamExample": "toggle-disabled",
+      "item": "toggle",
+      "file": "base-toggle-disabled"
+    },
+    {
+      "upstreamPage": "toggle",
+      "upstreamExample": "toggle-rtl",
+      "item": "toggle",
+      "file": "base-toggle-rtl"
+    },
+    {
+      "upstreamPage": "tooltip",
+      "upstreamExample": "tooltip-demo",
+      "item": "tooltip",
+      "file": "base-tooltip-demo"
+    },
+    {
+      "upstreamPage": "tooltip",
+      "upstreamExample": "tooltip-sides",
+      "item": "tooltip",
+      "file": "base-tooltip-sides"
+    },
+    {
+      "upstreamPage": "tooltip",
+      "upstreamExample": "tooltip-keyboard",
+      "item": "tooltip",
+      "file": "base-tooltip-keyboard"
+    },
+    {
+      "upstreamPage": "tooltip",
+      "upstreamExample": "tooltip-disabled",
+      "item": "tooltip",
+      "file": "base-tooltip-disabled"
+    },
+    {
+      "upstreamPage": "tooltip",
+      "upstreamExample": "tooltip-rtl",
+      "item": "tooltip",
+      "file": "base-tooltip-rtl"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-demo",
+      "item": "typography",
+      "file": "base-typography-demo"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-h1",
+      "item": "typography",
+      "file": "base-typography-h1"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-h2",
+      "item": "typography",
+      "file": "base-typography-h2"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-h3",
+      "item": "typography",
+      "file": "base-typography-h3"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-h4",
+      "item": "typography",
+      "file": "base-typography-h4"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-p",
+      "item": "typography",
+      "file": "base-typography-p"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-blockquote",
+      "item": "typography",
+      "file": "base-typography-blockquote"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-table",
+      "item": "typography",
+      "file": "base-typography-table"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-list",
+      "item": "typography",
+      "file": "base-typography-list"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-inline-code",
+      "item": "typography",
+      "file": "base-typography-inline-code"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-lead",
+      "item": "typography",
+      "file": "base-typography-lead"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-large",
+      "item": "typography",
+      "file": "base-typography-large"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-small",
+      "item": "typography",
+      "file": "base-typography-small"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-muted",
+      "item": "typography",
+      "file": "base-typography-muted"
+    },
+    {
+      "upstreamPage": "typography",
+      "upstreamExample": "typography-rtl",
+      "item": "typography",
+      "file": "base-typography-rtl"
+    }
+  ],
+  "usageGuides": [
+    {
+      "page": "accordion",
+      "sections": 7,
+      "codeBlocks": 3
+    },
+    {
+      "page": "alert-dialog",
+      "sections": 7,
+      "codeBlocks": 3
+    },
+    {
+      "page": "alert",
+      "sections": 6,
+      "codeBlocks": 3
+    },
+    {
+      "page": "aspect-ratio",
+      "sections": 3,
+      "codeBlocks": 2
+    },
+    {
+      "page": "attachment",
+      "sections": 10,
+      "codeBlocks": 7
+    },
+    {
+      "page": "avatar",
+      "sections": 10,
+      "codeBlocks": 5
+    },
+    {
+      "page": "badge",
+      "sections": 6,
+      "codeBlocks": 2
+    },
+    {
+      "page": "breadcrumb",
+      "sections": 7,
+      "codeBlocks": 3
+    },
+    {
+      "page": "bubble",
+      "sections": 13,
+      "codeBlocks": 9
+    },
+    {
+      "page": "button-group",
+      "sections": 14,
+      "codeBlocks": 4
+    },
+    {
+      "page": "button",
+      "sections": 8,
+      "codeBlocks": 3
+    },
+    {
+      "page": "calendar",
+      "sections": 10,
+      "codeBlocks": 6
+    },
+    {
+      "page": "card",
+      "sections": 5,
+      "codeBlocks": 3
+    },
+    {
+      "page": "carousel",
+      "sections": 10,
+      "codeBlocks": 12
+    },
+    {
+      "page": "chart",
+      "sections": 9,
+      "codeBlocks": 27
+    },
+    {
+      "page": "checkbox",
+      "sections": 7,
+      "codeBlocks": 3
+    },
+    {
+      "page": "collapsible",
+      "sections": 5,
+      "codeBlocks": 4
+    },
+    {
+      "page": "combobox",
+      "sections": 14,
+      "codeBlocks": 7
+    },
+    {
+      "page": "command",
+      "sections": 6,
+      "codeBlocks": 3
+    },
+    {
+      "page": "context-menu",
+      "sections": 11,
+      "codeBlocks": 3
+    },
+    {
+      "page": "data-table",
+      "sections": 13,
+      "codeBlocks": 19
+    },
+    {
+      "page": "date-picker",
+      "sections": 8,
+      "codeBlocks": 2
+    },
+    {
+      "page": "dialog",
+      "sections": 6,
+      "codeBlocks": 3
+    },
+    {
+      "page": "direction",
+      "sections": 3,
+      "codeBlocks": 3
+    },
+    {
+      "page": "drawer",
+      "sections": 12,
+      "codeBlocks": 17
+    },
+    {
+      "page": "dropdown-menu",
+      "sections": 13,
+      "codeBlocks": 3
+    },
+    {
+      "page": "empty",
+      "sections": 7,
+      "codeBlocks": 3
+    },
+    {
+      "page": "field",
+      "sections": 9,
+      "codeBlocks": 7
+    },
+    {
+      "page": "hover-card",
+      "sections": 4,
+      "codeBlocks": 5
+    },
+    {
+      "page": "input-group",
+      "sections": 4,
+      "codeBlocks": 3
+    },
+    {
+      "page": "input-otp",
+      "sections": 10,
+      "codeBlocks": 4
+    },
+    {
+      "page": "input",
+      "sections": 13,
+      "codeBlocks": 2
+    },
+    {
+      "page": "item",
+      "sections": 12,
+      "codeBlocks": 4
+    },
+    {
+      "page": "kbd",
+      "sections": 6,
+      "codeBlocks": 3
+    },
+    {
+      "page": "label",
+      "sections": 3,
+      "codeBlocks": 3
+    },
+    {
+      "page": "marker",
+      "sections": 12,
+      "codeBlocks": 9
+    },
+    {
+      "page": "menubar",
+      "sections": 5,
+      "codeBlocks": 3
+    },
+    {
+      "page": "message-scroller",
+      "sections": 9,
+      "codeBlocks": 19
+    },
+    {
+      "page": "message",
+      "sections": 9,
+      "codeBlocks": 6
+    },
+    {
+      "page": "navigation-menu",
+      "sections": 3,
+      "codeBlocks": 4
+    },
+    {
+      "page": "pagination",
+      "sections": 6,
+      "codeBlocks": 6
+    },
+    {
+      "page": "popover",
+      "sections": 5,
+      "codeBlocks": 3
+    },
+    {
+      "page": "progress",
+      "sections": 4,
+      "codeBlocks": 4
+    },
+    {
+      "page": "questionnaire",
+      "sections": 18,
+      "codeBlocks": 5
+    },
+    {
+      "page": "radio-group",
+      "sections": 7,
+      "codeBlocks": 3
+    },
+    {
+      "page": "resizable",
+      "sections": 5,
+      "codeBlocks": 3
+    },
+    {
+      "page": "scroll-area",
+      "sections": 3,
+      "codeBlocks": 3
+    },
+    {
+      "page": "select",
+      "sections": 6,
+      "codeBlocks": 4
+    },
+    {
+      "page": "separator",
+      "sections": 4,
+      "codeBlocks": 2
+    },
+    {
+      "page": "sheet",
+      "sections": 4,
+      "codeBlocks": 3
+    },
+    {
+      "page": "sidebar",
+      "sections": 23,
+      "codeBlocks": 32
+    },
+    {
+      "page": "skeleton",
+      "sections": 1,
+      "codeBlocks": 2
+    },
+    {
+      "page": "slider",
+      "sections": 5,
+      "codeBlocks": 2
+    },
+    {
+      "page": "spinner",
+      "sections": 5,
+      "codeBlocks": 3
+    },
+    {
+      "page": "switch",
+      "sections": 5,
+      "codeBlocks": 2
+    },
+    {
+      "page": "table",
+      "sections": 5,
+      "codeBlocks": 3
+    },
+    {
+      "page": "tabs",
+      "sections": 4,
+      "codeBlocks": 3
+    },
+    {
+      "page": "textarea",
+      "sections": 5,
+      "codeBlocks": 2
+    },
+    {
+      "page": "toast",
+      "sections": 4,
+      "codeBlocks": 3
+    },
+    {
+      "page": "toggle-group",
+      "sections": 7,
+      "codeBlocks": 3
+    },
+    {
+      "page": "toggle",
+      "sections": 3,
+      "codeBlocks": 2
+    },
+    {
+      "page": "tooltip",
+      "sections": 4,
+      "codeBlocks": 3
+    },
+    {
+      "page": "typography",
+      "sections": 1,
+      "codeBlocks": 0
+    }
+  ],
+  "sources": {
+    "base-accordion-basic": "4acb3350d9d4697b75dbfbc44b3271f24599fa70d26aaa76303db7be0d54877d",
+    "base-accordion-borders": "099ea54133893228f8519551b3b9bbfe16c54ecbeb1a021861ee9f5ad01ab81f",
+    "base-accordion-card": "59c59081bb826d380bd872a125fe09b5c966c773d5a6e9a83a386af8d8de4ef3",
+    "base-accordion-demo": "4fc15bf4ff11cb36e6be57859ae6f16d413ac8129f2008e878b93143bcd8d0c0",
+    "base-accordion-disabled": "fbf5f68d18545e85ded4cd5185b0f1861b2f29408e1bd46ba37e59eea1defec8",
+    "base-accordion-multiple": "b53b7648bc0411940806bf06d36a6e02d22097f464b55796486d7533814f1b0b",
+    "base-accordion-rtl": "75d54122a37cdd0d5eecac9be8d8082fc1328a765bf9eb2aa6c2c7b29001c8ef",
+    "base-alert-action": "414852c7cef78cc7d4d11966e6bda0f6f7f13a5e5d9c8938cfd1c859d1b64941",
+    "base-alert-basic": "f0ce1c40e559b56468800d5befe496fb7464f93baa77ffd888a90ef9bf0059a7",
+    "base-alert-colors": "7ea02336a7704f5749d1b7866c41be908b6e7fe3f4cfa8c8b65211ead152597a",
+    "base-alert-demo": "8c7aaef1cd2f947c560c7006fabc48b30d010a7fc6791183e48077715eba9590",
+    "base-alert-destructive": "a8a185d30acc2be06a9de663aad8b2a3240b6cc77bc015309d742a61fe40f751",
+    "base-alert-dialog-basic": "5e04681b17c48a0d19b83c71877eb9b367c0996c65ef88e167ac43b21270561c",
+    "base-alert-dialog-demo": "bd736ffbb1b6c0e9ce744c6865f9759cd2465347c6389c7569785805bd799605",
+    "base-alert-dialog-destructive": "fbaae8bd50506ec0ffe297a3b3b5fbe5e09878a087cf4442d64b0d6895ccc0e7",
+    "base-alert-dialog-media": "3a9830a67ea35853952665d511518b36cc1e125a8f8076e7ca471046a9455d43",
+    "base-alert-dialog-rtl": "13aaadbb7e48871332daafbcce5b05a191cd3351cfaa8173e8e77a59b5e1840f",
+    "base-alert-dialog-small": "108425a87400667218fef3b3ad6c711075a2f951855a445362b60c30068c176d",
+    "base-alert-dialog-small-media": "3bb3c6ba83573188f684ab78a5100b75b82cea0397e3887d76b18d7067b305fe",
+    "base-alert-rtl": "f0a24187db12d18ba427d97772d94ac2702a5cfba88d3ad96bc7d8a9730cb7be",
+    "base-aspect-ratio-demo": "0f999a39de1409e009667f0f240069b3d1b7d410b96ff480ac7a50c1bb0de018",
+    "base-aspect-ratio-portrait": "15fb01a4040b1715fdbe981578d15cbdf2081295e093dc76b923e698a3c81d4e",
+    "base-aspect-ratio-rtl": "e3854f500ee23adda75624b180d49f6a4040bfa8a9843c488d194f095a2c6778",
+    "base-aspect-ratio-square": "8feaa9dace4968fa6f6620bde2c4a6f046562edc6d48de4e210aae84b88ef63a",
+    "base-attachment-demo": "5ca7e462ccb07b438adb311a51ddef01a7ed885d7b65f1bbca6335609291fb5a",
+    "base-attachment-group": "698cf7ff7bd21a47913af5ec6b61eba45017434cd88ff8110cc569b7f84d268f",
+    "base-attachment-image": "6aeb9e45219e2fb17042f645dc73ad32e1dbd936e7591303a77f18965a895b00",
+    "base-attachment-sizes": "c933b9021821dc7986fa9175ace7fe287ce7135df22cdd294448bd078e811312",
+    "base-attachment-states": "76887af3e0f69241efbac0485987db82d074fd2dd51e19f3d6abcec44413e148",
+    "base-attachment-trigger": "1da991a023ccf5ddafbfda9b5dc64873b8f00c270559a6ee4ee741583575a7a6",
+    "base-avatar-badge": "e0379b48ea132f7ff989f01fcbc305f8ad1e8136e7fd979d4ad42c909c31a54b",
+    "base-avatar-badge-icon": "5138d85196ec18475468ca7b386fab3c6dac3750259bbab6befa93b041e9ffe8",
+    "base-avatar-basic": "065c41fa6ac66320c1e5ca7be0f5c55343b2fec75a294ee7b45ca7c39337936f",
+    "base-avatar-demo": "1387ffdf9f10e0994e912ed91ec6202f5868f1388837313040a13675e54aa2a4",
+    "base-avatar-dropdown": "e09a6e754be4aa06351cbaefc04d55d16d855bc0b45f867129ef66f694303da1",
+    "base-avatar-group": "030b65ffc2e91473a77b7edaf471eb9fa8a14ecdc0f77a7d03d94ad13256a6ce",
+    "base-avatar-group-count": "d66ff853adc5fd64b6f13deb946cf0406d2a42e3280df58b3a05b7e40c81716d",
+    "base-avatar-group-count-icon": "5dceae9a7b8233f42f6a2aaa028d60fa91759270909dfa1d5febe48b822ecf7e",
+    "base-avatar-rtl": "d2ad9f565efa937002ceeba7aa3ca0d65753017c3882db9adcd2e836ca76a27d",
+    "base-avatar-size": "c770ae43cc17b87ffdf5fefd267b11cb954ecc2ed1735eea9da71168550bcd5c",
+    "base-badge-colors": "b664df0d3a1e7acdd3b4c4d117a304d7373d971d48170ad9eb031c8f14e83cbf",
+    "base-badge-demo": "97976fed459b8325106d1261ed52573f05969302716d063efcbbe85a82fb733e",
+    "base-badge-icon": "5d6c425e5f6c353fb9a8dcc23740555219a09f1851841fa3ac69b76ce6eae30b",
+    "base-badge-link": "7db6359b649f030470539b24927dc358a620020fb2129f8d5bfdd6512013ffd2",
+    "base-badge-rtl": "c2c4339bd495ad93e639c40a073d2aff938b07e50dff972aebab779058b2a2f6",
+    "base-badge-spinner": "b8f0944080c15976354dfceb3f30acd53d8f1c3c743386fec8adb181ab977288",
+    "base-badge-variants": "7f7c4cc15a7c4691bfd802d0673a23566a34b0aea7570e6d3adf9b29bacce473",
+    "base-breadcrumb-basic": "da9614c271e2327aca3a80d551839b5117370634fb5949aa7841aa9a39b466d6",
+    "base-breadcrumb-demo": "c48691e51b39e608fb17fc89910ea7af87c0ca2a78a730abd494c340c27aa7e4",
+    "base-breadcrumb-dropdown": "1f97e66cb6e6bd08f6d39592f87d89000760296ab980696341acfe34a05d9e46",
+    "base-breadcrumb-ellipsis": "44ad0f9e5c9f1b046eab6233af43e1347df4b486bc31e28a1593e2a8ee226320",
+    "base-breadcrumb-link": "fb43ef86b8cc02571771868403758096667332c3ed048e34b513491a1db45d11",
+    "base-breadcrumb-rtl": "3da0384563d37860524583990635e03cf32edf33df8a8d6591c99a67682f71e1",
+    "base-breadcrumb-separator": "2b694c80b873948c8f28a9d65a95f5224476a2898add8dcb265b0dd859dcf312",
+    "base-bubble-alignment": "1be765224ddffc2e3b3ef761f746956f8f2a56914d542cc321ff0ec2b3822835",
+    "base-bubble-collapsible": "d5e0f61e4f0f3dcc5833c938b720fad093a9307882d1ff9013313ac4755ac07c",
+    "base-bubble-demo": "3e8600a47be7a3320e86941c2173fc7168d8d4785dc3173b0e0564c7114ef014",
+    "base-bubble-group-demo": "8780edb3ade90ca151dd14b2816b70a4dd2ecc6fac1e980bcc9d9b60706ca738",
+    "base-bubble-link-button": "8986f4369913ca73677b8cc17032de70defa751e2fffa979a92f06b1ad5ead6c",
+    "base-bubble-popover": "5ce3cb1389638b4b62b33213af921167ff95b6dc1fc0c0fc2f75d7021f1f0fb9",
+    "base-bubble-reactions": "1ef9a9e2e651a76c35946c0010b6630e20779a5de388aef93e626c26e4510c3b",
+    "base-bubble-tooltip": "0d39f79426cc4b33dd7754b7428db9ca64aff4e23989331203ffdeca2c0eb136",
+    "base-bubble-variants": "e81df1b52783edc924b84e2c3e08ea166a0387a759a861c44046c2c64c75b120",
+    "base-button-default": "39efce600f2536255c0b27ce6a90b1000b97f082e52fe77007d5633872051247",
+    "base-button-demo": "b68d96f3bc4b331d23c3f94ea231e8bae9efab13eccba6b8486fc0bc3a417fd9",
+    "base-button-destructive": "78ea0ff6dee5775c33f34aeba31d0f38e46ccc750cfeb6143ec55200ae8184f4",
+    "base-button-ghost": "892cf1d68d837a347f4bbd50516dfad9502b4b4c89ae991a98256bed6b420e31",
+    "base-button-group-demo": "5b68290df691d6ffeb4739d0828c7a6dbb81578504da1f8008dc45f67381a435",
+    "base-button-group-dropdown": "56540b03ce68177a652587497657bda73a443f79e105bb597c50c588f729586c",
+    "base-button-group-input": "342b53302e556ce115beff87a0b36f45920c056e0c8daa35201b5e55ccf4888f",
+    "base-button-group-input-group": "fb8d536093b5c14add7a39acb50acf39afeea8926900b8a82b1a83edeb35ea74",
+    "base-button-group-nested": "018dcd1dedcf8a33d1713b687f34767d56594186fafd6dd9c124ce28835fac5d",
+    "base-button-group-orientation": "5f01ce7f92c3adc9affab615087fa2e2850a4023af8abc1343e65a1ce59ceeac",
+    "base-button-group-popover": "49bd243130554cf8aba97c29b8c932fac6b664195a5a169ca1c1195c6b467768",
+    "base-button-group-rtl": "67f7b770eca885434410a4f8d2dea84c7cd38d424a5ebc78bcd1cdb431add595",
+    "base-button-group-select": "834948cf3c53db1e595130f53689b2a32986d1fde388a53854418e0f5a61df21",
+    "base-button-group-separator": "72fd2e0775d350b08645a5e2c36516e172cc7c5bff27604892a73714a134093c",
+    "base-button-group-size": "ca42b2d0368c92e07a6251e12e910944990d5eee5e8afb946d3f9acfda9f35f7",
+    "base-button-group-split": "d87e22d6393abdeefbad45021cc93f9da7fda454a1a7009de17d4b1f614c36cd",
+    "base-button-icon": "964e29dabdccdfe6ce145fa5dd97a58de4945af3551e50f29406ec84a3cf5ae6",
+    "base-button-link": "c9d73fdd405a6be5a0dcd1e6ee75464b6f8681a3b8934324326a92548ceee07c",
+    "base-button-outline": "6959a3e3223ef927eab274e90c92f5d7d8a2596efd872183f51db31f5c0af343",
+    "base-button-render": "baeba73e68463583a56060541a0962f28705a7051cbd148f1606e269bf2a2f5e",
+    "base-button-rounded": "dcb3bbdbfacd8079d3cfd1d536ae0256bfa500d57c9467e0dd5d7bb8aaaaa995",
+    "base-button-rtl": "652416023270bac8f68f0df8103f608fa6b1dc928a1cfcd89083090f1578407d",
+    "base-button-secondary": "db3cf9417f229ee1c6a4addffba822748982d470f901743190f902fda2d2431d",
+    "base-button-size": "55d7cab716f8436137ed21f6fc1a2c99ccfea9430a07790848aac5ccf5e4a4e2",
+    "base-button-spinner": "20d96f89e01cd7eaadcbd930f77db67d99fe1569474fe895b4fdb5e307883e63",
+    "base-button-with-icon": "6e7e8e627343fc80f5a1790837bc27163725bb8adc9d7112817f31d5669abf22",
+    "base-calendar-basic": "e08ce6c83f2359cc201558f25af1b5afda382cfb584097685cdfa4b467d23b1e",
+    "base-calendar-booked-dates": "144759fbdc8c782bd69b932cd7e01647041055cf9223b493c64e6291456e9077",
+    "base-calendar-caption": "5936b4f4380d90c300e9967bfd6229456c5cbe2498d68c8ae2d4d2f3cdc0071c",
+    "base-calendar-custom-days": "23e95bdb89e65e1fd949f6bfda79e37758e92215d8fcb0060049fcdbd5f17b3a",
+    "base-calendar-demo": "8ab5db8d4370b723a7bcc569b478464e08914398cd5b473af55ea1327eaff605",
+    "base-calendar-hijri": "1a865b3e98532069d7b175d0365dc1c2746264eeab3da99d409effc1132e0790",
+    "base-calendar-presets": "f1df16e4f875a34b757492ed73ae1068f25ca9a5e72e15f5f4bbb1b4f8e771aa",
+    "base-calendar-range": "384bb39e0368632edbc05e54107a73d04e61cde8ee97a8365cf3f01e679f4e20",
+    "base-calendar-rtl": "d21f8912fbc9b956384557f14fd926d136f03ba27810775a7cefbfa8fbf010c0",
+    "base-calendar-time": "b554d7cac67a6dd6b2f360a2d22b84ce8516606a25fe01ba0fade121e6128182",
+    "base-calendar-week-numbers": "c3e7f648540907194f2c0cc1f68a232cd6e635dee9862b6c4a2cefa96d73fb9e",
+    "base-card-demo": "164f5c1abb07381b513b549457379cf84927d9e210609cecfb3973a59a8f5ef2",
+    "base-card-edge-to-edge": "b2cbb03f41f6f5c01f748c6e505184f128a4cf32e37f84ac63aacab039fefb81",
+    "base-card-image": "3abb3f0477eee2d68c946663ca008aff44b485e4c9f428272777377536834c55",
+    "base-card-rtl": "ed8ccad61d4dcca3485268f17b2dd990d2d42e2a0392e1f23182c74e7d9a8170",
+    "base-card-small": "01b19c9d8bb34e8b2b50b0b6234985add20e2294b61c6331b0faba9836e4d15b",
+    "base-card-spacing": "f18bf0ddf15c5075b5d5c431384f9f44eff609ea1a527c758b404887f8474233",
+    "base-carousel-api": "b072fe502d5dcdb71777175881310cc649e5d1b7352d7b97db40f338bd4d1e22",
+    "base-carousel-demo": "d2e535320a222a722f87e3dc1706ce5584539cb9b92d4bd81c1b7015b1dcba5b",
+    "base-carousel-orientation": "571dcd4021e4b228bf8a17af18e2dc09f3f5e65106967a704d52712aabb0aa26",
+    "base-carousel-plugin": "f2bd3a74bb1fda70f4fc90fa1edbccaf82da031a848fadc784559511aef4702a",
+    "base-carousel-rtl": "70f20f6a5683d97cddef664538e718ceeb8c980cc339bd9b44ed0c1448174f2d",
+    "base-carousel-size": "5c7dd271c9cc058789b85b6171ece218fc6d7fbbbf1808f621cb38b42a83ece8",
+    "base-carousel-spacing": "f68c53e31ff5fe159404e54fd2e0ed7193a7e0f7f26a319c5e305bb70c410676",
+    "base-chart-demo": "9865fc46a43c626d46981efe5a371f9b93bde25cbec084a6a05c6180c1869595",
+    "base-chart-example": "7b73599ecbdaa27f21ae9200561a98fd67a1654adbd384e4b40a45ab045bb330",
+    "base-chart-example-axis": "93a5d94ebf9e2949bad373d5fd926a8d2c6d3f1084bf2076ccfe238bdb35b1c1",
+    "base-chart-example-grid": "7f2eb870e52ad017b3e9edbb437b3371585b1a08b0b0ace9d6d9164a71d0be9f",
+    "base-chart-example-legend": "928fad00f1e3f81617e44a2026390ecf0db02ce0ca2e23d52a5f79b96efe78aa",
+    "base-chart-example-tooltip": "d248b5b74d659ac91519716bcd1d07aa6c174d1fff7aae41b739dbee9e53eee3",
+    "base-chart-rtl": "90b2e5f1cf5925123260e65b141844820124951810f891679084f14de78afd1e",
+    "base-chart-tooltip": "2795ec62a081b42def1fe0e8decc951dd8fbc23582c486b3dd48ebd78b5cb016",
+    "base-checkbox-basic": "ef280a20dbd28a19b79716b5be292ffdd884336378837ac28ae08cadf0951931",
+    "base-checkbox-demo": "17b927a4114979cfcba43df0d41d738063dcb65bfbf4990d823c6e32618ef80e",
+    "base-checkbox-description": "3e8b85755d7cde85e86ecc2be454442871a52567ec6db1dfef492b125838945b",
+    "base-checkbox-disabled": "fd45134ecd97fd2dbc1d5994530569f822ceedc3893a7b41a3f9118774aabc25",
+    "base-checkbox-group": "2c1bb86e4b417d4ed047c973a988fb4b08b63117bc4bef9aa46edca9b40e4548",
+    "base-checkbox-invalid": "6283d5e5f3d2d2e2854027016e0beccfa2221422effe92097d449eb01869c550",
+    "base-checkbox-rtl": "d02320aa745f63b6b3ff9ad916ce80850e0ee48b07e982c6a15f27f2c1e33754",
+    "base-checkbox-table": "776d53ce29d8a030e8d06bced2db3dc6ea7172b9de3a97e5a53d8a9a7d49ea60",
+    "base-collapsible-basic": "2a7f22a444412815c470b9eeca4eb171f57d092a6725b21e812eb18c66b80f54",
+    "base-collapsible-demo": "90053558fcd355774cd1021e623e9c15cf81d18cefe5026b966422e59a536c1c",
+    "base-collapsible-file-tree": "afbd6d705da29432390d980c72fab919da5390a60872c3746e5e9472bf78e678",
+    "base-collapsible-rtl": "d03468089cdd036d4dcb9ed368fa515dcd5113feb1ffd603dd107f8c41b755e4",
+    "base-collapsible-settings": "6055028b11c01d8ce8573b456ff7b9c67294bcd1bb83efd351f693ab2be1d74f",
+    "base-combobox-auto-highlight": "7d4d5e2ff54d773da1f6638e099316c990de0e316d4402461a0e8008466a5f0a",
+    "base-combobox-basic": "331eaba2d27819d5672c5f2371b64a8ecc330987832180651d69b3d5cab19f8b",
+    "base-combobox-clear": "4a689f486c48dc20f1300e406713f558e1c7bc812be489d1981aac0c6bb4b280",
+    "base-combobox-custom": "f0c2e8916e5345d8c4c867fd624572ffdfbfbb1659403396cbe916deccb3e8e9",
+    "base-combobox-demo": "331eaba2d27819d5672c5f2371b64a8ecc330987832180651d69b3d5cab19f8b",
+    "base-combobox-disabled": "01bcfe26c597e968d0c501806d35d5270ee3b52496e5fd7ae2c4a6266b652ae9",
+    "base-combobox-groups": "2b99fae3ca4afe903beb0c28b4f4b5a405fd2ad653c42919977c0c7a549d851a",
+    "base-combobox-input-group": "93eb3c13df14b34e99341e4d691bc8fce6971a18d64be5cd2f8d9426637a9428",
+    "base-combobox-invalid": "e2974297ed670c0b404290562efbe265ee2f818d444df960f7dce191be5965b9",
+    "base-combobox-multiple": "691a21eab25e6a4a291776ca49ca31ae51dcc697d1ba6c14a2eed91586d03efa",
+    "base-combobox-popup": "9c561171f82969bddc1b64d20fab8cd942eda6fa3beb3be96d0a8d48f74a74c8",
+    "base-combobox-rtl": "8d7fee8989634a491527ac78701f2b2e68a4907d97bcad1e78edf520a2cc5617",
+    "base-command-basic": "19657606dcd5ab894172e15c73f6d3060b3faa562d8820cb91fee32967747840",
+    "base-command-demo": "32508223c231de21892e04bcea747318ca7680b100c4503259a602dccd323ea1",
+    "base-command-groups": "400283aed1788dd7ec3753e8239dc8cccd1ce54641a26f3edbe6fd7fbedfd183",
+    "base-command-rtl": "388aefae0701641d891511f75df0f4537859b7083c0dfbd6d0e0abd62f1981b5",
+    "base-command-scrollable": "68902e46061db280c750a538e7d636bd3572413c454401301beb515ef9659f2d",
+    "base-command-shortcuts": "fbc008c768ef2fce993bb561a0b713c7626b74d36af0fc15c198ceece98bcc11",
+    "base-context-menu-basic": "ed43409a380a1f15d62991701c4f1ef9c28993ad373088ede23f9d28c44f24a7",
+    "base-context-menu-checkboxes": "f9d37a3319a8ce85e7c5a7a15e2f2c97b13f04b2258baecdf0fdd6192cec394f",
+    "base-context-menu-demo": "3ede351705a8245cd8ac1e4c54e4c14bfe1495fe74504a71bb03415cbd761bb0",
+    "base-context-menu-destructive": "686e759efe50a45025928db4c7695d2b13cfca870c32a90a90a34a2f88470989",
+    "base-context-menu-groups": "102877d2d2ccd22795d0b5a1e4dc010eeb77d1da80e45813210a55594075aab9",
+    "base-context-menu-icons": "ec69302b01dfb6043fe3c39bdcf0a0b35ce5b57e5b20cf3af8ecb13fb47440ee",
+    "base-context-menu-radio": "d14c3acb4c4a37b9488223924b22850d5c6d908362ee90225ad74b8787b673e1",
+    "base-context-menu-rtl": "8ec6e5481a04fe530f960c38cea4e8fabb221064c8db5c4ca1135b5ba57ee68b",
+    "base-context-menu-shortcuts": "159e8795ef3b3706af19413fed77bd61a1b664482c85b6acb667681b5e76699d",
+    "base-context-menu-sides": "d8af78692d947c07f43616ad5907f6fb44298448828f06f37a2bd6d9052f5a83",
+    "base-context-menu-submenu": "24d447a21c7cb8e8b020776b9b1b2b6c2bff4944c52b18fe1cbc6715e2d88ac5",
+    "base-data-table-demo": "2ac6d184eb959e19d4f2dacd2231f10a6967f08e70471980d981f72d122cbb1a",
+    "base-data-table-rtl": "98230e3268455f34c5bbc45248748188676db0cf7692afc805f6cd37fb5d4c74",
+    "base-date-picker-basic": "314b3f48596fc2e8e3f9928cdeffec729983d6581258ada7a490d381f980c779",
+    "base-date-picker-demo": "4061a7ada9ff240287955c06a78b6b09f26970427c70a9a15e9e400edce77eeb",
+    "base-date-picker-dob": "d475d4d7cdcc0155255202b1fa1e96882f3133fab26a92d814d5f7a579843d5c",
+    "base-date-picker-input": "e6e6e627310378e186093f1a4f84e418b1d5b71e8e9da4f3f5fe9a8b124aebf3",
+    "base-date-picker-natural-language": "44479a69287edee9f88c1e3320e2b2caae94bc3ece28b4191c651264ce97b5ae",
+    "base-date-picker-range": "ff71b1d86cac551c27a59910d6de8b8dca388bd6ace96c88faae28b0d7c2c915",
+    "base-date-picker-rtl": "cc492c2a39369599765deffdf7056d3491e09956045151d7a20cc92b146d60a4",
+    "base-date-picker-time": "77e25cef06b492171086f0adecaeb58d29ede8bedfa61e3ce0a5fe6b5c74a1b3",
+    "base-dialog-close-button": "63945b11ced9715a844a566592c3b386066288d107682d84506192e549cdf305",
+    "base-dialog-demo": "14fb5db2c8e5817389ecef58b762b7622e7d11817f7bea3c98d6c799a622887b",
+    "base-dialog-no-close-button": "aca652bdcac4ea47263937c4ecd282dc47c0e8762c63e7d3537ee78ad81fcda2",
+    "base-dialog-rtl": "a8d21c507d59136c0a0e390b111f4253cae668e16ed800da10dd0226d1d1c4e2",
+    "base-dialog-scrollable-content": "3d7f8ee723e90eefc79106510d92477dd42f07a437ab5992ff85f4e61e5af5d6",
+    "base-dialog-sticky-footer": "481a33bbc4d89150c5d100599d15f449eefc91af4f9a7c37f00fbb6577821401",
+    "base-drawer-demo": "09092388b7f94871fc625146293571b062aeb18843541e46d71d8ac88c731090",
+    "base-drawer-dialog": "28f6a9ba01fd76aa6834d7688f7612faf986ab0070eee2ae460eb2cf55bbd94a",
+    "base-drawer-nested": "e123af8019c54fb03e9ffc3b529b0b81b690918f736878c688abc18ee6cd22ba",
+    "base-drawer-non-modal": "336fcd656eb216b7e87b90cddbb708bfe6cb420dc621f56f043e6a3623cd8712",
+    "base-drawer-sides": "c8eda724e2b3ed55d2b3d1521d8e1ad5bc779ce98270dd81d6e439334853cfe8",
+    "base-drawer-snap-points": "0808dd5a23305fb33f846aedd8488a47d60c4a3e77052009a4b65b1f6d828667",
+    "base-drawer-swipe-handle": "85635e9a303d146f1f286ae1162924387cf8020e4fe329c4f4bffaa1ebbfa678",
+    "base-dropdown-menu-avatar": "f48e10c4405c2fbd0e46410fad7be8a1591ca69df809c65647c4054d1b4bbcb6",
+    "base-dropdown-menu-basic": "ef6a74430fa0d988ad008d32afc0c8a1cebe2b11e3a3cc98e69e17c520d67a20",
+    "base-dropdown-menu-checkboxes": "0b2ebedb927faa0cc39f012a8fac107e6ad6aba279de1116d0af861d06f33753",
+    "base-dropdown-menu-checkboxes-icons": "8616b85ffb8f417c3e45f4d9ec2c16ed47b5b0be60d2f98fcc9a8d805dd085ff",
+    "base-dropdown-menu-complex": "3806fa5e4578ec6f71c1d999559bbad0a9de5a39ebba4b3e99c754a01331f3ed",
+    "base-dropdown-menu-demo": "a24e032fe6e2221c1a640c98065ac15f9eba7ab6151302da0863df913fedbd88",
+    "base-dropdown-menu-destructive": "2d162371db48a80dbf5c70a1f6c797a0d9af544305c51e1360632251cef0d072",
+    "base-dropdown-menu-icons": "5b1cdd5dce525ffa2035ac16c2f1d0197fb6a27c09b6b38b73d44cc136e58aae",
+    "base-dropdown-menu-radio-group": "fb8c8d4d31ccda9da81166d98c0997716d5ef9f075a428871500c39d9c81cead",
+    "base-dropdown-menu-radio-icons": "3949ede5485cee86180a8f5d867da88cee21c0ef287abec7c5536bee2a1ec947",
+    "base-dropdown-menu-rtl": "775843202f6935c921cbdb06deaa601e96e94e47879d8f6a75e94ec51625e638",
+    "base-dropdown-menu-shortcuts": "387add39a9e407e3a42614525f4d673941c0bac4841054c04eda0378b097856d",
+    "base-dropdown-menu-submenu": "2619949138513b2f1a2eb2fb07c8d8520a30cb21e808715561899f4def86001b",
+    "base-empty-avatar": "38135be88b8b952995597b6609307a83484a69566b99a1723ce78f530079aa15",
+    "base-empty-avatar-group": "b56df392ac83eef93bf170d541da2d582b1bacc682ff13e589b6ca0d9226d03f",
+    "base-empty-background": "2bc481dc95587fd3248a0d177df428852d08c80d5c19fdb295653a7fe43628e6",
+    "base-empty-demo": "0b6028d42f7120992f7906bff5ceb2e1ca4283bea820c53e6c380a649ca08375",
+    "base-empty-input-group": "4f836dce3a4730a58cd0d0ccaee6b174b38c7a2328749d59d0f5c3e528d3e0c7",
+    "base-empty-outline": "3c193cca6ee90fdaf81d19d2931f209794586301538e829245b617446fff1764",
+    "base-empty-rtl": "3eccd18f83c24b84908b2852b2434a33563b4daeb4815731a37bdb76fc10892b",
+    "base-field-checkbox": "0a8e0c039bac4eb009706f6a6b6340bf571715e6fb86bbdeb4eb615572096f1a",
+    "base-field-choice-card": "6629d411c8d32de902304dd770a3865e50672de25653b5c2b6add5356e7aee69",
+    "base-field-demo": "cabf958ae7e65b6c8988e7d58fb4bb08dee6cc89885b1c83d1856fff209d89be",
+    "base-field-fieldset": "2b3cd2d0ffcd603785c881407478fda95367635df74c1d0ff451057560a91f38",
+    "base-field-group": "52950500977f3459ad52c1eb58aafa65287bc5203e87753f8b7c0d60f8786de2",
+    "base-field-input": "7d12e5e062f310a9d3e512f03236289ac105a13c5e12f5499a662e9db1622c73",
+    "base-field-radio": "3bd467aef438210fcc0e3f73cb2c53e12d29ced22e096f105ccc31d5bab9034d",
+    "base-field-responsive": "4e78e1d6c39a71718806adc8a18cc3d99bd94dc1e32db9d47655870e35922c29",
+    "base-field-rtl": "9b764453aeb143eea3a8750bc3507fe092716e00a37a4307a1b1bd3c9ae7e3fb",
+    "base-field-select": "60ad50e76aa602832288da901f6d9da21342e98a2c2b6ee4099c8101624999e5",
+    "base-field-slider": "23054f3629e259780900c1a3b67e8c07bf720137d4fd3f506b2fe8695be0aa0c",
+    "base-field-switch": "d3314dbb8d4561bdac6a1777b46aaaec7956478c36e04f24a377dc4b8a8299f9",
+    "base-field-textarea": "672cfd88d0b432eda9c44f0b1db96fc7f523d03d765acdf9dcdf8fd8207e3e3c",
+    "base-hover-card-demo": "d26dfd08c5fd2792a5b12150abb7c7d16d64139484d820dc23f54e016b0f0345",
+    "base-hover-card-rtl": "b88c8f5c8a036a885ebfb18606b06d45e4653dac0d6508e2e5380b09cf32eb22",
+    "base-hover-card-sides": "bf30f614a9acaa52206d7d4437bb93c9fb702879748ab75fef955c24c0f86d32",
+    "base-input-badge": "23dad856f9598332496e9f17c5066e0ecf8e1b401ad56c18894986e0a466d8f1",
+    "base-input-basic": "6f178d8b44ce9dad950bbf95ac3ba97c4e3006fa480a98766a58b2b7048d6361",
+    "base-input-button-group": "93de669ca7746b606b7a02a5f38c5b299ce5092bd5f29a77319ae538809aa48e",
+    "base-input-demo": "84d103948218c6ae845cea1d3a972b547b2232c362ffb470c82ddacf524d03c5",
+    "base-input-disabled": "5ddda9e5d8351613aa5629d06cc8c127f9d3f2bd655436eaa2818d78f5d1dbab",
+    "base-input-field": "2cb1de9154b4b0050b9fca602a150609f44fcd6050ea540a8a6b707db1895a6e",
+    "base-input-fieldgroup": "5306a7c0f82bca2a5a986ff141e852ef1bc333113c43bb7b8a2dbc0e610de9a1",
+    "base-input-file": "796dbe1c038262335612c443538ed6c5295fd047f64ebee679494bdf934f8a34",
+    "base-input-form": "f840ae50e4371d3b58ff05954f186699d5d859c06b86b1517a72f26f6e3991bd",
+    "base-input-grid": "a82cebd6e33b0efeea79fc0a812abb7d2272bfce6eb7d9cf6dd5607e03edd9ac",
+    "base-input-group-block-end": "0c253c8c16395c712080ed89514c7e294434b2a5c82117fabaa6a2d9fe70ae84",
+    "base-input-group-block-start": "026ecfb93a17da10d98876e0d76f18d8931d97d1108a5c9a5cd27636c3669eee",
+    "base-input-group-button": "db4d219532e3a2779f8a1a950b58e2a521b085c8d1b624d835b8e347e4eb84fc",
+    "base-input-group-custom": "71daf8787e539b326668dd0bc2bead7e69a06b8cee42c4df56a4253eaf24734e",
+    "base-input-group-demo": "77b793115daa688eb7dbfb090fdee80da34b8bccedba540efe6b9ec0e27f210d",
+    "base-input-group-dropdown": "ad94c1879b0028ea6d00df3c9af9c5df99c06e45ed514126c04f38f745ff834f",
+    "base-input-group-icon": "1145e48a757ac3a3133166b01c9b33ceaf7786c35584c41742eedd4d1e60e1de",
+    "base-input-group-inline-end": "aba39afefac03a95507226ec4074502f6308714f03a0642f025973a99aa646d0",
+    "base-input-group-inline-start": "d095b39a74a38db0e33ae65f906ca53fee1c48ae28430092e3d0eb149fe7cadc",
+    "base-input-group-kbd": "c5b6a85fc791d34a3b13bcebe45fc0c5299e057e838141e8226ac0bd4cf7aec2",
+    "base-input-group-rtl": "cb1c2f712239b0b563598580f55aae707aacde6a4c4a5c5c0ca61960e9e982f3",
+    "base-input-group-spinner": "c62f5664eb8092524015e653e06e4aaa00e12d6deeee8aabf8c652c49ec6680a",
+    "base-input-group-text": "3b14627155987138dcf8182268a2a973ad4e1b91efc35a5d336d57d92840b963",
+    "base-input-group-textarea": "5cc233f11e95bcf0aea28e9efd07b16c51750979a94ae60dc36c9237e0ed380d",
+    "base-input-inline": "8d09aff41ef0edcb64080bc7b378133ff14cca3f9872b97ae48d5ecd3f3f1873",
+    "base-input-input-group": "7c8974a3b13c603c0b90bc18ab7a6b18c72ea72ae2a908296ba64a98d9be18c2",
+    "base-input-invalid": "15608325fc17dff598e8ec06b62d418dce5fffeb73e184afa6ba126a9ba3bc52",
+    "base-input-otp-alphanumeric": "034264e4b0ce030532ba235fe7c62e522aaf262b38d7ed5ac16003f891ef6575",
+    "base-input-otp-controlled": "bceb94dac295f7db73548a4c0b64d561e833d86d1f7e404d20b737d6c776958e",
+    "base-input-otp-demo": "88d858fb28a2a64ecc184c2e75c1805ec04ac780ed311d3f05d83f1d9a0a1404",
+    "base-input-otp-disabled": "20fc76071c936063d530f01a6423cf91e67eff7ab8f84a35cee1dcdc2ba3d936",
+    "base-input-otp-form": "78d66e6d77daf6d122edb5321702a7f5701802dfc4143c315e430ebc92e1482e",
+    "base-input-otp-four-digits": "db1dfbb2167204d763454c2fd393fba4c0da825348cfcefb16b3d44a449707f6",
+    "base-input-otp-invalid": "21cbe6ecc8aca57b1de9042d79772e03879e722baf19f8cac8104f2affda3fe6",
+    "base-input-otp-pattern": "a29833c299c75d4d7f0073c3d68fbdd568c9671a408ae416b70c53e608f2a5cc",
+    "base-input-otp-rtl": "faba49f103839da6e836cff61fab903b992ca946543ea0796e02cfae920d51f2",
+    "base-input-otp-separator": "8da550a240305517d6f9d30ac46f868226671249cb0b1825f5479b381f5bef7d",
+    "base-input-required": "2c8b23d33c08288bc90a093b4067e8d89fbf18331717ea2ae567b17594f14617",
+    "base-input-rtl": "63d5194e1f3a60f87684d18f1fd31c554558c8fa6f46fba00079b9b4d2c9cab3",
+    "base-item-avatar": "99a4c73eee99ca7bfca995548368129f1b3dd5c9f477ed6af0226edbf1ab30df",
+    "base-item-demo": "2baa3a0af9e0982ec770ed9d972fcee6ea83e62ede81de65f997ca948cfb712f",
+    "base-item-dropdown": "34658611c3f1bf773d49c61109d1ff4844d3cb50651f2e60649ec99424ca2a88",
+    "base-item-group": "1dc8647bd7f1106265f08ad3347599c55c3ff5193f23a8539fac32804878ff27",
+    "base-item-header": "6bc8194fe7f592d8290fe697a40bfa6a0da57b87eec92b95cd6379b68c38652e",
+    "base-item-icon": "e438ecc35f3803a469f3ac31dd5eb42322ff05517db19098e9005d60bf05c243",
+    "base-item-image": "928a2a55c309d7496175e7df76783bedf4189c2a44ec1f99b8c50d9c5fc19b9e",
+    "base-item-link": "47789eb972274c9d7c636b75205feb5ac0a554b6be4d4fac2678772a9781ff22",
+    "base-item-rtl": "23d959f783b1444e77905b94fb686200952d2fa2e6d1c05e76b4441261d0e801",
+    "base-item-size": "466142020fab3841ebbcb6eaa83db20367a2174f9559cc5f0bf9208174fd790c",
+    "base-item-variant": "cdcfbb5d69176110157d9950c0d7d0e0a953943c64765fc6ae9df60fe6c3134c",
+    "base-kbd-button": "4f5dbd4417c84b4483d222192c3aadab0dc3a3bf94ba7feaa77087d2d42a26d0",
+    "base-kbd-demo": "23592e99d4b659bc5a7c21645c3dfd22235cec4e126a196d95dce82c714b5c99",
+    "base-kbd-group": "2feb83646b6f1a92a331a4b945b97261c6e4c7f27523286a0ecfcad5a228315c",
+    "base-kbd-input-group": "811df995ee7bbf0532f15ef0e20446d4320df81663b4014c06ec925b1a2e0dc6",
+    "base-kbd-rtl": "bb83e0129e34f2093984acc7c2ffb34ac24265ce1c4c76e0c3692fe10eb66223",
+    "base-kbd-tooltip": "d2a554507f19a45ef1c6fe6cbad0c578bfe789ff70c7b44a514031581c9c0e37",
+    "base-label-demo": "04ae134d3433beb51adeb6462eabb88b038af1deb6a4ba6643de5ecf59d83f4a",
+    "base-label-rtl": "728f2b0044cb5990cc249117a9c12f9e6e03c41106d99daa3975b563d67cf8e9",
+    "base-marker-border": "8638fcbb650cc813c7d8c7fd808db208c1a9714e5a6863a305a40c63b40981cc",
+    "base-marker-demo": "5cb961757ab31973f161223994c9cce5f194ee5c2c900a8d55b88b9341ee48e1",
+    "base-marker-icon": "3c81e93eaa054de47799e59f9c739ec955eb015d0e0dc2c34ba3bc0cb933b6ff",
+    "base-marker-link-button": "cfd43a5a5278b76971583721b4ac4ad151f5bdc7dc0c4188d9c88b2e43daba51",
+    "base-marker-separator": "8e0458ee4d0888a8abc0a7b7b26ae36bb56fa9b18f0d4f27d56ef159a3735606",
+    "base-marker-shimmer": "e01cb0dfbcc854802bd9d6f8f186f78da2df85a9698590261e2c2aa5061bab08",
+    "base-marker-status": "d25dc968e15a3b11a336c37f1931ff8972170ea6d718a42acb4c1fc494224d14",
+    "base-marker-variants": "af5c907745d96539c53a8e63d0b509e3631b5e0410637a1c4d5d019c76ddcb72",
+    "base-menubar-checkbox": "8852dc39a74575a1a0f76c3cd36b222a6d2a5861fc5f82eda1dc325d6f5f7063",
+    "base-menubar-demo": "c922fb8a597e057cace68ad45a35b1e84db56e337831898d2e5591187e7e08b8",
+    "base-menubar-icons": "3a3a35d190a3bd218d2f8e9651c68f9794a631ed2b388842c87114f43b736140",
+    "base-menubar-radio": "5609d0fa5bfda41205fa9d2c1ec6179c4d02d4c0b9275d43e420ff0a1078c02b",
+    "base-menubar-rtl": "6d1d55a8cc372e7f46d120d147813f9283518bb252a811c18f81391367b83b24",
+    "base-menubar-submenu": "a40f5f3fdee982e551c7092e347dae9164de34ef26e3b74b3070113d2bfca69f",
+    "base-message-actions": "f10ff55c9309fc463655f1aedac7a6d40013fd0b58f0eadd7c61c1f25bd0f772",
+    "base-message-attachment": "04e08c4ae8d2b03752d49d88f9ba8ca32f0b706ba459e6ccd938c4a14dabbcd6",
+    "base-message-avatar": "179436093b0681862349a4cccd598c50661694d25ea3e602bc3a35a36b6d81d4",
+    "base-message-demo": "b972eb669c163b9a2159708e881e2b7a7328c21f93444f73d14cc7ddaa78a549",
+    "base-message-group": "025d2a67d6fe0e08d6b470ce7c303bc28fec6870e1e1451ef58a2fccefdc8a76",
+    "base-message-header-footer": "c894181d0b0a09a1fd63c4972e97dab8867b368d8dd0db104de9cc4106bbb50c",
+    "base-message-scroller-anchoring": "104ee7b44b773f9891168c27c1225105cba299be92284872e48c2c2f6039eb3a",
+    "base-message-scroller-animation": "ac55a0ccd61734cf16ee7417b8f9a5c448359fa49b7e08f8f445ca712d56235d",
+    "base-message-scroller-commands": "b6c58df8ad1be10be03e2144690ac81c836cd308865a31984160e020df3833ec",
+    "base-message-scroller-demo": "bb171eb3541557dc2166cc2e5a7f10fa5fcb1ee1c61d56ec843b4567e8c189c0",
+    "base-message-scroller-group-chat": "c0a92b60cf8d06a8b48489ca1b0f4da6a3d64ffe6d8bf7e529d1d011f4c07526",
+    "base-message-scroller-load-history": "9f57c370a0958c5f2a740f0ca4ffeab1ddb86c1079bb0d86461bff106b5b10d0",
+    "base-message-scroller-opening-position": "cc7835fb5da6baf003ba08b2fe5bfd3da60c03167de4b43630fc3016c95e5cfa",
+    "base-message-scroller-previous-context": "620de05a3def4371e059a208b5c809f865d54d4a7f88b5da86fbb247aaea39d9",
+    "base-message-scroller-scrollable": "21f6cd8736d272ce21b72f805376ae18ef4447cbdce9ea15b1361c8ecfd0983d",
+    "base-message-scroller-streaming": "e739414c341f39963f482e4a0b32525e75bf95c360bb1445ebb5f351dda025b3",
+    "base-message-scroller-visibility": "8a4196fba4cc53b093432d83e3973e38fce15ab7c8c18b550e88b5a9ca4b36a1",
+    "base-navigation-menu-demo": "0d67f52380a12de4700d83d85d0c278ea4e582e1a24e1aa47480271f94dd9f85",
+    "base-navigation-menu-rtl": "5e00cfd180d3e04d0d597e4d5ec7bcb2e18a6042d139f6816169348d57ef2af4",
+    "base-pagination-demo": "e030f2b1be425d4ac8a765e22a43e5284c4a9e6aa630ae658fbd5e037c2610b9",
+    "base-pagination-icons-only": "c2aa4d4050536e8581ba46427fe9fa029d0d2bf22a326338e7e1f5ba1fbf7ff8",
+    "base-pagination-rtl": "a2ff142d2adfe4573f63f7bfce03d05c16a27b704cd8b2826d69e9431489f1d2",
+    "base-pagination-simple": "d8232271109b4dbb063a0b5686aa8479603cae078cd58845e55285090cf4274c",
+    "base-popover-alignments": "cb5fea0fbb0a94027ded4b11387be08c04f334169605808100fcd78d18ef2e25",
+    "base-popover-basic": "54c07ecd2ef424fd5c6e9b853608d9be04d35d980c25a59fb78ea66ef5b221e8",
+    "base-popover-demo": "777c83abbfb7dd8a4d5aa89bccc65cbd19e4c4b7fb9ebb9bf3fbe4d614281ec8",
+    "base-popover-form": "64d3547fefdcf83ad54f08419d6e51bccf946732c6e67efa631aba69273a4c4d",
+    "base-popover-rtl": "4faf037da240378bd365cf5f5efe42a3b5974923f47d06119ea10472a9e94b27",
+    "base-progress-controlled": "e304c052482404b3fdeadf70c861eb36a01652d05ea636ef3b59840770a35753",
+    "base-progress-demo": "84d09ce0b4ec22b6aa10ac2286bba2a062f92e04908a102f7b7ee24f518b8d72",
+    "base-progress-label": "54d147433338c1ba3ce8bcb2e9717fbf21222a8d814e5e86ab105a1cebf5943e",
+    "base-progress-rtl": "c16dc28ec6f815513c0f92f5c37aa67cbbee278f956d58cb59cd80baeb11d15b",
+    "base-questionnaire-animated": "3eae85ad9ab899fd022a629f983543ded46c05e13c77f9f77dc5d58d0a2e10e1",
+    "base-questionnaire-card": "6de9ee11c05f99e4d99a8290c3bb4d10dffa191364c4c421c3146f57a9dec6ad",
+    "base-questionnaire-conditional": "98ef9176b22de1e825fffd4b487e5339a797ecf0b18de7a6984e74741eaff865",
+    "base-questionnaire-controlled": "235fb11e6632a25a843b1b618b51d6e696a95c1332729ca20b9866444afeb56d",
+    "base-questionnaire-demo": "aa49a6b42a12b1b770e32a2b0abc3a06c134636f09865ecdd231689cb33890d0",
+    "base-questionnaire-dialog": "529a2085aa5373764e5f369654691743d85fb0a7396b5f497f91da20fabf26ee",
+    "base-questionnaire-freeform": "4204c65ff21060528442d2bf5582b5c76d9c1b98cf5da04b8ae5ed033c40e648",
+    "base-questionnaire-multiple": "666e2c8df9b9bce2effd4f0d3f81d79bd8155169b9ac6793493e42addeb0d2c0",
+    "base-questionnaire-navigation-state": "d217806a4e6026258223cda48a7d2b7179b31b56af0ff7f9158f22b839b54055",
+    "base-questionnaire-progress": "0115caa784611482a1eb0d39bb005a0911a713d347a153e492ee173b0ce8bc05",
+    "base-questionnaire-resume": "a6c028cc10302a0777f51c84db7060c0e0d5b7e4b4ba389ad39f8f00e7b64f74",
+    "base-questionnaire-shortcuts": "7767151db51d198793808bd5b830d071621fc8991b9fb07a058502f1222b75fb",
+    "base-questionnaire-skip": "31b0464dcab89a5b188a1693a5da86c3cabb073ae444cb2c29ca6035e35357ff",
+    "base-questionnaire-validation": "819ee8b1f4339ed34e8ca33ac87fc4fb4f2a3ed6a68e3acc9d58a5fa55b510ba",
+    "base-radio-group-choice-card": "da3b47dfdc0787d139b3ce2323df38a03e17900bdc8707f50e1c64ed0c44fa1d",
+    "base-radio-group-demo": "56abe6fca7368a2dca5ec9afde37238eb0d4cc0f9061cc1c1b58e08d85c6bcd2",
+    "base-radio-group-description": "e3dc2949a12c05dd5233b48f067b16cd5c1245704e0ab8cdd72d54fd3c695a4c",
+    "base-radio-group-disabled": "e4617bcf9bc437bfc56ab1adcb9d96b922db2a9c1145a010fefaf984a12c0741",
+    "base-radio-group-fieldset": "1141ee53a436fd38147a0b71251a88a44ad63e1742576059cd9f37107d96d3c7",
+    "base-radio-group-invalid": "6c02b6de14f1e282fc364524ad743a04f6ce36cc830a1ec8d2231f7b619659e8",
+    "base-radio-group-rtl": "26959b474804242f5370453effb4e80b9bed1249f17a09369557324c2236aba7",
+    "base-resizable-demo": "34a7dc8b539da0047389fd843c45ffdad2f4b612cb834816945e22c06a2318b2",
+    "base-resizable-handle": "524a8b0bb62cc3c4c79f5e49adb003b6a6b03e2000ced27ab7089591bf1642e4",
+    "base-resizable-rtl": "d48799239ddb4f38afa2e2ba9a9eaea14a8ee5a37eb82aaa10db67e005c77382",
+    "base-resizable-vertical": "bd1aaf50e2bfcd3356999e249c0cd0a5006293ee13169a791a168fd869b14c6c",
+    "base-scroll-area-demo": "0dfeeaac66624bac600a245bd9e10036ea119eb32c2c21ca9c900a05abf650cd",
+    "base-scroll-area-horizontal-demo": "73b45033330f09ef1119f6caeadf9231d1870b9112de1bb12e1574e834e58efd",
+    "base-scroll-area-rtl": "d01d6dbf46c7e92d5c58689279526066b73608421f0c78f360abf0475d755adb",
+    "base-select-align-item": "7ec68bb75e8a52d5cfd083f131eecc97aacecf79a18d4a3c743619b57e8cb162",
+    "base-select-demo": "e99a2a767321440e02dc097b4b45b3d418e3c4775aa5bd908cb337dc9090b6c2",
+    "base-select-disabled": "b8ddf3e8858d4474cead551046290e5c30544f81f67a07d240043504c3b40cba",
+    "base-select-groups": "86400485b4d3bc7c9c0d1019dd9f13a1c15d0900ddcfeda7305a2558c276a827",
+    "base-select-invalid": "a838e1b2f3e735ef8d189ac9273e6e1643235e622310e9d3c0193989dae630ab",
+    "base-select-rtl": "8c1055587e4db064ccacb17a9eb70b80dcc2d0a51ff2329795cf4e7d8fb6ea2b",
+    "base-select-scrollable": "476b654e0bd375daba8f759e6685727e15a084e9bc3d11d73f1d871520807d66",
+    "base-separator-demo": "004769fb6a0c2b45354968c5d9fb1406dd5cdf23bf1d5d60df9ef519c76445fc",
+    "base-separator-list": "df796c8dfc83dd9cbe509695aa1c6634cbde88ba159e61df6180599b3f1de63d",
+    "base-separator-menu": "ee2f537fc8cf5e6978fac009ef2bd6fe017f69bdac8623958c894fff91405169",
+    "base-separator-rtl": "073979819dd7d1dde287a1f38bdc675e4bad7144479c838469ecc2f3aa18b639",
+    "base-separator-vertical": "1282eee64c5fa0ee4684f0e2ae557fd49a94cd854760e20a195d0e86a6d9e0a6",
+    "base-sheet-demo": "0db00078854b3105c9784fd510bfa6bc1a132c3ffa1213c4d58fab5f40359c53",
+    "base-sheet-no-close-button": "059c7de81b0a95d2ba97357b2c56be540f2063749cc445f6f73eb00f12386c35",
+    "base-sheet-rtl": "093612cb9a6a123150bdd5656ef16983e7dd08e37dc0bdb5615665307ce6d95b",
+    "base-sheet-side": "3ff88abac94e0048e9b84daf94d6da151f518c96c4cea84e1e9646f4164a1f6d",
+    "base-sidebar-demo": "6d6621b8d9f72b399c2ccbb9a9a504842a39e443a9c335b442e1c25c4d5c75f1",
+    "base-skeleton-avatar": "b1d909c806b7c19b123da13ac387c5f4e9e5dde3530476ba348b8a227a1fe0c5",
+    "base-skeleton-card": "6ca99a7b0f043fb1c82f9087d37d5fce49b84add8cd44e20b7eb170788896762",
+    "base-skeleton-demo": "2d5cf6a347592fc998d7662aad868bc284d0cd181504ae6123270487c62f041f",
+    "base-skeleton-form": "4ebf40d4dc944f96807d3dbbabd5f91a29967a1cc24c22eef42e2ab40621cf99",
+    "base-skeleton-rtl": "f2d53c2d41901a491f84fafc26c98d001c61e305a2ddc5b3789f5dc5db46389d",
+    "base-skeleton-table": "683978d52325fd263615e6d80c49d5da30f0599f087279b40e0bd3a53466570e",
+    "base-skeleton-text": "c8bd2f153e72c0c6ad9e61e63413ba9aeeed69c11b10b8f9d3d9b18a5f8c26d4",
+    "base-slider-controlled": "fd75a01509963a38c5ef6bdb09c1c1a4906d629918d231b1e0b2eb63f0b60ff4",
+    "base-slider-demo": "9b164263cf419bb9ab40623fba4539894e46ef896df8708f8aee035937eb9430",
+    "base-slider-disabled": "957145eb4c9cca9c74f0bfd84aea6e2e2646d9a360001bd0ce52fc24025675de",
+    "base-slider-multiple": "761053d64beedea556d951cd448abd52286f39e4822cdeb74b183097f20f3005",
+    "base-slider-range": "51de7bef1292b1f168cd77bf57fe18da8b80ad090f9cccf8bad2ded999ba8126",
+    "base-slider-rtl": "65b313fb911574f7f16c3624460bf6f17401436d8ed037939fc5346b2f2a489d",
+    "base-slider-vertical": "c4fbdd498276c99fe68f9a6475f52c61ffe60101560f299c7af680fd5ab73897",
+    "base-spinner-badge": "2839ae8a0ca45c2c48805d07b754aeb86e20d3e54e8118a34dfa3766388e471d",
+    "base-spinner-button": "78d8cdfcd35cdedd09e1e9cebf9aae2ad252335e9cf329a7193ac3a72680c892",
+    "base-spinner-custom": "fcd1793bfebb6e4f3fcdec441869f407c81544b15cdd946c32187f01ba86165c",
+    "base-spinner-demo": "fbc38d06068fec8b31c654b0702277ed84bb4dba6e289603dbc1ea3f56647923",
+    "base-spinner-empty": "22cfb1eead76a54f9b66b3ef99724b80e4a93a4fb89e99848210a3be043f1506",
+    "base-spinner-input-group": "c41045e28d1af5a1ce7e78f175f7095c1c0140fed47c40b1eedded454597dad7",
+    "base-spinner-rtl": "0128c601d1a1e3f481cc4a0c916886511e9fd1bf307b8a5727a904482cc39828",
+    "base-spinner-size": "79c375b562c55b8e94849f4c9280767c55408139cebe1ffe62c9fbaa03dcdb4c",
+    "base-switch-choice-card": "08fd43d06bff25b72c51c8c1243409df02d4c7c8d63e54091deb87bef7a689ca",
+    "base-switch-demo": "8f32d499a9cc61d37d673335f497b3790100f26c9cd7328484a0121f49a00b41",
+    "base-switch-description": "616c95a6a68a5b23d54238b02629bc6ca88ff9eb814fb7708ed5101a71a3c025",
+    "base-switch-disabled": "114255c8ba39f8127f44d10b8df6549ff7127a8f570f16d3f52e27bc36359a88",
+    "base-switch-invalid": "e5c72f6480e6a482aa89e5a14d2e52b6647323ae0fc3d6b2d6ab1cb23426ad7b",
+    "base-switch-rtl": "49a189f4b6b7ea5361976f4860401d50c8cdbaf518667de904bc4ae79f64e95a",
+    "base-switch-sizes": "2733e3ea56027642f251efaa853f8779f7d355818969a4f20443d954ff6a773c",
+    "base-table-actions": "ad845cf431c3920594fba5ba5f31f02a1278228b5b678974f5eb6d710ed6cb47",
+    "base-table-demo": "18c4bcdbb14625ec75dd00b31d91ecf61808dd33ecd24e953f4517947ea9600f",
+    "base-table-footer": "4da15465b0980d6879c365dc59ba99f357876d8dc9fa028390e6a82973fe8ec0",
+    "base-table-rtl": "3807245b544f1cd1479f0a01abd14426974e6275b114d5a55392be8755046703",
+    "base-tabs-demo": "bb0a95cae894b273c97d85b1d20f194bdfc9559f641317d1ae7d96de8728de5f",
+    "base-tabs-disabled": "b918dd294696eb1ed498208784271c949169860f6be75921a2d05d5be9a04dd9",
+    "base-tabs-icons": "96c9c8fb8e81c834e9ced0d15fb07d507590ea57893bc3a1e1bad8722f1f9989",
+    "base-tabs-line": "05f58b3b01f45fb42f0343488da4def1384236ca594c3f4ad4d1df4baf108e67",
+    "base-tabs-rtl": "65aa6fc983fc8aa3dbb0a905aacf099265d7fd2c1c1a4f0d1a3f60d1bf127c11",
+    "base-tabs-vertical": "a2bf0d4774e1ebbc66a1cf58717f5e12ff996e43d2f40d3e8f4801b378a2fe20",
+    "base-textarea-button": "5f6574ac31177dd21a71591bd0ae758cc01ed7a9bc1206690d6c345853045ba1",
+    "base-textarea-demo": "19ae4d637ec3f54cf12807e4c0e40f51bb636e7067fe49079775f1e977cd7582",
+    "base-textarea-disabled": "6cd739f27363edbc1a005d0ead17b660140c3217898066735b0d4ed9bbbab79d",
+    "base-textarea-field": "6b6e792ec986c4fa85c6b2317e2dc2dccf378732e382921fd7c64159c37133a5",
+    "base-textarea-invalid": "4bc83be8d3bf9bc171662e34a5e5f4e070cf34c26df31e0d54e7ae32b74e96c3",
+    "base-textarea-rtl": "fdc6dbfb4735dddce50c1ae046bdf5537cd33e5eb401186580c963cebdf10b64",
+    "base-toast-demo": "94653431951adfcae83d7b13515f26aebd2e9ecfd87848a6ebab4d5f523e95ef",
+    "base-toast-promise": "717b36a0c0cbf523eefb66b8bc9b4ee406ee10931e659389df340469760c298e",
+    "base-toast-types": "d6c482d39b7ecac910bba568a14ad17f496fe484a27c68a3a88e1f9c358396b4",
+    "base-toggle-demo": "f30213f18826e3dd1d7c6421bb2407cadafb900f7febf971d5c1cbcfeee3a811",
+    "base-toggle-disabled": "84bfaebad05efe0d4f0e3ceb0d52c3c0c9463433ca2c83cd32563a2c677c4d14",
+    "base-toggle-group-demo": "cc27380d000541485a5f20ed3fae667a05ceeec083e6cb0ecea8aa2c8504c9ea",
+    "base-toggle-group-disabled": "e7281e5e3a505fca93337520005e14f0bb17eb24e9543ef8bfa1aabb62160b40",
+    "base-toggle-group-font-weight-selector": "8896e505d769fc35a7306986f55ee6aabe88398872d8fb824ec5b8220bbf0cf9",
+    "base-toggle-group-outline": "98e1c0482d1390e3a0d2eba8066ecaac94e51b1cfc45db95063732b15fc3b30c",
+    "base-toggle-group-rtl": "eae7411aa21c75d20176257121d99cc47bf8ce5d11eefa7ab546a4b9855a0dce",
+    "base-toggle-group-sizes": "1181458fc8feae35b41e11fa0e102b5b420f2d806cfd1ff1d554ec5accc1de67",
+    "base-toggle-group-spacing": "8db1c5a918d69d7aedb4358ff5e303b9b4da599038a0ce69b35289e36ea50c54",
+    "base-toggle-group-vertical": "63014147b2df4d5c400091bf9720b68b7ce03dbf17c51249286858226ea4525b",
+    "base-toggle-outline": "e85096fa67eac53997226390c038130dd3cf80a0236a327c5a45b931b60169e2",
+    "base-toggle-rtl": "fb8a29c970bb66ffc6816c2b79b4ff36cae329bdae5c984ff516267610afa65d",
+    "base-toggle-sizes": "92142c400253010aeafdd7b3f16b86b19ad82fddd67b0eab1b54fee2fadc718a",
+    "base-toggle-text": "9d43520ce764723d3f0d5131b0a4d05d871b8613b8cbfc315c374730dbb97526",
+    "base-tooltip-demo": "26a5847d0c1708c779110413c86182e996ddab8365ed140f8560a89c8940af54",
+    "base-tooltip-disabled": "9b429af9fc5a6109edfe0bd02387cfb568e0e22451b515bde0425da238a4f2db",
+    "base-tooltip-keyboard": "5e66a98b51cf0dc9f9b3db1764a6078b5c337080446e7cd76557a3f05b41bb2d",
+    "base-tooltip-rtl": "be4a74f89fce2b2f87233993409bd41ff0ee8b5aed748a29b24c7735d8337b2e",
+    "base-tooltip-sides": "4e36979d59235936f34049b811be41c4f2990759856a71ba3465bb246260e626",
+    "base-typography-blockquote": "3d6ccdd1b54dd627ddc1eee4d13090e72ca9471499b7172bf0bc4cab1600ee88",
+    "base-typography-demo": "3d77b492ad2c75b85ef2fa9847469411a368c5f9ba20a779dd5c664f9fc8ad39",
+    "base-typography-h1": "63cdaae66cea3124ab2bcd6551cc272f4d8e8b498918a8117e992d9933b149c2",
+    "base-typography-h2": "94503bb55ad3f71250b5ba94717adb2a9cabbc4d18b5f11ea2e7cbdb4e76ff83",
+    "base-typography-h3": "9cbc12fc3ea4093f116ce0d1835e70dfd2258b1e565cc5240a8bbb9622282af5",
+    "base-typography-h4": "b371fb227ac18c91e0ef70127c04436ca809d4c2f9737dffc21866166f012bbe",
+    "base-typography-inline-code": "0d5053ef261f7b3fe6a44593e5e87d897ea11f8c194e9502fdaf3ce5a5d92455",
+    "base-typography-large": "c61015b89b9a811f132b431f62420d6f1238eaca66cb28198d0dc32fe0aa5231",
+    "base-typography-lead": "a34623994aa6f3a244c57336739d6673368e18093e5c9fa7c358fd371b2f89b2",
+    "base-typography-list": "2d82230e91c6a86325d948f9ae5ed664a4310ee89047393a16560cb8dedcdc25",
+    "base-typography-muted": "091a2d381a1df65955d002598b2f49bb151436cb052f3d64c9165c93bb4f346c",
+    "base-typography-p": "1ffee4d8ae619dfd7a8531af948d67d11b092127020af6fae8678f338f8f61c9",
+    "base-typography-rtl": "a42e5dc7f0012c63fbeb8a577a6482e7369ae8b8ac68e10f507e632ed2a4f151",
+    "base-typography-small": "8c0cdf4a3f7a2ed3d24a08a97a05dc5244055b17d07a0583b95f76ffb264443c",
+    "base-typography-table": "21a378da3802a40b38fa3c1ffdcaa38dbf1876b0c9e1515bd1c403bc92e8fc6f"
+  },
+  "verification": {
+    "ssrExamples": 453,
+    "focusedIntegrationTests": 17,
+    "consumer": "Independent strict React/Vite consumer, shadcn registry installation and all 453 lazy example modules.",
+    "remaining": "Whole-feature build, all Blocks/Charts and comprehensive light/dark/RTL review are task 13."
+  }
+}

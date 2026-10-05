@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:dafe66374ac3448f9f6c74d2cc86f5e632e91d888585f18ecb6a932be0467a7c -->
+<!-- lee-spec-kit:workflow-sync sha256:164ea0727cf57269d025e841d83d3c093d1b7d6bc0a5bb96f969a5ba3ad32859 -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -102,3 +102,13 @@
 - **Evidence**: 신규 DayPicker multiple/disabled·caption Select·Alert cancel/loading·Toast promise/update/action·Breadcrumb render/ref 5 tests와 기존 overlay/date/table/controls를 합친 25 tests PASS. strict typecheck PASS. public 25개 API 그룹은 실제 설치 타입과 source로 작성했다. 브라우저/consumer 검증 진행 중이며, 첫 caption browser 선택은 브라우저 locale의 옵션명이 2월이라 영문 Feb locator가 실패한 관찰을 성공으로 기록하지 않는다.
 
 - **Final verification**: 관련 overlay/date/table/controls/Motion/navigation 47 tests, registry-source + 새 composition 10 tests PASS. focused lint/strict typecheck/diff/registry build PASS. 독립 consumer의 두 번째 build에서 누락된 예제 외부 date-fns와 Popover 설치를 확인해 Calendar registry에 date-fns를 선언하고 필요한 Popover를 설치한 후 strict/Vite build PASS. registry Calendar Motion dependency도 직접 선언했다. 브라우저에서 Dialog Share→Escape, caption Feb 선택→February grid, Toast Success→알림 focus→Close→제거 확인. Base Toast가 focus 전 action을 aria-hidden으로 두는 정책은 유지한다. canonical Calendar width240/내부shell200/scrollWidth198 확인; 일정 grid만 자체 가로 스크롤한다. Toast는 실제 Base API를 두 프로젝트에서 검증하기 전 experimental로 표시한다. 후속 전체 예제 대응·light/dark/RTL/consumer 종합 확인은 task07/13이다.
+
+## D012 — 전체 Base 예제와 실제 composition 검증
+
+- **Decision**: 고정 기준 63개 문서의 456 Preview 참조를 453개의 실제 예제 source에 연결하고 inline Usage 330 code blocks를 제공한다. source 표시와 실행 파일은 동일하다. 긴 recipe는 접을 수 있는 Usage에 둔다. native Typography 예제는 불필요한 registry 명령을 표시하지 않는다.
+- **Trace**: 모든 예제를 SSR로 실행하면서 기존 FieldLabel/Description이 FieldRoot 외부 composition에서 실패하는 것을 확인했다. Root 내부 Base 연결을 유지하고 외부 native label/description과 FieldSet 설명 연결을 보완했다. choice card 스타일도 semantic token으로 제공한다. DataTable ColumnHeader/Pagination/ViewOptions를 실제 TanStack v8 API로 공개하며 upstream v9 예제·recipe를 v8로 적응했다. Sidebar 모바일 폭은 portal에 context로 전달한다.
+- **Boundaries**: RTL 언어/provider와 사용된 demo helper는 복사 source에 포함한다. AI SDK/Streamdown 등은 필요한 예제에서 별도 설치 명령을 표시한다. AI 예제는 로컬 transport이며 서버나 모델에 연결됐다고 설명하지 않는다. Questionnaire shortcut 예제의 NativeSelect를 Select로 교체했다. upstream CSS 애니메이션은 Motion/reduced-motion/token 규칙에 맞췄다.
+- **Evidence**: [Base 대응 자료](./artifacts/base-reference-correspondence.json). strict typecheck/focused lint/registry build/diff PASS; 453 SSR + 17 focused tests, 470 tests PASS. 독립 strict React/Vite consumer에서 63개 direct registry 항목과 453 예제의 lazy module 빌드 PASS. 브라우저에서 RTL Select 그룹 라벨, table 필터·행 선택, 로컬 채팅 스트리밍 확인. Field choice 카드의 첫 추가 browser action은 이미 선택된 radio 클릭과 잘못된 geometry selector 때문에 실패했으며 성공 근거로 사용하지 않는다; native label association은 통합 테스트로 확인했다.
+- **Consequences**: 추가 component parts도 설치 source에 포함되며 문서 전용 API로만 약속하지 않는다. 종합 light/dark/RTL/폭·모든 public Blocks/Charts/전체 build는 task 13에서 확인한다. README는 D004에 따라 변경하지 않는다.
+
+- **Consumer refresh**: 최종 Field/Sidebar/DataTable source를 CLI로 재설치하고 실제 docs의 toConsumerExampleCode와 같은 상대경로 변환으로 453 source를 다시 복사했다. 잘못된 임시 복사 스크립트와 누락된 vite/client 타입 선언으로 발생한 첫 재검사 실패를 수정한 뒤 최종 독립 소비자 strict/lazy build를 확인했다. 프로젝트 실행 source의 결함으로 기록하지 않는다.

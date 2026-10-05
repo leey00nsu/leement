@@ -161,12 +161,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-07 63개 Base 문서의 전체 예제·inline 사용법·API Reference 연결
+- [DONE][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-07 63개 Base 문서의 전체 예제·inline 사용법·API Reference 연결
   - Date: 2026-10-05
   - Acceptance:
     - 456 preview 참조/453 고유 ID와 inline composition/recipe/API에 실제 source·설치·문서 대응이 있으며 NativeSelect 제외만 남는다.
   - Checklist:
-    - [ ] 모든 예제를 실제 source와 alias로 실행하고 각 public part/props/default/event/공식 링크를 검증해 coverage 자료에 연결한다.
+    - [x] 모든 예제를 실제 source와 alias로 실행하고 각 public part/props/default/event/공식 링크를 검증해 coverage 자료에 연결한다.
+  - Verification: 453개 SSR 예제와 focused composition 17개, 총 470 tests PASS; strict typecheck, focused lint, registry build PASS. [456 참조/453 source 및 63 Usage 대응 자료](./artifacts/base-reference-correspondence.json). 독립 소비자 설치·타입·lazy bundle 및 RTL Select 그룹/테이블 필터·선택/로컬 채팅 스트리밍 확인. 전체 회귀 검증은 task 13.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
