@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:cc08a03db6f9bc10c68ff4ab1e9d8e7174166e7ac9c7bcf4ebae6276071547a1 -->
+<!-- lee-spec-kit:workflow-sync sha256:3739db19987faeea3ed402a1dab59bf23ca0b33e5bcd14b50a8fa4c3f66b78b8 -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -87,3 +87,9 @@
 - **Evidence**: strict docs typecheck, focused ESLint, registry build PASS. 신규 controlled Sidebar/링크/shortcut·Message semantics·Questionnaire required/previous/FormData·MessageScroller region/log/command/inactive-button 4 integration tests 및 기존 Motion 10 tests PASS. 브라우저/independent consumer 검증은 아래 기록처럼 완료했다. JSDOM에 없는 scrollTo는 테스트 환경에 native instant mock으로 제공했으며 실제 scroll geometry 검증과 구분한다.
 
 - **Browser findings/resolution**: 실제 초기 하단 위치(802px)를 확인한 뒤 Home→0px→메시지 추가에서 raw primitive가 다시 하단으로 따라가는 race를 재현했다. 사용자 입력 시 provider autoScroll을 잠시 끄는 gate를 추가하고 직접 하단으로 내려가거나 end command에서 다시 켠다. 후속 실브라우저에서 802→0→추가 후0 유지→jump 892/892 확인. 위치 계산·anchor/prepend 복원은 그대로 primitive 책임이며 Motion은 보간만 담당한다. 동일 동작의 geometry-aware integration test도 추가했다. 240px Questionnaire 중간 단계 버튼 겹침은 flex-wrap으로 바꾸어 Previous 20..109 / Skip158..220 첫 줄, Next156..220 다음 줄로 확인했다. Sidebar desktop collapse 및 mobile240 dialog/Escape, 각 canonical source preview와 scrollWidth240/240 확인. 접힌 Sidebar 예제에도 명시적인 navigation aria-label을 제공한다.
+
+## D010 — 기존 Base 콘텐츠·입력 계약 보완
+
+- **Decision**: Button/Input/Avatar를 실제 Base UI primitive와 연결하며 Leement의 기존 control 높이와 semantic 색상을 유지한다. Button primary 기본값과 asChild/loading, Combobox options+label shorthand, Base Field의 validation/FieldControl은 보존한다. 신규 render/link/icon-xs/icon-lg, Avatar Badge/Group/Count/size, Field Content/Title/Separator/orientation/errors, InputGroup align/Text, ToggleGroup variant/size/spacing 및 ButtonGroup Text/Separator/class recipe를 제공한다.
+- **Trace**: 고정 source의 nova @apply를 source Tailwind로 펼쳤고 animation class는 제거했다. InputGroup·Radio·Combobox control 상태는 기존 Motion helper로 전달한다. styled Base parts의 className(state)을 보존하고 icon-only Combobox trigger/clear에 이름을 제공한다. Spinner className 크기가 실제 내부 glyph에 적용되도록 수정한다. Spinner는 Leement의 기존 status span/다중 variant를 유지하며 shadcn SVG root와의 차이를 API note에 명시한다. Base 의존성은 검증한 1.7.0으로 registry graph에서 고정했다.
+- **Evidence**: 신규 API에 대한 8개 고정 Base 예제를 연결했고, 실제 설치 타입에서 20개 기본 component의 public part/props/default/event를 추출·검토해 API 표를 작성했다. 기존 core/content/navigation/message 통합 35 tests PASS. 신규 composition·error·multiple/clear·chip removal 5 integration tests PASS. 독립 consumer에 11개 관련 registry item과 8개 Base 예제를 설치·복사 후 strict/Vite build PASS. 실제 browser에서 Avatar sizes/InputGroup block-end/Combobox multiple-clear 실행, Next.js+Astro 선택→Escape→Next.js 삭제 후 Astro 유지 확인. 삭제 action의 이름 누락을 발견해 항목별 Remove label을 추가했다. 나머지 고정 예제 전체 연결은 task 07이다.

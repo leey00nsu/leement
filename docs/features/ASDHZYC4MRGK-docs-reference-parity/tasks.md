@@ -135,12 +135,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-05 기존 콘텐츠·입력·선택 API와 예제의 Base 대응 보완
+- [DONE][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-05 기존 콘텐츠·입력·선택 API와 예제의 Base 대응 보완
   - Date: 2026-10-05
   - Acceptance:
     - Button/Input/Card/Avatar/Badge/Field/InputGroup/Checkbox/RadioGroup/Select/Combobox 및 관련 기본 component의 baseline parts·props·예제 누락을 해결한다.
   - Checklist:
-    - [ ] 기존 API를 확인해 최소 확장/명시적 이전을 제공하고 render/variant/disabled/keyboard 테스트와 dependency를 맞춘다.
+    - [x] 기존 API를 확인해 최소 확장/명시적 이전을 제공하고 render/variant/disabled/keyboard 테스트와 dependency를 맞춘다.
+  - Verification: strict docs typecheck/registry UI lint/diff check PASS; existing integration 35 tests and new Base composition/FormData/clear/chip removal 5 tests PASS. Independent namespace 11-item install and 8 fixed Base examples tsc/Vite build PASS. Browser Avatar sizes/InputGroup block addon/Combobox multiple-clear and real chip removal confirmed (D010). Full baseline example distribution remains task 07.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
