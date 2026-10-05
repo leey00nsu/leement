@@ -135,3 +135,8 @@
 
 - **결과**: 공통 PreviewFrame은 pointer capture/touch·keyboard 폭 조절, 우측 상단 Replay, lazy viewport 로딩과 SSR/no-JS fallback을 제공한다. 전용 route는 같은 예제 source를 사용하며 독립 viewport·popup을 제공하고 부모와 theme/Foundation·height를 동기화한다. message origin/source와 height 범위를 확인하고 observer/listener를 cleanup한다. 별도 registry component/provider API를 추가하지 않았다.
 - **검증**: T-09의 artifacts/interactive-preview-verification.json 및 interactive-preview.png. 전체 route·대표 UI/Pattern/Block/Showcase/추가예제, breakpoint/container·Replay·pointer/touch/keyboard·theme/Foundation·reduced/no-JS·popup·Code/Source, 필수 gate PASS. 탭은 Base UI의 기존 keep-mounted 상태를 유지해 Preview로 돌아올 때 프레임이 중복 생성되지 않는다. 구현·병합 승인을 구분하고 원격 작업은 수행하지 않는다.
+
+## D013: 폭 수치와 Preview 단일 실행 경로
+
+- 사용자 요청(2026-10-05): 예시와 같은 px 폭 표시 및 Replay 도입 후 두 번 보이는 애니메이션 수정. 구현 승인 대신 추가 수정 요청으로 수용하고 같은 Feature T-10에서 진행한다.
+- T-09의 ready 이전 inline fallback과 iframe 예제가 각각 mount되는 구조를 확인했다. 예제는 iframe 안에서만 실행하고 no-JS에서도 같은 preview route를 사용한다. 폭 표시는 frame border를 제외한 실제 viewport를 기준으로 한다. 세부 재현·수정 검증 결과는 T-10에서 기록한다.

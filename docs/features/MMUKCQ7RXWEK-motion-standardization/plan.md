@@ -105,3 +105,5 @@ Motion/Radix/Base UI 라이브러리 내부 알고리즘을 재구현한 테스�
 
 - Spec: [spec.md](./spec.md)
 - Decisions: [decisions.md](./decisions.md)
+
+T-10 사용자 후속 요청: 공통 PreviewFrame에 실제 iframe viewport의 px 표시를 추가한다. 초기 임시 예제와 iframe 예제가 각각 mount하는 경로를 조사하고 예제 실행은 iframe에만 둔다. no-JS는 동일 preview route를 여는 iframe으로 읽을 수 있게 유지한다. PRD-FR-008·디자인 Preview 조작 규칙 UPDATE를 T-10 Docs에 연결한다. README·registry API·npm/theme 영향은 NONE이다. 새 영구 테스트 NONE; 실제 브라우저에서 느린 iframe 로딩·초기 진입·Replay 단일 재시작, 폭 표시와 pointer/keyboard/부모 resize, light/dark·no-JS를 확인하고 docs typecheck/lint를 실행한다.

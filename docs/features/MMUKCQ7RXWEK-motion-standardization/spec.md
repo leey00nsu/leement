@@ -68,6 +68,8 @@ Leement의 모든 시각 애니메이션을 Motion으로 실행해 새 효과를
 
 ### US-4: Replay와 반응형 미리보기
 
+- [ ] 프리뷰에 실제 viewport 폭을 px로 표시하고 폭 조절·부모 크기 변화와 동기화한다. 최초 진입과 Replay에서 예제가 중복 실행되지 않는다.
+
 - [x] 모션이 있는 예제에는 우측 상단 Replay를 제공하며 해당 예제만 다시 시작한다. reduced motion을 무시하거나 실제 미디어를 자동 재생하지 않는다.
 - [x] 모든 UI·Pattern·Block의 기본·추가·Showcase Preview에 우측 handle을 제공한다. pointer/touch drag 및 keyboard로 폭을 조절하고 실제 viewport media query와 container query가 적용된다.
 - [x] 좁은 viewport·부모 크기 변경에서 프레임은 사용 가능한 폭을 넘지 않는다. 예제의 popup, 테마·Foundations 동기화, 중심 배치·자동 높이·가로세로 guide와 Code/Source를 보존한다.

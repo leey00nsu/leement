@@ -230,6 +230,24 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-10 Preview 폭 px 표시와 초기 모션 중복 실행 수정
+  - Date: 2026-10-05
+  - Acceptance:
+    - 기본·추가·Showcase 프리뷰에서 실제 iframe viewport 폭을 px로 표시하며 drag/keyboard/window resize에 동기화한다.
+    - 초기 진입에서 임시 예제와 iframe 모션이 연이어 실행되지 않고 Replay 한 번에 현재 예제만 한 번 재시작한다.
+  - Checklist:
+    - [ ] 공통 PreviewFrame의 폭 표시와 단일 실행 경로 수정
+    - [ ] light/dark·mouse/keyboard·Replay·no-JS 브라우저 확인과 docs typecheck/lint
+    - [ ] PRD·디자인 규칙·Feature 문서 동기화 및 task checkpoint
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
