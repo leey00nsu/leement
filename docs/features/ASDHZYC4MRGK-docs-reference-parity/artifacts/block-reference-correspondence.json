@@ -478,5 +478,159 @@
       "disabled, pending, error and data preservation"
     ],
     "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
+  },
+  {
+    "upstream": {
+      "name": "feature",
+      "source": "apps/docs/content/blocks/feature.mdx",
+      "example": "apps/docs/examples/feature.tsx",
+      "exampleExists": true,
+      "installer": "feature",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/feature.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/feature"
+    },
+    "registryItem": "feature",
+    "route": "/blocks/feature",
+    "source": "registry/blocks/feature.tsx",
+    "example": "apps/docs/examples/feature.tsx",
+    "contracts": [
+      "controlled/uncontrolled accordion feature selection",
+      "desktop Motion image and mobile selected media",
+      "keyboard and empty data"
+    ],
+    "verification": "5 marketing integration + 5 registry tests, docs strict typecheck/focused lint/registry build. Actual CLI install and strict/Vite consumer build. Seven 240px previews plus browser Pricing period/action and Feature Enter selection."
+  },
+  {
+    "upstream": {
+      "name": "footer",
+      "source": "apps/docs/content/blocks/footer.mdx",
+      "example": "apps/docs/examples/footer.tsx",
+      "exampleExists": true,
+      "installer": "footer",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/footer.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/footer"
+    },
+    "registryItem": "footer",
+    "route": "/blocks/footer",
+    "source": "registry/blocks/footer.tsx",
+    "example": "apps/docs/examples/footer.tsx",
+    "contracts": [
+      "shared BrandLogo icon/name typography",
+      "grouped app-owned navigation and supporting links"
+    ],
+    "verification": "5 marketing integration + 5 registry tests, docs strict typecheck/focused lint/registry build. Actual CLI install and strict/Vite consumer build. Seven 240px previews plus browser Pricing period/action and Feature Enter selection."
+  },
+  {
+    "upstream": {
+      "name": "hero",
+      "source": "apps/docs/content/blocks/hero.mdx",
+      "example": "apps/docs/examples/hero.tsx",
+      "exampleExists": true,
+      "installer": "hero",
+      "dependencies": [
+        "/components/announcement",
+        "/components/marquee",
+        "/components/video-player"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/hero.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/hero"
+    },
+    "registryItem": "hero",
+    "route": "/blocks/hero",
+    "source": "registry/blocks/hero.tsx",
+    "example": "apps/docs/examples/hero.tsx",
+    "contracts": [
+      "announcement and primary/secondary links",
+      "partner Motion marquee with inert duplicates and pause",
+      "shared accessible video/caption source or app content"
+    ],
+    "verification": "5 marketing integration + 5 registry tests, docs strict typecheck/focused lint/registry build. Actual CLI install and strict/Vite consumer build. Seven 240px previews plus browser Pricing period/action and Feature Enter selection."
+  },
+  {
+    "upstream": {
+      "name": "pricing",
+      "source": "apps/docs/content/blocks/pricing.mdx",
+      "example": "apps/docs/examples/pricing.tsx",
+      "exampleExists": true,
+      "installer": "pricing",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/pricing.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/pricing"
+    },
+    "registryItem": "pricing",
+    "route": "/blocks/pricing",
+    "source": "registry/blocks/pricing.tsx",
+    "example": "apps/docs/examples/pricing.tsx",
+    "contracts": [
+      "controlled/uncontrolled monthly/yearly selection",
+      "Motion numeric price and final screen reader value",
+      "plan selection callback or native destination",
+      "disabled/empty plans"
+    ],
+    "verification": "5 marketing integration + 5 registry tests, docs strict typecheck/focused lint/registry build. Actual CLI install and strict/Vite consumer build. Seven 240px previews plus browser Pricing period/action and Feature Enter selection."
+  },
+  {
+    "upstream": {
+      "name": "stats",
+      "source": "apps/docs/content/blocks/stats.mdx",
+      "example": "apps/docs/examples/stats.tsx",
+      "exampleExists": true,
+      "installer": "stats",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/stats.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/stats"
+    },
+    "registryItem": "stats",
+    "route": "/blocks/stats",
+    "source": "registry/blocks/stats.tsx",
+    "example": "apps/docs/examples/stats.tsx",
+    "contracts": [
+      "app-owned metrics",
+      "report destination and empty data"
+    ],
+    "verification": "5 marketing integration + 5 registry tests, docs strict typecheck/focused lint/registry build. Actual CLI install and strict/Vite consumer build. Seven 240px previews plus browser Pricing period/action and Feature Enter selection."
+  },
+  {
+    "upstream": {
+      "name": "team",
+      "source": "apps/docs/content/blocks/team.mdx",
+      "example": "apps/docs/examples/team.tsx",
+      "exampleExists": true,
+      "installer": "team",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/team.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/team"
+    },
+    "registryItem": "team",
+    "route": "/blocks/team",
+    "source": "registry/blocks/team.tsx",
+    "example": "apps/docs/examples/team.tsx",
+    "contracts": [
+      "app-owned names/roles/avatar fallbacks",
+      "empty collection status"
+    ],
+    "verification": "5 marketing integration + 5 registry tests, docs strict typecheck/focused lint/registry build. Actual CLI install and strict/Vite consumer build. Seven 240px previews plus browser Pricing period/action and Feature Enter selection."
+  },
+  {
+    "upstream": {
+      "name": "testimonial",
+      "source": "apps/docs/content/blocks/testimonial.mdx",
+      "example": "apps/docs/examples/testimonial.tsx",
+      "exampleExists": true,
+      "installer": "testimonial",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/testimonial.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/testimonial"
+    },
+    "registryItem": "testimonial",
+    "route": "/blocks/testimonial",
+    "source": "registry/blocks/testimonial.tsx",
+    "example": "apps/docs/examples/testimonial.tsx",
+    "contracts": [
+      "native quotation and author identity"
+    ],
+    "verification": "5 marketing integration + 5 registry tests, docs strict typecheck/focused lint/registry build. Actual CLI install and strict/Vite consumer build. Seven 240px previews plus browser Pricing period/action and Feature Enter selection."
   }
 ]

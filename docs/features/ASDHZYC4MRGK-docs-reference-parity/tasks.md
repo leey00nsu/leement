@@ -215,12 +215,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-11 Kibo 마케팅 Websites 7개 block 구현
+- [DONE][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-11 Kibo 마케팅 Websites 7개 block 구현
   - Date: 2026-10-05
   - Acceptance:
     - Feature/Footer/Hero/Pricing/Stats/Team/Testimonial의 실제 조합·앱 데이터 교체·설치 source를 제공한다.
   - Checklist:
-    - [ ] pricing 선택/기간·carousel/video·link 등 핵심 동작과 semantic/light-dark/반응형을 검증하며 28개 block 기준표를 완성한다.
+    - [x] pricing 선택/기간·carousel/video·link 등 핵심 동작과 semantic/light-dark/반응형을 검증하며 28개 block 기준표를 완성한다.
+  - Verification: 마케팅5 + registry5 = 10 tests PASS; strict typecheck/focused lint/registry build/diff PASS. 7개 CLI 설치·독립 strict/Vite build, Pricing 90→75/yearly callback, Feature Enter, 7개 iframe240/root200/documentScroll240 확인. [28개 대응 자료](./artifacts/block-reference-correspondence.json)의 분모/이름 집합 일치; 전체 dark/RTL/media 회귀는 task13에서 수행한다.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

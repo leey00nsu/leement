@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:de7c7fdd649bddb2d71857fecfb77cfdcd9341da6701e1f210c924c71653b4ac -->
+<!-- lee-spec-kit:workflow-sync sha256:a8e88e84291148c8c8ae92d28d94944dd99e7a2614aa5cfcacede5b2523eead5 -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -133,3 +133,10 @@
 - **Trace**: Kibo 공개 레이아웃과 핵심 기능을 Leement primitive로 구성하고 MIT 전문을 보존했다. Contact의 RHF/Zod demo를 native form 계약으로 적응해 추가 dependency 없이 데이터와 오류를 제공한다. 다운로드 store badge는 원본 외부 브랜드 asset 대신 이름 있는 platform action으로 표현한다. Compliance의 default 배지는 중립 예시이며 인증 사실로 표시하지 않는다. 폭 제한과 optional/empty data를 처리한다.
 - **Evidence**: [공개 block 대응 자료](./artifacts/block-reference-correspondence.json). 신규 7 + 콘텐츠6 + registry5 = 18 tests PASS. strict docs typecheck/focused lint/registry build/diff PASS. 8개 namespace CLI 설치와 독립 strict/Vite lazy build PASS. 8개 iframe240/documentScroll240을 확인했고, Contact/Form 예제 wrapper 수정 뒤 root200도 확인했다. 실제 Form에서 이름/organizer 입력→Workshop→Online venue 검색·선택→callback 제출 및 local demo status, FAQ Enter 펼침을 확인했다.
 - **Findings**: 최초 FAQ 방향키 test는 설치된 Base UI 1.7이 APG 갱신에 맞춰 native Tab 순서로 변경한 계약과 맞지 않았다. 설치 타입/source의 deprecated orientation/loopFocus를 확인하고 Tab+Enter test 및 API note로 정정했다. Contact invalid handler의 synthetic event 값은 state updater 전에 캡처한다. Contact/Form 예제의 fragment가 flex preview에서 두 sibling을 가로 배치한 문제는 full-width wrapper로 수정했다. 제출 성공 직후 snapshot의 disabled 상태는 promise가 진행 중인 순간이며 최종 pending 복원은 통합 테스트에서 확인한다. 전체 Feature checks는 task13에서 수행한다.
+
+## D016 — 마케팅 Websites와 공개 Blocks 28개 연결
+
+- **Decision**: Feature/Footer/Hero/Pricing/Stats/Team/Testimonial을 실제 source/API/preview/registry로 제공했다. Feature는 accordion ID와 데스크톱 Motion 이미지·모바일 이미지를 동기화하며 empty/controlled를 지원한다. Hero는 Announcement·app links·partner Marquee·VideoPlayer/captions 및 app content composition을 제공한다. Pricing은 controlled billing period, Motion numeric price, 앱 callback 또는 native destination, disabled/empty를 처리한다. Footer 브랜드는 기존 BrandLogo의 icon+text/font-brand 규칙을 쓴다.
+- **Trace**: Kibo 공개 레이아웃·핵심 동작을 참조하고 MIT 전문을 보존했다. NumberFlow의 가격 변화는 Motion으로 적응했으며 numeric yearly 값은 월 단가+yearly billing으로 표시한다. screen reader는 최종 값을 한 번 받는다. 파트너 링크가 들어간 marquee의 시각 복사본에는 inert를 추가해 숨긴 링크의 중복 Tab 진입을 막았다. 모든 데이터·미디어·서비스는 앱 소유이며 결제나 실제 서비스 성공을 만들지 않는다.
+- **Evidence**: [28개 공개 block 대응](./artifacts/block-reference-correspondence.json)에서 fixed upstream 분모와 이름 집합이 일치함을 확인했다. 마케팅5 + registry5 = 10 tests PASS; docs strict typecheck/focused lint/registry build/diff PASS. 7개 namespace CLI 설치와 독립 strict/Vite lazy build PASS. 실제 browser에서 monthly90→yearly75 및 Pro/yearly local callback, Feature Enter 펼침/이미지 선택을 확인했다. 7개 모두 iframe240/root200/documentScroll240, Hero inert copy1을 확인했다. 대표 Pricing 문서에서 native theme toggle→iframe dark 동기화(rgb17,17,19 배경/rgb250,250,250 전경)와 실제 screenshot의 heading/cards/선택 탭 대비를 확인하고 light로 복원했다.
+- **Limits**: 초기 Hero 테스트는 JSDOM에 matchMedia가 없어 안전한 reduced-motion fallback이 활성화된 상태를 일반 pause 버튼으로 가정해 실패했다. 시스템 환경 mock을 명시하고 기존 media pause mock으로 복구했다. 실제 미디어 파일 재생·전반적 dark/RTL/Charts/전체 checks는 task13에서 확인한다. 모든 신규 block은 experimental이며 README는 D004에 따라 보류한다.
