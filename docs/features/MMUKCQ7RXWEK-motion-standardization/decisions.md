@@ -150,3 +150,7 @@ D013 결과: 느린 로딩에서 부모 inline 예제가 먼저 Motion으로 실
 - docs.ts에서 삭제된 Native Select를 가리키는 오래된 탐색 링크도 발견했다. 같은 Feature US-2의 제거 계약에 따라 링크만 정리한다. URL·registry 레이어·API·컴포넌트 구현은 변경하지 않는다. README 추가 영향 NONE.
 
 D014 결과: docs.ts에 Animations 5개를 중복 없이 추가했고 검색의 공통 분류도 반영했다. 기존 route/type/설치/Preview/Replay를 유지하며 Native Select 잔여 링크를 제거했다. T-11에서 catalog101개·production desktop/mobile·검색·5개 Preview와 필수 gate를 검증했다. 분류 외 UI 구현이나 registry metadata는 변경하지 않았다.
+
+## D015: 구현 수락과 병합 승인 분리 (2026-10-05)
+
+- 사용자의 A 응답은 직전 implementation_approve의 구현 승인으로 기록한다. T-11까지의 결과와 검증을 수락했으며 main 병합은 아직 승인되지 않았다. workflow-stage의 다음 검증/병합 경계를 확인하고 별도 local_merge 승인에서 멈춘다.
