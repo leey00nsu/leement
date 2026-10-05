@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:0a68d895d871874c628ff4b5152ad612b898c2b10319a907d8621c4da26510e7 -->
+<!-- lee-spec-kit:workflow-sync sha256:9fbed6f76ed174a73697f49e2c65ce830318713df00db6e877c7cdfaea7a6041 -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -73,3 +73,9 @@
 - **Context/Constraints**: task 02는 Attachment/Bubble/Direction/InputOTP/Item/Marker의 실제 parts와 composition을 제공한다. 고정 shadcn Base source를 검토하고 Leement semantic/spacing/Motion으로 적응한다. CSS module·upstream 전용 cn stylesheet/Next import는 설치 source에 남기지 않는다.
 - **Trace**: pinned Base source와 nova style의 정적 @apply 규칙을 읽었다. temporary 변환으로 실제 Tailwind class를 source에 펼치며 dynamic 애니메이션은 Motion helper로 바꾼다. OTP는 upstream과 같은 input-otp 1.4.2로 native single-field/paste/form behavior를 유지한다. third-party license를 보존한다.
 - **Evidence**: [고정 기준](./artifacts/reference-baseline.json), [계획](./plan.md), [notice](../../../THIRD_PARTY_NOTICES.md). 6개 source의 strict typecheck/focused ESLint, registry build, controlled/disabled OTP·native FormData·polymorphic ref·keyboard 등 5 integration tests와 registry-source 5 tests PASS. Aside session bJX49gOxpzdgNACK에서 6개 iframe/API 및 파일 삭제/반응 toggle/방향 변경/OTP 입력 PASS. 설치 consumer는 `/tmp/leement-reference-consumer`에서 namespace 6개 및 docs 조합용 Select/Label 설치 후 strict/Vite build PASS. Vite는 일반 use-client directive 경고를 표시하지만 설치 source 타입/빌드에는 실패가 없다. Direction API의 실제 optional/default ltr를 설치된 Base UI 타입으로 확인했다.
+
+## D008 — 탐색/overlay 7개 source와 검증
+
+- **Decision**: 고정 shadcn source의 Base UI ContextMenu/Drawer/Menubar/NavigationMenu/ScrollArea, Embla layout API와 resizable-panels v4를 Leement source로 제공한다. 실제 설치된 public 타입과 wrapper 기본값으로 API 표를 작성하며 upstream 전용 cn stylesheet와 IconPlaceholder를 제거한다.
+- **Trace**: Carousel의 Embla duration을 0으로 고정하고 programmatic scrollTo/Next/Prev를 Motion으로 연결했다. 방향·RTL에 맞는 키보드 조작과 editable target 예외를 유지한다. Drawer는 Base swipe 변수를 유지하고 Motion 전환 중 포인터 움직임을 직접 반영한다. Root/submenu별 닫힘 callback을 분리했다. NavigationMenu는 actionsRef로 manual unmount를 선택한다. ContextMenu의 설치된 타입에 빠진 optional preventUnmountOnClose는 runtime feature detection으로 확인하고, Shift+F10/ContextMenu key에서 primitive contextmenu event로 연결한다. ScrollArea는 overflow가 있을 때만 viewport를 Tab 순서에 넣는 primitive 정책을 유지한다.
+- **Evidence**: strict typecheck/registry build/focused lint, 기존 Motion/content 15 tests와 신규 keyboard/controlled 6 tests PASS. 기존 overlay/registry-source를 함께 실행한 27 tests PASS. 독립 consumer에서 7개 namespace와 예제 strict/Vite build PASS. 7개 browser 검증 진행 중. NavigationMenu 실제 링크로 iframe이 이동한 뒤 Replay가 메시지만 보내 복구하지 못하는 기존 문제를 확인해, 이동했을 때만 동일 iframe src를 원래 preview로 복구하도록 수정했다. 정상 preview의 Replay는 기존 single-runtime 메시지 방식을 유지한다. Aside 0fGXgi867CJg6d6d에서 7개 실행/API·키보드·pointer·scroll 조작 확인. 발견한 240px Carousel/ContextMenu/NavigationMenu 잘림을 수정했고 직접 Aside REPL에서 viewport/scrollWidth 240/240, arrows 20..56/184..220, context trigger 20..220, nav popup link 17..223 및 전체 description 확인. 실제 링크 이동 후 Replay가 동일 iframe을 preview route로 복구하는 것도 확인했다. className(state) callback을 styled primitive에 전달하여 public type와 동작을 일치시켰다.

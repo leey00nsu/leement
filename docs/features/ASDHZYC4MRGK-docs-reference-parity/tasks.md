@@ -105,12 +105,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-03 신규 탐색·overlay 컴포넌트와 실제 예제 추가
+- [DONE][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-03 신규 탐색·overlay 컴포넌트와 실제 예제 추가
   - Date: 2026-10-05
   - Acceptance:
     - Carousel/ContextMenu/Drawer/Menubar/NavigationMenu/Resizable/ScrollArea의 공개 source와 keyboard/controlled 계약을 제공한다.
   - Checklist:
-    - [ ] Base UI/외부 primitive와 Motion으로 구현하고 focus/키보드/RTL/disabled 및 registry dependency를 검증한다.
+    - [x] Base UI/외부 primitive와 Motion으로 구현하고 focus/키보드/RTL/disabled 및 registry dependency를 검증한다.
+  - Verification: strict typecheck/focused ESLint/registry build/independent shadcn consumer tsc+Vite build PASS; 신규 7 tests(context checkbox/state class callback/submenu/Drawer/Menubar/Navigation/scroll viewport/Carousel RTL·vertical·text editing) PASS; 기존 Motion/overlay/registry-source 21 tests PASS. Aside 0fGXgi867CJg6d6d에서 7개 기본 preview/API·pointer/keyboard/scroll 확인. 240px 잘림 3곳 수정 후 Aside REPL 재검증과 링크 이동 후 동일 iframe Replay 복구 PASS(D008).
   - Docs:
     - project:THIRD_PARTY_NOTICES.md
   - Review Evidence: -
