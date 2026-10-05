@@ -9,6 +9,9 @@ import css from "highlight.js/lib/languages/css";
 import javascript from "highlight.js/lib/languages/javascript";
 import json from "highlight.js/lib/languages/json";
 import typescript from "highlight.js/lib/languages/typescript";
+import python from "highlight.js/lib/languages/python";
+import go from "highlight.js/lib/languages/go";
+import ruby from "highlight.js/lib/languages/ruby";
 import xml from "highlight.js/lib/languages/xml";
 import { Check, Copy, FileCode2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -19,6 +22,9 @@ hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("json", json);
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("xml", xml);
+hljs.registerLanguage("python", python);
+hljs.registerLanguage("go", go);
+hljs.registerLanguage("ruby", ruby);
 
 type CodeSample = { label: string; code: string; language?: string; filename?: string };
 type CodeBlockProps = React.ComponentProps<"div"> & {

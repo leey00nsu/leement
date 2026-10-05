@@ -2643,6 +2643,199 @@
         "@leement/kanban",
         "@leement/utils"
       ]
+    },
+    {
+      "name": "about",
+      "type": "registry:block",
+      "title": "About",
+      "description": "Company story, media, partners and achievements.",
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button",
+        "@leement/marquee"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/about.tsx"
+        }
+      ]
+    },
+    {
+      "name": "awards",
+      "type": "registry:block",
+      "title": "Awards",
+      "description": "Award records in a responsive native table.",
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/awards.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/awards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog",
+      "type": "registry:block",
+      "title": "Blog",
+      "description": "Article summaries with metadata and native links.",
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/button",
+        "@leement/badge",
+        "@leement/card"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/blog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/blog.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "blog-post",
+      "type": "registry:block",
+      "title": "Blog Post",
+      "description": "Article header, author and editable rich content.",
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/status-notice",
+        "@leement/avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/blog-post.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/blog-post.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react",
+        "date-fns@4.1.0"
+      ]
+    },
+    {
+      "name": "careers",
+      "type": "registry:block",
+      "title": "Careers",
+      "description": "Categorized openings and application links.",
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/careers.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/careers.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "case-studies",
+      "type": "registry:block",
+      "title": "Case Studies",
+      "description": "Customer quotes, media and outcomes.",
+      "registryDependencies": [
+        "@leement/separator",
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/case-studies.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/case-studies.tsx"
+        }
+      ]
+    },
+    {
+      "name": "case-study",
+      "type": "registry:block",
+      "title": "Case Study",
+      "description": "Editorial case study with company details.",
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/case-study.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/case-study.tsx"
+        }
+      ]
+    },
+    {
+      "name": "changelog",
+      "type": "registry:block",
+      "title": "Changelog",
+      "description": "Versioned release notes and actions.",
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/badge",
+        "@leement/button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/changelog.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/changelog.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "code-example",
+      "type": "registry:block",
+      "title": "Code Example",
+      "description": "Selectable code languages with highlighting and copy.",
+      "registryDependencies": [
+        "@leement/button",
+        "@leement/code-block",
+        "@leement/tabs",
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/code-example.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/code-example.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "community",
+      "type": "registry:block",
+      "title": "Community",
+      "description": "Community channels with accessible links.",
+      "registryDependencies": [
+        "@leement/leement-motion",
+        "@leement/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/community.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/community.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
     }
   ]
 }

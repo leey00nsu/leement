@@ -2,6 +2,17 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+"about": "Content and links are supplied by your application. Examples use local demonstration data.",
+"awards": "Content and links are supplied by your application. Examples use local demonstration data.",
+"blog": "Content and links are supplied by your application. Examples use local demonstration data.",
+"blog-post": "Content and links are supplied by your application. Examples use local demonstration data.",
+"careers": "Content and links are supplied by your application. Examples use local demonstration data.",
+"case-studies": "Content and links are supplied by your application. Examples use local demonstration data.",
+"case-study": "Content and links are supplied by your application. Examples use local demonstration data.",
+"changelog": "Content and links are supplied by your application. Examples use local demonstration data.",
+"code-example": "Content and links are supplied by your application. Examples use local demonstration data.",
+"community": "Content and links are supplied by your application. Examples use local demonstration data.",
+
   "codebase": "Files and file tree are supplied by the application. Folders expand with arrow keys; file selection and clipboard copy remain local.",
   "collaborative-canvas": "Positions are 0\u2013100 percent. Drag objects or use arrows; Shift moves by ten percent. Your app supplies presence and persistence; this example uses a local simulation.",
   "roadmap": "Dates are local calendar dates. Filtered edits preserve other tasks. Changes are callbacks; no backend is bundled. Native visible actions provide alternatives to context menus and drag.",
