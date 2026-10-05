@@ -1,0 +1,34 @@
+{
+  "schemes": [
+    {
+      "theme": "light",
+      "full": 908,
+      "mobile": 333,
+      "initialAnimations": 6,
+      "replayAnimations": 12,
+      "noParentAnimation": true
+    },
+    {
+      "theme": "dark",
+      "full": 908,
+      "mobile": 333,
+      "initialAnimations": 6,
+      "replayAnimations": 12,
+      "noParentAnimation": true
+    }
+  ],
+  "errors": [],
+  "gallery": {
+    "viewport": 238,
+    "frame": 240
+  },
+  "additional": true,
+  "noJS": true,
+  "production": {
+    "initialTrackCount": 6,
+    "afterReplayTrackCount": 12,
+    "viewport": 496,
+    "noJS": true
+  },
+  "note": "TextReveal has three items; each runs two WAAPI property tracks once (6 total). A single Replay adds 6 tracks. Counts are animation tracks, not repeated whole-example runs."
+}

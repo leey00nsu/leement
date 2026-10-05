@@ -6,7 +6,6 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { SearchField } from "../../../registry/patterns/search-field";
-import { Preview } from "./previews";
 import { PreviewFrame } from "./preview-frame";
 import { registryCommand } from "../lib/docs";
 import { items } from "../lib/items";
@@ -80,7 +79,7 @@ export function ShowcaseGallery({ replayableNames }: { replayableNames: string[]
                 </div>
                 <p className="max-w-lg text-sm leading-6 text-muted-foreground">{item.overview}</p>
               </div>
-              <PreviewFrame gallery name={name} replayable={replayableNames.includes(name)}><Preview name={name} /></PreviewFrame>
+              <PreviewFrame gallery name={name} replayable={replayableNames.includes(name)} />
               <div className="flex min-w-0 flex-wrap items-center justify-between gap-3">
                 <code className="min-w-0 overflow-x-auto text-xs text-muted-foreground">{registryCommand(name)}</code>
                 <Link href={`/${section.id}/${name}`} className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">

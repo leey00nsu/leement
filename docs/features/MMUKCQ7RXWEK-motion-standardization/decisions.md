@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:e56d126b670d1a2941217e2a24902aa20e5d424688fcc0b40da656594f321f86 -->
+<!-- lee-spec-kit:workflow-sync sha256:edaef2cf6387b8d1c81e8cb850aa6bdaf60a0c099b14c6cd21cd55a6f41da09a -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -140,3 +140,5 @@
 
 - 사용자 요청(2026-10-05): 예시와 같은 px 폭 표시 및 Replay 도입 후 두 번 보이는 애니메이션 수정. 구현 승인 대신 추가 수정 요청으로 수용하고 같은 Feature T-10에서 진행한다.
 - T-09의 ready 이전 inline fallback과 iframe 예제가 각각 mount되는 구조를 확인했다. 예제는 iframe 안에서만 실행하고 no-JS에서도 같은 preview route를 사용한다. 폭 표시는 frame border를 제외한 실제 viewport를 기준으로 한다. 세부 재현·수정 검증 결과는 T-10에서 기록한다.
+
+D013 결과: 느린 로딩에서 부모 inline 예제가 먼저 Motion으로 실행되고 iframe 예제가 뒤이어 실행됨을 재현했다. 부모 예제 mount를 제거하고 로딩 안내 + 단일 iframe 실행으로 수정했다. no-JS용 iframe은 스크립트가 없는 경우에만 표시된다. px 표시는 iframe clientWidth를 관찰해 gallery border2px를 제외한다. light/dark 및 production 초기 진입·Replay, 키보드/drag/부모 resize·추가예제·gallery·no-JS를 확인했으며 T-10 evidence에 연결했다.

@@ -230,15 +230,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-10 Preview 폭 px 표시와 초기 모션 중복 실행 수정
+- [DONE][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-10 Preview 폭 px 표시와 초기 모션 중복 실행 수정
   - Date: 2026-10-05
   - Acceptance:
     - 기본·추가·Showcase 프리뷰에서 실제 iframe viewport 폭을 px로 표시하며 drag/keyboard/window resize에 동기화한다.
     - 초기 진입에서 임시 예제와 iframe 모션이 연이어 실행되지 않고 Replay 한 번에 현재 예제만 한 번 재시작한다.
   - Checklist:
-    - [ ] 공통 PreviewFrame의 폭 표시와 단일 실행 경로 수정
-    - [ ] light/dark·mouse/keyboard·Replay·no-JS 브라우저 확인과 docs typecheck/lint
-    - [ ] PRD·디자인 규칙·Feature 문서 동기화 및 task checkpoint
+    - [x] 공통 PreviewFrame의 폭 표시와 단일 실행 경로 수정
+    - [x] light/dark·mouse/keyboard·Replay·no-JS 브라우저 확인과 docs typecheck/lint
+    - [x] PRD·디자인 규칙·Feature 문서 동기화 및 task checkpoint
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -272,12 +272,12 @@
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
 | pnpm exec vitest run registry/ui/motion.test.tsx | 2026-10-04 | PASS 10 tests |
-| pnpm --filter @leement/docs typecheck | 2026-10-04 | PASS |
+| pnpm --filter @leement/docs typecheck | 2026-10-05 | PASS |
 | pnpm exec eslint registry/lib/leement-motion.ts registry/ui/motion.test.tsx | 2026-10-04 | PASS |
-| pnpm run typecheck | 2026-10-04 | PASS |
-| pnpm run lint | 2026-10-04 | PASS |
-| pnpm run test | 2026-10-04 | PASS 19 files / 120 tests |
-| pnpm run build | 2026-10-04 | PASS tokens/theme/registry/docs |
+| pnpm run typecheck | 2026-10-05 | PASS |
+| pnpm run lint | 2026-10-05 | PASS |
+| pnpm run test | 2026-10-05 | PASS 19 files / 120 tests |
+| pnpm run build | 2026-10-05 | PASS tokens/theme/registry/docs |
 | pnpm registry:build | 2026-10-04 | PASS dependency closure |
 | pnpm run build (isolated public consumer) | 2026-10-04 | PASS TypeScript + Vite |
 | pnpm run build (isolated changed consumer) | 2026-10-04 | PASS all installed source TypeScript + Vite |
@@ -345,3 +345,11 @@
 - iframe 내부 Dialog/Select focus·Escape, parent theme/Foundation CSS와 inline token 동기화, message origin/source 확인 PASS. 기본 UI·Pattern·Block·Showcase·추가 예제 적용과 Code/Source 복사 코드 유지 확인. client error 없음. no-JS에서는 기존 inline source가 읽히고 문서용 제어는 숨긴다.
 - 기존 중복 Replay 버튼3개를 공통 우측 상단 조작으로 통합했다. 예제 source와 표시 Code를 함께 갱신했다.
 - typecheck/lint/test19files120tests/build PASS. 신규 영구 테스트 NONE, 기존 테스트 및 브라우저 검증을 사용했다. token/theme/npm/registry public API 변화 없음. PRD/디자인 규칙 동기화 완료.
+
+### T-10 검증
+
+- 초기 iframe 로딩을 1.8초 지연해 기존 inline TextReveal의 Motion 실행(3 item, 6 WAAPI property track)을 관찰했다. iframe이 준비되면 inline 예제가 제거되고 동일 예제가 iframe에서 다시 실행되는 원인이 확인됐다.
+- 공통 PreviewFrame에서 실행 가능한 inline fallback과 workbench/Showcase의 예제 children을 제거했다. 예제 runtime은 동일 preview route의 iframe만 소유하며 로딩 안내는 정적이다. no-JS도 같은 route를 iframe으로 표시해 콘텐츠를 읽을 수 있다.
+- [브라우저 증거](./artifacts/preview-width-verification.json), [px 표시 화면](./artifacts/preview-width.png): light/dark·느린 로딩에서 부모 예제/모션은 0개이며 iframe 초기 실행은 item당 한 번, Replay 1회는 revision 0→1 및 item당 한 번 추가 실행이다. 3 item 각각의 opacity/filter·transform property track 2개(초기6, Replay 후 총12)는 예제 중복 실행 횟수와 구분한다. production build에서도 확인했다.
+- 실제 viewport 폭 표시: 상세908→240→256→320px, drag250px, 모바일333px; gallery frame240px의 내부238px을 표시한다. 추가예제240px과 production496px, Replay 후 폭·버튼 focus 유지 PASS. px 표시는 ResizeObserver로 iframe clientWidth와 동기화한다. client error 없음.
+- docs typecheck/변경 source lint 및 전체 typecheck/lint/test(19 files / 120 tests)/build PASS. 새 영구 테스트 NONE. PRD·디자인 Preview 조작 규칙을 동기화했고 README·registry API·npm/theme에는 변화가 없다.

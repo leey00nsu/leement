@@ -1,12 +1,11 @@
 "use client";
 
 import { GripVertical, RotateCcw } from "lucide-react";
-import { useEffect, useId, useRef, useState, type ReactNode } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "../../../registry/ui/button";
 
 /** Center the demo group; forms and panels keep their own internal alignment. */
-export function PreviewFrame({ children, name, exampleFile, replayable = false, gallery = false }: {
-  children: ReactNode;
+export function PreviewFrame({ name, exampleFile, replayable = false, gallery = false }: {
   name: string;
   exampleFile?: string;
   replayable?: boolean;
@@ -22,8 +21,10 @@ export function PreviewFrame({ children, name, exampleFile, replayable = false, 
   const [active, setActive] = useState(false);
   const [ready, setReady] = useState(false);
   const [resizing, setResizing] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(0);
   const minimum = Math.min(240, available);
   const actualWidth = Math.min(width ?? available, available);
+  const previewUrl = `/preview/${name}/${gallery ? "gallery" : "detail"}${exampleFile ? `/${exampleFile}` : ""}`;
   const label = `${name.replaceAll("-", " ")}${exampleFile ? ` ${exampleFile.replaceAll("-", " ")}` : ""}`;
 
   useEffect(() => {
@@ -73,6 +74,16 @@ export function PreviewFrame({ children, name, exampleFile, replayable = false, 
     };
   }, [active, gallery]);
 
+  useEffect(() => {
+    const element = iframe.current;
+    if (!element) return;
+    const update = () => setViewportWidth(element.clientWidth);
+    const observer = new ResizeObserver(update);
+    observer.observe(element);
+    update();
+    return () => observer.disconnect();
+  }, [active]);
+
   function changeWidth(value: number) {
     setWidth(Math.max(minimum, Math.min(available, value)));
   }
@@ -81,16 +92,23 @@ export function PreviewFrame({ children, name, exampleFile, replayable = false, 
     <div id={id} data-preview-frame={gallery ? "gallery" : "detail"} data-preview-width={actualWidth || undefined}
       className={`relative max-w-full bg-background ${gallery ? "rounded-xl border border-border/60" : "rounded-b-xl"}`}
       style={{ width: width === null ? "100%" : actualWidth, minHeight: height }}>
-      {!ready && <div>
-        <div className={`docs-preview-frame docs-preview-guides ${gallery ? "docs-preview-gallery" : ""} ${replayable ? "docs-preview-with-replay" : ""}`}>
-          <div className="docs-preview-content">{children}</div>
-        </div>
+      {!ready && <div role="status" aria-label={`Loading ${label} preview`}
+        className="absolute inset-0 flex items-center justify-center text-sm text-muted-foreground [@media(scripting:none)]:hidden">
+        Loading preview…
       </div>}
+      <noscript>
+        <iframe src={previewUrl} title={`${label} preview`}
+          className="block w-full rounded-[inherit] border-0" style={{ height }} />
+      </noscript>
       {active && <iframe ref={iframe}
-        src={`/preview/${name}/${gallery ? "gallery" : "detail"}${exampleFile ? `/${exampleFile}` : ""}`}
+        src={previewUrl}
         title={`${label} responsive preview`} tabIndex={ready ? 0 : -1} aria-hidden={!ready}
         className={`block w-full rounded-[inherit] border-0 [@media(scripting:none)]:hidden ${ready ? "" : "absolute inset-0 pointer-events-none opacity-0"} ${resizing ? "pointer-events-none" : ""}`}
         style={{ height }} />}
+      {viewportWidth > 0 && <span data-preview-size aria-label="Preview viewport width"
+        className="pointer-events-none absolute bottom-3 right-3 z-10 rounded-md bg-muted px-2 py-1 font-mono text-xs tabular-nums text-muted-foreground [@media(scripting:none)]:hidden">
+        {viewportWidth} px
+      </span>}
       {replayable && <Button type="button" variant="outline" size="icon-sm" disabled={!ready}
         className="absolute right-3 top-3 z-10 bg-background [@media(scripting:none)]:hidden"
         aria-label={`Replay ${label} preview`} title="Replay animation"

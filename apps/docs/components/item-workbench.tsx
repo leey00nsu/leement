@@ -6,7 +6,7 @@ import { useStyleMotion } from "@/lib/leement-motion";
 // The full notice is preserved in licenses/kibo-license.md.
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../registry/ui/tabs";
 import { Check, Clipboard, Code2, Eye, Files } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { PreviewFrame } from "./preview-frame";
 
 export function CopyButton({ value, label }: { value: string; label: string }) {
@@ -42,14 +42,13 @@ function CodePane({ code, filename }: { code: string; filename: string }) {
   </div>;
 }
 
-export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, exampleFile, replayable, children }: {
+export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, exampleFile, replayable }: {
   name: string;
   replayable: boolean;
   exampleCode: string;
   sourceCode: string;
   sourceFile: string;
   exampleFile?: string;
-  children: ReactNode;
 }) {
   const tabs = [
     { value: "example", label: "Code", Icon: Code2 },
@@ -67,7 +66,7 @@ export function ItemWorkbench({ name, exampleCode, sourceCode, sourceFile, examp
         </TabsList>
       </div>
       <TabsContent value="preview" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
-        <PreviewFrame name={name} exampleFile={exampleFile} replayable={replayable}>{children}</PreviewFrame>
+        <PreviewFrame name={name} exampleFile={exampleFile} replayable={replayable} />
       </TabsContent>
       <TabsContent value="example" className="focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
         <CodePane code={exampleCode} filename={`examples/${exampleFile ?? name}.tsx`} />

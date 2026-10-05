@@ -144,9 +144,9 @@ PreviewFrame의 최소 높이/inset/가로·세로 점선은 콘텐츠가 커지
 
 ### Preview 조작
 
-기본·추가·Showcase 프리뷰는 우측 handle을 드래그해 폭을 조절한다. 키보드 Arrow는 16px(Shift 64px), Home은 최소 폭, End는 전체 폭이다. 최소 폭은 240px이며 부모가 그보다 작으면 사용 가능한 폭이 우선한다. 각 예제의 실제 viewport에서 media query와 container query를 확인하고 콘텐츠 높이에 맞춰 프레임과 guide를 늘린다. 줄어든 영역 오른쪽은 background-subtle grid로 표시하며 코드 탭과 설치 소스는 조작 UI를 포함하지 않는다.
+기본·추가·Showcase 프리뷰는 우측 handle을 드래그해 폭을 조절한다. 키보드 Arrow는 16px(Shift 64px), Home은 최소 폭, End는 전체 폭이다. 최소 폭은 240px이며 부모가 그보다 작으면 사용 가능한 폭이 우선한다. 프리뷰 우측 하단에 테두리를 제외한 실제 iframe viewport 폭을 px로 표시하고 드래그·키보드·부모 폭 변화에 동기화한다. 각 예제의 실제 viewport에서 media query와 container query를 확인하고 콘텐츠 높이에 맞춰 프레임과 guide를 늘린다. 줄어든 영역 오른쪽은 background-subtle grid로 표시하며 코드 탭과 설치 소스는 조작 UI를 포함하지 않는다.
 
-Replay가 있는 프리뷰는 상단 60px 이상을 확보해 긴 표나 폼과 조작 버튼이 겹치지 않게 한다. Motion 의존이 있는 예제는 우측 상단 이름 있는 Replay로 현재 예제만 다시 시작한다. 폭·외부 focus·사이트 theme/Foundation은 유지하고 reduced motion과 미디어 non-autoplay를 보존한다. popup은 예제 viewport 안에서 focus/Escape를 처리한다. SSR/no-JS에서도 예제 콘텐츠는 읽을 수 있으며 문서 전용 제어를 registry API에 추가하지 않는다.
+Replay가 있는 프리뷰는 상단 60px 이상을 확보해 긴 표나 폼과 조작 버튼이 겹치지 않게 한다. Motion 의존이 있는 예제는 우측 상단 이름 있는 Replay로 현재 예제만 다시 시작한다. 폭·외부 focus·사이트 theme/Foundation은 유지하고 reduced motion과 미디어 non-autoplay를 보존한다. popup은 예제 viewport 안에서 focus/Escape를 처리한다. 예제 runtime은 iframe 한 곳에서만 실행한다. 로딩 중에는 정적 상태 안내를 표시하며 모션을 실행하는 inline 복사본을 mount하지 않는다. no-JS에서도 동일 preview route의 iframe으로 예제 콘텐츠를 읽을 수 있으며 문서 전용 제어를 registry API에 추가하지 않는다.
 
 ## 컴포넌트 스타일링
 

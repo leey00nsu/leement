@@ -1,8 +1,6 @@
 import { hasPreviewMotion } from "../lib/preview-config";
 import Link from "next/link";
 import { CopyButton, ItemWorkbench } from "./item-workbench";
-import { AdditionalExamplePreview } from "./example-previews";
-import { Preview } from "./previews";
 import { items, motionRule } from "../lib/items";
 import { itemStates } from "../lib/item-states";
 import { getAdditionalExampleCodes, getItemCode } from "../lib/registry-source";
@@ -108,9 +106,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
             exampleCode={exampleCode}
             sourceCode={sourceCode}
             sourceFile={sourceFile}
-          >
-            <Preview name={name} />
-          </ItemWorkbench>
+          />
         </section>
 
         <section id="installation" className="mt-12 scroll-mt-24">
@@ -164,9 +160,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
                   exampleCode={example.exampleCode}
                   sourceCode={sourceCode}
                   sourceFile={sourceFile}
-                >
-                  <AdditionalExamplePreview file={example.file} />
-                </ItemWorkbench>
+                />
                 <div className="flex min-w-0 flex-wrap items-center justify-between gap-3 rounded-md bg-muted p-3">
                   <code className="min-w-0 overflow-x-auto text-xs">
                     {example.installCommand}
