@@ -1,109 +1,93 @@
+// Adapted from shadcn/ui (MIT), commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c.
+// Copyright (c) 2023 shadcn. Full license is distributed with this registry item.
 "use client";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import {
-  motionSeconds,
-  motionEasing,
-  useMotionRevision,
-} from "@/lib/leement-motion";
+import * as React from "react"
+import { usePresenceMotion } from "@/lib/leement-motion"
+import { PopupContainerContext } from "@/lib/popup-scope"
 
-import * as React from "react";
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { cn } from "@/lib/utils";
-const TooltipProvider = TooltipPrimitive.Provider;
-const OpenContext = React.createContext(false);
-function Tooltip({
-  open: controlled,
-  defaultOpen = false,
-  onOpenChange,
+import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip"
+import { cn } from "@/lib/utils"
+
+function TooltipProvider({
+  delay,
+  delayDuration,
+  skipDelayDuration,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Root>) {
-  const [internal, setInternal] = React.useState(defaultOpen);
-  const open = controlled ?? internal;
+}: TooltipPrimitive.Provider.Props & { delayDuration?: number; skipDelayDuration?: number }) {
   return (
-    <OpenContext.Provider value={open}>
-      <TooltipPrimitive.Root
-        open={open}
-        onOpenChange={(next) => {
-          if (controlled === undefined) setInternal(next);
-          onOpenChange?.(next);
-        }}
-        {...props}
-      />
-    </OpenContext.Provider>
-  );
+    <TooltipPrimitive.Provider
+      data-slot="tooltip-provider"
+      delay={delay ?? delayDuration ?? 0}
+      timeout={skipDelayDuration}
+      {...props}
+    />
+  )
 }
-// Keep native handlers inside nativeProps so Motion does not reinterpret HTML onDrag.
-const MotionContent = motion.create(
-  React.forwardRef<
-    HTMLDivElement,
-    {
-      style?: React.CSSProperties;
-      children?: React.ReactNode;
-      nativeProps: React.ComponentProps<typeof TooltipPrimitive.Content> & {
-        "data-slot"?: string;
-      };
-    }
-  >(({ nativeProps, children, ...animationProps }, ref) => (
-    <TooltipPrimitive.Content
-      {...nativeProps}
-      {...animationProps}
-      style={{ ...nativeProps.style, ...animationProps.style }}
-      ref={ref}
-    >
-      {children ?? nativeProps.children}
-    </TooltipPrimitive.Content>
-  )),
-);
 
-const TooltipTrigger = TooltipPrimitive.Trigger;
+const ExitContext = React.createContext<((present: boolean) => void) | undefined>(undefined);
+const DescriptionContext = React.createContext<{ id: string; defaultId: string; setId: React.Dispatch<React.SetStateAction<string>>; open: boolean }>({ id: "", defaultId: "", setId: () => {}, open: false });
+const DelayContext = React.createContext<{ delay?: number; closeDelay?: number }>({});
+function Tooltip<Payload>({ delayDuration, open: controlled, defaultOpen = false, actionsRef, onOpenChange, ...props }: TooltipPrimitive.Root.Props<Payload> & { delayDuration?: number }) {
+  const defaultId = React.useId();
+  const [id, setId] = React.useState(defaultId);
+  const [internalOpen, setInternalOpen] = React.useState(defaultOpen);
+  const open = controlled ?? internalOpen;
+  const actions = React.useRef<TooltipPrimitive.Root.Actions | null>(null);
+  React.useImperativeHandle(actionsRef, () => ({ close: () => actions.current?.close(), unmount: () => actions.current?.unmount() }), []);
+  const complete = React.useCallback((present: boolean) => { if (!present) actions.current?.unmount(); }, []);
+  return <ExitContext.Provider value={complete}><DescriptionContext.Provider value={{ id, defaultId, setId, open: open && !props.disabled }}><DelayContext.Provider value={{ delay: delayDuration }}><TooltipPrimitive.Root {...props} actionsRef={actions} open={controlled} defaultOpen={defaultOpen} onOpenChange={(open, details) => { onOpenChange?.(open, details); if (!details.isCanceled && controlled === undefined) setInternalOpen(open); if (!open && !details.isCanceled) details.preventUnmountOnClose(); }} /></DelayContext.Provider></DescriptionContext.Provider></ExitContext.Provider>;
+}
+function TooltipTrigger({ asChild, children, render, ...props }: TooltipPrimitive.Trigger.Props & { asChild?: boolean }) {
+  const delays = React.useContext(DelayContext);
+  const description = React.useContext(DescriptionContext);
+  const child = asChild && React.isValidElement<{ children?: React.ReactNode }>(children) ? children : undefined;
+  return <TooltipPrimitive.Trigger {...delays} data-slot="tooltip-trigger" {...props} aria-describedby={[props["aria-describedby"], description.open && description.id].filter(Boolean).join(" ") || undefined} render={child ?? render}>{child ? child.props.children : children}</TooltipPrimitive.Trigger>;
+}
 function TooltipContent({
+  ref: forwardedRef,
   className,
+  side = "top",
   sideOffset = 4,
+  align = "center",
+  alignOffset = 0,
   children,
+  id,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Content>) {
-  const open = React.useContext(OpenContext);
-  useMotionRevision();
-  const reduced = useReducedMotion();
-  const tokenElement =
-    typeof document === "undefined" ? null : document.documentElement;
-  const transition = {
-    duration:
-      !reduced && tokenElement
-        ? motionSeconds(tokenElement, "duration-fast")
-        : 0,
-    ease: tokenElement
-      ? motionEasing(tokenElement, "standard")
-      : ("linear" as const),
-  };
+}: TooltipPrimitive.Popup.Props &
+  Pick<
+    TooltipPrimitive.Positioner.Props,
+    "align" | "alignOffset" | "side" | "sideOffset"
+  >) {
+  const description = React.useContext(DescriptionContext);
+  const { setId, defaultId } = description;
+  React.useLayoutEffect(() => { setId(id ?? defaultId); }, [id, defaultId, setId]);
+  const complete = React.useContext(ExitContext);
+  const presence = usePresenceMotion<HTMLDivElement>(forwardedRef, "fast", false, complete);
+  const ref = presence;
+  const container = React.useContext(PopupContainerContext);
   return (
-    <TooltipPrimitive.Portal forceMount>
-      <AnimatePresence>
-        {open && (
-          <React.Fragment key="content">
-            <MotionContent
-              ref={props.ref}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={transition}
-              nativeProps={{
-                ...props,
-                forceMount: true,
-                "data-slot": "tooltip-content",
-                sideOffset: sideOffset,
-                className: cn(
-                  "z-50 max-w-xs rounded-md bg-foreground px-3 py-1.5 text-xs text-background shadow-md",
-                  className,
-                ),
-              }}
-            >
-              {children}
-            </MotionContent>
-          </React.Fragment>
-        )}
-      </AnimatePresence>
+    <TooltipPrimitive.Portal container={container ?? undefined}>
+      <TooltipPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        side={side}
+        sideOffset={sideOffset}
+        className="isolate z-50"
+      >
+        <TooltipPrimitive.Popup ref={ref}
+          data-slot="tooltip-content" role="tooltip" id={id ?? description.id}
+          className={(state) => cn(
+            "inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs has-data-[slot=kbd]:pr-1.5 **:data-[slot=kbd]:relative **:data-[slot=kbd]:isolate **:data-[slot=kbd]:z-50 **:data-[slot=kbd]:rounded-sm z-50 w-fit max-w-xs origin-(--transform-origin) bg-foreground text-background",
+            (typeof className === "function" ? className(state) : className)
+          )}
+          {...props}
+        >
+          {children}
+          <TooltipPrimitive.Arrow className="size-2.5 translate-y-[calc(-50%-2px)] rotate-45 rounded-[2px] data-[side=inline-end]:top-1/2! data-[side=inline-end]:-left-1 data-[side=inline-end]:-translate-y-1/2 data-[side=inline-start]:top-1/2! data-[side=inline-start]:-right-1 data-[side=inline-start]:-translate-y-1/2 z-50 bg-foreground fill-foreground data-[side=bottom]:top-1 data-[side=left]:top-1/2! data-[side=left]:-right-1 data-[side=left]:-translate-y-1/2 data-[side=right]:top-1/2! data-[side=right]:-left-1 data-[side=right]:-translate-y-1/2 data-[side=top]:-bottom-2.5" />
+        </TooltipPrimitive.Popup>
+      </TooltipPrimitive.Positioner>
     </TooltipPrimitive.Portal>
-  );
+  )
 }
-export { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent };
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }

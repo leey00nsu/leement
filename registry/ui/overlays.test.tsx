@@ -63,10 +63,10 @@ test("tooltip can be reached from a keyboard focused trigger", async () => {
   render(<TooltipProvider delayDuration={0}><Tooltip><TooltipTrigger asChild><Button>Help</Button></TooltipTrigger><TooltipContent>Extra context</TooltipContent></Tooltip></TooltipProvider>);
   await user.tab();
   expect(document.activeElement).toBe(screen.getByRole("button", { name: "Help" }));
-  await waitFor(() => expect(screen.getByRole("tooltip")).toBeTruthy());
+  await waitFor(() => expect(screen.getByRole("tooltip").id).toBe(screen.getByRole("button", { name: "Help" }).getAttribute("aria-describedby")));
 });
 
-test("a nested Base UI select closes before its containing Radix dialog", async () => {
+test("a nested Base UI select closes before its containing Base UI dialog", async () => {
   const user = userEvent.setup();
   render(<Dialog><DialogTrigger asChild><Button>Open nested dialog</Button></DialogTrigger><DialogContent><DialogTitle>Nested form</DialogTitle><DialogDescription>Select a role.</DialogDescription><Select items={[{ value: "member", label: "Member" }]} defaultValue="member"><SelectTrigger aria-label="Nested role"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="member">Member</SelectItem></SelectContent></Select></DialogContent></Dialog>);
   await user.click(screen.getByRole("button", { name: "Open nested dialog" }));

@@ -205,7 +205,7 @@
       "title": "Separator",
       "description": "Leement separator component.",
       "dependencies": [
-        "@radix-ui/react-separator"
+        "@base-ui/react@1.7.0"
       ],
       "registryDependencies": [
         "@leement/utils"
@@ -224,19 +224,26 @@
       "title": "Dialog",
       "description": "Leement dialog component.",
       "dependencies": [
-        "@radix-ui/react-dialog",
-        "lucide-react"
+        "@base-ui/react@1.7.0",
+        "lucide-react",
+        "motion@13.1.0"
       ],
       "registryDependencies": [
         "@leement/utils",
         "@leement/leement-motion",
-        "@leement/popup-scope"
+        "@leement/popup-scope",
+        "@leement/button"
       ],
       "files": [
         {
           "path": "registry/ui/dialog.tsx",
           "type": "registry:ui",
           "target": "components/ui/dialog.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -311,17 +318,25 @@
       "title": "Tooltip",
       "description": "Leement tooltip component.",
       "dependencies": [
-        "@radix-ui/react-tooltip"
+        "@base-ui/react@1.7.0",
+        "lucide-react",
+        "motion@13.1.0"
       ],
       "registryDependencies": [
         "@leement/utils",
-        "@leement/leement-motion"
+        "@leement/leement-motion",
+        "@leement/popup-scope"
       ],
       "files": [
         {
           "path": "registry/ui/tooltip.tsx",
           "type": "registry:ui",
           "target": "components/ui/tooltip.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -387,7 +402,8 @@
       "title": "Status Notice",
       "description": "Inline semantic status feedback.",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@leement/utils"
@@ -397,6 +413,11 @@
           "path": "registry/ui/status-notice.tsx",
           "type": "registry:ui",
           "target": "components/ui/status-notice.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -560,18 +581,26 @@
       "title": "Toast",
       "description": "Sonner notification surface with Leement theme.",
       "dependencies": [
-        "sonner",
-        "lucide-react"
+        "@base-ui/react@1.7.0",
+        "lucide-react",
+        "motion@13.1.0"
       ],
       "registryDependencies": [
-        "@leement/leement-motion",
-        "@leement/spinner"
+        "@leement/utils",
+        "@leement/button",
+        "@leement/spinner",
+        "@leement/leement-motion"
       ],
       "files": [
         {
           "path": "registry/ui/toast.tsx",
           "type": "registry:ui",
           "target": "components/ui/toast.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -605,19 +634,26 @@
       "title": "Alert Dialog",
       "description": "Confirmation that requires an explicit choice.",
       "dependencies": [
-        "@radix-ui/react-alert-dialog"
+        "@base-ui/react@1.7.0",
+        "lucide-react",
+        "motion@13.1.0"
       ],
       "registryDependencies": [
         "@leement/utils",
-        "@leement/button",
         "@leement/leement-motion",
-        "@leement/popup-scope"
+        "@leement/popup-scope",
+        "@leement/button"
       ],
       "files": [
         {
           "path": "registry/ui/alert-dialog.tsx",
           "type": "registry:ui",
           "target": "components/ui/alert-dialog.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -699,16 +735,27 @@
       "title": "Calendar",
       "description": "Keyboard navigable date and event calendar.",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "react-day-picker@9.14.0",
+        "date-fns@4.1.0",
+        "motion@13.1.0"
       ],
       "registryDependencies": [
-        "@leement/utils"
+        "@leement/utils",
+        "@leement/button",
+        "@leement/select",
+        "@leement/leement-motion"
       ],
       "files": [
         {
           "path": "registry/ui/calendar.tsx",
           "type": "registry:ui",
           "target": "components/ui/calendar.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -1465,7 +1512,9 @@
       "type": "registry:component",
       "title": "EmptyState",
       "description": "Leement empty-state pattern.",
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "registryDependencies": [
         "@leement/utils",
         "@leement/card"
@@ -1475,6 +1524,11 @@
           "path": "registry/patterns/empty-state.tsx",
           "type": "registry:component",
           "target": "components/patterns/empty-state.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },
@@ -1853,8 +1907,9 @@
       "title": "Breadcrumb",
       "description": "\ud604\uc7ac \ud398\uc774\uc9c0\uc758 \uc0c1\uc704 \ud0d0\uc0c9 \uacbd\ub85c\uc785\ub2c8\ub2e4.",
       "dependencies": [
-        "@radix-ui/react-slot",
-        "lucide-react"
+        "@base-ui/react@1.7.0",
+        "lucide-react",
+        "motion@13.1.0"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -1895,8 +1950,7 @@
       "description": "\uac80\uc0c9\uacfc \ud0a4\ubcf4\ub4dc \uc120\ud0dd\uc774 \uac00\ub2a5\ud55c \uba85\ub839 \ubaa9\ub85d\uc785\ub2c8\ub2e4.",
       "dependencies": [
         "cmdk",
-        "lucide-react",
-        "@radix-ui/react-dialog"
+        "lucide-react"
       ],
       "registryDependencies": [
         "@leement/utils",
@@ -1972,17 +2026,25 @@
       "title": "Hover Card",
       "description": "\ub9c1\ud06c\ub098 \ub300\uc0c1\uc758 \ubcf4\uc870 \ub0b4\uc6a9\uc744 \ubbf8\ub9ac \ubcf4\uc5ec \uc8fc\ub294 \ube44\ubaa8\ub2ec popup\uc785\ub2c8\ub2e4.",
       "dependencies": [
-        "@radix-ui/react-hover-card"
+        "@base-ui/react@1.7.0",
+        "lucide-react",
+        "motion@13.1.0"
       ],
       "registryDependencies": [
         "@leement/utils",
-        "@leement/leement-motion"
+        "@leement/leement-motion",
+        "@leement/popup-scope"
       ],
       "files": [
         {
           "path": "registry/ui/hover-card.tsx",
           "type": "registry:ui",
           "target": "components/ui/hover-card.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement/shadcn-license.md"
         }
       ]
     },

@@ -4,14 +4,18 @@ import { Slider as SliderPrimitive } from "@base-ui/react/slider";
 
 import { cn } from "@/lib/utils";
 
+function SliderThumb({ ref: forwardedRef, ...props }: SliderPrimitive.Thumb.Props) {
+  const ref = useStyleMotion<HTMLDivElement>(forwardedRef, ["backgroundColor", "boxShadow"]);
+  return <SliderPrimitive.Thumb ref={ref} {...props} />;
+}
+
 function Slider({ className, defaultValue, value, min = 0, max = 100, "aria-label": ariaLabel, ...props }: SliderPrimitive.Root.Props) {
-  const styleMotionRef1 = useStyleMotion<HTMLDivElement>(undefined, ["translate", "backgroundColor"]);
 
   const _values = Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min];
 
   return (
     <SliderPrimitive.Root
-      className={cn("data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full", className)}
+      className={(state) => cn("data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full", (typeof className === "function" ? className(state) : className))}
       data-slot="slider"
       aria-label={ariaLabel}
       defaultValue={defaultValue}
@@ -32,7 +36,7 @@ function Slider({ className, defaultValue, value, min = 0, max = 100, "aria-labe
           />
         </SliderPrimitive.Track>
         {Array.from({ length: _values.length }, (_, index) => (
-          <SliderPrimitive.Thumb ref={styleMotionRef1}
+          <SliderThumb
             data-slot="slider-thumb"
             key={index}
             index={index}

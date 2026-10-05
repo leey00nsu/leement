@@ -1,3 +1,4 @@
+import { overlayDataApiReferences } from "./api-overlay-data";
 import { coreApiReferences } from "./api-core";
 import { complexApiReferences } from "./api-complex";
 import { navigationApiReferences } from "./api-navigation";
@@ -29,4 +30,5 @@ export const apiReferences: Partial<Record<keyof typeof items, ApiReference>> = 
   ...contentApiReferences,
   ...navigationApiReferences,
   ...coreApiReferences,
+  ...overlayDataApiReferences,
 };

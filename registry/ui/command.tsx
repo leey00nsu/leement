@@ -1,18 +1,17 @@
 "use client";
 import type { ComponentProps, ReactNode } from "react";
 import { Command as Primitive } from "cmdk";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Search } from "lucide-react";
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 function Command({ className, ...props }: ComponentProps<typeof Primitive>) {
   return <Primitive data-slot="command" className={cn("flex w-full flex-col overflow-hidden rounded-xl bg-popover text-popover-foreground", className)} {...props} />;
 }
-type CommandDialogProps = ComponentProps<typeof Dialog> & { title?: string; description?: string; trigger?: ReactNode };
-// Keep Radix Slot behavior when shadcn applies its Base UI JSX prop transform.
-function CommandDialog({ children, trigger, title = "Command menu", description = "Search and select a command.", ...props }: CommandDialogProps) {
-  return <Dialog {...props}>{trigger && <DialogPrimitive.Trigger {...{ asChild: true }}>{trigger}</DialogPrimitive.Trigger>}<DialogContent className="overflow-hidden p-0"><DialogTitle className="sr-only">{title}</DialogTitle><DialogDescription className="sr-only">{description}</DialogDescription>{children}</DialogContent></Dialog>;
+type CommandDialogProps = Omit<ComponentProps<typeof Dialog>, "children"> & { children?: ReactNode; title?: string; description?: string; trigger?: ReactNode; className?: string; showCloseButton?: boolean };
+// The consumer can supply a trigger or control the root open state.
+function CommandDialog({ children, trigger, className, showCloseButton = false, title = "Command menu", description = "Search and select a command.", ...props }: CommandDialogProps) {
+  return <Dialog {...props}>{trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}<DialogContent className={cn("overflow-hidden p-0", className)} showCloseButton={showCloseButton}><DialogTitle className="sr-only">{title}</DialogTitle><DialogDescription className="sr-only">{description}</DialogDescription>{children}</DialogContent></Dialog>;
 }
 function CommandInput({ className, ...props }: ComponentProps<typeof Primitive.Input>) {
   return <div className="flex items-center gap-2 border-b border-border px-4"><Search aria-hidden="true" className="size-4 text-muted-foreground" /><Primitive.Input className={cn("h-11 w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground disabled:opacity-50", className)} {...props} /></div>;

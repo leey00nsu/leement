@@ -42,9 +42,9 @@ function SheetOverlay({ ref: motionForwardedRef, className, ...props }: SheetPri
   return (
     <SheetPrimitive.Backdrop ref={styleMotionRef1}
       data-slot="sheet-overlay"
-      className={cn(
+      className={(state) => cn(
         "fixed inset-0 z-50 bg-foreground/50",
-        className,
+        (typeof className === "function" ? className(state) : className),
       )}
       {...props}
     />
@@ -70,9 +70,9 @@ function SheetContent({ ref: motionForwardedRef,
       <SheetPrimitive.Popup ref={styleMotionRef2}
         data-slot="sheet-content"
         data-side={side}
-        className={cn(
+        className={(state) => cn(
           "fixed z-50 flex max-w-full min-w-0 flex-col gap-4 overflow-x-hidden overflow-y-auto border-border bg-popover bg-clip-padding text-sm text-popover-foreground break-words shadow-lg *:min-w-0 data-[side=bottom]:inset-x-0 data-[side=bottom]:bottom-0 data-[side=bottom]:max-h-[calc(100dvh-1rem)] data-[side=bottom]:h-auto data-[side=bottom]:border-t data-[side=left]:inset-y-0 data-[side=left]:left-0 data-[side=left]:h-full data-[side=left]:w-3/4 data-[side=left]:border-r data-[side=right]:inset-y-0 data-[side=right]:right-0 data-[side=right]:h-full data-[side=right]:w-3/4 data-[side=right]:border-l data-[side=top]:inset-x-0 data-[side=top]:top-0 data-[side=top]:max-h-[calc(100dvh-1rem)] data-[side=top]:h-auto data-[side=top]:border-b data-[side=left]:sm:max-w-sm data-[side=right]:sm:max-w-sm",
-          className,
+          (typeof className === "function" ? className(state) : className),
         )}
         {...props}
       >
@@ -105,7 +105,7 @@ function SheetTitle({ className, ...props }: SheetPrimitive.Title.Props) {
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
-      className={cn("min-w-0 break-words text-base font-semibold text-foreground", className)}
+      className={(state) => cn("min-w-0 break-words text-base font-semibold text-foreground", (typeof className === "function" ? className(state) : className))}
       {...props}
     />
   );
@@ -115,10 +115,10 @@ function SheetDescription({ className, ...props }: SheetPrimitive.Description.Pr
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"
-      className={cn("min-w-0 break-words text-sm text-muted-foreground", className)}
+      className={(state) => cn("min-w-0 break-words text-sm text-muted-foreground", (typeof className === "function" ? className(state) : className))}
       {...props}
     />
   );
 }
 
-export { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger };
+export { SheetPortal, SheetOverlay, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger };

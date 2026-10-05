@@ -3,6 +3,13 @@
 import { lazy, Suspense } from "react";
 
 const examples = {
+  "base-dialog-close-button": lazy(() => import("../examples/base-dialog-close-button")),
+  "base-alert-dialog-small-media": lazy(() => import("../examples/base-alert-dialog-small-media")),
+  "base-popover-form": lazy(() => import("../examples/base-popover-form")),
+  "base-calendar-caption": lazy(() => import("../examples/base-calendar-caption")),
+  "base-calendar-range": lazy(() => import("../examples/base-calendar-range")),
+  "base-toast-types": lazy(() => import("../examples/base-toast-types")),
+
   "base-button-render": lazy(() => import("../examples/base-button-render")),
   "base-avatar-size": lazy(() => import("../examples/base-avatar-size")),
   "base-avatar-group-count": lazy(() => import("../examples/base-avatar-group-count")),

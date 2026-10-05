@@ -10,6 +10,7 @@ export type AdditionalExample = {
 export const additionalExamples: Partial<
   Record<keyof typeof items, AdditionalExample[]>
 > = {
+  "alert-dialog": [{"id": "base-small-media", "title": "Small Media", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-alert-dialog-small-media"}],
   select: [
     {
       id: "groups",
@@ -90,6 +91,7 @@ export const additionalExamples: Partial<
     },
   ],
   toast: [
+    {"id": "base-types", "title": "Types", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-toast-types"},
     {
       id: "feedback",
       title: "Types, promise and action",
@@ -283,6 +285,7 @@ export const additionalExamples: Partial<
     },
   ],
   dialog: [
+    {"id": "base-close-button", "title": "Close Button", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-dialog-close-button"},
     {
       id: "controlled",
       title: "Controlled dialog with scrollable content",
@@ -292,6 +295,7 @@ export const additionalExamples: Partial<
     },
   ],
   popover: [
+    {"id": "base-form", "title": "Form", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-popover-form"},
     {
       id: "positioning",
       title: "Positioning and controlled state",
@@ -364,6 +368,8 @@ export const additionalExamples: Partial<
     },
   ],
   calendar: [
+    {"id": "base-range", "title": "Range", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-calendar-range"},
+    {"id": "base-caption", "title": "Caption", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-calendar-caption"},
     {
       id: "constraints",
       title: "Locale, unavailable dates and range limits",
