@@ -228,12 +228,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-017] T-ASDHZYC4MRGK-docs-reference-parity-12 Charts 상단 탐색과 7분류 70개 설치 recipe 추가
+- [DONE][PRD-FR-017] T-ASDHZYC4MRGK-docs-reference-parity-12 Charts 상단 탐색과 7분류 70개 설치 recipe 추가
   - Date: 2026-10-05
   - Acceptance:
     - desktop/mobile Charts, category/search/direct routes와 모든 chart recipe가 동작한다.
   - Checklist:
-    - [ ] 원본 recipe를 Recharts/Motion/token source로 제공하고 tooltip/legend/filter/series/접근성·data fallback·lazy preview·dependency를 검증한다.
+    - [x] 원본 recipe를 Recharts/Motion/token source로 제공하고 tooltip/legend/filter/series/접근성·data fallback·lazy preview·dependency를 검증한다.
+  - Verification: Charts70 source/route/registry와 단일 lazy iframe 연결, 80 tests 및 strict/lint/registry build/diff PASS. 70개 실제 namespace CLI 설치 후 independent strict/lazy Vite build PASS. Browser 7분류240px/Area기간/갤러리·global search 확인. D017 및 chart-reference-correspondence.json 참조.
   - Docs:
     - project:THIRD_PARTY_NOTICES.md
   - Review Evidence: -

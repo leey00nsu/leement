@@ -48,7 +48,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## shadcn/ui
 
-The documentation parity update adapts public Base component source and examples at commit `295a1f114a138f23b5dfee0e0c6812394dfeb90c`. Source: https://github.com/shadcn-ui/ui. Leement applies its own tokens, control sizes and Motion behavior. The full license is retained at `licenses/shadcn-license.md` and distributed with adapted registry items.
+The documentation parity update adapts public Base component source, examples and all 70 public chart recipes at commit `295a1f114a138f23b5dfee0e0c6812394dfeb90c`. Source: https://github.com/shadcn-ui/ui. Leement applies its own tokens, control sizes and Motion behavior. The full license is retained at `licenses/shadcn-license.md` and distributed with adapted registry items.
 
 MIT License
 

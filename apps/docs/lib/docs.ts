@@ -1,3 +1,4 @@
+import { chartCategories, chartRecipes } from "./chart-catalog";
 type NavItem = { label: string; href: string };
 type NavSection = { title?: string; items: NavItem[] };
 export type NavGroup = { title: string; sections: NavSection[] };
@@ -33,6 +34,7 @@ export const navigation: NavGroup[] = [
   { title: "Components", sections: componentSections.map(({ title, names }) => ({ title, items: names.map(componentItem) })) },
   { title: "Patterns", sections: [{ items: ["DatePicker", "DataTable", "BrandLogo", "MediaReveal", "BrandAction", "PageHeader", "EmptyState", "FormSection", "SearchField", "StatCard", "StatePanel", "ProductPageIntro", "ResourceRowLink", "PageSkeleton", "FilterToolbar"].map(patternItem) }] },
   { title: "Blocks", sections: [{ items: ["Feature", "Footer", "Hero", "Pricing", "Stats", "Team", "Testimonial", "Compare", "Compliance", "Contact", "CTA", "Download", "Experience", "FAQ", "Form", "About", "Awards", "Blog", "Blog Post", "Careers", "Case Studies", "Case Study", "Changelog", "Code Example", "Community", "Codebase", "Collaborative Canvas", "Roadmap", "Settings Section", "Bento Grid", "Gantt", "Kanban", "Sandbox", "Reel", "Deck", "Dialog Stack"].map(label => ({ label, href: `/blocks/${label.toLowerCase().replaceAll(" ", "-")}` })) }] },
+  { title: "Charts", sections: [{ items: [{ label: "All charts", href: "/charts" }, ...chartCategories.map(category => ({ label: `${category === "tooltip" ? "Tooltips" : category.charAt(0).toUpperCase() + category.slice(1)} (${chartRecipes.filter(recipe => recipe.category === category).length})`, href: `/charts/${category}` }))] }] },
   { title: "Project", sections: [{ items: [{ label: "Changelog", href: "/changelog" }] }] },
 ];
 

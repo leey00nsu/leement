@@ -3129,6 +3129,1903 @@
         "@leement/utils",
         "@leement/avatar"
       ]
+    },
+    {
+      "name": "chart-area-axes",
+      "type": "registry:block",
+      "title": "Chart AreaAxes",
+      "description": "An area chart with axes",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-axes.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-axes.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-default",
+      "type": "registry:block",
+      "title": "Chart AreaDefault",
+      "description": "A simple area chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-default.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-default.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-gradient",
+      "type": "registry:block",
+      "title": "Chart AreaGradient",
+      "description": "An area chart with gradient fill",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-gradient.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-gradient.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-icons",
+      "type": "registry:block",
+      "title": "Chart AreaIcons",
+      "description": "An area chart with icons",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-icons.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-interactive",
+      "type": "registry:block",
+      "title": "Chart AreaInteractive",
+      "description": "An interactive area chart",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart",
+        "@leement/select"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-interactive.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-interactive.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-legend",
+      "type": "registry:block",
+      "title": "Chart AreaLegend",
+      "description": "An area chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-legend.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-legend.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-linear",
+      "type": "registry:block",
+      "title": "Chart AreaLinear",
+      "description": "A linear area chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-linear.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-linear.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-stacked-expand",
+      "type": "registry:block",
+      "title": "Chart AreaStackedExpand",
+      "description": "A stacked area chart with expand stacking",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-stacked-expand.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-stacked-expand.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-stacked",
+      "type": "registry:block",
+      "title": "Chart AreaStacked",
+      "description": "A stacked area chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-stacked.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-stacked.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-step",
+      "type": "registry:block",
+      "title": "Chart AreaStep",
+      "description": "A step area chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-area-step.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-area-step.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-active",
+      "type": "registry:block",
+      "title": "Chart BarActive",
+      "description": "A bar chart with an active bar",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-active.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-active.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-default",
+      "type": "registry:block",
+      "title": "Chart BarDefault",
+      "description": "A bar chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-default.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-default.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-horizontal",
+      "type": "registry:block",
+      "title": "Chart BarHorizontal",
+      "description": "A horizontal bar chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-horizontal.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-horizontal.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-interactive",
+      "type": "registry:block",
+      "title": "Chart BarInteractive",
+      "description": "An interactive bar chart",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-interactive.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-interactive.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-label-custom",
+      "type": "registry:block",
+      "title": "Chart BarLabelCustom",
+      "description": "A bar chart with a custom label",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-label-custom.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-label-custom.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-label",
+      "type": "registry:block",
+      "title": "Chart BarLabel",
+      "description": "A bar chart with a label",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-label.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-label.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-mixed",
+      "type": "registry:block",
+      "title": "Chart BarMixed",
+      "description": "A mixed bar chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-mixed.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-mixed.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-multiple",
+      "type": "registry:block",
+      "title": "Chart BarMultiple",
+      "description": "A multiple bar chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-multiple.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-multiple.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-negative",
+      "type": "registry:block",
+      "title": "Chart BarNegative",
+      "description": "A bar chart with negative values",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-negative.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-negative.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-stacked",
+      "type": "registry:block",
+      "title": "Chart BarStacked",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bar-stacked.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-bar-stacked.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-default",
+      "type": "registry:block",
+      "title": "Chart LineDefault",
+      "description": "A line chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-default.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-default.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-dots-colors",
+      "type": "registry:block",
+      "title": "Chart LineDotsColors",
+      "description": "A line chart with dots and colors",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-dots-colors.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-dots-colors.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-dots-custom",
+      "type": "registry:block",
+      "title": "Chart LineDotsCustom",
+      "description": "A line chart with custom dots",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-dots-custom.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-dots-custom.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-dots",
+      "type": "registry:block",
+      "title": "Chart LineDots",
+      "description": "A line chart with dots",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-dots.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-dots.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-interactive",
+      "type": "registry:block",
+      "title": "Chart LineInteractive",
+      "description": "An interactive line chart",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart",
+        "@leement/leement-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-interactive.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-interactive.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-label-custom",
+      "type": "registry:block",
+      "title": "Chart LineLabelCustom",
+      "description": "A line chart with a custom label",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-label-custom.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-label-custom.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-label",
+      "type": "registry:block",
+      "title": "Chart LineLabel",
+      "description": "A line chart with a label",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-label.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-label.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-linear",
+      "type": "registry:block",
+      "title": "Chart LineLinear",
+      "description": "A linear line chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-linear.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-linear.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-multiple",
+      "type": "registry:block",
+      "title": "Chart LineMultiple",
+      "description": "A multiple line chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-multiple.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-multiple.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-step",
+      "type": "registry:block",
+      "title": "Chart LineStep",
+      "description": "A line chart with step",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-line-step.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-line-step.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-donut-active",
+      "type": "registry:block",
+      "title": "Chart PieDonutActive",
+      "description": "A donut chart with an active sector",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-donut-active.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-donut-active.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-donut-text",
+      "type": "registry:block",
+      "title": "Chart PieDonutText",
+      "description": "A donut chart with text",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-donut-text.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-donut-text.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-donut",
+      "type": "registry:block",
+      "title": "Chart PieDonut",
+      "description": "A donut chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-donut.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-donut.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-interactive",
+      "type": "registry:block",
+      "title": "Chart PieInteractive",
+      "description": "An interactive pie chart",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart",
+        "@leement/select"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-interactive.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-interactive.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-label-custom",
+      "type": "registry:block",
+      "title": "Chart PieLabelCustom",
+      "description": "A pie chart with a custom label",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-label-custom.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-label-custom.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-label-list",
+      "type": "registry:block",
+      "title": "Chart PieLabelList",
+      "description": "A pie chart with a label list",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-label-list.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-label-list.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-label",
+      "type": "registry:block",
+      "title": "Chart PieLabel",
+      "description": "A pie chart with a label",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-label.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-label.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-legend",
+      "type": "registry:block",
+      "title": "Chart PieLegend",
+      "description": "A pie chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-legend.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-legend.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-separator-none",
+      "type": "registry:block",
+      "title": "Chart PieSeparatorNone",
+      "description": "A pie chart with no separator",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-separator-none.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-separator-none.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-simple",
+      "type": "registry:block",
+      "title": "Chart PieSimple",
+      "description": "A simple pie chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-simple.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-simple.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie-stacked",
+      "type": "registry:block",
+      "title": "Chart PieStacked",
+      "description": "A pie chart with stacked sections",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-pie-stacked.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-pie-stacked.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-default",
+      "type": "registry:block",
+      "title": "Chart RadarDefault",
+      "description": "A radar chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-default.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-default.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-dots",
+      "type": "registry:block",
+      "title": "Chart RadarDots",
+      "description": "A radar chart with dots",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-dots.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-dots.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-grid-circle-fill",
+      "type": "registry:block",
+      "title": "Chart RadarGridCircleFill",
+      "description": "A radar chart with a grid and circle fill",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-grid-circle-fill.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-grid-circle-fill.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-grid-circle-no-lines",
+      "type": "registry:block",
+      "title": "Chart RadarGridCircleNoLines",
+      "description": "A radar chart with a grid and circle fill",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-grid-circle-no-lines.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-grid-circle-no-lines.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-grid-circle",
+      "type": "registry:block",
+      "title": "Chart RadarGridCircle",
+      "description": "A radar chart with a grid and circle",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-grid-circle.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-grid-circle.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-grid-custom",
+      "type": "registry:block",
+      "title": "Chart RadarGridCustom",
+      "description": "A radar chart with a custom grid",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-grid-custom.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-grid-custom.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-grid-fill",
+      "type": "registry:block",
+      "title": "Chart RadarGridFill",
+      "description": "A radar chart with a grid filled",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-grid-fill.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-grid-fill.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-grid-none",
+      "type": "registry:block",
+      "title": "Chart RadarGridNone",
+      "description": "A radar chart with no grid",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-grid-none.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-grid-none.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-icons",
+      "type": "registry:block",
+      "title": "Chart RadarIcons",
+      "description": "A radar chart with icons",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-icons.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-label-custom",
+      "type": "registry:block",
+      "title": "Chart RadarLabelCustom",
+      "description": "A radar chart with a custom label",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-label-custom.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-label-custom.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-legend",
+      "type": "registry:block",
+      "title": "Chart RadarLegend",
+      "description": "A radar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-legend.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-legend.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-lines-only",
+      "type": "registry:block",
+      "title": "Chart RadarLinesOnly",
+      "description": "A radar chart with lines only",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-lines-only.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-lines-only.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-multiple",
+      "type": "registry:block",
+      "title": "Chart RadarMultiple",
+      "description": "A radar chart with multiple data",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-multiple.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-multiple.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radar-radius",
+      "type": "registry:block",
+      "title": "Chart RadarRadius",
+      "description": "A radar chart with a radius axis",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radar-radius.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radar-radius.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radial-grid",
+      "type": "registry:block",
+      "title": "Chart RadialGrid",
+      "description": "A radial chart with a grid",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radial-grid.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radial-grid.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radial-label",
+      "type": "registry:block",
+      "title": "Chart RadialLabel",
+      "description": "A radial chart with a label",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radial-label.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radial-label.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radial-shape",
+      "type": "registry:block",
+      "title": "Chart RadialShape",
+      "description": "A radial chart with a custom shape",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radial-shape.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radial-shape.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radial-simple",
+      "type": "registry:block",
+      "title": "Chart RadialSimple",
+      "description": "A radial chart",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radial-simple.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radial-simple.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radial-stacked",
+      "type": "registry:block",
+      "title": "Chart RadialStacked",
+      "description": "A radial chart with stacked sections",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radial-stacked.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radial-stacked.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-radial-text",
+      "type": "registry:block",
+      "title": "Chart RadialText",
+      "description": "A radial chart with text",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-radial-text.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-radial-text.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-advanced",
+      "type": "registry:block",
+      "title": "Chart TooltipAdvanced",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-advanced.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-advanced.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-default",
+      "type": "registry:block",
+      "title": "Chart TooltipDefault",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-default.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-default.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-formatter",
+      "type": "registry:block",
+      "title": "Chart TooltipFormatter",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-formatter.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-formatter.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-icons",
+      "type": "registry:block",
+      "title": "Chart TooltipIcons",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-icons.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-icons.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-indicator-line",
+      "type": "registry:block",
+      "title": "Chart TooltipIndicatorLine",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-indicator-line.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-indicator-line.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-indicator-none",
+      "type": "registry:block",
+      "title": "Chart TooltipIndicatorNone",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-indicator-none.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-indicator-none.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-label-custom",
+      "type": "registry:block",
+      "title": "Chart TooltipLabelCustom",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-label-custom.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-label-custom.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-label-formatter",
+      "type": "registry:block",
+      "title": "Chart TooltipLabelFormatter",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-label-formatter.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-label-formatter.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-tooltip-label-none",
+      "type": "registry:block",
+      "title": "Chart TooltipLabelNone",
+      "description": "A stacked bar chart with a legend",
+      "dependencies": [
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@leement/chart-data-table",
+        "@leement/card",
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-tooltip-label-none.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/charts/chart-tooltip-label-none.tsx"
+        },
+        {
+          "path": "licenses/shadcn-license.md",
+          "type": "registry:file",
+          "target": "licenses/leement-shadcn-license.md"
+        }
+      ]
+    },
+    {
+      "name": "chart-data-table",
+      "type": "registry:ui",
+      "title": "Chart data table",
+      "description": "Native accessible chart data fallback using the live series data.",
+      "registryDependencies": [
+        "@leement/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/chart-data-table.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/chart-data-table.tsx"
+        }
+      ]
     }
   ]
 }

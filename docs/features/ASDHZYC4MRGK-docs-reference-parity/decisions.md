@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:a8e88e84291148c8c8ae92d28d94944dd99e7a2614aa5cfcacede5b2523eead5 -->
+<!-- lee-spec-kit:workflow-sync sha256:313d3468a0b86a39267711bf5e879e4b8067f0ba7b9e392f1a527b8abf09d91b -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -140,3 +140,12 @@
 - **Trace**: Kibo 공개 레이아웃·핵심 동작을 참조하고 MIT 전문을 보존했다. NumberFlow의 가격 변화는 Motion으로 적응했으며 numeric yearly 값은 월 단가+yearly billing으로 표시한다. screen reader는 최종 값을 한 번 받는다. 파트너 링크가 들어간 marquee의 시각 복사본에는 inert를 추가해 숨긴 링크의 중복 Tab 진입을 막았다. 모든 데이터·미디어·서비스는 앱 소유이며 결제나 실제 서비스 성공을 만들지 않는다.
 - **Evidence**: [28개 공개 block 대응](./artifacts/block-reference-correspondence.json)에서 fixed upstream 분모와 이름 집합이 일치함을 확인했다. 마케팅5 + registry5 = 10 tests PASS; docs strict typecheck/focused lint/registry build/diff PASS. 7개 namespace CLI 설치와 독립 strict/Vite lazy build PASS. 실제 browser에서 monthly90→yearly75 및 Pro/yearly local callback, Feature Enter 펼침/이미지 선택을 확인했다. 7개 모두 iframe240/root200/documentScroll240, Hero inert copy1을 확인했다. 대표 Pricing 문서에서 native theme toggle→iframe dark 동기화(rgb17,17,19 배경/rgb250,250,250 전경)와 실제 screenshot의 heading/cards/선택 탭 대비를 확인하고 light로 복원했다.
 - **Limits**: 초기 Hero 테스트는 JSDOM에 matchMedia가 없어 안전한 reduced-motion fallback이 활성화된 상태를 일반 pause 버튼으로 가정해 실패했다. 시스템 환경 mock을 명시하고 기존 media pause mock으로 복구했다. 실제 미디어 파일 재생·전반적 dark/RTL/Charts/전체 checks는 task13에서 확인한다. 모든 신규 block은 experimental이며 README는 D004에 따라 보류한다.
+
+
+## D017 — Charts 70개와 source ownership
+
+- **Decision**: 고정 shadcn 공개 Area10/Bar10/Line10/Pie11/Radar14/Radial6/Tooltip9 source를 registry/blocks/charts의 실제 Recharts recipe로 제공한다. 3개 registry 레이어를 유지하고 새로운 Chart 패키지나 compiler는 만들지 않았다. desktop/mobile Charts, category index, gallery filter, global search와 70개 직접 상세 링크를 연결했다. Components Chart는 기존 공통 API 문서다.
+- **Trace**: 실제 registry source를 docs lazy preview와 Code/Source 양쪽에 사용한다. 직접 source를 읽는 런타임을 피하고 기존 공개 registry JSON에서 Code를 읽어 배포 경로를 보존했다. recipe의 데이터/config를 소비자가 수정하는 shadcn 방식이며 configurable library props를 문서에 약속하지 않는다. Motion ChartContainer entrance를 유지하고 70개 geometry의 Recharts interpolation을 끄며 SVG gradient/interactive Pie IDs를 인스턴스별로 분리했다. locale/timeZone을 명시하고 기간/월 Select label, native series button pressed/focus, semantic border 및 mobile filter를 보완했다.
+- **Accessibility**: 모든 recipe에 같은 live/filtered data의 native details/table fallback을 제공한다. table은 series label과 값, caption, keyboard scroll 및 empty 안내를 갖는다. 원본 tooltip/legend/axis/stack/donut/custom label/interactive selection을 실제 source에 유지했다. 새 chart-data-table helper는 작은 source composition이며 Chart registry dependency로 함께 설치된다.
+- **Evidence**: [Chart 대응 자료](./artifacts/chart-reference-correspondence.json). 70 SSR + 5 chart interaction/fallback + 5 registry/source = 80 tests PASS. focused strict typecheck/lint/registry build/diff PASS. 독립 소비자에 70개 recipe를 실제 namespace CLI로 설치하고 strict TypeScript 및 lazy Vite build PASS. 실제 browser의 Area 7-day selection, 7분류 대표의 iframe240/card200/documentScroll240/실제 SVG, gallery radial-stacked filter와 global Pie Interactive 검색을 확인했다.
+- **Findings and limits**: 최초 Pie test가 raw month를 표시하는 Base Select 차이를 드러내 명시 label renderer로 수정했다. 초기 cold lazy browser 검사에서 card가 아직 mount되지 않아 DOM getter가 실패했고 fresh snapshot과 다시 로드한 대표 route에서 복구했다. gallery input은 실제 snapshot에서 textbox였으므로 searchbox 추측 locator 실패를 정정했다. 첫 consumer refresh script의 cwd 오류는 최종 실제 CLI 재설치로 대체했다. consumer aggregate chunk/use-client 경고는 기존 fixture 특성이다. 전반적 dark/390/full, tooltip keyboard/RTL/Foundation/replay 및 전체 필수 checks는 task13에서 확인한다. README는 D004대로 보류한다.
