@@ -17,7 +17,7 @@ import SidebarExample from "../examples/sidebar";
 import MessageExample from "../examples/message";
 import MessageScrollerExample from "../examples/message-scroller";
 import QuestionnaireExample from "../examples/questionnaire";
-import type { ComponentType } from "react";
+import { lazy, Suspense, type ComponentType } from "react";
 import DatePickerExample from "../examples/date-picker";
 import DataTableExample from "../examples/data-table";
 import HoverCardExample from "../examples/hover-card";
@@ -122,6 +122,10 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+  "codebase": lazy(() => import("../examples/codebase")),
+  "collaborative-canvas": lazy(() => import("../examples/collaborative-canvas")),
+  "roadmap": lazy(() => import("../examples/roadmap")),
+
   "sidebar": SidebarExample,
   "message": MessageExample,
   "message-scroller": MessageScrollerExample,
@@ -247,5 +251,5 @@ const examples: Record<keyof typeof items, ComponentType> = {
 
 export function Preview({ name }: { name: keyof typeof items }) {
   const Example = examples[name];
-  return <div data-preview-name={name} className="flex min-w-0 w-full items-center justify-center text-foreground"><Example /></div>;
+  return <div data-preview-name={name} className="flex min-w-0 w-full items-center justify-center text-foreground"><Suspense fallback={<p className="p-4 text-sm text-muted-foreground">Loading example…</p>}><Example /></Suspense></div>;
 }

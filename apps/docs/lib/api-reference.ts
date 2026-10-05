@@ -1,3 +1,4 @@
+import { blockApiReferences } from "./api-blocks";
 import { overlayDataApiReferences } from "./api-overlay-data";
 import { coreApiReferences } from "./api-core";
 import { complexApiReferences } from "./api-complex";
@@ -26,6 +27,7 @@ export type ApiReference = {
 
 /** Leement-owned API. Primitive documentation does not replace this contract. */
 export const apiReferences: Partial<Record<keyof typeof items, ApiReference>> = {
+  ...blockApiReferences,
   ...complexApiReferences,
   ...contentApiReferences,
   ...navigationApiReferences,

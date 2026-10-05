@@ -257,6 +257,7 @@ type StyleProperty =
   | "width"
   | "height"
   | "left"
+  | "top"
   | "right";
 
 // CSS still defines the primitive's semantic states. Motion interpolates their resolved values.

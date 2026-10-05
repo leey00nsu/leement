@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ItemPage } from "../../../components/item-page";
 import { items } from "../../../lib/items";
 
-const names = ["settings-section", "bento-grid", "gantt", "kanban", "sandbox", "reel", "deck", "dialog-stack"] as const;
+const names = ["codebase", "collaborative-canvas", "roadmap", "settings-section", "bento-grid", "gantt", "kanban", "sandbox", "reel", "deck", "dialog-stack"] as const;
 type PageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {

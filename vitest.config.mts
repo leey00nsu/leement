@@ -4,6 +4,7 @@ export default defineConfig({
   oxc: { jsx: { runtime: "automatic" } },
   resolve: {
     alias: {
+      "@/components/blocks": fileURLToPath(new URL("./registry/blocks", import.meta.url)),
       "@/hooks": fileURLToPath(new URL("./registry/hooks", import.meta.url)),
       "@/components/ui": fileURLToPath(
         new URL("./registry/ui", import.meta.url),

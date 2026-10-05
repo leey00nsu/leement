@@ -2574,6 +2574,75 @@
           "target": "licenses/leement/shadcn-license.md"
         }
       ]
+    },
+    {
+      "name": "codebase",
+      "type": "registry:block",
+      "title": "Codebase",
+      "description": "File tree and code viewer with synchronized selection.",
+      "files": [
+        {
+          "path": "registry/blocks/codebase.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/codebase.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/tree",
+        "@leement/code-block",
+        "@leement/select",
+        "@leement/utils"
+      ]
+    },
+    {
+      "name": "collaborative-canvas",
+      "type": "registry:block",
+      "title": "Collaborative Canvas",
+      "description": "Application-controlled presence and movable canvas objects.",
+      "files": [
+        {
+          "path": "registry/blocks/collaborative-canvas.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/collaborative-canvas.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/avatar",
+        "@leement/avatar-stack",
+        "@leement/cursor",
+        "@leement/button",
+        "@leement/leement-motion",
+        "@leement/utils"
+      ]
+    },
+    {
+      "name": "roadmap",
+      "type": "registry:block",
+      "title": "Roadmap",
+      "description": "Five synchronized views of an editable roadmap.",
+      "files": [
+        {
+          "path": "registry/blocks/roadmap.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/roadmap.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/button",
+        "@leement/input",
+        "@leement/avatar",
+        "@leement/badge",
+        "@leement/calendar",
+        "@leement/list",
+        "@leement/table",
+        "@leement/select",
+        "@leement/tabs",
+        "@leement/dialog",
+        "@leement/context-menu",
+        "@leement/gantt",
+        "@leement/kanban",
+        "@leement/utils"
+      ]
     }
   ]
 }

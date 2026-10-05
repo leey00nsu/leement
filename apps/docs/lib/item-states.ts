@@ -2,6 +2,10 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+  "codebase": "Files and file tree are supplied by the application. Folders expand with arrow keys; file selection and clipboard copy remain local.",
+  "collaborative-canvas": "Positions are 0\u2013100 percent. Drag objects or use arrows; Shift moves by ten percent. Your app supplies presence and persistence; this example uses a local simulation.",
+  "roadmap": "Dates are local calendar dates. Filtered edits preserve other tasks. Changes are callbacks; no backend is bundled. Native visible actions provide alternatives to context menus and drag.",
+
   "sidebar": "Controlled state; see Examples.",
   "message": "Controlled state; see Examples.",
   "message-scroller": "Controlled state; see Examples.",

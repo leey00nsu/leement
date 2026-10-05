@@ -1,6 +1,6 @@
 # Third-party notices
 
-Leement's expanded registry uses selected Kibo UI component ideas and may adapt portions of its MIT-licensed source. Reference: https://github.com/shadcnblocks/kibo at commit `3d63cdb15b79d972e3dc38a10997987672f9b263`. This notice is retained for copied or substantially adapted code, including the initial Avatar Stack and Cursor source. Each Leement registry item remains editable source in the consumer project.
+Leement's expanded registry uses selected Kibo UI component ideas and may adapt portions of its MIT-licensed source. Reference: https://github.com/shadcnblocks/kibo at commit `3d63cdb15b79d972e3dc38a10997987672f9b263`. This notice is retained for copied or substantially adapted code, including the initial Avatar Stack and Cursor source and the public Codebase, Collaborative Canvas and Roadmap block compositions. Blocks use application-owned data and Leement primitives; copied or adapted files preserve the full MIT notice in their installed source. Each Leement registry item remains editable source in the consumer project.
 
 ## Kibo UI MIT license
 
