@@ -202,12 +202,13 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-10 Kibo 전환·입력 Websites 8개 block 구현
+- [DONE][PRD-FR-016] T-ASDHZYC4MRGK-docs-reference-parity-10 Kibo 전환·입력 Websites 8개 block 구현
   - Date: 2026-10-05
   - Acceptance:
     - Compare/Compliance/Contact/CTA/Download/Experience/FAQ/Form의 source와 해당 상호작용을 제공한다.
   - Checklist:
-    - [ ] 비교·문의/폼 제출 callback·FAQ 키보드 조작과 empty/error/disabled, 실제 preview 및 종속 설치를 검증한다.
+    - [x] 비교·문의/폼 제출 callback·FAQ 키보드 조작과 empty/error/disabled, 실제 preview 및 종속 설치를 검증한다.
+  - Verification: 신규7 + 콘텐츠6 + registry5 = 18 tests PASS; strict typecheck/focused lint/registry build/diff PASS. 8개 CLI 설치·독립 strict/Vite build 및 전체 8개 240px preview geometry, native FAQ Enter와 Form type/venue 검색·선택·local callback을 확인했다. [대응 자료](./artifacts/block-reference-correspondence.json).
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -

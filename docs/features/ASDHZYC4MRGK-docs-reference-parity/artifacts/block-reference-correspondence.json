@@ -299,5 +299,184 @@
       "empty collection status"
     ],
     "verification": "18 focused integration/registry tests; docs strict typecheck, focused lint and registry build; actual CLI consumer installation and strict/Vite lazy build. Representative article/overview/release/case/code 240px geometry and live code-language selection."
+  },
+  {
+    "upstream": {
+      "name": "compare",
+      "source": "apps/docs/content/blocks/compare.mdx",
+      "example": "apps/docs/examples/compare.tsx",
+      "exampleExists": true,
+      "installer": "compare",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/compare.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/compare"
+    },
+    "registryItem": "compare",
+    "route": "/blocks/compare",
+    "source": "registry/blocks/compare.tsx",
+    "example": "apps/docs/examples/compare.tsx",
+    "contracts": [
+      "editable native comparison table",
+      "keyboard focusable explanation tooltip",
+      "empty table row"
+    ],
+    "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
+  },
+  {
+    "upstream": {
+      "name": "compliance",
+      "source": "apps/docs/content/blocks/compliance.mdx",
+      "example": "apps/docs/examples/compliance.tsx",
+      "exampleExists": true,
+      "installer": "compliance",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/compliance.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/compliance"
+    },
+    "registryItem": "compliance",
+    "route": "/blocks/compliance",
+    "source": "registry/blocks/compliance.tsx",
+    "example": "apps/docs/examples/compliance.tsx",
+    "contracts": [
+      "application-owned badge media",
+      "security practices and supporting feature panels"
+    ],
+    "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
+  },
+  {
+    "upstream": {
+      "name": "contact",
+      "source": "apps/docs/content/blocks/contact.mdx",
+      "example": "apps/docs/examples/contact.tsx",
+      "exampleExists": true,
+      "installer": "contact",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/contact.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/contact"
+    },
+    "registryItem": "contact",
+    "route": "/blocks/contact",
+    "source": "registry/blocks/contact.tsx",
+    "example": "apps/docs/examples/contact.tsx",
+    "contracts": [
+      "contact link destinations",
+      "native required/email validation with inline errors",
+      "async callback pending/success/error",
+      "reset only after success and preserve data on failure"
+    ],
+    "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
+  },
+  {
+    "upstream": {
+      "name": "cta",
+      "source": "apps/docs/content/blocks/cta.mdx",
+      "example": "apps/docs/examples/cta.tsx",
+      "exampleExists": true,
+      "installer": "cta",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/cta.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/cta"
+    },
+    "registryItem": "cta",
+    "route": "/blocks/cta",
+    "source": "registry/blocks/cta.tsx",
+    "example": "apps/docs/examples/cta.tsx",
+    "contracts": [
+      "optional primary and secondary destination links"
+    ],
+    "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
+  },
+  {
+    "upstream": {
+      "name": "download",
+      "source": "apps/docs/content/blocks/download.mdx",
+      "example": "apps/docs/examples/download.tsx",
+      "exampleExists": true,
+      "installer": "download",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/download.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/download"
+    },
+    "registryItem": "download",
+    "route": "/blocks/download",
+    "source": "registry/blocks/download.tsx",
+    "example": "apps/docs/examples/download.tsx",
+    "contracts": [
+      "optional platform downloads",
+      "missing platforms hidden and empty status"
+    ],
+    "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
+  },
+  {
+    "upstream": {
+      "name": "experience",
+      "source": "apps/docs/content/blocks/experience.mdx",
+      "example": "apps/docs/examples/experience.tsx",
+      "exampleExists": true,
+      "installer": "experience",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/experience.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/experience"
+    },
+    "registryItem": "experience",
+    "route": "/blocks/experience",
+    "source": "registry/blocks/experience.tsx",
+    "example": "apps/docs/examples/experience.tsx",
+    "contracts": [
+      "editable career timeline",
+      "resume destination and empty collection"
+    ],
+    "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
+  },
+  {
+    "upstream": {
+      "name": "faq",
+      "source": "apps/docs/content/blocks/faq.mdx",
+      "example": "apps/docs/examples/faq.tsx",
+      "exampleExists": true,
+      "installer": "faq",
+      "dependencies": [],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/faq.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/faq"
+    },
+    "registryItem": "faq",
+    "route": "/blocks/faq",
+    "source": "registry/blocks/faq.tsx",
+    "example": "apps/docs/examples/faq.tsx",
+    "contracts": [
+      "native Tab and Enter/Space accordion interaction",
+      "stable question IDs and empty status"
+    ],
+    "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
+  },
+  {
+    "upstream": {
+      "name": "form",
+      "source": "apps/docs/content/blocks/form.mdx",
+      "example": "apps/docs/examples/form.tsx",
+      "exampleExists": true,
+      "installer": "form",
+      "dependencies": [
+        "/components/choicebox",
+        "/components/combobox",
+        "/components/dropzone",
+        "/components/mini-calendar",
+        "/components/tags"
+      ],
+      "sourceUrl": "https://github.com/shadcnblocks/kibo/blob/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/examples/form.tsx",
+      "docsUrl": "https://www.kibo-ui.com/blocks/form"
+    },
+    "registryItem": "form",
+    "route": "/blocks/form",
+    "source": "registry/blocks/form.tsx",
+    "example": "apps/docs/examples/form.tsx",
+    "contracts": [
+      "type choice and searchable venue",
+      "date navigation and tag add/remove",
+      "image type/5 files/5MB restriction",
+      "local app-owned submit and draft callbacks",
+      "disabled, pending, error and data preservation"
+    ],
+    "verification": "18 focused content/conversion/registry tests, docs strict typecheck/focused lint/registry build. Actual CLI installation and strict/Vite consumer build. Eight 240px previews, FAQ keyboard and event type/venue/local submission in browser."
   }
 ]

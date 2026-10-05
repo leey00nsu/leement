@@ -54,7 +54,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:87f351d24ba114a1e1806488d2f9d315c685280fe838c29f4d50c73b076f780e -->
+<!-- lee-spec-kit:workflow-sync sha256:de7c7fdd649bddb2d71857fecfb77cfdcd9341da6701e1f210c924c71653b4ac -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
@@ -126,3 +126,10 @@
 - **Trace**: CodeExample은 JavaScript/Python/Go/Ruby의 실제 source와 controlled/uncontrolled tab/copy를 연결했다. CodeBlock은 세 언어 highlight 모듈만 추가했다. 목록의 empty 상태, breakout/collection optional action 및 community keyboard focus를 보완했다. native table/code의 넓은 내용은 내부 스크롤을 사용한다.
 - **Evidence**: [공개 block 대응 자료](./artifacts/block-reference-correspondence.json). 콘텐츠 6 + Applications 7 + registry 5 = 18 tests PASS; strict docs typecheck/focused lint/registry build/diff PASS. 10개 namespace의 실제 shadcn CLI 설치와 독립 strict/Vite lazy build PASS. 실제 browser의 Python tab 전환, About/BlogPost/Changelog/CaseStudy/CodeExample의 iframe240/root200/documentScroll240을 확인했다.
 - **Fixes and limits**: 첫 consumer copy는 잘못된 작업 디렉터리 때문에 실패하여 절대 source 경로로 복구했다. 최초 About는 flex child의 intrinsic image 폭으로 overflow가 발생했고 full-width/min-width 및 grid columns를 명시해 수정했다. 첫 복합 slug handle locator 실패는 snapshot에서 새 ref를 얻어 복구했다. aggregate consumer bundle 크기/use-client 경고는 기존 검증 fixture 특성으로 남기며 build 실패로 간주하지 않는다. 전체 light/dark/RTL/모든 route와 잔여 Blocks/Charts는 task13에서 확인한다. README는 D004에 따라 변경하지 않는다.
+
+## D015 — 전환·입력 Websites 블록 8개
+
+- **Decision**: Compare/Compliance/Contact/CTA/Download/Experience/FAQ/Form을 public source/API/canonical preview/registry와 연결했다. Contact는 native required/email validation과 inline error, app async callback, pending/disabled, 실패 시 보존·성공 시 reset을 제공한다. EventForm은 choice/combobox/date/tags/dropzone의 앱 소유 데이터를 submit/draft callback으로 전달한다. backend·업로드·임시 가짜 성공은 source에 넣지 않았다.
+- **Trace**: Kibo 공개 레이아웃과 핵심 기능을 Leement primitive로 구성하고 MIT 전문을 보존했다. Contact의 RHF/Zod demo를 native form 계약으로 적응해 추가 dependency 없이 데이터와 오류를 제공한다. 다운로드 store badge는 원본 외부 브랜드 asset 대신 이름 있는 platform action으로 표현한다. Compliance의 default 배지는 중립 예시이며 인증 사실로 표시하지 않는다. 폭 제한과 optional/empty data를 처리한다.
+- **Evidence**: [공개 block 대응 자료](./artifacts/block-reference-correspondence.json). 신규 7 + 콘텐츠6 + registry5 = 18 tests PASS. strict docs typecheck/focused lint/registry build/diff PASS. 8개 namespace CLI 설치와 독립 strict/Vite lazy build PASS. 8개 iframe240/documentScroll240을 확인했고, Contact/Form 예제 wrapper 수정 뒤 root200도 확인했다. 실제 Form에서 이름/organizer 입력→Workshop→Online venue 검색·선택→callback 제출 및 local demo status, FAQ Enter 펼침을 확인했다.
+- **Findings**: 최초 FAQ 방향키 test는 설치된 Base UI 1.7이 APG 갱신에 맞춰 native Tab 순서로 변경한 계약과 맞지 않았다. 설치 타입/source의 deprecated orientation/loopFocus를 확인하고 Tab+Enter test 및 API note로 정정했다. Contact invalid handler의 synthetic event 값은 state updater 전에 캡처한다. Contact/Form 예제의 fragment가 flex preview에서 두 sibling을 가로 배치한 문제는 full-width wrapper로 수정했다. 제출 성공 직후 snapshot의 disabled 상태는 promise가 진행 중인 순간이며 최종 pending 복원은 통합 테스트에서 확인한다. 전체 Feature checks는 task13에서 수행한다.
