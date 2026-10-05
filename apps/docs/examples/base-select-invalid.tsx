@@ -1,0 +1,45 @@
+"use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
+import { Field, FieldError, FieldLabel } from "../../../registry/ui/field";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../../registry/ui/select";
+
+const items = [
+  { label: "Select a fruit", value: null },
+  { label: "Apple", value: "apple" },
+  { label: "Banana", value: "banana" },
+  { label: "Blueberry", value: "blueberry" },
+];
+
+function SelectInvalid() {
+  return (
+    <Field data-invalid className="w-full max-w-48">
+      <FieldLabel>Fruit</FieldLabel>
+      <Select items={items}>
+        <SelectTrigger aria-invalid>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {items.map((item) => (
+              <SelectItem key={item.value} value={item.value}>
+                {item.label}
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+      <FieldError>Please select a fruit.</FieldError>
+    </Field>
+  );
+}
+
+export default function Example() {
+  return <SelectInvalid />;
+}

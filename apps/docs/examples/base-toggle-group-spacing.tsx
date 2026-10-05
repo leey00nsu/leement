@@ -1,10 +1,11 @@
 "use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "../../../registry/ui/toggle-group"
+} from "../../../registry/ui/toggle-group";
 
-export default function ToggleGroupSpacing() {
+function ToggleGroupSpacing() {
   return (
     <ToggleGroup size="sm" defaultValue={["top"]} variant="outline" spacing={2}>
       <ToggleGroupItem value="top" aria-label="Toggle top">
@@ -20,5 +21,9 @@ export default function ToggleGroupSpacing() {
         Right
       </ToggleGroupItem>
     </ToggleGroup>
-  )
+  );
+}
+
+export default function Example() {
+  return <ToggleGroupSpacing />;
 }

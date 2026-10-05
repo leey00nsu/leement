@@ -38,7 +38,7 @@ describe("copyable docs example source", () => {
     );
   });
   it("does not read files for an item without additional examples", async () => {
-    expect(await getAdditionalExampleCodes("kbd")).toEqual([]);
+    expect(await getAdditionalExampleCodes("settings-section")).toEqual([]);
   });
   it("rejects a catalog path outside the examples directory", async () => {
     additionalExamples.kbd = [

@@ -14131,6 +14131,53 @@ export const overlayDataApiReferences: Record<string, ApiReference> = {
             "description": "Additional Tailwind classes."
           }
         ]
+      },
+      {
+        "name": "DataTableColumnHeader",
+        "description": "Sortable column header with ascending/descending and hide menu. Uses TanStack Table v8 column methods.",
+        "props": [
+          {
+            "name": "column",
+            "type": "Column<TData, TValue>",
+            "required": true,
+            "description": "Column instance from a TanStack Table v8 header."
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Visible and accessible column name."
+          },
+          {
+            "name": "className",
+            "type": "string",
+            "description": "Additional layout classes."
+          }
+        ]
+      },
+      {
+        "name": "DataTablePagination",
+        "description": "Selection count, page size, current page, first/previous/next/last commands. Boundary commands are disabled.",
+        "props": [
+          {
+            "name": "table",
+            "type": "Table<TData>",
+            "required": true,
+            "description": "TanStack Table v8 instance with pagination enabled."
+          }
+        ]
+      },
+      {
+        "name": "DataTableViewOptions",
+        "description": "Checkbox menu for hiding and showing accessor columns that permit hiding.",
+        "props": [
+          {
+            "name": "table",
+            "type": "Table<TData>",
+            "required": true,
+            "description": "TanStack Table v8 instance with column visibility state."
+          }
+        ]
       }
     ],
     "links": [
@@ -14145,7 +14192,8 @@ export const overlayDataApiReferences: Record<string, ApiReference> = {
     ],
     "notes": [
       "AdvancedDataTable provides TanStack v8 sorting/filtering/pagination/selection/column visibility with native Table semantics. Use stable getRowId and caption.",
-      "The Base reference is a recipe, not an npm component API. Its independent ColumnDef/useReactTable compositions remain available in Examples/Usage; the generic pattern is optional. Server data, virtualization and mutations remain application code."
+      "The Base reference is a recipe, not an npm component API. Its independent ColumnDef/useReactTable compositions remain available in Examples/Usage; the generic pattern is optional. Server data, virtualization and mutations remain application code.",
+      "The full baseline examples and step-by-step guide use direct TanStack Table v8 + Table composition. AdvancedDataTable is optional. Column header/pagination/view options are provided as source in this registry item."
     ]
   }
 };

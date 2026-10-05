@@ -2566,7 +2566,7 @@ export const coreApiReferences: Record<string, ApiReference> = {
       }
     ],
     "notes": [
-      "Field retains Base UI label/control/validation behavior and adds vertical, horizontal and responsive layout. FieldGroup establishes the container used by responsive orientation.",
+      "Field retains Base UI label/control/validation behavior and adds vertical, horizontal and responsive layout. Outside Field, FieldLabel renders a native label for choice-card composition and FieldDescription renders a native paragraph. Standalone class callbacks receive neutral state; use htmlFor/id or a nested native input. FieldSet links its direct description through aria-describedby. FieldGroup establishes the container used by responsive orientation.",
       "Input automatically registers with Field. FieldControl remains available for a custom native control. Use htmlFor/id for explicit native composition.",
       "FieldError errors accepts app-provided message objects, removes duplicate messages and links the error to the field control. Without errors, it preserves Base validation and match behavior."
     ]

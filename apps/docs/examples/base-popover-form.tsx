@@ -1,7 +1,8 @@
-// Adapted from the pinned shadcn/ui Base example (MIT).
-import { Button } from "../../../registry/ui/button"
-import { Field, FieldGroup, FieldLabel } from "../../../registry/ui/field"
-import { Input } from "../../../registry/ui/input"
+"use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
+import { Button } from "../../../registry/ui/button";
+import { Field, FieldGroup, FieldLabel } from "../../../registry/ui/field";
+import { Input } from "../../../registry/ui/input";
 import {
   Popover,
   PopoverContent,
@@ -9,9 +10,9 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "../../../registry/ui/popover"
+} from "../../../registry/ui/popover";
 
-export default function PopoverForm() {
+function PopoverForm() {
   return (
     <>
       <Popover>
@@ -42,5 +43,9 @@ export default function PopoverForm() {
         </PopoverContent>
       </Popover>
     </>
-  )
+  );
+}
+
+export default function Example() {
+  return <PopoverForm />;
 }

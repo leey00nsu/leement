@@ -1,7 +1,8 @@
 "use client";
-import { buttonVariants } from "../../../registry/ui/button"
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
+import { buttonVariants } from "../../../registry/ui/button";
 
-export default function ButtonRender() {
+function ButtonRender() {
   return (
     <a
       href="#"
@@ -9,5 +10,9 @@ export default function ButtonRender() {
     >
       Login
     </a>
-  )
+  );
+}
+
+export default function Example() {
+  return <ButtonRender />;
 }

@@ -1,5 +1,6 @@
-// Adapted from the pinned shadcn/ui Base example (MIT).
-import { BluetoothIcon } from "lucide-react"
+"use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
+import { BluetoothIcon } from "lucide-react";
 
 import {
   AlertDialog,
@@ -12,10 +13,10 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../../../registry/ui/alert-dialog"
-import { Button } from "../../../registry/ui/button"
+} from "../../../registry/ui/alert-dialog";
+import { Button } from "../../../registry/ui/button";
 
-export default function AlertDialogSmallWithMedia() {
+function AlertDialogSmallWithMedia() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
@@ -38,5 +39,9 @@ export default function AlertDialogSmallWithMedia() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  )
+  );
+}
+
+export default function Example() {
+  return <AlertDialogSmallWithMedia />;
 }

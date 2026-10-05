@@ -1,12 +1,12 @@
-// Adapted from the pinned shadcn/ui Base example (MIT).
-"use client"
+"use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 
-import { Button } from "../../../registry/ui/button"
-import { toast, Toaster } from "../../../registry/ui/toast"
+import { Button } from "../../../registry/ui/button";
+import { toast } from "../../../registry/ui/toast";
 
-export default function ToastTypes() {
+function ToastTypes() {
   return (
-    <div className="flex flex-wrap gap-2"><Toaster />
+    <div className="flex flex-wrap gap-2">
       <Button
         variant="outline"
         onClick={() => toast.add({ description: "Event has been created." })}
@@ -59,5 +59,16 @@ export default function ToastTypes() {
         Error
       </Button>
     </div>
-  )
+  );
+}
+
+import { Toaster as ExampleToaster } from "../../../registry/ui/toast";
+
+export default function Example() {
+  return (
+    <>
+      <ExampleToaster />
+      <ToastTypes />
+    </>
+  );
 }

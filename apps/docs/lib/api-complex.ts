@@ -1188,7 +1188,7 @@ export const complexApiReferences: Record<string, ApiReference> = {
       },
       {
         "name": "useSidebar",
-        "description": "Must be called inside SidebarProvider. Returns state, open/setOpen, openMobile/setOpenMobile, isMobile and toggleSidebar.",
+        "description": "Must be called inside SidebarProvider. Returns state, open/setOpen, openMobile/setOpenMobile, isMobile, mobileWidth and toggleSidebar.",
         "props": []
       },
       {
@@ -1211,9 +1211,10 @@ export const complexApiReferences: Record<string, ApiReference> = {
       }
     ],
     "notes": [
-      "Place SidebarProvider around navigation and content. Use SidebarInset for the content region. CSS variables --sidebar-width and --sidebar-width-icon customize desktop widths; mobile width is 18rem.",
+      "Place SidebarProvider around navigation and content. Use SidebarInset for the content region. CSS variables --sidebar-width and --sidebar-width-icon customize desktop widths; mobile width defaults to 18rem and can be overridden with --sidebar-width-mobile.",
       "The default desktop panel is fixed and the provider is viewport-height. Inside a bounded preview or embedded shell, explicitly override these layout classes.",
-      "Controlled open/onOpenChange affect desktop; useSidebar exposes openMobile/setOpenMobile for the mobile sheet. Toggling writes sidebar_state with a seven-day lifetime; the app may read it for initial state."
+      "Controlled open/onOpenChange affect desktop; useSidebar exposes openMobile/setOpenMobile for the mobile sheet. Toggling writes sidebar_state with a seven-day lifetime; the app may read it for initial state.",
+      "SidebarProvider style accepts --sidebar-width, --sidebar-width-icon and --sidebar-width-mobile. The mobile width is passed through context to the portal; useSidebar also exposes the resolved mobileWidth string. Desktop/mobile state and the Ctrl/Command+B toggle remain separate."
     ],
     "usage": "\"use client\";\nimport { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarFooter, SidebarInset, SidebarTrigger } from \"@/components/ui/sidebar\";\nimport { Home, Folder, Settings } from \"lucide-react\";\nexport default function SidebarExample(){return <SidebarProvider className=\"relative h-96 min-h-0 w-full overflow-hidden rounded-lg border\" style={{\"--sidebar-width\":\"12rem\"} as React.CSSProperties}><Sidebar collapsible=\"icon\" className=\"absolute! h-full!\"><SidebarHeader><strong className=\"px-2 group-data-[collapsible=icon]:hidden\">Workspace</strong></SidebarHeader><SidebarContent><SidebarGroup><SidebarGroupLabel>Projects</SidebarGroupLabel><SidebarMenu>{[{name:\"Overview\",Icon:Home},{name:\"Projects\",Icon:Folder},{name:\"Settings\",Icon:Settings}].map(({name,Icon},index)=><SidebarMenuItem key={name}><SidebarMenuButton isActive={index===0} tooltip={name}><Icon /><span>{name}</span></SidebarMenuButton></SidebarMenuItem>)}</SidebarMenu></SidebarGroup></SidebarContent><SidebarFooter className=\"group-data-[collapsible=icon]:hidden text-xs text-muted-foreground\">Application navigation</SidebarFooter></Sidebar><SidebarInset className=\"min-w-0\"><header className=\"flex items-center gap-2 border-b p-3\"><SidebarTrigger /><span>Overview</span></header><div className=\"p-4 text-sm text-muted-foreground\">Toggle the sidebar, or press Ctrl/\u2318 B. On small screens it opens as a sheet.</div></SidebarInset></SidebarProvider>;}\n",
     "links": [

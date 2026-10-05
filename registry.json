@@ -1802,7 +1802,8 @@
       ],
       "registryDependencies": [
         "@leement/utils",
-        "@leement/separator"
+        "@leement/separator",
+        "@leement/leement-motion"
       ],
       "files": [
         {
@@ -2063,7 +2064,8 @@
         "@leement/button",
         "@leement/input",
         "@leement/checkbox",
-        "@leement/dropdown-menu"
+        "@leement/dropdown-menu",
+        "@leement/select"
       ],
       "files": [
         {

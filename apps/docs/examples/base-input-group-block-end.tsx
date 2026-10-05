@@ -1,10 +1,11 @@
 "use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "../../../registry/ui/field"
+} from "../../../registry/ui/field";
 import {
   InputGroup,
   InputGroupAddon,
@@ -12,9 +13,9 @@ import {
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "../../../registry/ui/input-group"
+} from "../../../registry/ui/input-group";
 
-export default function InputGroupBlockEnd() {
+function InputGroupBlockEnd() {
   return (
     <FieldGroup className="max-w-sm">
       <Field>
@@ -46,5 +47,9 @@ export default function InputGroupBlockEnd() {
         </FieldDescription>
       </Field>
     </FieldGroup>
-  )
+  );
+}
+
+export default function Example() {
+  return <InputGroupBlockEnd />;
 }

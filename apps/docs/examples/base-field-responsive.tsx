@@ -1,5 +1,6 @@
 "use client";
-import { Button } from "../../../registry/ui/button"
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
+import { Button } from "../../../registry/ui/button";
 import {
   Field,
   FieldContent,
@@ -8,10 +9,10 @@ import {
   FieldLabel,
   FieldLegend,
   FieldSet,
-} from "../../../registry/ui/field"
-import { Input } from "../../../registry/ui/input"
+} from "../../../registry/ui/field";
+import { Input } from "../../../registry/ui/input";
 
-export default function FieldResponsive() {
+function FieldResponsive() {
   return (
     <div className="w-full max-w-lg">
       <form>
@@ -38,5 +39,9 @@ export default function FieldResponsive() {
         </FieldSet>
       </form>
     </div>
-  )
+  );
+}
+
+export default function Example() {
+  return <FieldResponsive />;
 }

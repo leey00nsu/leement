@@ -1,3 +1,4 @@
+import { baseExamples } from "./base-example-catalog";
 import type { items } from "./items";
 
 export type AdditionalExample = {
@@ -10,7 +11,15 @@ export type AdditionalExample = {
 export const additionalExamples: Partial<
   Record<keyof typeof items, AdditionalExample[]>
 > = {
-  "alert-dialog": [{"id": "base-small-media", "title": "Small Media", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-alert-dialog-small-media"}],
+  "alert-dialog": [
+    {
+      id: "base-small-media",
+      title: "Small Media",
+      description:
+        "Base composition with Leement source, accessible behavior and semantic tokens.",
+      file: "base-alert-dialog-small-media",
+    },
+  ],
   select: [
     {
       id: "groups",
@@ -35,7 +44,13 @@ export const additionalExamples: Partial<
     },
   ],
   "input-group": [
-    {"id": "base-block-end", "title": "Block End", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-input-group-block-end"},
+    {
+      id: "base-block-end",
+      title: "Block End",
+      description:
+        "Adapted from the fixed shadcn Base example with Leement source and tokens.",
+      file: "base-input-group-block-end",
+    },
     {
       id: "compositions",
       title: "Search, units and multiline",
@@ -45,7 +60,13 @@ export const additionalExamples: Partial<
     },
   ],
   field: [
-    {"id": "base-responsive", "title": "Responsive", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-field-responsive"},
+    {
+      id: "base-responsive",
+      title: "Responsive",
+      description:
+        "Adapted from the fixed shadcn Base example with Leement source and tokens.",
+      file: "base-field-responsive",
+    },
     {
       id: "fieldset",
       title: "Related fields and form values",
@@ -91,7 +112,13 @@ export const additionalExamples: Partial<
     },
   ],
   toast: [
-    {"id": "base-types", "title": "Types", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-toast-types"},
+    {
+      id: "base-types",
+      title: "Types",
+      description:
+        "Base composition with Leement source, accessible behavior and semantic tokens.",
+      file: "base-toast-types",
+    },
     {
       id: "feedback",
       title: "Types, promise and action",
@@ -101,8 +128,20 @@ export const additionalExamples: Partial<
     },
   ],
   avatar: [
-    {"id": "base-group-count", "title": "Group Count", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-avatar-group-count"},
-    {"id": "base-size", "title": "Size", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-avatar-size"},
+    {
+      id: "base-group-count",
+      title: "Group Count",
+      description:
+        "Adapted from the fixed shadcn Base example with Leement source and tokens.",
+      file: "base-avatar-group-count",
+    },
+    {
+      id: "base-size",
+      title: "Size",
+      description:
+        "Adapted from the fixed shadcn Base example with Leement source and tokens.",
+      file: "base-avatar-size",
+    },
     {
       id: "images",
       title: "Images, fallback and sizes",
@@ -166,7 +205,13 @@ export const additionalExamples: Partial<
     },
   ],
   "toggle-group": [
-    {"id": "base-spacing", "title": "Spacing", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-toggle-group-spacing"},
+    {
+      id: "base-spacing",
+      title: "Spacing",
+      description:
+        "Adapted from the fixed shadcn Base example with Leement source and tokens.",
+      file: "base-toggle-group-spacing",
+    },
     {
       id: "vertical",
       title: "Vertical controlled selection",
@@ -221,7 +266,13 @@ export const additionalExamples: Partial<
     },
   ],
   button: [
-    {"id": "base-render", "title": "Render", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-button-render"},
+    {
+      id: "base-render",
+      title: "Render",
+      description:
+        "Adapted from the fixed shadcn Base example with Leement source and tokens.",
+      file: "base-button-render",
+    },
     {
       id: "sizes",
       title: "Sizes, icon names and links",
@@ -285,7 +336,13 @@ export const additionalExamples: Partial<
     },
   ],
   dialog: [
-    {"id": "base-close-button", "title": "Close Button", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-dialog-close-button"},
+    {
+      id: "base-close-button",
+      title: "Close Button",
+      description:
+        "Base composition with Leement source, accessible behavior and semantic tokens.",
+      file: "base-dialog-close-button",
+    },
     {
       id: "controlled",
       title: "Controlled dialog with scrollable content",
@@ -295,7 +352,13 @@ export const additionalExamples: Partial<
     },
   ],
   popover: [
-    {"id": "base-form", "title": "Form", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-popover-form"},
+    {
+      id: "base-form",
+      title: "Form",
+      description:
+        "Base composition with Leement source, accessible behavior and semantic tokens.",
+      file: "base-popover-form",
+    },
     {
       id: "positioning",
       title: "Positioning and controlled state",
@@ -368,8 +431,20 @@ export const additionalExamples: Partial<
     },
   ],
   calendar: [
-    {"id": "base-range", "title": "Range", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-calendar-range"},
-    {"id": "base-caption", "title": "Caption", "description": "Base composition with Leement source, accessible behavior and semantic tokens.", "file": "base-calendar-caption"},
+    {
+      id: "base-range",
+      title: "Range",
+      description:
+        "Base composition with Leement source, accessible behavior and semantic tokens.",
+      file: "base-calendar-range",
+    },
+    {
+      id: "base-caption",
+      title: "Caption",
+      description:
+        "Base composition with Leement source, accessible behavior and semantic tokens.",
+      file: "base-calendar-caption",
+    },
     {
       id: "constraints",
       title: "Locale, unavailable dates and range limits",
@@ -415,8 +490,20 @@ export const additionalExamples: Partial<
     },
   ],
   combobox: [
-    {"id": "base-clear", "title": "Clear", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-combobox-clear"},
-    {"id": "base-multiple", "title": "Multiple", "description": "Adapted from the fixed shadcn Base example with Leement source and tokens.", "file": "base-combobox-multiple"},
+    {
+      id: "base-clear",
+      title: "Clear",
+      description:
+        "Adapted from the fixed shadcn Base example with Leement source and tokens.",
+      file: "base-combobox-clear",
+    },
+    {
+      id: "base-multiple",
+      title: "Multiple",
+      description:
+        "Adapted from the fixed shadcn Base example with Leement source and tokens.",
+      file: "base-combobox-multiple",
+    },
     {
       id: "controlled",
       title: "Controlled assignment and disabled field",
@@ -527,5 +614,10 @@ export const additionalExamples: Partial<
 };
 
 export function getAdditionalExamples(name: keyof typeof items) {
-  return additionalExamples[name] ?? [];
+  return [
+    ...(baseExamples[name] ?? []),
+    ...(additionalExamples[name] ?? []).filter(
+      (example) => !example.file.startsWith("base-"),
+    ),
+  ];
 }

@@ -1,5 +1,6 @@
-// Adapted from the pinned shadcn/ui Base example (MIT).
-import { Button } from "../../../registry/ui/button"
+"use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
+import { Button } from "../../../registry/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -9,11 +10,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../../registry/ui/dialog"
-import { Input } from "../../../registry/ui/input"
-import { Label } from "../../../registry/ui/label"
+} from "../../../registry/ui/dialog";
+import { Input } from "../../../registry/ui/input";
+import { Label } from "../../../registry/ui/label";
 
-export default function DialogCloseButton() {
+function DialogCloseButton() {
   return (
     <Dialog>
       <DialogTrigger render={<Button variant="outline" />}>Share</DialogTrigger>
@@ -31,7 +32,7 @@ export default function DialogCloseButton() {
             </Label>
             <Input
               id="link"
-              defaultValue="https://ui.shadcn.com/docs/installation"
+              defaultValue="https://ui.shadcn.com/getting-started"
               readOnly
             />
           </div>
@@ -41,5 +42,9 @@ export default function DialogCloseButton() {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
+}
+
+export default function Example() {
+  return <DialogCloseButton />;
 }

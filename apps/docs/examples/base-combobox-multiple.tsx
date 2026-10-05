@@ -1,6 +1,6 @@
-"use client"
-
-import * as React from "react"
+"use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
+import * as React from "react";
 
 import {
   Combobox,
@@ -13,7 +13,7 @@ import {
   ComboboxList,
   ComboboxValue,
   useComboboxAnchor,
-} from "../../../registry/ui/combobox"
+} from "../../../registry/ui/combobox";
 
 const frameworks = [
   "Next.js",
@@ -21,10 +21,10 @@ const frameworks = [
   "Nuxt.js",
   "Remix",
   "Astro",
-] as const
+] as const;
 
-export default function ComboboxMultiple() {
-  const anchor = useComboboxAnchor()
+function ComboboxMultiple() {
+  const anchor = useComboboxAnchor();
 
   return (
     <Combobox
@@ -40,7 +40,7 @@ export default function ComboboxMultiple() {
               {values.map((value: string) => (
                 <ComboboxChip key={value}>{value}</ComboboxChip>
               ))}
-              <ComboboxChipsInput aria-label="Select frameworks" />
+              <ComboboxChipsInput />
             </React.Fragment>
           )}
         </ComboboxValue>
@@ -56,5 +56,9 @@ export default function ComboboxMultiple() {
         </ComboboxList>
       </ComboboxContent>
     </Combobox>
-  )
+  );
+}
+
+export default function Example() {
+  return <ComboboxMultiple />;
 }

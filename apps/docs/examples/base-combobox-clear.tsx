@@ -1,4 +1,5 @@
-"use client"
+"use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 
 import {
   Combobox,
@@ -7,7 +8,7 @@ import {
   ComboboxInput,
   ComboboxItem,
   ComboboxList,
-} from "../../../registry/ui/combobox"
+} from "../../../registry/ui/combobox";
 
 const frameworks = [
   "Next.js",
@@ -15,12 +16,12 @@ const frameworks = [
   "Nuxt.js",
   "Remix",
   "Astro",
-] as const
+] as const;
 
-export default function ComboboxWithClear() {
+function ComboboxWithClear() {
   return (
     <Combobox items={frameworks} defaultValue={frameworks[0]}>
-      <ComboboxInput aria-label="Framework" placeholder="Select a framework" showClear />
+      <ComboboxInput placeholder="Select a framework" showClear />
       <ComboboxContent>
         <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
@@ -32,5 +33,9 @@ export default function ComboboxWithClear() {
         </ComboboxList>
       </ComboboxContent>
     </Combobox>
-  )
+  );
+}
+
+export default function Example() {
+  return <ComboboxWithClear />;
 }

@@ -1,0 +1,59 @@
+"use client";
+// Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
+import { GitBranchIcon, SearchIcon } from "lucide-react";
+
+import { Marker, MarkerContent, MarkerIcon } from "../../../registry/ui/marker";
+import { Spinner } from "../../../registry/ui/spinner";
+
+function MarkerDemo() {
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-8 py-12">
+      <Marker>
+        <MarkerIcon>
+          <GitBranchIcon />
+        </MarkerIcon>
+        <MarkerContent>Switched to a new branch</MarkerContent>
+      </Marker>
+      <Marker role="status">
+        <MarkerIcon>
+          <Spinner />
+        </MarkerIcon>
+        <MarkerContent>
+          <ShimmerText>Thinking...</ShimmerText>
+        </MarkerContent>
+      </Marker>
+      <Marker variant="separator">
+        <MarkerContent>Conversation compacted</MarkerContent>
+      </Marker>
+      <Marker>
+        <MarkerIcon>
+          <SearchIcon />
+        </MarkerIcon>
+        <MarkerContent>Explored 4 files</MarkerContent>
+      </Marker>
+    </div>
+  );
+}
+
+export default function Example() {
+  return <MarkerDemo />;
+}
+
+import * as React from "react";
+import { useMotionLoop } from "../../../registry/lib/leement-motion";
+function ShimmerText({ children }: { children: React.ReactNode }) {
+  const ref = React.useRef<HTMLSpanElement>(null);
+  useMotionLoop(
+    ref,
+    { backgroundPosition: ["200% 0%", "-200% 0%"] },
+    "cycle-pulse",
+  );
+  return (
+    <span
+      ref={ref}
+      className="bg-[linear-gradient(90deg,var(--lm-color-foreground-muted)_30%,var(--lm-color-foreground-default)_50%,var(--lm-color-foreground-muted)_70%)] bg-[length:200%_100%] bg-clip-text text-transparent motion-reduce:bg-none motion-reduce:text-muted-foreground"
+    >
+      {children}
+    </span>
+  );
+}

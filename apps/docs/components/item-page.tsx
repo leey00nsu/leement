@@ -1,3 +1,5 @@
+import { UsageGuide } from "./usage-guide";
+import { usageGuides } from "../lib/usage-guides";
 import { hasPreviewMotion } from "../lib/preview-config";
 import Link from "next/link";
 import { CopyButton, ItemWorkbench } from "./item-workbench";
@@ -100,8 +102,9 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           </h2>
           <p className="mt-3 text-sm leading-7 text-muted-foreground">
             Install the theme once, then add this editable registry source to
-            your project using the public namespace in Getting Started. The current
-            public release is 0.1.0; see Changelog for pending 0.2.0 changes.
+            your project using the public namespace in Getting Started. The
+            current public release is 0.1.0; see Changelog for pending 0.2.0
+            changes.
           </p>
           <div className="mt-5 overflow-hidden rounded-xl border border-border bg-muted/30">
             <div className="border-b border-border px-4 py-2 text-xs font-medium">
@@ -127,12 +130,19 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
           <div className="min-w-0 overflow-hidden rounded-xl border border-border">
             <div className="flex items-center justify-between gap-3 border-b border-border bg-muted/40 px-4 py-2.5">
-              <span className="font-mono text-xs text-muted-foreground">Basic usage</span>
+              <span className="font-mono text-xs text-muted-foreground">
+                Basic usage
+              </span>
               <CopyButton value={usageCode} label={`Copy usage for ${name}`} />
             </div>
-            <pre className="max-h-[28rem] overflow-auto p-5 text-[13px] leading-6"><code>{usageCode}</code></pre>
+            <pre className="max-h-[28rem] overflow-auto p-5 text-[13px] leading-6">
+              <code>{usageCode}</code>
+            </pre>
           </div>
-          <p className="text-sm leading-7 text-muted-foreground">{item.accessibility}</p>
+          <p className="text-sm leading-7 text-muted-foreground">
+            {item.accessibility}
+          </p>
+          <UsageGuide sections={usageGuides[name]} />
         </section>
 
         {examples.length > 0 && (
@@ -160,13 +170,27 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
                 />
                 <div className="flex min-w-0 flex-wrap items-center justify-between gap-3 rounded-md bg-muted p-3">
                   <code className="min-w-0 overflow-x-auto text-xs">
-                    {example.installCommand}
+                    {example.installCommand ||
+                      "No registry components required: native elements and theme utility classes."}
                   </code>
-                  <CopyButton
-                    value={example.installCommand}
-                    label={`Copy dependencies for ${example.title}`}
-                  />
+                  {example.installCommand && (
+                    <CopyButton
+                      value={example.installCommand}
+                      label={`Copy dependencies for ${example.title}`}
+                    />
+                  )}
                 </div>
+                {example.packageCommand && (
+                  <div className="flex flex-wrap items-center justify-between gap-3 rounded-md bg-muted p-3">
+                    <code className="overflow-x-auto text-xs">
+                      {example.packageCommand}
+                    </code>
+                    <CopyButton
+                      value={example.packageCommand}
+                      label={`Copy packages for ${example.title}`}
+                    />
+                  </div>
+                )}
               </section>
             ))}
           </section>
@@ -176,7 +200,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
       </article>
 
       <aside aria-label="On this page" className="hidden xl:block">
-        <div className="sticky top-24 border-l border-border pl-4">
+        <div className="sticky top-24 max-h-[calc(100svh-7rem)] overflow-y-auto border-l border-border pl-4 pe-2">
           <h2 className="text-sm font-medium text-foreground">On this page</h2>
           <nav aria-label="Page sections" className="mt-4 space-y-2">
             {outline.map((section) => (
