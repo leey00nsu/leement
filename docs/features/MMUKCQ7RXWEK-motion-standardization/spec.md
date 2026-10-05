@@ -76,7 +76,7 @@ Leement의 모든 시각 애니메이션을 Motion으로 실행해 새 효과를
 
 ### US-5: 목적에 따른 애니메이션 탐색
 
-- [ ] Components 좌측 Animations에 Brand Gradient Text, Text Reveal, Rotating Content, Reveal Content, Marquee를 모으고 기존 분류에 중복 노출하지 않는다. 검색 결과도 같은 분류를 쓴다. 기존 URL·registry UI 레이어·설치 API·미리보기 동작을 유지한다.
+- [x] Components 좌측 Animations에 Brand Gradient Text, Text Reveal, Rotating Content, Reveal Content, Marquee를 모으고 기존 분류에 중복 노출하지 않는다. 검색 결과도 같은 분류를 쓴다. 기존 URL·registry UI 레이어·설치 API·미리보기 동작을 유지한다.
 
 ## 기능 요구사항
 

@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:edaef2cf6387b8d1c81e8cb850aa6bdaf60a0c099b14c6cd21cd55a6f41da09a -->
+<!-- lee-spec-kit:workflow-sync sha256:a318fd16c6ba673726fcad0f47672f94a35ede20c6ef2c3a2aecf23ecddff630 -->
 
 ## D001: 세 요청을 한 Feature로 진행 (2026-10-04)
 
@@ -148,3 +148,5 @@ D013 결과: 느린 로딩에서 부모 inline 예제가 먼저 Motion으로 실
 - 사용자 요청(2026-10-05)과 위치 선택: 독립 상단 탭 대신 Components 좌측 분류로 제공한다. 같은 Feature T-11의 수정 요청으로 수용한다.
 - 시각 효과 자체가 목적인 BrandGradientText/TextReveal/RotatingContent/RevealContent/Marquee를 Animations로 묶는다. Spinner/Skeleton/Status는 feedback이고 MediaReveal은 loading/ready/error 상태, BrandAction은 Button 조합이므로 기존 책임 분류를 유지한다. Motion dependency 유무는 분류 기준이 아니다.
 - docs.ts에서 삭제된 Native Select를 가리키는 오래된 탐색 링크도 발견했다. 같은 Feature US-2의 제거 계약에 따라 링크만 정리한다. URL·registry 레이어·API·컴포넌트 구현은 변경하지 않는다. README 추가 영향 NONE.
+
+D014 결과: docs.ts에 Animations 5개를 중복 없이 추가했고 검색의 공통 분류도 반영했다. 기존 route/type/설치/Preview/Replay를 유지하며 Native Select 잔여 링크를 제거했다. T-11에서 catalog101개·production desktop/mobile·검색·5개 Preview와 필수 gate를 검증했다. 분류 외 UI 구현이나 registry metadata는 변경하지 않았다.

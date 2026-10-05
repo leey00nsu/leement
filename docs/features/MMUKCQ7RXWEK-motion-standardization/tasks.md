@@ -248,15 +248,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-11 Components의 Animations 탐색 분류 정리
+- [DONE][PRD-FR-008] T-MMUKCQ7RXWEK-motion-standardization-11 Components의 Animations 탐색 분류 정리
   - Date: 2026-10-05
   - Acceptance:
     - Components 좌측 Animations에 Brand Gradient Text·Text Reveal·Rotating Content·Reveal Content·Marquee를 중복 없이 표시하고 검색 결과도 Animations로 분류한다.
     - 기존 route·registry type·설치 명령·Preview/Replay를 유지하고 존재하지 않는 Native Select 탐색 링크는 노출하지 않는다.
   - Checklist:
-    - [ ] 목적 기준 분류와 navigation 링크 정합성 확인
-    - [ ] 데스크톱·모바일 탐색과 검색·5개 route·Preview browser 검증 및 typecheck/lint/build
-    - [ ] PRD·디자인 규칙·Feature 문서 동기화 및 task checkpoint
+    - [x] 목적 기준 분류와 navigation 링크 정합성 확인
+    - [x] 데스크톱·모바일 탐색과 검색·5개 route·Preview browser 검증 및 typecheck/lint/build
+    - [x] PRD·디자인 규칙·Feature 문서 동기화 및 task checkpoint
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -371,3 +371,10 @@
 - [브라우저 증거](./artifacts/preview-width-verification.json), [px 표시 화면](./artifacts/preview-width.png): light/dark·느린 로딩에서 부모 예제/모션은 0개이며 iframe 초기 실행은 item당 한 번, Replay 1회는 revision 0→1 및 item당 한 번 추가 실행이다. 3 item 각각의 opacity/filter·transform property track 2개(초기6, Replay 후 총12)는 예제 중복 실행 횟수와 구분한다. production build에서도 확인했다.
 - 실제 viewport 폭 표시: 상세908→240→256→320px, drag250px, 모바일333px; gallery frame240px의 내부238px을 표시한다. 추가예제240px과 production496px, Replay 후 폭·버튼 focus 유지 PASS. px 표시는 ResizeObserver로 iframe clientWidth와 동기화한다. client error 없음.
 - docs typecheck/변경 source lint 및 전체 typecheck/lint/test(19 files / 120 tests)/build PASS. 새 영구 테스트 NONE. PRD·디자인 Preview 조작 규칙을 동기화했고 README·registry API·npm/theme에는 변화가 없다.
+
+### T-11 검증
+
+- 공통 navigation의 Components 내부에 Animations를 추가해 Brand Gradient Text/Text Reveal/Rotating Content/Reveal Content/Marquee 5개를 모았다. 기존 Styling/Other에 중복하지 않으며 검색은 동일 section 이름을 표시한다. 모션이 부수 동작인 Feedback·control·product pattern은 기존 분류를 유지한다.
+- 삭제된 Native Select의 탐색 링크를 제거했다. 일회 navigation audit에서 Components78/Patterns15/Blocks8 총101개의 item 링크가 registry에 존재하고 범주 내부 중복이 없음을 확인했다. 5개 URL과 registry/UI 설치 source는 유지한다.
+- Production 브라우저에서 5개 route200, Animations 링크5개·현재 링크·기존 그룹 중복 없음, 각 Preview/Replay/handle/px 표시 PASS. 검색 query Animations는 해당 5개 결과와 기존 component URL을 반환한다. 모바일375px에서 같은 5개 링크가 보이고 Marquee 선택 시 메뉴가 닫히며 문서 overflow가 없다. client error 없음.
+- 전체 typecheck/lint/test(19 files / 120 tests)/build PASS. 새 영구 테스트 NONE이며 문서 분류 변경은 일회 catalog/browser 검증으로 확인했다. PRD와 디자인 탐색 규칙 동기화 완료.

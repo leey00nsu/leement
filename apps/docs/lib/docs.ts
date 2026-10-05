@@ -3,7 +3,7 @@ type NavSection = { title?: string; items: NavItem[] };
 export type NavGroup = { title: string; sections: NavSection[] };
 
 const componentSections = [
-  { title: "Core", names: ["Aspect Ratio", "Kbd", "Button Group", "Command", "Pagination", "Breadcrumb", "Accordion", "Toggle Group", "Toggle", "Native Select", "Input Group", "Field", "Radio Group", "Checkbox", "Button", "Input", "Select", "Switch", "Tabs", "Label", "Textarea", "Badge", "Card", "Separator"] },
+  { title: "Core", names: ["Aspect Ratio", "Kbd", "Button Group", "Command", "Pagination", "Breadcrumb", "Accordion", "Toggle Group", "Toggle", "Input Group", "Field", "Radio Group", "Checkbox", "Button", "Input", "Select", "Switch", "Tabs", "Label", "Textarea", "Badge", "Card", "Separator"] },
   { title: "Overlays", names: ["Hover Card", "Dialog", "Dropdown Menu", "Popover", "Sheet", "Tooltip", "Alert Dialog"] },
   { title: "Feedback", names: ["Skeleton", "Status Notice", "Progress", "Toast", "Spinner", "Status"] },
   { title: "Data", names: ["Chart", "Calendar", "List", "Table", "Contribution Graph"] },
@@ -14,8 +14,9 @@ const componentSections = [
   { title: "Social", names: ["Stories"] },
   { title: "Media", names: ["Audio Player", "Video Player"] },
   { title: "Callouts", names: ["Announcement", "Banner"] },
-  { title: "Styling", names: ["Typography", "Brand Gradient Text", "Text Reveal", "Rotating Content"] },
-  { title: "Other", names: ["Reveal Content", "Collapsible", "Code Block", "Snippet", "Editor", "Glimpse", "Marquee", "Pill", "QR Code", "Relative Time", "Theme Switcher", "Tree", "Comparison"] },
+  { title: "Styling", names: ["Typography"] },
+  { title: "Animations", names: ["Brand Gradient Text", "Text Reveal", "Rotating Content", "Reveal Content", "Marquee"] },
+  { title: "Other", names: ["Collapsible", "Code Block", "Snippet", "Editor", "Glimpse", "Pill", "QR Code", "Relative Time", "Theme Switcher", "Tree", "Comparison"] },
 ];
 
 const componentItem = (label: string): NavItem => ({ label, href: `/components/${label.toLowerCase().replaceAll(" ", "-")}` });
