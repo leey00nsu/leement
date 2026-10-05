@@ -122,6 +122,14 @@ import SettingsSectionExample from "../examples/settings-section";
 import { items } from "../lib/items";
 
 const examples: Record<keyof typeof items, ComponentType> = {
+"feature": lazy(() => import("../examples/feature")),
+"footer": lazy(() => import("../examples/footer")),
+"hero": lazy(() => import("../examples/hero")),
+"pricing": lazy(() => import("../examples/pricing")),
+"stats": lazy(() => import("../examples/stats")),
+"team": lazy(() => import("../examples/team")),
+"testimonial": lazy(() => import("../examples/testimonial")),
+
 "compare": lazy(() => import("../examples/compare")),
 "compliance": lazy(() => import("../examples/compliance")),
 "contact": lazy(() => import("../examples/contact")),

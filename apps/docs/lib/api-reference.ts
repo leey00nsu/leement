@@ -1,3 +1,4 @@
+import { marketingBlockApiReferences } from "./api-marketing-blocks";
 import { conversionBlockApiReferences } from "./api-conversion-blocks";
 import { contentBlockApiReferences } from "./api-content-blocks";
 import { blockApiReferences } from "./api-blocks";
@@ -30,6 +31,7 @@ export type ApiReference = {
 /** Leement-owned API. Primitive documentation does not replace this contract. */
 export const apiReferences: Partial<Record<keyof typeof items, ApiReference>> = {
   ...blockApiReferences,
+  ...marketingBlockApiReferences,
   ...conversionBlockApiReferences,
   ...contentBlockApiReferences,
   ...complexApiReferences,

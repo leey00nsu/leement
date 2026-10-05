@@ -2,6 +2,14 @@ import type { items } from "./items";
 
 /** States supported by the distributed source. The live preview shows a useful subset. */
 export const itemStates: Record<keyof typeof items, string> = {
+"feature": "Application-owned content and destinations. Motion follows the shared tokens and reduced-motion preference; docs callbacks remain local.",
+"footer": "Application-owned content and destinations. Motion follows the shared tokens and reduced-motion preference; docs callbacks remain local.",
+"hero": "Application-owned content and destinations. Motion follows the shared tokens and reduced-motion preference; docs callbacks remain local.",
+"pricing": "Application-owned content and destinations. Motion follows the shared tokens and reduced-motion preference; docs callbacks remain local.",
+"stats": "Application-owned content and destinations. Motion follows the shared tokens and reduced-motion preference; docs callbacks remain local.",
+"team": "Application-owned content and destinations. Motion follows the shared tokens and reduced-motion preference; docs callbacks remain local.",
+"testimonial": "Application-owned content and destinations. Motion follows the shared tokens and reduced-motion preference; docs callbacks remain local.",
+
 "compare": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
 "compliance": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",
 "contact": "Application-owned content and destinations; submission callbacks do not bundle a backend. The docs demonstrate local interactions.",

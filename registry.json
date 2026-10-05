@@ -2996,6 +2996,139 @@
       "dependencies": [
         "lucide-react"
       ]
+    },
+    {
+      "name": "feature",
+      "type": "registry:block",
+      "title": "Feature",
+      "description": "Feature questions and images sharing one selection.",
+      "files": [
+        {
+          "path": "registry/blocks/feature.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/feature.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/accordion",
+        "@leement/leement-motion",
+        "@leement/utils"
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:block",
+      "title": "Footer",
+      "description": "Brand composition and grouped footer navigation.",
+      "files": [
+        {
+          "path": "registry/blocks/footer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/footer.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/brand-logo",
+        "@leement/utils"
+      ]
+    },
+    {
+      "name": "hero",
+      "type": "registry:block",
+      "title": "Hero",
+      "description": "Announcement, actions, partner marquee and media hero.",
+      "files": [
+        {
+          "path": "registry/blocks/hero.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/hero.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/announcement",
+        "@leement/button",
+        "@leement/marquee",
+        "@leement/video-player",
+        "@leement/utils"
+      ]
+    },
+    {
+      "name": "pricing",
+      "type": "registry:block",
+      "title": "Pricing",
+      "description": "Controlled billing period and application-owned plan selection.",
+      "files": [
+        {
+          "path": "registry/blocks/pricing.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/pricing.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/badge",
+        "@leement/button",
+        "@leement/card",
+        "@leement/tabs",
+        "@leement/leement-motion",
+        "@leement/utils"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "motion@13.1.0"
+      ]
+    },
+    {
+      "name": "stats",
+      "type": "registry:block",
+      "title": "Stats",
+      "description": "App-owned metric values and report destination.",
+      "files": [
+        {
+          "path": "registry/blocks/stats.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/stats.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/utils"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "team",
+      "type": "registry:block",
+      "title": "Team",
+      "description": "Team members with names, roles and avatar fallback.",
+      "files": [
+        {
+          "path": "registry/blocks/team.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/team.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/avatar"
+      ]
+    },
+    {
+      "name": "testimonial",
+      "type": "registry:block",
+      "title": "Testimonial",
+      "description": "Customer quote and author identity.",
+      "files": [
+        {
+          "path": "registry/blocks/testimonial.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/testimonial.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "@leement/utils",
+        "@leement/avatar"
+      ]
     }
   ]
 }

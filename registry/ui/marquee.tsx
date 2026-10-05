@@ -50,6 +50,7 @@ function Marquee({
             <div
               key={String(duplicate)}
               aria-hidden={duplicate || undefined}
+              inert={duplicate || undefined}
               className="flex gap-4 pr-4"
             >
               {items.map((item, index) => (

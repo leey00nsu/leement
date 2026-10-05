@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ItemPage } from "../../../components/item-page";
 import { items } from "../../../lib/items";
 
-const names = ["compare", "compliance", "contact", "cta", "download", "experience", "faq", "form", "about", "awards", "blog", "blog-post", "careers", "case-studies", "case-study", "changelog", "code-example", "community", "codebase", "collaborative-canvas", "roadmap", "settings-section", "bento-grid", "gantt", "kanban", "sandbox", "reel", "deck", "dialog-stack"] as const;
+const names = ["feature", "footer", "hero", "pricing", "stats", "team", "testimonial", "compare", "compliance", "contact", "cta", "download", "experience", "faq", "form", "about", "awards", "blog", "blog-post", "careers", "case-studies", "case-study", "changelog", "code-example", "community", "codebase", "collaborative-canvas", "roadmap", "settings-section", "bento-grid", "gantt", "kanban", "sandbox", "reel", "deck", "dialog-stack"] as const;
 type PageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
