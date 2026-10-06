@@ -260,15 +260,17 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-14 전체 문서의 중복 Usage·접힌 안내를 Examples와 통합
+- [DONE][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-14 전체 문서의 중복 Usage·접힌 안내를 Examples와 통합
   - Date: 2026-10-06
   - Acceptance:
     - 63개 Base 및 기존 모든 항목에서 Examples와 겹치는 접힌 안내를 제거하고 고유 설명은 해당 예제에 통합한다. 기본 사용법·Provider·설정·긴 recipe·고유 제약은 한 곳에 유지하며 예제/API 대응 수를 줄이지 않는다.
   - Checklist:
-    - [ ] 모든 Usage section을 대조하여 중복 import/code/Composition 및 단문 상태 안내를 정리하고 실제 source/예제/API와 설명을 확인한다.
-    - [ ] 문서 typecheck·lint·coverage 및 production build와 RadioGroup/Sidebar/DataTable 대표 UI를 검증하고 curated docs/SDD/sync marker를 맞춘다.
+    - [x] 모든 Usage section을 대조하여 중복 import/code/Composition 및 단문 상태 안내를 정리하고 실제 source/예제/API와 설명을 확인한다.
+    - [x] 문서 typecheck·lint·coverage 및 production build와 RadioGroup/Sidebar/DataTable 대표 UI를 검증하고 curated docs/SDD/sync marker를 맞춘다.
+  - Verification: 63개 안내463개를 전수 대조하여 고유 설정/recipe44개(24개 문서)만 유지하고 예제별 안내258개를 Examples에 통합했다. Base456 contexts/453 source·Kibo28·Charts70/API146 분모 불변. focused coverage4 tests, docs strict typecheck/focused lint/최종 production build/diff PASS. 실제 RadioGroup basic code1/disclosure0/설명·inline code 및 Sidebar5·DataTable12 고유 guide headings/disclosure0 확인. D019와 usage-radio-group screenshot 참조.
   - Docs:
     - docs:designs/design-system.md
+    - docs:prd/leement-prd.md
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
@@ -301,10 +303,13 @@
 | `pnpm run typecheck` | 2026-10-05 | PASS — 5 workspace tasks |
 | `pnpm run lint` | 2026-10-05 | PASS — workspace + registry |
 | `pnpm run test` | 2026-10-05 | PASS — 32 files / 706 tests |
-| `pnpm run build` | 2026-10-05 | PASS — tokens/theme/registry/Next production |
+| `pnpm run build` | 2026-10-06 | PASS — final task14 tokens/theme/registry/Next production |
 | `consumer: shadcn add --yes --overwrite` | 2026-10-05 | PASS — final production registry161 direct namespaces, transitive source/dependencies |
 | `consumer: pnpm exec tsc --noEmit` | 2026-10-05 | PASS — final installed source and examples |
 | `consumer: pnpm build` | 2026-10-05 | PASS — lazy recipes/examples + refreshed0.2 theme |
-| `npx lee-spec-kit feature-audit --enforce --json` | 2026-10-05 | PASS — no violations |
+| `pnpm --filter @leement/docs typecheck` | 2026-10-06 | PASS — task14 strict docs types |
+| `pnpm exec eslint <task14 docs paths>` | 2026-10-06 | PASS — item-page/usage-guide/catalog/guides/coverage |
+| `pnpm exec vitest run apps/docs/lib/reference-coverage.test.ts` | 2026-10-06 | PASS — 4 fixed-scope and consolidation checks |
+| `npx lee-spec-kit feature-audit --enforce --json` | 2026-10-06 | PASS — task14 no violations |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.

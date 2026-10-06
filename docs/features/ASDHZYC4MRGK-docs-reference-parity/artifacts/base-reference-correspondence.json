@@ -2746,318 +2746,570 @@
   "usageGuides": [
     {
       "page": "accordion",
-      "sections": 7,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "accordion",
+      "originalSections": 7,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "alert-dialog",
-      "sections": 7,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "alert-dialog",
+      "originalSections": 7,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "alert",
-      "sections": 6,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "status-notice",
+      "originalSections": 6,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "aspect-ratio",
-      "sections": 3,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "aspect-ratio",
+      "originalSections": 3,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "attachment",
-      "sections": 10,
-      "codeBlocks": 7
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "attachment",
+      "originalSections": 10,
+      "originalCodeBlocks": 7,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "avatar",
-      "sections": 10,
-      "codeBlocks": 5
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "avatar",
+      "originalSections": 10,
+      "originalCodeBlocks": 5,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "badge",
-      "sections": 6,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "badge",
+      "originalSections": 6,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "breadcrumb",
-      "sections": 7,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "breadcrumb",
+      "originalSections": 7,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "bubble",
-      "sections": 13,
-      "codeBlocks": 9
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "bubble",
+      "originalSections": 13,
+      "originalCodeBlocks": 9,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "button-group",
-      "sections": 14,
-      "codeBlocks": 4
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "button-group",
+      "originalSections": 14,
+      "originalCodeBlocks": 4,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "button",
-      "sections": 8,
-      "codeBlocks": 3
+      "sections": 1,
+      "codeBlocks": 1,
+      "item": "button",
+      "originalSections": 8,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "calendar",
-      "sections": 10,
-      "codeBlocks": 6
+      "sections": 1,
+      "codeBlocks": 1,
+      "item": "calendar",
+      "originalSections": 10,
+      "originalCodeBlocks": 6,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "card",
-      "sections": 5,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "card",
+      "originalSections": 5,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "carousel",
-      "sections": 10,
-      "codeBlocks": 12
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "carousel",
+      "originalSections": 10,
+      "originalCodeBlocks": 12,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "chart",
-      "sections": 9,
-      "codeBlocks": 27
+      "sections": 4,
+      "codeBlocks": 5,
+      "item": "chart",
+      "originalSections": 9,
+      "originalCodeBlocks": 27,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "checkbox",
-      "sections": 7,
-      "codeBlocks": 3
+      "sections": 1,
+      "codeBlocks": 1,
+      "item": "checkbox",
+      "originalSections": 7,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "collapsible",
-      "sections": 5,
-      "codeBlocks": 4
+      "sections": 1,
+      "codeBlocks": 1,
+      "item": "collapsible",
+      "originalSections": 5,
+      "originalCodeBlocks": 4,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "combobox",
-      "sections": 14,
-      "codeBlocks": 7
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "combobox",
+      "originalSections": 14,
+      "originalCodeBlocks": 7,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "command",
-      "sections": 6,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "command",
+      "originalSections": 6,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "context-menu",
-      "sections": 11,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "context-menu",
+      "originalSections": 11,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "data-table",
-      "sections": 13,
-      "codeBlocks": 19
+      "sections": 12,
+      "codeBlocks": 18,
+      "item": "data-table",
+      "originalSections": 13,
+      "originalCodeBlocks": 19,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "date-picker",
-      "sections": 8,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "date-picker",
+      "originalSections": 8,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "dialog",
-      "sections": 6,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "dialog",
+      "originalSections": 6,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "direction",
-      "sections": 3,
-      "codeBlocks": 3
+      "sections": 2,
+      "codeBlocks": 1,
+      "item": "direction",
+      "originalSections": 3,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "drawer",
-      "sections": 12,
-      "codeBlocks": 17
+      "sections": 2,
+      "codeBlocks": 4,
+      "item": "drawer",
+      "originalSections": 12,
+      "originalCodeBlocks": 17,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "dropdown-menu",
-      "sections": 13,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "dropdown-menu",
+      "originalSections": 13,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "empty",
-      "sections": 7,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "empty-state",
+      "originalSections": 7,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "field",
-      "sections": 9,
-      "codeBlocks": 7
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "field",
+      "originalSections": 9,
+      "originalCodeBlocks": 7,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "hover-card",
-      "sections": 4,
-      "codeBlocks": 5
+      "sections": 1,
+      "codeBlocks": 1,
+      "item": "hover-card",
+      "originalSections": 4,
+      "originalCodeBlocks": 5,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "input-group",
-      "sections": 4,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "input-group",
+      "originalSections": 4,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "input-otp",
-      "sections": 10,
-      "codeBlocks": 4
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "input-otp",
+      "originalSections": 10,
+      "originalCodeBlocks": 4,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "input",
-      "sections": 13,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "input",
+      "originalSections": 13,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "item",
-      "sections": 12,
-      "codeBlocks": 4
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "item",
+      "originalSections": 12,
+      "originalCodeBlocks": 4,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "kbd",
-      "sections": 6,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "kbd",
+      "originalSections": 6,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "label",
-      "sections": 3,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "label",
+      "originalSections": 3,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "marker",
-      "sections": 12,
-      "codeBlocks": 9
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "marker",
+      "originalSections": 12,
+      "originalCodeBlocks": 9,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "menubar",
-      "sections": 5,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "menubar",
+      "originalSections": 5,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "message-scroller",
-      "sections": 9,
-      "codeBlocks": 19
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "message-scroller",
+      "originalSections": 9,
+      "originalCodeBlocks": 19,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "message",
-      "sections": 9,
-      "codeBlocks": 6
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "message",
+      "originalSections": 9,
+      "originalCodeBlocks": 6,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "navigation-menu",
-      "sections": 3,
-      "codeBlocks": 4
+      "sections": 1,
+      "codeBlocks": 1,
+      "item": "navigation-menu",
+      "originalSections": 3,
+      "originalCodeBlocks": 4,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "pagination",
-      "sections": 6,
-      "codeBlocks": 6
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "pagination",
+      "originalSections": 6,
+      "originalCodeBlocks": 6,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "popover",
-      "sections": 5,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "popover",
+      "originalSections": 5,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "progress",
-      "sections": 4,
-      "codeBlocks": 4
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "progress",
+      "originalSections": 4,
+      "originalCodeBlocks": 4,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "questionnaire",
-      "sections": 18,
-      "codeBlocks": 5
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "questionnaire",
+      "originalSections": 18,
+      "originalCodeBlocks": 5,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "radio-group",
-      "sections": 7,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "radio-group",
+      "originalSections": 7,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "resizable",
-      "sections": 5,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "resizable",
+      "originalSections": 5,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "scroll-area",
-      "sections": 3,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "scroll-area",
+      "originalSections": 3,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "select",
-      "sections": 6,
-      "codeBlocks": 4
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "select",
+      "originalSections": 6,
+      "originalCodeBlocks": 4,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "separator",
-      "sections": 4,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "separator",
+      "originalSections": 4,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "sheet",
-      "sections": 4,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "sheet",
+      "originalSections": 4,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "sidebar",
-      "sections": 23,
-      "codeBlocks": 32
+      "sections": 5,
+      "codeBlocks": 21,
+      "item": "sidebar",
+      "originalSections": 23,
+      "originalCodeBlocks": 32,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "skeleton",
-      "sections": 1,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "skeleton",
+      "originalSections": 1,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "slider",
-      "sections": 5,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "slider",
+      "originalSections": 5,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "spinner",
-      "sections": 5,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "spinner",
+      "originalSections": 5,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "switch",
-      "sections": 5,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "switch",
+      "originalSections": 5,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "table",
-      "sections": 5,
-      "codeBlocks": 3
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "table",
+      "originalSections": 5,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "tabs",
-      "sections": 4,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "tabs",
+      "originalSections": 4,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "textarea",
-      "sections": 5,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "textarea",
+      "originalSections": 5,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "toast",
-      "sections": 4,
-      "codeBlocks": 3
+      "sections": 1,
+      "codeBlocks": 0,
+      "item": "toast",
+      "originalSections": 4,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "toggle-group",
-      "sections": 7,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "toggle-group",
+      "originalSections": 7,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "toggle",
-      "sections": 3,
-      "codeBlocks": 2
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "toggle",
+      "originalSections": 3,
+      "originalCodeBlocks": 2,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "tooltip",
-      "sections": 4,
-      "codeBlocks": 3
+      "sections": 0,
+      "codeBlocks": 0,
+      "item": "tooltip",
+      "originalSections": 4,
+      "originalCodeBlocks": 3,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     },
     {
       "page": "typography",
       "sections": 1,
-      "codeBlocks": 0
+      "codeBlocks": 0,
+      "item": "typography",
+      "originalSections": 1,
+      "originalCodeBlocks": 0,
+      "explanationLocation": "Basic Usage, actual Examples and API Reference; only distinct setup/recipes remain as Usage headings."
     }
   ],
   "sources": {
@@ -3519,6 +3771,1830 @@
     "ssrExamples": 453,
     "focusedIntegrationTests": 17,
     "consumer": "Independent strict React/Vite consumer, shadcn registry installation and all 453 lazy example modules.",
-    "remaining": "Whole-feature build, all Blocks/Charts and comprehensive light/dark/RTL review are task 13."
+    "remaining": "None in the approved implementation scope. Task14 checks and production UI evidence are recorded in tasks.md and decisions.md; implementation approval and local integration remain separate."
+  },
+  "documentationLayout": {
+    "basicUsage": "Shown once, using the public API usage or the actual canonical example source.",
+    "examples": "Example-specific prose and composition are colocated with the same executable/copy source.",
+    "uniqueGuides": {
+      "sections": 44,
+      "pages": 24,
+      "display": "Plain headings without duplicate disclosure cards."
+    },
+    "relocatedSections": [
+      {
+        "item": "accordion",
+        "section": "Basic",
+        "files": [
+          "base-accordion-basic"
+        ]
+      },
+      {
+        "item": "accordion",
+        "section": "Multiple",
+        "files": [
+          "base-accordion-multiple"
+        ]
+      },
+      {
+        "item": "accordion",
+        "section": "Disabled",
+        "files": [
+          "base-accordion-disabled"
+        ]
+      },
+      {
+        "item": "accordion",
+        "section": "Borders",
+        "files": [
+          "base-accordion-borders"
+        ]
+      },
+      {
+        "item": "accordion",
+        "section": "Card",
+        "files": [
+          "base-accordion-card"
+        ]
+      },
+      {
+        "item": "alert-dialog",
+        "section": "Basic",
+        "files": [
+          "base-alert-dialog-basic"
+        ]
+      },
+      {
+        "item": "alert-dialog",
+        "section": "Small",
+        "files": [
+          "base-alert-dialog-small"
+        ]
+      },
+      {
+        "item": "alert-dialog",
+        "section": "Media",
+        "files": [
+          "base-alert-dialog-media"
+        ]
+      },
+      {
+        "item": "alert-dialog",
+        "section": "Small with Media",
+        "files": [
+          "base-alert-dialog-small-media"
+        ]
+      },
+      {
+        "item": "alert-dialog",
+        "section": "Destructive",
+        "files": [
+          "base-alert-dialog-destructive"
+        ]
+      },
+      {
+        "item": "status-notice",
+        "section": "Basic",
+        "files": [
+          "base-alert-basic"
+        ]
+      },
+      {
+        "item": "status-notice",
+        "section": "Destructive",
+        "files": [
+          "base-alert-destructive"
+        ]
+      },
+      {
+        "item": "status-notice",
+        "section": "Action",
+        "files": [
+          "base-alert-action"
+        ]
+      },
+      {
+        "item": "status-notice",
+        "section": "Custom Colors",
+        "files": [
+          "base-alert-colors"
+        ]
+      },
+      {
+        "item": "aspect-ratio",
+        "section": "Square",
+        "files": [
+          "base-aspect-ratio-square"
+        ]
+      },
+      {
+        "item": "aspect-ratio",
+        "section": "Portrait",
+        "files": [
+          "base-aspect-ratio-portrait"
+        ]
+      },
+      {
+        "item": "attachment",
+        "section": "Image",
+        "files": [
+          "base-attachment-image"
+        ]
+      },
+      {
+        "item": "attachment",
+        "section": "States",
+        "files": [
+          "base-attachment-states"
+        ]
+      },
+      {
+        "item": "attachment",
+        "section": "Sizes",
+        "files": [
+          "base-attachment-sizes"
+        ]
+      },
+      {
+        "item": "attachment",
+        "section": "Group",
+        "files": [
+          "base-attachment-group"
+        ]
+      },
+      {
+        "item": "attachment",
+        "section": "Trigger",
+        "files": [
+          "base-attachment-trigger"
+        ]
+      },
+      {
+        "item": "avatar",
+        "section": "Basic",
+        "files": [
+          "base-avatar-basic"
+        ]
+      },
+      {
+        "item": "avatar",
+        "section": "Badge",
+        "files": [
+          "base-avatar-badge"
+        ]
+      },
+      {
+        "item": "avatar",
+        "section": "Badge with Icon",
+        "files": [
+          "base-avatar-badge-icon"
+        ]
+      },
+      {
+        "item": "avatar",
+        "section": "Avatar Group",
+        "files": [
+          "base-avatar-group"
+        ]
+      },
+      {
+        "item": "avatar",
+        "section": "Avatar Group Count",
+        "files": [
+          "base-avatar-group-count"
+        ]
+      },
+      {
+        "item": "avatar",
+        "section": "Avatar Group with Icon",
+        "files": [
+          "base-avatar-group-count-icon"
+        ]
+      },
+      {
+        "item": "avatar",
+        "section": "Sizes",
+        "files": [
+          "base-avatar-size"
+        ]
+      },
+      {
+        "item": "avatar",
+        "section": "Dropdown",
+        "files": [
+          "base-avatar-dropdown"
+        ]
+      },
+      {
+        "item": "badge",
+        "section": "Variants",
+        "files": [
+          "base-badge-variants"
+        ]
+      },
+      {
+        "item": "badge",
+        "section": "With Icon",
+        "files": [
+          "base-badge-icon"
+        ]
+      },
+      {
+        "item": "badge",
+        "section": "With Spinner",
+        "files": [
+          "base-badge-spinner"
+        ]
+      },
+      {
+        "item": "badge",
+        "section": "Link",
+        "files": [
+          "base-badge-link"
+        ]
+      },
+      {
+        "item": "badge",
+        "section": "Custom Colors",
+        "files": [
+          "base-badge-colors"
+        ]
+      },
+      {
+        "item": "breadcrumb",
+        "section": "Basic",
+        "files": [
+          "base-breadcrumb-basic"
+        ]
+      },
+      {
+        "item": "breadcrumb",
+        "section": "Custom separator",
+        "files": [
+          "base-breadcrumb-separator"
+        ]
+      },
+      {
+        "item": "breadcrumb",
+        "section": "Dropdown",
+        "files": [
+          "base-breadcrumb-dropdown"
+        ]
+      },
+      {
+        "item": "breadcrumb",
+        "section": "Collapsed",
+        "files": [
+          "base-breadcrumb-ellipsis"
+        ]
+      },
+      {
+        "item": "breadcrumb",
+        "section": "Link component",
+        "files": [
+          "base-breadcrumb-link"
+        ]
+      },
+      {
+        "item": "bubble",
+        "section": "Variants",
+        "files": [
+          "base-bubble-variants"
+        ]
+      },
+      {
+        "item": "bubble",
+        "section": "Alignment",
+        "files": [
+          "base-bubble-alignment"
+        ]
+      },
+      {
+        "item": "bubble",
+        "section": "Bubble Group",
+        "files": [
+          "base-bubble-group-demo"
+        ]
+      },
+      {
+        "item": "bubble",
+        "section": "Links and Buttons",
+        "files": [
+          "base-bubble-link-button"
+        ]
+      },
+      {
+        "item": "bubble",
+        "section": "Reactions",
+        "files": [
+          "base-bubble-reactions"
+        ]
+      },
+      {
+        "item": "bubble",
+        "section": "Show More / Collapsible",
+        "files": [
+          "base-bubble-collapsible"
+        ]
+      },
+      {
+        "item": "bubble",
+        "section": "Tooltip",
+        "files": [
+          "base-bubble-tooltip"
+        ]
+      },
+      {
+        "item": "bubble",
+        "section": "Popover",
+        "files": [
+          "base-bubble-popover"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Orientation",
+        "files": [
+          "base-button-group-orientation"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Size",
+        "files": [
+          "base-button-group-size"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Nested",
+        "files": [
+          "base-button-group-nested"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Separator",
+        "files": [
+          "base-button-group-separator"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Split",
+        "files": [
+          "base-button-group-split"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Input",
+        "files": [
+          "base-button-group-input"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Input Group",
+        "files": [
+          "base-button-group-input-group"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Dropdown Menu",
+        "files": [
+          "base-button-group-dropdown"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Select",
+        "files": [
+          "base-button-group-select"
+        ]
+      },
+      {
+        "item": "button-group",
+        "section": "Popover",
+        "files": [
+          "base-button-group-popover"
+        ]
+      },
+      {
+        "item": "button",
+        "section": "Size",
+        "files": [
+          "base-button-size"
+        ]
+      },
+      {
+        "item": "button",
+        "section": "With Icon",
+        "files": [
+          "base-button-with-icon"
+        ]
+      },
+      {
+        "item": "button",
+        "section": "Rounded",
+        "files": [
+          "base-button-rounded"
+        ]
+      },
+      {
+        "item": "button",
+        "section": "Spinner",
+        "files": [
+          "base-button-spinner"
+        ]
+      },
+      {
+        "item": "button",
+        "section": "Button Group",
+        "files": [
+          "base-button-group-demo"
+        ]
+      },
+      {
+        "item": "button",
+        "section": "As Link",
+        "files": [
+          "base-button-render"
+        ]
+      },
+      {
+        "item": "calendar",
+        "section": "Persian / Hijri / Jalali Calendar",
+        "files": [
+          "base-calendar-hijri"
+        ]
+      },
+      {
+        "item": "calendar",
+        "section": "Basic",
+        "files": [
+          "base-calendar-basic"
+        ]
+      },
+      {
+        "item": "calendar",
+        "section": "Range Calendar",
+        "files": [
+          "base-calendar-range"
+        ]
+      },
+      {
+        "item": "calendar",
+        "section": "Month and Year Selector",
+        "files": [
+          "base-calendar-caption"
+        ]
+      },
+      {
+        "item": "calendar",
+        "section": "Custom Cell Size",
+        "files": [
+          "base-calendar-custom-days"
+        ]
+      },
+      {
+        "item": "calendar",
+        "section": "Week Numbers",
+        "files": [
+          "base-calendar-week-numbers"
+        ]
+      },
+      {
+        "item": "card",
+        "section": "Size",
+        "files": [
+          "base-card-small"
+        ]
+      },
+      {
+        "item": "card",
+        "section": "Spacing",
+        "files": [
+          "base-card-spacing",
+          "base-card-edge-to-edge"
+        ]
+      },
+      {
+        "item": "card",
+        "section": "Image",
+        "files": [
+          "base-card-image"
+        ]
+      },
+      {
+        "item": "carousel",
+        "section": "Sizes",
+        "files": [
+          "base-carousel-size"
+        ]
+      },
+      {
+        "item": "carousel",
+        "section": "Spacing",
+        "files": [
+          "base-carousel-spacing"
+        ]
+      },
+      {
+        "item": "carousel",
+        "section": "Orientation",
+        "files": [
+          "base-carousel-orientation"
+        ]
+      },
+      {
+        "item": "carousel",
+        "section": "API",
+        "files": [
+          "base-carousel-api"
+        ]
+      },
+      {
+        "item": "carousel",
+        "section": "Plugins",
+        "files": [
+          "base-carousel-plugin"
+        ]
+      },
+      {
+        "item": "checkbox",
+        "section": "Invalid State",
+        "files": [
+          "base-checkbox-invalid"
+        ]
+      },
+      {
+        "item": "checkbox",
+        "section": "Basic",
+        "files": [
+          "base-checkbox-basic"
+        ]
+      },
+      {
+        "item": "checkbox",
+        "section": "Description",
+        "files": [
+          "base-checkbox-description"
+        ]
+      },
+      {
+        "item": "checkbox",
+        "section": "Disabled",
+        "files": [
+          "base-checkbox-disabled"
+        ]
+      },
+      {
+        "item": "checkbox",
+        "section": "Group",
+        "files": [
+          "base-checkbox-group"
+        ]
+      },
+      {
+        "item": "collapsible",
+        "section": "Settings Panel",
+        "files": [
+          "base-collapsible-settings"
+        ]
+      },
+      {
+        "item": "collapsible",
+        "section": "File Tree",
+        "files": [
+          "base-collapsible-file-tree"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Custom Items",
+        "files": [
+          "base-combobox-custom"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Basic",
+        "files": [
+          "base-combobox-basic"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Multiple",
+        "files": [
+          "base-combobox-multiple"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Clear Button",
+        "files": [
+          "base-combobox-clear"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Groups",
+        "files": [
+          "base-combobox-groups"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Custom Items",
+        "files": [
+          "base-combobox-custom"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Invalid",
+        "files": [
+          "base-combobox-invalid"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Disabled",
+        "files": [
+          "base-combobox-disabled"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Auto Highlight",
+        "files": [
+          "base-combobox-auto-highlight"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Popup",
+        "files": [
+          "base-combobox-popup"
+        ]
+      },
+      {
+        "item": "combobox",
+        "section": "Input Group",
+        "files": [
+          "base-combobox-input-group"
+        ]
+      },
+      {
+        "item": "command",
+        "section": "Basic",
+        "files": [
+          "base-command-basic"
+        ]
+      },
+      {
+        "item": "command",
+        "section": "Groups",
+        "files": [
+          "base-command-groups"
+        ]
+      },
+      {
+        "item": "command",
+        "section": "Scrollable",
+        "files": [
+          "base-command-scrollable"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Basic",
+        "files": [
+          "base-context-menu-basic"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Submenu",
+        "files": [
+          "base-context-menu-submenu"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Shortcuts",
+        "files": [
+          "base-context-menu-shortcuts"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Groups",
+        "files": [
+          "base-context-menu-groups"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Icons",
+        "files": [
+          "base-context-menu-icons"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Checkboxes",
+        "files": [
+          "base-context-menu-checkboxes"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Radio",
+        "files": [
+          "base-context-menu-radio"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Destructive",
+        "files": [
+          "base-context-menu-destructive"
+        ]
+      },
+      {
+        "item": "context-menu",
+        "section": "Sides",
+        "files": [
+          "base-context-menu-sides"
+        ]
+      },
+      {
+        "item": "date-picker",
+        "section": "Basic",
+        "files": [
+          "base-date-picker-basic"
+        ]
+      },
+      {
+        "item": "date-picker",
+        "section": "Range Picker",
+        "files": [
+          "base-date-picker-range"
+        ]
+      },
+      {
+        "item": "date-picker",
+        "section": "Date of Birth",
+        "files": [
+          "base-date-picker-dob"
+        ]
+      },
+      {
+        "item": "date-picker",
+        "section": "Input",
+        "files": [
+          "base-date-picker-input"
+        ]
+      },
+      {
+        "item": "date-picker",
+        "section": "Time Picker",
+        "files": [
+          "base-date-picker-time"
+        ]
+      },
+      {
+        "item": "date-picker",
+        "section": "Natural Language Picker",
+        "files": [
+          "base-date-picker-natural-language"
+        ]
+      },
+      {
+        "item": "dialog",
+        "section": "Custom Close Button",
+        "files": [
+          "base-dialog-close-button"
+        ]
+      },
+      {
+        "item": "dialog",
+        "section": "No Close Button",
+        "files": [
+          "base-dialog-no-close-button"
+        ]
+      },
+      {
+        "item": "dialog",
+        "section": "Sticky Footer",
+        "files": [
+          "base-dialog-sticky-footer"
+        ]
+      },
+      {
+        "item": "dialog",
+        "section": "Scrollable Content",
+        "files": [
+          "base-dialog-scrollable-content"
+        ]
+      },
+      {
+        "item": "drawer",
+        "section": "Position",
+        "files": [
+          "base-drawer-sides"
+        ]
+      },
+      {
+        "item": "drawer",
+        "section": "Swipe Handle",
+        "files": [
+          "base-drawer-swipe-handle"
+        ]
+      },
+      {
+        "item": "drawer",
+        "section": "Nested",
+        "files": [
+          "base-drawer-nested"
+        ]
+      },
+      {
+        "item": "drawer",
+        "section": "Non Modal",
+        "files": [
+          "base-drawer-non-modal"
+        ]
+      },
+      {
+        "item": "drawer",
+        "section": "Snap Points",
+        "files": [
+          "base-drawer-snap-points"
+        ]
+      },
+      {
+        "item": "drawer",
+        "section": "Responsive",
+        "files": [
+          "base-drawer-dialog"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Basic",
+        "files": [
+          "base-dropdown-menu-basic"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Submenu",
+        "files": [
+          "base-dropdown-menu-submenu"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Shortcuts",
+        "files": [
+          "base-dropdown-menu-shortcuts"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Icons",
+        "files": [
+          "base-dropdown-menu-icons"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Checkboxes",
+        "files": [
+          "base-dropdown-menu-checkboxes"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Checkboxes Icons",
+        "files": [
+          "base-dropdown-menu-checkboxes-icons"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Radio Group",
+        "files": [
+          "base-dropdown-menu-radio-group"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Radio Icons",
+        "files": [
+          "base-dropdown-menu-radio-icons"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Destructive",
+        "files": [
+          "base-dropdown-menu-destructive"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Avatar",
+        "files": [
+          "base-dropdown-menu-avatar"
+        ]
+      },
+      {
+        "item": "dropdown-menu",
+        "section": "Complex",
+        "files": [
+          "base-dropdown-menu-complex"
+        ]
+      },
+      {
+        "item": "empty-state",
+        "section": "Outline",
+        "files": [
+          "base-empty-outline"
+        ]
+      },
+      {
+        "item": "empty-state",
+        "section": "Background",
+        "files": [
+          "base-empty-background"
+        ]
+      },
+      {
+        "item": "empty-state",
+        "section": "Avatar",
+        "files": [
+          "base-empty-avatar"
+        ]
+      },
+      {
+        "item": "empty-state",
+        "section": "Avatar Group",
+        "files": [
+          "base-empty-avatar-group"
+        ]
+      },
+      {
+        "item": "empty-state",
+        "section": "InputGroup",
+        "files": [
+          "base-empty-input-group"
+        ]
+      },
+      {
+        "item": "field",
+        "section": "Choice Card",
+        "files": [
+          "base-field-choice-card"
+        ]
+      },
+      {
+        "item": "field",
+        "section": "Field Group",
+        "files": [
+          "base-field-group"
+        ]
+      },
+      {
+        "item": "field",
+        "section": "Responsive Layout",
+        "files": [
+          "base-field-responsive"
+        ]
+      },
+      {
+        "item": "input-group",
+        "section": "Align",
+        "files": [
+          "base-input-group-inline-start",
+          "base-input-group-inline-end",
+          "base-input-group-block-start",
+          "base-input-group-block-end"
+        ]
+      },
+      {
+        "item": "input-group",
+        "section": "Custom Input",
+        "files": [
+          "base-input-group-custom"
+        ]
+      },
+      {
+        "item": "input-otp",
+        "section": "Pattern",
+        "files": [
+          "base-input-otp-pattern"
+        ]
+      },
+      {
+        "item": "input-otp",
+        "section": "Separator",
+        "files": [
+          "base-input-otp-separator"
+        ]
+      },
+      {
+        "item": "input-otp",
+        "section": "Disabled",
+        "files": [
+          "base-input-otp-disabled"
+        ]
+      },
+      {
+        "item": "input-otp",
+        "section": "Controlled",
+        "files": [
+          "base-input-otp-controlled"
+        ]
+      },
+      {
+        "item": "input-otp",
+        "section": "Invalid",
+        "files": [
+          "base-input-otp-invalid"
+        ]
+      },
+      {
+        "item": "input-otp",
+        "section": "Four Digits",
+        "files": [
+          "base-input-otp-four-digits"
+        ]
+      },
+      {
+        "item": "input-otp",
+        "section": "Alphanumeric",
+        "files": [
+          "base-input-otp-alphanumeric"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Field",
+        "files": [
+          "base-input-field"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Field Group",
+        "files": [
+          "base-input-fieldgroup"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Disabled",
+        "files": [
+          "base-input-disabled"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Invalid",
+        "files": [
+          "base-input-invalid"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "File",
+        "files": [
+          "base-input-file"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Inline",
+        "files": [
+          "base-input-inline"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Grid",
+        "files": [
+          "base-input-grid"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Required",
+        "files": [
+          "base-input-required"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Badge",
+        "files": [
+          "base-input-badge"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Input Group",
+        "files": [
+          "base-input-input-group"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Button Group",
+        "files": [
+          "base-input-button-group"
+        ]
+      },
+      {
+        "item": "input",
+        "section": "Form",
+        "files": [
+          "base-input-form"
+        ]
+      },
+      {
+        "item": "item",
+        "section": "Variant",
+        "files": [
+          "base-item-variant"
+        ]
+      },
+      {
+        "item": "item",
+        "section": "Size",
+        "files": [
+          "base-item-size"
+        ]
+      },
+      {
+        "item": "item",
+        "section": "Icon",
+        "files": [
+          "base-item-icon"
+        ]
+      },
+      {
+        "item": "item",
+        "section": "Avatar",
+        "files": [
+          "base-item-avatar"
+        ]
+      },
+      {
+        "item": "item",
+        "section": "Image",
+        "files": [
+          "base-item-image"
+        ]
+      },
+      {
+        "item": "item",
+        "section": "Group",
+        "files": [
+          "base-item-group"
+        ]
+      },
+      {
+        "item": "item",
+        "section": "Header",
+        "files": [
+          "base-item-header"
+        ]
+      },
+      {
+        "item": "item",
+        "section": "Link",
+        "files": [
+          "base-item-link"
+        ]
+      },
+      {
+        "item": "kbd",
+        "section": "Group",
+        "files": [
+          "base-kbd-group"
+        ]
+      },
+      {
+        "item": "kbd",
+        "section": "Button",
+        "files": [
+          "base-kbd-button"
+        ]
+      },
+      {
+        "item": "kbd",
+        "section": "Tooltip",
+        "files": [
+          "base-kbd-tooltip"
+        ]
+      },
+      {
+        "item": "kbd",
+        "section": "Input Group",
+        "files": [
+          "base-kbd-input-group"
+        ]
+      },
+      {
+        "item": "label",
+        "section": "Label in Field",
+        "files": [
+          "base-field-demo"
+        ]
+      },
+      {
+        "item": "marker",
+        "section": "Variants",
+        "files": [
+          "base-marker-variants"
+        ]
+      },
+      {
+        "item": "marker",
+        "section": "Status",
+        "files": [
+          "base-marker-status"
+        ]
+      },
+      {
+        "item": "marker",
+        "section": "Shimmer",
+        "files": [
+          "base-marker-shimmer"
+        ]
+      },
+      {
+        "item": "marker",
+        "section": "Separator",
+        "files": [
+          "base-marker-separator"
+        ]
+      },
+      {
+        "item": "marker",
+        "section": "Border",
+        "files": [
+          "base-marker-border"
+        ]
+      },
+      {
+        "item": "marker",
+        "section": "With Icon",
+        "files": [
+          "base-marker-icon"
+        ]
+      },
+      {
+        "item": "marker",
+        "section": "Links and Buttons",
+        "files": [
+          "base-marker-link-button"
+        ]
+      },
+      {
+        "item": "menubar",
+        "section": "Checkbox",
+        "files": [
+          "base-menubar-checkbox"
+        ]
+      },
+      {
+        "item": "menubar",
+        "section": "Radio",
+        "files": [
+          "base-menubar-radio"
+        ]
+      },
+      {
+        "item": "menubar",
+        "section": "Submenu",
+        "files": [
+          "base-menubar-submenu"
+        ]
+      },
+      {
+        "item": "message",
+        "section": "Avatar",
+        "files": [
+          "base-message-avatar"
+        ]
+      },
+      {
+        "item": "message",
+        "section": "Group",
+        "files": [
+          "base-message-group"
+        ]
+      },
+      {
+        "item": "message",
+        "section": "Header and Footer",
+        "files": [
+          "base-message-header-footer"
+        ]
+      },
+      {
+        "item": "message",
+        "section": "Actions",
+        "files": [
+          "base-message-actions"
+        ]
+      },
+      {
+        "item": "pagination",
+        "section": "Simple",
+        "files": [
+          "base-pagination-simple"
+        ]
+      },
+      {
+        "item": "pagination",
+        "section": "Icons Only",
+        "files": [
+          "base-pagination-icons-only"
+        ]
+      },
+      {
+        "item": "popover",
+        "section": "Basic",
+        "files": [
+          "base-popover-basic"
+        ]
+      },
+      {
+        "item": "popover",
+        "section": "Align",
+        "files": [
+          "base-popover-alignments"
+        ]
+      },
+      {
+        "item": "popover",
+        "section": "With Form",
+        "files": [
+          "base-popover-form"
+        ]
+      },
+      {
+        "item": "progress",
+        "section": "Label",
+        "files": [
+          "base-progress-label"
+        ]
+      },
+      {
+        "item": "progress",
+        "section": "Controlled",
+        "files": [
+          "base-progress-controlled"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Multiple Selection",
+        "files": [
+          "base-questionnaire-multiple"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Freeform Answer",
+        "files": [
+          "base-questionnaire-freeform"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Explicit Skip",
+        "files": [
+          "base-questionnaire-skip"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Shortcuts",
+        "files": [
+          "base-questionnaire-shortcuts"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Custom Validation",
+        "files": [
+          "base-questionnaire-validation"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Controlled",
+        "files": [
+          "base-questionnaire-controlled"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Resume",
+        "files": [
+          "base-questionnaire-resume"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Conditional Items",
+        "files": [
+          "base-questionnaire-conditional"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Navigation State",
+        "files": [
+          "base-questionnaire-navigation-state"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Custom Progress",
+        "files": [
+          "base-questionnaire-progress"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Animated Items",
+        "files": [
+          "base-questionnaire-animated"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Card",
+        "files": [
+          "base-questionnaire-card"
+        ]
+      },
+      {
+        "item": "questionnaire",
+        "section": "Dialog",
+        "files": [
+          "base-questionnaire-dialog"
+        ]
+      },
+      {
+        "item": "radio-group",
+        "section": "Description",
+        "files": [
+          "base-radio-group-description"
+        ]
+      },
+      {
+        "item": "radio-group",
+        "section": "Choice Card",
+        "files": [
+          "base-radio-group-choice-card"
+        ]
+      },
+      {
+        "item": "radio-group",
+        "section": "Fieldset",
+        "files": [
+          "base-radio-group-fieldset"
+        ]
+      },
+      {
+        "item": "radio-group",
+        "section": "Disabled",
+        "files": [
+          "base-radio-group-disabled"
+        ]
+      },
+      {
+        "item": "radio-group",
+        "section": "Invalid",
+        "files": [
+          "base-radio-group-invalid"
+        ]
+      },
+      {
+        "item": "resizable",
+        "section": "Vertical",
+        "files": [
+          "base-resizable-vertical"
+        ]
+      },
+      {
+        "item": "resizable",
+        "section": "Handle",
+        "files": [
+          "base-resizable-handle"
+        ]
+      },
+      {
+        "item": "scroll-area",
+        "section": "Horizontal",
+        "files": [
+          "base-scroll-area-horizontal-demo"
+        ]
+      },
+      {
+        "item": "select",
+        "section": "Align Item With Trigger",
+        "files": [
+          "base-select-align-item"
+        ]
+      },
+      {
+        "item": "select",
+        "section": "Groups",
+        "files": [
+          "base-select-groups"
+        ]
+      },
+      {
+        "item": "select",
+        "section": "Scrollable",
+        "files": [
+          "base-select-scrollable"
+        ]
+      },
+      {
+        "item": "select",
+        "section": "Invalid",
+        "files": [
+          "base-select-invalid"
+        ]
+      },
+      {
+        "item": "separator",
+        "section": "Vertical",
+        "files": [
+          "base-separator-vertical"
+        ]
+      },
+      {
+        "item": "separator",
+        "section": "Menu",
+        "files": [
+          "base-separator-menu"
+        ]
+      },
+      {
+        "item": "separator",
+        "section": "List",
+        "files": [
+          "base-separator-list"
+        ]
+      },
+      {
+        "item": "sheet",
+        "section": "Side",
+        "files": [
+          "base-sheet-side"
+        ]
+      },
+      {
+        "item": "sheet",
+        "section": "No Close Button",
+        "files": [
+          "base-sheet-no-close-button"
+        ]
+      },
+      {
+        "item": "slider",
+        "section": "Range",
+        "files": [
+          "base-slider-range"
+        ]
+      },
+      {
+        "item": "slider",
+        "section": "Multiple Thumbs",
+        "files": [
+          "base-slider-multiple"
+        ]
+      },
+      {
+        "item": "slider",
+        "section": "Vertical",
+        "files": [
+          "base-slider-vertical"
+        ]
+      },
+      {
+        "item": "slider",
+        "section": "Disabled",
+        "files": [
+          "base-slider-disabled"
+        ]
+      },
+      {
+        "item": "spinner",
+        "section": "Customization",
+        "files": [
+          "base-spinner-custom"
+        ]
+      },
+      {
+        "item": "spinner",
+        "section": "Size",
+        "files": [
+          "base-spinner-size"
+        ]
+      },
+      {
+        "item": "spinner",
+        "section": "Button",
+        "files": [
+          "base-spinner-button"
+        ]
+      },
+      {
+        "item": "spinner",
+        "section": "Badge",
+        "files": [
+          "base-spinner-badge"
+        ]
+      },
+      {
+        "item": "switch",
+        "section": "Choice Card",
+        "files": [
+          "base-switch-choice-card"
+        ]
+      },
+      {
+        "item": "switch",
+        "section": "Disabled",
+        "files": [
+          "base-switch-disabled"
+        ]
+      },
+      {
+        "item": "switch",
+        "section": "Invalid",
+        "files": [
+          "base-switch-invalid"
+        ]
+      },
+      {
+        "item": "switch",
+        "section": "Size",
+        "files": [
+          "base-switch-sizes"
+        ]
+      },
+      {
+        "item": "table",
+        "section": "Footer",
+        "files": [
+          "base-table-footer"
+        ]
+      },
+      {
+        "item": "table",
+        "section": "Actions",
+        "files": [
+          "base-table-actions"
+        ]
+      },
+      {
+        "item": "tabs",
+        "section": "Line",
+        "files": [
+          "base-tabs-line"
+        ]
+      },
+      {
+        "item": "tabs",
+        "section": "Vertical",
+        "files": [
+          "base-tabs-vertical"
+        ]
+      },
+      {
+        "item": "textarea",
+        "section": "Field",
+        "files": [
+          "base-textarea-field"
+        ]
+      },
+      {
+        "item": "textarea",
+        "section": "Disabled",
+        "files": [
+          "base-textarea-disabled"
+        ]
+      },
+      {
+        "item": "textarea",
+        "section": "Invalid",
+        "files": [
+          "base-textarea-invalid"
+        ]
+      },
+      {
+        "item": "textarea",
+        "section": "Button",
+        "files": [
+          "base-textarea-button"
+        ]
+      },
+      {
+        "item": "toast",
+        "section": "Types",
+        "files": [
+          "base-toast-types"
+        ]
+      },
+      {
+        "item": "toast",
+        "section": "Promise",
+        "files": [
+          "base-toast-promise"
+        ]
+      },
+      {
+        "item": "toggle-group",
+        "section": "Outline",
+        "files": [
+          "base-toggle-group-outline"
+        ]
+      },
+      {
+        "item": "toggle-group",
+        "section": "Size",
+        "files": [
+          "base-toggle-group-sizes"
+        ]
+      },
+      {
+        "item": "toggle-group",
+        "section": "Spacing",
+        "files": [
+          "base-toggle-group-spacing"
+        ]
+      },
+      {
+        "item": "toggle-group",
+        "section": "Vertical",
+        "files": [
+          "base-toggle-group-vertical"
+        ]
+      },
+      {
+        "item": "toggle-group",
+        "section": "Custom",
+        "files": [
+          "base-toggle-group-font-weight-selector"
+        ]
+      },
+      {
+        "item": "toggle",
+        "section": "Outline",
+        "files": [
+          "base-toggle-outline"
+        ]
+      },
+      {
+        "item": "toggle",
+        "section": "Size",
+        "files": [
+          "base-toggle-sizes"
+        ]
+      },
+      {
+        "item": "tooltip",
+        "section": "Side",
+        "files": [
+          "base-tooltip-sides"
+        ]
+      },
+      {
+        "item": "tooltip",
+        "section": "Disabled Button",
+        "files": [
+          "base-tooltip-disabled"
+        ]
+      }
+    ],
+    "upstreamInlineCodeBlocks": 330,
+    "inlinePolicy": "The original 330 snippets are baseline evidence, not a requirement to duplicate example code. Unique setup/recipes stay in Usage; repeated import/parts/state snippets use Examples and actual API instead.",
+    "userRequest": "2026-10-06: consolidate all repeated guides without reducing preview/API coverage."
   }
 }

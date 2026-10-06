@@ -130,11 +130,13 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 
 - StatusNotice는 짧은 Alert, EmptyState는 Empty 문제에 대응한다. 이름만 다른 source alias를 추가하지 않는다.
 - Field는 입력 하나의 label/help/error를 연결하고 FormSection은 여러 필드의 제품 섹션을 구성한다. Sheet는 측면 Dialog이며 swipe/snap-point Drawer 전체 동작을 보장하지 않는다.
-- 공개 탐색은 Components95/Patterns15/Blocks36과 Charts70이다. 고정 shadcn Base 64개 중 NativeSelect를 제외한 63개 문서의 Preview456건/고유453 source와 inline Usage330 code blocks를 제공한다. Alert→StatusNotice, Empty→EmptyState 등 이름이 다른 대응은 실제 composition으로 검증한다. Kibo 공개 Applications3/Websites25를 기존8개 Blocks에 추가하며 Chart recipe는 registry:block이지만 Charts에서 별도로 탐색한다. 기준은 Feature ASDHZYC4MRGK의 immutable reference-baseline.json이며 제외 없는 upstream 전체 100% 호환으로 표시하지 않는다.
+- 공개 탐색은 Components95/Patterns15/Blocks36과 Charts70이다. 고정 shadcn Base 64개 중 NativeSelect를 제외한 63개 문서의 Preview456건/고유453 source 및 필요한 inline 설정·조합 안내를 제공한다. Alert→StatusNotice, Empty→EmptyState 등 이름이 다른 대응은 실제 composition으로 검증한다. Kibo 공개 Applications3/Websites25를 기존8개 Blocks에 추가하며 Chart recipe는 registry:block이지만 Charts에서 별도로 탐색한다. 기준은 Feature ASDHZYC4MRGK의 immutable reference-baseline.json이며 제외 없는 upstream 전체 100% 호환으로 표시하지 않는다.
 
 ## 문서 예제 규칙
 
 Showcase는 항목마다 대표 예제 하나를 사용한다. 상세 Examples는 사용법이 달라지는 주요 variant/size/state/compound 조합을 이름과 설명·독립 Preview/Code로 제공한다. 예제는 registry 원본을 import하고 문서 표시 코드는 그 source를 소비자 alias로만 변환한다. 각 추가예제에 실제로 import하는 registry 항목의 설치 명령을 함께 제공하며 예제 때문에 UI runtime dependency를 늘리지 않는다. 모든 props 조합을 복제하지 않으며 미지원 upstream API를 약속하지 않는다. 입력 label/id는 useId로 같은 페이지의 다른 예제와 구분한다. 파일 처리·폼 저장·비동기 결과는 로컬 앱 조합으로 보여 주고 앱 책임을 설명한다. 무거운 추가 예제는 상세에서 lazy load하며 Showcase에 동시에 mount하지 않는다.
+
+기본 Usage 코드·import는 한 번만 표시한다. Examples와 겹치는 상태·변형 안내는 해당 예제의 설명과 Code에 통합하고 별도 접힌 항목으로 반복하지 않는다. Provider·hook·설정·긴 recipe처럼 독립 안내가 필요한 정보만 Usage의 일반 제목 아래에 둔다. 예제 설명은 실제 동작을 구분하는 제목과 짧은 안내를 쓰고 inline 코드·공식/내부 링크를 렌더한다. upstream 본문 markup·존재하지 않는 패키지/경로·미검증 성능 주장은 복사하지 않는다.
 
 ### Preview 중앙 배치
 

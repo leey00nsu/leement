@@ -5,6 +5,10 @@
 - **Request**: 사용자가 RadioGroup의 접힌 Usage/Composition/Description/Choice Card/Fieldset/Disabled/Invalid와 아래 Examples의 중복을 지적하고 모든 문서를 정리하도록 요청했다. 구현 승인 대신 수정 요청으로 처리하며 기존 Feature에 task14를 추가했다.
 - **Decision**: 모든 안내를 예제와 대조하고 반복 import/basic code와 Composition 설명을 한 곳으로 합친다. 예제별 고유 설명은 Examples에 두고 실제 Provider·hooks·setup·긴 recipe/주의사항은 보존한다. NativeSelect 제외 고정 예제/API 대응은 유지한다. main 통합/원격 배포 승인은 아직 없다.
 
+- **Result**: 63개 문서의 원래 안내463개를 전수 대조했다. 예제별 안내258개는 실행 예제의 설명에 합쳤고 중복 Usage/Composition/Features 및 기존에 없는 패키지/경로·CLI 안내는 제거·정정했다. 설정/recipe44개(24개 문서)만 일반 heading으로 유지한다. RadioGroup/Select 등은 기본 code 하나 다음에 바로 Examples를 읽고 Sidebar와 DataTable은 실제 setup/parts/recipe를 보존한다. 기본·추가 예제/API/registry source는 유지한다. 같은 제목만 반복하던 Chart5/MessageScroller10 예제를 고유 동작별 제목·설명으로 바꾸고 누락된 inline component 이름과 잘못 복사된 ComponentPreview markup을 수정했다. ChartConfig의 color/theme 상호배타 조건과 semantic aliases도 설명/코드에 맞췄다.
+- **Evidence**: focused coverage4 tests, docs strict typecheck/focused ESLint, 최종 production build와 diff PASS. 실제 browser에서 RadioGroup Usage code1/disclosure0, ChoiceCard 설명·inline component 표기와 기본 radio runtime, Sidebar5/DataTable12 고유 heading/disclosure0을 확인했다. [정리한 Usage 화면](./artifacts/screenshots/usage-radio-group.png)을 직접 열어 Usage→Examples 간격·목차·실제 프리뷰를 확인했다. 456contexts/453source/API146·Kibo28·Charts70 분모는 그대로다. registry 구현·consumer source가 바뀌지 않아 기존161 namespace 설치/빌드 증거를 유지하고 불필요한 재설치는 하지 않았다.
+- **Limits**: 최초 temporary script의 module resolution/예제 key 오류는 파일 쓰기 전 실패하여 올바른 모듈·catalog ID로 복구했다. 불필요한 formatting churn을 제거하는 과정에서도 metadata 동등성 guard가 중복 source context의 차이를 잡아 쓰기를 막았고 page+example ID로 고쳐 동등성을 확인했다. 첫 browser는 one-shot 세션이 이미 종료된 tab을 다시 찾으려다 실패했으며 최종 같은 세션에서 open/snapshot/action/close하여 검증했다. 이전 전체706 tests는2026-10-05 결과이며 task14는 문서 전용 범위의 focused checks와 최종 build를 실행했다. 구현 승인·main 병합·remote publish/deploy는 대기한다.
+
 ## D001: 예제·API 중심 문서와 고정 upstream 기준 (2026-10-05)
 
 - **Context**: 사용자가 반복 문단 제거, shadcn Base 예제/API 전체 대응, Kibo Blocks 전체 대응, Charts 탐색을 새 Feature로 요청했다.
@@ -59,7 +63,7 @@
   - **PRD**: [갱신한 제품 요구사항](../../prd/leement-prd.md).
   - **Code/Docs**: [README](../../../README.md), [디자인 규칙](../../designs/design-system.md).
 
-<!-- lee-spec-kit:workflow-sync sha256:c6696984ea2f5f4908341c2bddd6c8845634c465e7c24e529dc3e9da07bd7b22 -->
+<!-- lee-spec-kit:workflow-sync sha256:d16d8fd3a6fd0fb841f8572eaeaaa0a70e6377bb60e043d48b519b8dc07e13e1 -->
 
 ## D005: 명세 승인·자동 계획 진행과 shared docs 검토 (2026-10-05)
 
