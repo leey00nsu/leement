@@ -87,3 +87,10 @@
 - Item은 default16/sm12/xs8px inset으로 variant를 구별하고 Message gap12px로 정리했다. Navigation40px/8px radius·focus ring을 복구한다. DataTable sm36px와 icon-sm36px을 상속하며 Skeleton Form도40px 실입력 placeholder에 맞춘다.
 - Drawer scrim은 Dialog의 semantic foreground/50를 사용하고 swipe/snap/stack 상태는 보존한다. Tooltip은 공통 popover surface/foreground/border로 역할을 맞춘다. 기존 menu row·Calendar cell·media geometry·OTP40px slot 등 의도된 조합을 일반 Button 규칙으로 일괄 치환하지 않았다.
 - 타입/린트 및 기존34tests PASS. 전수 화면과 focus·contrast 관찰은 T06 pending이다.
+
+
+## D008: 공개 Blocks의 표면·통계·링크 규칙 (2026-10-06)
+
+- Compare는 테이블 외곽12px border와 자체 horizontal scroll을 사용하고 기본shadow를 제거한다. Download의 일반 icon surface는border로 구분한다. Compliance의 panel12px, Community/CaseStudy/About breakout20px inset을 적용한다. About 통계는 본문 sans·tabular-nums로 코드 서체 오용을 수정했다. 공개 Blocks 링크focus는3px/40%로 통일했다.
+- Hero의 대형제목·media 비율, About의 넓은 통계section64px, Compliance의 장식badge, Pricing 선택ring2px는각 역할과 상태강조이므로 일반40px control/20px Card 규칙과 구분하여 유지한다. 무관한 기존8 Blocks는 이번scope에 들어오지 않아변경하지 않는다.
+- 기존 application/content/conversion/marketing25tests와 ESLint PASS. 전체 실제preview4모드 및browser interaction은 T06에연결한다.

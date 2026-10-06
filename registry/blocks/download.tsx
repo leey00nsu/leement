@@ -90,7 +90,7 @@ export function Download({
             .filter((option) => option.platform)
             .map(({ platform, Icon }) => (
               <article key={platform!.subtitle} className="min-w-0 text-center">
-                <span className="mx-auto mb-5 flex size-20 items-center justify-center rounded-full bg-background shadow-sm">
+                <span className="mx-auto mb-5 flex size-20 items-center justify-center rounded-full bg-background border border-border">
                   <Icon aria-hidden="true" className="size-10" />
                 </span>
                 <h3 className="text-xl font-semibold">{platform!.subtitle}</h3>

@@ -58,7 +58,7 @@ export function Awards({ title = "Awards", awards, className }: AwardsProps) {
                   <td className="py-5 pe-4 text-lg font-medium">
                     {award.url ? (
                       <a
-                        className="rounded-sm hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        className="rounded-sm hover:underline focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
                         href={award.url}
                       >
                         {award.name}

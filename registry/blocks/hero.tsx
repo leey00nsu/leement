@@ -95,7 +95,7 @@ export function Hero({
               <a
                 key={logo.name}
                 href={logo.url}
-                className="flex min-w-24 items-center justify-center gap-3 px-5 font-brand text-lg font-semibold underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="flex min-w-24 items-center justify-center gap-3 px-5 font-brand text-lg font-semibold underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
               >
                 <span aria-hidden="true">{logo.icon}</span>
                 {logo.name}

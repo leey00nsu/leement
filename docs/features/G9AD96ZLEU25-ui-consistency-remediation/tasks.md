@@ -119,17 +119,19 @@
 
   - Verification: 수정16파일 ESLint와 docs typecheck PASS; 기존 form/menu/overlay/Sidebar/DataTable7파일34tests PASS. Context/Menu semantic 위험색 override 제거·입력 기본 surface·40px 내비게이션·36px DataTable sm controls·Item/Message spacing·Tooltip/Drawer overlay 역할 복구. Questionnaire 실제390 첫화면 확인. 전체 예제4모드는 T06에서 진행한다.
 
-- [TODO][PRD-FR-016] T-G9AD96ZLEU25-ui-consistency-remediation-04 공개 Blocks28의 전수검수와 시각 규칙 복구
+- [DONE][PRD-FR-016] T-G9AD96ZLEU25-ui-consistency-remediation-04 공개 Blocks28의 전수검수와 시각 규칙 복구
   - Date: 2026-10-06
   - Acceptance:
     - Applications3/Websites25 모두의 layout·표면·서체·controls·states를 검수하고 결함을 수정한다.
   - Checklist:
-    - [ ] 모든source/preview와 핵심 callback·forms·pricing·canvas·roadmap·media 동작을 확인하고 결과를 연결한다.
+    - [x] 28source 검수와 필요한 수정, 기존 callback/forms/pricing/canvas/roadmap 계약 검증. 모든preview 모드/폭은 T06의 전수 검수에서 최종 확인한다.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: Blocks 기존4파일25tests PASS; 변경11파일 ESLint PASS. 일반 surface shadow 제거/12px panels/20px Card inset·본문 숫자 sans/tabular·3px/40% link focus. source 수정과 preview 기본 조합은 보존하며 전체4모드 visual는 T06 pending.
 
 - [TODO][PRD-FR-017] T-G9AD96ZLEU25-ui-consistency-remediation-05 Charts70의 전수검수와 공용 UI 일관성 복구
   - Date: 2026-10-06
@@ -185,4 +187,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:d969e03eaa3053df08a2ac95ee35eaf2b286db028aee22f95aa1342bce10e315 -->
+<!-- lee-spec-kit:workflow-sync sha256:4e59090904b64eba55307fb6ebafbd47051103b65f3d8c95e6a7a3114a680c1f -->

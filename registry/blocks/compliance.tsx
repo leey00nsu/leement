@@ -108,7 +108,7 @@ export const Compliance = ({
               ))}
             </div>
           </div>
-          <div className="rounded-2xl border border-border bg-background">
+          <div className="rounded-xl border border-border bg-background">
             {features.map((feature, index) => (
               <div
                 key={index}

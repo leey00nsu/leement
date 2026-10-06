@@ -84,7 +84,7 @@ export function CaseStudies({
                     {study.url && (
                       <a
                         href={study.url}
-                        className="w-fit rounded-sm text-sm font-medium text-primary underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        className="w-fit rounded-sm text-sm font-medium text-primary underline underline-offset-4 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
                       >
                         Read the case study
                         <span className="sr-only">

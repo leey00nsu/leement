@@ -77,7 +77,7 @@ export function CaseStudy({
         </article>
         <aside
           aria-label={`${company.name} company details`}
-          className="h-fit min-w-0 rounded-xl border border-border bg-muted/50 p-6 lg:sticky lg:top-8 lg:w-72 lg:shrink-0"
+          className="h-fit min-w-0 rounded-xl border border-border bg-muted/50 p-5 lg:sticky lg:top-8 lg:w-72 lg:shrink-0"
         >
           {company.logo ? (
             <img

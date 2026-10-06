@@ -87,7 +87,7 @@ export const About = ({ className, ...props }: AboutProps = {}) => {
             className="size-full max-h-[620px] rounded-xl object-cover lg:col-span-2"
           />
           <div className="flex flex-col gap-7 md:flex-row lg:flex-col">
-            <div className="flex flex-col justify-between gap-6 rounded-xl bg-muted p-7 md:w-1/2 lg:w-auto">
+            <div className="flex flex-col justify-between gap-6 rounded-xl bg-muted p-5 md:w-1/2 lg:w-auto">
               {breakout.src && (
                 <img
                   src={breakout.src}
@@ -136,7 +136,7 @@ export const About = ({ className, ...props }: AboutProps = {}) => {
             />
           </div>
         )}
-        <div className="relative overflow-hidden rounded-xl bg-muted p-7 md:p-16">
+        <div className="relative overflow-hidden rounded-xl bg-muted p-5 md:p-16">
           <div className="flex flex-col gap-4 text-center md:text-left">
             <h2 className="text-3xl font-medium md:text-4xl">
               {achievementsTitle}
@@ -151,7 +151,7 @@ export const About = ({ className, ...props }: AboutProps = {}) => {
                 className="flex flex-col gap-2 text-center md:text-left"
                 key={item.label + String(idx)}
               >
-                <span className="font-mono text-4xl font-semibold md:text-5xl">
+                <span className="tabular-nums text-4xl font-semibold md:text-5xl">
                   {item.value}
                 </span>
                 <p className="text-sm md:text-base">{item.label}</p>

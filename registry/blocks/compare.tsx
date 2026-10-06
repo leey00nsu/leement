@@ -83,8 +83,8 @@ export const Compare = ({
           <p className="mb-8 text-center text-muted-foreground">
             {description}
           </p>
-          <div className="mx-auto max-w-3xl overflow-x-auto">
-            <Table className="rounded border text-left shadow-lg">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-xl border border-border">
+            <Table className="text-left">
               <TableHeader>
                 <TableRow>
                   <TableHead className="px-6 py-4 font-semibold">
@@ -117,7 +117,7 @@ export const Compare = ({
                             <button
                               type="button"
                               aria-label={`Details for ${row.feature}`}
-                              className="cursor-pointer rounded-sm text-start underline decoration-dotted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                              className="cursor-pointer rounded-sm text-start underline decoration-dotted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
                             >
                               {row.secondary}
                             </button>

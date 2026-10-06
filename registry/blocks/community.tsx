@@ -94,7 +94,7 @@ function CommunityLink({ link }: { link: CommunitySocialLink }) {
   ]);
   return (
     <a
-      className="group rounded-md border border-border p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      className="group rounded-xl border border-border p-5 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
       href={link.url}
     >
       <div className="flex items-center justify-between gap-4">
