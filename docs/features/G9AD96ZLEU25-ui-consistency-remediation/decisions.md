@@ -101,3 +101,69 @@
 - Interactive Area/Bar/Line은 공용Card20px inset을 상속하고 header title/series tile도20px을 사용한다. edge-to-edge series tile의 inset focus는3px/40%이며 graph geometry/250px plot 높이/축 margin은 데이터표현 역할로 유지한다.
 - 추가검수에서 Pie interactive Select28px 높이 override도 확인하여 공용40px Select를 상속하게 했다. Area/Pie popup/item radius override는 제거한다. custom tooltip 값은 코드 서체를 제거하고 tabular-nums 본문을 유지한다. 데이터표summary/scroll focus도 공용링으로 맞춘다.
 - 기존75 recipe tests와 변경7파일 ESLint PASS. recipe70의 실제4모드·series/기간/tooltip/Foundations/reduced motion은 T06에서 최종확인한다.
+
+
+## D010: 전체 검수와 실제 설치의 추가 발견 (2026-10-06)
+
+- T06 DOING에서 실제 registry namespace155개와 예제 소비처11개를 별도 React/Tailwind 소비자에 설치하고 theme tarball을 사용했다. 독립498 examples와70 lazy chart source의 첫 strict/Vite build PASS. monolithic fixture 공통chunk warning은 검수앱 번들 특성이며 제품 성능 주장으로 사용하지 않는다.
+- 설치된 Sidebar에서는 shadcn base 스타일 변환이 동적 child의 asChild를 제거해 중첩 button과 좁아진 메뉴를 만들었다. Sidebar의 TooltipTrigger를 명시 render prop+children으로 바꾸어 단일조작 구조를 보존한다. 위험색/폰트/모서리 검수에서도 공통 Chart tooltip의background·10px·mono 값과 Field/Attachment/Bubble/ScrollArea/Calendar/Toast의50% focus 잔여를 발견해 공용역할로복구했다. Toast12px/Field선택카드12px·custom Base charttooltip도 맞춘다. API는 유지하며 이러한 조합 결함은 Spec US-4 범위다.
+- full typecheck/lint/706tests 첫 PASS 후 위 추가수정의 기존112tests PASS. 최종검사는 추가수정이 반영된 source로 다시 실행한다.
+- browser568routes4모드 전수는 Aside read-only worker tXpEvZTmtFB9O0rQ가 진행중이며 capture와 실제 visualreview를 구별한다. worker는 구현/워크플로우검수 subagent가 아니고 Aside skill의 browser delegation이다.
+- devserver와 Next output 충돌을 피하기 위해 추적source·lockfile을 /tmp/leement-ui-consistency-build에 복사하고 frozen install 후 동일 pnpm run build를 실행한다. 첫 임시복사에서 기존coverage가 import하는 FeatureJSON 누락으로 실패했다; 모든 tracked Feature artifact를 복원한 동일source build가 PASS했다. 더 최신 수정source도 다시동기화해 검증한다. 워크트리 .next나제품빌드 설정은 변경하지 않는다.
+
+
+## D011: 설치된 Sidebar parts와 Foundations/RTL/mobile 검증 (2026-10-06)
+
+- 실제 설치consumer에서 단일button 중첩0·메뉴231px fullwidth/default40/sm36/lg44·action32(top2/6)·sub40/36·Input40/8px·shadow없음을 확인했다. group/menu action callback count0→1→2, controlled collapse statefalse와 collapsedtooltip 표시가 작동한다.
+- dark/right/inset/RTL에서는 Sidebar physical right1184..1440과 main8..1184가 겹치지 않고 logical inline action/submenu가 정렬됨을 [독립 consumer dark/RTL 화면](./artifacts/sidebar-consumer-dark-rtl.png)과 DOM으로 확인했다. Foundation semantic surface/default를#173f33,muted#28564a,border#94c9b8로 바꾸면 Sidebar/Input/selected/border가 즉시같은색으로바뀌었다.
+-390 mobile right/floating/RTL Sheet open에서 Input focus·입력/Escape후trigger focus복귀를확인했다.240px에서 defaultSheet data-side w-3/4가 Sidebar mobilewidth를덮어180px로render됨을 발견했다. Sidebar의 명시폭을!important로 보호하되Sheet max-w-full을유지해288px default/customwidth와좁은viewport clamp를복구한다. 최종재설치 후 viewport240에서는240px clamp,390에서는 기본288px Sheet로 표시됨을 확인했다. [모바일 설치 화면](./artifacts/sidebar-consumer-mobile.png)에서 Input 자동 focus와 Escape 후 trigger focus 복귀도 재확인했다.
+- Base Sidebar demo의 popup Radix width변수를Base --anchor-width로맞추고 radiusoverride를제거한다.관련기존style/API만정리하며README/원격게시 없음.
+
+
+## D012: 실제 전수 화면에서 발견한 컨테이너 축소와 캡처 품질 (2026-10-06)
+
+- Base Input FieldGroup/Grid·InputGroup block-start/end는 inline-size containment가 있는 FieldGroup의 intrinsic 폭이 계산되지 않아 centered flex 소비처에서 입력이 좁은 세로 띠로 줄었다. FieldGroup/FieldSet에 w-full을 명시해 부모 폭과 명시 max-width를 사용하게 한다. docs CSS 우회가 아닌 설치 source 수정이며 입력/label/validation API는 그대로다. 실제 browser에서는 모바일350px 입력과 desktop1360px 가용 폭으로 복구됨을 확인했고 예제는 max-w-sm으로 제한한다. responsive FieldContent가0px로 축소되는 별도 결함도 확인해 horizontal/responsive의 직접 Input/Textarea/SelectTrigger에 flex-1을 적용했다;512px 부모에서 content239/input265px로 각각 표시된다. [수정 후 가로 배치](./artifacts/field-responsive-after.png)를 보존한다. 최종 consumer 재설치 후384px/40px 입력과 실제 입력값 변경도 확인했다.
+- Aside fullPage 캡처가 긴 iframe에서 동일 viewport를 반복하는 결함을 확인했다. 긴 페이지는 iframe800px의 실제 child scroll을700px씩 이동하며 보통 viewport 이미지로 다시 캡처한다. 기존 screenshot 크기나 캡처 성공을 시각 검수 완료 근거로 사용하지 않는다. capture와 visual verdict를 따로 기록하며 하단 미검수는 pending으로 둔다.
+- About 기본 밝은 직사각형은 semantic UI 표면이 아니라 mainImage/secondaryImage/breakout/companies의 명시 data:image SVG content(#ececec/#d6d6d6)이다. theme 변경으로 사용자가 제공한 media를 강제 recolor하지 않는다. 주변 Card·본문·button은 semantic theme를 따라야 하며 실제 미디어 콘텐츠의 고정색은 역할 예외로 검토한다.
+
+
+## D013: 전수 검수에서 발견한 예제의 실제 viewport overflow (2026-10-06)
+
+- 수정된 캡처/DOM에서도 Base Carousel RTL은 모바일28px·desktop8px, MessageScroller visibility는 모바일28px, DataTable demo는 모바일108px document overflow가 있었다. 내부 Attachment/Table scroll과 구분한다.
+- Carousel RTL은 가운데 정렬과 외부 navigation96px 공간을 확보한다. MessageScroller는36px navigator+12px 간격을 예제의 오른쪽48px gutter 안에 배치한다. DataTable demo root min-w-0만으로는 넘침이 해소되지 않았다. 실제 DOM에서 static button의 absolute sr-only label이 바깥 preview를 containing block으로 삼아 스크롤 범위에서 빠져나온 것을 확인했다. public Table/DataTable의 scroll wrapper를 relative로 바꾸면 같은348px 내부 표에서 document scrollWidth498→390이 된다. label 접근성과 내부 horizontal scroll을 유지한다. 실제 source 예제만 수정하며 docs preview CSS로 감추지 않는다. 최종4모드/240px 재확인과 consumer 예제 동기화를 연결한다.
+
+
+## D014: 보조 browser 검수 도구 제한의 복구 (2026-10-06)
+
+- Aside의 openai-codex helper는 사용량 제한으로 시작 단계에서 실패했고 default provider로 같은 scope를 이어갔다. 이후 default provider도 명시429/5-hour usage-limit로 모든 worker가 terminal error를 반환했다. 실행 중인 worker를 조용하다는 이유로 중단하지 않았다.
+- 성공한538route의 corrected capture와 실제 fresh image review200여 항목은 보존한다. 남은30route와 최신 수정 재캡처·조작은 main의 Aside REPL에서 계속한다. 이미지 검수는 native Codex read-only QA worker4개에 정확한 잔여 목록을 분배하며 workflow gate review나 구현 위임으로 기록하지 않는다. 최종 결과에 pending을 완료로 바꾸지 않고 실제 검수 증거를 합친다.
+
+
+## D015: 전수 이미지 검수의 실제 레이블 결함 수정 (2026-10-06)
+
+- Radar의 고정250px plot에서 전체 월 이름 February가 plot 경계에서 잘렸다. 월 이름을 줄이거나 clipping을 예외로 처리하지 않고 angle-label recipes의 outerRadius65%, 숫자/월 두 줄 custom-label은55%로 레이블 공간을 확보한다. Radius-axis recipe는 해당 문제가 없어 geometry를 유지한다. custom 숫자는 fill-foreground로 semantic 대비를 복구한다.
+- PaginationContent의 여러 줄 wrapping은 justify-center를 명시해 좁은 화면에 홀로 줄바꿈된 Next도 가운데 정렬되게 한다. 기존 Pagination link/aria/API는 유지한다. 새 영구 테스트는 추가하지 않고 기존 회귀·실제4모드 재캡처·consumer 재설치를 수행한다.
+- static Questionnaire 캡처의 inversion은 현재 브라우저 demo의 semantic unchecked bg/fg가 올바른 것을 확인했으나 다른 exact-route 완료를 추정하지 않는다. 전체 Questionnaire 최신4모드 캡처와 checked/keyboard live proof로 재판정한다. SVG 축 레이블의 저대비 후보도 실제 computed fill을 확인한 뒤 처리한다.
+
+- 추가 실제 DOM에서는 Questionnaire의 unchecked choice에 light 테마의 background/color/border 인라인 값이 애니메이션 종료 뒤 남았고 제거하면 즉시dark semantic 색으로 복구됐다. 공용 useStyleMotion의 mini 다중-property 완료가 group 완료 전 inline 값을 써 MutationObserver가 이를 caller style로 오인했다. 각 property 완료 즉시 원래 caller style을 복구해 group 완료까지의 race를 막는다. 기존 normal/reduced motion·theme 반복·caller inline/ref 회귀를 확인한다.
+- Recharts 현행 tick text는 recharts-cartesian-axis-tick-value class와 새로운 tick-label wrapper를 사용한다. 기존 tick descendant 선택자가 맞지 않아 기본 #666 fill이 dark #1a1a1d 위에 표시됐다. 공용 ChartContainer에 현재 tick-value 선택자를 추가하고 기존 selector도 호환성 위해 유지한다. 수정 전후 실제 computed fill/대비와 영향 recipe 재캡처를 연결한다.
+
+- 완료 callback 복구만으로 해결되지 않아 ref lifecycle을 추가 추적했다. @shadcn/react ref merger는 반환 cleanup을 전달하지 않고 ref(null)을 호출해 기존 hook의 observer/animation이 누적됐다. useStyleMotion이 반환 cleanup과 ref(null) 양쪽을 처리하며 재부착 전 기존 구독을 해제하도록 고쳤다. theme mutation을 여러 오래된 controller가 동시에 처리한 것이 실제 원인이며 per-property 완료 복구는 중간 style 쓰기도 원본으로 즉시 되돌린다.
+
+- 최신 Questionnaire 선택 표식의 hollow 경계가 input border색이라 낮은 대비를 보였다. 기존 RadioGroup/Checkbox와 같은 border-muted-foreground로 marker만 복구해 선택 표면·row border·API를 유지한다. light #737373/white4.74:1, dark semantic muted-foreground/기본 surface의3:1 이상 대비와 checked indicator를 재확인한다.
+
+- Radial label의11px fill-white/mix-blend-luminosity가 dark의 밝은 data series 위에1.5~1.7:1로 표시되는 실제 결함을 확인했다. fill-foreground와3px stroke-card backing을 사용해 label 대비를 semantic 표면으로 확보하고 data series/geometry는 보존한다. Foundations 검수는 origin storage를 공유하므로 해당 검수 중 뒤쪽 캡처에 녹색 surface override가 보였다. source 결함으로 색을 바꾸지 않고 사용자 정의 token이 반영된 관찰로 구분하며 default 검수는 override reset 후 해당 캡처를 다시 확인한다.
+
+- PolarAngleAxis default #808080 텍스트도 semantic muted 역할을 읽지 않았다. 현행 polar-angle-axis-tick-value에 muted-foreground를 연결하며, Polygon 위 radius 숫자는 foreground와 Card backing으로 분리한다. 모든14 Radar를 최종source로4모드 재검수하고 형상 자체는 유지한다.
+
+
+## D016: 최종 전수 검수·설치·회귀 결과 (2026-10-06)
+
+- 고정498 example+70 chart의568route를 실제390/1440 light/dark 총2272상태에서 모두 검수했다. 초기 Aside actual-child-scroll PASS200항목과 native image 검수368항목은 중복 없이568전체를 덮는다. 수정 후102항목과 후속 Questionnaire/Radar/Radial/Tooltip를 다시 캡처·검수했고 final102 전체PASS다. 해당102항목 밖의 MessageScroller Commands(dev chrome에 가려졌던 도움말)와 Pagination RTL(모바일 줄바꿈 정렬)도 최신4상태를 main이 추가 재검수해 PASS로 확정했다. 남은 시각 finding/uncertainty는0이다. Pattern AdvancedDataTable은 별도 기본preview4상태도 추가 검수했다. 검수 분모와 API/namespace는 보존했다.
+- [항목별 검수 결과](./artifacts/audit-results.json)는157source와41docs/install supporting경로·18finding묶음의 수정/유지·consumer witness를 연결한다. [화면 검수 증거](./artifacts/visual-verification.json)는568frozen+1Pattern route별4상태·실제 이미지 해시·판정/근거를 보존한다. 큰 원본 이미지는 일회성 실행 위치에 남기고 필요한 [Radar 수정 전](./artifacts/radar-label-before.png)/[후](./artifacts/radar-label-after.png)와 [Questionnaire 테마 수정 전](./artifacts/questionnaire-theme-before.png)/[후](./artifacts/questionnaire-theme-after.png)를 Feature에 보존한다.
+- [상태·설치 검증](./artifacts/interaction-verification.json)에 Sidebar parts/variant/controlled/mobile/RTL·semanticFoundation,31liveQA기록과 명시적인 한계를 남겼다. Contact/EventForm pending/error데이터보존·중복callback차단, code/file선택, canvas키보드, roadmap5view, pricing기간/선택, carousel/videoerror/reset, Questionnaire선택/필수/skip/keyboard/theme반복, overlayEscape/focus, Chart기간/series/tooltip/표, 메시지실제scroll/jump, Preview240/1024·px/keyboardresize/Replay/Code/Source·Foundation실제editor→iframe동기화와원복을확인했다.
+- 독립React/Tailwindconsumer에 실제namespace155+추가11직접설치와transitive source/theme tarball을사용했다. strict/Vite build와 Sidebar/Menu/Compare/Field/Charts/Pattern 실제설치UI가PASS다. 최종 Radial label도 docs없이 dark foreground250/stroke26/paintOrderstroke로표시됨을확인했다. fixture전체source import로생긴largechunkwarning은 제품번들성능결론으로사용하지않는다.
+- 최종 pnpm run typecheck/lint/test(32files706tests)/build(동일trackedsource·lockfileisolatedsnapshot3workspace)/registry:build와독립consumerbuild가PASS다. 기존motion caller-inline/ref 테스트를cleanup반환을전달하지않는ref조합에확장했고새durable테스트파일은추가하지않았다.
+- reduced motion은 Aside의nativeOSpreferenceemulationAPI가없어 독립consumer의mount전matchMediafixture로실제JS분기와runninganimation0을검증하고기존reducedmotion테스트를병행했다. nativeOS/CSSpreference전환은미검증한계다. Clipboard는copy성공UI를확인했지만payloadreadback은하지못했다. Video는nativecontrols/error/reset경로를확인했고외부media재생성공을주장하지않는다. Newsletter는검수source/API가존재하지않아N/A다. 모든한계는제품결함없음과별개로보존한다.
+- Foundations 검수의originstorage공유로default캡처에반영된일시적override는원복후실제default로재검수했다. Next/extensionchrome이덮은controls는temporarycapture에서devportal만숨겨source를변경하지않고재검수했다. README/원격게시/배포변경없다.
+- 현재 결과는 구현검증 완료이며 Feature완료나main통합을의미하지않는다. taskcheckpoint뒤workflow가반환하는구현승인과별도local merge승인게이트를따른다.

@@ -39,38 +39,38 @@
 
 **Acceptance Criteria:**
 
-- [ ] 고정 source/예제 목록의 모든 항목에 유지·수정·의도된 예외 결과와 비교 기준·근거를 연결한다. 관련 없는 차원은 사유가 있는 해당 없음으로 표시한다.
-- [ ] 색상/표면/대비, 서체/글자 계층, control·icon 크기, 간격/inset, radius/border/shadow, hover/active/selected/focus/disabled/invalid/loading/empty, 반응형과 motion을 점검한다.
-- [ ] 각 렌더 가능한 항목과 독립 예제 source의 실제 기본 preview를 light/dark·390px/1440px에서 확인한다. helper/Direction처럼 단독 UI가 없는 source는 소비처에서 검증한다.
-- [ ] 498개 예제와 70개 chart recipe를 누락 없이 추적한다. 같은 source의 중복 참조는 재사용할 수 있으나 독립 source/상태를 대표 표본 하나로 완료 처리하지 않는다.
+- [x] 고정 source/예제 목록의 모든 항목에 유지·수정·의도된 예외 결과와 비교 기준·근거를 연결한다. 관련 없는 차원은 사유가 있는 해당 없음으로 표시한다.
+- [x] 색상/표면/대비, 서체/글자 계층, control·icon 크기, 간격/inset, radius/border/shadow, hover/active/selected/focus/disabled/invalid/loading/empty, 반응형과 motion을 점검한다.
+- [x] 각 렌더 가능한 항목과 독립 예제 source의 실제 기본 preview를 light/dark·390px/1440px에서 확인한다. helper/Direction처럼 단독 UI가 없는 source는 소비처에서 검증한다.
+- [x] 498개 예제와 70개 chart recipe를 누락 없이 추적한다. 같은 source의 중복 참조는 재사용할 수 있으나 독립 source/상태를 대표 표본 하나로 완료 처리하지 않는다.
 
 ### US-2: Sidebar와 공용 컨트롤이 같은 규칙을 따른다
 
 **Acceptance Criteria:**
 
-- [ ] Sidebar의 surface/foreground/accent/border/focus가 실제 Leement semantic token을 읽고 light/dark 및 Foundations 변경을 반영한다. docs 전용 CSS로 설치 source의 문제를 감추지 않는다.
-- [ ] Sidebar의 입력·메뉴·서브메뉴·group action·badge·skeleton·trigger, expanded/icon/offcanvas와 sidebar/floating/inset의 관련 상태를 확인하고 수정한다.
-- [ ] 기본 일반 컨트롤은40px, sm36px, lg44px 및 기존 명시적 xs32px 규칙을 따른다. dense navigation·장식 표식 등의 차이는 조작 영역·가독성과 사용 근거를 확인해 문서화하고 크기를 일괄 치환하지 않는다.
-- [ ] 일반 표면의 불필요한 그림자, 일관되지 않은 focus/선택 표현, 서체·간격·모서리 차이를 수정한다. floating overlay의 의도된 shadow와 layout은 역할에 맞게 유지한다.
-- [ ] mobile sheet·좌/우 배치·controlled 상태·collapse·shortcut·tooltip·RTL·Escape/focus 복귀가 계속 동작한다.
+- [x] Sidebar의 surface/foreground/accent/border/focus가 실제 Leement semantic token을 읽고 light/dark 및 Foundations 변경을 반영한다. docs 전용 CSS로 설치 source의 문제를 감추지 않는다.
+- [x] Sidebar의 입력·메뉴·서브메뉴·group action·badge·skeleton·trigger, expanded/icon/offcanvas와 sidebar/floating/inset의 관련 상태를 확인하고 수정한다.
+- [x] 기본 일반 컨트롤은40px, sm36px, lg44px 및 기존 명시적 xs32px 규칙을 따른다. dense navigation·장식 표식 등의 차이는 조작 영역·가독성과 사용 근거를 확인해 문서화하고 크기를 일괄 치환하지 않는다.
+- [x] 일반 표면의 불필요한 그림자, 일관되지 않은 focus/선택 표현, 서체·간격·모서리 차이를 수정한다. floating overlay의 의도된 shadow와 layout은 역할에 맞게 유지한다.
+- [x] mobile sheet·좌/우 배치·controlled 상태·collapse·shortcut·tooltip·RTL·Escape/focus 복귀가 계속 동작한다.
 
 ### US-3: Blocks와 Charts를 기존 UI와 자연스럽게 조합한다
 
 **Acceptance Criteria:**
 
-- [ ] 28개 Blocks와 70개 Charts를 전수 검수하고 반복되는 불일치를 공용 source 또는 각 source의 필요한 부분에서 수정한다.
-- [ ] 의미색, 본문/브랜드/코드 서체 역할, Card inset, 컨트롤 크기, border/shadow, 선택·오류·empty 표현이 기존 규칙과 일치한다.
-- [ ] marketing heading, media ratio, canvas 좌표, chart layout 등 역할에 필요한 차이는 보존한다. 제품 제목 규칙을 Hero의 모든 대형 제목에 기계적으로 적용하지 않는다.
-- [ ] 수정 영향을 받는 기존 동작을 검증한다: form 제출/validation/pending/실패 시 데이터 보존, 코드/파일 선택, canvas 조작, roadmap view, pricing 기간/선택, carousel/video, chart series/기간/tooltip/legend.
+- [x] 28개 Blocks와 70개 Charts를 전수 검수하고 반복되는 불일치를 공용 source 또는 각 source의 필요한 부분에서 수정한다.
+- [x] 의미색, 본문/브랜드/코드 서체 역할, Card inset, 컨트롤 크기, border/shadow, 선택·오류·empty 표현이 기존 규칙과 일치한다.
+- [x] marketing heading, media ratio, canvas 좌표, chart layout 등 역할에 필요한 차이는 보존한다. 제품 제목 규칙을 Hero의 모든 대형 제목에 기계적으로 적용하지 않는다.
+- [x] 수정 영향을 받는 기존 동작을 검증한다: form 제출/validation/pending/실패 시 데이터 보존, 코드/파일 선택, canvas 조작, roadmap view, pricing 기간/선택, carousel/video, chart series/기간/tooltip/legend.
 
 ### US-4: 프리뷰와 설치 source가 같은 결과를 제공한다
 
 **Acceptance Criteria:**
 
-- [ ] 수정한 registry 원본을 예제에서 사용하고 실행·표시·복사 코드를 일치시킨다. preview wrapper의 임시 style로 source 문제를 보정하지 않는다.
-- [ ] 기존 Preview inset/점선/중앙 배치, 내부 읽기 정렬·scroll, 실제 iframe 폭·px/resize/Replay·단일 lazy runtime·theme/Foundation 동기화를 유지한다.
-- [ ] 변경 source와 transitive dependency를 독립 React/Tailwind consumer에 registry namespace로 설치하고 타입·빌드·대표 UI를 검증한다. docs 없이도 같은 테마·상태 규칙을 따른다.
-- [ ] typecheck/lint/test/build와 registry graph/고정 대응 검사를 통과한다. 변경한 고위험 조합은240px preview·1024px와 keyboard/RTL/reduced motion에서도 확인한다.
+- [x] 수정한 registry 원본을 예제에서 사용하고 실행·표시·복사 코드를 일치시킨다. preview wrapper의 임시 style로 source 문제를 보정하지 않는다.
+- [x] 기존 Preview inset/점선/중앙 배치, 내부 읽기 정렬·scroll, 실제 iframe 폭·px/resize/Replay·단일 lazy runtime·theme/Foundation 동기화를 유지한다.
+- [x] 변경 source와 transitive dependency를 독립 React/Tailwind consumer에 registry namespace로 설치하고 타입·빌드·대표 UI를 검증한다. docs 없이도 같은 테마·상태 규칙을 따른다.
+- [x] typecheck/lint/test/build와 registry graph/고정 대응 검사를 통과한다. 변경한 고위험 조합은240px preview·1024px와 keyboard/RTL/reduced motion에서도 확인한다.
 
 ## 기능 요구사항
 

@@ -84,6 +84,7 @@ constitution/custom/README/THIRD_PARTY_NOTICES는 NONE: 기존 dependency/API/li
 | US-1 전수 시각/역할 검수 | NONE | 실제 browser·source 검수와 scope 대조 | 독립 예제 누락·의도적 차이 오판 | 고정 audit scope·기존 design-system과 공용 source |
 | US-2 Sidebar/theme semantic 연결 | UPDATE | packages/theme/theme.test.mjs의 기존 compatibility 계약 테스트 | consumer에서 CSS alias 미정의·모드/brand override 불연결 | semantic tokens와 theme import 계약 |
 | US-2/3 기존 public interaction/API | NONE | 기존 focused Vitest 통합 테스트·browser 조작 | collapse/Escape/form/series·disabled 동작 회귀 | 기존 consumer 계약/HTML/Base UI behavior |
+| US-2/4 모션·테마·ref lifecycle | UPDATE | registry/ui/motion.test.tsx의 기존 caller-style/ref-cleanup 테스트 확장 | cleanup 반환을 버리는 primitive ref merger에서 구독 누적·ref 미해제 | ref(null) detach 계약·브라우저 실제 반복 theme/선택 결과 |
 | FR-3 전체 source·예제 대응 | NONE | 기존 coverage/registry-source/SSR 예제 검사 | 설치 dependency/source/route 누락 | 고정 Base/Blocks/Charts baseline·실제 namespace 설치 |
 | US-4 consumer·Preview | NONE | 독립 설치/tsc/build/browser·기존 Preview 검사 | docs에서만 보정된 CSS·px/Replay/테마 불일치 | 설치 source와 기존 실행 UI |
 

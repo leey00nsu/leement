@@ -147,12 +147,12 @@
 
   - Verification: 기존70 source SSR와 live data/filter/series/semantic contracts75tests PASS; 변경7파일 ESLint PASS. interactive area/bar/line20px inset·series link focus3/40·Pie Select40px 상속·tooltip 값 sans/tabular. geometry/series semantic mappings/API 보존.
 
-- [TODO][PRD-FR-009] T-G9AD96ZLEU25-ui-consistency-remediation-06 전체 예제 화면·독립 consumer·최종 문서와 회귀 검증
+- [DONE][PRD-FR-009] T-G9AD96ZLEU25-ui-consistency-remediation-06 전체 예제 화면·독립 consumer·최종 문서와 회귀 검증
   - Date: 2026-10-06
   - Acceptance:
     - 498 examples/70 charts/기본 source 소비처의 전체 검수 결과가 있고 필요한 설치/tsc/build/full checks와 문서 동기화를 통과한다.
   - Checklist:
-    - [ ] 모든390/1440 light-dark 검수·고위험240/1024/RTL/focus/Replay/resize를 완료하고 registry consumer와 curated docs/unreleased/sync marker를 연결한다.
+    - [x] 모든390/1440 light-dark568route/2272상태·추가Pattern4상태, 고위험240/1024/RTL/focus/Replay/resize를 검증하고 registryconsumer·curateddocs/unreleased를 연결했다. reduced-motion/clipboard/media한계는D016과검증artifact에명시하며최종정리후현재source fingerprint의sync marker를갱신했다.
   - Docs:
     - docs:designs/design-system.md
     - project:apps/docs/lib/releases.ts
@@ -161,6 +161,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: [항목별 결과](./artifacts/audit-results.json), [전수 화면](./artifacts/visual-verification.json), [상태/설치/전체 검사](./artifacts/interaction-verification.json), D010..D016. 실제검수 finding18묶음 수정/재확인, API/고정분모 보존, 새테스트파일 없음.
 
 ## Repository Knowledge (완료 비차단)
 
@@ -174,8 +176,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -185,8 +187,14 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm run typecheck` | `2026-10-06` | PASS — 전체 workspace strict types |
+| `pnpm run lint` | `2026-10-06` | PASS — ESLint |
+| `pnpm run test` | `2026-10-06` | PASS — 32 files /706 tests, 최종 motion·표·Field·chartlabel 수정 포함 |
+| `pnpm run build` | `2026-10-06` | PASS — 동일 tracked source/lockfile isolated snapshot, 3 workspace builds |
+| `pnpm registry:build` | `2026-10-06` | PASS — namespace source 및 graph 생성 |
+| 독립 consumer `pnpm build` | `2026-10-06` | PASS — 최종 namespace 재설치 source strict/Vite build 및 실제UI |
+| Aside browser 전수 검수 | `2026-10-06` | PASS — 실제568route/2272기본상태 +Pattern4상태, 고위험live QA31기록; 명시적검증한계는D016 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:20fc238d7f4dc42db2a78cde7c10817c1b15cc6e6f9eef458dd24f1330664c2b -->
+<!-- lee-spec-kit:workflow-sync sha256:0b258af432892d5fc7005a787fc09b418ad6bcee241bc7a9fccae92ac0481e44 -->
