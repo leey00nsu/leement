@@ -76,7 +76,7 @@ export function ChartRadarGridCircleFill() {
           config={chartConfig}
           className="mx-auto aspect-square max-h-[250px]"
         >
-          <RadarChart accessibilityLayer data={chartData}>
+          <RadarChart accessibilityLayer data={chartData} outerRadius="65%">
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <PolarGrid
               className="fill-(--color-desktop) opacity-20"

@@ -34,7 +34,7 @@ function DataTable<T>({ data, columns, rowId, caption, emptyMessage = "No result
     });
   }, [columns, data, sort]);
   function toggle(id: string) { setSort((current) => current?.id === id ? { id, descending: !current.descending } : { id, descending: false }); }
-  return <div data-slot="data-table" className={cn("w-full overflow-x-auto rounded-xl border border-border", className)}>
+  return <div data-slot="data-table" className={cn("relative w-full overflow-x-auto rounded-xl border border-border", className)}>
     <table className="w-full border-collapse text-left text-sm">
       <caption className="sr-only">{caption}</caption>
       <thead className="bg-muted/50"><tr>{columns.map((column) => <th key={column.id} scope="col" aria-sort={sort?.id === column.id ? sort.descending ? "descending" : "ascending" : undefined} className="border-b border-border px-4 py-3 font-medium text-foreground">{column.sortValue ? <button type="button" onClick={() => toggle(column.id)} className="inline-flex items-center gap-1.5 rounded-sm focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40">{column.header}{sort?.id === column.id ? sort.descending ? <ArrowDown aria-hidden="true" className="size-3.5" /> : <ArrowUp aria-hidden="true" className="size-3.5" /> : <ChevronsUpDown aria-hidden="true" className="size-3.5 text-muted-foreground" />}</button> : column.header}</th>)}</tr></thead>
@@ -43,7 +43,7 @@ function DataTable<T>({ data, columns, rowId, caption, emptyMessage = "No result
   </div>;
 }
 
-function Table({ className, ...props }: React.ComponentProps<"table">) { return <div data-slot="table-container" className="w-full overflow-x-auto"><table data-slot="table" className={cn("w-full border-collapse text-left text-sm", className)} {...props} /></div>; }
+function Table({ className, ...props }: React.ComponentProps<"table">) { return <div data-slot="table-container" className="relative w-full overflow-x-auto"><table data-slot="table" className={cn("w-full border-collapse text-left text-sm", className)} {...props} /></div>; }
 function TableHeader({ className, ...props }: React.ComponentProps<"thead">) { return <thead className={cn("bg-muted/50 [&_tr]:border-b", className)} {...props} />; }
 function TableBody({ className, ...props }: React.ComponentProps<"tbody">) { return <tbody className={cn("[&_tr:last-child]:border-0", className)} {...props} />; }
 function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) { return <tfoot className={cn("border-t border-border bg-muted/50 font-medium", className)} {...props} />; }

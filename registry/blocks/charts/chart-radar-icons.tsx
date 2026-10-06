@@ -85,6 +85,7 @@ export function ChartRadarIcons() {
           className="mx-auto aspect-square max-h-[250px]"
         >
           <RadarChart
+            outerRadius="65%"
             accessibilityLayer
             data={chartData}
             margin={{

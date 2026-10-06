@@ -76,7 +76,7 @@ export function ChartRadarDefault() {
           config={chartConfig}
           className="mx-auto aspect-square max-h-[250px]"
         >
-          <RadarChart accessibilityLayer data={chartData}>
+          <RadarChart accessibilityLayer data={chartData} outerRadius="65%">
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <PolarAngleAxis dataKey="month" />
             <PolarGrid />

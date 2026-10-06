@@ -268,8 +268,13 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
   durationRole = "normal",
 ) {
   const key = properties.join(",");
+  const cleanupRef = useRef<(() => void) | undefined>(undefined);
   return useCallback(
     (node: T | null) => {
+      // Some primitive ref mergers discard React 19's returned cleanup and
+      // detach through ref(null). Keep one subscription per real element.
+      cleanupRef.current?.();
+      cleanupRef.current = undefined;
       if (!node) return;
       const externalCleanup =
         typeof forwardedRef === "function" ? forwardedRef(node) : undefined;
@@ -338,6 +343,10 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
           const next = animateStyles(node, keyframes, {
             duration,
             ease: motionEasing(node, "standard"),
+            // Mini writes each property's final frame before the group settles.
+            // Restore immediately so its MutationObserver cannot adopt that
+            // frame as a new caller-owned inline value while siblings run.
+            onComplete: restore,
           });
           control = next;
           void next.then(() => {
@@ -386,8 +395,10 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
           : null;
       preference?.addEventListener("change", update);
       window.addEventListener("leement:motion-change", update);
-      return () => {
+      const cleanup = () => {
+        if (disposed) return;
         disposed = true;
+        if (cleanupRef.current === cleanup) cleanupRef.current = undefined;
         control?.cancel();
         restore();
         observer.disconnect();
@@ -402,6 +413,8 @@ export function useStyleMotion<T extends HTMLElement | SVGElement>(
         else if (typeof forwardedRef === "function") forwardedRef(null);
         else if (forwardedRef) forwardedRef.current = null;
       };
+      cleanupRef.current = cleanup;
+      return cleanup;
     },
     [forwardedRef, key, durationRole],
   );

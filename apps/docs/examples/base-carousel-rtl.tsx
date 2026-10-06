@@ -48,7 +48,7 @@ function CarouselRtl() {
   return (
     <Carousel
       dir={dir}
-      className="w-full max-w-[12rem] sm:max-w-xs"
+      className="mx-auto w-[calc(100%-6rem)] max-w-[12rem] sm:max-w-xs"
       opts={{
         direction: dir,
       }}

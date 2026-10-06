@@ -104,6 +104,7 @@ export function ChartRadarRadius() {
               stroke="var(--foreground)"
               orientation="middle"
               axisLine={false}
+              tick={{ fill: "var(--foreground)", stroke: "var(--card)", strokeWidth: 3, paintOrder: "stroke" }}
             />
           </RadarChart>
         </ChartContainer>

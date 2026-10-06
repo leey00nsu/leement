@@ -58,7 +58,7 @@ const userMessages = messages.filter((message) => message.role === "user");
 function MessageScrollerVisibility() {
   return (
     <MessageScrollerProvider scrollMargin={12}>
-      <div className="relative flex flex-col gap-4">
+      <div className="relative flex w-full min-w-0 max-w-[27rem] flex-col gap-4 pr-12">
         <div className="relative mx-auto w-full max-w-sm">
           <Card className="h-140 w-full gap-0">
             <CardHeader className="gap-1 border-b">

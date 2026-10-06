@@ -201,7 +201,7 @@ function DataTableDemo() {
   });
 
   return (
-    <div className="w-full">
+    <div className="w-full min-w-0">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."

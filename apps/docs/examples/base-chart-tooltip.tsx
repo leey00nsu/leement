@@ -152,7 +152,7 @@ function TooltipDemo({
   return (
     <div
       className={cn(
-        "grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl  ease-in-out hover:-translate-y-0.5",
+        "grid min-w-[8rem] items-start gap-2 rounded-md border border-border bg-popover px-3 py-2 text-xs text-popover-foreground shadow-md  ease-in-out hover:-translate-y-0.5",
         className,
       )}
     >

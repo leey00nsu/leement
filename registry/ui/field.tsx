@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { useStyleMotion } from "@/lib/leement-motion";
 import { cn } from "@/lib/utils";
 const fieldLabelClasses =
-  "text-sm font-medium leading-snug data-disabled:opacity-50 group/field-label block has-[:disabled,[data-disabled]]:opacity-50 has-data-checked:bg-primary/5 has-data-checked:border-primary/30 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:cursor-pointer has-[>[data-slot=field]]:rounded-lg has-[>[data-slot=field]]:border has-[>[data-slot=field]]:border-border has-[>[data-slot=field]]:not-has-[:disabled,[data-disabled]]:hover:bg-muted/50 has-[>[data-slot=field]]:has-[:focus-visible]:border-ring has-[>[data-slot=field]]:has-[:focus-visible]:ring-ring/50 has-[>[data-slot=field]]:has-[:focus-visible]:ring-3 [&>[data-slot=field]]:p-3";
+  "text-sm font-medium leading-snug data-disabled:opacity-50 group/field-label block has-[:disabled,[data-disabled]]:opacity-50 has-data-checked:bg-primary/5 has-data-checked:border-primary/30 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:cursor-pointer has-[>[data-slot=field]]:rounded-xl has-[>[data-slot=field]]:border has-[>[data-slot=field]]:border-border has-[>[data-slot=field]]:not-has-[:disabled,[data-disabled]]:hover:bg-muted/50 has-[>[data-slot=field]]:has-[:focus-visible]:border-ring has-[>[data-slot=field]]:has-[:focus-visible]:ring-ring/40 has-[>[data-slot=field]]:has-[:focus-visible]:ring-3 [&>[data-slot=field]]:p-3";
 const InField = React.createContext(false);
 const SetDescription = React.createContext<string | undefined>(undefined);
 const standaloneState: Primitive.Root.State & Record<string, unknown> = {
@@ -91,8 +91,8 @@ function Field({ className, orientation = "vertical", ...props }: FieldProps) {
             orientation === "vertical"
               ? "flex-col"
               : orientation === "horizontal"
-                ? "flex-row items-start"
-                : "flex-col @md/field-group:flex-row @md/field-group:items-start",
+                ? "flex-row items-start [&>[data-slot=input]]:flex-1 [&>[data-slot=textarea]]:flex-1 [&>[data-slot=select-trigger]]:flex-1"
+                : "flex-col @md/field-group:flex-row @md/field-group:items-start @md/field-group:[&>[data-slot=input]]:flex-1 @md/field-group:[&>[data-slot=textarea]]:flex-1 @md/field-group:[&>[data-slot=select-trigger]]:flex-1",
             typeof className === "function" ? className(state) : className,
           )
         }
@@ -224,7 +224,7 @@ function FieldSet({
         aria-describedby={descriptionId}
         data-slot="field-set"
         className={cn(
-          "@container/field-group group/field-group grid min-w-0 gap-5",
+          "@container/field-group group/field-group grid w-full min-w-0 gap-5",
           className,
         )}
         {...props}
@@ -257,7 +257,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="field-group"
       className={cn(
-        "@container/field-group group/field-group grid min-w-0 gap-5",
+        "@container/field-group group/field-group grid w-full min-w-0 gap-5",
         className,
       )}
       {...props}

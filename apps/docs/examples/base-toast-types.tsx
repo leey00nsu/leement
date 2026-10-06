@@ -6,7 +6,7 @@ import { toast } from "../../../registry/ui/toast";
 
 function ToastTypes() {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap justify-center gap-2">
       <Button
         variant="outline"
         onClick={() => toast.add({ description: "Event has been created." })}

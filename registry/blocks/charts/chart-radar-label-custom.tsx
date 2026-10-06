@@ -81,6 +81,7 @@ export function ChartRadarLabelCustom() {
           className="mx-auto aspect-square max-h-[250px]"
         >
           <RadarChart
+            outerRadius="55%"
             accessibilityLayer
             data={chartData}
             margin={{
@@ -109,6 +110,7 @@ export function ChartRadarLabelCustom() {
                     fontSize={13}
                     fontWeight={500}
                     {...props}
+                    className="fill-foreground"
                   >
                     <tspan>{data.desktop}</tspan>
                     <tspan className="fill-muted-foreground">/</tspan>

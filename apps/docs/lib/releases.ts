@@ -11,7 +11,9 @@ export type Release = {
 };
 
 export const repositoryVersion = manifest.version;
-export const unreleasedChanges: ReleaseChange[] = [];
+export const unreleasedChanges: ReleaseChange[] = [
+  { title: "Consistent component surfaces and controls", details: "Sidebar uses Leement semantic theme colors, shared control sizes and stable skeleton rendering. Menus preserve destructive colors; inputs, navigation and table controls inherit common surfaces, focus and sizing. Blocks and interactive charts use consistent borders, card insets and typography. Field layouts keep labels and inputs readable, table scrolling contains hidden labels, and responsive examples reserve space for external navigation. Chart axes and radar labels remain readable in dark mode; Questionnaire restores semantic colors when its theme or state changes. To adopt the source changes, review and reinstall the affected registry items and update the theme together; existing application-owned source is not overwritten automatically." },
+];
 
 const changes = [
   { title: "Motion standardization", details: "All Leement visual transitions use Motion: controls, popups, disclosure height, repeated decoration and docs previews. Theme CSS remains static and framework independent. Spin, pulse and marquee cycles are editable tokens. Tokens/theme and the source registry are published for 0.2.0." },

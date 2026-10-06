@@ -139,7 +139,7 @@ test("reveal content observes its real element with either kind of consumer ref"
 });
 
 
-test("style transitions preserve caller inline styles, priority and ref cleanup under reduced motion", async () => {
+test("style transitions preserve caller inline styles and cleanup through native and composed refs", async () => {
   vi.stubGlobal("matchMedia", () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
   const callerRef = createRef<HTMLButtonElement>();
   function Control({ selected }: { selected: boolean }) {
@@ -161,4 +161,20 @@ test("style transitions preserve caller inline styles, priority and ref cleanup 
   expect(callerRef.current).toBeNull();
   expect(node.style.color).toBe("rgb(12, 34, 56)");
   expect(node.style.getPropertyPriority("background-color")).toBe("important");
+
+  // A primitive may merge refs without returning React 19's cleanup callback.
+  function ComposedControl({ selected }: { selected: boolean }) {
+    const ref = useStyleMotion(callerRef);
+    return <button ref={element => { ref(element); }} aria-pressed={selected} style={{ color: "rgb(12, 34, 56)" }}>Composed action</button>;
+  }
+  const composed = render(<ComposedControl selected={false} />);
+  const composedNode = screen.getByRole("button", { name: "Composed action" });
+  for (const selected of [true, false, true]) {
+    await act(async () => { composed.rerender(<ComposedControl selected={selected} />); });
+    expect(callerRef.current).toBe(composedNode);
+    expect(composedNode.style.color).toBe("rgb(12, 34, 56)");
+  }
+  composed.unmount();
+  expect(callerRef.current).toBeNull();
+  expect(composedNode.style.color).toBe("rgb(12, 34, 56)");
 });

@@ -11,7 +11,7 @@ import { Input } from "../../../registry/ui/input";
 
 function InputFieldgroup() {
   return (
-    <FieldGroup>
+    <FieldGroup className="max-w-sm">
       <Field>
         <FieldLabel htmlFor="fieldgroup-name">Name</FieldLabel>
         <Input id="fieldgroup-name" placeholder="Jordan Lee" />

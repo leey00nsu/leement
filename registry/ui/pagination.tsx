@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 function Pagination({ className, ...props }: ComponentProps<"nav">) { return <nav aria-label="Pagination" className={cn("flex justify-center", className)} {...props} />; }
-function PaginationContent({ className, ...props }: ComponentProps<"ul">) { return <ul className={cn("flex flex-wrap items-center gap-1", className)} {...props} />; }
+function PaginationContent({ className, ...props }: ComponentProps<"ul">) { return <ul className={cn("flex flex-wrap items-center justify-center gap-1", className)} {...props} />; }
 function PaginationItem(props: ComponentProps<"li">) { return <li {...props} />; }
 type PaginationLinkProps = ComponentProps<"a"> & { isActive?: boolean; disabled?: boolean; size?: ComponentProps<typeof import("@/components/ui/button").Button>["size"] };
 function PaginationLink({ isActive, disabled, size = "icon", className, onClick, href, ...props }: PaginationLinkProps) {

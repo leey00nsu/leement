@@ -124,7 +124,7 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 - DatePicker는 Button/Popover/Calendar(date)를 조합한다. 접근 가능한 label과 선택 값을 trigger에 제공하고 popup이 열리면 선택 가능한 날짜로 focus를 이동한다. single 또는 range 완료 시 닫고 trigger로 복귀하며 Escape도 같은 복귀를 유지한다. 필드 id/aria-describedby/aria-invalid를 연결할 수 있다.
 - 날짜 값은 consumer의 local Date이며 시간·타임존 변환·서버 저장을 추가하지 않는다. range를 controlled로 사용하면 부분 선택도 consumer가 반영해야 한다.
 
-- 신규 작은 선택 표식(Checkbox/Radio)과 Select/InputGroup 경계는 muted foreground semantic 역할을 사용해 라이트 표면에서도 식별한다. 단순 장식 border와 control 경계를 구분하며 focus ring은 불투명한 ring 역할을 사용한다. Base UI의 data-disabled도 시각 상태에 연결한다.
+- 신규 작은 선택 표식(Checkbox/Radio)과 Select/InputGroup 경계는 muted foreground semantic 역할을 사용해 라이트 표면에서도 식별한다. 단순 장식 border와 control 경계를 구분하며 focus ring은 공용 ring 의미색의3px/40% 표현을 사용한다. Base UI의 data-disabled도 시각 상태에 연결한다.
 
 ### upstream 이름과 사용 문제의 대응
 
@@ -171,3 +171,10 @@ Charts는 Area10/Bar10/Line10/Pie11/Radar14/Radial6/Tooltips9의 70개 source re
 ## Sidebar와 복합 UI의 일관성
 
 Sidebar는 기본 surface/foreground, muted 선택·hover 표면, 공용 border/focus 의미 역할을 사용한다. theme의 sidebar 호환 변수와 Tailwind 색상은 이 역할에서 파생하며 별도의 브랜드 팔레트를 갖지 않는다. 일반 border utility의 기본색도 semantic border다. Input은 공용 입력 surface와40px 높이를 상속한다. 메뉴 기본40/sm36/lg44px, collapsed icon40px, 서브메뉴 기본40/sm36px와32px 보조 action을 사용한다. 배지는20px 메타데이터이며 일반 메뉴와 조작 크기를 혼동하지 않는다. 모든 action의 focus는 공용3px/40% 링으로 표시하고 badge/action은 row 크기와 RTL에 맞춰 정렬한다. 일반 inset·floating panel은 border와12px 모서리로 구분하며 기본 shadow를 추가하지 않는다. collapsed 상태의 tooltip과 모바일 sheet는 해당 overlay 규칙을 따른다. skeleton의 인스턴스별 폭은 첫 서버·클라이언트 렌더에서 같아야 한다.
+
+메뉴는 DropdownMenu와 같은 solid popover 표면과 위험 동작의 의미색을 유지한다. 일반 입력은 기본 surface, disabled muted, invalid30% ring을 사용하며 dark 전용 input 경계색을 배경으로 대신 쓰지 않는다. 복합 목록은4px 리듬을 지키고 Item default16/sm12/xs8px inset을 구별한다. Chart tooltip은 popover 표면과 본문 서체·tabular 숫자를 사용하며 코드 서체는 코드/명령/단축키에만 쓴다. 축과 사용자 정의 숫자 레이블도 semantic foreground/muted-foreground를 사용하고 plot 안에서 글자가 잘리지 않게 공간을 확보한다. Interactive chart의 Card와 일반 Block card는20px inset·12px 표면 모서리를 공유하고 plot 좌표·마케팅 제목·넓은 통계 구획은 역할에 맞는 크기를 유지한다. Sidebar의 tooltip 조합은 render prop으로 단일 메뉴 조작 요소를 유지하여 registry 설치 도구의 변환 뒤에도 중첩 버튼을 만들지 않는다.
+
+
+모션 ref는 반환 cleanup을 전달하는 조합과 ref(null)로 해제하는 조합을 모두 지원하며 동일 요소에 구독을 중복하지 않는다. 테마·선택 전환 후에는 앱이 지정한 inline style을 보존하고 animation 완료 값이 semantic CSS를 덮어쓰지 않게 한다.
+
+FieldGroup와 FieldSet은 부모의 가용 폭을 사용하고 명시한 max-width를 유지한다. horizontal/responsive Field의 입력과 설명 영역은 폭을 나눠 가지며 label을0px로 축소하지 않는다. 표의 scroll wrapper는 내부 absolute 접근성 label도 포함하도록 위치 기준을 제공한다. 예제의 외부 carousel/message navigation에는 실제 조작 공간을 확보하고 document overflow로 버튼을 노출하지 않는다.

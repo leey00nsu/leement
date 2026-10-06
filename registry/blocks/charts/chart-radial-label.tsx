@@ -108,7 +108,9 @@ export function ChartRadialLabel() {
               <LabelList
                 position="insideStart"
                 dataKey="browser"
-                className="fill-white capitalize mix-blend-luminosity"
+                className="fill-foreground stroke-card capitalize"
+                strokeWidth={3}
+                paintOrder="stroke"
                 fontSize={11}
               />
             </RadialBar>
