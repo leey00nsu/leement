@@ -1,0 +1,2824 @@
+{
+  "featureId": "G9AD96ZLEU25",
+  "referenceFeatureId": "ASDHZYC4MRGK",
+  "createdAt": "2026-10-06",
+  "previousFeatureBase": "a64c377d55a92921653d58e9204aceff5eadcdb0",
+  "previousFeatureEnd": "9dac3fdf81dd467d8ba986b23c1e0f2691918d71",
+  "implementationBaseline": "5830646f4ce6a628c210e15ac113e69a4edd8236",
+  "scopeStatus": "frozen-inventory-not-a-completed-visual-audit",
+  "counts": {
+    "docsSurfaces": 39,
+    "examples": 498,
+    "installation": 2,
+    "foundations": 2,
+    "blocks": 28,
+    "chartRecipes": 70,
+    "supportSources": 3,
+    "patternSources": 2,
+    "uiSources": 52
+  },
+  "groups": {
+    "docsSurfaces": [
+      {
+        "change": "M",
+        "path": "apps/docs/app/blocks/[slug]/page.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/app/charts/[...slug]/page.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/app/charts/page.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/app/components/[slug]/page.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/app/layout.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/app/preview/[...slug]/page.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/components/api-reference.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/components/chart-page.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/components/chart-previews.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/components/charts-gallery.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/components/docs-navigation.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/components/docs-search.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/components/docs-top-navigation.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/components/example-previews.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/components/item-page.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/components/preview-frame.tsx"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/components/previews.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/components/usage-guide.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-blocks.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-complex.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-content-blocks.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-content.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-conversion-blocks.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-core.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-leement.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-marketing-blocks.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-navigation.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-overlay-data.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/api-reference.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/base-example-catalog.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/chart-catalog.ts"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/lib/docs.ts"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/lib/example-catalog.ts"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/lib/example-source.ts"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/lib/item-states.ts"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/lib/items.ts"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/lib/usage-guides.ts"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/package.json"
+      },
+      {
+        "change": "M",
+        "path": "apps/docs/tsconfig.json"
+      }
+    ],
+    "examples": [
+      {
+        "change": "A",
+        "path": "apps/docs/examples/about.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/attachment.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/awards.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-accordion-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-accordion-borders.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-accordion-card.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-accordion-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-accordion-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-accordion-multiple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-accordion-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-action.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-colors.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-destructive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-dialog-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-dialog-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-dialog-destructive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-dialog-media.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-dialog-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-dialog-small-media.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-dialog-small.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-alert-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-aspect-ratio-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-aspect-ratio-portrait.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-aspect-ratio-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-aspect-ratio-square.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-attachment-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-attachment-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-attachment-image.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-attachment-sizes.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-attachment-states.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-attachment-trigger.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-badge-icon.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-badge.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-dropdown.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-group-count-icon.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-group-count.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-avatar-size.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-badge-colors.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-badge-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-badge-icon.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-badge-link.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-badge-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-badge-spinner.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-badge-variants.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-breadcrumb-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-breadcrumb-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-breadcrumb-dropdown.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-breadcrumb-ellipsis.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-breadcrumb-link.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-breadcrumb-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-breadcrumb-separator.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-alignment.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-collapsible.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-group-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-link-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-popover.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-reactions.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-tooltip.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-bubble-variants.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-default.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-destructive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-ghost.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-dropdown.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-input-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-input.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-nested.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-orientation.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-popover.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-select.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-separator.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-size.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-group-split.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-icon.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-link.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-outline.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-render.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-rounded.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-secondary.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-size.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-spinner.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-button-with-icon.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-booked-dates.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-caption.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-custom-days.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-hijri.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-presets.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-range.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-time.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-calendar-week-numbers.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-card-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-card-edge-to-edge.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-card-image.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-card-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-card-small.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-card-spacing.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-carousel-api.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-carousel-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-carousel-orientation.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-carousel-plugin.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-carousel-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-carousel-size.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-carousel-spacing.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-chart-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-chart-example-axis.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-chart-example-grid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-chart-example-legend.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-chart-example-tooltip.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-chart-example.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-chart-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-chart-tooltip.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-checkbox-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-checkbox-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-checkbox-description.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-checkbox-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-checkbox-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-checkbox-invalid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-checkbox-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-checkbox-table.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-collapsible-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-collapsible-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-collapsible-file-tree.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-collapsible-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-collapsible-settings.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-auto-highlight.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-clear.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-groups.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-input-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-invalid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-multiple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-popup.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-combobox-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-command-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-command-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-command-groups.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-command-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-command-scrollable.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-command-shortcuts.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-checkboxes.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-destructive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-groups.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-radio.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-shortcuts.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-sides.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-context-menu-submenu.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-data-table-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-data-table-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-date-picker-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-date-picker-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-date-picker-dob.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-date-picker-input.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-date-picker-natural-language.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-date-picker-range.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-date-picker-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-date-picker-time.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dialog-close-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dialog-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dialog-no-close-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dialog-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dialog-scrollable-content.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dialog-sticky-footer.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-drawer-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-drawer-dialog.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-drawer-nested.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-drawer-non-modal.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-drawer-sides.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-drawer-snap-points.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-drawer-swipe-handle.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-avatar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-checkboxes-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-checkboxes.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-complex.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-destructive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-radio-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-radio-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-shortcuts.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-dropdown-menu-submenu.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-empty-avatar-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-empty-avatar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-empty-background.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-empty-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-empty-input-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-empty-outline.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-empty-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-checkbox.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-choice-card.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-fieldset.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-input.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-radio.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-responsive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-select.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-slider.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-switch.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-field-textarea.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-hover-card-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-hover-card-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-hover-card-sides.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-badge.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-button-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-field.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-fieldgroup.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-file.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-form.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-grid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-block-end.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-block-start.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-dropdown.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-icon.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-inline-end.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-inline-start.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-kbd.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-spinner.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-text.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-group-textarea.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-inline.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-input-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-invalid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-alphanumeric.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-controlled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-form.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-four-digits.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-invalid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-pattern.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-otp-separator.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-required.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-input-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-avatar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-dropdown.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-header.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-icon.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-image.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-link.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-size.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-item-variant.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-kbd-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-kbd-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-kbd-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-kbd-input-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-kbd-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-kbd-tooltip.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-label-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-label-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-marker-border.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-marker-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-marker-icon.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-marker-link-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-marker-separator.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-marker-shimmer.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-marker-status.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-marker-variants.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-menubar-checkbox.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-menubar-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-menubar-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-menubar-radio.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-menubar-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-menubar-submenu.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-actions.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-attachment.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-avatar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-header-footer.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-anchoring.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-animation.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-commands.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-group-chat.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-load-history.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-opening-position.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-previous-context.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-scrollable.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-streaming.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-message-scroller-visibility.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-navigation-menu-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-navigation-menu-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-pagination-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-pagination-icons-only.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-pagination-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-pagination-simple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-popover-alignments.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-popover-basic.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-popover-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-popover-form.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-popover-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-progress-controlled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-progress-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-progress-label.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-progress-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-animated.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-card.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-conditional.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-controlled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-dialog.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-freeform.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-multiple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-navigation-state.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-progress.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-resume.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-shortcuts.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-skip.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-questionnaire-validation.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-radio-group-choice-card.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-radio-group-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-radio-group-description.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-radio-group-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-radio-group-fieldset.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-radio-group-invalid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-radio-group-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-resizable-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-resizable-handle.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-resizable-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-resizable-vertical.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-scroll-area-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-scroll-area-horizontal-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-scroll-area-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-select-align-item.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-select-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-select-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-select-groups.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-select-invalid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-select-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-select-scrollable.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-separator-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-separator-list.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-separator-menu.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-separator-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-separator-vertical.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-sheet-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-sheet-no-close-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-sheet-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-sheet-side.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-sidebar-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-skeleton-avatar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-skeleton-card.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-skeleton-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-skeleton-form.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-skeleton-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-skeleton-table.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-skeleton-text.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-slider-controlled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-slider-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-slider-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-slider-multiple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-slider-range.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-slider-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-slider-vertical.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-spinner-badge.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-spinner-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-spinner-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-spinner-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-spinner-empty.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-spinner-input-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-spinner-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-spinner-size.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-switch-choice-card.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-switch-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-switch-description.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-switch-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-switch-invalid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-switch-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-switch-sizes.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-table-actions.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-table-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-table-footer.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-table-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tabs-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tabs-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tabs-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tabs-line.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tabs-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tabs-vertical.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-textarea-button.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-textarea-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-textarea-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-textarea-field.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-textarea-invalid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-textarea-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toast-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toast-promise.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toast-types.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-group-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-group-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-group-font-weight-selector.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-group-outline.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-group-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-group-sizes.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-group-spacing.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-group-vertical.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-outline.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-sizes.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-toggle-text.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tooltip-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tooltip-disabled.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tooltip-keyboard.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tooltip-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-tooltip-sides.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-blockquote.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-demo.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-h1.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-h2.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-h3.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-h4.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-inline-code.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-large.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-lead.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-list.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-muted.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-p.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-rtl.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-small.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/base-typography-table.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/blog-post.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/blog.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/bubble.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/careers.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/carousel.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/case-studies.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/case-study.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/changelog.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/code-example.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/codebase.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/collaborative-canvas.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/community.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/compare.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/compliance.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/contact.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/context-menu.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/cta.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/direction.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/download.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/drawer.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/experience.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/faq.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/feature.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/footer.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/form.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/hero.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/input-otp.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/item.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/marker.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/menubar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/message-scroller.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/message.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/navigation-menu.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/pricing.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/questionnaire.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/resizable.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/roadmap.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/scroll-area.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/sidebar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/stats.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/team.tsx"
+      },
+      {
+        "change": "A",
+        "path": "apps/docs/examples/testimonial.tsx"
+      }
+    ],
+    "installation": [
+      {
+        "change": "M",
+        "path": "package.json"
+      },
+      {
+        "change": "M",
+        "path": "registry.json"
+      }
+    ],
+    "foundations": [
+      {
+        "change": "M",
+        "path": "packages/theme/build.mjs"
+      },
+      {
+        "change": "M",
+        "path": "packages/tokens/src/tokens.json"
+      }
+    ],
+    "blocks": [
+      {
+        "change": "A",
+        "path": "registry/blocks/about.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/awards.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/blog-post.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/blog.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/careers.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/case-studies.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/case-study.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/changelog.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/code-example.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/codebase.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/collaborative-canvas.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/community.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/compare.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/compliance.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/contact.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/cta.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/download.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/experience.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/faq.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/feature.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/footer.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/form.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/hero.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/pricing.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/roadmap.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/stats.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/team.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/testimonial.tsx"
+      }
+    ],
+    "chartRecipes": [
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-axes.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-default.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-gradient.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-interactive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-legend.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-linear.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-stacked-expand.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-stacked.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-area-step.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-active.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-default.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-horizontal.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-interactive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-label-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-label.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-mixed.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-multiple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-negative.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-bar-stacked.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-default.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-dots-colors.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-dots-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-dots.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-interactive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-label-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-label.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-linear.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-multiple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-line-step.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-donut-active.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-donut-text.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-donut.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-interactive.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-label-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-label-list.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-label.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-legend.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-separator-none.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-simple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-pie-stacked.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-default.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-dots.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-grid-circle-fill.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-grid-circle-no-lines.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-grid-circle.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-grid-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-grid-fill.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-grid-none.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-label-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-legend.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-lines-only.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-multiple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radar-radius.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radial-grid.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radial-label.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radial-shape.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radial-simple.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radial-stacked.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-radial-text.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-advanced.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-default.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-formatter.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-icons.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-indicator-line.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-indicator-none.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-label-custom.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-label-formatter.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/blocks/charts/chart-tooltip-label-none.tsx"
+      }
+    ],
+    "supportSources": [
+      {
+        "change": "A",
+        "path": "registry/hooks/use-mobile.ts"
+      },
+      {
+        "change": "M",
+        "path": "registry/lib/leement-motion.ts"
+      },
+      {
+        "change": "M",
+        "path": "registry/lib/popup-scope.ts"
+      }
+    ],
+    "patternSources": [
+      {
+        "change": "M",
+        "path": "registry/patterns/data-table.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/patterns/empty-state.tsx"
+      }
+    ],
+    "uiSources": [
+      {
+        "change": "M",
+        "path": "registry/ui/alert-dialog.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/attachment.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/avatar.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/badge.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/breadcrumb.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/bubble.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/button-group.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/button.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/calendar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/carousel.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/chart-data-table.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/code-block.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/combobox.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/command.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/context-menu.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/dialog.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/direction.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/drawer.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/dropdown-menu.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/field.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/hover-card.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/input-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/input-otp.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/input.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/item.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/kbd.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/marker.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/marquee.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/menubar.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/message-scroller.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/message.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/navigation-menu.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/pagination.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/popover.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/progress.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/questionnaire.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/radio-group.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/resizable.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/scroll-area.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/select.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/separator.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/sheet.tsx"
+      },
+      {
+        "change": "A",
+        "path": "registry/ui/sidebar.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/slider.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/spinner.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/status-notice.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/switch.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/tabs.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/toast.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/toggle-group.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/toggle.tsx"
+      },
+      {
+        "change": "M",
+        "path": "registry/ui/tooltip.tsx"
+      }
+    ]
+  }
+}

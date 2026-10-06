@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/G9AD96ZLEU25-ui-consistency-remediation`
 - **대기 중 변경 요청**: -
@@ -74,6 +74,85 @@
 > 수동 편집이 필요하면 현재 태스크 근처가 아니라 `태스크 목록`의 마지막 기존 태스크 block 아래에만 append 하세요.
 
 ---
+
+- [DONE][PRD-FR-011] T-G9AD96ZLEU25-ui-consistency-remediation-01 고정 source 전수검수와 Sidebar 수정 전 기준 확보
+  - Date: 2026-10-06
+  - Acceptance:
+    - UI52/Patterns2/Blocks28/Charts70와 관련 예제의 source를 검사하고 결과·수정 후보·역할 예외를 audit-results에 연결한다.
+  - Checklist:
+    - [x] scope 분모와 실제 source를 읽고 browser baseline을 확보하며 inspection과 visual 검수를 구별한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+  - Verification: 고정157 runtime/support/foundation source와498 example 목록의 스타일 후보 대조. Sidebar browser computed background rgba(0,0,0,0), sidebar alias 빈 값·선택 표면 누락 확인. [검수표](./artifacts/audit-results.json)와 [수정 전](./artifacts/sidebar-before.png). 실제 전수 browser 검수는 T02..06에 pending으로 남겼다.
+
+- [TODO][PRD-FR-011] T-G9AD96ZLEU25-ui-consistency-remediation-02 Sidebar semantic theme·크기·상태 표현 복구
+  - Date: 2026-10-06
+  - Acceptance:
+    - Sidebar parts/variants·light-dark/Foundations와 독립 theme 연결을 수정하고 collapse/mobile/keyboard 계약을 유지한다.
+  - Checklist:
+    - [ ] theme alias와 기존 compatibility test를 갱신하고 Input/menu/sub/action/skeleton/focus/RTL/모바일을 함께 확인한다.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-015] T-G9AD96ZLEU25-ui-consistency-remediation-03 나머지 UI·Patterns와 Base 예제의 일관성 수정
+  - Date: 2026-10-06
+  - Acceptance:
+    - 52 UI/2 Patterns의 남은 불일치와 관련 Base 예제를 기존 공용 역할에 맞추고 public API·고정 대응을 보존한다.
+  - Checklist:
+    - [ ] source/예제 스타일을 필요한 곳만 수정하고 focused contracts·light-dark·키보드/overlay·responsive를 검증한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-016] T-G9AD96ZLEU25-ui-consistency-remediation-04 공개 Blocks28의 전수검수와 시각 규칙 복구
+  - Date: 2026-10-06
+  - Acceptance:
+    - Applications3/Websites25 모두의 layout·표면·서체·controls·states를 검수하고 결함을 수정한다.
+  - Checklist:
+    - [ ] 모든source/preview와 핵심 callback·forms·pricing·canvas·roadmap·media 동작을 확인하고 결과를 연결한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-017] T-G9AD96ZLEU25-ui-consistency-remediation-05 Charts70의 전수검수와 공용 UI 일관성 복구
+  - Date: 2026-10-06
+  - Acceptance:
+    - 70 recipe의 Card/control/tooltip/legend/축/표·semantic series를 검수하고 의도된 차이와 결함을 구분해 처리한다.
+  - Checklist:
+    - [ ] 모든source와 light-dark/mobile-desktop 렌더, 기간/series·tooltip·Foundation data token/reduced motion을 확인한다.
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-009] T-G9AD96ZLEU25-ui-consistency-remediation-06 전체 예제 화면·독립 consumer·최종 문서와 회귀 검증
+  - Date: 2026-10-06
+  - Acceptance:
+    - 498 examples/70 charts/기본 source 소비처의 전체 검수 결과가 있고 필요한 설치/tsc/build/full checks와 문서 동기화를 통과한다.
+  - Checklist:
+    - [ ] 모든390/1440 light-dark 검수·고위험240/1024/RTL/focus/Replay/resize를 완료하고 registry consumer와 curated docs/unreleased/sync marker를 연결한다.
+  - Docs:
+    - docs:designs/design-system.md
+    - project:apps/docs/lib/releases.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
 
 ## Repository Knowledge (완료 비차단)
 

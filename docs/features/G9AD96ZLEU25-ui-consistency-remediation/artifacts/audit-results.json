@@ -1,0 +1,1580 @@
+{
+  "featureId": "G9AD96ZLEU25",
+  "baseline": "5830646f4ce6a628c210e15ac113e69a4edd8236",
+  "dimensions": [
+    "semantic-color/surface/contrast",
+    "typography",
+    "control/icon-size",
+    "spacing/inset",
+    "radius/border/shadow",
+    "states/focus",
+    "responsive",
+    "motion"
+  ],
+  "sourceInspection": [
+    {
+      "path": "registry/ui/alert-dialog.tsx",
+      "sha256": "07c98e2a1b19b5c6929a81a8b37da0fdc9782ca02f978e25966d18992d69bdd0",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/attachment.tsx",
+      "sha256": "a99da9b1c3148cfa0aa54ce31eb8a6f20ef38403c1fd3e130eae8eb7388adb09",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/avatar.tsx",
+      "sha256": "8a7f3752e2b1abe20a27dcca532f3b908e70e114788bcac4660981bf73b64a83",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/badge.tsx",
+      "sha256": "3aadd90b8bda2a1f2dedbc42738836f456a37781ef8893add94feb7a944455d4",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/breadcrumb.tsx",
+      "sha256": "f4e5bd8d09cb7d0670da9769cb96937161b187401e2ca35d5c232dfa15ff600a",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/bubble.tsx",
+      "sha256": "0adb2685c34d2aad51ee93c6dd5b955a5ccb3757b177a86255e5797ce1594c43",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/button-group.tsx",
+      "sha256": "959e40517565632678e53c5bf30eb91016763b4bf76109255847ebc9a71dea81",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/button.tsx",
+      "sha256": "ec64b848e015598d1a10d1716d8a7cb819d35a34e1b0fbeb4154dddcc6d4e48c",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/calendar.tsx",
+      "sha256": "296d91f9f4048fe356cf6c14c404ec3df9fa6b49db26a1fb56ccc2354d1714d1",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/carousel.tsx",
+      "sha256": "0118b22fabbd7b1c2e75143cbd8676134220b68d9027442976cc2e7e20c40c47",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/chart-data-table.tsx",
+      "sha256": "ead75d78deb4b1050ccbd66eba2653964f948d28dd4185b4582a5a5e205386db",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/code-block.tsx",
+      "sha256": "948a7b291da19eba297ede2f23f4aaa7a9c62969f94473da0ba2c724ada7b9df",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/combobox.tsx",
+      "sha256": "29da341038025a89b4e4f978ca715cd194c7e58d6bb0534c2e94435a4c0d974b",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/command.tsx",
+      "sha256": "e7063e0aac6a114c9f9488e9c78df8c43d28f0f44ea78e826a86dbbffdc4be89",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/context-menu.tsx",
+      "sha256": "a360821a1c53f04d9986a192b359d601fc1e63b9660c06d9d32f69e7bf42b37d",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V03"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/dialog.tsx",
+      "sha256": "df1dd5883c451110252315c9658774b56dff3761148f7bfa5d0e64cebc2ad8a9",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/direction.tsx",
+      "sha256": "8278c23608fe628a3e6a6c0c3269e24242832e8250ed00d61545a4f8a98ee381",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/drawer.tsx",
+      "sha256": "52f3ec82c3bf0ed0796a38968e22c9f18acd1411d15b916d17a9af33acb7fbb3",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V09"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/dropdown-menu.tsx",
+      "sha256": "65fcbeb777adbc220b806ca35d2355e84e42861ed584c6be776c3fed3bdf195b",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/field.tsx",
+      "sha256": "2cebb0d892a995127225c0acadac81ad87bea1d35a3b61ed73bc362aa5994edb",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/hover-card.tsx",
+      "sha256": "b4e3d90f8b2d5d34f9c5b9651a031da040b6de7bbc7d3d28b931e1bdfd6bf34e",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/input-group.tsx",
+      "sha256": "7fdcce31309c9a1fc5a38524ef8789e9da66724da84cc3ebe4abeb110136943e",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V04"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/input-otp.tsx",
+      "sha256": "5ccab04d78fc8679f96bac64b99a6cb5f2002d56c457484ed1777d62fd706466",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V04"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/input.tsx",
+      "sha256": "2228bfab17c85ffdb842db2f0b1428600938bad3688cd8660efb6672aed36e26",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/item.tsx",
+      "sha256": "51ab3242348677144f9cfe6a97123113c2faeb011653af648a23409990ed157f",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V05"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/kbd.tsx",
+      "sha256": "56747ae31a88e8f32b2f735d71a689f5401d258372e1354d9ce4a496f4ee99c0",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/marker.tsx",
+      "sha256": "9fe4b58d57cdac17fa3d27abc9bd6fc44cbcba81f5563e605fd1c4cc703ab700",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/marquee.tsx",
+      "sha256": "1a8eeee96beb059aa3b88bf7164aeb0c96a34dbce67ee05aab9c4e5bc6e5a3ff",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/menubar.tsx",
+      "sha256": "6b4749821d952be1de8cae9649bcebbd909204132c13b5689cac764bd4670029",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V03"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/message-scroller.tsx",
+      "sha256": "84019dd43d1e96ce03588d9c81cb0b558e887b5e2e860105fcb2516835dd360f",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/message.tsx",
+      "sha256": "61357e4afd1d445ffd2d2495296f97be65aa3e061b12322ecaa1729504870bf3",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V05"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/navigation-menu.tsx",
+      "sha256": "02149b7e883d31e0bd3ddfa059cbb77b49596c7fe0b937ca825ad323454bbc9b",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V05"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/pagination.tsx",
+      "sha256": "67006b5e8174e631620e25a2b24e55b1e71e47a3b19017569f58ee27197445b8",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/popover.tsx",
+      "sha256": "3e50dcf090d5a4acdc840947d0bf91b2e3b42e847bf6c99e25013021e227dcc9",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/progress.tsx",
+      "sha256": "427b8f7f077dc62d6bedcbe93a36fe5f39b6ea20cd6df114bb5f631d75e018f1",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/questionnaire.tsx",
+      "sha256": "31018f1e19959103cede36564d29e03793d64c5a7ee77193d996df3e1de10713",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V04"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/radio-group.tsx",
+      "sha256": "dacb7038d07c915cf100f35c3e2509bf82210668cb7483b31c365b94b50a4e1f",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/resizable.tsx",
+      "sha256": "32846f6320ec1a40aa75104a3b8223b39519904705f74ce920f074bd607e7ecf",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/scroll-area.tsx",
+      "sha256": "2d935170fc215041d1e536c77ed90af39795edaa9b9d26390dd6c30c445fd1ca",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/select.tsx",
+      "sha256": "754416ae07deb223e47b02af73fe1097ad4d40e125a5edcc7198ca6dd83473ef",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/separator.tsx",
+      "sha256": "90335410ee02b544d25412b46ff8ab59c42e724f51430e959ea68fe9f9ecd0a6",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/sheet.tsx",
+      "sha256": "1723a22343562ee3e3b75176f6508fbecd6046ae5571382973798ca7b0ff3140",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/sidebar.tsx",
+      "sha256": "798934f058031d993b6071b55bc3b6fa8c5cbf7e9fde98e3c03196a2e6eadbc1",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V01",
+        "V02"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/slider.tsx",
+      "sha256": "6174ccbb6f0b37ae433824b74980a38c872b77b533cb217269d01b3d5d34cedf",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/spinner.tsx",
+      "sha256": "330a391074b5bb332e34c7f43704c392663030c6dee25aab24eaf5795df6bc33",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/status-notice.tsx",
+      "sha256": "515f6378daad03fab1e450ee924bd30485c1b8bfd24b3381502f8069bd24087c",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/switch.tsx",
+      "sha256": "32ea668ae776f0f7464555d7ab09e240abadc193d5314b0b8ec641b68fcf68ff",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/tabs.tsx",
+      "sha256": "adb4d39b561fff44df83fff1e464ee2b9d7339d371b98ac063fdd8dcbafb0f48",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/toast.tsx",
+      "sha256": "3d8b82d720c3097f50ad4a00ff6090656c40bb2bcaead4e765e08cc15f16ddfa",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/toggle-group.tsx",
+      "sha256": "7a10eec98bfe9e0c718d57323c9237275ff6fec3f80936e60c2c0c444f6dd4c3",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/toggle.tsx",
+      "sha256": "7a9363a6d4038e12d6e2d4375e29edd85a96673d8e4643e52615ca10889988a1",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/ui/tooltip.tsx",
+      "sha256": "d108c26d4df2f69caae758f695be55138ed37c00cdb4eef4a989f10160c0c42c",
+      "group": "uiSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V09"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/patterns/data-table.tsx",
+      "sha256": "5f8f2db31ad3e75a1641b3adabb9fe076b652202628003a70dadc0f959d6fb19",
+      "group": "patternSources",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V06"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/patterns/empty-state.tsx",
+      "sha256": "c2311b4dc4ba84bf71dd48946cf19b8715ffa5842c95d815e01d60f48b4e9bbd",
+      "group": "patternSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/about.tsx",
+      "sha256": "2549ace5e0157c69d601c41716200abbf4a010fd19ea0cd504b664806756e862",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/awards.tsx",
+      "sha256": "d2eeb710d0b8086d74375db4f4523ae7229ea780230dec656a04af17b7b5ab1b",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/blog-post.tsx",
+      "sha256": "e64e8d0dd4becaa8049247594aae980c1519299b18fe5733cbd11fc80317c474",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/blog.tsx",
+      "sha256": "a9433320819c6f1184243d0caa17e3ecfe7515061ecb5431ea00f36f223b2705",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/careers.tsx",
+      "sha256": "b48a77a9e0fce9fa6feda0e94fed965ad0258b3493a05555e241c002fa1b54b6",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/case-studies.tsx",
+      "sha256": "0d89af2cf38f53f074e73c459de3d79200113b509f89b271811707fa9b045682",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/case-study.tsx",
+      "sha256": "cdfb0b06e13d72134ad58d80b2566cca7ca0741796f501bc525ccab2ea5a381b",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/changelog.tsx",
+      "sha256": "3a18a847f9c2ee1b86e9f66f1ef8866cbb15130e9df98669ae1aec98f745613b",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/code-example.tsx",
+      "sha256": "bd0f00b4aa18ed64b1b91ac5fbb0b2280fb45974e4a99bbcd59cc9be5bade25e",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/codebase.tsx",
+      "sha256": "9c822a8cb3715670fa37bb3e7fc6db1450a274e11bc891e74724cad720d44bc9",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/collaborative-canvas.tsx",
+      "sha256": "24e31da80263188ce8a82d4b0e27c93457495f7cbeec5834776e7889876b0dfe",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/community.tsx",
+      "sha256": "a6ae648edf764a86297989b173dd41d86accdc0d116f54e5f42fe88030e8f25f",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/compare.tsx",
+      "sha256": "e22f34361b280fd9bae6896cec4f3da3319cf33367ac3bb6749e9caa0f80edd7",
+      "group": "blocks",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V07"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/compliance.tsx",
+      "sha256": "8ab0f4eed3cf95a316e44481b4edeace1dab56301fd5d04bda8308c1269d80a9",
+      "group": "blocks",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V07"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/contact.tsx",
+      "sha256": "a4c4438098c21c76069e808ebde56dd1ab122c2eb3ca04bc157d96b95ec8eb03",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/cta.tsx",
+      "sha256": "5a0aa43c3ad8c1f3c0fd0f580b176474d80bd6ceadcdd496556fdafbbc913413",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/download.tsx",
+      "sha256": "703a21a4a042e4207e0453741216f3e83c3650cd580771791129a96e50ada3ee",
+      "group": "blocks",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V07"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/experience.tsx",
+      "sha256": "aafb961b8ba35f223475408fb1f9501ae10bb11d9d2b31566be5fda21eb18698",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/faq.tsx",
+      "sha256": "0fdef97c421e600dd2fc245cb0200b33f9c1fae6091078246e35541d8fcc87fb",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/feature.tsx",
+      "sha256": "0c43705a1b559863fdbfe4b9d223c934a81210d198cbabbdb841be7cec85b145",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/footer.tsx",
+      "sha256": "c2e2fc4b445f5a4183536d3ff4a772bc510605f6b58a9e7c1e5de6f50805fb33",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/form.tsx",
+      "sha256": "934719c322b7d1a22ca3980592f6f05572620c74f7789fa39612c8a4895f6a4e",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/hero.tsx",
+      "sha256": "39e8e98d73f1e2e6c9db024484056861884c0c8637e2d72884e4e4f20549a0a0",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/pricing.tsx",
+      "sha256": "c8f59641cce903c508c200a3a0ad7390a038ee9e7be36c2f78e9925078fefe86",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/roadmap.tsx",
+      "sha256": "932b3c592f5c5d4ab89a32c40029a8857aede6cbfa32f317fbbd1f88d7095472",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/stats.tsx",
+      "sha256": "ef36fc7256c8db5ed5a26eba1e3e5c94f403f6344da70edfd9737fe059dcf4e8",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/team.tsx",
+      "sha256": "a06a2f779b66b910bdaf337014e6c02ec184ce26ad7b62b3bef2ca05a90f6a9a",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/testimonial.tsx",
+      "sha256": "b895f75aa8695312bd1669361a1d81f7680a85696f0d068cad191dfd1a6259b2",
+      "group": "blocks",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-axes.tsx",
+      "sha256": "33d32bd102dd564d2bd7d397deefe9f43005ae13411cb941de0b45ec393115a9",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-default.tsx",
+      "sha256": "7b0549f960ff4defd261ad73fd83a1a03aeb221539ac55fa79e5297678ccb2f7",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-gradient.tsx",
+      "sha256": "deb16886cf394dffac4e8dcce8f5e0c1bad9cc1ac585793c73e0f10db0995e48",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-icons.tsx",
+      "sha256": "274d1bb7ecc10c6b61151aab2af7f88dfb7eed5f4378e7f23bf65d6968ccd6f4",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-interactive.tsx",
+      "sha256": "4bc6949f17bdd45422a44ee52ff886900000b2b791ec79cadaa9539d5f9a8072",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V08"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-legend.tsx",
+      "sha256": "2dbcfa633bb935e1f4471a3fb80422af7c4ca2c90c2032cee1a875e2ae905929",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-linear.tsx",
+      "sha256": "f2673f67e714c5deab635dd0d3fa0b179692f6b7520b77274544b997bece8b8c",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-stacked-expand.tsx",
+      "sha256": "eb927646d046cd00e0deac194d2b8fe99cb4f6b9444bb5ee8979546b5617447f",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-stacked.tsx",
+      "sha256": "8371e1bf4b92aebc26da2dfa94a627e7d0beec01b00a2f93957cb4de9644192e",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-area-step.tsx",
+      "sha256": "1c92e4ca7882213d55d2cf6d43483fdf8ebe35792fecd5dc444e224e7fd82f43",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-active.tsx",
+      "sha256": "bf66c6e5255ca27d68b9efb8ee0b5edf48a65e6294eeb855c9d9e581e9c236bd",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-default.tsx",
+      "sha256": "53e4f8e51873826cf1594bb0ad98f1c15be873b9d2e51fb82209f4c6d94929e4",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-horizontal.tsx",
+      "sha256": "0c364ed1a5e99a1a06e2135042caaf933465eefd75ffeac046a34853e79d60ce",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-interactive.tsx",
+      "sha256": "841e6afc6fa8da2096d07d4dccde8843ab556b5da69663322e69e53c6a9f5cd8",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V08"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-label-custom.tsx",
+      "sha256": "60a9aeff7b7fce5e8fb6ca081c6f681bf3d342369d610512509f1ff3a65a4fcc",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-label.tsx",
+      "sha256": "3bd3d6312baf5013b3274550984dc1b4f9ed909674952384ba580f68a1ee7abe",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-mixed.tsx",
+      "sha256": "b153d9c7cf9eae922fde4559e1f8901b2b6795f381589b8bdd7ec07f0e8b1cfc",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-multiple.tsx",
+      "sha256": "267ff72c979ea191f912c9df0e00cbee19dd7ba14e9b22b7f5165630ef1b63e5",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-negative.tsx",
+      "sha256": "2c8b05156a3e59f1809b848f2b8c02529a138de717649c3c71ef3808df737c74",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-bar-stacked.tsx",
+      "sha256": "749f28654f147ccf74ac7766cbe971d9e314842ed74df17311fd92d2a08961eb",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-default.tsx",
+      "sha256": "b3f71beb14729a81d7af2933fd819d9cb991673d2b4288a8d9321fd7528e1747",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-dots-colors.tsx",
+      "sha256": "d14ff0f4ea81de230e6b3470f62b656845274948196770810ef236e6d4bdb3e9",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-dots-custom.tsx",
+      "sha256": "221cd1c4f62f130c2e76f6e2da70bfe210456a29c00e75d4946d118a45538f11",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-dots.tsx",
+      "sha256": "5a2cfdaa3d169a76da678a8e3454a10f2b7dc542e96325da26faf56910c55ce7",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-interactive.tsx",
+      "sha256": "544a34aa88ae4993d0f908613c8ef7725e72510e028c2ce2b9b93d15421c6764",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V08"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-label-custom.tsx",
+      "sha256": "1229449cedea8d1257d0f6e0571e61772679aa2b060912e596e1f8f46af02063",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-label.tsx",
+      "sha256": "f5f21bc9f0a63582c0320c5d0329dc1a0641bf5bc6f54329544ec8d05f065db1",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-linear.tsx",
+      "sha256": "6b48a3345a0b8e9a8875124a4194434a270d94da847edcefa22acbaa03151cc2",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-multiple.tsx",
+      "sha256": "12a3aaf34ddf4d83aab03076dd21058fb35d3e601b301b99b872efa9228f64b0",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-line-step.tsx",
+      "sha256": "318bad2ada5b95156d8e0782eaaea907285f2cf82fa7402438f613039ecc085d",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-donut-active.tsx",
+      "sha256": "6ed2b85ddb32f04f9b5fd9e06b61a4009aadf488402cae1c64b3d872d5fe0283",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-donut-text.tsx",
+      "sha256": "71315949519bbe195073efa27629598e5efab44ac89d01063cac3e233ba2adf7",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-donut.tsx",
+      "sha256": "53ba97c4f6e29dfba4311286607194223baff0d20cbf2dabac7c9efd2c42ec5a",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-interactive.tsx",
+      "sha256": "2104eae3fb6d9f39796ba4cbf7825db7bf1d70672dcf3c9e7c7ebef51682253b",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-label-custom.tsx",
+      "sha256": "c36d28bc24c8d0674152946014f899bb18ace79ada9d8c731b609ed8a98132a3",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-label-list.tsx",
+      "sha256": "8f3e468b3dd78ed0de98039e63b0800fc1af40f6bb4483229ad4b1652fe6635d",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-label.tsx",
+      "sha256": "5b20554524b9b7e5eef21ce7d1ebc0cf752610c3c88d2e6973f64a7bc57af3b7",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-legend.tsx",
+      "sha256": "8214f4009f0624653b5fcafbe184eee4e914856312da104e83bf1c458aa04975",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-separator-none.tsx",
+      "sha256": "e7168ced03bd4a72e03173fff3ca545a0ea232cab77462caceae8256a8f8526e",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-simple.tsx",
+      "sha256": "fe32959be13b0870366a59f74e6de8a9a96780462a37c1dea1ff6c39e9bccfe7",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-pie-stacked.tsx",
+      "sha256": "36833867b33ef9ab8a20877262ee4d1de6bee0c2d8ba26a72d832b3ef26cc5e4",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-default.tsx",
+      "sha256": "da2188675573590891c8cf17d6e34c175f85c4a04aad5615f026dc568a5df026",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-dots.tsx",
+      "sha256": "f1a66b036a57dfe372eab1f3cbd2ff3fb4f28391679ff1fa38479b26dffa48d3",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-grid-circle-fill.tsx",
+      "sha256": "33d01aca906cc46d5a03daba0d1ab08bc606c957c4417e59c93a7feab58d07f8",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-grid-circle-no-lines.tsx",
+      "sha256": "31d8c686c84cbb62ba1da13c2cadcaa449ab5d6b88da95aa8527970bf58d7635",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-grid-circle.tsx",
+      "sha256": "1b184be09ee99fef509e909a3e807167fd7f72e53e5ea8f5810929ca5a357f67",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-grid-custom.tsx",
+      "sha256": "614c5998f15352a44d6f5ed896dc1e799e66ddc255f614ce6fe950da751cbb7f",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-grid-fill.tsx",
+      "sha256": "1360af358339190e08b1fd3e8e5f92a53cb0b54e3ff06f56fbae574cf1a41088",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-grid-none.tsx",
+      "sha256": "9d6a39a074801dd812ccf9f75d2269a8a01e0063f5a3c9f13540739260d8401d",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-icons.tsx",
+      "sha256": "42da53561808badc7fa4ac8c9133354ccfec9256ddb81223f7e9493864b70e58",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-label-custom.tsx",
+      "sha256": "8fdb567381bae8ee49c51ca21f4d78ff2c3eb3d917a8f77b8595ac2c3a5dc413",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-legend.tsx",
+      "sha256": "8e899381dc8a8fb2cca65720f7b1925f78ff08b14dac2ae9399bb2062eda01d8",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-lines-only.tsx",
+      "sha256": "5daba14ab97c1cbfa69a7a678aea61426de6e5578018add7fb961e6dd6c6fa53",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-multiple.tsx",
+      "sha256": "214c9fd063f8e55db2da8d512fa9dedbf3236a094ea2f574f45125cf83b27362",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radar-radius.tsx",
+      "sha256": "8e5ed606c3efd63bb8e5f4383ad42b65d6a5f71ac23e612450407b6d18bbec84",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radial-grid.tsx",
+      "sha256": "0955cfdd1a3d9169d1024f9c39a6514682540093be340960fe08fe8bc9f574de",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radial-label.tsx",
+      "sha256": "b6f605397482a5ac62482fd4f73a8800d64199345290c70f3ca0b2f820c5571b",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radial-shape.tsx",
+      "sha256": "98803c19ae9be5efa3c080842a94eb3ec3a461ac33669bf69fa3e3e08e8754bc",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radial-simple.tsx",
+      "sha256": "b970d454bf7a814cac1c6064f9afa7f6c976206ed8ed26a9df4c04cbfb5f1b7b",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radial-stacked.tsx",
+      "sha256": "2a37a96b9369f57399ffdf2f8c70477e47f555ecd51204b71fd9f2076775a7d1",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-radial-text.tsx",
+      "sha256": "c77fc1a92d042cd9babc042d666295693c759e52fda616147b0bcdf5200a609a",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-advanced.tsx",
+      "sha256": "0b73db7e77ef72b5fc86428c89ec8ae086abfff52662598add8e42655304d14d",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-default.tsx",
+      "sha256": "05c9cadd9c8a36712e075420a0c500e97db26afd70a5e2f47979579d6a06a6db",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-formatter.tsx",
+      "sha256": "b0f5affb8181ddf6a2e1a71c8ac44188af87660ad44b3aca5dd9704a7559e6fb",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-icons.tsx",
+      "sha256": "65706e52678cf062acf1ca32a1febbba23039e6ce5ba85084c979f12a18c5e4f",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-indicator-line.tsx",
+      "sha256": "24fa6cf3c4c2db855b0bf35e31c004e34076803c71c72d835109063f55d43ac8",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-indicator-none.tsx",
+      "sha256": "40760611d4b672ad4fd7c721ffada55e0d7177a07c7a2a80e94453ec3ee637c9",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-label-custom.tsx",
+      "sha256": "3b92f1ea19259faa57669b1e4abe83e09d16206d7dc3a5c5eb04cd6309deb68a",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-label-formatter.tsx",
+      "sha256": "27b884da9ee186354dff1e2bc5f5bd26b272519ac24286ec5ca5d25fcff7896e",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/blocks/charts/chart-tooltip-label-none.tsx",
+      "sha256": "62f2c1b0fe4784b4ffe3cb7fdd64dd49f6cc0d8187046ba1dde0bbf78e5999e0",
+      "group": "chartRecipes",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/hooks/use-mobile.ts",
+      "sha256": "e029a45bbb34580ef896ad305fe62029c5e413652925805226b2ae7d4161d026",
+      "group": "supportSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/lib/leement-motion.ts",
+      "sha256": "7b4277e37d628fa372ad239b5c50c2fca3ce9254fa7e011adce4226c5af9b350",
+      "group": "supportSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "registry/lib/popup-scope.ts",
+      "sha256": "d101060c19c94d758d03319eb7659cd0c5dbf2e067dff99f695bc9e535a97bc7",
+      "group": "supportSources",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "packages/theme/build.mjs",
+      "sha256": "a00f9303aa3eb018ee6926f9fa8bd4ed5546a64d0e0e5fab7e7a36be0ab88c11",
+      "group": "foundations",
+      "sourceStatus": "reviewed-candidates",
+      "findings": [
+        "V01"
+      ],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    },
+    {
+      "path": "packages/tokens/src/tokens.json",
+      "sha256": "0eeb277e879a15490aa764dc56fee1a96c0f72d76bcf9048df92d88e6983f36a",
+      "group": "foundations",
+      "sourceStatus": "reviewed-no-identified-rule-violation",
+      "findings": [],
+      "visualStatus": "pending",
+      "notes": "Source roles/state/layout compared with design-system and shared controls; actual preview and high-risk state verification remain pending."
+    }
+  ],
+  "findings": [
+    {
+      "id": "V01",
+      "paths": [
+        "registry/ui/sidebar.tsx",
+        "packages/theme/build.mjs"
+      ],
+      "finding": "Sidebar CSS aliases and Tailwind colors are undefined; browser background is transparent, selected state has no semantic surface.",
+      "task": "02",
+      "status": "open"
+    },
+    {
+      "id": "V02",
+      "paths": [
+        "registry/ui/sidebar.tsx"
+      ],
+      "finding": "Input/menu/submenu/action/skeleton sizes and focus differ from shared controls; default inset carries shadow.",
+      "task": "02",
+      "status": "open"
+    },
+    {
+      "id": "V03",
+      "paths": [
+        "registry/ui/context-menu.tsx",
+        "registry/ui/menubar.tsx"
+      ],
+      "finding": "Translucent blur and forced descendant styles override semantic highlighted/destructive menu states.",
+      "task": "03",
+      "status": "open"
+    },
+    {
+      "id": "V04",
+      "paths": [
+        "registry/ui/input-group.tsx",
+        "registry/ui/input-otp.tsx",
+        "registry/ui/questionnaire.tsx"
+      ],
+      "finding": "Dark input surface uses border color tint and questionnaires shrink to32px instead of common input surface/40px.",
+      "task": "03",
+      "status": "open"
+    },
+    {
+      "id": "V05",
+      "paths": [
+        "registry/ui/navigation-menu.tsx",
+        "registry/ui/item.tsx",
+        "registry/ui/message.tsx"
+      ],
+      "finding": "Navigation control size, open/focus rules and10px layout rhythm drift from shared rules.",
+      "task": "03",
+      "status": "open"
+    },
+    {
+      "id": "V06",
+      "paths": [
+        "registry/patterns/data-table.tsx"
+      ],
+      "finding": "Table/toolbar recipes force shared Button and Select to32px.",
+      "task": "03",
+      "status": "open"
+    },
+    {
+      "id": "V07",
+      "paths": [
+        "registry/blocks/compare.tsx",
+        "registry/blocks/download.tsx",
+        "registry/blocks/compliance.tsx"
+      ],
+      "finding": "Nonfloating table/platform shadow and16px panel radius diverge from Card rules.",
+      "task": "04",
+      "status": "open"
+    },
+    {
+      "id": "V08",
+      "paths": [
+        "registry/blocks/charts/chart-area-interactive.tsx",
+        "registry/blocks/charts/chart-bar-interactive.tsx",
+        "registry/blocks/charts/chart-line-interactive.tsx"
+      ],
+      "finding": "Interactive chart24px/32px insets and custom Select radius drift from common Card20px/control8px.",
+      "task": "05",
+      "status": "open"
+    },
+    {
+      "id": "V09",
+      "paths": [
+        "registry/ui/drawer.tsx",
+        "registry/ui/tooltip.tsx"
+      ],
+      "finding": "Drawer uses palette black while dialog uses semantic backdrop; Tooltip inverted colors diverge from documented popover surface.",
+      "task": "03",
+      "status": "open"
+    }
+  ],
+  "visualVerification": [],
+  "exceptions": [
+    {
+      "scope": "marketing blocks",
+      "reason": "Large page headings/photography/section spacing describe marketing hierarchy; do not force product control/title geometry.",
+      "reconsiderWhen": "Role/content changes or contrast/readability fails"
+    },
+    {
+      "scope": "Avatar, Calendar, chart geometry and canvas object colors",
+      "reason": "Avatar/media/compact day cells/series are not general action controls. Object data colors describe app content, not brand/status tokens.",
+      "reconsiderWhen": "Interactive hit area or semantic meaning becomes unclear"
+    },
+    {
+      "scope": "Dialog/Popover/Sheet/Tooltip and floating UI",
+      "reason": "Raised surfaces may use semantic shadow to indicate overlay depth.",
+      "reconsiderWhen": "Shadow appears on nonfloating panels"
+    }
+  ]
+}
