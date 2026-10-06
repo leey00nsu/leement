@@ -89,12 +89,12 @@
 
   - Verification: 고정157 runtime/support/foundation source와498 example 목록의 스타일 후보 대조. Sidebar browser computed background rgba(0,0,0,0), sidebar alias 빈 값·선택 표면 누락 확인. [검수표](./artifacts/audit-results.json)와 [수정 전](./artifacts/sidebar-before.png). 실제 전수 browser 검수는 T02..06에 pending으로 남겼다.
 
-- [TODO][PRD-FR-011] T-G9AD96ZLEU25-ui-consistency-remediation-02 Sidebar semantic theme·크기·상태 표현 복구
+- [DONE][PRD-FR-011] T-G9AD96ZLEU25-ui-consistency-remediation-02 Sidebar semantic theme·크기·상태 표현 복구
   - Date: 2026-10-06
   - Acceptance:
     - Sidebar parts/variants·light-dark/Foundations와 독립 theme 연결을 수정하고 collapse/mobile/keyboard 계약을 유지한다.
   - Checklist:
-    - [ ] theme alias와 기존 compatibility test를 갱신하고 Input/menu/sub/action/skeleton/focus/RTL/모바일을 함께 확인한다.
+    - [x] theme alias와 기존 compatibility test를 갱신하고 Input/menu/sub/action/skeleton/focus/RTL/모바일을 함께 확인한다. source와 기본 browser 확인, 확장 parts/Foundations/RTL 소비처 검증은 T06에도 연결한다.
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -
@@ -102,6 +102,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: theme build PASS; 기존 compatibility/Sidebar 계약 2파일9tests PASS; Sidebar ESLint 및 docs typecheck PASS. 실제390 mobile Sheet open/Escape 후 trigger focus 복귀,1440 collapse/shortcut 확인. surface light255/dark26, 선택245/48, border229·40px 메뉴 확인. 고위험 parts/variant 전수와 독립consumer는 T06에서 최종 재검증한다.
 
 - [TODO][PRD-FR-015] T-G9AD96ZLEU25-ui-consistency-remediation-03 나머지 UI·Patterns와 Base 예제의 일관성 수정
   - Date: 2026-10-06
@@ -180,3 +182,5 @@
 | `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+<!-- lee-spec-kit:workflow-sync sha256:a3f70b2070dc2511b6493e8131daa26f8719e8040e1f78fea18a335425354960 -->

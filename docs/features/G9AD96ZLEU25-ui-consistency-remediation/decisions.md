@@ -70,3 +70,11 @@
 - **Trace**: 실제 Aside Sidebar1440 화면과 computed style에서 sidebar inner 투명/alias 빈값·selected surface 누락을 확인했다. 앱에 의해 설정되지 않은 일반 border가 currentColor인 점도 theme reset과 예제에서 재확인한다. browser extension이 html에 data-immersive-translate-page-theme를 추가하여 dev hydration warning을 발생시킨 것은 source 결함과 구분한다. 모든 예제의 visual status는 아직 pending이다.
 - **Evidence**: [audit-results.json](./artifacts/audit-results.json), [sidebar-before.png](./artifacts/sidebar-before.png), 이전 코드5830646.
 - **Consequences**: T01은 검수 후보·baseline 준비를 완료하며 UI 수정과 전체 시각 검수 완료를 주장하지 않는다.
+
+
+## D006: Sidebar와 semantic border 복구 (2026-10-06)
+
+- Sidebar compatibility8역할과 Tailwind alias를 기존 semantic 토큰에 연결하고 일반 border reset을 복구했다. expanded40/sm36/lg44·icon40·action32·submenu40/36, Input상속·3px/40% focus·논리적 inline 간격·12px shadowless panel을 적용했다. Skeleton의 random SSR 폭은 useId로 안정화했다.
+- Plan의 border reset 추가를 main이 Spec FR-2/US-2와 재대조해 승인했다. API/팔레트 확장이 아닌 currentColor fallback 결함 복구이며 자동 plan review 설정을 유지한다.
+- T01 문서 checkpoint3890043 후 canonical task subject의 빈 project checkpoint f2beca4를 만들었다. T02 변경은 별도 보존 후 T02 DOING 성공을 확인하고 적용했다.
+- 기존9tests·ESLint·docs typecheck 통과, actual Sidebar390/1440과 mode/shortcut/Sheet Escape focus 확인. 확장parts/consumer 및 전수모드는 T06에서 완료하며 이 단계로 전체 시각검수 완료를 주장하지 않는다.

@@ -43,6 +43,19 @@ describe("Leement web theme contract", () => {
     expect(css).toContain("--data-accent: var(--lm-color-data-accent)");
     expect(css).toContain('.dark, [data-lm-theme="dark"]');
     expect(css).toContain("--radius-xl: var(--lm-radius-xl)");
+    const sidebarRoles = {
+      "sidebar": "surface-default", "sidebar-foreground": "foreground-default",
+      "sidebar-primary": "action-primary", "sidebar-primary-foreground": "foreground-inverse",
+      "sidebar-accent": "surface-muted", "sidebar-accent-foreground": "foreground-default",
+      "sidebar-border": "border-default", "sidebar-ring": "focus-ring",
+    };
+    for (const [alias, role] of Object.entries(sidebarRoles)) {
+      for (const selector of [':root, [data-lm-theme="light"] {', '.dark, [data-lm-theme="dark"] {']) {
+        expect(css.split(selector)[1].split("color-scheme:")[0]).toContain(`--${alias}: var(--lm-color-${role})`);
+      }
+      expect(css).toContain(`--color-${alias}: var(--${alias})`);
+    }
+    expect(css).toContain("border-color: var(--lm-color-border-default)");
   });
 
   it("keeps brand overrides connected to focus, data and reduced-motion examples", () => {

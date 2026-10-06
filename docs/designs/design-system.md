@@ -12,7 +12,7 @@ lee-spec-kit:
 
 ## 출처와 테마
 
-CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 다크 모드처럼 만들려 한 의도가 출발점이다. Leement는 두 제품의 숫자를 복제하거나 평균 내지 않고 하나의 semantic 역할 집합에 light/dark 값을 배정한다. 두 앱에서 공통 source/API를 쓸 수 있는지, 본문 가독성·상태 대비·사용 맥락이 일관적인지를 우선한다. 제품별 브랜드·도메인 표현은 앱에 남긴다. light는 밝은 중립 표면과 진한 본문, dark는 `#111113` 배경 위에 `#1a1a1d` 기본 표면과 `#242427` 떠 있는 표면을 쓴다. dark는 `[data-lm-theme="dark"]` 또는 기존 앱의 `.dark`로 선택한다. 숫자·픽셀 단위의 원본 일치 여부는 성공 기준이 아니며 두 앱의 공통22개 설치/렌더와 대표 사용처의 격리 적용 검증은 Feature GMA8H5L3TLTY에 기록되어 있다. 원본 앱 전체 교체를 의미하지 않는다.
+CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 다크 모드처럼 만들려 한 의도가 출발점이다. Leement는 두 제품의 숫자를 복제하거나 평균 내지 않고 하나의 semantic 역할 집합에 light/dark 값을 배정한다. 두 앱에서 공통 source/API를 쓸 수 있는지, 본문 가독성·상태 대비·사용 맥락이 일관적인지를 우선한다. 제품별 브랜드·도메인 표현은 앱에 남긴다. light는 밝은 중립 표면과 진한 본문, dark는 `#111113` 배경 위에 `#1a1a1d` 기본 표면과 `#242427` 떠 있는 표면을 쓴다. dark는 `[data-lm-theme="dark"]` 또는 기존 앱의 `.dark`로 선택한다. 숫자·픽셀 단위의 원본 일치 여부는 성공 기준이 아니며 두 앱의 공통 source는 설치·렌더와 대표 사용처의 격리 적용으로 검증한다. 원본 앱 전체 교체를 의미하지 않는다.
 
 기존 Tailwind 앱에 도입할 때 CSS에서는 `@leement/theme`을 Tailwind 다음, `shadcn/tailwind.css`보다 앞에 import한다. 기존 앱이 같은 `--background`, `--primary` 등의 alias를 다시 정의한다면 뒤의 값이 Leement 호환 alias를 덮을 수 있다. 작은 영역에 `data-lm-theme="light"` 또는 `"dark"`를 부여해 공통 source와 의미 토큰을 먼저 확인하고, 전면 도입할 때 중복 alias를 정리한다. 제품 전용 wrapper는 도메인 동작·현지화와 이전 API 매핑을 맡되 Leement component source를 복제하거나 제품별로 fork하지 않는다. 예를 들어 기존 Button `default`를 Leement `primary`로, 앱의 `isLoading`/`loadingText`를 Leement `loading` 및 자식 텍스트로 연결할 수 있다. `data-accent-foreground`는 채워진 데이터 강조 표면 위의 전경색이므로 일반 카드 위 텍스트로 사용하지 않는다.
 
@@ -130,7 +130,7 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 
 - StatusNotice는 짧은 Alert, EmptyState는 Empty 문제에 대응한다. 이름만 다른 source alias를 추가하지 않는다.
 - Field는 입력 하나의 label/help/error를 연결하고 FormSection은 여러 필드의 제품 섹션을 구성한다. Sheet는 측면 Dialog이며 swipe/snap-point Drawer 전체 동작을 보장하지 않는다.
-- 공개 탐색은 Components95/Patterns15/Blocks36과 Charts70이다. 고정 shadcn Base 64개 중 NativeSelect를 제외한 63개 문서의 Preview456건/고유453 source 및 필요한 inline 설정·조합 안내를 제공한다. Alert→StatusNotice, Empty→EmptyState 등 이름이 다른 대응은 실제 composition으로 검증한다. Kibo 공개 Applications3/Websites25를 기존8개 Blocks에 추가하며 Chart recipe는 registry:block이지만 Charts에서 별도로 탐색한다. 기준은 Feature ASDHZYC4MRGK의 immutable reference-baseline.json이며 제외 없는 upstream 전체 100% 호환으로 표시하지 않는다.
+- 공개 탐색은 Components95/Patterns15/Blocks36과 Charts70이다. 고정 shadcn Base 64개 중 NativeSelect를 제외한 63개 문서의 Preview456건/고유453 source 및 필요한 inline 설정·조합 안내를 제공한다. Alert→StatusNotice, Empty→EmptyState 등 이름이 다른 대응은 실제 composition으로 검증한다. Kibo 공개 Applications3/Websites25를 기존8개 Blocks에 추가하며 Chart recipe는 registry:block이지만 Charts에서 별도로 탐색한다. 기준은 고정 shadcn/Kibo upstream revision과 그 공개 문서·예제이며 제외 없는 upstream 전체 100% 호환으로 표시하지 않는다.
 
 ## 문서 예제 규칙
 
@@ -166,3 +166,8 @@ Registry 컴포넌트의 정적 배치·색상·data 상태·focus와 reduced-mo
 공개 Kibo Blocks28은 실제 app-owned props/composition과 native destination/callback으로 구성한다. Contact/EventForm은 pending/validation/error와 실패 시 데이터 보존을 제공하며 문서의 제출은 local demonstration이다. Codebase의 파일 선택, Canvas의 percent 좌표/participant presence, Roadmap의 5개 view는 동일 앱 데이터를 공유한다. 서버 realtime·저장·결제·인증은 제품 책임이다. 신규 source는 experimental이며 반복 적용 근거 없이 stable로 승격하지 않는다.
 
 Charts는 Area10/Bar10/Line10/Pie11/Radar14/Radial6/Tooltips9의 70개 source recipe를 `/charts`·분류 index·직접 상세 링크·검색에서 제공한다. Components Chart는 공통 primitive API를 유지한다. recipe는 공개 registry:block이며 Chart/Card/필수 controls/Recharts를 dependency로 설치한다. source의 sample data/config를 앱이 교체하며 configuration library API를 추가하지 않는다. 시리즈 색은 semantic `color.data.series1..5`를 정본으로 하고 theme compatibility `--chart-1..5`는 `--lm-color-data-series1..5`만 참조한다. series1은 모드별 brand.text를 읽고 다른 series는 구별 가능한 palette 역할을 갖는다. 범주색은 성공/실패 의미를 자동 부여하지 않으며 항상 series label·legend·값을 제공한다. Foundations의 data series 편집은 차트에 즉시 반영된다. 데이터 표는 같은 live/filtered data와 caption/series labels를 제공한다. Recharts 자체 animation은 끄고 Motion entrance를 사용하며 reduced motion/Foundation override/Replay/단일 lazy iframe/240px inset 규칙을 공유한다. 넓은 데이터 표는 내부에서 keyboard scroll한다. gradient/Pie style ID는 인스턴스별로 구분하며 locale/timeZone을 명시한다.
+
+
+## Sidebar와 복합 UI의 일관성
+
+Sidebar는 기본 surface/foreground, muted 선택·hover 표면, 공용 border/focus 의미 역할을 사용한다. theme의 sidebar 호환 변수와 Tailwind 색상은 이 역할에서 파생하며 별도의 브랜드 팔레트를 갖지 않는다. 일반 border utility의 기본색도 semantic border다. Input은 공용 입력 surface와40px 높이를 상속한다. 메뉴 기본40/sm36/lg44px, collapsed icon40px, 서브메뉴 기본40/sm36px와32px 보조 action을 사용한다. 배지는20px 메타데이터이며 일반 메뉴와 조작 크기를 혼동하지 않는다. 모든 action의 focus는 공용3px/40% 링으로 표시하고 badge/action은 row 크기와 RTL에 맞춰 정렬한다. 일반 inset·floating panel은 border와12px 모서리로 구분하며 기본 shadow를 추가하지 않는다. collapsed 상태의 tooltip과 모바일 sheet는 해당 overlay 규칙을 따른다. skeleton의 인스턴스별 폭은 첫 서버·클라이언트 렌더에서 같아야 한다.

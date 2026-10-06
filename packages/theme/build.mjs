@@ -43,6 +43,15 @@ const compatibility = `  /* shadcn compatibility: aliases only */
   --chart-4: var(--lm-color-data-series4);
   --chart-5: var(--lm-color-data-series5);
 
+  --sidebar: var(--lm-color-surface-default);
+  --sidebar-foreground: var(--lm-color-foreground-default);
+  --sidebar-primary: var(--lm-color-action-primary);
+  --sidebar-primary-foreground: var(--lm-color-foreground-inverse);
+  --sidebar-accent: var(--lm-color-surface-muted);
+  --sidebar-accent-foreground: var(--lm-color-foreground-default);
+  --sidebar-border: var(--lm-color-border-default);
+  --sidebar-ring: var(--lm-color-focus-ring);
+
   --border: var(--lm-color-border-default);
   --input: var(--lm-color-border-default);
   --ring: var(--lm-color-focus-ring);
@@ -112,6 +121,14 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   --color-data-accent: var(--data-accent); --color-data-accent-foreground: var(--data-accent-foreground);
   --color-brand-accent: var(--lm-color-brand-accent);
   --color-input: var(--input); --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
   --radius-sm: var(--lm-radius-sm); --radius-md: var(--lm-radius-md);
   --radius-lg: var(--lm-radius-lg); --radius-xl: var(--lm-radius-xl);
   --font-sans: var(--lm-typography-family-sans);
@@ -121,7 +138,7 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   --shadow-lg: var(--lm-shadow-lg);
 }
 @layer base {
-  *, ::before, ::after { box-sizing: border-box; }
+  *, ::before, ::after { box-sizing: border-box; border-color: var(--lm-color-border-default); }
   body { margin: 0; background: var(--lm-color-background-default); color: var(--lm-color-foreground-default); font-family: var(--lm-typography-family-sans); }
   :focus-visible { outline-color: var(--lm-color-focus-ring); }
 }
