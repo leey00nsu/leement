@@ -18,14 +18,14 @@ export function ChartDataTable({ data, config, caption }: ChartDataTableProps) {
   );
   return (
     <details className="mx-5 mb-5 min-w-0 rounded-md bg-muted/40">
-      <summary className="cursor-pointer rounded-md px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+      <summary className="cursor-pointer rounded-md px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40">
         View chart data
       </summary>
       <div
         role="region"
         aria-labelledby={id}
         tabIndex={0}
-        className="max-h-64 overflow-auto rounded-md px-3 pb-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="max-h-64 overflow-auto rounded-md px-3 pb-3 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
       >
         <table className="w-full text-left text-xs tabular-nums">
           <caption id={id} className="pb-3 text-left font-medium">

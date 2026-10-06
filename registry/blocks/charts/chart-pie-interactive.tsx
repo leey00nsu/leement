@@ -141,7 +141,7 @@ export function ChartPieInteractive() {
           }}
         >
           <SelectTrigger
-            className="max-w-full sm:ml-auto h-7 w-[130px] rounded-lg pl-2.5"
+            className="max-w-full sm:ms-auto w-[130px]"
             aria-label="Select a value"
           >
             <SelectValue placeholder="Select month">
@@ -151,7 +151,7 @@ export function ChartPieInteractive() {
               }
             </SelectValue>
           </SelectTrigger>
-          <SelectContent align="end" className="rounded-xl">
+          <SelectContent align="end">
             {months.map((key) => {
               const config = chartConfig[key as keyof typeof chartConfig];
 
@@ -163,7 +163,7 @@ export function ChartPieInteractive() {
                 <SelectItem
                   key={key}
                   value={key}
-                  className="rounded-lg [&_span]:flex"
+                  className="[&_span]:flex"
                 >
                   <div className="flex items-center gap-2 text-xs">
                     <span

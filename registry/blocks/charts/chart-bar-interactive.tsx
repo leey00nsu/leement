@@ -174,7 +174,7 @@ export function ChartBarInteractive() {
   return (
     <Card className="w-full min-w-0 max-w-2xl py-0">
       <CardHeader className="flex flex-col items-stretch border-b p-0! sm:flex-row border-border">
-        <div className="flex flex-1 flex-col justify-center gap-1 px-6 pt-4 pb-3 sm:py-0!">
+        <div className="flex flex-1 flex-col justify-center gap-1 p-5">
           <CardTitle>Bar Chart - Interactive</CardTitle>
           <CardDescription>
             Showing total visitors for the last 3 months
@@ -190,7 +190,7 @@ export function ChartBarInteractive() {
                 type="button"
                 aria-pressed={activeChart === chart}
                 data-active={activeChart === chart}
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring relative z-30 min-w-0 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-t-0 sm:border-l sm:px-8 sm:py-6 border-border"
+                className="focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-ring/40 relative z-30 min-w-0 flex flex-1 flex-col justify-center gap-1 border-t px-5 py-4 text-start even:border-s data-[active=true]:bg-muted sm:border-t-0 sm:border-s sm:py-5 border-border"
                 onClick={() => setActiveChart(chart)}
               >
                 <span className="text-xs text-muted-foreground">
@@ -204,7 +204,7 @@ export function ChartBarInteractive() {
           })}
         </div>
       </CardHeader>
-      <CardContent className="px-2 sm:p-6">
+      <CardContent className="px-5">
         <ChartContainer
           config={chartConfig}
           className="aspect-auto h-[250px] w-full"

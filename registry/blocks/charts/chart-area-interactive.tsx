@@ -196,7 +196,7 @@ export function ChartAreaInteractive() {
           }}
         >
           <SelectTrigger
-            className="flex w-[160px] max-w-full rounded-lg sm:ml-auto"
+            className="flex w-[160px] max-w-full sm:ms-auto"
             aria-label="Select a value"
           >
             <SelectValue placeholder="Last 3 months">
@@ -211,20 +211,20 @@ export function ChartAreaInteractive() {
               }
             </SelectValue>
           </SelectTrigger>
-          <SelectContent className="rounded-xl">
-            <SelectItem value="90d" className="rounded-lg">
+          <SelectContent>
+            <SelectItem value="90d">
               Last 3 months
             </SelectItem>
-            <SelectItem value="30d" className="rounded-lg">
+            <SelectItem value="30d">
               Last 30 days
             </SelectItem>
-            <SelectItem value="7d" className="rounded-lg">
+            <SelectItem value="7d">
               Last 7 days
             </SelectItem>
           </SelectContent>
         </Select>
       </CardHeader>
-      <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
+      <CardContent className="px-5">
         <ChartContainer
           config={chartConfig}
           className="aspect-auto h-[250px] w-full"

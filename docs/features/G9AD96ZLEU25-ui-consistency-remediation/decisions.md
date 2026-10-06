@@ -94,3 +94,10 @@
 - Compare는 테이블 외곽12px border와 자체 horizontal scroll을 사용하고 기본shadow를 제거한다. Download의 일반 icon surface는border로 구분한다. Compliance의 panel12px, Community/CaseStudy/About breakout20px inset을 적용한다. About 통계는 본문 sans·tabular-nums로 코드 서체 오용을 수정했다. 공개 Blocks 링크focus는3px/40%로 통일했다.
 - Hero의 대형제목·media 비율, About의 넓은 통계section64px, Compliance의 장식badge, Pricing 선택ring2px는각 역할과 상태강조이므로 일반40px control/20px Card 규칙과 구분하여 유지한다. 무관한 기존8 Blocks는 이번scope에 들어오지 않아변경하지 않는다.
 - 기존 application/content/conversion/marketing25tests와 ESLint PASS. 전체 실제preview4모드 및browser interaction은 T06에연결한다.
+
+
+## D009: Charts의 Card/control 역할 정렬 (2026-10-06)
+
+- Interactive Area/Bar/Line은 공용Card20px inset을 상속하고 header title/series tile도20px을 사용한다. edge-to-edge series tile의 inset focus는3px/40%이며 graph geometry/250px plot 높이/축 margin은 데이터표현 역할로 유지한다.
+- 추가검수에서 Pie interactive Select28px 높이 override도 확인하여 공용40px Select를 상속하게 했다. Area/Pie popup/item radius override는 제거한다. custom tooltip 값은 코드 서체를 제거하고 tabular-nums 본문을 유지한다. 데이터표summary/scroll focus도 공용링으로 맞춘다.
+- 기존75 recipe tests와 변경7파일 ESLint PASS. recipe70의 실제4모드·series/기간/tooltip/Foundations/reduced motion은 T06에서 최종확인한다.

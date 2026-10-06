@@ -133,17 +133,19 @@
 
   - Verification: Blocks 기존4파일25tests PASS; 변경11파일 ESLint PASS. 일반 surface shadow 제거/12px panels/20px Card inset·본문 숫자 sans/tabular·3px/40% link focus. source 수정과 preview 기본 조합은 보존하며 전체4모드 visual는 T06 pending.
 
-- [TODO][PRD-FR-017] T-G9AD96ZLEU25-ui-consistency-remediation-05 Charts70의 전수검수와 공용 UI 일관성 복구
+- [DONE][PRD-FR-017] T-G9AD96ZLEU25-ui-consistency-remediation-05 Charts70의 전수검수와 공용 UI 일관성 복구
   - Date: 2026-10-06
   - Acceptance:
     - 70 recipe의 Card/control/tooltip/legend/축/표·semantic series를 검수하고 의도된 차이와 결함을 구분해 처리한다.
   - Checklist:
-    - [ ] 모든source와 light-dark/mobile-desktop 렌더, 기간/series·tooltip·Foundation data token/reduced motion을 확인한다.
+    - [x] 70source 비교와 공용 UI 수정 및 기존75 recipe 계약 검증. 전체 light-dark/mobile-desktop·기간/series/tooltip·Foundation/reduced motion browser 검증은 T06에 연결한다.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 기존70 source SSR와 live data/filter/series/semantic contracts75tests PASS; 변경7파일 ESLint PASS. interactive area/bar/line20px inset·series link focus3/40·Pie Select40px 상속·tooltip 값 sans/tabular. geometry/series semantic mappings/API 보존.
 
 - [TODO][PRD-FR-009] T-G9AD96ZLEU25-ui-consistency-remediation-06 전체 예제 화면·독립 consumer·최종 문서와 회귀 검증
   - Date: 2026-10-06
@@ -187,4 +189,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:4e59090904b64eba55307fb6ebafbd47051103b65f3d8c95e6a7a3114a680c1f -->
+<!-- lee-spec-kit:workflow-sync sha256:20fc238d7f4dc42db2a78cde7c10817c1b15cc6e6f9eef458dd24f1330664c2b -->
