@@ -1,11 +1,13 @@
 {
   "name": "leement",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "packageManager": "pnpm@10.34.5",
   "scripts": {
+    "version:bump": "node tooling/release/version.mjs",
+    "version:check": "node tooling/release/version.mjs --check",
     "dev": "turbo dev",
-    "build": "pnpm build:tokens && pnpm build:theme && pnpm registry:build && turbo build",
+    "build": "pnpm version:check && pnpm build:tokens && pnpm build:theme && pnpm registry:build && turbo build",
     "build:tokens": "pnpm --filter @leement/tokens build",
     "build:theme": "pnpm --filter @leement/theme build",
     "registry:build": "shadcn build registry.json --output apps/docs/public/r",

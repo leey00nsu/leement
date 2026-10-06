@@ -16,6 +16,7 @@
     "./css": "./dist/index.css"
   },
   "scripts": {
+    "prepublishOnly": "node ../../tooling/release/version.mjs --check",
     "build": "node build.mjs",
     "typecheck": "node --check build.mjs",
     "lint": "eslint build.mjs"

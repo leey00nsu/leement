@@ -1,10 +1,10 @@
 {
   "name": "@leement/docs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "pnpm --dir ../.. build:tokens && pnpm --dir ../.. build:theme && pnpm --dir ../.. registry:build && next dev",
-    "build": "pnpm --dir ../.. build:tokens && pnpm --dir ../.. build:theme && pnpm --dir ../.. registry:build && next build",
+    "build": "pnpm --dir ../.. version:check && pnpm --dir ../.. build:tokens && pnpm --dir ../.. build:theme && pnpm --dir ../.. registry:build && next build",
     "typecheck": "next typegen && tsc --noEmit",
     "lint": "eslint ."
   },

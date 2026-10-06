@@ -9,7 +9,9 @@
 
 ## 프로젝트 특화 규칙
 
-(여기에 프로젝트만의 규칙을 작성하세요)
+- 루트와 `apps/*`, `packages/*`, `tooling/*` workspace 패키지는 하나의 릴리스 버전을 사용합니다. 버전 변경은 `pnpm version:bump patch|minor|major` 또는 `pnpm version:bump 0.2.1`로 함께 적용합니다.
+- `pnpm version:check`는 루트 버전과 모든 workspace manifest의 일치를 확인하며 루트 build 전에 실행됩니다. 개별 `package.json`의 버전만 변경하지 않습니다.
+- 이 명령은 커밋·게시·배포를 실행하지 않습니다. npm 게시 전에 `pnpm version:check`를 실행합니다. 문서의 실제 공개 버전과 게시/배포 상태는 해당 작업 성공을 확인한 뒤 갱신하며, 과거 Changelog 버전은 유지합니다.
 
 ---
 

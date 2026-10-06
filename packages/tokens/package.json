@@ -16,6 +16,7 @@
     "./tokens.json": "./src/tokens.json"
   },
   "scripts": {
+    "prepublishOnly": "node ../../tooling/release/version.mjs --check",
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src"
