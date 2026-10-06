@@ -29,7 +29,7 @@ function PopoverDemo() {
               <Input
                 id="width"
                 defaultValue="100%"
-                className="col-span-2 h-8"
+                className="col-span-2"
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
@@ -37,7 +37,7 @@ function PopoverDemo() {
               <Input
                 id="maxWidth"
                 defaultValue="300px"
-                className="col-span-2 h-8"
+                className="col-span-2"
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
@@ -45,7 +45,7 @@ function PopoverDemo() {
               <Input
                 id="height"
                 defaultValue="25px"
-                className="col-span-2 h-8"
+                className="col-span-2"
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
@@ -53,7 +53,7 @@ function PopoverDemo() {
               <Input
                 id="maxHeight"
                 defaultValue="none"
-                className="col-span-2 h-8"
+                className="col-span-2"
               />
             </div>
           </div>

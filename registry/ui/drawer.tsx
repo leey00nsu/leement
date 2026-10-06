@@ -87,7 +87,7 @@ function DrawerOverlay({
       ref={ref}
       data-slot="drawer-overlay"
       className={(state) => cn(
-        "bg-black/10 supports-backdrop-filter:backdrop-blur-xs fixed inset-0 z-50 min-h-dvh opacity-[max(var(--drawer-overlay-min-opacity,0),calc(1-var(--drawer-swipe-progress)))] select-none data-starting-style:opacity-0 data-ending-style:opacity-0 data-ending-style:pointer-events-none  data-snap-points:[--drawer-overlay-min-opacity:0.5]  supports-[-webkit-touch-callout:none]:absolute",
+        "bg-foreground/50 fixed inset-0 z-50 min-h-dvh opacity-[max(var(--drawer-overlay-min-opacity,0),calc(1-var(--drawer-swipe-progress)))] select-none data-starting-style:opacity-0 data-ending-style:opacity-0 data-ending-style:pointer-events-none  data-snap-points:[--drawer-overlay-min-opacity:0.5]  supports-[-webkit-touch-callout:none]:absolute",
         (typeof className === "function" ? className(state) : className)
       )}
       {...props}

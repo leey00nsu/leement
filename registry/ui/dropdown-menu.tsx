@@ -179,7 +179,7 @@ function DropdownMenuSubContent({
       ref={presenceForwardedRef}
       data-slot="dropdown-menu-sub-content"
       className={cn(
-        "w-auto min-w-[96px] rounded-lg bg-popover p-1 text-popover-foreground shadow-lg ring-1 ring-foreground/10",
+        "w-auto min-w-32",
         className,
       )}
       align={align}

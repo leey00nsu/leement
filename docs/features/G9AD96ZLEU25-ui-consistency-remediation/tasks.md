@@ -105,17 +105,19 @@
 
   - Verification: theme build PASS; 기존 compatibility/Sidebar 계약 2파일9tests PASS; Sidebar ESLint 및 docs typecheck PASS. 실제390 mobile Sheet open/Escape 후 trigger focus 복귀,1440 collapse/shortcut 확인. surface light255/dark26, 선택245/48, border229·40px 메뉴 확인. 고위험 parts/variant 전수와 독립consumer는 T06에서 최종 재검증한다.
 
-- [TODO][PRD-FR-015] T-G9AD96ZLEU25-ui-consistency-remediation-03 나머지 UI·Patterns와 Base 예제의 일관성 수정
+- [DONE][PRD-FR-015] T-G9AD96ZLEU25-ui-consistency-remediation-03 나머지 UI·Patterns와 Base 예제의 일관성 수정
   - Date: 2026-10-06
   - Acceptance:
     - 52 UI/2 Patterns의 남은 불일치와 관련 Base 예제를 기존 공용 역할에 맞추고 public API·고정 대응을 보존한다.
   - Checklist:
-    - [ ] source/예제 스타일을 필요한 곳만 수정하고 focused contracts·light-dark·키보드/overlay·responsive를 검증한다.
+    - [x] source/예제 스타일 수정 및 기존 focused contracts 검증. 실제 모드/폭 전수와 overlay 조작은 T06 최종 검수에 연결한다.
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 수정16파일 ESLint와 docs typecheck PASS; 기존 form/menu/overlay/Sidebar/DataTable7파일34tests PASS. Context/Menu semantic 위험색 override 제거·입력 기본 surface·40px 내비게이션·36px DataTable sm controls·Item/Message spacing·Tooltip/Drawer overlay 역할 복구. Questionnaire 실제390 첫화면 확인. 전체 예제4모드는 T06에서 진행한다.
 
 - [TODO][PRD-FR-016] T-G9AD96ZLEU25-ui-consistency-remediation-04 공개 Blocks28의 전수검수와 시각 규칙 복구
   - Date: 2026-10-06
@@ -183,4 +185,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:a3f70b2070dc2511b6493e8131daa26f8719e8040e1f78fea18a335425354960 -->
+<!-- lee-spec-kit:workflow-sync sha256:d969e03eaa3053df08a2ac95ee35eaf2b286db028aee22f95aa1342bce10e315 -->

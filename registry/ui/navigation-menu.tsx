@@ -72,7 +72,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  "hover:bg-muted focus:bg-muted data-open:hover:bg-muted data-open:focus:bg-muted data-open:bg-muted/50 focus-visible:ring-ring/50 data-popup-open:bg-muted/50 data-popup-open:hover:bg-muted rounded-lg px-2.5 py-1.5 text-sm font-medium focus-visible:ring-3 focus-visible:outline-1 disabled:opacity-50 group/navigation-menu-trigger inline-flex h-9 w-max items-center justify-center outline-none disabled:pointer-events-none"
+  "hover:bg-muted focus:bg-muted data-open:hover:bg-muted data-open:focus:bg-muted data-open:bg-muted focus-visible:ring-ring/40 data-popup-open:bg-muted data-popup-open:hover:bg-muted rounded-md px-3 py-2 text-sm font-medium focus-visible:ring-3 focus-visible:outline-none disabled:opacity-50 group/navigation-menu-trigger inline-flex h-10 w-max items-center justify-center outline-none disabled:pointer-events-none"
 )
 
 function NavigationMenuTrigger({
@@ -107,7 +107,7 @@ function NavigationMenuContent({
       ref={ref}
       data-slot="navigation-menu-content"
       className={(state) => cn(
-        "group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:ring-foreground/10 p-1 group-data-[viewport=false]/navigation-menu:rounded-lg group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:ring-1 data-ending-style:data-activation-direction=left:translate-x-[50%] data-ending-style:data-activation-direction=right:translate-x-[-50%] data-starting-style:data-activation-direction=left:translate-x-[-50%] data-starting-style:data-activation-direction=right:translate-x-[50%] h-full w-auto data-ending-style:opacity-0 data-starting-style:opacity-0 **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none",
+        "group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:border-border p-1 group-data-[viewport=false]/navigation-menu:rounded-md group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:border data-ending-style:data-activation-direction=left:translate-x-[50%] data-ending-style:data-activation-direction=right:translate-x-[-50%] data-starting-style:data-activation-direction=left:translate-x-[-50%] data-starting-style:data-activation-direction=right:translate-x-[50%] h-full w-auto data-ending-style:opacity-0 data-starting-style:opacity-0",
         (typeof className === "function" ? className(state) : className)
       )}
       {...props}
@@ -139,8 +139,8 @@ function NavigationMenuPositioner({
         )}
         {...props}
       >
-        <NavigationMenuPrimitive.Popup ref={popupRef} className="bg-popover text-popover-foreground ring-foreground/10 rounded-lg shadow ring-1 outline-none     xs:w-(--popup-width) relative h-(--popup-height) w-(--popup-width) max-w-full origin-(--transform-origin)">
-          <NavigationMenuPrimitive.Viewport className="relative size-full overflow-hidden" />
+        <NavigationMenuPrimitive.Popup ref={popupRef} className="bg-popover text-popover-foreground border border-border rounded-md shadow-md outline-none     xs:w-(--popup-width) relative h-(--popup-height) w-(--popup-width) max-w-full origin-(--transform-origin)">
+          <NavigationMenuPrimitive.Viewport className="relative size-full overflow-hidden p-1" />
         </NavigationMenuPrimitive.Popup>
       </NavigationMenuPrimitive.Positioner>
     </NavigationMenuPrimitive.Portal>
@@ -157,7 +157,7 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       ref={ref}
       data-slot="navigation-menu-link"
-      className={(state) => cn("data-active:focus:bg-muted data-active:hover:bg-muted data-active:bg-muted/50 focus-visible:ring-ring/50 hover:bg-muted focus:bg-muted flex items-center gap-2 rounded-lg p-2 text-sm outline-none focus-visible:ring-3 focus-visible:outline-1 in-data-[slot=navigation-menu-content]:rounded-md [&_svg:not([class*='size-'])]:size-4", (typeof className === "function" ? className(state) : className))}
+      className={(state) => cn("data-active:focus:bg-muted data-active:hover:bg-muted data-active:bg-muted focus-visible:ring-ring/40 hover:bg-muted focus:bg-muted flex items-center gap-2 rounded-md p-2 text-sm outline-none focus-visible:ring-3 focus-visible:outline-none in-data-[slot=navigation-menu-content]:rounded-md [&_svg:not([class*='size-'])]:size-4", (typeof className === "function" ? className(state) : className))}
       {...props}
     />
   )

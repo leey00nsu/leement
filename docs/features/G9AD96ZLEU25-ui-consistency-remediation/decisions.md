@@ -78,3 +78,12 @@
 - Plan의 border reset 추가를 main이 Spec FR-2/US-2와 재대조해 승인했다. API/팔레트 확장이 아닌 currentColor fallback 결함 복구이며 자동 plan review 설정을 유지한다.
 - T01 문서 checkpoint3890043 후 canonical task subject의 빈 project checkpoint f2beca4를 만들었다. T02 변경은 별도 보존 후 T02 DOING 성공을 확인하고 적용했다.
 - 기존9tests·ESLint·docs typecheck 통과, actual Sidebar390/1440과 mode/shortcut/Sheet Escape focus 확인. 확장parts/consumer 및 전수모드는 T06에서 완료하며 이 단계로 전체 시각검수 완료를 주장하지 않는다.
+
+
+## D007: 복합 UI와 예제의 역할별 복구 (2026-10-06)
+
+- ContextMenu/Menubar의 glass·descendant destructive override를 제거하고 공용 DropdownMenu 표면/강조를 상속한다. Context item은 동일 메뉴 밀도, Menubar 내부32px trigger는40px toolbar 안의 explicit 보조 조작이다. Dropdown submenu도 공용 popup 규칙을 상속한다.
+- InputGroup/OTP/Questionnaire는 기본 semantic surface와 공용 focus40%/invalid30%·disabled muted를 적용한다. InputGroup 내부24/32px adornment는40px 입력 안의 보조 조작이라는 예외를 유지한다. Questionnaire의 mobile44px은 touch target이며 desktop40px이다.
+- Item은 default16/sm12/xs8px inset으로 variant를 구별하고 Message gap12px로 정리했다. Navigation40px/8px radius·focus ring을 복구한다. DataTable sm36px와 icon-sm36px을 상속하며 Skeleton Form도40px 실입력 placeholder에 맞춘다.
+- Drawer scrim은 Dialog의 semantic foreground/50를 사용하고 swipe/snap/stack 상태는 보존한다. Tooltip은 공통 popover surface/foreground/border로 역할을 맞춘다. 기존 menu row·Calendar cell·media geometry·OTP40px slot 등 의도된 조합을 일반 Button 규칙으로 일괄 치환하지 않았다.
+- 타입/린트 및 기존34tests PASS. 전수 화면과 focus·contrast 관찰은 T06 pending이다.

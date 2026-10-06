@@ -135,7 +135,7 @@ function TranscriptOutline() {
           <button
             type="button"
             aria-label="Open transcript outline"
-            className="flex h-9 w-9 flex-col items-center justify-center gap-1 rounded-md  outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="flex size-9 flex-col items-center justify-center gap-1 rounded-md  outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
           />
         }
       >

@@ -323,7 +323,7 @@ export function DataTableColumnHeader<TData extends RowData, TValue>({
             <Button
               variant="ghost"
               size="sm"
-              className="-ml-3 h-8 data-[state=open]:bg-accent"
+              className="-ms-3 data-popup-open:bg-accent"
             />
           }
         >
@@ -397,7 +397,7 @@ export function DataTablePagination<TData extends RowData>({
               table.setPageSize(Number(value));
             }}
           >
-            <SelectTrigger aria-label="Rows per page" className="h-8 w-[70px]">
+            <SelectTrigger aria-label="Rows per page" size="sm" className="w-[70px]">
               <SelectValue
                 placeholder={String(table.getState().pagination.pageSize)}
               />
@@ -418,8 +418,8 @@ export function DataTablePagination<TData extends RowData>({
         <div className="flex items-center space-x-2">
           <Button
             variant="outline"
-            size="icon"
-            className="hidden size-8 lg:flex"
+            size="icon-sm"
+            className="hidden lg:flex"
             onClick={() => table.setPageIndex(0)}
             disabled={!table.getCanPreviousPage()}
           >
@@ -428,8 +428,7 @@ export function DataTablePagination<TData extends RowData>({
           </Button>
           <Button
             variant="outline"
-            size="icon"
-            className="size-8"
+            size="icon-sm"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
@@ -438,8 +437,7 @@ export function DataTablePagination<TData extends RowData>({
           </Button>
           <Button
             variant="outline"
-            size="icon"
-            className="size-8"
+            size="icon-sm"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
@@ -448,8 +446,8 @@ export function DataTablePagination<TData extends RowData>({
           </Button>
           <Button
             variant="outline"
-            size="icon"
-            className="hidden size-8 lg:flex"
+            size="icon-sm"
+            className="hidden lg:flex"
             onClick={() =>
               table.setPageIndex(Math.max(0, table.getPageCount() - 1))
             }
@@ -476,7 +474,7 @@ export function DataTableViewOptions<TData extends RowData>({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        render={<Button variant="outline" size="sm" className="ms-auto h-8" />}
+        render={<Button variant="outline" size="sm" className="ms-auto" />}
       >
         <Settings2 />
         View
