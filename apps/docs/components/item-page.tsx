@@ -7,6 +7,7 @@ import { items } from "../lib/items";
 import { apiReferences } from "../lib/api-reference";
 import { ApiReference } from "./api-reference";
 import { getAdditionalExampleCodes, getItemCode } from "../lib/registry-source";
+import { publishedVersion, repositoryVersion } from "../lib/releases";
 
 function displayName(name: string) {
   return name
@@ -103,9 +104,15 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           <p className="mt-3 text-sm leading-7 text-muted-foreground">
             Install the theme once, then add this editable registry source to
             your project using the public namespace in Getting Started. The
-            current public release is 0.1.0; see Changelog for pending 0.2.0
-            changes.
+            current public release is {publishedVersion}. See Changelog for
+            release notes and migration guidance.
           </p>
+          {repositoryVersion !== publishedVersion && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              This repository targets {repositoryVersion}, which has not been
+              published yet.
+            </p>
+          )}
           <div className="mt-5 overflow-hidden rounded-xl border border-border bg-muted/30">
             <div className="border-b border-border px-4 py-2 text-xs font-medium">
               shadcn CLI

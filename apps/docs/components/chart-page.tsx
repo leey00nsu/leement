@@ -86,7 +86,7 @@ export async function ChartRecipePage({ name }: { name: ChartName }) {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Installation</h2>
         <p className="text-sm leading-7 text-muted-foreground">
-          These recipes target the pending 0.2.0 theme. Install the theme first.
+          These recipes require @leement/theme 0.2.0 or newer. Install the theme first.
           This command installs the recipe, Chart, Card, accessible data table,
           any required controls, and Recharts. The source belongs to your
           project.

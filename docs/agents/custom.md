@@ -12,6 +12,7 @@
 - 루트와 `apps/*`, `packages/*`, `tooling/*` workspace 패키지는 하나의 릴리스 버전을 사용합니다. 버전 변경은 `pnpm version:bump patch|minor|major` 또는 `pnpm version:bump 0.2.1`로 함께 적용합니다.
 - `pnpm version:check`는 루트 버전과 모든 workspace manifest의 일치를 확인하며 루트 build 전에 실행됩니다. 개별 `package.json`의 버전만 변경하지 않습니다.
 - 이 명령은 커밋·게시·배포를 실행하지 않습니다. npm 게시 전에 `pnpm version:check`를 실행합니다. 문서의 실제 공개 버전과 게시/배포 상태는 해당 작업 성공을 확인한 뒤 갱신하며, 과거 Changelog 버전은 유지합니다.
+- Changelog와 공개 설치 버전의 정본은 `apps/docs/lib/releases.ts`입니다. 개발 중 변경은 `unreleasedChanges`에 기록하고, npm 게시와 registry 배포가 확인되면 버전별 `releases` 항목으로 옮깁니다. `releases`는 최신 공개 버전부터 정렬합니다. 설치 문서는 같은 `publishedVersion`을 사용하며 저장소 버전은 루트 manifest에서 읽습니다. 새 사용자 기능·호환성 변경은 해당 릴리스의 변경/이전 안내에 반영합니다.
 
 ---
 
