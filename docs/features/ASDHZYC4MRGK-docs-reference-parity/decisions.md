@@ -1,5 +1,11 @@
 # Decisions Log
 
+## D020 — 구현 승인과 출시 버전 확인 (2026-10-06)
+
+- **Approval**: 사용자 “A로 할건데 버전 올려야하는지?”를 구현 승인 A와 버전 질문으로 처리한다. 전체 구현과 task14 결과를 수락한 것으로 기록하며 main 통합은 별도 local_merge 승인 경계를 유지한다.
+- **Version**: main과 Feature의 tokens/theme package.json 모두 이미0.2.0이다. Changelog는 Unreleased0.2.0이며 private root/docs0.1.0은 공개 패키지 버전이 아니다. pnpm view 조회에서 공개 npm tokens/theme은 둘 다0.1.0이다. 이번 Feature는 미출시0.2.0에 포함하는 것이 적절하며 추가 version bump·publish·remote registry 배포는 실행하지 않는다.
+
+
 ## D019 — 중복 안내 통합 요청 (2026-10-06)
 
 - **Request**: 사용자가 RadioGroup의 접힌 Usage/Composition/Description/Choice Card/Fieldset/Disabled/Invalid와 아래 Examples의 중복을 지적하고 모든 문서를 정리하도록 요청했다. 구현 승인 대신 수정 요청으로 처리하며 기존 Feature에 task14를 추가했다.
