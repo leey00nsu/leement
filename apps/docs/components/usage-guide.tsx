@@ -37,7 +37,7 @@ function inline(text: string): ReactNode {
       return <Fragment key={index}>{part}</Fragment>;
     });
 }
-function GuideText({ value }: { value: string }) {
+export function GuideText({ value }: { value: string }) {
   return (
     <div className="space-y-3 text-sm leading-7 text-muted-foreground">
       {value.split(/\n\s*\n/).map((paragraph, i) => {
@@ -110,17 +110,17 @@ function GuideText({ value }: { value: string }) {
 export function UsageGuide({ sections }: { sections?: UsageSection[] }) {
   if (!sections?.length) return null;
   return (
-    <div className="space-y-3">
+    <div className="space-y-8">
       {sections.map((section) => (
-        <details
+        <section
           key={section.id}
           id={section.id}
-          className="group scroll-mt-24 rounded-lg border border-border open:bg-muted/10"
+          className="scroll-mt-24 space-y-4"
         >
-          <summary className="cursor-pointer rounded-lg px-4 py-3 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <h3 className="text-lg font-semibold">
             {section.title}
-          </summary>
-          <div className="space-y-4 px-4 pb-4">
+          </h3>
+          <div className="space-y-4">
             {section.blocks.map((block, i) =>
               block.kind === "text" ? (
                 <GuideText key={i} value={block.value} />
@@ -145,7 +145,7 @@ export function UsageGuide({ sections }: { sections?: UsageSection[] }) {
               ),
             )}
           </div>
-        </details>
+        </section>
       ))}
     </div>
   );

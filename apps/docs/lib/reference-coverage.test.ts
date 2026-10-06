@@ -30,7 +30,6 @@ describe("fixed public upstream scope", () => {
         const name = row.item as keyof typeof items;
         expect(items[name], page.name).toBeTruthy();
         expect(apiReferences[name]?.parts.length, page.name).toBeGreaterThan(0);
-        expect(usageGuides[name]?.length, page.name).toBeGreaterThan(0);
         expect(
           getAdditionalExamples(name).some(
             (example) => example.file === row.file,
@@ -42,6 +41,26 @@ describe("fixed public upstream scope", () => {
         );
         expect(source).toContain("export default");
         expect(source).not.toContain("native-select");
+      }
+    }
+    // Usage is shown once; example-specific instructions belong with that example.
+    const normalize = (title: string) =>
+      title.toLowerCase().replace(/[^a-z0-9]/g, "").replace(/s$/, "");
+    for (const [name, sections] of Object.entries(usageGuides)) {
+      const exampleTitles = getAdditionalExamples(name as keyof typeof items)
+        .map((example) => normalize(example.title));
+      for (const section of sections) {
+        expect(["usage", "composition", "compositiontree", "features"])
+          .not.toContain(normalize(section.title));
+        expect(exampleTitles).not.toContain(normalize(section.title));
+        for (const block of section.blocks) {
+          expect(block.value).not.toMatch(/@Leement\/react|\/docs\/react\/|\/docs\/utils\/shimmer/);
+        }
+      }
+    }
+    for (const name of Object.keys(items) as (keyof typeof items)[]) {
+      for (const example of getAdditionalExamples(name)) {
+        expect(example.description).not.toMatch(/<ComponentPreview|@Leement\/react|\/docs\/components\/|\/docs\/utils\/shimmer|``/);
       }
     }
   });

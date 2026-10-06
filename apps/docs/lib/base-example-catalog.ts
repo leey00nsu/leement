@@ -128,7 +128,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-colors",
       title: "Custom Colors",
       description:
-        "You can customize the alert colors by adding custom classes such as `bg-amber-50 dark:bg-amber-950` to the `Alert` component.",
+        "Use semantic surface, foreground and border utilities to customize the notice while keeping its meaning and contrast.",
       file: "base-alert-colors",
     },
     {
@@ -179,7 +179,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-image",
       title: "Image",
       description:
-        'Set `variant="image"` on `AttachmentMedia` and render an `` inside it. Use `orientation="vertical"` to stack the media above the content.',
+        'Set `variant="image"` on `AttachmentMedia` and render an `<img>` inside it. Use `orientation="vertical"` to stack the media above the content.',
       file: "base-attachment-image",
     },
     {
@@ -227,13 +227,13 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-badge",
       title: "Badge",
       description:
-        "Use the `AvatarBadge` component to add a badge to the avatar. The badge is positioned at the bottom right of the avatar.",
+        "Use the `AvatarBadge` component to add a badge to the avatar. The badge is positioned at the bottom right of the avatar.\n\nUse the `className` prop to add custom styles to the badge such as custom colors, sizes, etc.",
       file: "base-avatar-badge",
     },
     {
       id: "base-badge-icon",
       title: "Badge with Icon",
-      description: "You can also use an icon inside ``.",
+      description: "You can also use an icon inside `<AvatarBadge>`.",
       file: "base-avatar-badge-icon",
     },
     {
@@ -245,13 +245,13 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-group-count",
       title: "Avatar Group Count",
-      description: "Use `` to add a count to the group.",
+      description: "Use `<AvatarGroupCount>` to add a count to the group.",
       file: "base-avatar-group-count",
     },
     {
       id: "base-group-count-icon",
       title: "Avatar Group with Icon",
-      description: "You can also use an icon inside ``.",
+      description: "You can also use an icon inside `<AvatarGroupCount>`.",
       file: "base-avatar-group-count-icon",
     },
     {
@@ -312,7 +312,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-colors",
       title: "Custom Colors",
       description:
-        "You can customize the colors of a badge by adding custom classes such as `bg-green-50 dark:bg-green-800` to the `Badge` component.",
+        "Customize the badge using semantic surface and foreground utilities; preserve readable contrast in both themes.",
       file: "base-badge-colors",
     },
     {
@@ -340,28 +340,28 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-separator",
       title: "Custom separator",
       description:
-        "Use a custom component as `children` for `` to create a custom separator.",
+        "Use a custom component as `children` for `<BreadcrumbSeparator />` to create a custom separator.",
       file: "base-breadcrumb-separator",
     },
     {
       id: "base-dropdown",
       title: "Dropdown",
       description:
-        "You can compose `` with a `` to create a dropdown in the breadcrumb.",
+        "You can compose `<BreadcrumbItem />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.",
       file: "base-breadcrumb-dropdown",
     },
     {
       id: "base-ellipsis",
       title: "Collapsed",
       description:
-        "We provide a `` component to show a collapsed state when the breadcrumb is too long.",
+        "We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when the breadcrumb is too long.",
       file: "base-breadcrumb-ellipsis",
     },
     {
       id: "base-link",
       title: "Link component",
       description:
-        "To use a custom link component from your routing library, you can use the `render` prop on ``.",
+        "To use a custom link component from your routing library, you can use the `render` prop on `<BreadcrumbLink />`.",
       file: "base-breadcrumb-link",
     },
     {
@@ -383,14 +383,14 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-variants",
       title: "Variants",
       description:
-        "Use `variant` to change the visual treatment of the bubble. Rich text is rendered with Streamdown; the application owns the message content.",
+        "Use variant for the message surface. Bubbles fit their content up to 80% of the container; ghost removes that limit for rich content. The app supplies the text and Streamdown content.",
       file: "base-bubble-variants",
     },
     {
       id: "base-alignment",
       title: "Alignment",
       description:
-        "Use `align` on `Bubble` to align the bubble to the start or end of the conversation.",
+        'Use align="start" or align="end" for a standalone Bubble. In a transcript, set alignment on Message so the avatar, footer and surface stay together.',
       file: "base-bubble-alignment",
     },
     {
@@ -418,21 +418,21 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-collapsible",
       title: "Show More / Collapsible",
       description:
-        "Long bubble content can be composed with [`Collapsible`](/docs/components/collapsible) to allow for a show more or show less interaction. Use the `CollapsibleTrigger` component to trigger the collapsible content.",
+        "Long bubble content can be composed with [`Collapsible`](/components/collapsible) to allow for a show more or show less interaction. Use the `CollapsibleTrigger` component to trigger the collapsible content.",
       file: "base-bubble-collapsible",
     },
     {
       id: "base-tooltip",
       title: "Tooltip",
       description:
-        "Wrap a bubble in a [`Tooltip`](/docs/components/tooltip) to reveal metadata on hover, such as when a message was read.",
+        "Wrap a bubble in a [`Tooltip`](/components/tooltip) to reveal metadata on hover, such as when a message was read.",
       file: "base-bubble-tooltip",
     },
     {
       id: "base-popover",
       title: "Popover",
       description:
-        "Pair a bubble with a [`Popover`](/docs/components/popover) to surface more information on demand, such as the full error message for a failed action.",
+        "Pair a bubble with a [`Popover`](/components/popover) to surface more information on demand, such as the full error message for a failed action.",
       file: "base-bubble-popover",
     },
   ],
@@ -460,14 +460,14 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-nested",
       title: "Nested",
-      description: "Nest `` components to create button groups with spacing.",
+      description: "Nest `<ButtonGroup>` components to create button groups with spacing.",
       file: "base-button-group-nested",
     },
     {
       id: "base-separator",
       title: "Separator",
       description:
-        "The `ButtonGroupSeparator` component visually divides buttons within a group.",
+        "The `ButtonGroupSeparator` component visually divides buttons within a group.\n\nButtons with variant `outline` do not need a separator since they have a border. For other variants, a separator is recommended to improve the visual hierarchy.",
       file: "base-button-group-separator",
     },
     {
@@ -533,43 +533,43 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-default",
       title: "Default",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use the primary button for the main action.",
       file: "base-button-default",
     },
     {
       id: "base-outline",
       title: "Outline",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use outline for a bordered secondary action.",
       file: "base-button-outline",
     },
     {
       id: "base-secondary",
       title: "Secondary",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use secondary for an action on a neutral filled surface.",
       file: "base-button-secondary",
     },
     {
       id: "base-ghost",
       title: "Ghost",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use ghost for a quiet action without a persistent background.",
       file: "base-button-ghost",
     },
     {
       id: "base-destructive",
       title: "Destructive",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use destructive for an action that removes or discards data.",
       file: "base-button-destructive",
     },
     {
       id: "base-link",
       title: "Link",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use the link variant for a button action styled as text. For navigation, use a native anchor with buttonVariants.",
       file: "base-button-link",
     },
     {
       id: "base-icon",
       title: "Icon",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Give an icon-only button an accessible name with aria-label.",
       file: "base-button-icon",
     },
     {
@@ -589,21 +589,21 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-spinner",
       title: "Spinner",
       description:
-        'Render a `` component inside the button to show a loading state. Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the spinner for the correct spacing.',
+        'Render a `<Spinner />` component inside the button to show a loading state. Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the spinner for the correct spacing.',
       file: "base-button-spinner",
     },
     {
       id: "base-group-demo",
       title: "Button Group",
       description:
-        "To create a button group, use the `ButtonGroup` component. See the [Button Group](/docs/components/base/button-group) documentation for more details.",
+        "To create a button group, use the `ButtonGroup` component. See the [Button Group](/components/button-group) documentation for more details.",
       file: "base-button-group-demo",
     },
     {
       id: "base-render",
       title: "As Link",
       description:
-        "You can use the `buttonVariants` helper to make a link look like a button.",
+        'You can use the `buttonVariants` helper to make a link look like a button.\n\n**Do not use `<Button render={<a />} nativeButton={false} />` for links.** The Base UI `Button` component always applies `role="button"`, which overrides the semantic link role on `<a>` elements. Use `buttonVariants` with a plain `<a>` tag instead.',
       file: "base-button-render",
     },
     {
@@ -625,7 +625,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-hijri",
       title: "Persian / Hijri / Jalali Calendar",
       description:
-        "To use the Persian calendar, edit `components/ui/calendar.tsx` and replace `react-day-picker` with `react-day-picker/persian`. Uses the Persian DayPicker entry point with the Leement body font; supply a custom Arabic font if needed.",
+        "To use the Persian calendar, edit `components/ui/calendar.tsx` and replace `react-day-picker` with `react-day-picker/persian`.",
       file: "base-calendar-hijri",
     },
     {
@@ -651,25 +651,25 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-presets",
       title: "Presets",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Select a preset date or pick a date from the same controlled Calendar.",
       file: "base-calendar-presets",
     },
     {
       id: "base-time",
       title: "Date and Time Picker",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Combine Calendar with a labelled time input; the app combines date and time values.",
       file: "base-calendar-time",
     },
     {
       id: "base-booked-dates",
       title: "Booked dates",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Disable booked dates so they remain visible without being selectable.",
       file: "base-calendar-booked-dates",
     },
     {
       id: "base-custom-days",
       title: "Custom Cell Size",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "You can customize the size of calendar cells using the `--cell-size` CSS variable. You can also make it responsive by using breakpoint-specific values:\n\nOr use fixed values:",
       file: "base-calendar-custom-days",
     },
     {
@@ -704,14 +704,14 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-spacing",
       title: "Spacing",
       description:
-        "In addition to the `size` prop, you can use the `--card-spacing` CSS variable to control the spacing between sections and the inset of card parts.",
+        "In addition to the `size` prop, you can use the `--card-spacing` CSS variable to control the spacing between sections and the inset of card parts.\n\nUse negative margins with `-mx-(--card-spacing)` to make content go edge to edge while keeping it aligned with the card inset. When the edge-to-edge content sits above a footer, use `-mb-(--card-spacing)` on `CardContent` to remove the section gap.",
       file: "base-card-spacing",
     },
     {
       id: "base-edge-to-edge",
       title: "Spacing",
       description:
-        "In addition to the `size` prop, you can use the `--card-spacing` CSS variable to control the spacing between sections and the inset of card parts.",
+        "In addition to the `size` prop, you can use the `--card-spacing` CSS variable to control the spacing between sections and the inset of card parts.\n\nUse negative margins with `-mx-(--card-spacing)` to make content go edge to edge while keeping it aligned with the card inset. When the edge-to-edge content sits above a footer, use `-mb-(--card-spacing)` on `CardContent` to remove the section gap.",
       file: "base-card-edge-to-edge",
     },
     {
@@ -740,14 +740,14 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-size",
       title: "Sizes",
       description:
-        "To set the size of the items, you can use the `basis` utility class on the ``.",
+        "To set the size of the items, you can use the `basis` utility class on the `<CarouselItem />`.",
       file: "base-carousel-size",
     },
     {
       id: "base-spacing",
       title: "Spacing",
       description:
-        "To set the spacing between the items, we use a `pl-[VALUE]` utility on the `` and a negative `-ml-[VALUE]` on the ``.",
+        "To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<CarouselItem />` and a negative `-ml-[VALUE]` on the `<CarouselContent />`.",
       file: "base-carousel-spacing",
     },
     {
@@ -761,7 +761,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-api",
       title: "API",
       description:
-        "Use a state and the `setApi` prop to get an instance of the carousel API.",
+        "Use a state and the `setApi` prop to get an instance of the carousel API. Subscribe to the Embla select event through setApi and clean up listeners on unmount. Pass opts for axis/alignment behavior; see the linked Embla API for supported options.",
       file: "base-carousel-api",
     },
     {
@@ -788,44 +788,44 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     },
     {
       id: "base-example",
-      title: "Your First Chart",
+      title: "Basic bar chart",
       description:
-        "Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.",
+        "Define data and ChartConfig, then map Bar dataKey to the config. Give ChartContainer a minimum height.",
       file: "base-chart-example",
     },
     {
       id: "base-example-grid",
-      title: "Your First Chart",
+      title: "Add a grid",
       description:
-        "Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.",
+        "Add CartesianGrid; vertical={false} keeps only horizontal guides.",
       file: "base-chart-example-grid",
     },
     {
       id: "base-example-axis",
-      title: "Your First Chart",
+      title: "Add an axis",
       description:
-        "Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.",
+        "Add XAxis with the category dataKey. Format tick values without changing the underlying data.",
       file: "base-chart-example-axis",
     },
     {
       id: "base-example-tooltip",
-      title: "Your First Chart",
+      title: "Add a tooltip",
       description:
-        "Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.",
+        "Compose ChartTooltip and ChartTooltipContent for labels, indicators and formatted values.",
       file: "base-chart-example-tooltip",
     },
     {
       id: "base-example-legend",
-      title: "Your First Chart",
+      title: "Add a legend",
       description:
-        "Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.",
+        "Compose ChartLegend and ChartLegendContent with the same ChartConfig used by the series.",
       file: "base-chart-example-legend",
     },
     {
       id: "base-tooltip",
       title: "Tooltip",
       description:
-        "A chart tooltip contains a label, name, indicator and value. You can use a combination of these to customize your tooltip.",
+        "Use hideLabel, hideIndicator and indicator to control tooltip content and appearance. labelKey and nameKey select the matching data/config keys; see API Reference for the props.",
       file: "base-chart-tooltip",
     },
     {
@@ -867,7 +867,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-disabled",
       title: "Disabled",
       description:
-        "Use the `disabled` prop to prevent interaction and add the `data-disabled` attribute to the `` component for disabled styles.",
+        "Use the `disabled` prop to prevent interaction and add the `data-disabled` attribute to the `<Field>` component for disabled styles.",
       file: "base-checkbox-disabled",
     },
     {
@@ -879,7 +879,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-table",
       title: "Table",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Use labelled checkboxes for row selection and an indeterminate header checkbox for a partly selected table.",
       file: "base-checkbox-table",
     },
     {
@@ -900,7 +900,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-basic",
       title: "Basic",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Compose a trigger and content panel. Keep padding and borders on the inner box so the measured Motion height opens smoothly.",
       file: "base-collapsible-basic",
     },
     {
@@ -940,7 +940,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-multiple",
       title: "Multiple",
       description:
-        "A combobox with multiple selection using `multiple` and `ComboboxChips`.",
+        "A combobox with multiple selection using `multiple` and `ComboboxChips`. Compose ComboboxChips and ComboboxChip with ComboboxChipsInput for selected values.",
       file: "base-combobox-multiple",
     },
     {
@@ -959,7 +959,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-custom",
       title: "Custom Items",
-      description: "You can render a custom component inside `ComboboxItem`.",
+      description: "Use itemToStringValue for object items and render the matching content inside ComboboxItem.",
       file: "base-combobox-custom",
     },
     {
@@ -1019,7 +1019,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-shortcuts",
       title: "Shortcuts",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Show shortcut hints beside command items; the app owns the matching keyboard command.",
       file: "base-command-shortcuts",
     },
     {
@@ -1242,7 +1242,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-sides",
       title: "Position",
       description:
-        "Use the `swipeDirection` prop to set the side of the drawer.",
+        "Use the `swipeDirection` prop to set the side of the drawer.\n\nAvailable options are `up`, `right`, `down`, and `left`.",
       file: "base-drawer-sides",
     },
     {
@@ -1270,7 +1270,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-snap-points",
       title: "Snap Points",
       description:
-        "Use `snapPoints` to snap a drawer to preset heights. Numbers between `0` and `1` represent fractions of the viewport. Numbers greater than `1` are treated as pixel values. String values support `px` and `rem` units. Snap points apply to vertical drawers.",
+        "Use `snapPoints` to snap a drawer to preset heights. Numbers between `0` and `1` represent fractions of the viewport. Numbers greater than `1` are treated as pixel values. String values support `px` and `rem` units. Snap points apply to vertical drawers.\n\nTrack the active snap point with the controlled `snapPoint` and `onSnapPointChange` props. At the full snap point, the drawer gets a `data-expanded` attribute you can style with the `data-expanded:` variant.",
       file: "base-drawer-snap-points",
     },
     {
@@ -1422,56 +1422,56 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-input",
       title: "Input",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Associate FieldLabel, Input and optional FieldDescription within one Field.",
       file: "base-field-input",
     },
     {
       id: "base-textarea",
       title: "Textarea",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Pair Textarea with its label, description and validation message.",
       file: "base-field-textarea",
     },
     {
       id: "base-select",
       title: "Select",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Place a labelled Select within Field; keep the label associated with the trigger.",
       file: "base-field-select",
     },
     {
       id: "base-slider",
       title: "Slider",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Give Slider a field label and expose the current value alongside the control.",
       file: "base-field-slider",
     },
     {
       id: "base-fieldset",
       title: "Fieldset",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use FieldSet and FieldLegend to name a set of related controls.",
       file: "base-field-fieldset",
     },
     {
       id: "base-checkbox",
       title: "Checkbox",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Compose FieldLabel and Checkbox; use FieldContent when the option needs a description.",
       file: "base-field-checkbox",
     },
     {
       id: "base-radio",
       title: "Radio",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Group exclusive options with RadioGroup and a shared FieldLegend.",
       file: "base-field-radio",
     },
     {
       id: "base-switch",
       title: "Switch",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Pair Switch with its label and supporting description in a horizontal Field.",
       file: "base-field-switch",
     },
     {
       id: "base-choice-card",
       title: "Choice Card",
       description:
-        "Wrap `Field` components inside `FieldLabel` to create selectable field groups. This works with `RadioItem`, `Checkbox` and `Switch` components.",
+        "Wrap `Field` components inside `FieldLabel` to create selectable field groups. This works with `RadioGroupItem`, `Checkbox` and `Switch` components.",
       file: "base-field-choice-card",
     },
     {
@@ -1506,7 +1506,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-sides",
       title: "Sides",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Use side and align on HoverCardContent to choose placement. delay and closeDelay belong on HoverCardTrigger.",
       file: "base-hover-card-sides",
     },
     {
@@ -1528,77 +1528,77 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-inline-start",
       title: "Align",
       description:
-        "Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.",
+        'Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.\n\n  For proper focus management, `InputGroupAddon` should always be placed after\n  `InputGroupInput` or `InputGroupTextarea` in the DOM. Use the `align` prop to\n  visually position the addon.\n\n### inline-start\n\nUse `align="inline-start"` to position the addon at the start of the input. This is the default.\n\n### inline-end\n\nUse `align="inline-end"` to position the addon at the end of the input.\n\n### block-start\n\nUse `align="block-start"` to position the addon above the input.\n\n### block-end\n\nUse `align="block-end"` to position the addon below the input.',
       file: "base-input-group-inline-start",
     },
     {
       id: "base-inline-end",
       title: "Align",
       description:
-        "Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.",
+        'Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.\n\n  For proper focus management, `InputGroupAddon` should always be placed after\n  `InputGroupInput` or `InputGroupTextarea` in the DOM. Use the `align` prop to\n  visually position the addon.\n\n### inline-start\n\nUse `align="inline-start"` to position the addon at the start of the input. This is the default.\n\n### inline-end\n\nUse `align="inline-end"` to position the addon at the end of the input.\n\n### block-start\n\nUse `align="block-start"` to position the addon above the input.\n\n### block-end\n\nUse `align="block-end"` to position the addon below the input.',
       file: "base-input-group-inline-end",
     },
     {
       id: "base-block-start",
       title: "Align",
       description:
-        "Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.",
+        'Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.\n\n  For proper focus management, `InputGroupAddon` should always be placed after\n  `InputGroupInput` or `InputGroupTextarea` in the DOM. Use the `align` prop to\n  visually position the addon.\n\n### inline-start\n\nUse `align="inline-start"` to position the addon at the start of the input. This is the default.\n\n### inline-end\n\nUse `align="inline-end"` to position the addon at the end of the input.\n\n### block-start\n\nUse `align="block-start"` to position the addon above the input.\n\n### block-end\n\nUse `align="block-end"` to position the addon below the input.',
       file: "base-input-group-block-start",
     },
     {
       id: "base-block-end",
       title: "Align",
       description:
-        "Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.",
+        'Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.\n\n  For proper focus management, `InputGroupAddon` should always be placed after\n  `InputGroupInput` or `InputGroupTextarea` in the DOM. Use the `align` prop to\n  visually position the addon.\n\n### inline-start\n\nUse `align="inline-start"` to position the addon at the start of the input. This is the default.\n\n### inline-end\n\nUse `align="inline-end"` to position the addon at the end of the input.\n\n### block-start\n\nUse `align="block-start"` to position the addon above the input.\n\n### block-end\n\nUse `align="block-end"` to position the addon below the input.',
       file: "base-input-group-block-end",
     },
     {
       id: "base-icon",
       title: "Icon",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Place a decorative icon in InputGroupAddon and keep a separate label for the input.",
       file: "base-input-group-icon",
     },
     {
       id: "base-text",
       title: "Text",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Use an addon for units, prefixes or suffixes without including them in the input value.",
       file: "base-input-group-text",
     },
     {
       id: "base-button",
       title: "Button",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Compose InputGroupButton for an action within the control; label icon-only actions.",
       file: "base-input-group-button",
     },
     {
       id: "base-kbd",
       title: "Kbd",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Use Kbd in an addon to show a shortcut hint. The app owns shortcut handling.",
       file: "base-input-group-kbd",
     },
     {
       id: "base-dropdown",
       title: "Dropdown",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Use an addon button as the dropdown trigger while the input retains its label and focus behavior.",
       file: "base-input-group-dropdown",
     },
     {
       id: "base-spinner",
       title: "Spinner",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Show Spinner while work is pending; keep loading text available to assistive technology.",
       file: "base-input-group-spinner",
     },
     {
       id: "base-textarea",
       title: "Textarea",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Use InputGroupTextarea for multiline input with block-start or block-end addons.",
       file: "base-input-group-textarea",
     },
     {
       id: "base-custom",
       title: "Custom Input",
       description:
-        'Add the `data-slot="input-group-control"` attribute to your custom input for automatic focus state handling.',
+        "Add the `data-slot=\"input-group-control\"` attribute to your custom input for automatic focus state handling.\n\nHere's an example of a custom resizable textarea from a third-party library.",
       file: "base-input-group-custom",
     },
     {
@@ -1627,7 +1627,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-separator",
       title: "Separator",
       description:
-        "Use the `` component to add a separator between input groups.",
+        "Use the `<InputOTPSeparator />` component to add a separator between input groups.",
       file: "base-input-otp-separator",
     },
     {
@@ -1666,7 +1666,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-form",
       title: "Form",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Use the OTP value with a labelled form and submit action; the app owns verification and errors.",
       file: "base-input-otp-form",
     },
     {
@@ -1687,7 +1687,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-basic",
       title: "Basic",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Use a native input type with an associated label and an appropriate placeholder.",
       file: "base-input-basic",
     },
     {
@@ -1753,14 +1753,14 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-input-group",
       title: "Input Group",
       description:
-        "To add icons, text, or buttons inside an input, use the `InputGroup` component. See the [Input Group](/docs/components/input-group) component for more examples.",
+        "To add icons, text, or buttons inside an input, use the `InputGroup` component. See the [Input Group](/components/input-group) component for more examples.",
       file: "base-input-input-group",
     },
     {
       id: "base-button-group",
       title: "Button Group",
       description:
-        "To add buttons to an input, use the `ButtonGroup` component. See the [Button Group](/docs/components/button-group) component for more examples.",
+        "To add buttons to an input, use the `ButtonGroup` component. See the [Button Group](/components/button-group) component for more examples.",
       file: "base-input-button-group",
     },
     {
@@ -1841,7 +1841,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-dropdown",
       title: "Dropdown",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Place the dropdown trigger in ItemActions so its interaction stays separate from the content.",
       file: "base-item-dropdown",
     },
     {
@@ -1906,7 +1906,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-field-demo",
       title: "Label in Field",
       description:
-        "For form fields, use the [Field](/docs/components/base/field) component which\nincludes built-in `FieldLabel`, `FieldDescription`, and `FieldError` components.",
+        "For form fields, use the [Field](/components/field) component which\nincludes built-in `FieldLabel`, `FieldDescription`, and `FieldError` components.",
       file: "base-field-demo",
     },
     {
@@ -1928,21 +1928,21 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-variants",
       title: "Variants",
       description:
-        "Use `variant` to switch between an inline marker, bordered row, and labeled separator.",
+        "Use default for an inline marker, border for a separated status row, or separator for a labelled divider.",
       file: "base-marker-variants",
     },
     {
       id: "base-status",
       title: "Status",
       description:
-        'Set `role="status"` and include a [`Spinner`](/docs/components/spinner) for streaming or in-progress markers so updates are announced.',
+        'Set `role="status"` and include a [`Spinner`](/components/spinner) for streaming or in-progress markers so updates are announced.',
       file: "base-marker-status",
     },
     {
       id: "base-shimmer",
       title: "Shimmer",
       description:
-        "Add the [`shimmer`](/docs/utils/shimmer) utility class to `MarkerContent` for an animated streaming-text effect. The utility ships with the `shadcn` package \u2014 see the shimmer docs for installation.",
+        "This example uses Motion with reduced-motion support for streaming emphasis. Copy the example source; no shimmer CSS utility or separate package is required.",
       file: "base-marker-shimmer",
     },
     {
@@ -2004,7 +2004,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-icons",
       title: "With Icons",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Add decorative icons beside menu labels while retaining text names and keyboard navigation.",
       file: "base-menubar-icons",
     },
     {
@@ -2025,72 +2025,72 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     },
     {
       id: "base-anchoring",
-      title: "Core Concepts",
+      title: "Anchoring turns",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Set scrollAnchor on the row that starts a turn. Stable messageId values identify rows as messages arrive. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-anchoring",
     },
     {
       id: "base-group-chat",
-      title: "Core Concepts",
+      title: "Group conversations",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Compose mixed participants and system rows in one transcript. Anchoring is independent of the sender role. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-group-chat",
     },
     {
       id: "base-previous-context",
-      title: "Core Concepts",
+      title: "Previous context",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Keep a peek of the previous turn above the current scroll anchor for context. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-previous-context",
     },
     {
       id: "base-streaming",
-      title: "Core Concepts",
+      title: "Streaming updates",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Append streamed content to the current row; follow output when the reader is at the end and preserve their position when they scroll away. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-streaming",
     },
     {
       id: "base-opening-position",
-      title: "Core Concepts",
+      title: "Opening position",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Choose the initial transcript position without changing subsequent reader-controlled scrolling. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-opening-position",
     },
     {
       id: "base-load-history",
-      title: "Core Concepts",
+      title: "Prepend history",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Prepend older rows with stable message IDs and preserve the visible row and its offset. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-load-history",
     },
     {
       id: "base-animation",
-      title: "Core Concepts",
+      title: "Animated rows",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Compose Motion with transcript rows while keeping measurements and scroll state in MessageScroller. Reduced motion remains supported. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-animation",
     },
     {
       id: "base-commands",
-      title: "Core Concepts",
+      title: "Scroll commands",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Use the provider’s scroll commands to jump to a row or transcript boundary. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-commands",
     },
     {
       id: "base-visibility",
-      title: "Core Concepts",
+      title: "Row visibility",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Read visibility callbacks to observe transcript rows without changing the content or transport. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-visibility",
     },
     {
       id: "base-scrollable",
-      title: "Core Concepts",
+      title: "Nested scrollable content",
       description:
-        "### Anchoring Turns The chat transport is a local scripted demo; connect your own service in an application.",
+        "Keep code and other wide content internally scrollable while the transcript retains its vertical scroll region. Transport in these examples is a local scripted demo; connect your own service in the app.",
       file: "base-message-scroller-scrollable",
     },
   ],
@@ -2105,7 +2105,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-avatar",
       title: "Avatar",
       description:
-        'Use `MessageAvatar` to render an avatar next to the message. Set `align="end"` on the message to align the avatar to the end of the message.',
+        'Use MessageAvatar next to the message. Set align="start" or align="end" on Message to align the entire row.',
       file: "base-message-avatar",
     },
     {
@@ -2132,7 +2132,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-attachment",
       title: "Attachment",
-      description: '<ComponentPreview\n  styleName="base-rhea"',
+      description: "Compose Attachment inside a Message; the app supplies file data and file actions.",
       file: "base-message-attachment",
     },
   ],
@@ -2470,7 +2470,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-disabled",
       title: "Disabled",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Set disabled on Select to prevent interaction while preserving the displayed value.",
       file: "base-select-disabled",
     },
     {
@@ -2568,31 +2568,31 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-avatar",
       title: "Avatar",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Match a loading placeholder to the avatar and nearby text layout.",
       file: "base-skeleton-avatar",
     },
     {
       id: "base-card",
       title: "Card",
-      description: '<ComponentPreview\n  styleName="base-nova"',
+      description: "Reserve the image, title and body layout while card content loads.",
       file: "base-skeleton-card",
     },
     {
       id: "base-text",
       title: "Text",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use varied line widths to represent loading text without announcing each placeholder.",
       file: "base-skeleton-text",
     },
     {
       id: "base-form",
       title: "Form",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Reserve label and control space while the form loads.",
       file: "base-skeleton-form",
     },
     {
       id: "base-table",
       title: "Table",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Reserve rows and columns while table data loads.",
       file: "base-skeleton-table",
     },
     {
@@ -2631,7 +2631,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-controlled",
       title: "Controlled",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Control value and onValueChange from app state; show the current numeric value beside the slider.",
       file: "base-slider-controlled",
     },
     {
@@ -2673,26 +2673,26 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-button",
       title: "Button",
       description:
-        'Add a spinner to a button to indicate a loading state. Place the `` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.',
+        'Add a spinner to a button to indicate a loading state. Place the `<Spinner />` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.',
       file: "base-spinner-button",
     },
     {
       id: "base-badge",
       title: "Badge",
       description:
-        'Add a spinner to a badge to indicate a loading state. Place the `` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.',
+        'Add a spinner to a badge to indicate a loading state. Place the `<Spinner />` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.',
       file: "base-spinner-badge",
     },
     {
       id: "base-input-group",
       title: "Input Group",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Place Spinner in an input addon while the input action is processing.",
       file: "base-spinner-input-group",
     },
     {
       id: "base-empty",
       title: "Empty",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Compose Spinner with an empty/loading surface and a readable status message.",
       file: "base-spinner-empty",
     },
     {
@@ -2713,7 +2713,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-description",
       title: "Description",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use FieldContent to group the switch label and supporting description.",
       file: "base-switch-description",
     },
     {
@@ -2761,13 +2761,13 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-footer",
       title: "Footer",
-      description: "Use the `` component to add a footer to the table.",
+      description: "Use the `<TableFooter />` component to add a footer to the table.",
       file: "base-table-footer",
     },
     {
       id: "base-actions",
       title: "Actions",
-      description: "A table showing actions for each row using a `` component.",
+      description: "A table showing actions for each row using a `<DropdownMenu />` component.",
       file: "base-table-actions",
     },
     {
@@ -2801,13 +2801,13 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-disabled",
       title: "Disabled",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Set disabled on an individual TabsTrigger so it cannot be selected.",
       file: "base-tabs-disabled",
     },
     {
       id: "base-icons",
       title: "Icons",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Add decorative icons to named tab triggers; keep the visible text label.",
       file: "base-tabs-icons",
     },
     {
@@ -2918,7 +2918,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-disabled",
       title: "Disabled",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Disable the group or an individual item while retaining the current selection.",
       file: "base-toggle-group-disabled",
     },
     {
@@ -2951,7 +2951,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-text",
       title: "With Text",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Combine an icon and text in a toggle with an accessible pressed state.",
       file: "base-toggle-text",
     },
     {
@@ -2963,7 +2963,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-disabled",
       title: "Disabled",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Set disabled to prevent the toggle state from changing.",
       file: "base-toggle-disabled",
     },
     {
@@ -2990,7 +2990,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-keyboard",
       title: "With Keyboard Shortcut",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Show a shortcut hint with Kbd in TooltipContent. The trigger must have its own accessible name.",
       file: "base-tooltip-keyboard",
     },
     {
@@ -3018,79 +3018,79 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
     {
       id: "base-h1",
       title: "h1",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use semantic <h1> with the appropriate typography utilities; choose headings by document hierarchy.",
       file: "base-typography-h1",
     },
     {
       id: "base-h2",
       title: "h2",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use semantic <h2> with the appropriate typography utilities; choose headings by document hierarchy.",
       file: "base-typography-h2",
     },
     {
       id: "base-h3",
       title: "h3",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use semantic <h3> with the appropriate typography utilities; choose headings by document hierarchy.",
       file: "base-typography-h3",
     },
     {
       id: "base-h4",
       title: "h4",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use semantic <h4> with the appropriate typography utilities; choose headings by document hierarchy.",
       file: "base-typography-h4",
     },
     {
       id: "base-p",
       title: "p",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use semantic <p> with the appropriate typography utilities; choose headings by document hierarchy.",
       file: "base-typography-p",
     },
     {
       id: "base-blockquote",
       title: "blockquote",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use semantic <blockquote> with the appropriate typography utilities; choose headings by document hierarchy.",
       file: "base-typography-blockquote",
     },
     {
       id: "base-table",
       title: "table",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use semantic <table> with the appropriate typography utilities; choose headings by document hierarchy.",
       file: "base-typography-table",
     },
     {
       id: "base-list",
       title: "list",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use semantic list elements with the appropriate typography utilities; choose headings by document hierarchy.",
       file: "base-typography-list",
     },
     {
       id: "base-inline-code",
       title: "Inline code",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use inline code utilities for emphasis while preserving the native element’s meaning.",
       file: "base-typography-inline-code",
     },
     {
       id: "base-lead",
       title: "Lead",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use lead utilities for emphasis while preserving the native element’s meaning.",
       file: "base-typography-lead",
     },
     {
       id: "base-large",
       title: "Large",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use large utilities for emphasis while preserving the native element’s meaning.",
       file: "base-typography-large",
     },
     {
       id: "base-small",
       title: "Small",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use small utilities for emphasis while preserving the native element’s meaning.",
       file: "base-typography-small",
     },
     {
       id: "base-muted",
       title: "Muted",
-      description: '<ComponentPreview styleName="base-nova"',
+      description: "Use muted utilities for emphasis while preserving the native element’s meaning.",
       file: "base-typography-muted",
     },
     {

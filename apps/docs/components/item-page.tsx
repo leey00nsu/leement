@@ -1,4 +1,4 @@
-import { UsageGuide } from "./usage-guide";
+import { GuideText, UsageGuide } from "./usage-guide";
 import { usageGuides } from "../lib/usage-guides";
 import { hasPreviewMotion } from "../lib/preview-config";
 import Link from "next/link";
@@ -156,9 +156,11 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
               >
                 <div>
                   <h3 className="text-xl font-semibold">{example.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                    {example.description}
-                  </p>
+                  {example.description && (
+                    <div className="mt-2">
+                      <GuideText value={example.description} />
+                    </div>
+                  )}
                 </div>
                 <ItemWorkbench
                   name={name}
