@@ -260,6 +260,21 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-015] T-ASDHZYC4MRGK-docs-reference-parity-14 전체 문서의 중복 Usage·접힌 안내를 Examples와 통합
+  - Date: 2026-10-06
+  - Acceptance:
+    - 63개 Base 및 기존 모든 항목에서 Examples와 겹치는 접힌 안내를 제거하고 고유 설명은 해당 예제에 통합한다. 기본 사용법·Provider·설정·긴 recipe·고유 제약은 한 곳에 유지하며 예제/API 대응 수를 줄이지 않는다.
+  - Checklist:
+    - [ ] 모든 Usage section을 대조하여 중복 import/code/Composition 및 단문 상태 안내를 정리하고 실제 source/예제/API와 설명을 확인한다.
+    - [ ] 문서 typecheck·lint·coverage 및 production build와 RadioGroup/Sidebar/DataTable 대표 UI를 검증하고 curated docs/SDD/sync marker를 맞춘다.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생

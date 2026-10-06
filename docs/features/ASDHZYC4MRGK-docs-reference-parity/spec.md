@@ -14,6 +14,8 @@
 
 반복되는 설명 문단을 정리하고 실제 예제와 정확한 API Reference 중심으로 문서를 제공한다. shadcn Base 문서의 예제·조합·API, Kibo 공개 Blocks 전체, shadcn Charts 전체에 대응한다. 문서에 필요한 실제 컴포넌트 기능도 같은 Feature에서 보완한다.
 
+2026-10-06 사용자 수정 요청: 전체 문서에서 Examples와 중복되는 접힌 안내를 정리한다. 기본 사용법은 하나로 제공하고 고유 설명은 관련 예제에 통합한다. Provider·설정·긴 recipe 등 별도 안내가 필요한 정보는 유지하며 고정 예제/API 대응 범위는 줄이지 않는다.
+
 ## 기준과 현재 차이
 
 2026-10-05의 고정 upstream commit을 사용한다. [reference-baseline.json](./artifacts/reference-baseline.json)에 항목별 예제 ID, 문서 headings, API 표 수, source 경로와 출처를 보존했다. 구현 중 분모를 줄이지 않는다.

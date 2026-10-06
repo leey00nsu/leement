@@ -1,5 +1,10 @@
 # Decisions Log
 
+## D019 — 중복 안내 통합 요청 (2026-10-06)
+
+- **Request**: 사용자가 RadioGroup의 접힌 Usage/Composition/Description/Choice Card/Fieldset/Disabled/Invalid와 아래 Examples의 중복을 지적하고 모든 문서를 정리하도록 요청했다. 구현 승인 대신 수정 요청으로 처리하며 기존 Feature에 task14를 추가했다.
+- **Decision**: 모든 안내를 예제와 대조하고 반복 import/basic code와 Composition 설명을 한 곳으로 합친다. 예제별 고유 설명은 Examples에 두고 실제 Provider·hooks·setup·긴 recipe/주의사항은 보존한다. NativeSelect 제외 고정 예제/API 대응은 유지한다. main 통합/원격 배포 승인은 아직 없다.
+
 ## D001: 예제·API 중심 문서와 고정 upstream 기준 (2026-10-05)
 
 - **Context**: 사용자가 반복 문단 제거, shadcn Base 예제/API 전체 대응, Kibo Blocks 전체 대응, Charts 탐색을 새 Feature로 요청했다.

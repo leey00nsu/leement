@@ -38,6 +38,8 @@
 
 Tasks의 단일 순차 목록이 우선순위다. 문서 구조 → 신규 입력/콘텐츠 → 신규 탐색/overlay → 신규 복합 UI → 기존 기본 입력/콘텐츠 parity → 기존 overlay/data parity → 전체 Base 예제/inline recipe/API → Kibo Applications → Kibo Websites 3묶음 → Charts → 전체 검증/curated sync. 각 완료 task에서 checkpoint commit을 만든다. 임시 migration script는 `/tmp`에 두며 재실행할 필요가 검증된 경우만 tooling에 남긴다.
 
+사용자 검토 후 task14에서 모든 Usage 안내와 실행 예제를 대조한다. 중복 안내의 고유 설명은 해당 Examples에 통합하고 basic usage/import는 한 번만 제공한다. 고유 Provider·설정·hook·긴 recipe는 유지한다. 기존 coverage 검사는 안내 위치 변경을 반영하되 고정 63/456/453 분모와 source/API 검증을 유지한다. 문서 typecheck/lint/coverage/build와 대표 RadioGroup/Sidebar/DataTable UI로 검증하며 구현 컴포넌트는 변경하지 않는다.
+
 ## Curated Documentation Impact
 
 - **Schema**: 2
