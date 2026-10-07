@@ -15,7 +15,7 @@
 - **Evidence**:
   - **Commit**: 제품 baseline `31642301cb61a9432094c7af95863fea489d676f`.
   - **Test/Log**: [경로·줄 번호·자산 해시가 포함된 초기 소스 조사](./artifacts/media-audit-scope.json).
-- **Consequences**: Spec 승인 뒤 선정·제공·적용·정상 재생 검증을 Plan/Tasks로 구체화한다. 현재는 구현과 전수 화면 검수가 진행되지 않았다.
+- **Consequences**: 2026-10-07 사용자의 `A` 응답으로 Spec이 승인됐다. 선정·제공·적용·정상 재생 검증을 Plan/Tasks로 구체화한다. 현재는 구현과 전수 화면 검수가 진행되지 않았다.
 
 ## D002: Pixabay 원본과 적용 조건을 함께 선정 (2026-10-07)
 
@@ -50,3 +50,21 @@
   - **Test/Log**: CLI terminal error: `profile u0 is not connected to daemon`.
   - [후보 조사 방법과 브라우저 제한](./artifacts/pixabay-candidates.json).
 - **Consequences**: 이후 브라우저로 실제 파일의 표시·정상 재생을 검증해야 한다. 메타데이터 확인을 최종 자산 검수나 적용 완료로 보고하지 않는다.
+
+
+## D004: 고정 외부 미디어와 순차 구현 계획 (2026-10-07)
+
+- **Context**: Spec은 사용자 `A`로 승인됐다. 구현 계획의 조건·전수 자리·출처/기술 검증을 작업 단위로 분리했다.
+- **Constraints**: docs/registry 복사 소스가 숨은 docs public 경로를 요구하지 않고, 원본 Content License 음악/영상을 공개 저장소에 단독 배포하지 않아야 한다. 정상 재생과 음악 CORS/decode를 실제로 확인한다.
+- **Options**: 모든 원본 파일을 Git에 포함; 런타임 검색 API; 공식 항목에서 확인한 고정 rendition URL로 완성된 예제에 포함.
+- **Decision**: 고정 HTTPS URL 제공을 기본으로 하고 T01에서 로그인 없는 로드·전송 크기·실제 파일 metadata/hash·조건·음악 CORS와 seek를 확인한 후보만 확정한다. 임시 다운로드 파일은 /tmp에 두고 source 목록과 출처만 추적한다. T01→T05 순차 작업으로 전수 선정·Components/Patterns·Blocks·영상/음악·최종 검증을 수행한다.
+- **Rationale**: 복사 예제와 독립 소비자에서 같은 실제 미디어를 표시하고 별도 키/서비스/미디어 재배포 패키지를 만들지 않는다. 고정 URL 사용만으로 권리가 해결됐다고 보지 않으며 적합하지 않은 후보를 교체한다.
+- **Trace**:
+  - workflow는 Plan agent review와 사용자 Plan 승인 요청이 비활성화돼 있고 `plan_approve`가 `approvalRequired: false`, “Promote ... automatically”를 반환했다. 준비된 Plan을 자동 승인 처리하며 Spec 승인 범위를 바꾸지 않았다.
+  - Curated Documentation Impact의 모든 UPDATE 대상은 T05 Docs에 연결했다. PRD·디자인·출처 문서는 현재 main baseline을 읽었으며 과거 Feature들의 sharedDocumentationWarnings를 현재 문서로 비교한다. README는 수정하지 않는다.
+  - Aside CLI는 PATH에 없었지만 설치된 앱 번들을 찾아 실행했다. `open -a Aside` 후 읽기 전용 조사 세션 `KwcZlwQgBD3bV0CO`이 공식 음악 페이지를 열고 실제 재생 시간 증가를 관찰했다. 아직 로컬 예제에서의 재생·CORS 검증과 최종 선정은 수행하지 않았다.
+- **Evidence**:
+  - **Test/Log**: `workflow-stage PKGZD92HP77F-preview-real-media --json`의 `plan_approve`, 승인 요청 없음.
+  - [Plan](./plan.md), [순차 Tasks와 문서 대상](./tasks.md).
+  - [Pixabay Terms](https://pixabay.com/service/terms/), [FAQ의 완성된 앱/창작물 맥락 설명](https://pixabay.com/service/faq/).
+- **Consequences**: asset-selection 단계가 실패하면 해당 task는 완료되지 않는다. 정상 미디어 재생을 오류 UI나 메타데이터 조사로 대신하지 않는다. 프로젝트·컴포넌트 API와 레이아웃/테마 계약은 유지한다.

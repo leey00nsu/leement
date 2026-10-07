@@ -6,7 +6,7 @@
 - **기능명**: preview-real-media
 - **대상 레포**: Leement
 - **작성일**: 2026-10-07
-- **상태**: Review
+- **상태**: Approved
 
 ## 목적
 

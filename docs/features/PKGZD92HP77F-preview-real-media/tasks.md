@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/PKGZD92HP77F-preview-real-media`
 - **대기 중 변경 요청**: -
@@ -74,6 +74,90 @@
 > 수동 편집이 필요하면 현재 태스크 근처가 아니라 `태스크 목록`의 마지막 기존 태스크 block 아래에만 append 하세요.
 
 ---
+
+- [TODO][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-01 미디어 자리 전수 판정과 Pixabay 최종 자산·제공 방식 확정
+  - Date: 2026-10-07
+  - Acceptance:
+    - 초기 73개 후보와 추가 발견 자리마다 역할·판정·이유·Preview 경로를 기록하고 미검수 자리를 남기지 않는다.
+    - 실제 사진·서로 다른 클립·음악 두 곡을 선정하고 source URL·조건·메타데이터·해시·로그인 없는 로드/재생·CORS를 확인한다.
+  - Checklist:
+    - [ ] 직접/간접 source, CSS, 기본 props와 누락된 사진 조합을 확인하여 조사 목록 보강
+    - [ ] 공식 무료 후보 시청/청취와 비율·권리·Content ID·전송 크기 검토
+    - [ ] 실제 자산 source 목록과 역할별 사용 계획을 작성하고 만료/추측 URL·원본 파일 재배포 제외
+    - [ ] 최종 선정 근거·제한·다운로드 증빙을 Feature Decisions와 artifacts에 동기화
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-007] T-PKGZD92HP77F-preview-real-media-02 Components·Patterns의 사진과 대표·추가 예제 교체
+  - Date: 2026-10-07
+  - Acceptance:
+    - 사진 슬롯이 실제 Pixabay 콘텐츠를 표시하며 크롭/줌/비교·아바타·첨부·사이드바 예제와 복사 코드가 같은 의미를 전달한다.
+  - Checklist:
+    - [ ] 대표/추가/Showcase의 그림·일반 데모 외부 사진을 역할별 검증 자산으로 교체
+    - [ ] 같은 샘플 프로필의 사진·이름을 일치시키고 alt·텍스트·비교 전후를 실제 콘텐츠에 맞춤
+    - [ ] 브랜드·아이콘·의도적인 broken image/fallback 유지 판정과 적용 결과 기록
+    - [ ] 수정 예제 light/dark·390/1440px, 실제 디코딩·관련 키보드 조작과 scoped 검사 확인
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-016] T-PKGZD92HP77F-preview-real-media-03 Blocks 사진 기본값·예제 조합과 샘플 콘텐츠 정비
+  - Date: 2026-10-07
+  - Acceptance:
+    - About·Blog·Team·Testimonial 등 모든 판정된 사진 자리와 사진 props가 빠진 조합을 실제 미디어로 보여준다.
+    - registry 기본값과 사용자 제공 props는 docs public 경로나 docs 모듈에 의존하지 않고 설치 source가 기존 API를 유지한다.
+  - Checklist:
+    - [ ] About/Blog/BlogPost/Feature/Team/Testimonial/Changelog와 추가 발견 Blocks 교체
+    - [ ] CaseStudies/CaseStudy/Form 등 필요한 미디어 props를 예제에 명시적으로 제공
+    - [ ] 로고·인증 배지·제품 화면 역할을 구분하고 가상 샘플 맥락·alt·내용을 맞춤
+    - [ ] 기본값 소비 화면과 대표/추가 예제의 실제 표시·반응형·scoped 검사 기록
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-04 실제 영상·음악·포스터·자막 적용과 재생 검증
+  - Date: 2026-10-07
+  - Acceptance:
+    - VideoPlayer·Hero·Stories·Reel·AudioPlayer가 실제 미디어를 로드하여 정상 재생/탐색/소스 변경하고 이전 재생을 정리한다.
+  - Checklist:
+    - [ ] 가로 영상과 세로 Reel 클립·실제 장면 포스터·실제 곡 두 개로 교체
+    - [ ] 제작자·제목·설명·자막을 실제 콘텐츠와 맞추고 초기 음악 autoplay 제외
+    - [ ] 실제 duration/currentTime 증가·seek/음량/mute·파형 decode·source change/close cleanup 확인
+    - [ ] 기존 오류/reset/native fallback·reduced motion·키보드 조작과 focused media 통합 검사 확인
+    - [ ] 실제로 발견된 player 결함만 계약 범위 안에서 수정하고 필요한 기존 회귀 테스트를 갱신
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005] T-PKGZD92HP77F-preview-real-media-05 전수 화면·소비자·출처 문서와 최종 검증
+  - Date: 2026-10-07
+  - Acceptance:
+    - 최종 자리 목록에 미검수 항목이 없고 모든 변경 독립 Preview와 기본 소비 화면의 실제 표시·재생·내용을 검증한다.
+    - 독립 registry 소비자와 전체 type/lint/test/build가 통과하고 PRD·미디어 정책·출처 안내가 구현과 일치한다.
+  - Checklist:
+    - [ ] light/dark × 390/1440px 전체 변경 Preview와 중요한 240px/키보드/reduced motion 상태 검증
+    - [ ] 복사 코드·독립 React/Tailwind 소비자 registry 설치·tsc/build·실제 미디어 로드와 조작 확인
+    - [ ] 무참조 생성 데모 자산만 제거하고 출처 목록·제공 경로·권리 증빙 최종 정리
+    - [ ] PRD-FR-005/008, 디자인 미디어/Preview 규칙, THIRD_PARTY_NOTICES 동기화
+    - [ ] 설정된 전체 검사 실행, Feature 증거·Acceptance·workflow sync marker 동기화
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:THIRD_PARTY_NOTICES.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
 
 ## Repository Knowledge (완료 비차단)
 
