@@ -146,17 +146,17 @@
 
   - Verification: 실제 미디어 11경로 × 4조건=44건, 조작 35상태·대체 source 6화면 확인. 실제 재생/탐색/음량/파형/VTT/fullscreen, 오류/retry/reset/native fallback, Reel offscreen·source cleanup, Stories 종료·초점 복귀 PASS. scoped typecheck/eslint·기존 15개 테스트 PASS. [D009](./decisions.md#d009-t04-실제-미디어와-관찰된-reel-정리-결함-2026-10-07), [증거](./artifacts/media-verification.json).
 
-- [TODO][PRD-FR-005] T-PKGZD92HP77F-preview-real-media-05 전수 화면·소비자·출처 문서와 최종 검증
+- [DONE][PRD-FR-005] T-PKGZD92HP77F-preview-real-media-05 전수 화면·소비자·출처 문서와 최종 검증
   - Date: 2026-10-07
   - Acceptance:
     - 최종 자리 목록에 미검수 항목이 없고 모든 변경 독립 Preview와 기본 소비 화면의 실제 표시·재생·내용을 검증한다.
     - 독립 registry 소비자와 전체 type/lint/test/build가 통과하고 PRD·미디어 정책·출처 안내가 구현과 일치한다.
   - Checklist:
-    - [ ] light/dark × 390/1440px 전체 변경 Preview와 중요한 240px/키보드/reduced motion 상태 검증
-    - [ ] 복사 코드·독립 React/Tailwind 소비자 registry 설치·tsc/build·실제 미디어 로드와 조작 확인
-    - [ ] 무참조 생성 데모 자산만 제거하고 출처 목록·제공 경로·권리 증빙 최종 정리
-    - [ ] PRD-FR-005/008, 디자인 미디어/Preview 규칙, THIRD_PARTY_NOTICES 동기화
-    - [ ] 설정된 전체 검사 실행, Feature 증거·Acceptance·workflow sync marker 동기화
+    - [x] light/dark × 390/1440px 전체 변경 Preview와 중요한 240px/키보드/reduced motion 상태 검증
+    - [x] 복사 코드·독립 React/Tailwind 소비자 registry 설치·tsc/build·실제 미디어 로드와 조작 확인
+    - [x] 무참조 생성 데모 자산만 제거하고 출처 목록·제공 경로·권리 증빙 최종 정리
+    - [x] PRD-FR-005/008, 디자인 미디어/Preview 규칙, THIRD_PARTY_NOTICES 동기화; token/theme/workbench 표면/API 영향 없음 확인
+    - [x] 설정된 전체 검사 실행, Feature 증거·Acceptance·workflow sync marker 동기화
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -166,6 +166,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 최종 모든 자리 83/83 판정과 실제 소비 화면 확인. Preview 332건+유지 역할 80건, Stories 후속 12건, 독립 registry CLI 45-item graph/49 targets·production tsc/build·24조합/96건 PASS. Photo/real playback/control·240px·Foundation/Replay/lazy·SSR/native fallback 확인. 실제 Stories Portal 결함을 기존 테스트 UPDATE와 native 재생으로 수정 확인. [D010](./decisions.md#d010-t05-출처-안내와-최종-소비자-검증-2026-10-07), [최종 증거](./artifacts/media-verification.json).
 
 ## Repository Knowledge (완료 비차단)
 
@@ -179,8 +181,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -190,8 +192,14 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm run typecheck` | 2026-10-07 | PASS |
+| `pnpm run lint` | 2026-10-07 | PASS |
+| `pnpm run test` | 2026-10-07 | PASS: 32 files / 706 tests |
+| `pnpm run build` | 2026-10-07 | PASS: tokens/theme/registry/docs |
+| `pnpm exec vitest run registry/ui/media-finance.test.tsx registry/ui/player.test.tsx` | 2026-10-07 | PASS: 2 files / 15 tests |
+| temporary consumer `pnpm run build` | 2026-10-07 | PASS: strict tsc + Vite production build |
+| `npx lee-spec-kit feature-audit --enforce --json` | 2026-10-07 | PASS |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:d37151e4dbcbd1d5c961fe3206c4ca187e867a4dd226058723664f14fcf2d0a3 -->
+<!-- lee-spec-kit:workflow-sync sha256:c10223e379e5f88ae7ccf636409884cda01883350aa1e319769ebc51396200f9 -->

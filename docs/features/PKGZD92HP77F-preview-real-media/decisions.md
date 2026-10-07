@@ -148,3 +148,18 @@
 - **Verification Contract update**: 새 test 파일을 추가하지 않고 media-finance의 기존 Reel keyboard/mute 테스트를 UPDATE했다. viewport exit 이벤트 뒤 실제 pause 호출과 observer unmount disconnect를 독립 oracle로 확인한다. player/media-finance 기존 2파일/15개 검사 PASS; jsdom 통과는 native media 재생 증거로 취급하지 않는다.
 - **Evidence**: [native 검증 결과](./artifacts/media-verification.json)의 T04. 35개 조작 상태에서 실제 seek/음량 0.4·mute·speed 1.25·full screen·VTT cue·source change/old media pause·native error 4/fallback/retry/reset·240px·Reel offscreen 재진입/사용자 pause·Stories Escape/초점 복귀 확인. 실제 음악 waveform ready와 시간 증가 확인; 초기 autoplay 없음. docs typecheck·변경 eslint·기존 15개 검사 PASS.
 - **Consequences**: 물리 OS 설정은 바꾸지 않았으며 reduced motion은 브라우저 emulation임을 명시한다. 일시적인 Hero gallery timeout은 정상 대기 후 다시 4조건 통과했고 원인은 단정하지 않는다. 최종 consumer/전체 검사는 T05에서 수행한다.
+
+
+## D010: T05 출처 안내와 최종 소비자 검증 (2026-10-07)
+
+- **Context**: 마지막 task의 전수 검수와 registry 소비자·공용 문서 검사를 시작했다.
+- **Decision**: 상세 Preview 아래 접이식 Demo media credits를 실제 Source·Code·Usage·추가 예제에 등장하는 자산만으로 구성한다. 샘플 맥락과 코드/미디어 조건을 구분하고 음악의 등록/미확인 상태를 정확히 안내한다. PRD·디자인·THIRD_PARTY_NOTICES의 승인된 UPDATE를 반영했다.
+- **Trace**: apps/registry/tooling/packages source scan에서 기존 생성 demo 자산 참조가 없음을 확인하고 11개만 제거했다. 실제 장면 설명은 VideoPlayer copied source의 inline VTT로 유지한다. 의도적인 missing source 오류 fixture는 보존한다. README는 읽기만 했고 현재 변경으로 인한 확정 불일치가 발견되지 않았다.
+- **Verification**: 전체 검사·독립 registry 소비자·Foundation/Replay/lazy/폭 조절 검증 진행 중. 앞선 332건 정상 Preview 증거는 각 source hash로 변경 여부를 확인해 유지하고 최종 변경 표면을 별도로 검증한다.
+
+- **T05 observed defect / Verification Contract UPDATE**: 독립 production 소비자의 Stories modal 첫 영상은 duration 12.033333s·readyState=4·error 없음인데 paused=true/time=0을 유지했다. active effect가 Radix Portal의 video attach 전에 ref=null로 종료하고 mount 후 재실행되지 않았다. 기존 media-finance Stories 테스트를 영상 첫 항목과 portal attach 후 play 호출/전환 cleanup oracle로 UPDATE했고 수정 전 1개 실패를 확인했다. video callback ref를 state로 관찰해 attach 후 effect를 실행하고 이전 element pause cleanup·reduced motion·수동 재생 계약을 유지했다. 새 public API·test 파일은 추가하지 않는다. 후속 native production 및 모든 Stories route와 전체 검사를 재실행한다.
+
+- **Final verification**: 새 Stories 회귀는 수정 전 기존 테스트 1개 실패, 수정 후 15개 focused·706개 전체 통과로 확인했다. strict production 소비자에서 modal 첫 진입 시간 0.303456s, source 전환 old paused/disconnected, close 정리·trigger focus 복귀를 확인했다. reduced emulation은 initial 0/paused → 수동 0.320665s, source 변경 뒤 다시 paused다. 생성 registry를 CLI로 재설치한 45-item graph/49 targets의 실행 source와 license 파일을 검증했고 독립 tsc/Vite build PASS.
+- **Final UI scope**: 변경 독립 Preview 83경로/332건과 유지 역할 추가 20경로/80건, Stories 수정 후 12건, production consumer 24조합/96건의 정상 콘텐츠/프레이밍 화면을 직접 확인했다. 중요한 조작·240px·theme/Foundation sync·Replay cleanup·lazy activation·SSR/no-JS native controls도 PASS. 이전 source fingerprint는 기존 media-finance 테스트의 T05 수정 외에 그대로다. 가상 샘플·원본 16항목·음악 Content ID 상태는 상세 credits/공용 notices에 연결했다.
+- **Checks**: 최종 `pnpm run typecheck`, `pnpm run lint`, `pnpm run test` (32 files/706), `pnpm run build` 모두 PASS; `feature-audit --enforce --json` PASS. 변경 후 다시 실행한 최종 결과다. [검증 증거](./artifacts/media-verification.json), [전체 자리 판정](./artifacts/media-audit-scope.json), [실제 음악 파형과 출처 안내](./artifacts/audio-real-waveform-credits.png).
+- **Limits / remaining workflow**: 실제 OS 설정은 바꾸지 않았고 reduced motion은 브라우저 emulation으로 구분한다. 외부 URL 가용성과 다운스트림 Content ID/초상권 사용 맥락은 보장하지 않으며 검증 수준을 안내했다. 구현 승인과 local merge 승인은 별개이며 아직 요청/실행하지 않았다. 원격 게시도 수행하지 않는다.

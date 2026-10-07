@@ -938,7 +938,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "7cd782f7b36d0812974a746bdf3add4646b72ab266ecf740b6363433d0e1d532",
+      "finalVerifiedRoutes": [
+        "/preview/aspect-ratio/detail/aspect-ratio-media"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/audio-player.tsx",
@@ -990,7 +996,14 @@
         "524039"
       ],
       "implementationStatus": "T04 actual media applied and native lifecycle verified",
-      "implementationSha256": "18212a8335cf79b11e456997960379d89682d52df281b5c0eec179daaf5fdef8"
+      "implementationSha256": "18212a8335cf79b11e456997960379d89682d52df281b5c0eec179daaf5fdef8",
+      "finalSourceSha256": "18212a8335cf79b11e456997960379d89682d52df281b5c0eec179daaf5fdef8",
+      "finalVerifiedRoutes": [
+        "/preview/audio-player/detail",
+        "/preview/audio-player/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/avatar-images.tsx",
@@ -1064,7 +1077,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "109714c814124dfe30e1d54a3e3a54e8a612a6b1f997cb1c9472a6e69b6d5676",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/avatar-images"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/avatar-stack-animated.tsx",
@@ -1131,7 +1150,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "cbfe5bfbc8a8db79ab96d51a5fb0857b79fb344a96c9ff154b1160a2441635f9",
+      "finalVerifiedRoutes": [
+        "/preview/avatar-stack/detail/avatar-stack-animated"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-demo.tsx",
@@ -1193,7 +1218,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "fbf2ab5667c8434dc00b315fa6678e0c8ed37ae81c720d33d5483b5560f581ba",
+      "finalVerifiedRoutes": [
+        "/preview/aspect-ratio/detail/base-aspect-ratio-demo"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-portrait.tsx",
@@ -1255,7 +1286,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "376e09665550351ae03bfe0b6d3d83f8b17b40914de04efb5d1b8eb7fcfec915",
+      "finalVerifiedRoutes": [
+        "/preview/aspect-ratio/detail/base-aspect-ratio-portrait"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-rtl.tsx",
@@ -1317,7 +1354,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "71462e6086275181631c362fa9297958761561a318feed85e88e836d7bb904b6",
+      "finalVerifiedRoutes": [
+        "/preview/aspect-ratio/detail/base-aspect-ratio-rtl"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-square.tsx",
@@ -1379,7 +1422,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "222862fa431d5b81992839edbea107a0f35eb0144c6380d42a335c3e0f5fca1a",
+      "finalVerifiedRoutes": [
+        "/preview/aspect-ratio/detail/base-aspect-ratio-square"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-attachment-demo.tsx",
@@ -1455,7 +1504,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "c65d5038fc9ca35e3ef8dd4b4fec62d160ecf91d740366bfed8ad6130b9d8aa8",
+      "finalVerifiedRoutes": [
+        "/preview/attachment/detail/base-attachment-demo"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-attachment-group.tsx",
@@ -1519,7 +1574,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "a63f748b613873a35db71e4f3fd1867f39da7357a006740f4564219e3be685ee",
+      "finalVerifiedRoutes": [
+        "/preview/attachment/detail/base-attachment-group"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-attachment-image.tsx",
@@ -1595,7 +1656,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "17cd22019d5c25f851f6498370928f74545062b0b0605b29b961ddc8c688e929",
+      "finalVerifiedRoutes": [
+        "/preview/attachment/detail/base-attachment-image"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-badge-icon.tsx",
@@ -1657,7 +1724,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "c1a0e78e6c68de8c77b34136f83b6704f61abbc9237498803b6a3ffe0d420dec",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-badge-icon"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-badge.tsx",
@@ -1719,7 +1792,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "75b35247ac77256b12206dbeec03e2d833c5af48d78feaa0b8391a96733490d5",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-badge"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-basic.tsx",
@@ -1781,7 +1860,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "6e41a7b95850ef8003e71df431c5559c2a481c7c7f485b380374c1275978218a",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-basic"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-demo.tsx",
@@ -1887,7 +1972,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "5761615f7a7b173db2f7f11c732d63f9be0ce0cca494b0360ceb39dedc6e0226",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-demo"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-dropdown.tsx",
@@ -1949,7 +2040,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "0cb0278fdc5ed4846681df15fb65b9fee5861066ed3edaa1095b4cc01dc269d0",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-dropdown"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-group-count-icon.tsx",
@@ -2035,7 +2132,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "a6ba4cc89ce5b88077982afadddda4c748a3d5fcd6346ddc89ead67f7d73d4e4",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-group-count-icon"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-group-count.tsx",
@@ -2121,7 +2224,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "67d48b2f84694993adbd42b22ea8527b13625c2394ebb985e55be62fdbf60094",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-group-count"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-group.tsx",
@@ -2207,7 +2316,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "d4c267c378cfaed508d064e62661ad3a4dc1a93927cb637cba8410da299c9eac",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-group"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-rtl.tsx",
@@ -2313,7 +2428,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "24d4ec7650581364e4f2ba368f68aa9d3e643434f950ee0f2915609615d90367",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-rtl"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-avatar-size.tsx",
@@ -2395,7 +2516,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "56646a9d5966b0a63b9ddfee3e559e53263e4df81b4d69d33d32192d3cf820b5",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail/base-avatar-size"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-card-image.tsx",
@@ -2457,7 +2584,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "a806e39a8caed232d714422840f2136860b2c135e93a5408356f9c64f547ed21",
+      "finalVerifiedRoutes": [
+        "/preview/card/detail/base-card-image"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-dropdown-menu-avatar.tsx",
@@ -2519,7 +2652,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "85686a2899cd486190c452809c99e42ccc78464f89de6f655b926f7cc4fe4331",
+      "finalVerifiedRoutes": [
+        "/preview/dropdown-menu/detail/base-dropdown-menu-avatar"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-empty-avatar-group.tsx",
@@ -2605,7 +2744,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "059f6e92cbbf030508df66dc0edfb7ded1dae689dcf2a5456a00b4c8c39260d9",
+      "finalVerifiedRoutes": [
+        "/preview/empty-state/detail/base-empty-avatar-group"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-empty-avatar.tsx",
@@ -2667,7 +2812,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "6fae3a905099284fb3f669ef18bfff368d24c87d4fa86ce00fadc334569580de",
+      "finalVerifiedRoutes": [
+        "/preview/empty-state/detail/base-empty-avatar"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-item-avatar.tsx",
@@ -2763,7 +2914,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "cdc8b2526b31b7886a737c5dafab5e822609e11382490e50390c4b74e9b22541",
+      "finalVerifiedRoutes": [
+        "/preview/item/detail/base-item-avatar"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-item-dropdown.tsx",
@@ -2839,7 +2996,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "a3cb5d6995e2648a4eff413f6ecbeb0d7f97842f0b7f81b59d8c51733e683612",
+      "finalVerifiedRoutes": [
+        "/preview/item/detail/base-item-dropdown"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-item-group.tsx",
@@ -2915,7 +3078,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "1960b67913431b0e02fb5e1977d4fc7818d6603d87b3166a37c4209f21b51d19",
+      "finalVerifiedRoutes": [
+        "/preview/item/detail/base-item-group"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-item-header.tsx",
@@ -2991,7 +3160,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "31c2b35c44748bf8bb6c0687cc20b9290e2162f32ba8f7bab319c2b9f62c7c99",
+      "finalVerifiedRoutes": [
+        "/preview/item/detail/base-item-header"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-item-image.tsx",
@@ -3059,7 +3234,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "3bf4e318deeb0c6c570fe897e521614ed5f97db3ef80acf7f90df0bad4dabea8",
+      "finalVerifiedRoutes": [
+        "/preview/item/detail/base-item-image"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-message-attachment.tsx",
@@ -3121,7 +3302,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "730a555977d385fc7096677a9fdfd430cf5b0b8a9b911aa858f73502f693932e",
+      "finalVerifiedRoutes": [
+        "/preview/message/detail/base-message-attachment"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-message-avatar.tsx",
@@ -3205,7 +3392,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "1524b77a63e607222d59c53fba7a4b4c06dbc10332ff983253118cc298c94479",
+      "finalVerifiedRoutes": [
+        "/preview/message/detail/base-message-avatar"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-message-demo.tsx",
@@ -3299,7 +3492,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "901b621fdfe667956b665244663a8635f8e10c5d4af705bb3885ddae593dfe41",
+      "finalVerifiedRoutes": [
+        "/preview/message/detail/base-message-demo"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-message-group.tsx",
@@ -3362,7 +3561,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "5c1ec2aaf0a8fda90ec5b697557f028048c8cdca4adf57ad4b144279eaac8cd7",
+      "finalVerifiedRoutes": [
+        "/preview/message/detail/base-message-group"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-scroll-area-horizontal-demo.tsx",
@@ -3438,7 +3643,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "45b5e2feb222b8c44203698e8e93e39bace4ea356c0eced95ac4a8fd2e10b2a9",
+      "finalVerifiedRoutes": [
+        "/preview/scroll-area/detail/base-scroll-area-horizontal-demo"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/base-sidebar-demo.tsx",
@@ -3505,12 +3716,18 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "7bbcac9fa52192463062babaa9a32d57efd8e606ec59e8cbae1f3d512c95bcc0",
+      "finalVerifiedRoutes": [
+        "/preview/sidebar/detail/base-sidebar-demo"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/brand-logo.tsx",
       "sha256": "19b2f3511f3b9ad33fe3350630a8f76bed8d26ae96c08069725f5e5ed9d91835",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -3530,11 +3747,18 @@
         "/preview/brand-logo/detail",
         "/preview/brand-logo/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "19b2f3511f3b9ad33fe3350630a8f76bed8d26ae96c08069725f5e5ed9d91835",
+      "finalVerifiedRoutes": [
+        "/preview/brand-logo/detail",
+        "/preview/brand-logo/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/card-media.tsx",
@@ -3596,7 +3820,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "9b818ffacd8f70af8af209375093ec6d59de7767f76b6b398c833b648cea68f8",
+      "finalVerifiedRoutes": [
+        "/preview/card/detail/card-media"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/comparison.tsx",
@@ -3684,7 +3914,14 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "b150e2afdba96df40ec6be3af1d1179df13be9acc4df5a86b412c7b275b514b4",
+      "finalVerifiedRoutes": [
+        "/preview/comparison/detail",
+        "/preview/comparison/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/feature.tsx",
@@ -3729,7 +3966,14 @@
         "1516329"
       ],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "5dd25346723b7f360942c584ff1cab9d86c89389a232957c1464982eb5e35625"
+      "implementationSha256": "5dd25346723b7f360942c584ff1cab9d86c89389a232957c1464982eb5e35625",
+      "finalSourceSha256": "5dd25346723b7f360942c584ff1cab9d86c89389a232957c1464982eb5e35625",
+      "finalVerifiedRoutes": [
+        "/preview/feature/detail",
+        "/preview/feature/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/glimpse.tsx",
@@ -3812,7 +4056,14 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "2139ee736a685b9424dbbefe038898dbf95f734ada893e98478f31675890bb03",
+      "finalVerifiedRoutes": [
+        "/preview/glimpse/detail",
+        "/preview/glimpse/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/hero.tsx",
@@ -3844,7 +4095,14 @@
         "189692"
       ],
       "implementationStatus": "T04 actual media applied and native lifecycle verified",
-      "implementationSha256": "df72e74bbaa09905f0d4cb8d104ce5ea6c5a4b0fb49e4aaad22524b59fc5e60e"
+      "implementationSha256": "df72e74bbaa09905f0d4cb8d104ce5ea6c5a4b0fb49e4aaad22524b59fc5e60e",
+      "finalSourceSha256": "df72e74bbaa09905f0d4cb8d104ce5ea6c5a4b0fb49e4aaad22524b59fc5e60e",
+      "finalVerifiedRoutes": [
+        "/preview/hero/detail",
+        "/preview/hero/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/image-crop-aspect.tsx",
@@ -3906,7 +4164,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "d10a0d8b87053f59e913fc4dbc0887ee7f6c047317a0b1d4914d99e5e7995e26",
+      "finalVerifiedRoutes": [
+        "/preview/image-crop/detail/image-crop-aspect"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/image-crop.tsx",
@@ -3994,7 +4258,14 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "218e5e1d3f09e558e3aee93eab9986b0b8c9da1606018b4144c371d4752445b0",
+      "finalVerifiedRoutes": [
+        "/preview/image-crop/detail",
+        "/preview/image-crop/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/image-zoom.tsx",
@@ -4082,7 +4353,14 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "8c0369968c244ac3fec7362ebffbfb39dcca541607e6687c9e4fa3508ba7d28d",
+      "finalVerifiedRoutes": [
+        "/preview/image-zoom/detail",
+        "/preview/image-zoom/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/media-reveal.tsx",
@@ -4170,7 +4448,14 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "83bafd2893f3a9da15cc8d832ad96408a38657c7bce9854d17249de32283a620",
+      "finalVerifiedRoutes": [
+        "/preview/media-reveal/detail",
+        "/preview/media-reveal/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/reel.tsx",
@@ -4219,7 +4504,14 @@
         "115053"
       ],
       "implementationStatus": "T04 actual media applied and native lifecycle verified",
-      "implementationSha256": "9ac70119db6b61fc2f9b823d948bcbfd47e0fe6997da3a81c03f676a24d9dbfa"
+      "implementationSha256": "9ac70119db6b61fc2f9b823d948bcbfd47e0fe6997da3a81c03f676a24d9dbfa",
+      "finalSourceSha256": "9ac70119db6b61fc2f9b823d948bcbfd47e0fe6997da3a81c03f676a24d9dbfa",
+      "finalVerifiedRoutes": [
+        "/preview/reel/detail",
+        "/preview/reel/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/reveal-content-variants.tsx",
@@ -4281,7 +4573,13 @@
             }
           ]
         }
-      ]
+      ],
+      "finalSourceSha256": "06bad4067ad7d0b50bd5302a9596e3e2baa0e29bc689aa6517b1fbc59243d601",
+      "finalVerifiedRoutes": [
+        "/preview/reveal-content/detail/reveal-content-variants"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/stories-viewer.tsx",
@@ -4318,7 +4616,13 @@
         "3601004"
       ],
       "implementationStatus": "T04 actual media applied and native lifecycle verified",
-      "implementationSha256": "8e5f8098d3210f7b4e32196403aa293b11f32934228ca302422954564bd9c09a"
+      "implementationSha256": "8e5f8098d3210f7b4e32196403aa293b11f32934228ca302422954564bd9c09a",
+      "finalSourceSha256": "8e5f8098d3210f7b4e32196403aa293b11f32934228ca302422954564bd9c09a",
+      "finalVerifiedRoutes": [
+        "/preview/stories/detail/stories-viewer"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/stories.tsx",
@@ -4373,7 +4677,14 @@
         "115053"
       ],
       "implementationStatus": "T04 actual media applied and native lifecycle verified",
-      "implementationSha256": "5c139556b80ddbee560ecc7668238a0b84336cb4a575fb5e1b0e67388a4f9b6c"
+      "implementationSha256": "5c139556b80ddbee560ecc7668238a0b84336cb4a575fb5e1b0e67388a4f9b6c",
+      "finalSourceSha256": "5c139556b80ddbee560ecc7668238a0b84336cb4a575fb5e1b0e67388a4f9b6c",
+      "finalVerifiedRoutes": [
+        "/preview/stories/detail",
+        "/preview/stories/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/video-player.tsx",
@@ -4427,7 +4738,14 @@
         "189692"
       ],
       "implementationStatus": "T04 actual media applied and native lifecycle verified",
-      "implementationSha256": "f90d37cde0f866c67132d3c41ef275a8891377194b1bd3815267d23a0683bdaf"
+      "implementationSha256": "f90d37cde0f866c67132d3c41ef275a8891377194b1bd3815267d23a0683bdaf",
+      "finalSourceSha256": "f90d37cde0f866c67132d3c41ef275a8891377194b1bd3815267d23a0683bdaf",
+      "finalVerifiedRoutes": [
+        "/preview/video-player/detail",
+        "/preview/video-player/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/about.tsx",
@@ -4526,7 +4844,14 @@
         "secondaryImage": "1516329 CC0 boardroom photo",
         "breakout": "Own ES demo monogram",
         "companies": "Six distinct own demo monograms; example partner labels"
-      }
+      },
+      "finalSourceSha256": "876e453b983f0f08670703008d36bb199d97624178ce0c34baa066757a1eaeb2",
+      "finalVerifiedRoutes": [
+        "/preview/about/detail",
+        "/preview/about/gallery"
+      ],
+      "finalDecision": "replace-by-slot",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/blog-post.tsx",
@@ -4586,7 +4911,14 @@
         "1283231"
       ],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "4606b4aff29b42e383e5f55127c22e00764e1d7e1107383bb75892696608e7cf"
+      "implementationSha256": "4606b4aff29b42e383e5f55127c22e00764e1d7e1107383bb75892696608e7cf",
+      "finalSourceSha256": "4606b4aff29b42e383e5f55127c22e00764e1d7e1107383bb75892696608e7cf",
+      "finalVerifiedRoutes": [
+        "/preview/blog-post/detail",
+        "/preview/blog-post/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/blog.tsx",
@@ -4636,7 +4968,14 @@
         "1516329"
       ],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "8eef9cc3fb41e575ec97e3c7dd3b54b30d9de6674acfe8600c29e76e96973e95"
+      "implementationSha256": "8eef9cc3fb41e575ec97e3c7dd3b54b30d9de6674acfe8600c29e76e96973e95",
+      "finalSourceSha256": "8eef9cc3fb41e575ec97e3c7dd3b54b30d9de6674acfe8600c29e76e96973e95",
+      "finalVerifiedRoutes": [
+        "/preview/blog/detail",
+        "/preview/blog/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/case-studies.tsx",
@@ -4668,7 +5007,14 @@
       ],
       "sourceRoleStatus": "reviewed",
       "assetMappingStatus": "selected-for-implementation",
-      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example"
+      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example",
+      "finalSourceSha256": "5f08f5d3cf4dc52610f295912731452bc418a388f808d0342bd72f0edb852f22",
+      "finalVerifiedRoutes": [
+        "/preview/case-studies/detail",
+        "/preview/case-studies/gallery"
+      ],
+      "finalDecision": "complete-example",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/case-study.tsx",
@@ -4700,7 +5046,14 @@
       ],
       "sourceRoleStatus": "reviewed",
       "assetMappingStatus": "selected-for-implementation",
-      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example"
+      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example",
+      "finalSourceSha256": "d2e28e33dc6e7e6b5f21ab3d1c15a77021785ebfcf53a4785fdbccad8a9d5e3b",
+      "finalVerifiedRoutes": [
+        "/preview/case-study/detail",
+        "/preview/case-study/gallery"
+      ],
+      "finalDecision": "complete-example",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/changelog.tsx",
@@ -4750,12 +5103,19 @@
         "1516329"
       ],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "c3b53bc913db3b78f102119620e15566dbe1f61feb77e73cad1b66d3dbd61860"
+      "implementationSha256": "c3b53bc913db3b78f102119620e15566dbe1f61feb77e73cad1b66d3dbd61860",
+      "finalSourceSha256": "c3b53bc913db3b78f102119620e15566dbe1f61feb77e73cad1b66d3dbd61860",
+      "finalVerifiedRoutes": [
+        "/preview/changelog/detail",
+        "/preview/changelog/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/collaborative-canvas.tsx",
       "sha256": "24e31da80263188ce8a82d4b0e27c93457495f7cbeec5834776e7889876b0dfe",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -4770,11 +5130,18 @@
         "/preview/collaborative-canvas/detail",
         "/preview/collaborative-canvas/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "24e31da80263188ce8a82d4b0e27c93457495f7cbeec5834776e7889876b0dfe",
+      "finalVerifiedRoutes": [
+        "/preview/collaborative-canvas/detail",
+        "/preview/collaborative-canvas/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/compliance.tsx",
@@ -4831,7 +5198,14 @@
       "assetMappingStatus": "no-stock-media-required",
       "implementedAssetIds": [],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "c2589169b6263353662abc00b9ece0f3e58acff91803dd4af41f6572a3a9740c"
+      "implementationSha256": "c2589169b6263353662abc00b9ece0f3e58acff91803dd4af41f6572a3a9740c",
+      "finalSourceSha256": "c2589169b6263353662abc00b9ece0f3e58acff91803dd4af41f6572a3a9740c",
+      "finalVerifiedRoutes": [
+        "/preview/compliance/detail",
+        "/preview/compliance/gallery"
+      ],
+      "finalDecision": "replace-demo-mark",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/experience.tsx",
@@ -4878,7 +5252,14 @@
       "assetMappingStatus": "no-stock-media-required",
       "implementedAssetIds": [],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "0b7ec6e5b4a8a0a364dcdd72b9f156299299cee65b8557c0f6ee05283d9d51e0"
+      "implementationSha256": "0b7ec6e5b4a8a0a364dcdd72b9f156299299cee65b8557c0f6ee05283d9d51e0",
+      "finalSourceSha256": "0b7ec6e5b4a8a0a364dcdd72b9f156299299cee65b8557c0f6ee05283d9d51e0",
+      "finalVerifiedRoutes": [
+        "/preview/experience/detail",
+        "/preview/experience/gallery"
+      ],
+      "finalDecision": "replace-demo-mark",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/feature.tsx",
@@ -4908,7 +5289,14 @@
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
       "assetMappingStatus": "no-stock-media-required",
-      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example"
+      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example",
+      "finalSourceSha256": "0c43705a1b559863fdbfe4b9d223c934a81210d198cbabbdb841be7cec85b145",
+      "finalVerifiedRoutes": [
+        "/preview/feature/detail",
+        "/preview/feature/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/footer.tsx",
@@ -4940,7 +5328,14 @@
       "assetMappingStatus": "no-stock-media-required",
       "implementedAssetIds": [],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "15464279c5c9e6c3deff427e7f413dfcc5b44e3515f78843c8412aab6f45c97b"
+      "implementationSha256": "15464279c5c9e6c3deff427e7f413dfcc5b44e3515f78843c8412aab6f45c97b",
+      "finalSourceSha256": "15464279c5c9e6c3deff427e7f413dfcc5b44e3515f78843c8412aab6f45c97b",
+      "finalVerifiedRoutes": [
+        "/preview/footer/detail",
+        "/preview/footer/gallery"
+      ],
+      "finalDecision": "replace-demo-mark",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/reel.tsx",
@@ -4967,12 +5362,19 @@
       "assetMappingStatus": "no-stock-media-required",
       "implementedAssetIds": [],
       "implementationStatus": "T04 actual media applied and native lifecycle verified",
-      "implementationSha256": "f11c98654b0e4c72a7568e83cb13e6475bfd733745ecc3053054231f01e8fa4a"
+      "implementationSha256": "f11c98654b0e4c72a7568e83cb13e6475bfd733745ecc3053054231f01e8fa4a",
+      "finalSourceSha256": "f11c98654b0e4c72a7568e83cb13e6475bfd733745ecc3053054231f01e8fa4a",
+      "finalVerifiedRoutes": [
+        "/preview/reel/detail",
+        "/preview/reel/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/roadmap.tsx",
       "sha256": "298c9151020870c021397eca17d5e745c3621fc9c22f2e87459429cd1e730174",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -4987,11 +5389,18 @@
         "/preview/roadmap/detail",
         "/preview/roadmap/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "298c9151020870c021397eca17d5e745c3621fc9c22f2e87459429cd1e730174",
+      "finalVerifiedRoutes": [
+        "/preview/roadmap/detail",
+        "/preview/roadmap/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/team.tsx",
@@ -5065,7 +5474,14 @@
       "implementationSha256": "891bf059980d60ac04ef8549d4538ad1f09bc1433b82c39b95c7768cc63cac42",
       "slotResults": {
         "members": "Six fictional sample names/roles and six distinct stock portraits; caller-provided members preserved"
-      }
+      },
+      "finalSourceSha256": "891bf059980d60ac04ef8549d4538ad1f09bc1433b82c39b95c7768cc63cac42",
+      "finalVerifiedRoutes": [
+        "/preview/team/detail",
+        "/preview/team/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/testimonial.tsx",
@@ -5101,12 +5517,19 @@
         "1283231"
       ],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "0a5639f7dd9520b37b1f523ccdd8cba70282d52d5c30cce9c1a20978b99126d4"
+      "implementationSha256": "0a5639f7dd9520b37b1f523ccdd8cba70282d52d5c30cce9c1a20978b99126d4",
+      "finalSourceSha256": "0a5639f7dd9520b37b1f523ccdd8cba70282d52d5c30cce9c1a20978b99126d4",
+      "finalVerifiedRoutes": [
+        "/preview/testimonial/detail",
+        "/preview/testimonial/gallery"
+      ],
+      "finalDecision": "replace",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/audio-player.tsx",
       "sha256": "fdbe03e23e5afd69d8b38d0451b92331f9466e4cb8d45ce5c05078a80b3e37f7",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -5121,16 +5544,23 @@
         "/preview/audio-player/detail",
         "/preview/audio-player/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T04; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "fdbe03e23e5afd69d8b38d0451b92331f9466e4cb8d45ce5c05078a80b3e37f7",
+      "finalVerifiedRoutes": [
+        "/preview/audio-player/detail",
+        "/preview/audio-player/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/comparison.tsx",
       "sha256": "c0cc4a739e78809eab61da1c5a2555bc32636755669751e1e165c7dc5cd745d9",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -5150,16 +5580,23 @@
         "/preview/comparison/detail",
         "/preview/comparison/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T02; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "c0cc4a739e78809eab61da1c5a2555bc32636755669751e1e165c7dc5cd745d9",
+      "finalVerifiedRoutes": [
+        "/preview/comparison/detail",
+        "/preview/comparison/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/glimpse.tsx",
       "sha256": "100ff74d7601edd041011cc39f4cc68baf4349e1d2132469e71ebc05b4605295",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -5174,16 +5611,23 @@
         "/preview/glimpse/detail",
         "/preview/glimpse/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T02; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "100ff74d7601edd041011cc39f4cc68baf4349e1d2132469e71ebc05b4605295",
+      "finalVerifiedRoutes": [
+        "/preview/glimpse/detail",
+        "/preview/glimpse/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/image-crop.tsx",
       "sha256": "1cac094e4ec505c5f2314f36455da27e35d15cd1eee3d27998d51aea30fdaeb3",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -5203,16 +5647,23 @@
         "/preview/image-crop/detail",
         "/preview/image-crop/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T02; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "1cac094e4ec505c5f2314f36455da27e35d15cd1eee3d27998d51aea30fdaeb3",
+      "finalVerifiedRoutes": [
+        "/preview/image-crop/detail",
+        "/preview/image-crop/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/image-zoom.tsx",
       "sha256": "ce6869033604801f06bb696fce625f359800e37644d34b3a68704f0b0b150172",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -5232,16 +5683,23 @@
         "/preview/image-zoom/detail",
         "/preview/image-zoom/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T02; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "ce6869033604801f06bb696fce625f359800e37644d34b3a68704f0b0b150172",
+      "finalVerifiedRoutes": [
+        "/preview/image-zoom/detail",
+        "/preview/image-zoom/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/stories.tsx",
       "sha256": "4a8827dd4d797a6154e4a340009fec2abdda94e82bf8874f5355d4c37c0d0b1a",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -5266,16 +5724,25 @@
         "/preview/stories/detail",
         "/preview/stories/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T05 12 post-fix screens and native production direct-video modal opening, source/close cleanup and reduced-motion emulation",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "bc0ee295ebd7af37bfff75a03e22c4c6b66acebb74f95361484b325b629e9abb",
+      "finalVerifiedRoutes": [
+        "/preview/stories/detail",
+        "/preview/stories/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers",
+      "implementationStatus": "T05 fixed production Portal attach playback; actual normal/reduced/manual/cleanup verified",
+      "implementationSha256": "bc0ee295ebd7af37bfff75a03e22c4c6b66acebb74f95361484b325b629e9abb"
     },
     {
       "path": "registry/ui/video-player.tsx",
       "sha256": "098d60f10d7f056190c71636d0cc191a66f84976199fc1841ab5cb4aee677e38",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -5290,17 +5757,24 @@
         "/preview/video-player/detail",
         "/preview/video-player/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "Actual consumers: T04; direct contact-sheet inspection in four theme/viewport conditions",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "098d60f10d7f056190c71636d0cc191a66f84976199fc1841ab5cb4aee677e38",
+      "finalVerifiedRoutes": [
+        "/preview/video-player/detail",
+        "/preview/video-player/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/blocks/form.tsx",
       "sha256": "934719c322b7d1a22ca3980592f6f05572620c74f7789fa39612c8a4895f6a4e",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "role": "upload-icon-and-file-input",
       "plannedAction": "retain",
       "decisionReason": "This is an Image icon naming a file upload control, not a drawn photo preview. API accepts user files; no URL/cover prop exists. Do not add an unrelated API.",
@@ -5308,18 +5782,25 @@
         "/preview/form/detail",
         "/preview/form/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "934719c322b7d1a22ca3980592f6f05572620c74f7789fa39612c8a4895f6a4e",
+      "finalVerifiedRoutes": [
+        "/preview/form/detail",
+        "/preview/form/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/attachment.tsx",
       "sha256": "52954d3bfe37c864561d31ba27928add8e48a7872e123aef74be496c865aa7b5",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "role": "css-media-layout-mask",
       "plannedAction": "retain",
       "decisionReason": "AttachmentMedia defines slots/styles; mask-image is CSS edge fading, not a content photograph.",
@@ -5327,18 +5808,25 @@
         "/preview/attachment/detail",
         "/preview/attachment/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "52954d3bfe37c864561d31ba27928add8e48a7872e123aef74be496c865aa7b5",
+      "finalVerifiedRoutes": [
+        "/preview/attachment/detail",
+        "/preview/attachment/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/avatar-stack.tsx",
       "sha256": "2cb680befda2f1491c47b21a4cc164515590e7e193bc554c3c72fa4cc6cd6349",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "role": "css-avatar-overlap-mask",
       "plannedAction": "retain",
       "decisionReason": "Intentional CSS compositing mask, not a content image.",
@@ -5346,18 +5834,25 @@
         "/preview/avatar-stack/detail",
         "/preview/avatar-stack/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "2cb680befda2f1491c47b21a4cc164515590e7e193bc554c3c72fa4cc6cd6349",
+      "finalVerifiedRoutes": [
+        "/preview/avatar-stack/detail",
+        "/preview/avatar-stack/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/avatar.tsx",
       "sha256": "8a7f3752e2b1abe20a27dcca532f3b908e70e114788bcac4660981bf73b64a83",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "role": "avatar-fallback-and-size-style",
       "plannedAction": "retain",
       "decisionReason": "Intentional initials/status icon sizing and loading fallback; caller owns media src.",
@@ -5365,18 +5860,25 @@
         "/preview/avatar/detail",
         "/preview/avatar/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "8a7f3752e2b1abe20a27dcca532f3b908e70e114788bcac4660981bf73b64a83",
+      "finalVerifiedRoutes": [
+        "/preview/avatar/detail",
+        "/preview/avatar/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/item.tsx",
       "sha256": "9cd8638d69512cd06a174a62c14b02bd0e5d87d2d8ed6995624c7278fe9cf3c3",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "role": "css-media-slot-sizing",
       "plannedAction": "retain",
       "decisionReason": "Image variant sizes the app-supplied child; no own content asset.",
@@ -5384,18 +5886,25 @@
         "/preview/item/detail",
         "/preview/item/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "9cd8638d69512cd06a174a62c14b02bd0e5d87d2d8ed6995624c7278fe9cf3c3",
+      "finalVerifiedRoutes": [
+        "/preview/item/detail",
+        "/preview/item/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/marquee.tsx",
       "sha256": "1a8eeee96beb059aa3b88bf7164aeb0c96a34dbce67ee05aab9c4e5bc6e5a3ff",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "role": "css-edge-mask",
       "plannedAction": "retain",
       "decisionReason": "Intentional animation edge mask, not a photo source.",
@@ -5403,18 +5912,25 @@
         "/preview/marquee/detail",
         "/preview/marquee/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "1a8eeee96beb059aa3b88bf7164aeb0c96a34dbce67ee05aab9c4e5bc6e5a3ff",
+      "finalVerifiedRoutes": [
+        "/preview/marquee/detail",
+        "/preview/marquee/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "registry/ui/message-scroller.tsx",
       "sha256": "84019dd43d1e96ce03588d9c81cb0b558e887b5e2e860105fcb2516835dd360f",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "role": "css-scroll-edge-mask",
       "plannedAction": "retain",
       "decisionReason": "Intentional overflow edge fade, not content media.",
@@ -5422,12 +5938,19 @@
         "/preview/message-scroller/detail",
         "/preview/message-scroller/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "84019dd43d1e96ce03588d9c81cb0b558e887b5e2e860105fcb2516835dd360f",
+      "finalVerifiedRoutes": [
+        "/preview/message-scroller/detail",
+        "/preview/message-scroller/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/case-study.tsx",
@@ -5453,7 +5976,14 @@
         "594091"
       ],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "8792cc95761ddd92f43d8b380a785b8d3d9c8a97192c4816ab7ed8a36908a378"
+      "implementationSha256": "8792cc95761ddd92f43d8b380a785b8d3d9c8a97192c4816ab7ed8a36908a378",
+      "finalSourceSha256": "8792cc95761ddd92f43d8b380a785b8d3d9c8a97192c4816ab7ed8a36908a378",
+      "finalVerifiedRoutes": [
+        "/preview/case-study/detail",
+        "/preview/case-study/gallery"
+      ],
+      "finalDecision": "complete-example",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/case-studies.tsx",
@@ -5479,13 +6009,20 @@
         "1283231"
       ],
       "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
-      "implementationSha256": "191306a73253825aad680eac0764c0f7390a3cd37ebd6bbea1758df09ade0621"
+      "implementationSha256": "191306a73253825aad680eac0764c0f7390a3cd37ebd6bbea1758df09ade0621",
+      "finalSourceSha256": "191306a73253825aad680eac0764c0f7390a3cd37ebd6bbea1758df09ade0621",
+      "finalVerifiedRoutes": [
+        "/preview/case-studies/detail",
+        "/preview/case-studies/gallery"
+      ],
+      "finalDecision": "complete-example",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     },
     {
       "path": "apps/docs/examples/form.tsx",
       "sha256": "9b560a3b97fe85a5eded6340ece1a9163aef21d4b9566398b7c762eb0231a0ad",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "retained-role-and-consumer-ui-verified",
       "role": "upload-ui-composition",
       "plannedAction": "retain",
       "decisionReason": "Actual file upload UI and icon; does not claim to display a cover photo. No supported cover URL prop exists.",
@@ -5493,69 +6030,87 @@
         "/preview/form/detail",
         "/preview/form/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "Actual consumers: T05 retained roles; direct contact-sheet inspection in four theme/viewport conditions",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Source/props role reviewed; intended renderer, icon/brand, fallback or CSS mask retained and actual consumer UI verified.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "finalSourceSha256": "9b560a3b97fe85a5eded6340ece1a9163aef21d4b9566398b7c762eb0231a0ad",
+      "finalVerifiedRoutes": [
+        "/preview/form/detail",
+        "/preview/form/gallery"
+      ],
+      "finalDecision": "retain",
+      "finalRoleStatus": "reviewed-and-verified-through-preview-consumers"
     }
   ],
   "localDemoAssets": [
     {
       "path": "apps/docs/public/demo-audio.wav",
       "bytes": 384044,
-      "sha256": "03f2e8578e7e9aa46aebf71814d9a8e1e334fe79422f2639ce00c2b8e88149f8"
+      "sha256": "03f2e8578e7e9aa46aebf71814d9a8e1e334fe79422f2639ce00c2b8e88149f8",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-captions.vtt",
       "bytes": 190,
-      "sha256": "2541831292583422319d305c5756854ab3f6a86a4a941e906464d64e8f885054"
+      "sha256": "2541831292583422319d305c5756854ab3f6a86a4a941e906464d64e8f885054",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-landscape.svg",
       "bytes": 326,
-      "sha256": "32133d485c0c9ca2771550b9c050a1a0b7413db08049645c4671564dbb3a46f2"
+      "sha256": "32133d485c0c9ca2771550b9c050a1a0b7413db08049645c4671564dbb3a46f2",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-motion.mp4",
       "bytes": 4855,
-      "sha256": "338e67963b3322dad291bd31ba4f0be92b3f109c3465d0f17471834c43ed055e"
+      "sha256": "338e67963b3322dad291bd31ba4f0be92b3f109c3465d0f17471834c43ed055e",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-player.mp4",
       "bytes": 98401,
-      "sha256": "5fae4b879358b186842d49522b454ab874d6934de299267a188b3d530b56036b"
+      "sha256": "5fae4b879358b186842d49522b454ab874d6934de299267a188b3d530b56036b",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-reel-dark.mp4",
       "bytes": 110574,
-      "sha256": "06684048777a9f52e448e6ebc921ca459d55589ca7e6c3bdd17ca171cea42014"
+      "sha256": "06684048777a9f52e448e6ebc921ca459d55589ca7e6c3bdd17ca171cea42014",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-reel-dark.png",
       "bytes": 121147,
-      "sha256": "823429594494abe1b60e62e21fa69cf06761108b37a467bf43c30bf770c4dfd2"
+      "sha256": "823429594494abe1b60e62e21fa69cf06761108b37a467bf43c30bf770c4dfd2",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-reel-light.mp4",
       "bytes": 128506,
-      "sha256": "28b99cc59d93d154bf504a7a74bd2f225593354dc6b577d2cc97f72afc9964af"
+      "sha256": "28b99cc59d93d154bf504a7a74bd2f225593354dc6b577d2cc97f72afc9964af",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-reel-light.png",
       "bytes": 118287,
-      "sha256": "1b38646f60dfc356fad01999ee156db1f6adad885c9d9c1e8cbf6ca0c73e13be"
+      "sha256": "1b38646f60dfc356fad01999ee156db1f6adad885c9d9c1e8cbf6ca0c73e13be",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-scene-night.svg",
       "bytes": 657,
-      "sha256": "049ff3523c1205c50e80cd98cbcdcc6181a19b55d6062c02699e54be4e2f171a"
+      "sha256": "049ff3523c1205c50e80cd98cbcdcc6181a19b55d6062c02699e54be4e2f171a",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     },
     {
       "path": "apps/docs/public/demo-scene.svg",
       "bytes": 668,
-      "sha256": "638ad4157a115b01e797502ecd56071134286587559fb43b63f1fa3a9aefbd85"
+      "sha256": "638ad4157a115b01e797502ecd56071134286587559fb43b63f1fa3a9aefbd85",
+      "finalAction": "removed-unreferenced-generated-placeholder"
     }
   ],
   "counts": {
@@ -5581,5 +6136,17 @@
       "reason": "SVG clipPath references chart geometry and is outside stock media replacement."
     }
   ],
-  "repositoryReferenceScan": "Source references in apps/registry matched known candidates; api-reference and usage-guides contain no legacy demo media URLs. Photo/card/list metadata must still be synchronized during implementation."
+  "repositoryReferenceScan": "Source references in apps/registry matched known candidates; api-reference and usage-guides contain no legacy demo media URLs. Photo/card/list metadata must still be synchronized during implementation.",
+  "finalSummary": {
+    "candidateFiles": 83,
+    "roleReviewedAndConsumerVerified": 83,
+    "unreviewed": 0,
+    "changedIndependentPreviewRoutes": 83,
+    "normalChangedPreviewCases": 332,
+    "additionalRetainedRoleRoutes": 20,
+    "additionalRetainedRoleCases": 80,
+    "postFixStoriesCases": 12,
+    "installedConsumerCases": 96,
+    "status": "Final implementation validation complete; workflow implementation approval/integration remains pending."
+  }
 }

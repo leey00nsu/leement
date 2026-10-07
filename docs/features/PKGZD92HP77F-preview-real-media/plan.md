@@ -100,7 +100,7 @@ constitution, API/schema, 인증/보안, 배포/관측성은 NONE: 관련 구조
 | 계약 / 요구사항 | 결정 | 테스트 수준 | 보호할 현실적인 회귀 | 독립적인 Oracle |
 | --------------- | ---- | ----------- | -------------------- | ---------------- |
 | US-1/FR-1 실제 사진·역할 | NONE | 소스 자리 검수+실제 브라우저 | 로고를 사진으로 교체, 상세/추가 예제 누락, 틀린 크롭·alt | 최종 자리 목록과 실제 파일/화면·원본 항목 |
-| US-2/FR-3 실제 영상·음악 | NONE | 기존 media-finance/extended interaction 통합 테스트+실제 브라우저 | metadata만 성공 처리, 정상 재생/seek·파형 부재, 종료 후 소리 지속 | HTMLMediaElement의 실제 events/duration/currentTime·실제 파일 decode |
+| US-2/FR-3 실제 영상·음악 | UPDATE | 기존 media-finance/extended interaction 통합 테스트+실제 브라우저 | metadata만 성공 처리, 정상 재생/seek·파형 부재, 종료 후 소리 지속; 실제 발견된 Reel offscreen과 Stories portal attach 재생 회귀를 기존 media-finance 테스트에서 검증 | HTMLMediaElement의 실제 events/duration/currentTime·실제 파일 decode |
 | FR-2 props/설치·복사 코드 | NONE | 기존 source 테스트+독립 소비자 설치·tsc/build/브라우저 | docs 모듈·public path 의존, 앱 제공 props 무시 | 생성된 registry source·복사 코드·새 소비자 앱 |
 | US-3/FR-4 출처·사용 조건 | NONE | 원본/조건 수동 확인+목록/참조 검사 | 제작자·라이선스 오표기, 누락/만료 URL, 원본 파일 재배포 | 공식 항목/약관, 실제 file hash와 저장소 tree |
 
