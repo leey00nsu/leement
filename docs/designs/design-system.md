@@ -96,7 +96,7 @@ AudioPlayer는 CopySinger의 72px 파형과 조밀한 재생·시간·배속·�
 
 실제 음악 파형은 해당 곡의 decode 결과를 사용하고 초기 autoplay를 하지 않는다. 예제는 검증한 고정 공개 URL을 copied source에도 명시하며 docs public 자산·키·런타임 검색을 요구하지 않는다. 원본 Content License 영상·음악 바이너리는 registry/저장소에 단독 배포하지 않는다. `apps/docs/lib/demo-media.json`은 원본 항목·게시/확인 날짜·license·크기/해시·비율/길이·Content ID 확인 수준·사용 위치를 추적한다. 원본 source나 조건 변경 시 목록·예제·출처 안내를 함께 갱신한다. 외부 source 실패는 정상 표시 확인을 대신하지 않으며 앱에서 자신의 사용 맥락에 맞는 자산으로 교체할 수 있다. 코드 MIT와 미디어 조건을 구분하고 확인되지 않은 초상권 동의나 Content ID 미등록을 단정하지 않는다.
 
-Native HTML media event가 playback state의 정본이다. src 변경은 이전 시간/오류/engine을 분리하고 유효한 duration 안에서만 seek한다. 파형 decode 실패는 native audio controls로 대체하며 media 자체 실패와 구분한다. SSR/no-JS에서는 native controls를 제공하고 영상은 앱이 자막 언어/label/파일을 전달한다. 로딩/오류는 이름 있는 상태이며 timeupdate는 반복 live announce하지 않는다. reduced motion은 장식만 멈추며 사용자가 재생한 오디오/영상은 보존한다. 구간 분석과 blob preview 생성은 앱 composition이다.
+Native HTML media event가 playback state의 정본이다. src 변경은 이전 시간/오류/engine을 분리하고 유효한 duration 안에서만 seek한다. JavaScript 활성 로딩 중 AudioPlayer는 파형과 재생·시간·배속·음량·음소거 영역 전체를 Skeleton으로 표시하고 native controls는 숨긴다. 파형 준비 뒤 Leement controls로 전환하고 재시도·src 교체에도 같은 로딩 구조를 사용한다. 파형 decode 실패·timeout은 native audio controls로 대체하며 media 자체 실패와 구분한다. SSR/no-JS에서는 native controls를 제공하고 영상은 앱이 자막 언어/label/파일을 전달한다. 로딩/오류는 이름 있는 상태이며 timeupdate는 반복 live announce하지 않는다. reduced motion은 장식만 멈추며 사용자가 재생한 오디오/영상은 보존한다. 구간 분석과 blob preview 생성은 앱 composition이다.
 
 ## 기본 입력과 선택
 

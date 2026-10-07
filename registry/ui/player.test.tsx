@@ -25,15 +25,26 @@ afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 async function readyAudio() {
   const view = render(<AudioPlayer src="/audio.wav" title="Sample" />);
   await waitFor(() => expect(wave.records).toHaveLength(1));
+  expect(view.container.querySelector('[data-slot="audio-player"]')?.getAttribute("aria-busy")).toBe("true");
+  expect(screen.getByRole("status").textContent).toBe("Sample loading");
+  expect(screen.queryByRole("group", { name: "Sample controls" })).toBeNull();
   const media = view.container.querySelector("audio")!;
   Object.defineProperty(media, "duration", { value: 12, configurable: true });
   Object.defineProperty(media, "readyState", { value: 1, configurable: true });
   fireEvent.loadedMetadata(media);
+  // Native metadata can arrive before waveform decoding finishes.
+  expect(screen.getByRole("status").textContent).toBe("Sample loading");
   act(() => wave.records[0]!.events.ready?.(12));
+  expect(view.container.querySelector('[data-slot="audio-player"]')?.getAttribute("aria-busy")).toBe("false");
+  expect(screen.getByRole("group", { name: "Sample controls" })).toBeTruthy();
+  expect(media.hidden).toBe(true);
   return { view, media };
 }
 test("audio static HTML preserves native controls and finite unknown time", () => {
-  expect(renderToString(<AudioPlayer src="/audio.wav" title="Sample" />)).toContain('controls=""');
+  const html = document.createElement("div");
+  html.innerHTML = renderToString(<AudioPlayer src="/audio.wav" title="Sample" />);
+  expect(html.querySelector("audio")?.controls).toBe(true);
+  expect(html.querySelector("audio")?.hidden).toBe(false);
   expect(formatMediaTime(Infinity)).toBe("0:00");
   expect(formatMediaTime(NaN)).toBe("0:00");
   expect(formatMediaTime(-10)).toBe("0:00");
@@ -68,7 +79,8 @@ test("waveform keyboard seeks and native events update play, speed and volume", 
   expect(media.volume).toBe(0.4);
   expect(media.muted).toBe(false);
 });
-test("decode error preserves native audio; source replacement destroys the old engine and rejects late updates", async () => {
+test("decode fallback retries through loading; source replacement destroys engines and rejects late updates", async () => {
+  const user = userEvent.setup();
   const ref = createRef<HTMLDivElement>();
   const view = render(<AudioPlayer ref={ref} src="/first.wav" title="Sample" />);
   await waitFor(() => expect(wave.records).toHaveLength(1));
@@ -76,13 +88,24 @@ test("decode error preserves native audio; source replacement destroys the old e
   act(() => old.events.error?.(new Error("Decode")));
   expect(view.container.querySelector("audio")?.hidden).toBe(false);
   expect(screen.getByText(/Waveform unavailable/)).toBeTruthy();
-  view.rerender(<AudioPlayer ref={ref} src="/second.wav" title="Sample" />);
+  expect(ref.current?.getAttribute("aria-busy")).toBe("false");
+  expect(view.container.querySelector('[data-slot="skeleton"]')).toBeNull();
+  await user.click(screen.getByRole("button", { name: "Retry waveform" }));
   await waitFor(() => expect(wave.records).toHaveLength(2));
   expect(old.destroy).toHaveBeenCalledOnce();
+  expect(ref.current?.getAttribute("aria-busy")).toBe("true");
+  expect(screen.queryByText(/Waveform unavailable/)).toBeNull();
+  expect(screen.getByRole("status").textContent).toBe("Sample loading");
+  act(() => wave.records[1]!.events.ready?.(12));
+  expect(screen.getByRole("group", { name: "Sample controls" })).toBeTruthy();
+  view.rerender(<AudioPlayer ref={ref} src="/second.wav" title="Sample" />);
+  await waitFor(() => expect(wave.records).toHaveLength(3));
+  expect(wave.records[1]!.destroy).toHaveBeenCalledOnce();
+  expect(screen.queryByRole("group", { name: "Sample controls" })).toBeNull();
   act(() => old.events.ready?.(100));
   expect(ref.current?.getAttribute("data-waveform")).toBe("loading");
   view.unmount();
-  expect(wave.records[1]!.destroy).toHaveBeenCalledOnce();
+  expect(wave.records[2]!.destroy).toHaveBeenCalledOnce();
   expect(ref.current).toBeNull();
 });
 test("rejected playback exposes retry and native fallback without an unhandled promise", async () => {
@@ -96,8 +119,10 @@ test("rejected playback exposes retry and native fallback without an unhandled p
   expect(media.load).toHaveBeenCalled();
 });
 test("empty source is idle rather than indefinitely loading", () => {
-  render(<AudioPlayer src="" title="Choose a source" />);
+  const view = render(<AudioPlayer src="" title="Choose a source" />);
   expect(screen.getByRole("status").textContent).toBe("No audio source.");
+  expect(view.container.querySelector('[data-slot="skeleton"]')).toBeNull();
+  expect(view.container.querySelector('[data-slot="audio-player"]')?.getAttribute("aria-busy")).toBe("false");
 });
 
 test("video source changes reset time, errors, readiness and refs", async () => {

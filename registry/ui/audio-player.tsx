@@ -77,20 +77,30 @@ function AudioPlayerInstance({ src, title, peaks, duration, brand = false, class
   }, [src, peaks, duration, brand, attempt]);
 
   const enhanced = waveform === "ready" && !player.state.error;
-  return <div ref={root} data-slot="audio-player" data-waveform={waveform} data-brand={brand} className={cn("w-full rounded-xl border border-border bg-card text-card-foreground", className)} {...props}>
-    <div className="relative mx-3 mt-3 min-h-[72px] overflow-hidden rounded-[var(--lm-radius-md)] [@media(scripting:none)]:hidden" hidden={waveform === "fallback"} aria-hidden={!enhanced}>
+  const loading = Boolean(src) && waveform === "loading" && !player.state.error;
+  return <div ref={root} data-slot="audio-player" data-waveform={waveform} data-brand={brand} aria-busy={loading} className={cn("w-full rounded-xl border border-border bg-card text-card-foreground", className)} {...props}>
+    <div className="relative mx-3 mt-3 min-h-[72px] overflow-hidden rounded-[var(--lm-radius-md)] [@media(scripting:none)]:hidden" hidden={!loading && !enhanced} aria-hidden={!enhanced}>
       <div ref={canvasMotion} className="min-h-[72px] opacity-0 data-[ready=true]:opacity-100 focus-visible:outline-2 focus-visible:outline-[var(--lm-color-focus-ring)] focus-visible:-outline-offset-2" data-ready={enhanced} role="slider" aria-label={title + " waveform"} aria-valuemin={0} aria-valuemax={player.state.duration} aria-valuenow={Math.min(player.state.time, player.state.duration)} aria-valuetext={formatMediaTime(player.state.time) + " / " + formatMediaTime(player.state.duration)} aria-busy={!enhanced} aria-disabled={!enhanced || !player.state.duration} tabIndex={enhanced && player.state.duration ? 0 : -1} onKeyDown={(event) => {
         if (!enhanced) return;
         const targets: Record<string, number> = { ArrowLeft: player.state.time - 5, ArrowRight: player.state.time + 5, Home: 0, End: player.state.duration };
         if (event.key in targets) { event.preventDefault(); player.seek(targets[event.key]!); }
         else if (event.key === " ") { event.preventDefault(); void player.togglePlay(); }
       }} />
-      {!enhanced && <Skeleton aria-hidden="true" className="absolute inset-0" />}
+      {loading && <Skeleton aria-hidden="true" className="absolute inset-0" />}
     </div>
-    <audio ref={audio} src={src || undefined} aria-label={title} controls preload="metadata" hidden={enhanced} className="w-full p-3" />
-    {waveform === "fallback" && src && <div className="flex flex-wrap items-center gap-2 px-3 pb-3"><p className="text-xs text-muted-foreground">Waveform unavailable. Use the native audio controls.</p><button type="button" className="text-xs underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={() => setAttempt((value) => value + 1)}>Retry waveform</button></div>}
+    {loading && <div aria-hidden="true" className="flex flex-wrap items-center gap-2 p-3 [@media(scripting:none)]:hidden">
+      <Skeleton className="size-9 shrink-0 rounded-[var(--lm-radius-md)]" />
+      <Skeleton className="h-4 w-24" />
+      <span className="flex-1" />
+      <Skeleton className="size-9 shrink-0 rounded-[var(--lm-radius-md)]" />
+      <Skeleton className="size-9 shrink-0 rounded-[var(--lm-radius-md)]" />
+      <Skeleton className="size-9 shrink-0 rounded-[var(--lm-radius-md)]" />
+    </div>}
+    {/* CSS hides loading controls before hydration while preserving SSR/no-JS playback. */}
+    <audio ref={audio} src={src || undefined} aria-label={title} controls preload="metadata" hidden={enhanced} data-loading={loading} className="w-full p-3 [@media(scripting:enabled)]:data-[loading=true]:hidden" />
+    {waveform === "fallback" && src && <div className="flex flex-wrap items-center gap-2 px-3 pb-3"><p className="text-xs text-muted-foreground">Waveform unavailable. Use the native audio controls.</p><button type="button" className="text-xs underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={() => { setWaveform("loading"); setAttempt((value) => value + 1); }}>Retry waveform</button></div>}
     {enhanced && <MediaPlayerControls player={player} kind="audio" title={title} />}
-    {src ? <MediaPlayerStatus player={player} title={title} /> : <p role="status" className="p-3 text-sm text-muted-foreground">No audio source.</p>}
+    {loading ? <span role="status" className="sr-only [@media(scripting:none)]:hidden">{title} loading</span> : src ? <MediaPlayerStatus player={player} title={title} /> : <p role="status" className="p-3 text-sm text-muted-foreground">No audio source.</p>}
   </div>;
 }
 export { AudioPlayer };
