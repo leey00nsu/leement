@@ -1,3 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Abstract hills at night">
-  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#182044"/><stop offset="1" stop-color="#453c78"/></linearGradient></defs><rect width="640" height="480" fill="url(#sky)"/><circle cx="484" cy="120" r="45" fill="#e5e7ff"/><circle cx="130" cy="70" r="3" fill="#fff"/><circle cx="250" cy="110" r="2" fill="#fff"/><circle cx="360" cy="50" r="2" fill="#fff"/><path d="M0 330 Q130 200 260 325 Q365 235 510 320 Q590 265 640 300 V480 H0Z" fill="#52609a"/><path d="M0 405 Q180 270 350 400 Q500 260 640 360 V480 H0Z" fill="#20294e"/>
-</svg>

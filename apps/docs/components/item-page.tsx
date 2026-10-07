@@ -8,6 +8,7 @@ import { apiReferences } from "../lib/api-reference";
 import { ApiReference } from "./api-reference";
 import { getAdditionalExampleCodes, getItemCode } from "../lib/registry-source";
 import { publishedVersion, repositoryVersion } from "../lib/releases";
+import demoMedia from "../lib/demo-media.json";
 
 function displayName(name: string) {
   return name
@@ -23,6 +24,12 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
   const command = `npx shadcn@latest add @leement/${name}`;
   const reference = apiReferences[name];
   const usageCode = reference?.usage ?? exampleCode;
+  const mediaSources = [sourceCode, exampleCode, usageCode, ...examples.map((example) => example.exampleCode)].join("\n");
+  const mediaCredits = demoMedia.assets.filter((asset) =>
+    [asset.src, asset.pageUrl, asset.poster?.src, asset.thumbnail?.src].some(
+      (url) => url && mediaSources.includes(url),
+    ),
+  );
   const outline = [
     { title: "Preview", id: "preview" },
     { title: "Installation", id: "installation" },
@@ -95,6 +102,39 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
             sourceCode={sourceCode}
             sourceFile={sourceFile}
           />
+          {mediaCredits.length > 0 && (
+            <details className="mt-4 text-sm leading-6 text-muted-foreground">
+              <summary className="w-fit cursor-pointer rounded-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                Demo media credits
+              </summary>
+              <p className="mt-3">
+                Photos, footage and music are from Pixabay. Profile names,
+                company relationships and editorial stories are fictional sample
+                data. Replace the demo sources with media licensed for your app.
+                Media licenses are separate from the code license.
+              </p>
+              <ul className="mt-3 space-y-2">
+                {mediaCredits.map((asset) => (
+                  <li key={asset.id}>
+                    <a href={asset.pageUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                      {asset.title}
+                    </a>{" "}
+                    by {asset.author} ·{" "}
+                    <a href={asset.licenseUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                      {asset.license}
+                    </a>
+                    {asset.type === "music" && (
+                      <span>
+                        {asset.contentId === "registered"
+                          ? ". Content ID registered; retain your license evidence for reuse."
+                          : ". Content ID status is unconfirmed; retain your license evidence for reuse."}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )}
         </section>
 
         <section id="installation" className="mt-12 scroll-mt-24">

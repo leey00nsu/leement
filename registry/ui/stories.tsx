@@ -17,7 +17,7 @@ function Stories({ items, autoAdvanceMs, presentation = "triggers", className, .
   const [open, setOpen] = React.useState(false);
   const [paused, setPaused] = React.useState(false);
   const [manualPlay, setManualPlay] = React.useState(false);
-  const video = React.useRef<HTMLVideoElement>(null);
+  const [video, setVideo] = React.useState<HTMLVideoElement | null>(null);
   const triggers = React.useRef<Array<HTMLButtonElement | null>>([]);
   const openedFrom = React.useRef(0);
   const current = items[index];
@@ -32,12 +32,12 @@ function Stories({ items, autoAdvanceMs, presentation = "triggers", className, .
     return () => window.clearTimeout(timer);
   }, [active, autoAdvanceMs, index, items.length, paused]);
   React.useEffect(() => {
-    const element = video.current;
+    const element = video;
     if (!active || !element || current?.type !== "video") return;
     if (paused || (window.matchMedia("(prefers-reduced-motion: reduce)").matches && !manualPlay)) element.pause();
     else void element.play().catch(() => setPaused(true));
     return () => element.pause();
-  }, [active, current, manualPlay, paused]);
+  }, [active, current, manualPlay, paused, video]);
 
   function move(amount: number) {
     setIndex((position) => Math.max(0, Math.min(items.length - 1, position + amount)));
@@ -58,7 +58,7 @@ function Stories({ items, autoAdvanceMs, presentation = "triggers", className, .
 
   const viewer = current ? <div data-slot="stories-viewer" className="w-full max-w-xs overflow-hidden rounded-xl border border-border bg-card text-card-foreground">
     <div className="flex gap-1 p-2" aria-label={`Story ${index + 1} of ${items.length}`}>{items.map((item, position) => <span key={item.id} className={cn("h-1 flex-1 rounded-full", position <= index ? "bg-primary" : "bg-muted")} />)}</div>
-    <div className="relative aspect-[9/12] bg-muted">{current.type === "video" ? <video key={current.id} ref={video} src={current.src} poster={current.poster} aria-label={current.alt} muted playsInline onEnded={() => { if (index < items.length - 1) move(1); else setPaused(true); }} className="size-full object-cover" /> : <img src={current.src} alt={current.alt} className="size-full object-cover" />}<span className="absolute right-3 top-3 rounded-full bg-card/90 px-2 py-1 text-xs font-medium text-card-foreground">{current.author}</span></div>
+    <div className="relative aspect-[9/12] bg-muted">{current.type === "video" ? <video key={current.id} ref={setVideo} src={current.src} poster={current.poster} aria-label={current.alt} muted playsInline onEnded={() => { if (index < items.length - 1) move(1); else setPaused(true); }} className="size-full object-cover" /> : <img src={current.src} alt={current.alt} className="size-full object-cover" />}<span className="absolute right-3 top-3 rounded-full bg-card/90 px-2 py-1 text-xs font-medium text-card-foreground">{current.author}</span></div>
     <div className="flex items-center justify-between p-2"><button type="button" disabled={index === 0} onClick={() => move(-1)} aria-label="Previous story" className="rounded-md p-2 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-40"><ChevronLeft className="size-4" /></button><span className="text-xs text-muted-foreground">{index + 1} / {items.length}</span><div className="flex"><button type="button" onClick={togglePause} aria-label={paused ? "Play stories" : "Pause stories"} className="rounded-md p-2 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{paused ? <Play className="size-4" /> : <Pause className="size-4" />}</button><button type="button" disabled={index === items.length - 1} onClick={() => move(1)} aria-label="Next story" className="rounded-md p-2 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-40"><ChevronRight className="size-4" /></button></div></div>
   </div> : <p className="p-4 text-sm text-muted-foreground">No stories</p>;
 

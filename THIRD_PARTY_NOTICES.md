@@ -71,3 +71,35 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+## Pixabay demo media
+
+Checked on 2026-10-07. Leement code licensing does not license third-party media. The docs and editable examples integrate the following fixed public Pixabay sources; original video/music binaries are not redistributed in this repository or registry. Apps own their media and may replace these demo URLs with sources licensed for their use. External URLs can become unavailable; the media components retain error/retry and native fallback behavior.
+
+The eleven photos were published before 2019-01-09 and are covered by CC0 under [Pixabay Terms section 4](https://pixabay.com/service/terms/). Later videos/music use the [Pixabay Content License](https://pixabay.com/service/license-summary/) and [Terms section 5](https://pixabay.com/service/terms/), including the restriction on standalone distribution. The complete docs/player composition is the intended use; a copied URL is not permission to redistribute a standalone music or video file. Consult [Pixabay's FAQ](https://pixabay.com/service/faq/) and retain source/license evidence for your own use.
+
+Names, company relationships, recommendations and editorial stories are fictional layout examples. Stock portraits do not establish actual employment or endorsement. Model/property releases are not claimed; third-party rights still depend on the use context.
+
+| Media | Creator | Original item | License |
+| --- | --- | --- | --- |
+| Photo | StartupStockPhotos | [Meeting, Brainstorming, Business](https://pixabay.com/photos/meeting-brainstorming-business-594091/) | CC0 |
+| Photo | AlfredMuller | [Computer, Notebook, Office](https://pixabay.com/photos/computer-notebook-office-code-2788918/) | CC0 |
+| Photo | Jo_Johnston | [Office, Boardroom, Meeting](https://pixabay.com/photos/office-boardroom-meeting-table-1516329/) | CC0 |
+| Photo | Katzenfee50 | [Lake, Ulmener maar, Reflection](https://pixabay.com/photos/lake-ulmener-maar-reflection-3733649/) | CC0 |
+| Photo | jplenio | [Hintersee, Lake, Mountains](https://pixabay.com/photos/hintersee-lake-mountains-nature-3601004/) | CC0 |
+| Photo | Pexels | [Man, Model, Portrait](https://pixabay.com/photos/man-model-portrait-hairstyle-1283231/) | CC0 |
+| Photo | shawrypa | [Man, Smile, Bold](https://pixabay.com/photos/man-smile-bold-1690965/) | CC0 |
+| Photo | RyanMcGuire | [Man, Silly, Expression](https://pixabay.com/photos/man-silly-expression-869215/) | CC0 |
+| Photo | JerzyGórecki | [Beautiful, Woman, Portrait](https://pixabay.com/photos/beautiful-woman-portrait-model-2359121/) | CC0 |
+| Photo | Gromovataya | [Woman, Portrait, Fashion](https://pixabay.com/photos/woman-portrait-fashion-model-3083453/) | CC0 |
+| Photo | JerzyGórecki | [Woman, Model, Portrait](https://pixabay.com/photos/woman-model-portrait-pose-style-3584435/) | CC0 |
+| Video | mariancroitoru | [Lake, Houses, Hill](https://pixabay.com/videos/lake-houses-hill-mountain-boat-67201/) | Pixabay Content License |
+| Video | JoshuaWoroniecki | [Waterfall, Fall, Forest](https://pixabay.com/videos/waterfall-fall-forest-tranquil-189692/) | Pixabay Content License |
+| Video | 21698102 | [City, Day, Arch](https://pixabay.com/videos/city-day-arch-people-walking-wet-115053/) | Pixabay Content License |
+| Music | GavinNellist | [Atmospheric Ambient Music with Piano](https://pixabay.com/music/ambient-atmospheric-ambient-music-with-piano-108412/) | Pixabay Content License |
+| Music | FreeMusicForVideo | [Ambient Piano](https://pixabay.com/music/solo-piano-ambient-piano-524039/) | Pixabay Content License |
+
+Music “Ambient Piano” (524039) displays **Content ID Registered** on its official item. “Atmospheric Ambient Music with Piano” (108412) did not display a badge when checked; registration status is **unconfirmed**, not asserted absent. Keep the original item and applicable license/download evidence for downstream uploads or claims. No external-platform upload is performed by the docs examples. The city video's official creator identifier is 21698102; an unverified personal name is not substituted.
+
+The machine-readable source/provenance inventory is `apps/docs/lib/demo-media.json`. It records observed media/poster/thumbnail URLs, publication and verification dates, actual dimensions/duration, file size and SHA-256, Content ID status, and source usages. The source URLs in examples are literal so installed consumers do not rely on docs-only public assets.

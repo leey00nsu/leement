@@ -1,4 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Abstract hills beneath a lavender sky">
-  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#b6a0f0"/><stop offset="1" stop-color="#e8d9fa"/></linearGradient><linearGradient id="hill" x2="0" y2="1"><stop stop-color="#5465b8"/><stop offset="1" stop-color="#263266"/></linearGradient></defs>
-  <rect width="640" height="480" fill="url(#sky)"/><circle cx="484" cy="120" r="56" fill="#fff4cc"/><path d="M0 330 Q130 200 260 325 Q365 235 510 320 Q590 265 640 300 V480 H0Z" fill="#8191c7"/><path d="M0 405 Q180 270 350 400 Q500 260 640 360 V480 H0Z" fill="url(#hill)"/>
-</svg>

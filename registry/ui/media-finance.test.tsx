@@ -51,13 +51,16 @@ test("ticker expands supplied high and low data", async () => {
   expect(screen.getByRole("button").getAttribute("aria-expanded")).toBe("true");
 });
 
-test("stories navigate and expose pause control", async () => {
+test("stories play after portal attachment, navigate and expose pause control", async () => {
   const user = userEvent.setup();
-  render(<Stories items={[{ id: "a", src: "/a.svg", alt: "First", author: "Alex" }, { id: "b", src: "/b.svg", alt: "Second", author: "Robin" }]} />);
+  render(<Stories items={[{ id: "a", src: "/a.mp4", poster: "/a.jpg", type: "video", alt: "First", author: "Alex" }, { id: "b", src: "/b.svg", alt: "Second", author: "Robin" }]} />);
   const trigger = screen.getByRole("button", { name: "Open story from Alex" });
   await user.click(trigger);
   expect(screen.getByRole("dialog", { name: "Alex story" })).toBeTruthy();
+  const firstVideo = screen.getByLabelText("First") as HTMLVideoElement;
+  expect(vi.mocked(firstVideo.play)).toHaveBeenCalled();
   await user.click(screen.getByRole("button", { name: "Next story" }));
+  expect(vi.mocked(firstVideo.pause)).toHaveBeenCalled();
   expect(screen.getByRole("img", { name: "Second" })).toBeTruthy();
   await user.click(screen.getByRole("button", { name: "Pause stories" }));
   expect(screen.getByRole("button", { name: "Play stories" })).toBeTruthy();
