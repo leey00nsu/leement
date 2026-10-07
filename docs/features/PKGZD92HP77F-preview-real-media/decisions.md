@@ -136,3 +136,15 @@
 - **Consequences**: 앱이 실제 데이터/사진을 주면 그대로 사용하는 계약을 유지한다. 영상/음악은 T04, 생성 registry의 최종 설치/출처 문서는 T05에서 검증한다.
 
 - T03 대표 화면: [서로 다른 6개 샘플 프로필](./artifacts/team-real-profiles.png).
+
+
+## D009: T04 실제 미디어와 관찰된 Reel 정리 결함 (2026-10-07)
+
+- **Context**: T03 checkpoint 후 다음 workflow task T04를 활성화해 실제 영상 3개·음악 2곡·포스터를 예제에 적용했다.
+- **Constraints**: normal playback을 mock이나 오류 UI로 대신하지 않으며 제목·제작자·poster·source를 같이 전환한다. 영상/음악 원본을 Git에 넣지 않고 captions도 copied source에서 동작해야 한다.
+- **Decision**: VideoPlayer는 호수/폭포 영상과 함께 전환되는 metadata, AudioPlayer는 실제 피아노 2곡, Reel/Stories는 세로 폭포/도시 영상으로 구성했다. Hero는 제품 시연이라는 표시를 제거하고 가상 여행 페이지로 맞췄다. 도형 영상의 기존 VTT 대신 실제 풍경의 설명 text를 inline VTT로 전달하며 이를 음성 transcript로 주장하지 않는다.
+- **Trace**: 별도 native 브라우저에서 호수 영상 duration 11.378s와 실제 currentTime 증가, VTT track readyState=2/cues 로드, 음원 duration 120.672s·WaveSurfer ready·사용자 클릭 후 재생 증가를 확인했다. 전체 변경 Preview 11경로 × 4조건=44건과 source 변경 6화면을 실제로 확인했다.
+- **Observed defect**: 새 실제 Reel에서 viewport 밖으로 스크롤된 뒤 video의 bottom=-821px, viewport=800px인데 paused=false로 currentTime 0.306813→1.413973 증가했다. 승인 Plan의 보이지 않는 피드 미재생 계약을 충족하도록 IntersectionObserver로 숨김 상태에서 pause하며, 기존 ref 전달·사용자 pause·reduced motion과 unmount 정리를 유지한다. 수정 후 같은 위치 paused=true, time 0.322221→0.332758로 확인했다.
+- **Verification Contract update**: 새 test 파일을 추가하지 않고 media-finance의 기존 Reel keyboard/mute 테스트를 UPDATE했다. viewport exit 이벤트 뒤 실제 pause 호출과 observer unmount disconnect를 독립 oracle로 확인한다. player/media-finance 기존 2파일/15개 검사 PASS; jsdom 통과는 native media 재생 증거로 취급하지 않는다.
+- **Evidence**: [native 검증 결과](./artifacts/media-verification.json)의 T04. 35개 조작 상태에서 실제 seek/음량 0.4·mute·speed 1.25·full screen·VTT cue·source change/old media pause·native error 4/fallback/retry/reset·240px·Reel offscreen 재진입/사용자 pause·Stories Escape/초점 복귀 확인. 실제 음악 waveform ready와 시간 증가 확인; 초기 autoplay 없음. docs typecheck·변경 eslint·기존 15개 검사 PASS.
+- **Consequences**: 물리 OS 설정은 바꾸지 않았으며 reduced motion은 브라우저 emulation임을 명시한다. 일시적인 Hero gallery timeout은 정상 대기 후 다시 4조건 통과했고 원인은 단정하지 않는다. 최종 consumer/전체 검사는 T05에서 수행한다.

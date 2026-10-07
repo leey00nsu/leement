@@ -128,21 +128,23 @@
 
   - Verification: default Blocks 9개와 사진 props 예제 3개, 독립 Preview 24경로 × 4조건=96건 정상 디코딩·화면 확인. Feature keyboard 선택 24상태 확인. Form은 사진 prop 없음으로 아이콘 유지; 앱 custom props/children/empty collection 기존 검사 6개 PASS. [증거](./artifacts/media-verification.json), [D008](./decisions.md#d008-t03-blocks-기본-콘텐츠와-미디어-역할-2026-10-07).
 
-- [TODO][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-04 실제 영상·음악·포스터·자막 적용과 재생 검증
+- [DONE][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-04 실제 영상·음악·포스터·자막 적용과 재생 검증
   - Date: 2026-10-07
   - Acceptance:
     - VideoPlayer·Hero·Stories·Reel·AudioPlayer가 실제 미디어를 로드하여 정상 재생/탐색/소스 변경하고 이전 재생을 정리한다.
   - Checklist:
-    - [ ] 가로 영상과 세로 Reel 클립·실제 장면 포스터·실제 곡 두 개로 교체
-    - [ ] 제작자·제목·설명·자막을 실제 콘텐츠와 맞추고 초기 음악 autoplay 제외
-    - [ ] 실제 duration/currentTime 증가·seek/음량/mute·파형 decode·source change/close cleanup 확인
-    - [ ] 기존 오류/reset/native fallback·reduced motion·키보드 조작과 focused media 통합 검사 확인
-    - [ ] 실제로 발견된 player 결함만 계약 범위 안에서 수정하고 필요한 기존 회귀 테스트를 갱신
+    - [x] 가로 영상과 세로 Reel 클립·실제 장면 포스터·실제 곡 두 개로 교체
+    - [x] 제작자·제목·설명·자막을 실제 콘텐츠와 맞추고 초기 음악 autoplay 제외
+    - [x] 실제 duration/currentTime 증가·seek/음량/mute·파형 decode·source change/close cleanup 확인
+    - [x] 기존 오류/reset/native fallback·reduced motion·키보드 조작과 focused media 통합 검사 확인
+    - [x] 실제로 발견된 player 결함만 계약 범위 안에서 수정하고 필요한 기존 회귀 테스트를 갱신
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 실제 미디어 11경로 × 4조건=44건, 조작 35상태·대체 source 6화면 확인. 실제 재생/탐색/음량/파형/VTT/fullscreen, 오류/retry/reset/native fallback, Reel offscreen·source cleanup, Stories 종료·초점 복귀 PASS. scoped typecheck/eslint·기존 15개 테스트 PASS. [D009](./decisions.md#d009-t04-실제-미디어와-관찰된-reel-정리-결함-2026-10-07), [증거](./artifacts/media-verification.json).
 
 - [TODO][PRD-FR-005] T-PKGZD92HP77F-preview-real-media-05 전수 화면·소비자·출처 문서와 최종 검증
   - Date: 2026-10-07
@@ -192,4 +194,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:ea4ccd169019087e83ac5e30a2b35090244d63fb63225d38ae223a27da55a9f0 -->
+<!-- lee-spec-kit:workflow-sync sha256:d37151e4dbcbd1d5c961fe3206c4ca187e867a4dd226058723664f14fcf2d0a3 -->

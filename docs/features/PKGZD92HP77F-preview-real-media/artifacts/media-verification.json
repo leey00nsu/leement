@@ -12138,5 +12138,3235 @@
     "visualNotes": "All 24 independent detail/gallery routes × four theme/viewport combinations inspected as contact sheets. Nine changed default blocks rendered with omitted props through their representative examples. Six Team portraits are distinct, CaseStudy editorial photo and CaseStudies portrait appear, marks/badges are intentional vector symbols. Feature accordion source changes verified via Enter in all 24 photo/route/theme/viewport combinations.",
     "harnessLimit": "Playwright stability-based scroll timed out for moving About/Feature assets; corrected harness uses native scroll for image decode inspection. A transient Changelog gallery detached locator was rerun. No product defect inferred from these automation errors.",
     "retainedRoles": "EventForm upload icon has no cover prop; CollaborativeCanvas/Roadmap intentionally use initials until app data supplies avatars."
+  },
+  "T04": {
+    "changedFileCount": 8,
+    "routeCount": 11,
+    "caseCount": 44,
+    "files": {
+      "apps/docs/examples/video-player.tsx": "f90d37cde0f866c67132d3c41ef275a8891377194b1bd3815267d23a0683bdaf",
+      "apps/docs/examples/audio-player.tsx": "18212a8335cf79b11e456997960379d89682d52df281b5c0eec179daaf5fdef8",
+      "apps/docs/examples/hero.tsx": "df72e74bbaa09905f0d4cb8d104ce5ea6c5a4b0fb49e4aaad22524b59fc5e60e",
+      "apps/docs/examples/reel.tsx": "9ac70119db6b61fc2f9b823d948bcbfd47e0fe6997da3a81c03f676a24d9dbfa",
+      "apps/docs/examples/stories.tsx": "5c139556b80ddbee560ecc7668238a0b84336cb4a575fb5e1b0e67388a4f9b6c",
+      "apps/docs/examples/stories-viewer.tsx": "8e5f8098d3210f7b4e32196403aa293b11f32934228ca302422954564bd9c09a",
+      "registry/blocks/reel.tsx": "f11c98654b0e4c72a7568e83cb13e6475bfd733745ecc3053054231f01e8fa4a",
+      "registry/ui/media-finance.test.tsx": "8ca7a1288da3ca9885d328e3aaee8f0a91d9829a48d0f79b7be7f15b6246670e"
+    },
+    "cases": [
+      {
+        "route": "/preview/video-player/detail",
+        "width": 390,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "0:00 / 0:11\nChange video source\nSimulate video error\nReset video sample\n\nReal Pixabay footage with its own scene poster. Scene descriptions identify the visible landscape; they are not spoken captions. Try playback, seeking, volume, speed and full screen where supported.",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0.635277,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "captions",
+            "tracks": [
+              {
+                "label": "Scene descriptions",
+                "mode": "showing",
+                "cues": [
+                  "A lakeside village beside calm water."
+                ]
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_video-player_detail-390-light.png"
+      },
+      {
+        "route": "/preview/video-player/detail",
+        "width": 390,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "0:01 / 0:11\nChange video source\nSimulate video error\nReset video sample\n\nReal Pixabay footage with its own scene poster. Scene descriptions identify the visible landscape; they are not spoken captions. Try playback, seeking, volume, speed and full screen where supported.",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0.652255,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.305982,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "captions",
+            "tracks": [
+              {
+                "label": "Scene descriptions",
+                "mode": "showing",
+                "cues": [
+                  "A lakeside village beside calm water."
+                ]
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_video-player_detail-390-dark.png"
+      },
+      {
+        "route": "/preview/video-player/detail",
+        "width": 1440,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "0:01 / 0:11\nChange video source\nSimulate video error\nReset video sample\n\nReal Pixabay footage with its own scene poster. Scene descriptions identify the visible landscape; they are not spoken captions. Try playback, seeking, volume, speed and full screen where supported.",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.317022,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.971113,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "captions",
+            "tracks": [
+              {
+                "label": "Scene descriptions",
+                "mode": "showing",
+                "cues": [
+                  "A lakeside village beside calm water."
+                ]
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_video-player_detail-1440-light.png"
+      },
+      {
+        "route": "/preview/video-player/detail",
+        "width": 1440,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "0:02 / 0:11\nChange video source\nSimulate video error\nReset video sample\n\nReal Pixabay footage with its own scene poster. Scene descriptions identify the visible landscape; they are not spoken captions. Try playback, seeking, volume, speed and full screen where supported.",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.981841,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 2.635447,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "captions",
+            "tracks": [
+              {
+                "label": "Scene descriptions",
+                "mode": "showing",
+                "cues": [
+                  "A lakeside village beside calm water."
+                ]
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_video-player_detail-1440-dark.png"
+      },
+      {
+        "route": "/preview/video-player/gallery",
+        "width": 390,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "0:00 / 0:11\nChange video source\nSimulate video error\nReset video sample\n\nReal Pixabay footage with its own scene poster. Scene descriptions identify the visible landscape; they are not spoken captions. Try playback, seeking, volume, speed and full screen where supported.",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0.616768,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "captions",
+            "tracks": [
+              {
+                "label": "Scene descriptions",
+                "mode": "showing",
+                "cues": [
+                  "A lakeside village beside calm water."
+                ]
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_video-player_gallery-390-light.png"
+      },
+      {
+        "route": "/preview/video-player/gallery",
+        "width": 390,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "0:01 / 0:11\nChange video source\nSimulate video error\nReset video sample\n\nReal Pixabay footage with its own scene poster. Scene descriptions identify the visible landscape; they are not spoken captions. Try playback, seeking, volume, speed and full screen where supported.",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0.627028,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.280704,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "captions",
+            "tracks": [
+              {
+                "label": "Scene descriptions",
+                "mode": "showing",
+                "cues": [
+                  "A lakeside village beside calm water."
+                ]
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_video-player_gallery-390-dark.png"
+      },
+      {
+        "route": "/preview/video-player/gallery",
+        "width": 1440,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "0:01 / 0:11\nChange video source\nSimulate video error\nReset video sample\n\nReal Pixabay footage with its own scene poster. Scene descriptions identify the visible landscape; they are not spoken captions. Try playback, seeking, volume, speed and full screen where supported.",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.293165,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.946928,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "captions",
+            "tracks": [
+              {
+                "label": "Scene descriptions",
+                "mode": "showing",
+                "cues": [
+                  "A lakeside village beside calm water."
+                ]
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_video-player_gallery-1440-light.png"
+      },
+      {
+        "route": "/preview/video-player/gallery",
+        "width": 1440,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "0:02 / 0:11\nChange video source\nSimulate video error\nReset video sample\n\nReal Pixabay footage with its own scene poster. Scene descriptions identify the visible landscape; they are not spoken captions. Try playback, seeking, volume, speed and full screen where supported.",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.956972,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 2.610544,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "captions",
+            "tracks": [
+              {
+                "label": "Scene descriptions",
+                "mode": "showing",
+                "cues": [
+                  "A lakeside village beside calm water."
+                ]
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_video-player_gallery-1440-dark.png"
+      },
+      {
+        "route": "/preview/audio-player/detail",
+        "width": 390,
+        "theme": "light",
+        "images": [],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "0:00 / 2:00\nBrand waveform\nChange source\nSimulate error\nReset sample\n\nAtmospheric Ambient Music with Piano by GavinNellist on Pixabay. The waveform is decoded from the actual recording. Use it or its arrow keys to seek, then try brand color and a Foundations override. Playback starts only when you choose it.",
+        "steps": [
+          {
+            "action": "actual waveform decode ready",
+            "state": "ready",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 0,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play audio",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 0.407415,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_audio-player_detail-390-light.png"
+      },
+      {
+        "route": "/preview/audio-player/detail",
+        "width": 390,
+        "theme": "dark",
+        "images": [],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "0:00 / 2:00\nBrand waveform\nChange source\nSimulate error\nReset sample\n\nAtmospheric Ambient Music with Piano by GavinNellist on Pixabay. The waveform is decoded from the actual recording. Use it or its arrow keys to seek, then try brand color and a Foundations override. Playback starts only when you choose it.",
+        "steps": [
+          {
+            "action": "actual waveform decode ready",
+            "state": "ready",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 0.432545,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play audio",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 1.089233,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_audio-player_detail-390-dark.png"
+      },
+      {
+        "route": "/preview/audio-player/detail",
+        "width": 1440,
+        "theme": "light",
+        "images": [],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "0:01 / 2:00\nBrand waveform\nChange source\nSimulate error\nReset sample\n\nAtmospheric Ambient Music with Piano by GavinNellist on Pixabay. The waveform is decoded from the actual recording. Use it or its arrow keys to seek, then try brand color and a Foundations override. Playback starts only when you choose it.",
+        "steps": [
+          {
+            "action": "actual waveform decode ready",
+            "state": "ready",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 1.118352,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play audio",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 1.74873,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_audio-player_detail-1440-light.png"
+      },
+      {
+        "route": "/preview/audio-player/detail",
+        "width": 1440,
+        "theme": "dark",
+        "images": [],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "0:02 / 2:00\nBrand waveform\nChange source\nSimulate error\nReset sample\n\nAtmospheric Ambient Music with Piano by GavinNellist on Pixabay. The waveform is decoded from the actual recording. Use it or its arrow keys to seek, then try brand color and a Foundations override. Playback starts only when you choose it.",
+        "steps": [
+          {
+            "action": "actual waveform decode ready",
+            "state": "ready",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 1.778773,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play audio",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 2.413577,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_audio-player_detail-1440-dark.png"
+      },
+      {
+        "route": "/preview/audio-player/gallery",
+        "width": 390,
+        "theme": "light",
+        "images": [],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "0:00 / 2:00\nBrand waveform\nChange source\nSimulate error\nReset sample\n\nAtmospheric Ambient Music with Piano by GavinNellist on Pixabay. The waveform is decoded from the actual recording. Use it or its arrow keys to seek, then try brand color and a Foundations override. Playback starts only when you choose it.",
+        "steps": [
+          {
+            "action": "actual waveform decode ready",
+            "state": "ready",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 0,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play audio",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 0.403785,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_audio-player_gallery-390-light.png"
+      },
+      {
+        "route": "/preview/audio-player/gallery",
+        "width": 390,
+        "theme": "dark",
+        "images": [],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "0:00 / 2:00\nBrand waveform\nChange source\nSimulate error\nReset sample\n\nAtmospheric Ambient Music with Piano by GavinNellist on Pixabay. The waveform is decoded from the actual recording. Use it or its arrow keys to seek, then try brand color and a Foundations override. Playback starts only when you choose it.",
+        "steps": [
+          {
+            "action": "actual waveform decode ready",
+            "state": "ready",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 0.429242,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play audio",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 1.076155,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_audio-player_gallery-390-dark.png"
+      },
+      {
+        "route": "/preview/audio-player/gallery",
+        "width": 1440,
+        "theme": "light",
+        "images": [],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "0:01 / 2:00\nBrand waveform\nChange source\nSimulate error\nReset sample\n\nAtmospheric Ambient Music with Piano by GavinNellist on Pixabay. The waveform is decoded from the actual recording. Use it or its arrow keys to seek, then try brand color and a Foundations override. Playback starts only when you choose it.",
+        "steps": [
+          {
+            "action": "actual waveform decode ready",
+            "state": "ready",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 1.105909,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play audio",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 1.762603,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_audio-player_gallery-1440-light.png"
+      },
+      {
+        "route": "/preview/audio-player/gallery",
+        "width": 1440,
+        "theme": "dark",
+        "images": [],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "0:02 / 2:00\nBrand waveform\nChange source\nSimulate error\nReset sample\n\nAtmospheric Ambient Music with Piano by GavinNellist on Pixabay. The waveform is decoded from the actual recording. Use it or its arrow keys to seek, then try brand color and a Foundations override. Playback starts only when you choose it.",
+        "steps": [
+          {
+            "action": "actual waveform decode ready",
+            "state": "ready",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 1.791723,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play audio",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+                "title": "Atmospheric Ambient Music with Piano",
+                "poster": null,
+                "duration": 120.672,
+                "currentTime": 2.44444,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": null,
+                "height": null,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_audio-player_gallery-1440-dark.png"
+      },
+      {
+        "route": "/preview/hero/detail",
+        "width": 390,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "Explore\nLakeside landscapes\nFind a quieter view\n\nA sample travel page with real lakeside footage by mariancroitoru on Pixabay.\n\nView the lake film\nSee the waterfall\n\nExample travel partners\n\nStudio\nTeam\nProduct\nCommunity\nStudio\nTeam\nProduct\nCommunity\n0:00 / 0:11",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0.614693,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_hero_detail-390-light.png"
+      },
+      {
+        "route": "/preview/hero/detail",
+        "width": 390,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "Explore\nLakeside landscapes\nFind a quieter view\n\nA sample travel page with real lakeside footage by mariancroitoru on Pixabay.\n\nView the lake film\nSee the waterfall\n\nExample travel partners\n\nStudio\nTeam\nProduct\nCommunity\nStudio\nTeam\nProduct\nCommunity\n0:01 / 0:11",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0.6425,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.296465,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_hero_detail-390-dark.png"
+      },
+      {
+        "route": "/preview/hero/detail",
+        "width": 1440,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "Explore\nLakeside landscapes\nFind a quieter view\n\nA sample travel page with real lakeside footage by mariancroitoru on Pixabay.\n\nView the lake film\nSee the waterfall\n\nExample travel partners\n\nStudio\nTeam\nProduct\nCommunity\nStudio\nTeam\nProduct\nCommunity\n0:01 / 0:11",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.324934,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.978818,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_hero_detail-1440-light.png"
+      },
+      {
+        "route": "/preview/hero/detail",
+        "width": 1440,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "Explore\nLakeside landscapes\nFind a quieter view\n\nA sample travel page with real lakeside footage by mariancroitoru on Pixabay.\n\nView the lake film\nSee the waterfall\n\nExample travel partners\n\nStudio\nTeam\nProduct\nCommunity\nStudio\nTeam\nProduct\nCommunity\n0:02 / 0:11",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 2.017005,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 2.671286,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_hero_detail-1440-dark.png"
+      },
+      {
+        "route": "/preview/reel/detail",
+        "width": 390,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "JoshuaWoroniecki · 1/2\n\nForest waterfall\n\nWater cascades over mossy rocks · Pixabay footage",
+        "steps": [
+          {
+            "action": "play reel",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Forest waterfall",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.970257,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_reel_detail-390-light.png"
+      },
+      {
+        "route": "/preview/reel/detail",
+        "width": 390,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "JoshuaWoroniecki · 1/2\n\nForest waterfall\n\nWater cascades over mossy rocks · Pixabay footage",
+        "steps": [
+          {
+            "action": "play reel",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Forest waterfall",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 1.646119,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_reel_detail-390-dark.png"
+      },
+      {
+        "route": "/preview/reel/detail",
+        "width": 1440,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "JoshuaWoroniecki · 1/2\n\nForest waterfall\n\nWater cascades over mossy rocks · Pixabay footage",
+        "steps": [
+          {
+            "action": "play reel",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Forest waterfall",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 2.312003,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_reel_detail-1440-light.png"
+      },
+      {
+        "route": "/preview/reel/detail",
+        "width": 1440,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "JoshuaWoroniecki · 1/2\n\nForest waterfall\n\nWater cascades over mossy rocks · Pixabay footage",
+        "steps": [
+          {
+            "action": "play reel",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Forest waterfall",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 2.978067,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_reel_detail-1440-dark.png"
+      },
+      {
+        "route": "/preview/reel/gallery",
+        "width": 390,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "JoshuaWoroniecki · 1/2\n\nForest waterfall\n\nWater cascades over mossy rocks · Pixabay footage",
+        "steps": [
+          {
+            "action": "play reel",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Forest waterfall",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.949658,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_reel_gallery-390-light.png"
+      },
+      {
+        "route": "/preview/reel/gallery",
+        "width": 390,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "JoshuaWoroniecki · 1/2\n\nForest waterfall\n\nWater cascades over mossy rocks · Pixabay footage",
+        "steps": [
+          {
+            "action": "play reel",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Forest waterfall",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 1.614325,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_reel_gallery-390-dark.png"
+      },
+      {
+        "route": "/preview/reel/gallery",
+        "width": 1440,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "JoshuaWoroniecki · 1/2\n\nForest waterfall\n\nWater cascades over mossy rocks · Pixabay footage",
+        "steps": [
+          {
+            "action": "play reel",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Forest waterfall",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 2.280861,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_reel_gallery-1440-light.png"
+      },
+      {
+        "route": "/preview/reel/gallery",
+        "width": 1440,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "JoshuaWoroniecki · 1/2\n\nForest waterfall\n\nWater cascades over mossy rocks · Pixabay footage",
+        "steps": [
+          {
+            "action": "play reel",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Forest waterfall",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 2.947522,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_reel_gallery-1440-dark.png"
+      },
+      {
+        "route": "/preview/stories/detail",
+        "width": 390,
+        "theme": "light",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+            "width": 540,
+            "height": 960,
+            "alt": ""
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "jplenio\nJoshuaWoroniecki\nPixabay creator 21698102",
+        "steps": [
+          {
+            "action": "open landscape photo",
+            "images": [
+              {
+                "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+                "width": 1280,
+                "alt": "Hintersee lake reflecting mountains and trees"
+              }
+            ]
+          },
+          {
+            "action": "waterfall video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Water cascades over mossy rocks in a forest",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.549394,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "city video and previous cleanup",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+                "title": "A city archway and historic architecture",
+                "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+                "duration": 10.175,
+                "currentTime": 0.603507,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ],
+            "previous": {
+              "paused": true,
+              "connected": false
+            }
+          },
+          {
+            "action": "close",
+            "remainingMedia": 0
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_detail-390-light.png"
+      },
+      {
+        "route": "/preview/stories/detail",
+        "width": 390,
+        "theme": "dark",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+            "width": 540,
+            "height": 960,
+            "alt": ""
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "jplenio\nJoshuaWoroniecki\nPixabay creator 21698102",
+        "steps": [
+          {
+            "action": "open landscape photo",
+            "images": [
+              {
+                "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+                "width": 1280,
+                "alt": "Hintersee lake reflecting mountains and trees"
+              }
+            ]
+          },
+          {
+            "action": "waterfall video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Water cascades over mossy rocks in a forest",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.652345,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "city video and previous cleanup",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+                "title": "A city archway and historic architecture",
+                "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+                "duration": 10.175,
+                "currentTime": 0.603402,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ],
+            "previous": {
+              "paused": true,
+              "connected": false
+            }
+          },
+          {
+            "action": "close",
+            "remainingMedia": 0
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_detail-390-dark.png"
+      },
+      {
+        "route": "/preview/stories/detail",
+        "width": 1440,
+        "theme": "light",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+            "width": 540,
+            "height": 960,
+            "alt": ""
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "jplenio\nJoshuaWoroniecki\nPixabay creator 21698102",
+        "steps": [
+          {
+            "action": "open landscape photo",
+            "images": [
+              {
+                "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+                "width": 1280,
+                "alt": "Hintersee lake reflecting mountains and trees"
+              }
+            ]
+          },
+          {
+            "action": "waterfall video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Water cascades over mossy rocks in a forest",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.659986,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "city video and previous cleanup",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+                "title": "A city archway and historic architecture",
+                "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+                "duration": 10.175,
+                "currentTime": 0.611347,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ],
+            "previous": {
+              "paused": true,
+              "connected": false
+            }
+          },
+          {
+            "action": "close",
+            "remainingMedia": 0
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_detail-1440-light.png"
+      },
+      {
+        "route": "/preview/stories/detail",
+        "width": 1440,
+        "theme": "dark",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+            "width": 540,
+            "height": 960,
+            "alt": ""
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "jplenio\nJoshuaWoroniecki\nPixabay creator 21698102",
+        "steps": [
+          {
+            "action": "open landscape photo",
+            "images": [
+              {
+                "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+                "width": 1280,
+                "alt": "Hintersee lake reflecting mountains and trees"
+              }
+            ]
+          },
+          {
+            "action": "waterfall video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Water cascades over mossy rocks in a forest",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.657222,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "city video and previous cleanup",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+                "title": "A city archway and historic architecture",
+                "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+                "duration": 10.175,
+                "currentTime": 0.6098,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ],
+            "previous": {
+              "paused": true,
+              "connected": false
+            }
+          },
+          {
+            "action": "close",
+            "remainingMedia": 0
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_detail-1440-dark.png"
+      },
+      {
+        "route": "/preview/stories/gallery",
+        "width": 390,
+        "theme": "light",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+            "width": 540,
+            "height": 960,
+            "alt": ""
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "jplenio\nJoshuaWoroniecki\nPixabay creator 21698102",
+        "steps": [
+          {
+            "action": "open landscape photo",
+            "images": [
+              {
+                "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+                "width": 1280,
+                "alt": "Hintersee lake reflecting mountains and trees"
+              }
+            ]
+          },
+          {
+            "action": "waterfall video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Water cascades over mossy rocks in a forest",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.64019,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "city video and previous cleanup",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+                "title": "A city archway and historic architecture",
+                "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+                "duration": 10.175,
+                "currentTime": 0.598263,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ],
+            "previous": {
+              "paused": true,
+              "connected": false
+            }
+          },
+          {
+            "action": "close",
+            "remainingMedia": 0
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_gallery-390-light.png"
+      },
+      {
+        "route": "/preview/stories/gallery",
+        "width": 390,
+        "theme": "dark",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+            "width": 540,
+            "height": 960,
+            "alt": ""
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "jplenio\nJoshuaWoroniecki\nPixabay creator 21698102",
+        "steps": [
+          {
+            "action": "open landscape photo",
+            "images": [
+              {
+                "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+                "width": 1280,
+                "alt": "Hintersee lake reflecting mountains and trees"
+              }
+            ]
+          },
+          {
+            "action": "waterfall video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Water cascades over mossy rocks in a forest",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.655466,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "city video and previous cleanup",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+                "title": "A city archway and historic architecture",
+                "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+                "duration": 10.175,
+                "currentTime": 0.605881,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ],
+            "previous": {
+              "paused": true,
+              "connected": false
+            }
+          },
+          {
+            "action": "close",
+            "remainingMedia": 0
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_gallery-390-dark.png"
+      },
+      {
+        "route": "/preview/stories/gallery",
+        "width": 1440,
+        "theme": "light",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+            "width": 540,
+            "height": 960,
+            "alt": ""
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "jplenio\nJoshuaWoroniecki\nPixabay creator 21698102",
+        "steps": [
+          {
+            "action": "open landscape photo",
+            "images": [
+              {
+                "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+                "width": 1280,
+                "alt": "Hintersee lake reflecting mountains and trees"
+              }
+            ]
+          },
+          {
+            "action": "waterfall video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Water cascades over mossy rocks in a forest",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.658576,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "city video and previous cleanup",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+                "title": "A city archway and historic architecture",
+                "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+                "duration": 10.175,
+                "currentTime": 0.608655,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ],
+            "previous": {
+              "paused": true,
+              "connected": false
+            }
+          },
+          {
+            "action": "close",
+            "remainingMedia": 0
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_gallery-1440-light.png"
+      },
+      {
+        "route": "/preview/stories/gallery",
+        "width": 1440,
+        "theme": "dark",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+            "width": 720,
+            "height": 1280,
+            "alt": ""
+          },
+          {
+            "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+            "width": 540,
+            "height": 960,
+            "alt": ""
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "jplenio\nJoshuaWoroniecki\nPixabay creator 21698102",
+        "steps": [
+          {
+            "action": "open landscape photo",
+            "images": [
+              {
+                "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+                "width": 1280,
+                "alt": "Hintersee lake reflecting mountains and trees"
+              }
+            ]
+          },
+          {
+            "action": "waterfall video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+                "title": "Water cascades over mossy rocks in a forest",
+                "poster": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.jpg",
+                "duration": 12.033333,
+                "currentTime": 0.658374,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "city video and previous cleanup",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+                "title": "A city archway and historic architecture",
+                "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+                "duration": 10.175,
+                "currentTime": 0.61058,
+                "paused": false,
+                "muted": true,
+                "readyState": 4,
+                "width": 720,
+                "height": 1280,
+                "error": null
+              }
+            ],
+            "previous": {
+              "paused": true,
+              "connected": false
+            }
+          },
+          {
+            "action": "close",
+            "remainingMedia": 0
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_gallery-1440-dark.png"
+      },
+      {
+        "route": "/preview/stories/detail/stories-viewer",
+        "width": 390,
+        "theme": "light",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": "Hintersee lake reflecting mountains and trees"
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "jplenio\n1 / 2",
+        "steps": [
+          {
+            "action": "first photo",
+            "image": {
+              "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+              "width": 1280,
+              "alt": "Hintersee lake reflecting mountains and trees"
+            }
+          },
+          {
+            "action": "next photo",
+            "image": {
+              "src": "https://cdn.pixabay.com/photo/2018/10/08/22/34/lake-3733649_640.jpg",
+              "width": 640,
+              "alt": "Autumn trees reflected in Lake Ulmener Maar"
+            }
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_detail_stories-viewer-390-light.png"
+      },
+      {
+        "route": "/preview/stories/detail/stories-viewer",
+        "width": 390,
+        "theme": "dark",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": "Hintersee lake reflecting mountains and trees"
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "jplenio\n1 / 2",
+        "steps": [
+          {
+            "action": "first photo",
+            "image": {
+              "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+              "width": 1280,
+              "alt": "Hintersee lake reflecting mountains and trees"
+            }
+          },
+          {
+            "action": "next photo",
+            "image": {
+              "src": "https://cdn.pixabay.com/photo/2018/10/08/22/34/lake-3733649_640.jpg",
+              "width": 640,
+              "alt": "Autumn trees reflected in Lake Ulmener Maar"
+            }
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_detail_stories-viewer-390-dark.png"
+      },
+      {
+        "route": "/preview/stories/detail/stories-viewer",
+        "width": 1440,
+        "theme": "light",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": "Hintersee lake reflecting mountains and trees"
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "jplenio\n1 / 2",
+        "steps": [
+          {
+            "action": "first photo",
+            "image": {
+              "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+              "width": 1280,
+              "alt": "Hintersee lake reflecting mountains and trees"
+            }
+          },
+          {
+            "action": "next photo",
+            "image": {
+              "src": "https://cdn.pixabay.com/photo/2018/10/08/22/34/lake-3733649_640.jpg",
+              "width": 640,
+              "alt": "Autumn trees reflected in Lake Ulmener Maar"
+            }
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_detail_stories-viewer-1440-light.png"
+      },
+      {
+        "route": "/preview/stories/detail/stories-viewer",
+        "width": 1440,
+        "theme": "dark",
+        "images": [
+          {
+            "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+            "width": 1280,
+            "height": 720,
+            "alt": "Hintersee lake reflecting mountains and trees"
+          }
+        ],
+        "posters": [],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "jplenio\n1 / 2",
+        "steps": [
+          {
+            "action": "first photo",
+            "image": {
+              "src": "https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg",
+              "width": 1280,
+              "alt": "Hintersee lake reflecting mountains and trees"
+            }
+          },
+          {
+            "action": "next photo",
+            "image": {
+              "src": "https://cdn.pixabay.com/photo/2018/10/08/22/34/lake-3733649_640.jpg",
+              "width": 640,
+              "alt": "Autumn trees reflected in Lake Ulmener Maar"
+            }
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_stories_detail_stories-viewer-1440-dark.png"
+      },
+      {
+        "route": "/preview/hero/gallery",
+        "width": 390,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "Explore\nLakeside landscapes\nFind a quieter view\n\nA sample travel page with real lakeside footage by mariancroitoru on Pixabay.\n\nView the lake film\nSee the waterfall\n\nExample travel partners\n\nStudio\nTeam\nProduct\nCommunity\nStudio\nTeam\nProduct\nCommunity\n0:00 / 0:11",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0.635752,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_hero_gallery-390-light.png"
+      },
+      {
+        "route": "/preview/hero/gallery",
+        "width": 390,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 390,
+        "viewport": 390,
+        "text": "Explore\nLakeside landscapes\nFind a quieter view\n\nA sample travel page with real lakeside footage by mariancroitoru on Pixabay.\n\nView the lake film\nSee the waterfall\n\nExample travel partners\n\nStudio\nTeam\nProduct\nCommunity\nStudio\nTeam\nProduct\nCommunity\n0:01 / 0:11",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 0.666524,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.324866,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_hero_gallery-390-dark.png"
+      },
+      {
+        "route": "/preview/hero/gallery",
+        "width": 1440,
+        "theme": "light",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "Explore\nLakeside landscapes\nFind a quieter view\n\nA sample travel page with real lakeside footage by mariancroitoru on Pixabay.\n\nView the lake film\nSee the waterfall\n\nExample travel partners\n\nStudio\nTeam\nProduct\nCommunity\nStudio\nTeam\nProduct\nCommunity\n0:01 / 0:11",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 1.368977,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 2.023884,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_hero_gallery-1440-light.png"
+      },
+      {
+        "route": "/preview/hero/gallery",
+        "width": 1440,
+        "theme": "dark",
+        "images": [],
+        "posters": [
+          {
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "scrollWidth": 1440,
+        "viewport": 1440,
+        "text": "Explore\nLakeside landscapes\nFind a quieter view\n\nA sample travel page with real lakeside footage by mariancroitoru on Pixabay.\n\nView the lake film\nSee the waterfall\n\nExample travel partners\n\nStudio\nTeam\nProduct\nCommunity\nStudio\nTeam\nProduct\nCommunity\n0:02 / 0:11",
+        "steps": [
+          {
+            "action": "loaded paused",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 2.050515,
+                "paused": true,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          },
+          {
+            "action": "play video",
+            "media": [
+              {
+                "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+                "title": "Lakeside village · mariancroitoru",
+                "poster": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.jpg",
+                "duration": 11.378033,
+                "currentTime": 2.705286,
+                "paused": false,
+                "muted": false,
+                "readyState": 4,
+                "width": 1280,
+                "height": 720,
+                "error": null
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "shot": "/tmp/leement-media-planning/t04-shots/_preview_hero_gallery-1440-dark.png"
+      }
+    ],
+    "controls": {
+      "results": [
+        {
+          "name": "video initial",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "video real play",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 0.887791,
+              "paused": false,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "video keyboard seek",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 2,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "video mute",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 2,
+              "paused": true,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "video volume",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 2,
+              "paused": true,
+              "muted": false,
+              "volume": 0.4,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "video speed",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 2,
+              "paused": true,
+              "muted": false,
+              "volume": 0.4,
+              "rate": 1.25,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "scene descriptions",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 2,
+              "paused": true,
+              "muted": false,
+              "volume": 0.4,
+              "rate": 1.25,
+              "error": null
+            }
+          ],
+          "tracks": [
+            {
+              "label": "Scene descriptions",
+              "mode": "showing",
+              "cues": [
+                "A lakeside village beside calm water."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "full screen",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 2,
+              "paused": true,
+              "muted": false,
+              "volume": 0.4,
+              "rate": 1.25,
+              "error": null
+            }
+          ],
+          "entered": true
+        },
+        {
+          "name": "video source replacement",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Forest waterfall · JoshuaWoroniecki",
+              "duration": 12.033333,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ],
+          "previous": {
+            "paused": true,
+            "connected": false,
+            "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4"
+          }
+        },
+        {
+          "name": "video second source play",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Forest waterfall · JoshuaWoroniecki",
+              "duration": 12.033333,
+              "time": 0.760324,
+              "paused": false,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "video intended error",
+          "media": [
+            {
+              "src": "http://127.0.0.1:3117/demo-missing-video.mp4",
+              "title": "Forest waterfall · JoshuaWoroniecki",
+              "duration": null,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": 4
+            }
+          ],
+          "nativeControls": true,
+          "retry": 1
+        },
+        {
+          "name": "video reset",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "video 240px",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2021/03/07/67201-521635037_tiny.mp4",
+              "title": "Lakeside village · mariancroitoru",
+              "duration": 11.378033,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ],
+          "scrollWidth": 240
+        },
+        {
+          "name": "audio initial",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "audio real play",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 0.21465,
+              "paused": false,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "audio keyboard seek",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 5,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "audio mute",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 5,
+              "paused": true,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "audio volume",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 5,
+              "paused": true,
+              "muted": false,
+              "volume": 0.4,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "audio speed",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 5,
+              "paused": true,
+              "muted": false,
+              "volume": 0.4,
+              "rate": 1.25,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "brand waveform",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 5,
+              "paused": true,
+              "muted": false,
+              "volume": 0.4,
+              "rate": 1.25,
+              "error": null
+            }
+          ],
+          "brand": true
+        },
+        {
+          "name": "audio source replacement",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2026/05/07/audio_98b252e81c.mp3",
+              "title": "Ambient Piano",
+              "duration": 125.857938,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ],
+          "previous": {
+            "paused": true,
+            "connected": false,
+            "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3"
+          }
+        },
+        {
+          "name": "audio second source play",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2026/05/07/audio_98b252e81c.mp3",
+              "title": "Ambient Piano",
+              "duration": 125.857938,
+              "time": 0.593689,
+              "paused": false,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "audio intended error",
+          "media": [
+            {
+              "src": "http://127.0.0.1:3117/demo-missing-audio.wav",
+              "title": "Ambient Piano",
+              "duration": null,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": 4
+            }
+          ],
+          "nativeControls": true,
+          "retry": 1
+        },
+        {
+          "name": "audio reset",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "audio 240px",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+              "title": "Atmospheric Ambient Music with Piano",
+              "duration": 120.672,
+              "time": 0,
+              "paused": true,
+              "muted": false,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ],
+          "scrollWidth": 240
+        },
+        {
+          "name": "reel reduced motion initial",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Forest waterfall",
+              "duration": 12.033333,
+              "time": 0,
+              "paused": true,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "reel manual play under reduced motion",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Forest waterfall",
+              "duration": 12.033333,
+              "time": 0.67277,
+              "paused": false,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "reel keyboard second source reduced-motion",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+              "title": "City archway",
+              "duration": 10.175,
+              "time": 0,
+              "paused": true,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ],
+          "previous": {
+            "paused": true,
+            "connected": false
+          }
+        },
+        {
+          "name": "reel normal autoplay",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Forest waterfall",
+              "duration": 12.033333,
+              "time": 1.05653,
+              "paused": false,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "reel offscreen pause",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Forest waterfall",
+              "duration": 12.033333,
+              "time": 1.072868,
+              "paused": true,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "reel visible resume",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Forest waterfall",
+              "duration": 12.033333,
+              "time": 1.673482,
+              "paused": false,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "reel preserves user pause",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Forest waterfall",
+              "duration": 12.033333,
+              "time": 1.685372,
+              "paused": true,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "stories reduced motion initial",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Water cascades over mossy rocks in a forest",
+              "duration": 12.033333,
+              "time": 0,
+              "paused": true,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "stories manual play",
+          "media": [
+            {
+              "src": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_tiny.mp4",
+              "title": "Water cascades over mossy rocks in a forest",
+              "duration": 12.033333,
+              "time": 0.625866,
+              "paused": false,
+              "muted": true,
+              "volume": 1,
+              "rate": 1,
+              "error": null
+            }
+          ]
+        },
+        {
+          "name": "stories close cleanup",
+          "media": [],
+          "previous": {
+            "paused": true,
+            "connected": false
+          },
+          "focus": "Open story from JoshuaWoroniecki"
+        }
+      ],
+      "errors": [],
+      "reducedMotion": "Chromium emulation; physical OS preference unchanged"
+    },
+    "alternateViews": [
+      {
+        "name": "reel",
+        "theme": "light",
+        "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+        "title": "City archway",
+        "duration": 10.175,
+        "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+        "width": 720,
+        "height": 1280,
+        "shot": "/tmp/leement-media-planning/t04-shots/second-reel-light.png"
+      },
+      {
+        "name": "stories",
+        "theme": "light",
+        "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+        "title": "A city archway and historic architecture",
+        "duration": 10.175,
+        "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+        "width": 720,
+        "height": 1280,
+        "shot": "/tmp/leement-media-planning/t04-shots/second-stories-light.png"
+      },
+      {
+        "name": "audio-player",
+        "theme": "light",
+        "src": "https://cdn.pixabay.com/audio/2026/05/07/audio_98b252e81c.mp3",
+        "title": "Ambient Piano",
+        "duration": 125.857938,
+        "poster": null,
+        "width": null,
+        "height": null,
+        "shot": "/tmp/leement-media-planning/t04-shots/second-audio-player-light.png"
+      },
+      {
+        "name": "reel",
+        "theme": "dark",
+        "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+        "title": "City archway",
+        "duration": 10.175,
+        "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+        "width": 720,
+        "height": 1280,
+        "shot": "/tmp/leement-media-planning/t04-shots/second-reel-dark.png"
+      },
+      {
+        "name": "stories",
+        "theme": "dark",
+        "src": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_small.mp4",
+        "title": "A city archway and historic architecture",
+        "duration": 10.175,
+        "poster": "https://cdn.pixabay.com/video/2022/04/25/115053-703067837_tiny.jpg",
+        "width": 720,
+        "height": 1280,
+        "shot": "/tmp/leement-media-planning/t04-shots/second-stories-dark.png"
+      },
+      {
+        "name": "audio-player",
+        "theme": "dark",
+        "src": "https://cdn.pixabay.com/audio/2026/05/07/audio_98b252e81c.mp3",
+        "title": "Ambient Piano",
+        "duration": 125.857938,
+        "poster": null,
+        "width": null,
+        "height": null,
+        "shot": "/tmp/leement-media-planning/t04-shots/second-audio-player-dark.png"
+      }
+    ],
+    "checks": {
+      "docsTypecheck": "PASS",
+      "changedEslint": "PASS",
+      "focusedTests": "PASS: media-finance/player 2 files / 15 tests"
+    },
+    "visualNotes": "44 normal route/theme/viewport screens directly inspected as contact sheets. Six alternate music/city Reel/Stories screens inspected; capture awaits readyState >=3 and frame paint. Actual play/time progression, seek, volume/mute/rate, fullscreen, native scene-description track, source cleanup, decoded waveform, intentional error/native fallback/retry/reset, 240px layout and keyboard all passed. Offscreen Reel defect fixed and pause/resume/user pause preservation verified in native Chromium.",
+    "limits": "Reduced motion is browser emulation; physical OS preference was not changed. Initial hero gallery transient timeout rerun successfully. Harness waits for hydrated error UI and settled keyboard volume; no unrelated product defect inferred."
   }
 }

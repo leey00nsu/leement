@@ -943,7 +943,7 @@
     {
       "path": "apps/docs/examples/audio-player.tsx",
       "sha256": "b6eac7fbd079405b2de540657da00dda1904c5c7d850f5a28a5e67180b233e77",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -975,8 +975,8 @@
         "/preview/audio-player/detail",
         "/preview/audio-player/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T04 11 independent routes × light/dark·390/1440 =44 normal screens; actual playback and 35 control states, 6 alternate-media views inspected",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "108412",
         "524039",
@@ -984,7 +984,13 @@
         "3733649"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "108412",
+        "524039"
+      ],
+      "implementationStatus": "T04 actual media applied and native lifecycle verified",
+      "implementationSha256": "18212a8335cf79b11e456997960379d89682d52df281b5c0eec179daaf5fdef8"
     },
     {
       "path": "apps/docs/examples/avatar-images.tsx",
@@ -3811,7 +3817,7 @@
     {
       "path": "apps/docs/examples/hero.tsx",
       "sha256": "d87081cfcd103ced315a73f5e6789ed5b218cbe6eded746ba894e9b9722167f8",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -3826,13 +3832,19 @@
         "/preview/hero/detail",
         "/preview/hero/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T04 11 independent routes × light/dark·390/1440 =44 normal screens; actual playback and 35 control states, 6 alternate-media views inspected",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "67201"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "67201",
+        "189692"
+      ],
+      "implementationStatus": "T04 actual media applied and native lifecycle verified",
+      "implementationSha256": "df72e74bbaa09905f0d4cb8d104ce5ea6c5a4b0fb49e4aaad22524b59fc5e60e"
     },
     {
       "path": "apps/docs/examples/image-crop-aspect.tsx",
@@ -4163,7 +4175,7 @@
     {
       "path": "apps/docs/examples/reel.tsx",
       "sha256": "84e3767a28090de4da53ea7d777a2edf8eac3f38779c9b57f8c8edcd76ca9830",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -4193,15 +4205,21 @@
         "/preview/reel/detail",
         "/preview/reel/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T04 11 independent routes × light/dark·390/1440 =44 normal screens; actual playback and 35 control states, 6 alternate-media views inspected",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "189692",
         "115053",
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "189692",
+        "115053"
+      ],
+      "implementationStatus": "T04 actual media applied and native lifecycle verified",
+      "implementationSha256": "9ac70119db6b61fc2f9b823d948bcbfd47e0fe6997da3a81c03f676a24d9dbfa"
     },
     {
       "path": "apps/docs/examples/reveal-content-variants.tsx",
@@ -4268,7 +4286,7 @@
     {
       "path": "apps/docs/examples/stories-viewer.tsx",
       "sha256": "a90b189b7abd76316edfd2f091fe33f471ff3378d5c21d86231cc83a92262756",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -4287,19 +4305,25 @@
       "previewRoutes": [
         "/preview/stories/detail/stories-viewer"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T04 11 independent routes × light/dark·390/1440 =44 normal screens; actual playback and 35 control states, 6 alternate-media views inspected",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004",
         "3733649"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3733649",
+        "3601004"
+      ],
+      "implementationStatus": "T04 actual media applied and native lifecycle verified",
+      "implementationSha256": "8e5f8098d3210f7b4e32196403aa293b11f32934228ca302422954564bd9c09a"
     },
     {
       "path": "apps/docs/examples/stories.tsx",
       "sha256": "95121dd0c72eacaaf198a057fdf5b80926c2461715006cb85cf3b183f53ac7ae",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -4334,20 +4358,27 @@
         "/preview/stories/detail",
         "/preview/stories/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T04 11 independent routes × light/dark·390/1440 =44 normal screens; actual playback and 35 control states, 6 alternate-media views inspected",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "189692",
         "115053",
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004",
+        "189692",
+        "115053"
+      ],
+      "implementationStatus": "T04 actual media applied and native lifecycle verified",
+      "implementationSha256": "5c139556b80ddbee560ecc7668238a0b84336cb4a575fb5e1b0e67388a4f9b6c"
     },
     {
       "path": "apps/docs/examples/video-player.tsx",
       "sha256": "1df8d9d3de7e86961359f995547276120a5438ee707bf98497ffd93f16071570",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -4384,13 +4415,19 @@
         "/preview/video-player/detail",
         "/preview/video-player/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T04 11 independent routes × light/dark·390/1440 =44 normal screens; actual playback and 35 control states, 6 alternate-media views inspected",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "67201"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "67201",
+        "189692"
+      ],
+      "implementationStatus": "T04 actual media applied and native lifecycle verified",
+      "implementationSha256": "f90d37cde0f866c67132d3c41ef275a8891377194b1bd3815267d23a0683bdaf"
     },
     {
       "path": "registry/blocks/about.tsx",
@@ -4908,7 +4945,7 @@
     {
       "path": "registry/blocks/reel.tsx",
       "sha256": "1f3ca981b64a955b0d843559aa161032dc120ac6e9b1767539d84dadbe538e77",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -4923,11 +4960,14 @@
         "/preview/reel/detail",
         "/preview/reel/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T04 11 independent routes × light/dark·390/1440 =44 normal screens; actual playback and 35 control states, 6 alternate-media views inspected",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "implementedAssetIds": [],
+      "implementationStatus": "T04 actual media applied and native lifecycle verified",
+      "implementationSha256": "f11c98654b0e4c72a7568e83cb13e6475bfd733745ecc3053054231f01e8fa4a"
     },
     {
       "path": "registry/blocks/roadmap.tsx",
