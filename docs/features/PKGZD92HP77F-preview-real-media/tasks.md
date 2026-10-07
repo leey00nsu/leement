@@ -169,14 +169,14 @@
 
   - Verification: 최종 모든 자리 83/83 판정과 실제 소비 화면 확인. Preview 332건+유지 역할 80건, Stories 후속 12건, 독립 registry CLI 45-item graph/49 targets·production tsc/build·24조합/96건 PASS. Photo/real playback/control·240px·Foundation/Replay/lazy·SSR/native fallback 확인. 실제 Stories Portal 결함을 기존 테스트 UPDATE와 native 재생으로 수정 확인. [D010](./decisions.md#d010-t05-출처-안내와-최종-소비자-검증-2026-10-07), [최종 증거](./artifacts/media-verification.json).
 
-- [TODO][PRD-FR-005] T-PKGZD92HP77F-preview-real-media-06 왼쪽 Components·Blocks·Patterns 항목 알파벳순 정렬
+- [DONE][PRD-FR-005] T-PKGZD92HP77F-preview-real-media-06 왼쪽 Components·Blocks·Patterns 항목 알파벳순 정렬
   - Date: 2026-10-07
   - Acceptance:
     - 왼쪽 데스크톱 메뉴와 모바일 메뉴에서 Components·Blocks·Patterns의 각 기존 분류 안 항목이 표시 이름 기준 A–Z 순으로 나오며 현재 항목 선택과 링크를 유지한다.
   - Checklist:
-    - [ ] navigation의 기존 분류를 보존하며 표시 label 기준 정렬 적용
-    - [ ] 세 범주 데스크톱·모바일 실제 메뉴 순서와 현재 항목 표시·링크 확인
-    - [ ] 필요한 PRD·디자인 설명과 Feature 문서·검증·커밋 동기화
+    - [x] navigation의 기존 분류를 보존하며 표시 label 기준 정렬 적용
+    - [x] 세 범주 데스크톱·모바일 실제 메뉴 순서와 현재 항목 표시·링크 확인
+    - [x] 필요한 PRD·디자인 설명과 Feature 문서·검증·커밋 동기화
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -185,6 +185,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 실제 Components 95·Blocks 36·Patterns 15항목의 1440/390px 메뉴 6건에서 모든 분류의 A–Z 순서·현재 항목·href PASS. 여섯 화면 직접 확인. docs typecheck·scoped eslint PASS. 기존 기능 분류와 URL 보존, 영구 테스트 NONE. [증거](./artifacts/media-verification.json), [화면](./artifacts/navigation-alphabetical.png), [D011](./decisions.md#d011-실제-왼쪽-탐색-메뉴-정렬-추가-요청-2026-10-07).
 
 ## Repository Knowledge (완료 비차단)
 
@@ -198,7 +200,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
@@ -216,7 +218,9 @@
 | `pnpm exec vitest run registry/ui/media-finance.test.tsx registry/ui/player.test.tsx` | 2026-10-07 | PASS: 2 files / 15 tests |
 | temporary consumer `pnpm run build` | 2026-10-07 | PASS: strict tsc + Vite production build |
 | `npx lee-spec-kit feature-audit --enforce --json` | 2026-10-07 | PASS |
+| `pnpm --filter @leement/docs typecheck` | 2026-10-07 | PASS: navigation 변경 후 |
+| `pnpm exec eslint apps/docs/lib/docs.ts` | 2026-10-07 | PASS: navigation 변경 후 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:c10223e379e5f88ae7ccf636409884cda01883350aa1e319769ebc51396200f9 -->
+<!-- lee-spec-kit:workflow-sync sha256:806402886f4889326f32675978700ed383dacffe64adc6a832e883ec85439c8b -->

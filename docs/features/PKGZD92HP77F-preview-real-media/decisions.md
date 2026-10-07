@@ -170,3 +170,5 @@
 - **Context**: 사용자는 채팅의 링크 목록이 아니라 실제 왼쪽 Components·Blocks·Patterns 메뉴를 알파벳순으로 정렬하라고 화면과 함께 명시했다. 구현 승인 대기 중인 기존 Feature에 T06을 추가해 요청을 반영한다. 기존 미디어 완료 task는 수정하지 않는다.
 - **Decision**: 공용 navigation의 표시 label 기준 A–Z 정렬을 사용한다. Components의 기능 분류는 보존하며 각 분류 내부 항목을 정렬한다. Blocks·Patterns 전체 목록을 정렬하고 navigation의 범주 순서를 Components→Blocks→Patterns로 맞춘다. desktop/mobile이 같은 데이터를 사용한다.
 - **Verification Contract**: 표시 순서만 바꾸는 가역적인 변경으로 영구 테스트는 NONE. 실제 세 범주의 desktop/mobile 메뉴에서 분류별 label 순서·현재 항목과 href를 확인하고 docs type/lint를 실행한다. 공용 PRD·디자인에 유지할 정렬 규칙만 설명한다.
+
+- **Result**: Components 95·Blocks 36·Patterns 15항목의 desktop 1440px/mobile 390px 실제 메뉴 6건에서 모든 분류의 표시 이름 순서와 현재 항목·href를 확인했다. 여섯 화면을 직접 검수했고 docs typecheck·scoped eslint PASS. [검증 기록](./artifacts/media-verification.json), [메뉴 화면](./artifacts/navigation-alphabetical.png). 기존 미디어 검사 결과는 보존하며 이번 변경은 탐색 순서에만 해당한다.

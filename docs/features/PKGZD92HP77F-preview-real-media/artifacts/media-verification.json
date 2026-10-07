@@ -20407,5 +20407,1661 @@
       "Consumer CLI removes leading comments in some directive-bearing files; executable output matched and full license targets installed. Source media preflight hashes identify temporary original files, not Git-distributed binaries."
     ],
     "harnessCorrections": "Initial shell used duplicate Foundation style ID and wrong Play label; corrected to actual Foundation provider storage event and accessible Play video/audio names. Consumer used wrong Seek audio name; corrected to actual waveform slider. Stories paused at zero in production was separately reproduced, a test failed before fix, and corrected source was reinstalled/rebuilt/reverified."
+  },
+  "T06": {
+    "scope": "Actual Components, Blocks, Patterns left navigation; sort displayed labels inside existing sections; preserve href and active state on desktop/mobile",
+    "verificationMethod": "Chromium native rendered navigation at localhost:3001; all section link labels compared with English case-insensitive A-Z; one aria-current=page with expected href per route; six screenshots visually inspected",
+    "cases": [
+      {
+        "category": "Components",
+        "width": 1440,
+        "itemCount": 95,
+        "sections": [
+          [
+            {
+              "label": "Accordion",
+              "href": "/components/accordion",
+              "current": null
+            },
+            {
+              "label": "Aspect Ratio",
+              "href": "/components/aspect-ratio",
+              "current": null
+            },
+            {
+              "label": "Attachment",
+              "href": "/components/attachment",
+              "current": null
+            },
+            {
+              "label": "Badge",
+              "href": "/components/badge",
+              "current": null
+            },
+            {
+              "label": "Breadcrumb",
+              "href": "/components/breadcrumb",
+              "current": null
+            },
+            {
+              "label": "Bubble",
+              "href": "/components/bubble",
+              "current": null
+            },
+            {
+              "label": "Button",
+              "href": "/components/button",
+              "current": null
+            },
+            {
+              "label": "Button Group",
+              "href": "/components/button-group",
+              "current": null
+            },
+            {
+              "label": "Card",
+              "href": "/components/card",
+              "current": null
+            },
+            {
+              "label": "Carousel",
+              "href": "/components/carousel",
+              "current": null
+            },
+            {
+              "label": "Checkbox",
+              "href": "/components/checkbox",
+              "current": null
+            },
+            {
+              "label": "Command",
+              "href": "/components/command",
+              "current": null
+            },
+            {
+              "label": "Context Menu",
+              "href": "/components/context-menu",
+              "current": null
+            },
+            {
+              "label": "Direction",
+              "href": "/components/direction",
+              "current": null
+            },
+            {
+              "label": "Drawer",
+              "href": "/components/drawer",
+              "current": null
+            },
+            {
+              "label": "Field",
+              "href": "/components/field",
+              "current": null
+            },
+            {
+              "label": "Input",
+              "href": "/components/input",
+              "current": null
+            },
+            {
+              "label": "Input Group",
+              "href": "/components/input-group",
+              "current": null
+            },
+            {
+              "label": "Input OTP",
+              "href": "/components/input-otp",
+              "current": null
+            },
+            {
+              "label": "Item",
+              "href": "/components/item",
+              "current": null
+            },
+            {
+              "label": "Kbd",
+              "href": "/components/kbd",
+              "current": null
+            },
+            {
+              "label": "Label",
+              "href": "/components/label",
+              "current": null
+            },
+            {
+              "label": "Marker",
+              "href": "/components/marker",
+              "current": null
+            },
+            {
+              "label": "Menubar",
+              "href": "/components/menubar",
+              "current": null
+            },
+            {
+              "label": "Message",
+              "href": "/components/message",
+              "current": null
+            },
+            {
+              "label": "Message Scroller",
+              "href": "/components/message-scroller",
+              "current": null
+            },
+            {
+              "label": "Navigation Menu",
+              "href": "/components/navigation-menu",
+              "current": null
+            },
+            {
+              "label": "Pagination",
+              "href": "/components/pagination",
+              "current": null
+            },
+            {
+              "label": "Questionnaire",
+              "href": "/components/questionnaire",
+              "current": null
+            },
+            {
+              "label": "Radio Group",
+              "href": "/components/radio-group",
+              "current": "page"
+            },
+            {
+              "label": "Resizable",
+              "href": "/components/resizable",
+              "current": null
+            },
+            {
+              "label": "Scroll Area",
+              "href": "/components/scroll-area",
+              "current": null
+            },
+            {
+              "label": "Select",
+              "href": "/components/select",
+              "current": null
+            },
+            {
+              "label": "Separator",
+              "href": "/components/separator",
+              "current": null
+            },
+            {
+              "label": "Sidebar",
+              "href": "/components/sidebar",
+              "current": null
+            },
+            {
+              "label": "Switch",
+              "href": "/components/switch",
+              "current": null
+            },
+            {
+              "label": "Tabs",
+              "href": "/components/tabs",
+              "current": null
+            },
+            {
+              "label": "Textarea",
+              "href": "/components/textarea",
+              "current": null
+            },
+            {
+              "label": "Toggle",
+              "href": "/components/toggle",
+              "current": null
+            },
+            {
+              "label": "Toggle Group",
+              "href": "/components/toggle-group",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Alert Dialog",
+              "href": "/components/alert-dialog",
+              "current": null
+            },
+            {
+              "label": "Dialog",
+              "href": "/components/dialog",
+              "current": null
+            },
+            {
+              "label": "Dropdown Menu",
+              "href": "/components/dropdown-menu",
+              "current": null
+            },
+            {
+              "label": "Hover Card",
+              "href": "/components/hover-card",
+              "current": null
+            },
+            {
+              "label": "Popover",
+              "href": "/components/popover",
+              "current": null
+            },
+            {
+              "label": "Sheet",
+              "href": "/components/sheet",
+              "current": null
+            },
+            {
+              "label": "Tooltip",
+              "href": "/components/tooltip",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Progress",
+              "href": "/components/progress",
+              "current": null
+            },
+            {
+              "label": "Skeleton",
+              "href": "/components/skeleton",
+              "current": null
+            },
+            {
+              "label": "Spinner",
+              "href": "/components/spinner",
+              "current": null
+            },
+            {
+              "label": "Status",
+              "href": "/components/status",
+              "current": null
+            },
+            {
+              "label": "Status Notice",
+              "href": "/components/status-notice",
+              "current": null
+            },
+            {
+              "label": "Toast",
+              "href": "/components/toast",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Calendar",
+              "href": "/components/calendar",
+              "current": null
+            },
+            {
+              "label": "Chart",
+              "href": "/components/chart",
+              "current": null
+            },
+            {
+              "label": "Contribution Graph",
+              "href": "/components/contribution-graph",
+              "current": null
+            },
+            {
+              "label": "List",
+              "href": "/components/list",
+              "current": null
+            },
+            {
+              "label": "Table",
+              "href": "/components/table",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Avatar",
+              "href": "/components/avatar",
+              "current": null
+            },
+            {
+              "label": "Avatar Stack",
+              "href": "/components/avatar-stack",
+              "current": null
+            },
+            {
+              "label": "Cursor",
+              "href": "/components/cursor",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Choicebox",
+              "href": "/components/choicebox",
+              "current": null
+            },
+            {
+              "label": "Color Picker",
+              "href": "/components/color-picker",
+              "current": null
+            },
+            {
+              "label": "Combobox",
+              "href": "/components/combobox",
+              "current": null
+            },
+            {
+              "label": "Dropzone",
+              "href": "/components/dropzone",
+              "current": null
+            },
+            {
+              "label": "Mini Calendar",
+              "href": "/components/mini-calendar",
+              "current": null
+            },
+            {
+              "label": "Rating",
+              "href": "/components/rating",
+              "current": null
+            },
+            {
+              "label": "Slider",
+              "href": "/components/slider",
+              "current": null
+            },
+            {
+              "label": "Tags",
+              "href": "/components/tags",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Image Crop",
+              "href": "/components/image-crop",
+              "current": null
+            },
+            {
+              "label": "Image Zoom",
+              "href": "/components/image-zoom",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Credit Card",
+              "href": "/components/credit-card",
+              "current": null
+            },
+            {
+              "label": "Ticker",
+              "href": "/components/ticker",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Stories",
+              "href": "/components/stories",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Audio Player",
+              "href": "/components/audio-player",
+              "current": null
+            },
+            {
+              "label": "Video Player",
+              "href": "/components/video-player",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Announcement",
+              "href": "/components/announcement",
+              "current": null
+            },
+            {
+              "label": "Banner",
+              "href": "/components/banner",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Typography",
+              "href": "/components/typography",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Brand Gradient Text",
+              "href": "/components/brand-gradient-text",
+              "current": null
+            },
+            {
+              "label": "Marquee",
+              "href": "/components/marquee",
+              "current": null
+            },
+            {
+              "label": "Reveal Content",
+              "href": "/components/reveal-content",
+              "current": null
+            },
+            {
+              "label": "Rotating Content",
+              "href": "/components/rotating-content",
+              "current": null
+            },
+            {
+              "label": "Text Reveal",
+              "href": "/components/text-reveal",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Code Block",
+              "href": "/components/code-block",
+              "current": null
+            },
+            {
+              "label": "Collapsible",
+              "href": "/components/collapsible",
+              "current": null
+            },
+            {
+              "label": "Comparison",
+              "href": "/components/comparison",
+              "current": null
+            },
+            {
+              "label": "Editor",
+              "href": "/components/editor",
+              "current": null
+            },
+            {
+              "label": "Glimpse",
+              "href": "/components/glimpse",
+              "current": null
+            },
+            {
+              "label": "Pill",
+              "href": "/components/pill",
+              "current": null
+            },
+            {
+              "label": "QR Code",
+              "href": "/components/qr-code",
+              "current": null
+            },
+            {
+              "label": "Relative Time",
+              "href": "/components/relative-time",
+              "current": null
+            },
+            {
+              "label": "Snippet",
+              "href": "/components/snippet",
+              "current": null
+            },
+            {
+              "label": "Theme Switcher",
+              "href": "/components/theme-switcher",
+              "current": null
+            },
+            {
+              "label": "Tree",
+              "href": "/components/tree",
+              "current": null
+            }
+          ]
+        ],
+        "first": [
+          "Accordion",
+          "Aspect Ratio",
+          "Attachment",
+          "Badge",
+          "Breadcrumb",
+          "Bubble",
+          "Button",
+          "Button Group"
+        ],
+        "active": "/components/radio-group",
+        "shot": "/tmp/leement-media-planning/t06-components-1440.png"
+      },
+      {
+        "category": "Blocks",
+        "width": 1440,
+        "itemCount": 36,
+        "sections": [
+          [
+            {
+              "label": "About",
+              "href": "/blocks/about",
+              "current": null
+            },
+            {
+              "label": "Awards",
+              "href": "/blocks/awards",
+              "current": null
+            },
+            {
+              "label": "Bento Grid",
+              "href": "/blocks/bento-grid",
+              "current": null
+            },
+            {
+              "label": "Blog",
+              "href": "/blocks/blog",
+              "current": null
+            },
+            {
+              "label": "Blog Post",
+              "href": "/blocks/blog-post",
+              "current": null
+            },
+            {
+              "label": "Careers",
+              "href": "/blocks/careers",
+              "current": null
+            },
+            {
+              "label": "Case Studies",
+              "href": "/blocks/case-studies",
+              "current": null
+            },
+            {
+              "label": "Case Study",
+              "href": "/blocks/case-study",
+              "current": null
+            },
+            {
+              "label": "Changelog",
+              "href": "/blocks/changelog",
+              "current": null
+            },
+            {
+              "label": "Code Example",
+              "href": "/blocks/code-example",
+              "current": null
+            },
+            {
+              "label": "Codebase",
+              "href": "/blocks/codebase",
+              "current": null
+            },
+            {
+              "label": "Collaborative Canvas",
+              "href": "/blocks/collaborative-canvas",
+              "current": null
+            },
+            {
+              "label": "Community",
+              "href": "/blocks/community",
+              "current": null
+            },
+            {
+              "label": "Compare",
+              "href": "/blocks/compare",
+              "current": null
+            },
+            {
+              "label": "Compliance",
+              "href": "/blocks/compliance",
+              "current": null
+            },
+            {
+              "label": "Contact",
+              "href": "/blocks/contact",
+              "current": null
+            },
+            {
+              "label": "CTA",
+              "href": "/blocks/cta",
+              "current": null
+            },
+            {
+              "label": "Deck",
+              "href": "/blocks/deck",
+              "current": null
+            },
+            {
+              "label": "Dialog Stack",
+              "href": "/blocks/dialog-stack",
+              "current": null
+            },
+            {
+              "label": "Download",
+              "href": "/blocks/download",
+              "current": null
+            },
+            {
+              "label": "Experience",
+              "href": "/blocks/experience",
+              "current": null
+            },
+            {
+              "label": "FAQ",
+              "href": "/blocks/faq",
+              "current": null
+            },
+            {
+              "label": "Feature",
+              "href": "/blocks/feature",
+              "current": null
+            },
+            {
+              "label": "Footer",
+              "href": "/blocks/footer",
+              "current": null
+            },
+            {
+              "label": "Form",
+              "href": "/blocks/form",
+              "current": null
+            },
+            {
+              "label": "Gantt",
+              "href": "/blocks/gantt",
+              "current": null
+            },
+            {
+              "label": "Hero",
+              "href": "/blocks/hero",
+              "current": null
+            },
+            {
+              "label": "Kanban",
+              "href": "/blocks/kanban",
+              "current": null
+            },
+            {
+              "label": "Pricing",
+              "href": "/blocks/pricing",
+              "current": null
+            },
+            {
+              "label": "Reel",
+              "href": "/blocks/reel",
+              "current": null
+            },
+            {
+              "label": "Roadmap",
+              "href": "/blocks/roadmap",
+              "current": null
+            },
+            {
+              "label": "Sandbox",
+              "href": "/blocks/sandbox",
+              "current": null
+            },
+            {
+              "label": "Settings Section",
+              "href": "/blocks/settings-section",
+              "current": null
+            },
+            {
+              "label": "Stats",
+              "href": "/blocks/stats",
+              "current": null
+            },
+            {
+              "label": "Team",
+              "href": "/blocks/team",
+              "current": "page"
+            },
+            {
+              "label": "Testimonial",
+              "href": "/blocks/testimonial",
+              "current": null
+            }
+          ]
+        ],
+        "first": [
+          "About",
+          "Awards",
+          "Bento Grid",
+          "Blog",
+          "Blog Post",
+          "Careers",
+          "Case Studies",
+          "Case Study"
+        ],
+        "active": "/blocks/team",
+        "shot": "/tmp/leement-media-planning/t06-blocks-1440.png"
+      },
+      {
+        "category": "Patterns",
+        "width": 1440,
+        "itemCount": 15,
+        "sections": [
+          [
+            {
+              "label": "BrandAction",
+              "href": "/patterns/brand-action",
+              "current": null
+            },
+            {
+              "label": "BrandLogo",
+              "href": "/patterns/brand-logo",
+              "current": null
+            },
+            {
+              "label": "DataTable",
+              "href": "/patterns/data-table",
+              "current": null
+            },
+            {
+              "label": "DatePicker",
+              "href": "/patterns/date-picker",
+              "current": null
+            },
+            {
+              "label": "EmptyState",
+              "href": "/patterns/empty-state",
+              "current": null
+            },
+            {
+              "label": "FilterToolbar",
+              "href": "/patterns/filter-toolbar",
+              "current": null
+            },
+            {
+              "label": "FormSection",
+              "href": "/patterns/form-section",
+              "current": null
+            },
+            {
+              "label": "MediaReveal",
+              "href": "/patterns/media-reveal",
+              "current": "page"
+            },
+            {
+              "label": "PageHeader",
+              "href": "/patterns/page-header",
+              "current": null
+            },
+            {
+              "label": "PageSkeleton",
+              "href": "/patterns/page-skeleton",
+              "current": null
+            },
+            {
+              "label": "ProductPageIntro",
+              "href": "/patterns/product-page-intro",
+              "current": null
+            },
+            {
+              "label": "ResourceRowLink",
+              "href": "/patterns/resource-row-link",
+              "current": null
+            },
+            {
+              "label": "SearchField",
+              "href": "/patterns/search-field",
+              "current": null
+            },
+            {
+              "label": "StatCard",
+              "href": "/patterns/stat-card",
+              "current": null
+            },
+            {
+              "label": "StatePanel",
+              "href": "/patterns/state-panel",
+              "current": null
+            }
+          ]
+        ],
+        "first": [
+          "BrandAction",
+          "BrandLogo",
+          "DataTable",
+          "DatePicker",
+          "EmptyState",
+          "FilterToolbar",
+          "FormSection",
+          "MediaReveal"
+        ],
+        "active": "/patterns/media-reveal",
+        "shot": "/tmp/leement-media-planning/t06-patterns-1440.png"
+      },
+      {
+        "category": "Components",
+        "width": 390,
+        "itemCount": 95,
+        "sections": [
+          [
+            {
+              "label": "Accordion",
+              "href": "/components/accordion",
+              "current": null
+            },
+            {
+              "label": "Aspect Ratio",
+              "href": "/components/aspect-ratio",
+              "current": null
+            },
+            {
+              "label": "Attachment",
+              "href": "/components/attachment",
+              "current": null
+            },
+            {
+              "label": "Badge",
+              "href": "/components/badge",
+              "current": null
+            },
+            {
+              "label": "Breadcrumb",
+              "href": "/components/breadcrumb",
+              "current": null
+            },
+            {
+              "label": "Bubble",
+              "href": "/components/bubble",
+              "current": null
+            },
+            {
+              "label": "Button",
+              "href": "/components/button",
+              "current": null
+            },
+            {
+              "label": "Button Group",
+              "href": "/components/button-group",
+              "current": null
+            },
+            {
+              "label": "Card",
+              "href": "/components/card",
+              "current": null
+            },
+            {
+              "label": "Carousel",
+              "href": "/components/carousel",
+              "current": null
+            },
+            {
+              "label": "Checkbox",
+              "href": "/components/checkbox",
+              "current": null
+            },
+            {
+              "label": "Command",
+              "href": "/components/command",
+              "current": null
+            },
+            {
+              "label": "Context Menu",
+              "href": "/components/context-menu",
+              "current": null
+            },
+            {
+              "label": "Direction",
+              "href": "/components/direction",
+              "current": null
+            },
+            {
+              "label": "Drawer",
+              "href": "/components/drawer",
+              "current": null
+            },
+            {
+              "label": "Field",
+              "href": "/components/field",
+              "current": null
+            },
+            {
+              "label": "Input",
+              "href": "/components/input",
+              "current": null
+            },
+            {
+              "label": "Input Group",
+              "href": "/components/input-group",
+              "current": null
+            },
+            {
+              "label": "Input OTP",
+              "href": "/components/input-otp",
+              "current": null
+            },
+            {
+              "label": "Item",
+              "href": "/components/item",
+              "current": null
+            },
+            {
+              "label": "Kbd",
+              "href": "/components/kbd",
+              "current": null
+            },
+            {
+              "label": "Label",
+              "href": "/components/label",
+              "current": null
+            },
+            {
+              "label": "Marker",
+              "href": "/components/marker",
+              "current": null
+            },
+            {
+              "label": "Menubar",
+              "href": "/components/menubar",
+              "current": null
+            },
+            {
+              "label": "Message",
+              "href": "/components/message",
+              "current": null
+            },
+            {
+              "label": "Message Scroller",
+              "href": "/components/message-scroller",
+              "current": null
+            },
+            {
+              "label": "Navigation Menu",
+              "href": "/components/navigation-menu",
+              "current": null
+            },
+            {
+              "label": "Pagination",
+              "href": "/components/pagination",
+              "current": null
+            },
+            {
+              "label": "Questionnaire",
+              "href": "/components/questionnaire",
+              "current": null
+            },
+            {
+              "label": "Radio Group",
+              "href": "/components/radio-group",
+              "current": "page"
+            },
+            {
+              "label": "Resizable",
+              "href": "/components/resizable",
+              "current": null
+            },
+            {
+              "label": "Scroll Area",
+              "href": "/components/scroll-area",
+              "current": null
+            },
+            {
+              "label": "Select",
+              "href": "/components/select",
+              "current": null
+            },
+            {
+              "label": "Separator",
+              "href": "/components/separator",
+              "current": null
+            },
+            {
+              "label": "Sidebar",
+              "href": "/components/sidebar",
+              "current": null
+            },
+            {
+              "label": "Switch",
+              "href": "/components/switch",
+              "current": null
+            },
+            {
+              "label": "Tabs",
+              "href": "/components/tabs",
+              "current": null
+            },
+            {
+              "label": "Textarea",
+              "href": "/components/textarea",
+              "current": null
+            },
+            {
+              "label": "Toggle",
+              "href": "/components/toggle",
+              "current": null
+            },
+            {
+              "label": "Toggle Group",
+              "href": "/components/toggle-group",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Alert Dialog",
+              "href": "/components/alert-dialog",
+              "current": null
+            },
+            {
+              "label": "Dialog",
+              "href": "/components/dialog",
+              "current": null
+            },
+            {
+              "label": "Dropdown Menu",
+              "href": "/components/dropdown-menu",
+              "current": null
+            },
+            {
+              "label": "Hover Card",
+              "href": "/components/hover-card",
+              "current": null
+            },
+            {
+              "label": "Popover",
+              "href": "/components/popover",
+              "current": null
+            },
+            {
+              "label": "Sheet",
+              "href": "/components/sheet",
+              "current": null
+            },
+            {
+              "label": "Tooltip",
+              "href": "/components/tooltip",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Progress",
+              "href": "/components/progress",
+              "current": null
+            },
+            {
+              "label": "Skeleton",
+              "href": "/components/skeleton",
+              "current": null
+            },
+            {
+              "label": "Spinner",
+              "href": "/components/spinner",
+              "current": null
+            },
+            {
+              "label": "Status",
+              "href": "/components/status",
+              "current": null
+            },
+            {
+              "label": "Status Notice",
+              "href": "/components/status-notice",
+              "current": null
+            },
+            {
+              "label": "Toast",
+              "href": "/components/toast",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Calendar",
+              "href": "/components/calendar",
+              "current": null
+            },
+            {
+              "label": "Chart",
+              "href": "/components/chart",
+              "current": null
+            },
+            {
+              "label": "Contribution Graph",
+              "href": "/components/contribution-graph",
+              "current": null
+            },
+            {
+              "label": "List",
+              "href": "/components/list",
+              "current": null
+            },
+            {
+              "label": "Table",
+              "href": "/components/table",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Avatar",
+              "href": "/components/avatar",
+              "current": null
+            },
+            {
+              "label": "Avatar Stack",
+              "href": "/components/avatar-stack",
+              "current": null
+            },
+            {
+              "label": "Cursor",
+              "href": "/components/cursor",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Choicebox",
+              "href": "/components/choicebox",
+              "current": null
+            },
+            {
+              "label": "Color Picker",
+              "href": "/components/color-picker",
+              "current": null
+            },
+            {
+              "label": "Combobox",
+              "href": "/components/combobox",
+              "current": null
+            },
+            {
+              "label": "Dropzone",
+              "href": "/components/dropzone",
+              "current": null
+            },
+            {
+              "label": "Mini Calendar",
+              "href": "/components/mini-calendar",
+              "current": null
+            },
+            {
+              "label": "Rating",
+              "href": "/components/rating",
+              "current": null
+            },
+            {
+              "label": "Slider",
+              "href": "/components/slider",
+              "current": null
+            },
+            {
+              "label": "Tags",
+              "href": "/components/tags",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Image Crop",
+              "href": "/components/image-crop",
+              "current": null
+            },
+            {
+              "label": "Image Zoom",
+              "href": "/components/image-zoom",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Credit Card",
+              "href": "/components/credit-card",
+              "current": null
+            },
+            {
+              "label": "Ticker",
+              "href": "/components/ticker",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Stories",
+              "href": "/components/stories",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Audio Player",
+              "href": "/components/audio-player",
+              "current": null
+            },
+            {
+              "label": "Video Player",
+              "href": "/components/video-player",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Announcement",
+              "href": "/components/announcement",
+              "current": null
+            },
+            {
+              "label": "Banner",
+              "href": "/components/banner",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Typography",
+              "href": "/components/typography",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Brand Gradient Text",
+              "href": "/components/brand-gradient-text",
+              "current": null
+            },
+            {
+              "label": "Marquee",
+              "href": "/components/marquee",
+              "current": null
+            },
+            {
+              "label": "Reveal Content",
+              "href": "/components/reveal-content",
+              "current": null
+            },
+            {
+              "label": "Rotating Content",
+              "href": "/components/rotating-content",
+              "current": null
+            },
+            {
+              "label": "Text Reveal",
+              "href": "/components/text-reveal",
+              "current": null
+            }
+          ],
+          [
+            {
+              "label": "Code Block",
+              "href": "/components/code-block",
+              "current": null
+            },
+            {
+              "label": "Collapsible",
+              "href": "/components/collapsible",
+              "current": null
+            },
+            {
+              "label": "Comparison",
+              "href": "/components/comparison",
+              "current": null
+            },
+            {
+              "label": "Editor",
+              "href": "/components/editor",
+              "current": null
+            },
+            {
+              "label": "Glimpse",
+              "href": "/components/glimpse",
+              "current": null
+            },
+            {
+              "label": "Pill",
+              "href": "/components/pill",
+              "current": null
+            },
+            {
+              "label": "QR Code",
+              "href": "/components/qr-code",
+              "current": null
+            },
+            {
+              "label": "Relative Time",
+              "href": "/components/relative-time",
+              "current": null
+            },
+            {
+              "label": "Snippet",
+              "href": "/components/snippet",
+              "current": null
+            },
+            {
+              "label": "Theme Switcher",
+              "href": "/components/theme-switcher",
+              "current": null
+            },
+            {
+              "label": "Tree",
+              "href": "/components/tree",
+              "current": null
+            }
+          ]
+        ],
+        "first": [
+          "Accordion",
+          "Aspect Ratio",
+          "Attachment",
+          "Badge",
+          "Breadcrumb",
+          "Bubble",
+          "Button",
+          "Button Group"
+        ],
+        "active": "/components/radio-group",
+        "shot": "/tmp/leement-media-planning/t06-components-390.png"
+      },
+      {
+        "category": "Blocks",
+        "width": 390,
+        "itemCount": 36,
+        "sections": [
+          [
+            {
+              "label": "About",
+              "href": "/blocks/about",
+              "current": null
+            },
+            {
+              "label": "Awards",
+              "href": "/blocks/awards",
+              "current": null
+            },
+            {
+              "label": "Bento Grid",
+              "href": "/blocks/bento-grid",
+              "current": null
+            },
+            {
+              "label": "Blog",
+              "href": "/blocks/blog",
+              "current": null
+            },
+            {
+              "label": "Blog Post",
+              "href": "/blocks/blog-post",
+              "current": null
+            },
+            {
+              "label": "Careers",
+              "href": "/blocks/careers",
+              "current": null
+            },
+            {
+              "label": "Case Studies",
+              "href": "/blocks/case-studies",
+              "current": null
+            },
+            {
+              "label": "Case Study",
+              "href": "/blocks/case-study",
+              "current": null
+            },
+            {
+              "label": "Changelog",
+              "href": "/blocks/changelog",
+              "current": null
+            },
+            {
+              "label": "Code Example",
+              "href": "/blocks/code-example",
+              "current": null
+            },
+            {
+              "label": "Codebase",
+              "href": "/blocks/codebase",
+              "current": null
+            },
+            {
+              "label": "Collaborative Canvas",
+              "href": "/blocks/collaborative-canvas",
+              "current": null
+            },
+            {
+              "label": "Community",
+              "href": "/blocks/community",
+              "current": null
+            },
+            {
+              "label": "Compare",
+              "href": "/blocks/compare",
+              "current": null
+            },
+            {
+              "label": "Compliance",
+              "href": "/blocks/compliance",
+              "current": null
+            },
+            {
+              "label": "Contact",
+              "href": "/blocks/contact",
+              "current": null
+            },
+            {
+              "label": "CTA",
+              "href": "/blocks/cta",
+              "current": null
+            },
+            {
+              "label": "Deck",
+              "href": "/blocks/deck",
+              "current": null
+            },
+            {
+              "label": "Dialog Stack",
+              "href": "/blocks/dialog-stack",
+              "current": null
+            },
+            {
+              "label": "Download",
+              "href": "/blocks/download",
+              "current": null
+            },
+            {
+              "label": "Experience",
+              "href": "/blocks/experience",
+              "current": null
+            },
+            {
+              "label": "FAQ",
+              "href": "/blocks/faq",
+              "current": null
+            },
+            {
+              "label": "Feature",
+              "href": "/blocks/feature",
+              "current": null
+            },
+            {
+              "label": "Footer",
+              "href": "/blocks/footer",
+              "current": null
+            },
+            {
+              "label": "Form",
+              "href": "/blocks/form",
+              "current": null
+            },
+            {
+              "label": "Gantt",
+              "href": "/blocks/gantt",
+              "current": null
+            },
+            {
+              "label": "Hero",
+              "href": "/blocks/hero",
+              "current": null
+            },
+            {
+              "label": "Kanban",
+              "href": "/blocks/kanban",
+              "current": null
+            },
+            {
+              "label": "Pricing",
+              "href": "/blocks/pricing",
+              "current": null
+            },
+            {
+              "label": "Reel",
+              "href": "/blocks/reel",
+              "current": null
+            },
+            {
+              "label": "Roadmap",
+              "href": "/blocks/roadmap",
+              "current": null
+            },
+            {
+              "label": "Sandbox",
+              "href": "/blocks/sandbox",
+              "current": null
+            },
+            {
+              "label": "Settings Section",
+              "href": "/blocks/settings-section",
+              "current": null
+            },
+            {
+              "label": "Stats",
+              "href": "/blocks/stats",
+              "current": null
+            },
+            {
+              "label": "Team",
+              "href": "/blocks/team",
+              "current": "page"
+            },
+            {
+              "label": "Testimonial",
+              "href": "/blocks/testimonial",
+              "current": null
+            }
+          ]
+        ],
+        "first": [
+          "About",
+          "Awards",
+          "Bento Grid",
+          "Blog",
+          "Blog Post",
+          "Careers",
+          "Case Studies",
+          "Case Study"
+        ],
+        "active": "/blocks/team",
+        "shot": "/tmp/leement-media-planning/t06-blocks-390.png"
+      },
+      {
+        "category": "Patterns",
+        "width": 390,
+        "itemCount": 15,
+        "sections": [
+          [
+            {
+              "label": "BrandAction",
+              "href": "/patterns/brand-action",
+              "current": null
+            },
+            {
+              "label": "BrandLogo",
+              "href": "/patterns/brand-logo",
+              "current": null
+            },
+            {
+              "label": "DataTable",
+              "href": "/patterns/data-table",
+              "current": null
+            },
+            {
+              "label": "DatePicker",
+              "href": "/patterns/date-picker",
+              "current": null
+            },
+            {
+              "label": "EmptyState",
+              "href": "/patterns/empty-state",
+              "current": null
+            },
+            {
+              "label": "FilterToolbar",
+              "href": "/patterns/filter-toolbar",
+              "current": null
+            },
+            {
+              "label": "FormSection",
+              "href": "/patterns/form-section",
+              "current": null
+            },
+            {
+              "label": "MediaReveal",
+              "href": "/patterns/media-reveal",
+              "current": "page"
+            },
+            {
+              "label": "PageHeader",
+              "href": "/patterns/page-header",
+              "current": null
+            },
+            {
+              "label": "PageSkeleton",
+              "href": "/patterns/page-skeleton",
+              "current": null
+            },
+            {
+              "label": "ProductPageIntro",
+              "href": "/patterns/product-page-intro",
+              "current": null
+            },
+            {
+              "label": "ResourceRowLink",
+              "href": "/patterns/resource-row-link",
+              "current": null
+            },
+            {
+              "label": "SearchField",
+              "href": "/patterns/search-field",
+              "current": null
+            },
+            {
+              "label": "StatCard",
+              "href": "/patterns/stat-card",
+              "current": null
+            },
+            {
+              "label": "StatePanel",
+              "href": "/patterns/state-panel",
+              "current": null
+            }
+          ]
+        ],
+        "first": [
+          "BrandAction",
+          "BrandLogo",
+          "DataTable",
+          "DatePicker",
+          "EmptyState",
+          "FilterToolbar",
+          "FormSection",
+          "MediaReveal"
+        ],
+        "active": "/patterns/media-reveal",
+        "shot": "/tmp/leement-media-planning/t06-patterns-390.png"
+      }
+    ],
+    "checks": [
+      {
+        "command": "pnpm --filter @leement/docs typecheck",
+        "result": "PASS"
+      },
+      {
+        "command": "pnpm exec eslint apps/docs/lib/docs.ts",
+        "result": "PASS"
+      }
+    ],
+    "permanentTests": "NONE: reversible display order change; approved task-scoped rendered UI checks",
+    "screenshot": "navigation-alphabetical.png"
   }
 }
