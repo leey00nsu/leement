@@ -80,7 +80,7 @@
 
 **Acceptance Criteria:**
 
-- [ ] 초기·재시도·source 교체 로딩의 전체 Skeleton, 성공 전환, 실패/timeout native fallback, SSR/no-JS 재생 조작과 상태 안내를 검증한다.
+- [x] 초기·재시도·source 교체 로딩의 전체 Skeleton, 성공 전환, 실패/timeout native fallback, SSR/no-JS 재생 조작과 상태 안내를 검증한다.
 
 ## 기능 요구사항
 

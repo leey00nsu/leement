@@ -188,15 +188,15 @@
 
   - Verification: 실제 Components 95·Blocks 36·Patterns 15항목의 1440/390px 메뉴 6건에서 모든 분류의 A–Z 순서·현재 항목·href PASS. 여섯 화면 직접 확인. docs typecheck·scoped eslint PASS. 기존 기능 분류와 URL 보존, 영구 테스트 NONE. [증거](./artifacts/media-verification.json), [화면](./artifacts/navigation-alphabetical.png), [D011](./decisions.md#d011-실제-왼쪽-탐색-메뉴-정렬-추가-요청-2026-10-07).
 
-- [TODO][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-07 AudioPlayer 로딩 전체 Skeleton과 native fallback 분리
+- [DONE][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-07 AudioPlayer 로딩 전체 Skeleton과 native fallback 분리
   - Date: 2026-10-07
   - Acceptance:
     - JavaScript 활성 로딩 중 파형과 컨트롤 전체에 Skeleton을 표시하고 native controls를 노출하지 않는다. 성공·실패·재시도·소스 변경과 SSR/no-JS native controls를 보존한다.
   - Checklist:
-    - [ ] 로딩·ready·fallback 표현과 상태 안내를 분리하고 전체 Skeleton 적용
-    - [ ] 기존 player 테스트를 갱신해 로딩·성공·실패·재시도·source cleanup 검증
-    - [ ] 실제 desktop/mobile와 SSR/no-JS·지연 로딩·fallback 화면 및 scoped type/lint/test·registry build 확인
-    - [ ] 디자인 규칙과 Feature 문서·검증·커밋 동기화
+    - [x] 로딩·ready·fallback 표현과 상태 안내를 분리하고 전체 Skeleton 적용
+    - [x] 기존 player 테스트를 갱신해 로딩·성공·실패·재시도·source cleanup 검증
+    - [x] 실제 desktop/mobile와 SSR/no-JS·지연 로딩·fallback 화면 및 scoped type/lint/test·registry build 확인
+    - [x] 디자인 규칙과 Feature 문서·검증·커밋 동기화
   - Docs:
     - docs:designs/design-system.md
   - Review Evidence: -
@@ -204,6 +204,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 실제 docs 35상태·설치 소비자 32상태에서 1440/390px light/dark 전체 Skeleton→ready, decode/media 실패·retry·source cleanup·실제 재생/keyboard seek PASS. SSR hydration 이전 native 숨김, no-JS native keyboard 재생, 15초 timeout 확인. source 일치·소비자 strict tsc/Vite build·전체 type/lint/test(706)/build와 focused 15 tests PASS. [D012](./decisions.md#d012-audioplayer-로딩-전체-skeleton-2026-10-07), [증거](./artifacts/media-verification.json), [화면](./artifacts/audio-loading-ready.png).
 
 ## Repository Knowledge (완료 비차단)
 
@@ -217,7 +219,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
@@ -240,4 +242,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:806402886f4889326f32675978700ed383dacffe64adc6a832e883ec85439c8b -->
+<!-- lee-spec-kit:workflow-sync sha256:c18332b954d6002e2165a71956058e80fdc1ae72e74669d915bc3eab544d6c71 -->
