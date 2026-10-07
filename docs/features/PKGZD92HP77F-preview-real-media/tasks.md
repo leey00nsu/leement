@@ -110,21 +110,23 @@
 
   - Verification: 43 example 파일/독립 Preview 48경로 × 4조건=192건 실제 사진 디코딩·화면 확인. Crop/Zoom/Comparison keyboard·240px, Sidebar 모바일 sheet, broken avatar·MediaReveal retry 유지. docs typecheck·변경 파일 eslint·기존 focused tests 2파일/15개 PASS. [검증 증거](./artifacts/media-verification.json), [D007](./decisions.md#d007-t02-사진프로필비교-예제의-사실성-2026-10-07).
 
-- [TODO][PRD-FR-016] T-PKGZD92HP77F-preview-real-media-03 Blocks 사진 기본값·예제 조합과 샘플 콘텐츠 정비
+- [DONE][PRD-FR-016] T-PKGZD92HP77F-preview-real-media-03 Blocks 사진 기본값·예제 조합과 샘플 콘텐츠 정비
   - Date: 2026-10-07
   - Acceptance:
     - About·Blog·Team·Testimonial 등 모든 판정된 사진 자리와 사진 props가 빠진 조합을 실제 미디어로 보여준다.
     - registry 기본값과 사용자 제공 props는 docs public 경로나 docs 모듈에 의존하지 않고 설치 source가 기존 API를 유지한다.
   - Checklist:
-    - [ ] About/Blog/BlogPost/Feature/Team/Testimonial/Changelog와 추가 발견 Blocks 교체
-    - [ ] CaseStudies/CaseStudy/Form 등 필요한 미디어 props를 예제에 명시적으로 제공
-    - [ ] 로고·인증 배지·제품 화면 역할을 구분하고 가상 샘플 맥락·alt·내용을 맞춤
-    - [ ] 기본값 소비 화면과 대표/추가 예제의 실제 표시·반응형·scoped 검사 기록
+    - [x] About/Blog/BlogPost/Feature/Team/Testimonial/Changelog와 추가 발견 Blocks 교체
+    - [x] CaseStudies/CaseStudy/Form 등 필요한 미디어 props를 예제에 명시적으로 제공
+    - [x] 로고·인증 배지·제품 화면 역할을 구분하고 가상 샘플 맥락·alt·내용을 맞춤
+    - [x] 기본값 소비 화면과 대표/추가 예제의 실제 표시·반응형·scoped 검사 기록
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: default Blocks 9개와 사진 props 예제 3개, 독립 Preview 24경로 × 4조건=96건 정상 디코딩·화면 확인. Feature keyboard 선택 24상태 확인. Form은 사진 prop 없음으로 아이콘 유지; 앱 custom props/children/empty collection 기존 검사 6개 PASS. [증거](./artifacts/media-verification.json), [D008](./decisions.md#d008-t03-blocks-기본-콘텐츠와-미디어-역할-2026-10-07).
 
 - [TODO][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-04 실제 영상·음악·포스터·자막 적용과 재생 검증
   - Date: 2026-10-07
@@ -190,4 +192,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:af8aef6fe4aa4affa6aebc9ca1db35e824d541340d2fe40c4c709340a43df17c -->
+<!-- lee-spec-kit:workflow-sync sha256:ea4ccd169019087e83ac5e30a2b35090244d63fb63225d38ae223a27da55a9f0 -->

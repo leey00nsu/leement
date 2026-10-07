@@ -124,3 +124,15 @@
 - **Consequences**: registry Blocks와 영상/음악 교체는 각각 후속 T03/T04의 범위다. source URL 가용성 확인이나 jsdom play mock을 실제 Preview 재생 증거로 기록하지 않는다.
 
 - T02 대표 화면: [같은 사진의 비교](./artifacts/comparison-real-photo.png), [모바일 Sidebar 프로필](./artifacts/sidebar-real-profile.png).
+
+
+## D008: T03 Blocks 기본 콘텐츠와 미디어 역할 (2026-10-07)
+
+- **Context**: T02 checkpoint 후 workflow가 반환한 T03을 활성화했다. Blocks의 기본값 9개와 사진 props 예제 3개를 수정했다.
+- **Constraints**: 설치 소스에 docs 모듈/로컬 public 의존성을 만들지 않고 사용자 제공 props, children, 빈 collection 동작과 원저작자의 MIT notice를 보존한다. stock 사진은 직원/추천/제품 화면의 증거가 아니다.
+- **Decision**: About main/secondary, Blog·BlogPost·Changelog 표지/본문, Team·Testimonial 프로필은 직접 검증한 CC0 사진을 사용한다. 글·팀·고객 사례·통계는 가상 샘플로 표시하고 사진에 맞는 내용을 제공한다. CaseStudy의 image와 CaseStudies의 study.image를 실제 예제에서 명시적으로 전달했다.
+- **Trace**: About 파트너·breakout과 Footer/Experience의 로고는 목적 있는 자체 monogram, Compliance는 데모 shield/check 마크다. 사진 슬롯과 구분하므로 무관한 stock 풍경으로 바꾸지 않는다. EventForm에는 사진/표지 prop이 없어 upload Image icon을 유지하며 사진 API를 신설하지 않는다. CollaborativeCanvas/Roadmap의 앱 제공 avatar가 없는 초기값도 의도적인 initials fallback으로 유지한다. BlogPost는 기존 children 교체 계약을 유지하면서 기본 본문·header를 실제 workshop/coding desk의 샘플 기사로 맞췄다.
+- **Evidence**: docs typecheck·변경 파일 eslint·기존 content-websites 통합 테스트 1파일/6개 통과. 기본 props를 사용하는 대표/Showcase 포함 24경로 × 4조건=96건의 이미지 decode·내용·크롭과 실제 화면을 확인했다. Feature는 3개 사진 각각 keyboard Enter로 변경해 24상태를 확인했다. [검증 증거](./artifacts/media-verification.json). 자동 검수의 움직이는 요소 안정성 대기와 일시적인 detached locator 실패는 실제 미디어 로드/화면 대기로 수정해 재검증했고 제품 결함으로 오인하지 않았다.
+- **Consequences**: 앱이 실제 데이터/사진을 주면 그대로 사용하는 계약을 유지한다. 영상/음악은 T04, 생성 registry의 최종 설치/출처 문서는 T05에서 검증한다.
+
+- T03 대표 화면: [서로 다른 6개 샘플 프로필](./artifacts/team-real-profiles.png).

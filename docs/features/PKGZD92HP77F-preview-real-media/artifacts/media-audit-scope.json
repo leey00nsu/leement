@@ -3683,7 +3683,7 @@
     {
       "path": "apps/docs/examples/feature.tsx",
       "sha256": "0b6197abbd0c508a3c66d211def864a3492d99966ab5adb750b925d41d085670",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -3708,15 +3708,22 @@
         "/preview/feature/detail",
         "/preview/feature/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "2788918",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "5dd25346723b7f360942c584ff1cab9d86c89389a232957c1464982eb5e35625"
     },
     {
       "path": "apps/docs/examples/glimpse.tsx",
@@ -4388,7 +4395,7 @@
     {
       "path": "registry/blocks/about.tsx",
       "sha256": "140664e0740a442e5a1a3ee5c42d88f6a507a10d6eab4758ce3707bc28ee56f4",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4463,19 +4470,31 @@
         "/preview/about/detail",
         "/preview/about/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091",
+        "1516329"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "876e453b983f0f08670703008d36bb199d97624178ce0c34baa066757a1eaeb2",
+      "slotResults": {
+        "mainImage": "594091 CC0 workshop photo",
+        "secondaryImage": "1516329 CC0 boardroom photo",
+        "breakout": "Own ES demo monogram",
+        "companies": "Six distinct own demo monograms; example partner labels"
+      }
     },
     {
       "path": "registry/blocks/blog-post.tsx",
       "sha256": "e64e8d0dd4becaa8049247594aae980c1519299b18fe5733cbd11fc80317c474",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4515,20 +4534,27 @@
         "/preview/blog-post/detail",
         "/preview/blog-post/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "1283231",
         "2788918"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091",
+        "2788918",
+        "1283231"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "4606b4aff29b42e383e5f55127c22e00764e1d7e1107383bb75892696608e7cf"
     },
     {
       "path": "registry/blocks/blog.tsx",
       "sha256": "a9433320819c6f1184243d0caa17e3ecfe7515061ecb5431ea00f36f223b2705",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4558,20 +4584,27 @@
         "/preview/blog/detail",
         "/preview/blog/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "2788918",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "8eef9cc3fb41e575ec97e3c7dd3b54b30d9de6674acfe8600c29e76e96973e95"
     },
     {
       "path": "registry/blocks/case-studies.tsx",
       "sha256": "5f08f5d3cf4dc52610f295912731452bc418a388f808d0342bd72f0edb852f22",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -4591,18 +4624,19 @@
         "/preview/case-studies/detail",
         "/preview/case-studies/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
       "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example"
     },
     {
       "path": "registry/blocks/case-study.tsx",
       "sha256": "d2e28e33dc6e7e6b5f21ab3d1c15a77021785ebfcf53a4785fdbccad8a9d5e3b",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -4622,18 +4656,19 @@
         "/preview/case-study/detail",
         "/preview/case-study/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
       "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
       "proposedAssetIds": [
         "594091"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example"
     },
     {
       "path": "registry/blocks/changelog.tsx",
       "sha256": "3a18a847f9c2ee1b86e9f66f1ef8866cbb15130e9df98669ae1aec98f745613b",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4663,15 +4698,22 @@
         "/preview/changelog/detail",
         "/preview/changelog/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "2788918",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "c3b53bc913db3b78f102119620e15566dbe1f61feb77e73cad1b66d3dbd61860"
     },
     {
       "path": "registry/blocks/collaborative-canvas.tsx",
@@ -4700,7 +4742,7 @@
     {
       "path": "registry/blocks/compliance.tsx",
       "sha256": "cb7ae49ceb86ec7657ee7acbc7b325e70a21fcb350c2cabbea43891e9e59ad7e",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4745,16 +4787,19 @@
         "/preview/compliance/detail",
         "/preview/compliance/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "implementedAssetIds": [],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "c2589169b6263353662abc00b9ece0f3e58acff91803dd4af41f6572a3a9740c"
     },
     {
       "path": "registry/blocks/experience.tsx",
       "sha256": "aafb961b8ba35f223475408fb1f9501ae10bb11d9d2b31566be5fda21eb18698",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4789,16 +4834,19 @@
         "/preview/experience/detail",
         "/preview/experience/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "implementedAssetIds": [],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "0b7ec6e5b4a8a0a364dcdd72b9f156299299cee65b8557c0f6ee05283d9d51e0"
     },
     {
       "path": "registry/blocks/feature.tsx",
       "sha256": "0c43705a1b559863fdbfe4b9d223c934a81210d198cbabbdb841be7cec85b145",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -4818,16 +4866,17 @@
         "/preview/feature/detail",
         "/preview/feature/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
       "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "implementationStatus": "Public renderer unchanged; actual photos now explicitly provided in its docs example"
     },
     {
       "path": "registry/blocks/footer.tsx",
       "sha256": "c2e2fc4b445f5a4183536d3ff4a772bc510605f6b58a9e7c1e5de6f50805fb33",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4847,11 +4896,14 @@
         "/preview/footer/detail",
         "/preview/footer/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "no-stock-media-required"
+      "assetMappingStatus": "no-stock-media-required",
+      "implementedAssetIds": [],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "15464279c5c9e6c3deff427e7f413dfcc5b44e3515f78843c8412aab6f45c97b"
     },
     {
       "path": "registry/blocks/reel.tsx",
@@ -4904,7 +4956,7 @@
     {
       "path": "registry/blocks/team.tsx",
       "sha256": "a06a2f779b66b910bdaf337014e6c02ec184ce26ad7b62b3bef2ca05a90f6a9a",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4949,8 +5001,8 @@
         "/preview/team/detail",
         "/preview/team/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "2359121",
         "1690965",
@@ -4960,12 +5012,25 @@
         "3584435"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "869215",
+        "2359121",
+        "3083453",
+        "3584435"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "891bf059980d60ac04ef8549d4538ad1f09bc1433b82c39b95c7768cc63cac42",
+      "slotResults": {
+        "members": "Six fictional sample names/roles and six distinct stock portraits; caller-provided members preserved"
+      }
     },
     {
       "path": "registry/blocks/testimonial.tsx",
       "sha256": "b895f75aa8695312bd1669361a1d81f7680a85696f0d068cad191dfd1a6259b2",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -4985,13 +5050,18 @@
         "/preview/testimonial/detail",
         "/preview/testimonial/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "0a5639f7dd9520b37b1f523ccdd8cba70282d52d5c30cce9c1a20978b99126d4"
     },
     {
       "path": "registry/ui/audio-player.tsx",
@@ -5323,7 +5393,7 @@
       "path": "apps/docs/examples/case-study.tsx",
       "sha256": "54fb4316ec6d093f692f81b0b36cbf3804dbc9d6a5a460a226c5ce27f6f30895",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "role": "case-header-photo",
       "plannedAction": "complete-example",
       "decisionReason": "image prop is omitted although supported; supply actual photo and clearly fictional case content.",
@@ -5331,20 +5401,25 @@
         "/preview/case-study/detail",
         "/preview/case-study/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "8792cc95761ddd92f43d8b380a785b8d3d9c8a97192c4816ab7ed8a36908a378"
     },
     {
       "path": "apps/docs/examples/case-studies.tsx",
       "sha256": "42bafe921b5d78937c937b5a17c1019e948c39fcf18cf0f86190513d7f15943d",
       "signals": [],
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "role": "sample-person-photo",
       "plannedAction": "complete-example",
       "decisionReason": "image prop is omitted although supported; demonstrate sample portrait without claiming a real customer recommendation.",
@@ -5352,14 +5427,19 @@
         "/preview/case-studies/detail",
         "/preview/case-studies/gallery"
       ],
-      "visualVerification": "not-performed",
+      "visualVerification": "T03 24 independent routes × light/dark·390/1440: real photo or intentional vector decode and contact-sheet inspection; Feature keyboard changes additionally verified",
       "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T03 default media or example-provided media applied; renderer API preserved",
+      "implementationSha256": "191306a73253825aad680eac0764c0f7390a3cd37ebd6bbea1758df09ade0621"
     },
     {
       "path": "apps/docs/examples/form.tsx",
