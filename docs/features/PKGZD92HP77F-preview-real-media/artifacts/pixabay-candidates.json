@@ -1,0 +1,165 @@
+{
+  "featureId": "PKGZD92HP77F",
+  "checkedDate": "2026-10-07",
+  "method": "Official Pixabay item text and metadata read through web browser/search. Assets have not been downloaded, listened to or visually approved. These are preliminary candidates, not the final media catalog.",
+  "policySources": [
+    "https://pixabay.com/service/terms/",
+    "https://pixabay.com/service/license-summary/",
+    "https://pixabay.com/service/faq/"
+  ],
+  "policyFindings": [
+    "Terms section4 classifies pre-2019-01-09 published media as CC0 even when item sidebar uses generic Content License wording. Retain publication-date evidence.",
+    "Other media uses Pixabay Content License; standalone resale/distribution is restricted and cropping/resizing/filtering alone does not change standalone status. Determine integration/distribution route before committing any raw non-CC0 file.",
+    "Do not claim Pixabay media is covered by Leement MIT code license, or use stock media as trade marks or imply endorsement.",
+    "Music may be Content ID registered even though freely licensed; item checks and evidence are required."
+  ],
+  "browserLimitation": "Aside profile u0 was not connected to daemon; delegated research exited terminal failure before browsing. Official web metadata research continued; live inspection and downloads remain future work.",
+  "items": [
+    {
+      "id": "photo-workshop",
+      "type": "photo",
+      "url": "https://pixabay.com/photos/meeting-brainstorming-business-594091/",
+      "title": "Meeting, Brainstorming, Business",
+      "author": "StartupStockPhotos",
+      "publishedDate": "2015-01-09",
+      "resolution": "5472x3648",
+      "possibleUses": [
+        "About",
+        "Blog",
+        "CaseStudy",
+        "Event cover"
+      ],
+      "licenseClass": "CC0 according to Pixabay Terms section4 and published date; item sidebar shows generic Content License",
+      "status": "candidate-metadata-verified",
+      "remainingChecks": [
+        "Visual framing and visible brands",
+        "Depicted people demo context and applicable rights",
+        "Official download availability"
+      ]
+    },
+    {
+      "id": "photo-code-desk",
+      "type": "photo",
+      "url": "https://pixabay.com/photos/computer-notebook-office-code-2788918/",
+      "title": "Computer, Notebook, Office",
+      "author": "AlfredMuller",
+      "publishedDate": "2017-09-26",
+      "resolution": "6144x4069",
+      "possibleUses": [
+        "Feature",
+        "Blog",
+        "Card",
+        "Attachment"
+      ],
+      "licenseClass": "CC0 according to Terms section4 and published date",
+      "status": "candidate-metadata-verified",
+      "remainingChecks": [
+        "Visual suitability and trademarks/screens",
+        "Official download availability"
+      ]
+    },
+    {
+      "id": "photo-lake",
+      "type": "photo",
+      "url": "https://pixabay.com/photos/lake-ulmener-maar-reflection-3733649/",
+      "title": "Lake, Ulmener Maar, Reflection",
+      "author": "Katzenfee50",
+      "publishedDate": "2018-10-10",
+      "resolution": "7360x4912",
+      "possibleUses": [
+        "AspectRatio",
+        "ImageCrop",
+        "ImageZoom",
+        "MediaReveal",
+        "Stories",
+        "Comparison"
+      ],
+      "licenseClass": "CC0 according to Terms section4 and published date",
+      "status": "candidate-metadata-verified",
+      "remainingChecks": [
+        "Visual suitability for crop/zoom",
+        "Official download availability"
+      ]
+    },
+    {
+      "id": "photo-portrait",
+      "type": "photo",
+      "url": "https://pixabay.com/photos/man-model-portrait-hairstyle-1283231/",
+      "title": "Man, Model, Portrait",
+      "author": "Pexels (Pixabay contributor)",
+      "publishedDate": "2016-03-27",
+      "resolution": "2851x1981",
+      "possibleUses": [
+        "Avatar",
+        "Team sample profiles"
+      ],
+      "licenseClass": "CC0 according to Terms section4 and published date; personality rights still need context review",
+      "status": "candidate-metadata-verified",
+      "remainingChecks": [
+        "Square crop and identity-safe demo context",
+        "Model/third-party rights evidence",
+        "Official download availability"
+      ]
+    },
+    {
+      "id": "video-lake",
+      "type": "video",
+      "url": "https://pixabay.com/videos/lake-houses-hill-mountain-boat-67201/",
+      "title": "Lake, Houses, Hill",
+      "author": "mariancroitoru",
+      "publishedDate": "2021-03-09",
+      "resolution": "3840x2160",
+      "possibleUses": [
+        "VideoPlayer",
+        "Hero",
+        "Stories"
+      ],
+      "licenseClass": "Pixabay Content License",
+      "status": "candidate-metadata-verified",
+      "remainingChecks": [
+        "Actual playback and duration",
+        "Suitable 720p/1080p download and bytes",
+        "Poster frame and truthful title/captions",
+        "Embedding and redistribution route"
+      ]
+    },
+    {
+      "id": "music-piano",
+      "type": "music",
+      "url": "https://pixabay.com/music/ambient-atmospheric-ambient-music-with-piano-108412/",
+      "title": "Atmospheric Ambient Music with Piano",
+      "author": "GavinNellist",
+      "publishedDate": "2022-03-29",
+      "duration": "2:01",
+      "possibleUses": [
+        "AudioPlayer"
+      ],
+      "licenseClass": "Pixabay Content License",
+      "contentId": "No registration label visible in fetched item text; absence is not proof of no Content ID",
+      "status": "candidate-metadata-verified",
+      "remainingChecks": [
+        "Listen and actual playback/decode",
+        "Official download and Content ID recheck",
+        "Distribution permission for audio demo asset; never treat raw file as MIT"
+      ]
+    },
+    {
+      "id": "music-piano-alternate",
+      "type": "music",
+      "url": "https://pixabay.com/music/solo-piano-ambient-piano-524039/",
+      "title": "Ambient Piano",
+      "author": "FreeMusicForVideo",
+      "publishedDate": "2026-05-13",
+      "duration": "2:06",
+      "possibleUses": [
+        "AudioPlayer source switch"
+      ],
+      "licenseClass": "Pixabay Content License",
+      "status": "candidate-metadata-verified",
+      "remainingChecks": [
+        "Listen/download/Content ID and license recheck",
+        "Distribution permission for audio demo asset"
+      ]
+    }
+  ]
+}

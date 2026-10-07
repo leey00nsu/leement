@@ -1,0 +1,2702 @@
+{
+  "featureId": "PKGZD92HP77F",
+  "baseline": "ff974a5381e8b6cb24a89c20f88229ae99f3028c",
+  "method": "All tracked source TSX under four UI/example namespaces scanned; signals are candidates, not completed visual review or blanket photo-replacement decisions. Manual JSX/CSS/media-source review and new findings must extend this inventory.",
+  "scannedSourceCount": 872,
+  "scannedSourcePaths": [
+    "apps/docs/examples/about.tsx",
+    "apps/docs/examples/accordion-multiple.tsx",
+    "apps/docs/examples/accordion.tsx",
+    "apps/docs/examples/alert-dialog.tsx",
+    "apps/docs/examples/announcement-static.tsx",
+    "apps/docs/examples/announcement.tsx",
+    "apps/docs/examples/aspect-ratio-media.tsx",
+    "apps/docs/examples/aspect-ratio.tsx",
+    "apps/docs/examples/attachment.tsx",
+    "apps/docs/examples/audio-player.tsx",
+    "apps/docs/examples/avatar-images.tsx",
+    "apps/docs/examples/avatar-stack-animated.tsx",
+    "apps/docs/examples/avatar-stack.tsx",
+    "apps/docs/examples/avatar.tsx",
+    "apps/docs/examples/awards.tsx",
+    "apps/docs/examples/badge.tsx",
+    "apps/docs/examples/banner-subtle.tsx",
+    "apps/docs/examples/banner.tsx",
+    "apps/docs/examples/base-accordion-basic.tsx",
+    "apps/docs/examples/base-accordion-borders.tsx",
+    "apps/docs/examples/base-accordion-card.tsx",
+    "apps/docs/examples/base-accordion-demo.tsx",
+    "apps/docs/examples/base-accordion-disabled.tsx",
+    "apps/docs/examples/base-accordion-multiple.tsx",
+    "apps/docs/examples/base-accordion-rtl.tsx",
+    "apps/docs/examples/base-alert-action.tsx",
+    "apps/docs/examples/base-alert-basic.tsx",
+    "apps/docs/examples/base-alert-colors.tsx",
+    "apps/docs/examples/base-alert-demo.tsx",
+    "apps/docs/examples/base-alert-destructive.tsx",
+    "apps/docs/examples/base-alert-dialog-basic.tsx",
+    "apps/docs/examples/base-alert-dialog-demo.tsx",
+    "apps/docs/examples/base-alert-dialog-destructive.tsx",
+    "apps/docs/examples/base-alert-dialog-media.tsx",
+    "apps/docs/examples/base-alert-dialog-rtl.tsx",
+    "apps/docs/examples/base-alert-dialog-small-media.tsx",
+    "apps/docs/examples/base-alert-dialog-small.tsx",
+    "apps/docs/examples/base-alert-rtl.tsx",
+    "apps/docs/examples/base-aspect-ratio-demo.tsx",
+    "apps/docs/examples/base-aspect-ratio-portrait.tsx",
+    "apps/docs/examples/base-aspect-ratio-rtl.tsx",
+    "apps/docs/examples/base-aspect-ratio-square.tsx",
+    "apps/docs/examples/base-attachment-demo.tsx",
+    "apps/docs/examples/base-attachment-group.tsx",
+    "apps/docs/examples/base-attachment-image.tsx",
+    "apps/docs/examples/base-attachment-sizes.tsx",
+    "apps/docs/examples/base-attachment-states.tsx",
+    "apps/docs/examples/base-attachment-trigger.tsx",
+    "apps/docs/examples/base-avatar-badge-icon.tsx",
+    "apps/docs/examples/base-avatar-badge.tsx",
+    "apps/docs/examples/base-avatar-basic.tsx",
+    "apps/docs/examples/base-avatar-demo.tsx",
+    "apps/docs/examples/base-avatar-dropdown.tsx",
+    "apps/docs/examples/base-avatar-group-count-icon.tsx",
+    "apps/docs/examples/base-avatar-group-count.tsx",
+    "apps/docs/examples/base-avatar-group.tsx",
+    "apps/docs/examples/base-avatar-rtl.tsx",
+    "apps/docs/examples/base-avatar-size.tsx",
+    "apps/docs/examples/base-badge-colors.tsx",
+    "apps/docs/examples/base-badge-demo.tsx",
+    "apps/docs/examples/base-badge-icon.tsx",
+    "apps/docs/examples/base-badge-link.tsx",
+    "apps/docs/examples/base-badge-rtl.tsx",
+    "apps/docs/examples/base-badge-spinner.tsx",
+    "apps/docs/examples/base-badge-variants.tsx",
+    "apps/docs/examples/base-breadcrumb-basic.tsx",
+    "apps/docs/examples/base-breadcrumb-demo.tsx",
+    "apps/docs/examples/base-breadcrumb-dropdown.tsx",
+    "apps/docs/examples/base-breadcrumb-ellipsis.tsx",
+    "apps/docs/examples/base-breadcrumb-link.tsx",
+    "apps/docs/examples/base-breadcrumb-rtl.tsx",
+    "apps/docs/examples/base-breadcrumb-separator.tsx",
+    "apps/docs/examples/base-bubble-alignment.tsx",
+    "apps/docs/examples/base-bubble-collapsible.tsx",
+    "apps/docs/examples/base-bubble-demo.tsx",
+    "apps/docs/examples/base-bubble-group-demo.tsx",
+    "apps/docs/examples/base-bubble-link-button.tsx",
+    "apps/docs/examples/base-bubble-popover.tsx",
+    "apps/docs/examples/base-bubble-reactions.tsx",
+    "apps/docs/examples/base-bubble-tooltip.tsx",
+    "apps/docs/examples/base-bubble-variants.tsx",
+    "apps/docs/examples/base-button-default.tsx",
+    "apps/docs/examples/base-button-demo.tsx",
+    "apps/docs/examples/base-button-destructive.tsx",
+    "apps/docs/examples/base-button-ghost.tsx",
+    "apps/docs/examples/base-button-group-demo.tsx",
+    "apps/docs/examples/base-button-group-dropdown.tsx",
+    "apps/docs/examples/base-button-group-input-group.tsx",
+    "apps/docs/examples/base-button-group-input.tsx",
+    "apps/docs/examples/base-button-group-nested.tsx",
+    "apps/docs/examples/base-button-group-orientation.tsx",
+    "apps/docs/examples/base-button-group-popover.tsx",
+    "apps/docs/examples/base-button-group-rtl.tsx",
+    "apps/docs/examples/base-button-group-select.tsx",
+    "apps/docs/examples/base-button-group-separator.tsx",
+    "apps/docs/examples/base-button-group-size.tsx",
+    "apps/docs/examples/base-button-group-split.tsx",
+    "apps/docs/examples/base-button-icon.tsx",
+    "apps/docs/examples/base-button-link.tsx",
+    "apps/docs/examples/base-button-outline.tsx",
+    "apps/docs/examples/base-button-render.tsx",
+    "apps/docs/examples/base-button-rounded.tsx",
+    "apps/docs/examples/base-button-rtl.tsx",
+    "apps/docs/examples/base-button-secondary.tsx",
+    "apps/docs/examples/base-button-size.tsx",
+    "apps/docs/examples/base-button-spinner.tsx",
+    "apps/docs/examples/base-button-with-icon.tsx",
+    "apps/docs/examples/base-calendar-basic.tsx",
+    "apps/docs/examples/base-calendar-booked-dates.tsx",
+    "apps/docs/examples/base-calendar-caption.tsx",
+    "apps/docs/examples/base-calendar-custom-days.tsx",
+    "apps/docs/examples/base-calendar-demo.tsx",
+    "apps/docs/examples/base-calendar-hijri.tsx",
+    "apps/docs/examples/base-calendar-presets.tsx",
+    "apps/docs/examples/base-calendar-range.tsx",
+    "apps/docs/examples/base-calendar-rtl.tsx",
+    "apps/docs/examples/base-calendar-time.tsx",
+    "apps/docs/examples/base-calendar-week-numbers.tsx",
+    "apps/docs/examples/base-card-demo.tsx",
+    "apps/docs/examples/base-card-edge-to-edge.tsx",
+    "apps/docs/examples/base-card-image.tsx",
+    "apps/docs/examples/base-card-rtl.tsx",
+    "apps/docs/examples/base-card-small.tsx",
+    "apps/docs/examples/base-card-spacing.tsx",
+    "apps/docs/examples/base-carousel-api.tsx",
+    "apps/docs/examples/base-carousel-demo.tsx",
+    "apps/docs/examples/base-carousel-orientation.tsx",
+    "apps/docs/examples/base-carousel-plugin.tsx",
+    "apps/docs/examples/base-carousel-rtl.tsx",
+    "apps/docs/examples/base-carousel-size.tsx",
+    "apps/docs/examples/base-carousel-spacing.tsx",
+    "apps/docs/examples/base-chart-demo.tsx",
+    "apps/docs/examples/base-chart-example-axis.tsx",
+    "apps/docs/examples/base-chart-example-grid.tsx",
+    "apps/docs/examples/base-chart-example-legend.tsx",
+    "apps/docs/examples/base-chart-example-tooltip.tsx",
+    "apps/docs/examples/base-chart-example.tsx",
+    "apps/docs/examples/base-chart-rtl.tsx",
+    "apps/docs/examples/base-chart-tooltip.tsx",
+    "apps/docs/examples/base-checkbox-basic.tsx",
+    "apps/docs/examples/base-checkbox-demo.tsx",
+    "apps/docs/examples/base-checkbox-description.tsx",
+    "apps/docs/examples/base-checkbox-disabled.tsx",
+    "apps/docs/examples/base-checkbox-group.tsx",
+    "apps/docs/examples/base-checkbox-invalid.tsx",
+    "apps/docs/examples/base-checkbox-rtl.tsx",
+    "apps/docs/examples/base-checkbox-table.tsx",
+    "apps/docs/examples/base-collapsible-basic.tsx",
+    "apps/docs/examples/base-collapsible-demo.tsx",
+    "apps/docs/examples/base-collapsible-file-tree.tsx",
+    "apps/docs/examples/base-collapsible-rtl.tsx",
+    "apps/docs/examples/base-collapsible-settings.tsx",
+    "apps/docs/examples/base-combobox-auto-highlight.tsx",
+    "apps/docs/examples/base-combobox-basic.tsx",
+    "apps/docs/examples/base-combobox-clear.tsx",
+    "apps/docs/examples/base-combobox-custom.tsx",
+    "apps/docs/examples/base-combobox-demo.tsx",
+    "apps/docs/examples/base-combobox-disabled.tsx",
+    "apps/docs/examples/base-combobox-groups.tsx",
+    "apps/docs/examples/base-combobox-input-group.tsx",
+    "apps/docs/examples/base-combobox-invalid.tsx",
+    "apps/docs/examples/base-combobox-multiple.tsx",
+    "apps/docs/examples/base-combobox-popup.tsx",
+    "apps/docs/examples/base-combobox-rtl.tsx",
+    "apps/docs/examples/base-command-basic.tsx",
+    "apps/docs/examples/base-command-demo.tsx",
+    "apps/docs/examples/base-command-groups.tsx",
+    "apps/docs/examples/base-command-rtl.tsx",
+    "apps/docs/examples/base-command-scrollable.tsx",
+    "apps/docs/examples/base-command-shortcuts.tsx",
+    "apps/docs/examples/base-context-menu-basic.tsx",
+    "apps/docs/examples/base-context-menu-checkboxes.tsx",
+    "apps/docs/examples/base-context-menu-demo.tsx",
+    "apps/docs/examples/base-context-menu-destructive.tsx",
+    "apps/docs/examples/base-context-menu-groups.tsx",
+    "apps/docs/examples/base-context-menu-icons.tsx",
+    "apps/docs/examples/base-context-menu-radio.tsx",
+    "apps/docs/examples/base-context-menu-rtl.tsx",
+    "apps/docs/examples/base-context-menu-shortcuts.tsx",
+    "apps/docs/examples/base-context-menu-sides.tsx",
+    "apps/docs/examples/base-context-menu-submenu.tsx",
+    "apps/docs/examples/base-data-table-demo.tsx",
+    "apps/docs/examples/base-data-table-rtl.tsx",
+    "apps/docs/examples/base-date-picker-basic.tsx",
+    "apps/docs/examples/base-date-picker-demo.tsx",
+    "apps/docs/examples/base-date-picker-dob.tsx",
+    "apps/docs/examples/base-date-picker-input.tsx",
+    "apps/docs/examples/base-date-picker-natural-language.tsx",
+    "apps/docs/examples/base-date-picker-range.tsx",
+    "apps/docs/examples/base-date-picker-rtl.tsx",
+    "apps/docs/examples/base-date-picker-time.tsx",
+    "apps/docs/examples/base-dialog-close-button.tsx",
+    "apps/docs/examples/base-dialog-demo.tsx",
+    "apps/docs/examples/base-dialog-no-close-button.tsx",
+    "apps/docs/examples/base-dialog-rtl.tsx",
+    "apps/docs/examples/base-dialog-scrollable-content.tsx",
+    "apps/docs/examples/base-dialog-sticky-footer.tsx",
+    "apps/docs/examples/base-drawer-demo.tsx",
+    "apps/docs/examples/base-drawer-dialog.tsx",
+    "apps/docs/examples/base-drawer-nested.tsx",
+    "apps/docs/examples/base-drawer-non-modal.tsx",
+    "apps/docs/examples/base-drawer-sides.tsx",
+    "apps/docs/examples/base-drawer-snap-points.tsx",
+    "apps/docs/examples/base-drawer-swipe-handle.tsx",
+    "apps/docs/examples/base-dropdown-menu-avatar.tsx",
+    "apps/docs/examples/base-dropdown-menu-basic.tsx",
+    "apps/docs/examples/base-dropdown-menu-checkboxes-icons.tsx",
+    "apps/docs/examples/base-dropdown-menu-checkboxes.tsx",
+    "apps/docs/examples/base-dropdown-menu-complex.tsx",
+    "apps/docs/examples/base-dropdown-menu-demo.tsx",
+    "apps/docs/examples/base-dropdown-menu-destructive.tsx",
+    "apps/docs/examples/base-dropdown-menu-icons.tsx",
+    "apps/docs/examples/base-dropdown-menu-radio-group.tsx",
+    "apps/docs/examples/base-dropdown-menu-radio-icons.tsx",
+    "apps/docs/examples/base-dropdown-menu-rtl.tsx",
+    "apps/docs/examples/base-dropdown-menu-shortcuts.tsx",
+    "apps/docs/examples/base-dropdown-menu-submenu.tsx",
+    "apps/docs/examples/base-empty-avatar-group.tsx",
+    "apps/docs/examples/base-empty-avatar.tsx",
+    "apps/docs/examples/base-empty-background.tsx",
+    "apps/docs/examples/base-empty-demo.tsx",
+    "apps/docs/examples/base-empty-input-group.tsx",
+    "apps/docs/examples/base-empty-outline.tsx",
+    "apps/docs/examples/base-empty-rtl.tsx",
+    "apps/docs/examples/base-field-checkbox.tsx",
+    "apps/docs/examples/base-field-choice-card.tsx",
+    "apps/docs/examples/base-field-demo.tsx",
+    "apps/docs/examples/base-field-fieldset.tsx",
+    "apps/docs/examples/base-field-group.tsx",
+    "apps/docs/examples/base-field-input.tsx",
+    "apps/docs/examples/base-field-radio.tsx",
+    "apps/docs/examples/base-field-responsive.tsx",
+    "apps/docs/examples/base-field-rtl.tsx",
+    "apps/docs/examples/base-field-select.tsx",
+    "apps/docs/examples/base-field-slider.tsx",
+    "apps/docs/examples/base-field-switch.tsx",
+    "apps/docs/examples/base-field-textarea.tsx",
+    "apps/docs/examples/base-hover-card-demo.tsx",
+    "apps/docs/examples/base-hover-card-rtl.tsx",
+    "apps/docs/examples/base-hover-card-sides.tsx",
+    "apps/docs/examples/base-input-badge.tsx",
+    "apps/docs/examples/base-input-basic.tsx",
+    "apps/docs/examples/base-input-button-group.tsx",
+    "apps/docs/examples/base-input-demo.tsx",
+    "apps/docs/examples/base-input-disabled.tsx",
+    "apps/docs/examples/base-input-field.tsx",
+    "apps/docs/examples/base-input-fieldgroup.tsx",
+    "apps/docs/examples/base-input-file.tsx",
+    "apps/docs/examples/base-input-form.tsx",
+    "apps/docs/examples/base-input-grid.tsx",
+    "apps/docs/examples/base-input-group-block-end.tsx",
+    "apps/docs/examples/base-input-group-block-start.tsx",
+    "apps/docs/examples/base-input-group-button.tsx",
+    "apps/docs/examples/base-input-group-custom.tsx",
+    "apps/docs/examples/base-input-group-demo.tsx",
+    "apps/docs/examples/base-input-group-dropdown.tsx",
+    "apps/docs/examples/base-input-group-icon.tsx",
+    "apps/docs/examples/base-input-group-inline-end.tsx",
+    "apps/docs/examples/base-input-group-inline-start.tsx",
+    "apps/docs/examples/base-input-group-kbd.tsx",
+    "apps/docs/examples/base-input-group-rtl.tsx",
+    "apps/docs/examples/base-input-group-spinner.tsx",
+    "apps/docs/examples/base-input-group-text.tsx",
+    "apps/docs/examples/base-input-group-textarea.tsx",
+    "apps/docs/examples/base-input-inline.tsx",
+    "apps/docs/examples/base-input-input-group.tsx",
+    "apps/docs/examples/base-input-invalid.tsx",
+    "apps/docs/examples/base-input-otp-alphanumeric.tsx",
+    "apps/docs/examples/base-input-otp-controlled.tsx",
+    "apps/docs/examples/base-input-otp-demo.tsx",
+    "apps/docs/examples/base-input-otp-disabled.tsx",
+    "apps/docs/examples/base-input-otp-form.tsx",
+    "apps/docs/examples/base-input-otp-four-digits.tsx",
+    "apps/docs/examples/base-input-otp-invalid.tsx",
+    "apps/docs/examples/base-input-otp-pattern.tsx",
+    "apps/docs/examples/base-input-otp-rtl.tsx",
+    "apps/docs/examples/base-input-otp-separator.tsx",
+    "apps/docs/examples/base-input-required.tsx",
+    "apps/docs/examples/base-input-rtl.tsx",
+    "apps/docs/examples/base-item-avatar.tsx",
+    "apps/docs/examples/base-item-demo.tsx",
+    "apps/docs/examples/base-item-dropdown.tsx",
+    "apps/docs/examples/base-item-group.tsx",
+    "apps/docs/examples/base-item-header.tsx",
+    "apps/docs/examples/base-item-icon.tsx",
+    "apps/docs/examples/base-item-image.tsx",
+    "apps/docs/examples/base-item-link.tsx",
+    "apps/docs/examples/base-item-rtl.tsx",
+    "apps/docs/examples/base-item-size.tsx",
+    "apps/docs/examples/base-item-variant.tsx",
+    "apps/docs/examples/base-kbd-button.tsx",
+    "apps/docs/examples/base-kbd-demo.tsx",
+    "apps/docs/examples/base-kbd-group.tsx",
+    "apps/docs/examples/base-kbd-input-group.tsx",
+    "apps/docs/examples/base-kbd-rtl.tsx",
+    "apps/docs/examples/base-kbd-tooltip.tsx",
+    "apps/docs/examples/base-label-demo.tsx",
+    "apps/docs/examples/base-label-rtl.tsx",
+    "apps/docs/examples/base-marker-border.tsx",
+    "apps/docs/examples/base-marker-demo.tsx",
+    "apps/docs/examples/base-marker-icon.tsx",
+    "apps/docs/examples/base-marker-link-button.tsx",
+    "apps/docs/examples/base-marker-separator.tsx",
+    "apps/docs/examples/base-marker-shimmer.tsx",
+    "apps/docs/examples/base-marker-status.tsx",
+    "apps/docs/examples/base-marker-variants.tsx",
+    "apps/docs/examples/base-menubar-checkbox.tsx",
+    "apps/docs/examples/base-menubar-demo.tsx",
+    "apps/docs/examples/base-menubar-icons.tsx",
+    "apps/docs/examples/base-menubar-radio.tsx",
+    "apps/docs/examples/base-menubar-rtl.tsx",
+    "apps/docs/examples/base-menubar-submenu.tsx",
+    "apps/docs/examples/base-message-actions.tsx",
+    "apps/docs/examples/base-message-attachment.tsx",
+    "apps/docs/examples/base-message-avatar.tsx",
+    "apps/docs/examples/base-message-demo.tsx",
+    "apps/docs/examples/base-message-group.tsx",
+    "apps/docs/examples/base-message-header-footer.tsx",
+    "apps/docs/examples/base-message-scroller-anchoring.tsx",
+    "apps/docs/examples/base-message-scroller-animation.tsx",
+    "apps/docs/examples/base-message-scroller-commands.tsx",
+    "apps/docs/examples/base-message-scroller-demo.tsx",
+    "apps/docs/examples/base-message-scroller-group-chat.tsx",
+    "apps/docs/examples/base-message-scroller-load-history.tsx",
+    "apps/docs/examples/base-message-scroller-opening-position.tsx",
+    "apps/docs/examples/base-message-scroller-previous-context.tsx",
+    "apps/docs/examples/base-message-scroller-scrollable.tsx",
+    "apps/docs/examples/base-message-scroller-streaming.tsx",
+    "apps/docs/examples/base-message-scroller-visibility.tsx",
+    "apps/docs/examples/base-navigation-menu-demo.tsx",
+    "apps/docs/examples/base-navigation-menu-rtl.tsx",
+    "apps/docs/examples/base-pagination-demo.tsx",
+    "apps/docs/examples/base-pagination-icons-only.tsx",
+    "apps/docs/examples/base-pagination-rtl.tsx",
+    "apps/docs/examples/base-pagination-simple.tsx",
+    "apps/docs/examples/base-popover-alignments.tsx",
+    "apps/docs/examples/base-popover-basic.tsx",
+    "apps/docs/examples/base-popover-demo.tsx",
+    "apps/docs/examples/base-popover-form.tsx",
+    "apps/docs/examples/base-popover-rtl.tsx",
+    "apps/docs/examples/base-progress-controlled.tsx",
+    "apps/docs/examples/base-progress-demo.tsx",
+    "apps/docs/examples/base-progress-label.tsx",
+    "apps/docs/examples/base-progress-rtl.tsx",
+    "apps/docs/examples/base-questionnaire-animated.tsx",
+    "apps/docs/examples/base-questionnaire-card.tsx",
+    "apps/docs/examples/base-questionnaire-conditional.tsx",
+    "apps/docs/examples/base-questionnaire-controlled.tsx",
+    "apps/docs/examples/base-questionnaire-demo.tsx",
+    "apps/docs/examples/base-questionnaire-dialog.tsx",
+    "apps/docs/examples/base-questionnaire-freeform.tsx",
+    "apps/docs/examples/base-questionnaire-multiple.tsx",
+    "apps/docs/examples/base-questionnaire-navigation-state.tsx",
+    "apps/docs/examples/base-questionnaire-progress.tsx",
+    "apps/docs/examples/base-questionnaire-resume.tsx",
+    "apps/docs/examples/base-questionnaire-shortcuts.tsx",
+    "apps/docs/examples/base-questionnaire-skip.tsx",
+    "apps/docs/examples/base-questionnaire-validation.tsx",
+    "apps/docs/examples/base-radio-group-choice-card.tsx",
+    "apps/docs/examples/base-radio-group-demo.tsx",
+    "apps/docs/examples/base-radio-group-description.tsx",
+    "apps/docs/examples/base-radio-group-disabled.tsx",
+    "apps/docs/examples/base-radio-group-fieldset.tsx",
+    "apps/docs/examples/base-radio-group-invalid.tsx",
+    "apps/docs/examples/base-radio-group-rtl.tsx",
+    "apps/docs/examples/base-resizable-demo.tsx",
+    "apps/docs/examples/base-resizable-handle.tsx",
+    "apps/docs/examples/base-resizable-rtl.tsx",
+    "apps/docs/examples/base-resizable-vertical.tsx",
+    "apps/docs/examples/base-scroll-area-demo.tsx",
+    "apps/docs/examples/base-scroll-area-horizontal-demo.tsx",
+    "apps/docs/examples/base-scroll-area-rtl.tsx",
+    "apps/docs/examples/base-select-align-item.tsx",
+    "apps/docs/examples/base-select-demo.tsx",
+    "apps/docs/examples/base-select-disabled.tsx",
+    "apps/docs/examples/base-select-groups.tsx",
+    "apps/docs/examples/base-select-invalid.tsx",
+    "apps/docs/examples/base-select-rtl.tsx",
+    "apps/docs/examples/base-select-scrollable.tsx",
+    "apps/docs/examples/base-separator-demo.tsx",
+    "apps/docs/examples/base-separator-list.tsx",
+    "apps/docs/examples/base-separator-menu.tsx",
+    "apps/docs/examples/base-separator-rtl.tsx",
+    "apps/docs/examples/base-separator-vertical.tsx",
+    "apps/docs/examples/base-sheet-demo.tsx",
+    "apps/docs/examples/base-sheet-no-close-button.tsx",
+    "apps/docs/examples/base-sheet-rtl.tsx",
+    "apps/docs/examples/base-sheet-side.tsx",
+    "apps/docs/examples/base-sidebar-demo.tsx",
+    "apps/docs/examples/base-skeleton-avatar.tsx",
+    "apps/docs/examples/base-skeleton-card.tsx",
+    "apps/docs/examples/base-skeleton-demo.tsx",
+    "apps/docs/examples/base-skeleton-form.tsx",
+    "apps/docs/examples/base-skeleton-rtl.tsx",
+    "apps/docs/examples/base-skeleton-table.tsx",
+    "apps/docs/examples/base-skeleton-text.tsx",
+    "apps/docs/examples/base-slider-controlled.tsx",
+    "apps/docs/examples/base-slider-demo.tsx",
+    "apps/docs/examples/base-slider-disabled.tsx",
+    "apps/docs/examples/base-slider-multiple.tsx",
+    "apps/docs/examples/base-slider-range.tsx",
+    "apps/docs/examples/base-slider-rtl.tsx",
+    "apps/docs/examples/base-slider-vertical.tsx",
+    "apps/docs/examples/base-spinner-badge.tsx",
+    "apps/docs/examples/base-spinner-button.tsx",
+    "apps/docs/examples/base-spinner-custom.tsx",
+    "apps/docs/examples/base-spinner-demo.tsx",
+    "apps/docs/examples/base-spinner-empty.tsx",
+    "apps/docs/examples/base-spinner-input-group.tsx",
+    "apps/docs/examples/base-spinner-rtl.tsx",
+    "apps/docs/examples/base-spinner-size.tsx",
+    "apps/docs/examples/base-switch-choice-card.tsx",
+    "apps/docs/examples/base-switch-demo.tsx",
+    "apps/docs/examples/base-switch-description.tsx",
+    "apps/docs/examples/base-switch-disabled.tsx",
+    "apps/docs/examples/base-switch-invalid.tsx",
+    "apps/docs/examples/base-switch-rtl.tsx",
+    "apps/docs/examples/base-switch-sizes.tsx",
+    "apps/docs/examples/base-table-actions.tsx",
+    "apps/docs/examples/base-table-demo.tsx",
+    "apps/docs/examples/base-table-footer.tsx",
+    "apps/docs/examples/base-table-rtl.tsx",
+    "apps/docs/examples/base-tabs-demo.tsx",
+    "apps/docs/examples/base-tabs-disabled.tsx",
+    "apps/docs/examples/base-tabs-icons.tsx",
+    "apps/docs/examples/base-tabs-line.tsx",
+    "apps/docs/examples/base-tabs-rtl.tsx",
+    "apps/docs/examples/base-tabs-vertical.tsx",
+    "apps/docs/examples/base-textarea-button.tsx",
+    "apps/docs/examples/base-textarea-demo.tsx",
+    "apps/docs/examples/base-textarea-disabled.tsx",
+    "apps/docs/examples/base-textarea-field.tsx",
+    "apps/docs/examples/base-textarea-invalid.tsx",
+    "apps/docs/examples/base-textarea-rtl.tsx",
+    "apps/docs/examples/base-toast-demo.tsx",
+    "apps/docs/examples/base-toast-promise.tsx",
+    "apps/docs/examples/base-toast-types.tsx",
+    "apps/docs/examples/base-toggle-demo.tsx",
+    "apps/docs/examples/base-toggle-disabled.tsx",
+    "apps/docs/examples/base-toggle-group-demo.tsx",
+    "apps/docs/examples/base-toggle-group-disabled.tsx",
+    "apps/docs/examples/base-toggle-group-font-weight-selector.tsx",
+    "apps/docs/examples/base-toggle-group-outline.tsx",
+    "apps/docs/examples/base-toggle-group-rtl.tsx",
+    "apps/docs/examples/base-toggle-group-sizes.tsx",
+    "apps/docs/examples/base-toggle-group-spacing.tsx",
+    "apps/docs/examples/base-toggle-group-vertical.tsx",
+    "apps/docs/examples/base-toggle-outline.tsx",
+    "apps/docs/examples/base-toggle-rtl.tsx",
+    "apps/docs/examples/base-toggle-sizes.tsx",
+    "apps/docs/examples/base-toggle-text.tsx",
+    "apps/docs/examples/base-tooltip-demo.tsx",
+    "apps/docs/examples/base-tooltip-disabled.tsx",
+    "apps/docs/examples/base-tooltip-keyboard.tsx",
+    "apps/docs/examples/base-tooltip-rtl.tsx",
+    "apps/docs/examples/base-tooltip-sides.tsx",
+    "apps/docs/examples/base-typography-blockquote.tsx",
+    "apps/docs/examples/base-typography-demo.tsx",
+    "apps/docs/examples/base-typography-h1.tsx",
+    "apps/docs/examples/base-typography-h2.tsx",
+    "apps/docs/examples/base-typography-h3.tsx",
+    "apps/docs/examples/base-typography-h4.tsx",
+    "apps/docs/examples/base-typography-inline-code.tsx",
+    "apps/docs/examples/base-typography-large.tsx",
+    "apps/docs/examples/base-typography-lead.tsx",
+    "apps/docs/examples/base-typography-list.tsx",
+    "apps/docs/examples/base-typography-muted.tsx",
+    "apps/docs/examples/base-typography-p.tsx",
+    "apps/docs/examples/base-typography-rtl.tsx",
+    "apps/docs/examples/base-typography-small.tsx",
+    "apps/docs/examples/base-typography-table.tsx",
+    "apps/docs/examples/bento-grid.tsx",
+    "apps/docs/examples/blog-post.tsx",
+    "apps/docs/examples/blog.tsx",
+    "apps/docs/examples/brand-action.tsx",
+    "apps/docs/examples/brand-gradient-text-motion.tsx",
+    "apps/docs/examples/brand-gradient-text.tsx",
+    "apps/docs/examples/brand-logo.tsx",
+    "apps/docs/examples/breadcrumb.tsx",
+    "apps/docs/examples/bubble.tsx",
+    "apps/docs/examples/button-group-orientation.tsx",
+    "apps/docs/examples/button-group.tsx",
+    "apps/docs/examples/button-sizes.tsx",
+    "apps/docs/examples/button.tsx",
+    "apps/docs/examples/calendar-constraints.tsx",
+    "apps/docs/examples/calendar.tsx",
+    "apps/docs/examples/card-media.tsx",
+    "apps/docs/examples/card.tsx",
+    "apps/docs/examples/careers.tsx",
+    "apps/docs/examples/carousel.tsx",
+    "apps/docs/examples/case-studies.tsx",
+    "apps/docs/examples/case-study.tsx",
+    "apps/docs/examples/changelog.tsx",
+    "apps/docs/examples/chart-series.tsx",
+    "apps/docs/examples/chart.tsx",
+    "apps/docs/examples/checkbox-select-all.tsx",
+    "apps/docs/examples/checkbox.tsx",
+    "apps/docs/examples/choicebox-form.tsx",
+    "apps/docs/examples/choicebox.tsx",
+    "apps/docs/examples/code-block-plain.tsx",
+    "apps/docs/examples/code-block.tsx",
+    "apps/docs/examples/code-example.tsx",
+    "apps/docs/examples/codebase.tsx",
+    "apps/docs/examples/collaborative-canvas.tsx",
+    "apps/docs/examples/collapsible-controlled.tsx",
+    "apps/docs/examples/collapsible.tsx",
+    "apps/docs/examples/color-picker-controlled.tsx",
+    "apps/docs/examples/color-picker.tsx",
+    "apps/docs/examples/combobox-controlled.tsx",
+    "apps/docs/examples/combobox.tsx",
+    "apps/docs/examples/command.tsx",
+    "apps/docs/examples/community.tsx",
+    "apps/docs/examples/compare.tsx",
+    "apps/docs/examples/comparison.tsx",
+    "apps/docs/examples/compliance.tsx",
+    "apps/docs/examples/contact.tsx",
+    "apps/docs/examples/context-menu.tsx",
+    "apps/docs/examples/contribution-graph-selection.tsx",
+    "apps/docs/examples/contribution-graph.tsx",
+    "apps/docs/examples/credit-card.tsx",
+    "apps/docs/examples/cta.tsx",
+    "apps/docs/examples/cursor.tsx",
+    "apps/docs/examples/data-table.tsx",
+    "apps/docs/examples/date-picker.tsx",
+    "apps/docs/examples/deck.tsx",
+    "apps/docs/examples/dialog-controlled.tsx",
+    "apps/docs/examples/dialog-stack.tsx",
+    "apps/docs/examples/dialog.tsx",
+    "apps/docs/examples/direction.tsx",
+    "apps/docs/examples/download.tsx",
+    "apps/docs/examples/drawer.tsx",
+    "apps/docs/examples/dropdown-menu-selection.tsx",
+    "apps/docs/examples/dropdown-menu.tsx",
+    "apps/docs/examples/dropzone-files.tsx",
+    "apps/docs/examples/dropzone.tsx",
+    "apps/docs/examples/editor-readonly.tsx",
+    "apps/docs/examples/editor.tsx",
+    "apps/docs/examples/empty-state.tsx",
+    "apps/docs/examples/experience.tsx",
+    "apps/docs/examples/faq.tsx",
+    "apps/docs/examples/feature.tsx",
+    "apps/docs/examples/field-fieldset.tsx",
+    "apps/docs/examples/field.tsx",
+    "apps/docs/examples/filter-toolbar.tsx",
+    "apps/docs/examples/footer.tsx",
+    "apps/docs/examples/form-section.tsx",
+    "apps/docs/examples/form.tsx",
+    "apps/docs/examples/gantt.tsx",
+    "apps/docs/examples/glimpse-text-only.tsx",
+    "apps/docs/examples/glimpse.tsx",
+    "apps/docs/examples/hero.tsx",
+    "apps/docs/examples/hover-card.tsx",
+    "apps/docs/examples/image-crop-aspect.tsx",
+    "apps/docs/examples/image-crop.tsx",
+    "apps/docs/examples/image-zoom.tsx",
+    "apps/docs/examples/input-group-compositions.tsx",
+    "apps/docs/examples/input-group.tsx",
+    "apps/docs/examples/input-otp.tsx",
+    "apps/docs/examples/input-types.tsx",
+    "apps/docs/examples/input.tsx",
+    "apps/docs/examples/item.tsx",
+    "apps/docs/examples/kanban.tsx",
+    "apps/docs/examples/kbd.tsx",
+    "apps/docs/examples/label-controls.tsx",
+    "apps/docs/examples/label.tsx",
+    "apps/docs/examples/list-custom-rows.tsx",
+    "apps/docs/examples/list.tsx",
+    "apps/docs/examples/marker.tsx",
+    "apps/docs/examples/marquee.tsx",
+    "apps/docs/examples/media-reveal.tsx",
+    "apps/docs/examples/menubar.tsx",
+    "apps/docs/examples/message-scroller.tsx",
+    "apps/docs/examples/message.tsx",
+    "apps/docs/examples/mini-calendar.tsx",
+    "apps/docs/examples/navigation-menu.tsx",
+    "apps/docs/examples/page-header.tsx",
+    "apps/docs/examples/page-skeleton.tsx",
+    "apps/docs/examples/pagination.tsx",
+    "apps/docs/examples/pill-locked.tsx",
+    "apps/docs/examples/pill.tsx",
+    "apps/docs/examples/popover-positioning.tsx",
+    "apps/docs/examples/popover.tsx",
+    "apps/docs/examples/pricing.tsx",
+    "apps/docs/examples/product-page-intro.tsx",
+    "apps/docs/examples/progress-states.tsx",
+    "apps/docs/examples/progress.tsx",
+    "apps/docs/examples/qr-code.tsx",
+    "apps/docs/examples/questionnaire.tsx",
+    "apps/docs/examples/radio-group-form.tsx",
+    "apps/docs/examples/radio-group.tsx",
+    "apps/docs/examples/rating.tsx",
+    "apps/docs/examples/reel.tsx",
+    "apps/docs/examples/relative-time.tsx",
+    "apps/docs/examples/resizable.tsx",
+    "apps/docs/examples/resource-row-link.tsx",
+    "apps/docs/examples/reveal-content-variants.tsx",
+    "apps/docs/examples/reveal-content.tsx",
+    "apps/docs/examples/roadmap.tsx",
+    "apps/docs/examples/rotating-content-external-control.tsx",
+    "apps/docs/examples/rotating-content.tsx",
+    "apps/docs/examples/sandbox.tsx",
+    "apps/docs/examples/scroll-area.tsx",
+    "apps/docs/examples/search-field.tsx",
+    "apps/docs/examples/select-groups.tsx",
+    "apps/docs/examples/select-scroll.tsx",
+    "apps/docs/examples/select-states.tsx",
+    "apps/docs/examples/select.tsx",
+    "apps/docs/examples/separator-vertical.tsx",
+    "apps/docs/examples/separator.tsx",
+    "apps/docs/examples/settings-section.tsx",
+    "apps/docs/examples/sheet-sides.tsx",
+    "apps/docs/examples/sheet.tsx",
+    "apps/docs/examples/sidebar.tsx",
+    "apps/docs/examples/skeleton.tsx",
+    "apps/docs/examples/slider.tsx",
+    "apps/docs/examples/snippet.tsx",
+    "apps/docs/examples/spinner-sizes.tsx",
+    "apps/docs/examples/spinner.tsx",
+    "apps/docs/examples/stat-card.tsx",
+    "apps/docs/examples/state-panel.tsx",
+    "apps/docs/examples/stats.tsx",
+    "apps/docs/examples/status-notice-actions.tsx",
+    "apps/docs/examples/status-notice.tsx",
+    "apps/docs/examples/status.tsx",
+    "apps/docs/examples/stories-viewer.tsx",
+    "apps/docs/examples/stories.tsx",
+    "apps/docs/examples/switch-states.tsx",
+    "apps/docs/examples/switch.tsx",
+    "apps/docs/examples/table-native.tsx",
+    "apps/docs/examples/table.tsx",
+    "apps/docs/examples/tabs-variants.tsx",
+    "apps/docs/examples/tabs.tsx",
+    "apps/docs/examples/tags-controlled.tsx",
+    "apps/docs/examples/tags.tsx",
+    "apps/docs/examples/team.tsx",
+    "apps/docs/examples/testimonial.tsx",
+    "apps/docs/examples/text-reveal-timing.tsx",
+    "apps/docs/examples/text-reveal.tsx",
+    "apps/docs/examples/textarea-states.tsx",
+    "apps/docs/examples/textarea.tsx",
+    "apps/docs/examples/theme-switcher.tsx",
+    "apps/docs/examples/ticker-card.tsx",
+    "apps/docs/examples/ticker.tsx",
+    "apps/docs/examples/toast-feedback.tsx",
+    "apps/docs/examples/toast.tsx",
+    "apps/docs/examples/toggle-controlled.tsx",
+    "apps/docs/examples/toggle-group-vertical.tsx",
+    "apps/docs/examples/toggle-group.tsx",
+    "apps/docs/examples/toggle.tsx",
+    "apps/docs/examples/tooltip-sides.tsx",
+    "apps/docs/examples/tooltip.tsx",
+    "apps/docs/examples/tree.tsx",
+    "apps/docs/examples/typography-semantics.tsx",
+    "apps/docs/examples/typography.tsx",
+    "apps/docs/examples/video-player.tsx",
+    "registry/blocks/about.tsx",
+    "registry/blocks/awards.tsx",
+    "registry/blocks/bento-grid.tsx",
+    "registry/blocks/blog-post.tsx",
+    "registry/blocks/blog.tsx",
+    "registry/blocks/careers.tsx",
+    "registry/blocks/case-studies.tsx",
+    "registry/blocks/case-study.tsx",
+    "registry/blocks/changelog.tsx",
+    "registry/blocks/charts/chart-area-axes.tsx",
+    "registry/blocks/charts/chart-area-default.tsx",
+    "registry/blocks/charts/chart-area-gradient.tsx",
+    "registry/blocks/charts/chart-area-icons.tsx",
+    "registry/blocks/charts/chart-area-interactive.tsx",
+    "registry/blocks/charts/chart-area-legend.tsx",
+    "registry/blocks/charts/chart-area-linear.tsx",
+    "registry/blocks/charts/chart-area-stacked-expand.tsx",
+    "registry/blocks/charts/chart-area-stacked.tsx",
+    "registry/blocks/charts/chart-area-step.tsx",
+    "registry/blocks/charts/chart-bar-active.tsx",
+    "registry/blocks/charts/chart-bar-default.tsx",
+    "registry/blocks/charts/chart-bar-horizontal.tsx",
+    "registry/blocks/charts/chart-bar-interactive.tsx",
+    "registry/blocks/charts/chart-bar-label-custom.tsx",
+    "registry/blocks/charts/chart-bar-label.tsx",
+    "registry/blocks/charts/chart-bar-mixed.tsx",
+    "registry/blocks/charts/chart-bar-multiple.tsx",
+    "registry/blocks/charts/chart-bar-negative.tsx",
+    "registry/blocks/charts/chart-bar-stacked.tsx",
+    "registry/blocks/charts/chart-line-default.tsx",
+    "registry/blocks/charts/chart-line-dots-colors.tsx",
+    "registry/blocks/charts/chart-line-dots-custom.tsx",
+    "registry/blocks/charts/chart-line-dots.tsx",
+    "registry/blocks/charts/chart-line-interactive.tsx",
+    "registry/blocks/charts/chart-line-label-custom.tsx",
+    "registry/blocks/charts/chart-line-label.tsx",
+    "registry/blocks/charts/chart-line-linear.tsx",
+    "registry/blocks/charts/chart-line-multiple.tsx",
+    "registry/blocks/charts/chart-line-step.tsx",
+    "registry/blocks/charts/chart-pie-donut-active.tsx",
+    "registry/blocks/charts/chart-pie-donut-text.tsx",
+    "registry/blocks/charts/chart-pie-donut.tsx",
+    "registry/blocks/charts/chart-pie-interactive.tsx",
+    "registry/blocks/charts/chart-pie-label-custom.tsx",
+    "registry/blocks/charts/chart-pie-label-list.tsx",
+    "registry/blocks/charts/chart-pie-label.tsx",
+    "registry/blocks/charts/chart-pie-legend.tsx",
+    "registry/blocks/charts/chart-pie-separator-none.tsx",
+    "registry/blocks/charts/chart-pie-simple.tsx",
+    "registry/blocks/charts/chart-pie-stacked.tsx",
+    "registry/blocks/charts/chart-radar-default.tsx",
+    "registry/blocks/charts/chart-radar-dots.tsx",
+    "registry/blocks/charts/chart-radar-grid-circle-fill.tsx",
+    "registry/blocks/charts/chart-radar-grid-circle-no-lines.tsx",
+    "registry/blocks/charts/chart-radar-grid-circle.tsx",
+    "registry/blocks/charts/chart-radar-grid-custom.tsx",
+    "registry/blocks/charts/chart-radar-grid-fill.tsx",
+    "registry/blocks/charts/chart-radar-grid-none.tsx",
+    "registry/blocks/charts/chart-radar-icons.tsx",
+    "registry/blocks/charts/chart-radar-label-custom.tsx",
+    "registry/blocks/charts/chart-radar-legend.tsx",
+    "registry/blocks/charts/chart-radar-lines-only.tsx",
+    "registry/blocks/charts/chart-radar-multiple.tsx",
+    "registry/blocks/charts/chart-radar-radius.tsx",
+    "registry/blocks/charts/chart-radial-grid.tsx",
+    "registry/blocks/charts/chart-radial-label.tsx",
+    "registry/blocks/charts/chart-radial-shape.tsx",
+    "registry/blocks/charts/chart-radial-simple.tsx",
+    "registry/blocks/charts/chart-radial-stacked.tsx",
+    "registry/blocks/charts/chart-radial-text.tsx",
+    "registry/blocks/charts/chart-tooltip-advanced.tsx",
+    "registry/blocks/charts/chart-tooltip-default.tsx",
+    "registry/blocks/charts/chart-tooltip-formatter.tsx",
+    "registry/blocks/charts/chart-tooltip-icons.tsx",
+    "registry/blocks/charts/chart-tooltip-indicator-line.tsx",
+    "registry/blocks/charts/chart-tooltip-indicator-none.tsx",
+    "registry/blocks/charts/chart-tooltip-label-custom.tsx",
+    "registry/blocks/charts/chart-tooltip-label-formatter.tsx",
+    "registry/blocks/charts/chart-tooltip-label-none.tsx",
+    "registry/blocks/code-example.tsx",
+    "registry/blocks/codebase.tsx",
+    "registry/blocks/collaborative-canvas.tsx",
+    "registry/blocks/community.tsx",
+    "registry/blocks/compare.tsx",
+    "registry/blocks/compliance.tsx",
+    "registry/blocks/contact.tsx",
+    "registry/blocks/cta.tsx",
+    "registry/blocks/deck.tsx",
+    "registry/blocks/dialog-stack.tsx",
+    "registry/blocks/download.tsx",
+    "registry/blocks/experience.tsx",
+    "registry/blocks/faq.tsx",
+    "registry/blocks/feature.tsx",
+    "registry/blocks/footer.tsx",
+    "registry/blocks/form.tsx",
+    "registry/blocks/gantt.tsx",
+    "registry/blocks/hero.tsx",
+    "registry/blocks/kanban.tsx",
+    "registry/blocks/pricing.tsx",
+    "registry/blocks/reel.tsx",
+    "registry/blocks/roadmap.tsx",
+    "registry/blocks/sandbox.tsx",
+    "registry/blocks/settings-section.tsx",
+    "registry/blocks/stats.tsx",
+    "registry/blocks/team.tsx",
+    "registry/blocks/testimonial.tsx",
+    "registry/ui/accordion.tsx",
+    "registry/ui/alert-dialog.tsx",
+    "registry/ui/announcement.tsx",
+    "registry/ui/aspect-ratio.tsx",
+    "registry/ui/attachment.tsx",
+    "registry/ui/audio-player.tsx",
+    "registry/ui/avatar-stack.tsx",
+    "registry/ui/avatar.tsx",
+    "registry/ui/badge.tsx",
+    "registry/ui/banner.tsx",
+    "registry/ui/brand-gradient-text.tsx",
+    "registry/ui/breadcrumb.tsx",
+    "registry/ui/bubble.tsx",
+    "registry/ui/button-group.tsx",
+    "registry/ui/button.tsx",
+    "registry/ui/calendar.tsx",
+    "registry/ui/card.tsx",
+    "registry/ui/carousel.tsx",
+    "registry/ui/chart-data-table.tsx",
+    "registry/ui/chart.tsx",
+    "registry/ui/checkbox.tsx",
+    "registry/ui/choicebox.tsx",
+    "registry/ui/code-block.tsx",
+    "registry/ui/collapsible.tsx",
+    "registry/ui/color-picker.tsx",
+    "registry/ui/combobox.tsx",
+    "registry/ui/command.tsx",
+    "registry/ui/comparison.tsx",
+    "registry/ui/context-menu.tsx",
+    "registry/ui/contribution-graph.tsx",
+    "registry/ui/credit-card.tsx",
+    "registry/ui/cursor.tsx",
+    "registry/ui/dialog.tsx",
+    "registry/ui/direction.tsx",
+    "registry/ui/drawer.tsx",
+    "registry/ui/dropdown-menu.tsx",
+    "registry/ui/dropzone.tsx",
+    "registry/ui/editor.tsx",
+    "registry/ui/field.tsx",
+    "registry/ui/glimpse.tsx",
+    "registry/ui/hover-card.tsx",
+    "registry/ui/image-crop.tsx",
+    "registry/ui/image-zoom.tsx",
+    "registry/ui/input-group.tsx",
+    "registry/ui/input-otp.tsx",
+    "registry/ui/input.tsx",
+    "registry/ui/item.tsx",
+    "registry/ui/kbd.tsx",
+    "registry/ui/label.tsx",
+    "registry/ui/list.tsx",
+    "registry/ui/marker.tsx",
+    "registry/ui/marquee.tsx",
+    "registry/ui/menubar.tsx",
+    "registry/ui/message-scroller.tsx",
+    "registry/ui/message.tsx",
+    "registry/ui/mini-calendar.tsx",
+    "registry/ui/navigation-menu.tsx",
+    "registry/ui/pagination.tsx",
+    "registry/ui/pill.tsx",
+    "registry/ui/popover.tsx",
+    "registry/ui/progress.tsx",
+    "registry/ui/qr-code.tsx",
+    "registry/ui/questionnaire.tsx",
+    "registry/ui/radio-group.tsx",
+    "registry/ui/rating.tsx",
+    "registry/ui/relative-time.tsx",
+    "registry/ui/resizable.tsx",
+    "registry/ui/reveal-content.tsx",
+    "registry/ui/rotating-content.tsx",
+    "registry/ui/scroll-area.tsx",
+    "registry/ui/select.tsx",
+    "registry/ui/separator.tsx",
+    "registry/ui/sheet.tsx",
+    "registry/ui/sidebar.tsx",
+    "registry/ui/skeleton.tsx",
+    "registry/ui/slider.tsx",
+    "registry/ui/snippet.tsx",
+    "registry/ui/spinner.tsx",
+    "registry/ui/status-notice.tsx",
+    "registry/ui/status.tsx",
+    "registry/ui/stories.tsx",
+    "registry/ui/switch.tsx",
+    "registry/ui/table.tsx",
+    "registry/ui/tabs.tsx",
+    "registry/ui/tags.tsx",
+    "registry/ui/text-reveal.tsx",
+    "registry/ui/textarea.tsx",
+    "registry/ui/theme-switcher.tsx",
+    "registry/ui/ticker.tsx",
+    "registry/ui/toast.tsx",
+    "registry/ui/toggle-group.tsx",
+    "registry/ui/toggle.tsx",
+    "registry/ui/tooltip.tsx",
+    "registry/ui/tree.tsx",
+    "registry/ui/typography.tsx",
+    "registry/ui/video-player.tsx",
+    "registry/patterns/brand-action.tsx",
+    "registry/patterns/brand-logo.tsx",
+    "registry/patterns/data-table.tsx",
+    "registry/patterns/date-picker.tsx",
+    "registry/patterns/empty-state.tsx",
+    "registry/patterns/filter-toolbar.tsx",
+    "registry/patterns/form-section.tsx",
+    "registry/patterns/media-reveal.tsx",
+    "registry/patterns/page-header.tsx",
+    "registry/patterns/page-skeleton.tsx",
+    "registry/patterns/product-page-intro.tsx",
+    "registry/patterns/resource-row-link.tsx",
+    "registry/patterns/search-field.tsx",
+    "registry/patterns/stat-card.tsx",
+    "registry/patterns/state-panel.tsx"
+  ],
+  "mediaCandidateFiles": [
+    {
+      "path": "apps/docs/examples/aspect-ratio-media.tsx",
+      "sha256": "5c7f44d7b9e7865dbc38df0d7cb41e3a47e77400b864eb0c5e41b1548077024e",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 9,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 8,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/audio-player.tsx",
+      "sha256": "b6eac7fbd079405b2de540657da00dda1904c5c7d850f5a28a5e67180b233e77",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 7,
+          "value": "/demo-audio.wav"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 13,
+          "value": "/demo-audio.wav"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 15,
+          "value": "/demo-audio.wav"
+        },
+        {
+          "kind": "intentionalFailure",
+          "line": 14,
+          "value": "/demo-missing-audio.wav"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/avatar-images.tsx",
+      "sha256": "3502eb076516a765341e20c312e25be4b744421f081a77802e81d117395f3454",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 13,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "intentionalFailure",
+          "line": 23,
+          "value": "data:image/png;base64,broken"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 12,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 23,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/avatar-stack-animated.tsx",
+      "sha256": "8caa89162ebe312e2f8df1d9322011ec6585fbd3ad0ffff720025e22ad0952b1",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 15,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 15,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-aspect-ratio-demo.tsx",
+      "sha256": "0f999a39de1409e009667f0f240069b3d1b7d410b96ff480ac7a50c1bb0de018",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 10,
+          "value": "https://avatar.vercel.sh/shadcn1"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 9,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-aspect-ratio-portrait.tsx",
+      "sha256": "15fb01a4040b1715fdbe981578d15cbdf2081295e093dc76b923e698a3c81d4e",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 13,
+          "value": "https://avatar.vercel.sh/shadcn1"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 12,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-aspect-ratio-rtl.tsx",
+      "sha256": "e3854f500ee23adda75624b180d49f6a4040bfa8a9843c488d194f095a2c6778",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 35,
+          "value": "https://avatar.vercel.sh/shadcn1"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 34,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-aspect-ratio-square.tsx",
+      "sha256": "8feaa9dace4968fa6f6620bde2c4a6f046562edc6d48de4e210aae84b88ef63a",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 13,
+          "value": "https://avatar.vercel.sh/shadcn1"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 12,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-attachment-demo.tsx",
+      "sha256": "5ca7e462ccb07b438adb311a51ddef01a7ed885d7b65f1bbca6335609291fb5a",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 21,
+          "value": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80"
+        },
+        {
+          "kind": "externalImage",
+          "line": 27,
+          "value": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&auto=format&fit=crop&q=80"
+        },
+        {
+          "kind": "externalImage",
+          "line": 33,
+          "value": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&auto=format&fit=crop&q=80"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 45,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-attachment-group.tsx",
+      "sha256": "698cf7ff7bd21a47913af5ec6b61eba45017434cd88ff8110cc569b7f84d268f",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 34,
+          "value": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 51,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-attachment-image.tsx",
+      "sha256": "6aeb9e45219e2fb17042f645dc73ad32e1dbd936e7591303a77f18965a895b00",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 21,
+          "value": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80"
+        },
+        {
+          "kind": "externalImage",
+          "line": 27,
+          "value": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&auto=format&fit=crop&q=80"
+        },
+        {
+          "kind": "externalImage",
+          "line": 33,
+          "value": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&auto=format&fit=crop&q=80"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 45,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-badge-icon.tsx",
+      "sha256": "5138d85196ec18475468ca7b386fab3c6dac3750259bbab6befa93b041e9ffe8",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 15,
+          "value": "https://github.com/pranathip.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 15,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-badge.tsx",
+      "sha256": "e0379b48ea132f7ff989f01fcbc305f8ad1e8136e7fd979d4ad42c909c31a54b",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 13,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 13,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-basic.tsx",
+      "sha256": "065c41fa6ac66320c1e5ca7be0f5c55343b2fec75a294ee7b45ca7c39337936f",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 13,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 12,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-demo.tsx",
+      "sha256": "1387ffdf9f10e0994e912ed91ec6202f5868f1388837313040a13675e54aa2a4",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 17,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 25,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 33,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 38,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 45,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 16,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 24,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 33,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 37,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 44,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-dropdown.tsx",
+      "sha256": "e09a6e754be4aa06351cbaefc04d55d16d855bc0b45f867129ef66f694303da1",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 26,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 26,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-group-count-icon.tsx",
+      "sha256": "5dceae9a7b8233f42f6a2aaa028d60fa91759270909dfa1d5febe48b822ecf7e",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 17,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 21,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 26,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 17,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 21,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 25,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-group-count.tsx",
+      "sha256": "d66ff853adc5fd64b6f13deb946cf0406d2a42e3280df58b3a05b7e40c81716d",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 15,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 19,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 24,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 15,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 19,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 23,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-group.tsx",
+      "sha256": "030b65ffc2e91473a77b7edaf471eb9fa8a14ecdc0f77a7d03d94ad13256a6ce",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 14,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 18,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 23,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 14,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 18,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 22,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-rtl.tsx",
+      "sha256": "d2ad9f565efa937002ceeba7aa3ca0d65753017c3882db9adcd2e836ca76a27d",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 45,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 53,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 61,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 66,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 73,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 44,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 52,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 61,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 65,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 72,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-avatar-size.tsx",
+      "sha256": "c770ae43cc17b87ffdf5fefd267b11cb954ecc2ed1735eea9da71168550bcd5c",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 13,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 17,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 21,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 13,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 17,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 21,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-card-image.tsx",
+      "sha256": "3abb3f0477eee2d68c946663ca008aff44b485e4c9f428272777377536834c55",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 19,
+          "value": "https://avatar.vercel.sh/shadcn1"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 18,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-dropdown-menu-avatar.tsx",
+      "sha256": "f48e10c4405c2fbd0e46410fad7be8a1591ca69df809c65647c4054d1b4bbcb6",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 33,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 33,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-empty-avatar-group.tsx",
+      "sha256": "b56df392ac83eef93bf170d541da2d582b1bacc682ff13e589b6ca0d9226d03f",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 27,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 32,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 39,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 27,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 31,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 38,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-empty-avatar.tsx",
+      "sha256": "38135be88b8b952995597b6609307a83484a69566b99a1723ce78f530079aa15",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 25,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 24,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-item-avatar.tsx",
+      "sha256": "99a4c73eee99ca7bfca995548368129f1b3dd5c9f477ed6af0226edbf1ab30df",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 26,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 49,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 54,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 61,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 26,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 49,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 53,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 60,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-item-dropdown.tsx",
+      "sha256": "34658611c3f1bf773d49c61109d1ff4844d3cb50651f2e60649ec99424ca2a88",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 30,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 35,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 40,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 58,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-item-group.tsx",
+      "sha256": "1dc8647bd7f1106265f08ad3347599c55c3ff5193f23a8539fac32804878ff27",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 24,
+          "value": "https://github.com/shadcn.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 29,
+          "value": "https://github.com/maxleiter.png"
+        },
+        {
+          "kind": "externalImage",
+          "line": 34,
+          "value": "https://github.com/evilrabbit.png"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 46,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-item-header.tsx",
+      "sha256": "6bc8194fe7f592d8290fe697a40bfa6a0da57b87eec92b95cd6379b68c38652e",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 18,
+          "value": "https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?q=80&w=640&auto=format&fit=crop"
+        },
+        {
+          "kind": "externalImage",
+          "line": 25,
+          "value": "https://images.unsplash.com/photo-1610280777472-54133d004c8c?q=80&w=640&auto=format&fit=crop"
+        },
+        {
+          "kind": "externalImage",
+          "line": 32,
+          "value": "https://images.unsplash.com/photo-1602146057681-08560aee8cde?q=80&w=640&auto=format&fit=crop"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 44,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-item-image.tsx",
+      "sha256": "928a2a55c309d7496175e7df76783bedf4189c2a44ec1f99b8c50d9c5fc19b9e",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 47,
+          "value": "https://avatar.vercel.sh/${song.title}`}"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 46,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-message-attachment.tsx",
+      "sha256": "04e08c4ae8d2b03752d49d88f9ba8ca32f0b706ba459e6ccd938c4a14dabbcd6",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 26,
+          "value": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 25,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-message-avatar.tsx",
+      "sha256": "179436093b0681862349a4cccd598c50661694d25ea3e602bc3a35a36b6d81d4",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 26,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 44,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 60,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 25,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 43,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 59,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-message-demo.tsx",
+      "sha256": "b972eb669c163b9a2159708e881e2b7a7328c21f93444f73d14cc7ddaa78a549",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 29,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 45,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 61,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 78,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 28,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 44,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 60,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 77,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-message-group.tsx",
+      "sha256": "025d2a67d6fe0e08d6b470ce7c303bc28fec6870e1e1451ef58a2fccefdc8a76",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 32,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 31,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-scroll-area-horizontal-demo.tsx",
+      "sha256": "73b45033330f09ef1119f6caeadf9231d1870b9112de1bb12e1574e834e58efd",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "externalImage",
+          "line": 14,
+          "value": "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80"
+        },
+        {
+          "kind": "externalImage",
+          "line": 18,
+          "value": "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80"
+        },
+        {
+          "kind": "externalImage",
+          "line": 22,
+          "value": "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 33,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/base-sidebar-demo.tsx",
+      "sha256": "07b624e9559628a7923e018b7cb5397aa5e530ca4c921d58cdf14135d2c276ec",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 77,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 415,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 434,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/brand-logo.tsx",
+      "sha256": "19b2f3511f3b9ad33fe3350630a8f76bed8d26ae96c08069725f5e5ed9d91835",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 15,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 16,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/card-media.tsx",
+      "sha256": "e3d35ab6f85fd7f81565065c0b005e564dd3ef7efb4870a96a361dc40e0e4415",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 16,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 15,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/comparison.tsx",
+      "sha256": "046654c7f61f92d54e5a11804f52da735cc038bf2342aa3eb14d519411e701be",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-scene-night.svg"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/feature.tsx",
+      "sha256": "0b6197abbd0c508a3c66d211def864a3492d99966ab5adb750b925d41d085670",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 13,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 21,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 28,
+          "value": "data:image/svg+xml"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/glimpse.tsx",
+      "sha256": "82087be3c29ae0e9be83b9395c226e3c43b7d39e8603630b68d75fea87a24257",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-scene.svg"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/hero.tsx",
+      "sha256": "d87081cfcd103ced315a73f5e6789ed5b218cbe6eded746ba894e9b9722167f8",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 18,
+          "value": "/demo-player.mp4"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/image-crop-aspect.tsx",
+      "sha256": "4ce60833ecbecb705d1e8623a913c4fa1ba3230b243c5dbbe0c6de0280e56b45",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 31,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 28,
+          "value": "<ImageCrop"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/image-crop.tsx",
+      "sha256": "3b2d3c07bfc945474c5f1c38ce61c193feaf83e805d4ac9e4b29b15be71f58e2",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 4,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 4,
+          "value": "<ImageCrop"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/image-zoom.tsx",
+      "sha256": "1013eda17a1d37307b49e163fd4a3ec2b3b37482bc9b094635cc79e878fff81c",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 3,
+          "value": "<ImageZoom"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/media-reveal.tsx",
+      "sha256": "6c926681c55da3e86dc9f755ade351c3a39ef39302a2211aa4e4ae18b45de0fd",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 7,
+          "value": "/demo-landscape.svg"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 7,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/reel.tsx",
+      "sha256": "84e3767a28090de4da53ea7d777a2edf8eac3f38779c9b57f8c8edcd76ca9830",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-reel-light.mp4"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-reel-light.png"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-reel-dark.mp4"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-reel-dark.png"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/reveal-content-variants.tsx",
+      "sha256": "ee0ddecbc718af6710426d8c7a58b06ccb7e9c97fd36f94c97f048cd59619c5a",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 21,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 19,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/stories-viewer.tsx",
+      "sha256": "a90b189b7abd76316edfd2f091fe33f471ff3378d5c21d86231cc83a92262756",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 11,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 17,
+          "value": "/demo-scene-night.svg"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/stories.tsx",
+      "sha256": "95121dd0c72eacaaf198a057fdf5b80926c2461715006cb85cf3b183f53ac7ae",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-reel-light.mp4"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-reel-light.png"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-reel-dark.mp4"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 3,
+          "value": "/demo-reel-dark.png"
+        }
+      ]
+    },
+    {
+      "path": "apps/docs/examples/video-player.tsx",
+      "sha256": "1df8d9d3de7e86961359f995547276120a5438ee707bf98497ffd93f16071570",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "drawnDemoReference",
+          "line": 6,
+          "value": "/demo-player.mp4"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 8,
+          "value": "/demo-scene.svg"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 10,
+          "value": "/demo-player.mp4"
+        },
+        {
+          "kind": "drawnDemoReference",
+          "line": 12,
+          "value": "/demo-player.mp4"
+        },
+        {
+          "kind": "intentionalFailure",
+          "line": 11,
+          "value": "/demo-missing-video.mp4"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/about.tsx",
+      "sha256": "140664e0740a442e5a1a3ee5c42d88f6a507a10d6eab4758ce3707bc28ee56f4",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 181,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 185,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 189,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 193,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 197,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 201,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 218,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 222,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 226,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 84,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 92,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 114,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 127,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/blog-post.tsx",
+      "sha256": "e64e8d0dd4becaa8049247594aae980c1519299b18fe5733cbd11fc80317c474",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 52,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 54,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 163,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 71,
+          "value": "<AvatarImage"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 92,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 162,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/blog.tsx",
+      "sha256": "a9433320819c6f1184243d0caa17e3ecfe7515061ecb5431ea00f36f223b2705",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 68,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 80,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 92,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 130,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/case-studies.tsx",
+      "sha256": "5f08f5d3cf4dc52610f295912731452bc418a388f808d0342bd72f0edb852f22",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 59,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 77,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/case-study.tsx",
+      "sha256": "d2e28e33dc6e7e6b5f21ab3d1c15a77021785ebfcf53a4785fdbccad8a9d5e3b",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 65,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 83,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/changelog.tsx",
+      "sha256": "3a18a847f9c2ee1b86e9f66f1ef8866cbb15130e9df98669ae1aec98f745613b",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 58,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 90,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 99,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 160,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/collaborative-canvas.tsx",
+      "sha256": "24e31da80263188ce8a82d4b0e27c93457495f7cbeec5834776e7889876b0dfe",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 161,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/compliance.tsx",
+      "sha256": "cb7ae49ceb86ec7657ee7acbc7b325e70a21fcb350c2cabbea43891e9e59ad7e",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 48,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 53,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 63,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 71,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 79,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 102,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 129,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/experience.tsx",
+      "sha256": "aafb961b8ba35f223475408fb1f9501ae10bb11d9d2b31566be5fda21eb18698",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 50,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 58,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 66,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 74,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 114,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/feature.tsx",
+      "sha256": "0c43705a1b559863fdbfe4b9d223c934a81210d198cbabbdb841be7cec85b145",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 96,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 129,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/footer.tsx",
+      "sha256": "c2e2fc4b445f5a4183536d3ff4a772bc510605f6b58a9e7c1e5de6f50805fb33",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 44,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 109,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/reel.tsx",
+      "sha256": "1f3ca981b64a955b0d843559aa161032dc120ac6e9b1767539d84dadbe538e77",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 42,
+          "value": "<video"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/roadmap.tsx",
+      "sha256": "298c9151020870c021397eca17d5e745c3621fc9c22f2e87459429cd1e730174",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 223,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/team.tsx",
+      "sha256": "a06a2f779b66b910bdaf337014e6c02ec184ce26ad7b62b3bef2ca05a90f6a9a",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 41,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 48,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 55,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 62,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 69,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "inlinePlaceholder",
+          "line": 76,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 100,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "registry/blocks/testimonial.tsx",
+      "sha256": "b895f75aa8695312bd1669361a1d81f7680a85696f0d068cad191dfd1a6259b2",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "inlinePlaceholder",
+          "line": 38,
+          "value": "data:image/svg+xml"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 52,
+          "value": "<AvatarImage"
+        }
+      ]
+    },
+    {
+      "path": "registry/ui/audio-player.tsx",
+      "sha256": "fdbe03e23e5afd69d8b38d0451b92331f9466e4cb8d45ce5c05078a80b3e37f7",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 90,
+          "value": "<audio"
+        }
+      ]
+    },
+    {
+      "path": "registry/ui/comparison.tsx",
+      "sha256": "c0cc4a739e78809eab61da1c5a2555bc32636755669751e1e165c7dc5cd745d9",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 21,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 21,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/ui/glimpse.tsx",
+      "sha256": "100ff74d7601edd041011cc39f4cc68baf4349e1d2132469e71ebc05b4605295",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 10,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/ui/image-crop.tsx",
+      "sha256": "1cac094e4ec505c5f2314f36455da27e35d15cd1eee3d27998d51aea30fdaeb3",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 89,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 99,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/ui/image-zoom.tsx",
+      "sha256": "ce6869033604801f06bb696fce625f359800e37644d34b3a68704f0b0b150172",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 15,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 16,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/ui/stories.tsx",
+      "sha256": "4a8827dd4d797a6154e4a340009fec2abdda94e82bf8874f5355d4c37c0d0b1a",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 61,
+          "value": "<video"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 61,
+          "value": "<img"
+        },
+        {
+          "kind": "renderedMediaSlot",
+          "line": 68,
+          "value": "<img"
+        }
+      ]
+    },
+    {
+      "path": "registry/ui/video-player.tsx",
+      "sha256": "098d60f10d7f056190c71636d0cc191a66f84976199fc1841ab5cb4aee677e38",
+      "reviewStatus": "pending-role-review",
+      "signals": [
+        {
+          "kind": "renderedMediaSlot",
+          "line": 64,
+          "value": "<video"
+        }
+      ]
+    }
+  ],
+  "localDemoAssets": [
+    {
+      "path": "apps/docs/public/demo-audio.wav",
+      "bytes": 384044,
+      "sha256": "03f2e8578e7e9aa46aebf71814d9a8e1e334fe79422f2639ce00c2b8e88149f8"
+    },
+    {
+      "path": "apps/docs/public/demo-captions.vtt",
+      "bytes": 190,
+      "sha256": "2541831292583422319d305c5756854ab3f6a86a4a941e906464d64e8f885054"
+    },
+    {
+      "path": "apps/docs/public/demo-landscape.svg",
+      "bytes": 326,
+      "sha256": "32133d485c0c9ca2771550b9c050a1a0b7413db08049645c4671564dbb3a46f2"
+    },
+    {
+      "path": "apps/docs/public/demo-motion.mp4",
+      "bytes": 4855,
+      "sha256": "338e67963b3322dad291bd31ba4f0be92b3f109c3465d0f17471834c43ed055e"
+    },
+    {
+      "path": "apps/docs/public/demo-player.mp4",
+      "bytes": 98401,
+      "sha256": "5fae4b879358b186842d49522b454ab874d6934de299267a188b3d530b56036b"
+    },
+    {
+      "path": "apps/docs/public/demo-reel-dark.mp4",
+      "bytes": 110574,
+      "sha256": "06684048777a9f52e448e6ebc921ca459d55589ca7e6c3bdd17ca171cea42014"
+    },
+    {
+      "path": "apps/docs/public/demo-reel-dark.png",
+      "bytes": 121147,
+      "sha256": "823429594494abe1b60e62e21fa69cf06761108b37a467bf43c30bf770c4dfd2"
+    },
+    {
+      "path": "apps/docs/public/demo-reel-light.mp4",
+      "bytes": 128506,
+      "sha256": "28b99cc59d93d154bf504a7a74bd2f225593354dc6b577d2cc97f72afc9964af"
+    },
+    {
+      "path": "apps/docs/public/demo-reel-light.png",
+      "bytes": 118287,
+      "sha256": "1b38646f60dfc356fad01999ee156db1f6adad885c9d9c1e8cbf6ca0c73e13be"
+    },
+    {
+      "path": "apps/docs/public/demo-scene-night.svg",
+      "bytes": 657,
+      "sha256": "049ff3523c1205c50e80cd98cbcdcc6181a19b55d6062c02699e54be4e2f171a"
+    },
+    {
+      "path": "apps/docs/public/demo-scene.svg",
+      "bytes": 668,
+      "sha256": "638ad4157a115b01e797502ecd56071134286587559fb43b63f1fa3a9aefbd85"
+    }
+  ],
+  "counts": {
+    "candidateFiles": 73,
+    "localDemoAssets": 11,
+    "inlinePlaceholderFiles": 14,
+    "drawnDemoConsumerFiles": 17
+  },
+  "sourceBaseline": "31642301cb61a9432094c7af95863fea489d676f"
+}
