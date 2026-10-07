@@ -112,3 +112,15 @@
   - [source 역할·실제 Preview 연결·선정 자산 매핑](./artifacts/media-audit-scope.json).
   - [Pixabay Terms](https://pixabay.com/service/terms/), [FAQ](https://pixabay.com/service/faq/).
 - **Consequences**: T01의 조사/선정/전송 검증은 완료했다. 컴포넌트의 실제 파형·조작/lifecycle와 전수 수정 화면 검증은 T02~T05에서 남아 있으며 Spec의 Feature 인수 항목은 아직 체크하지 않는다. 네트워크 의존성과 Content ID·다운스트림 사용 맥락은 최종 출처 안내에서도 유지한다.
+
+
+## D007: T02 사진·프로필·비교 예제의 사실성 (2026-10-07)
+
+- **Context**: workflow의 다음 실행 task T02를 owner session으로 활성화했다.
+- **Constraints**: 숨은 docs public dependency와 기존 public API 변경을 만들지 않고 원저작자 코드 attribution을 보존한다. stock 모델의 실제 직원/고객 관계를 주장하지 않는다.
+- **Decision**: Components·Patterns의 43개 example 파일에 검증한 고정 Pixabay URL을 직접 사용했다. 가상 프로필별 사진/이름/initials를 맞추고 업무 사진의 alt·파일 형식·실측 크기, 실제 곡의 제목/작곡가와 풍경 artwork 역할을 맞췄다. Comparison은 같은 Hintersee 원본과 명시적인 CSS grayscale 편집을 사용한다.
+- **Trace**: 사진은 작업 공간/기사/풍경/인물 역할별로 구분했다. 브랜드·아이콘과 avatar-images의 의도적인 broken PNG/Blair fallback은 유지했다. AspectRatio의 기존 generated image용 심한 dark 필터를 제거하고 사진 크기를 컨테이너에 맞췄다. ItemHeader의 AI 모델 표시는 실제 사진 목록으로 조정했다. 가로 ScrollArea는 내부 scroll을 유지하며 좁은 viewport 안에 맞춘다.
+- **Evidence**: docs typecheck와 수정 example eslint 통과. 기존 media-finance/source-extension 통합 검사 2파일 15개 통과. 43개 변경 파일의 독립 Preview 48경로 × light/dark·390/1440=192건에서 실제 사진 디코딩·포맷/크롭/내용과 화면을 확인했다. Crop apply/reset·Comparison arrows/Home/End·Zoom Escape/focus 복귀·모바일 Sidebar·MediaReveal 오류/retry·의도적 BK fallback도 통과했다. 240px crop/zoom/comparison overflow 없음, avatar stack browser reduced-motion emulation 확인. [실제 검증](./artifacts/media-verification.json). 초기 검증 harness의 hydration/hover 대기 누락과 잘못된 animated-stack 경로를 바로잡고 다시 검사했으며 해당 관찰만으로 제품 결함으로 분류하지 않았다.
+- **Consequences**: registry Blocks와 영상/음악 교체는 각각 후속 T03/T04의 범위다. source URL 가용성 확인이나 jsdom play mock을 실제 Preview 재생 증거로 기록하지 않는다.
+
+- T02 대표 화면: [같은 사진의 비교](./artifacts/comparison-real-photo.png), [모바일 Sidebar 프로필](./artifacts/sidebar-real-profile.png).

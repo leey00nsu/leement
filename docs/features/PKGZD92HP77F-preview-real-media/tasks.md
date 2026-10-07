@@ -93,20 +93,22 @@
 
   - Verification: source 83개 역할/실제 route 검토; 공식 16개 자산 선정; fresh browser image/video/audio decode 16/16 및 모든 video play/time advance/seek 통과. [D006](./decisions.md#d006-t01-최종-자산과-제공-검증-완료-2026-10-07), [전송/해시 증거](./artifacts/asset-source-preflight.json). 실제 수정 Preview는 T02~T05에서 검증.
 
-- [TODO][PRD-FR-007] T-PKGZD92HP77F-preview-real-media-02 Components·Patterns의 사진과 대표·추가 예제 교체
+- [DONE][PRD-FR-007] T-PKGZD92HP77F-preview-real-media-02 Components·Patterns의 사진과 대표·추가 예제 교체
   - Date: 2026-10-07
   - Acceptance:
     - 사진 슬롯이 실제 Pixabay 콘텐츠를 표시하며 크롭/줌/비교·아바타·첨부·사이드바 예제와 복사 코드가 같은 의미를 전달한다.
   - Checklist:
-    - [ ] 대표/추가/Showcase의 그림·일반 데모 외부 사진을 역할별 검증 자산으로 교체
-    - [ ] 같은 샘플 프로필의 사진·이름을 일치시키고 alt·텍스트·비교 전후를 실제 콘텐츠에 맞춤
-    - [ ] 브랜드·아이콘·의도적인 broken image/fallback 유지 판정과 적용 결과 기록
-    - [ ] 수정 예제 light/dark·390/1440px, 실제 디코딩·관련 키보드 조작과 scoped 검사 확인
+    - [x] 대표/추가/Showcase의 그림·일반 데모 외부 사진을 역할별 검증 자산으로 교체
+    - [x] 같은 샘플 프로필의 사진·이름을 일치시키고 alt·텍스트·비교 전후를 실제 콘텐츠에 맞춤
+    - [x] 브랜드·아이콘·의도적인 broken image/fallback 유지 판정과 적용 결과 기록
+    - [x] 수정 예제 light/dark·390/1440px, 실제 디코딩·관련 키보드 조작과 scoped 검사 확인
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 43 example 파일/독립 Preview 48경로 × 4조건=192건 실제 사진 디코딩·화면 확인. Crop/Zoom/Comparison keyboard·240px, Sidebar 모바일 sheet, broken avatar·MediaReveal retry 유지. docs typecheck·변경 파일 eslint·기존 focused tests 2파일/15개 PASS. [검증 증거](./artifacts/media-verification.json), [D007](./decisions.md#d007-t02-사진프로필비교-예제의-사실성-2026-10-07).
 
 - [TODO][PRD-FR-016] T-PKGZD92HP77F-preview-real-media-03 Blocks 사진 기본값·예제 조합과 샘플 콘텐츠 정비
   - Date: 2026-10-07
@@ -188,4 +190,4 @@
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
-<!-- lee-spec-kit:workflow-sync sha256:58b47210b0b887e205ef73d8fd91d711a3cd880c0973b1fc159ba6edc9dabed3 -->
+<!-- lee-spec-kit:workflow-sync sha256:af8aef6fe4aa4affa6aebc9ca1db35e824d541340d2fe40c4c709340a43df17c -->

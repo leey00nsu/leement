@@ -881,7 +881,7 @@
     {
       "path": "apps/docs/examples/aspect-ratio-media.tsx",
       "sha256": "5c7f44d7b9e7865dbc38df0d7cb41e3a47e77400b864eb0c5e41b1548077024e",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -900,13 +900,45 @@
       "previewRoutes": [
         "/preview/aspect-ratio/detail/aspect-ratio-media"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "7cd782f7b36d0812974a746bdf3add4646b72ab266ecf740b6363433d0e1d532",
+      "visualCases": [
+        {
+          "route": "/preview/aspect-ratio/detail/aspect-ratio-media",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/audio-player.tsx",
@@ -957,7 +989,7 @@
     {
       "path": "apps/docs/examples/avatar-images.tsx",
       "sha256": "3502eb076516a765341e20c312e25be4b744421f081a77802e81d117395f3454",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -988,18 +1020,50 @@
       "previewRoutes": [
         "/preview/avatar/detail/avatar-images"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "109714c814124dfe30e1d54a3e3a54e8a612a6b1f997cb1c9472a6e69b6d5676",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/avatar-images",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/avatar-stack-animated.tsx",
       "sha256": "8caa89162ebe312e2f8df1d9322011ec6585fbd3ad0ffff720025e22ad0952b1",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -1018,8 +1082,8 @@
       "previewRoutes": [
         "/preview/avatar-stack/detail/avatar-stack-animated"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
@@ -1027,12 +1091,46 @@
         "3083453"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "3083453"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "cbfe5bfbc8a8db79ab96d51a5fb0857b79fb344a96c9ff154b1160a2441635f9",
+      "visualCases": [
+        {
+          "route": "/preview/avatar-stack/detail/avatar-stack-animated",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-demo.tsx",
       "sha256": "0f999a39de1409e009667f0f240069b3d1b7d410b96ff480ac7a50c1bb0de018",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1051,18 +1149,50 @@
       "previewRoutes": [
         "/preview/aspect-ratio/detail/base-aspect-ratio-demo"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "fbf2ab5667c8434dc00b315fa6678e0c8ed37ae81c720d33d5483b5560f581ba",
+      "visualCases": [
+        {
+          "route": "/preview/aspect-ratio/detail/base-aspect-ratio-demo",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-portrait.tsx",
       "sha256": "15fb01a4040b1715fdbe981578d15cbdf2081295e093dc76b923e698a3c81d4e",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1081,18 +1211,50 @@
       "previewRoutes": [
         "/preview/aspect-ratio/detail/base-aspect-ratio-portrait"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3083453"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3083453"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "376e09665550351ae03bfe0b6d3d83f8b17b40914de04efb5d1b8eb7fcfec915",
+      "visualCases": [
+        {
+          "route": "/preview/aspect-ratio/detail/base-aspect-ratio-portrait",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-rtl.tsx",
       "sha256": "e3854f500ee23adda75624b180d49f6a4040bfa8a9843c488d194f095a2c6778",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1111,18 +1273,50 @@
       "previewRoutes": [
         "/preview/aspect-ratio/detail/base-aspect-ratio-rtl"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "71462e6086275181631c362fa9297958761561a318feed85e88e836d7bb904b6",
+      "visualCases": [
+        {
+          "route": "/preview/aspect-ratio/detail/base-aspect-ratio-rtl",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-square.tsx",
       "sha256": "8feaa9dace4968fa6f6620bde2c4a6f046562edc6d48de4e210aae84b88ef63a",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1141,18 +1335,50 @@
       "previewRoutes": [
         "/preview/aspect-ratio/detail/base-aspect-ratio-square"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "222862fa431d5b81992839edbea107a0f35eb0144c6380d42a335c3e0f5fca1a",
+      "visualCases": [
+        {
+          "route": "/preview/aspect-ratio/detail/base-aspect-ratio-square",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-attachment-demo.tsx",
       "sha256": "5ca7e462ccb07b438adb311a51ddef01a7ed885d7b65f1bbca6335609291fb5a",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1181,20 +1407,54 @@
       "previewRoutes": [
         "/preview/attachment/detail/base-attachment-demo"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "2788918",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "c65d5038fc9ca35e3ef8dd4b4fec62d160ecf91d740366bfed8ad6130b9d8aa8",
+      "visualCases": [
+        {
+          "route": "/preview/attachment/detail/base-attachment-demo",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-attachment-group.tsx",
       "sha256": "698cf7ff7bd21a47913af5ec6b61eba45017434cd88ff8110cc569b7f84d268f",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1213,20 +1473,52 @@
       "previewRoutes": [
         "/preview/attachment/detail/base-attachment-group"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "2788918",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "a63f748b613873a35db71e4f3fd1867f39da7357a006740f4564219e3be685ee",
+      "visualCases": [
+        {
+          "route": "/preview/attachment/detail/base-attachment-group",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-attachment-image.tsx",
       "sha256": "6aeb9e45219e2fb17042f645dc73ad32e1dbd936e7591303a77f18965a895b00",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1255,20 +1547,54 @@
       "previewRoutes": [
         "/preview/attachment/detail/base-attachment-image"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "2788918",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "17cd22019d5c25f851f6498370928f74545062b0b0605b29b961ddc8c688e929",
+      "visualCases": [
+        {
+          "route": "/preview/attachment/detail/base-attachment-image",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-badge-icon.tsx",
       "sha256": "5138d85196ec18475468ca7b386fab3c6dac3750259bbab6befa93b041e9ffe8",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1287,18 +1613,50 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-badge-icon"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3083453"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3083453"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "c1a0e78e6c68de8c77b34136f83b6704f61abbc9237498803b6a3ffe0d420dec",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-badge-icon",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-badge.tsx",
       "sha256": "e0379b48ea132f7ff989f01fcbc305f8ad1e8136e7fd979d4ad42c909c31a54b",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1317,18 +1675,50 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-badge"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "75b35247ac77256b12206dbeec03e2d833c5af48d78feaa0b8391a96733490d5",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-badge",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-basic.tsx",
       "sha256": "065c41fa6ac66320c1e5ca7be0f5c55343b2fec75a294ee7b45ca7c39337936f",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1347,18 +1737,50 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-basic"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "6e41a7b95850ef8003e71df431c5559c2a481c7c7f485b380374c1275978218a",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-basic",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-demo.tsx",
       "sha256": "1387ffdf9f10e0994e912ed91ec6202f5868f1388837313040a13675e54aa2a4",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1417,20 +1839,54 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-demo"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "5761615f7a7b173db2f7f11c732d63f9be0ce0cca494b0360ceb39dedc6e0226",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-demo",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-dropdown.tsx",
       "sha256": "e09a6e754be4aa06351cbaefc04d55d16d855bc0b45f867129ef66f694303da1",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1449,18 +1905,50 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-dropdown"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "0cb0278fdc5ed4846681df15fb65b9fee5861066ed3edaa1095b4cc01dc269d0",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-dropdown",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-group-count-icon.tsx",
       "sha256": "5dceae9a7b8233f42f6a2aaa028d60fa91759270909dfa1d5febe48b822ecf7e",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1499,20 +1987,54 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-group-count-icon"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "a6ba4cc89ce5b88077982afadddda4c748a3d5fcd6346ddc89ead67f7d73d4e4",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-group-count-icon",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-group-count.tsx",
       "sha256": "d66ff853adc5fd64b6f13deb946cf0406d2a42e3280df58b3a05b7e40c81716d",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1551,20 +2073,54 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-group-count"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "67d48b2f84694993adbd42b22ea8527b13625c2394ebb985e55be62fdbf60094",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-group-count",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-group.tsx",
       "sha256": "030b65ffc2e91473a77b7edaf471eb9fa8a14ecdc0f77a7d03d94ad13256a6ce",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1603,20 +2159,54 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-group"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "d4c267c378cfaed508d064e62661ad3a4dc1a93927cb637cba8410da299c9eac",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-group",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-rtl.tsx",
       "sha256": "d2ad9f565efa937002ceeba7aa3ca0d65753017c3882db9adcd2e836ca76a27d",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1675,20 +2265,54 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-rtl"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "24d4ec7650581364e4f2ba368f68aa9d3e643434f950ee0f2915609615d90367",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-rtl",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-avatar-size.tsx",
       "sha256": "c770ae43cc17b87ffdf5fefd267b11cb954ecc2ed1735eea9da71168550bcd5c",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1727,18 +2351,50 @@
       "previewRoutes": [
         "/preview/avatar/detail/base-avatar-size"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "56646a9d5966b0a63b9ddfee3e559e53263e4df81b4d69d33d32192d3cf820b5",
+      "visualCases": [
+        {
+          "route": "/preview/avatar/detail/base-avatar-size",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-card-image.tsx",
       "sha256": "3abb3f0477eee2d68c946663ca008aff44b485e4c9f428272777377536834c55",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1757,18 +2413,50 @@
       "previewRoutes": [
         "/preview/card/detail/base-card-image"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1516329"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "a806e39a8caed232d714422840f2136860b2c135e93a5408356f9c64f547ed21",
+      "visualCases": [
+        {
+          "route": "/preview/card/detail/base-card-image",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-dropdown-menu-avatar.tsx",
       "sha256": "f48e10c4405c2fbd0e46410fad7be8a1591ca69df809c65647c4054d1b4bbcb6",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1787,18 +2475,50 @@
       "previewRoutes": [
         "/preview/dropdown-menu/detail/base-dropdown-menu-avatar"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "85686a2899cd486190c452809c99e42ccc78464f89de6f655b926f7cc4fe4331",
+      "visualCases": [
+        {
+          "route": "/preview/dropdown-menu/detail/base-dropdown-menu-avatar",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-empty-avatar-group.tsx",
       "sha256": "b56df392ac83eef93bf170d541da2d582b1bacc682ff13e589b6ca0d9226d03f",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1837,20 +2557,54 @@
       "previewRoutes": [
         "/preview/empty-state/detail/base-empty-avatar-group"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "059f6e92cbbf030508df66dc0edfb7ded1dae689dcf2a5456a00b4c8c39260d9",
+      "visualCases": [
+        {
+          "route": "/preview/empty-state/detail/base-empty-avatar-group",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-empty-avatar.tsx",
       "sha256": "38135be88b8b952995597b6609307a83484a69566b99a1723ce78f530079aa15",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1869,18 +2623,50 @@
       "previewRoutes": [
         "/preview/empty-state/detail/base-empty-avatar"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "6fae3a905099284fb3f669ef18bfff368d24c87d4fa86ce00fadc334569580de",
+      "visualCases": [
+        {
+          "route": "/preview/empty-state/detail/base-empty-avatar",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-item-avatar.tsx",
       "sha256": "99a4c73eee99ca7bfca995548368129f1b3dd5c9f477ed6af0226edbf1ab30df",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1929,20 +2715,54 @@
       "previewRoutes": [
         "/preview/item/detail/base-item-avatar"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "cdc8b2526b31b7886a737c5dafab5e822609e11382490e50390c4b74e9b22541",
+      "visualCases": [
+        {
+          "route": "/preview/item/detail/base-item-avatar",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-item-dropdown.tsx",
       "sha256": "34658611c3f1bf773d49c61109d1ff4844d3cb50651f2e60649ec99424ca2a88",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -1971,20 +2791,54 @@
       "previewRoutes": [
         "/preview/item/detail/base-item-dropdown"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "a3cb5d6995e2648a4eff413f6ecbeb0d7f97842f0b7f81b59d8c51733e683612",
+      "visualCases": [
+        {
+          "route": "/preview/item/detail/base-item-dropdown",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-item-group.tsx",
       "sha256": "1dc8647bd7f1106265f08ad3347599c55c3ff5193f23a8539fac32804878ff27",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -2013,20 +2867,54 @@
       "previewRoutes": [
         "/preview/item/detail/base-item-group"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "1960b67913431b0e02fb5e1977d4fc7818d6603d87b3166a37c4209f21b51d19",
+      "visualCases": [
+        {
+          "route": "/preview/item/detail/base-item-group",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-item-header.tsx",
       "sha256": "6bc8194fe7f592d8290fe697a40bfa6a0da57b87eec92b95cd6379b68c38652e",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -2055,20 +2943,54 @@
       "previewRoutes": [
         "/preview/item/detail/base-item-header"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091",
         "2788918",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "31c2b35c44748bf8bb6c0687cc20b9290e2162f32ba8f7bab319c2b9f62c7c99",
+      "visualCases": [
+        {
+          "route": "/preview/item/detail/base-item-header",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-item-image.tsx",
       "sha256": "928a2a55c309d7496175e7df76783bedf4189c2a44ec1f99b8c50d9c5fc19b9e",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -2087,8 +3009,8 @@
       "previewRoutes": [
         "/preview/item/detail/base-item-image"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "108412",
         "524039",
@@ -2096,12 +3018,47 @@
         "3733649"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3733649",
+        "3601004",
+        "108412",
+        "524039"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "3bf4e318deeb0c6c570fe897e521614ed5f97db3ef80acf7f90df0bad4dabea8",
+      "visualCases": [
+        {
+          "route": "/preview/item/detail/base-item-image",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-message-attachment.tsx",
       "sha256": "04e08c4ae8d2b03752d49d88f9ba8ca32f0b706ba459e6ccd938c4a14dabbcd6",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -2120,18 +3077,50 @@
       "previewRoutes": [
         "/preview/message/detail/base-message-attachment"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "594091"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "594091"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "730a555977d385fc7096677a9fdfd430cf5b0b8a9b911aa858f73502f693932e",
+      "visualCases": [
+        {
+          "route": "/preview/message/detail/base-message-attachment",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-message-avatar.tsx",
       "sha256": "179436093b0681862349a4cccd598c50661694d25ea3e602bc3a35a36b6d81d4",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2170,19 +3159,52 @@
       "previewRoutes": [
         "/preview/message/detail/base-message-avatar"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "1690965"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "1524b77a63e607222d59c53fba7a4b4c06dbc10332ff983253118cc298c94479",
+      "visualCases": [
+        {
+          "route": "/preview/message/detail/base-message-avatar",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-message-demo.tsx",
       "sha256": "b972eb669c163b9a2159708e881e2b7a7328c21f93444f73d14cc7ddaa78a549",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2231,19 +3253,52 @@
       "previewRoutes": [
         "/preview/message/detail/base-message-demo"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "2359121"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231",
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "901b621fdfe667956b665244663a8635f8e10c5d4af705bb3885ddae593dfe41",
+      "visualCases": [
+        {
+          "route": "/preview/message/detail/base-message-demo",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-message-group.tsx",
       "sha256": "025d2a67d6fe0e08d6b470ce7c303bc28fec6870e1e1451ef58a2fccefdc8a76",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2262,19 +3317,51 @@
       "previewRoutes": [
         "/preview/message/detail/base-message-group"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231",
         "1690965"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "2359121"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "5c1ec2aaf0a8fda90ec5b697557f028048c8cdca4adf57ad4b144279eaac8cd7",
+      "visualCases": [
+        {
+          "route": "/preview/message/detail/base-message-group",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-scroll-area-horizontal-demo.tsx",
       "sha256": "73b45033330f09ef1119f6caeadf9231d1870b9112de1bb12e1574e834e58efd",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "externalImage",
@@ -2303,20 +3390,54 @@
       "previewRoutes": [
         "/preview/scroll-area/detail/base-scroll-area-horizontal-demo"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004",
         "3733649",
         "1516329"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1516329",
+        "3733649",
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "45b5e2feb222b8c44203698e8e93e39bace4ea356c0eced95ac4a8fd2e10b2a9",
+      "visualCases": [
+        {
+          "route": "/preview/scroll-area/detail/base-scroll-area-horizontal-demo",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/base-sidebar-demo.tsx",
       "sha256": "07b624e9559628a7923e018b7cb5397aa5e530ca4c921d58cdf14135d2c276ec",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2340,13 +3461,45 @@
       "previewRoutes": [
         "/preview/sidebar/detail/base-sidebar-demo"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "1283231"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "1283231"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "7bbcac9fa52192463062babaa9a32d57efd8e606ec59e8cbae1f3d512c95bcc0",
+      "visualCases": [
+        {
+          "route": "/preview/sidebar/detail/base-sidebar-demo",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/brand-logo.tsx",
@@ -2380,7 +3533,7 @@
     {
       "path": "apps/docs/examples/card-media.tsx",
       "sha256": "e3d35ab6f85fd7f81565065c0b005e564dd3ef7efb4870a96a361dc40e0e4415",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2399,18 +3552,50 @@
       "previewRoutes": [
         "/preview/card/detail/card-media"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "9b818ffacd8f70af8af209375093ec6d59de7767f76b6b398c833b648cea68f8",
+      "visualCases": [
+        {
+          "route": "/preview/card/detail/card-media",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/comparison.tsx",
       "sha256": "046654c7f61f92d54e5a11804f52da735cc038bf2342aa3eb14d519411e701be",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2430,13 +3615,70 @@
         "/preview/comparison/detail",
         "/preview/comparison/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "b150e2afdba96df40ec6be3af1d1179df13be9acc4df5a86b412c7b275b514b4",
+      "visualCases": [
+        {
+          "route": "/preview/comparison/detail",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        },
+        {
+          "route": "/preview/comparison/gallery",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/feature.tsx",
@@ -2479,7 +3721,7 @@
     {
       "path": "apps/docs/examples/glimpse.tsx",
       "sha256": "82087be3c29ae0e9be83b9395c226e3c43b7d39e8603630b68d75fea87a24257",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2494,13 +3736,70 @@
         "/preview/glimpse/detail",
         "/preview/glimpse/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3733649"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3733649"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "2139ee736a685b9424dbbefe038898dbf95f734ada893e98478f31675890bb03",
+      "visualCases": [
+        {
+          "route": "/preview/glimpse/detail",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        },
+        {
+          "route": "/preview/glimpse/gallery",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/hero.tsx",
@@ -2531,7 +3830,7 @@
     {
       "path": "apps/docs/examples/image-crop-aspect.tsx",
       "sha256": "4ce60833ecbecb705d1e8623a913c4fa1ba3230b243c5dbbe0c6de0280e56b45",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2550,18 +3849,50 @@
       "previewRoutes": [
         "/preview/image-crop/detail/image-crop-aspect"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3733649"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3733649"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "d10a0d8b87053f59e913fc4dbc0887ee7f6c047317a0b1d4914d99e5e7995e26",
+      "visualCases": [
+        {
+          "route": "/preview/image-crop/detail/image-crop-aspect",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/image-crop.tsx",
       "sha256": "3b2d3c07bfc945474c5f1c38ce61c193feaf83e805d4ac9e4b29b15be71f58e2",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2581,18 +3912,75 @@
         "/preview/image-crop/detail",
         "/preview/image-crop/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3733649"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3733649"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "218e5e1d3f09e558e3aee93eab9986b0b8c9da1606018b4144c371d4752445b0",
+      "visualCases": [
+        {
+          "route": "/preview/image-crop/detail",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        },
+        {
+          "route": "/preview/image-crop/gallery",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/image-zoom.tsx",
       "sha256": "1013eda17a1d37307b49e163fd4a3ec2b3b37482bc9b094635cc79e878fff81c",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2612,18 +4000,75 @@
         "/preview/image-zoom/detail",
         "/preview/image-zoom/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3733649"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3733649"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "8c0369968c244ac3fec7362ebffbfb39dcca541607e6687c9e4fa3508ba7d28d",
+      "visualCases": [
+        {
+          "route": "/preview/image-zoom/detail",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        },
+        {
+          "route": "/preview/image-zoom/gallery",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/media-reveal.tsx",
       "sha256": "6c926681c55da3e86dc9f755ade351c3a39ef39302a2211aa4e4ae18b45de0fd",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2643,13 +4088,70 @@
         "/preview/media-reveal/detail",
         "/preview/media-reveal/gallery"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "83bafd2893f3a9da15cc8d832ad96408a38657c7bce9854d17249de32283a620",
+      "visualCases": [
+        {
+          "route": "/preview/media-reveal/detail",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        },
+        {
+          "route": "/preview/media-reveal/gallery",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/reel.tsx",
@@ -2697,7 +4199,7 @@
     {
       "path": "apps/docs/examples/reveal-content-variants.tsx",
       "sha256": "ee0ddecbc718af6710426d8c7a58b06ccb7e9c97fd36f94c97f048cd59619c5a",
-      "reviewStatus": "source-role-reviewed",
+      "reviewStatus": "implemented-and-scoped-ui-verified",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2716,13 +4218,45 @@
       "previewRoutes": [
         "/preview/reveal-content/detail/reveal-content-variants"
       ],
-      "visualVerification": "not-performed",
-      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "visualVerification": "T02 all mapped independent routes light/dark × 390/1440; actual photo decode and contact-sheet inspection",
+      "sourceVerification": "Observed fixed Pixabay URLs are present directly in copied example source. Profile/alt/editorial and comparison semantics updated; intentional error fixture and brand/icon roles retained.",
       "proposedAssetIds": [
         "3601004"
       ],
       "sourceRoleStatus": "reviewed",
-      "assetMappingStatus": "selected-for-implementation"
+      "assetMappingStatus": "selected-for-implementation",
+      "implementedAssetIds": [
+        "3601004"
+      ],
+      "implementationStatus": "T02 applied and verified",
+      "implementationSha256": "06bad4067ad7d0b50bd5302a9596e3e2baa0e29bc689aa6517b1fbc59243d601",
+      "visualCases": [
+        {
+          "route": "/preview/reveal-content/detail/reveal-content-variants",
+          "cases": [
+            {
+              "width": 390,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 390,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "light",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            },
+            {
+              "width": 1440,
+              "theme": "dark",
+              "result": "PASS: real photo decode and direct contact-sheet inspection"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "apps/docs/examples/stories-viewer.tsx",
