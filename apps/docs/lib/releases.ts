@@ -11,7 +11,7 @@ export type Release = {
 };
 
 export const repositoryVersion = manifest.version;
-export const unreleasedChanges: ReleaseChange[] = [
+const patchChanges: ReleaseChange[] = [
   { title: "Consistent component surfaces and controls", details: "Sidebar uses Leement semantic theme colors, shared control sizes and stable skeleton rendering. Menus preserve destructive colors; inputs, navigation and table controls inherit common surfaces, focus and sizing. Blocks and interactive charts use consistent borders, card insets and typography. Field layouts keep labels and inputs readable, table scrolling contains hidden labels, and responsive examples reserve space for external navigation. Chart axes and radar labels remain readable in dark mode; Questionnaire restores semantic colors when its theme or state changes. To adopt the source changes, review and reinstall the affected registry items and update the theme together; existing application-owned source is not overwritten automatically." },
   { title: "Real media examples and credits", details: "Image, video and music previews use appropriate free Pixabay media in place of generated placeholders. Photos, posters, titles and alternative text match the content; fictional sample profiles remain consistent. Detail pages link the original media, creators and license information, including music Content ID status. Media licensing is separate from the MIT component source." },
   { title: "Complete AudioPlayer loading skeleton", details: "AudioPlayer shows skeletons for both the waveform and all playback controls while decoding, including source changes and retries. Native controls appear on failure or timeout and remain available without JavaScript. Successful decoding reveals the Leement waveform and controls without changing the player height." },
@@ -19,6 +19,8 @@ export const unreleasedChanges: ReleaseChange[] = [
   { title: "Alphabetical documentation menus", details: "Components, Blocks and Patterns navigation items are sorted A–Z by their displayed names within the existing sections. Desktop and mobile menus share the order, links and current-page selection." },
   { title: "Package license files", details: "The theme and tokens npm packages include the MIT license text. The theme also retains the bundled font license and attribution files." },
 ];
+
+export const unreleasedChanges: ReleaseChange[] = [];
 
 const changes = [
   { title: "Motion standardization", details: "All Leement visual transitions use Motion: controls, popups, disclosure height, repeated decoration and docs previews. Theme CSS remains static and framework independent. Spin, pulse and marquee cycles are editable tokens. Tokens/theme and the source registry are published for 0.2.0." },
@@ -84,6 +86,15 @@ const migrations = [
 ];
 
 export const releases: [Release, ...Release[]] = [
+  {
+    version: "0.2.1",
+    summary: "Consistent Leement UI, realistic media previews and complete AudioPlayer loading states.",
+    changes: patchChanges,
+    migrations: [
+      "Update @leement/theme and @leement/tokens to 0.2.1. Review local changes before reinstalling affected registry items; updating npm packages does not overwrite application-owned component source.",
+      "Preview photos, video and music use separate media licenses. Review the media credits on the documentation pages before reusing these example assets.",
+    ],
+  },
   {
     version: "0.2.0",
     summary: "Expanded components, blocks and charts with editable source, detailed examples and a shared Motion system.",
