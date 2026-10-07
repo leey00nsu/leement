@@ -5,27 +5,27 @@ export default function FeatureExample() {
     <Feature
       features={[
         {
-          id: "source",
-          title: "Editable source",
+          id: "workshop",
+          title: "Workshop collaboration",
           description:
-            "Keep components in your project and shape them around your product.",
+            "People sharing ideas around a workshop table. Photo by StartupStockPhotos on Pixabay.",
           image:
-            "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+            "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg",
         },
         {
-          id: "theme",
-          title: "Shared design tokens",
+          id: "desk",
+          title: "A focused coding desk",
           description:
-            "Change a design rule across your product without replacing components.",
+            "A notebook computer displaying code. Photo by AlfredMuller on Pixabay.",
           image:
-            "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+            "https://cdn.pixabay.com/photo/2017/09/26/15/13/computer-2788918_1280.jpg",
         },
         {
-          id: "accessibility",
-          title: "Keyboard interactions",
-          description: "Preserve predictable native and primitive behavior.",
+          id: "meeting",
+          title: "Room for shared decisions",
+          description: "An empty boardroom ready for a meeting. Photo by Jo_Johnston on Pixabay.",
           image:
-            "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+            "https://cdn.pixabay.com/photo/2016/07/14/08/25/office-1516329_1280.jpg",
         },
       ]}
     />

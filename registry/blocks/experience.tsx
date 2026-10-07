@@ -37,7 +37,7 @@ export interface ExperienceProps {
 }
 
 export const Experience = ({
-  heading = "Experience",
+  heading = "Sample experience",
   buttonText = "Download CV",
   buttonUrl = "#",
   experience = [
@@ -47,7 +47,7 @@ export const Experience = ({
       description:
         "Leading development of scalable web applications using React, TypeScript, and Node.js. Mentoring junior developers and implementing best practices.",
       company: "Example Studio",
-      logo: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+      logo: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EES%3C%2Ftext%3E%3C%2Fsvg%3E",
     },
     {
       period: "Mar 2023 - Aug 2025",
@@ -55,7 +55,7 @@ export const Experience = ({
       description:
         "Built and maintained multiple client websites and e-commerce platforms. Collaborated with design teams to implement pixel-perfect UI/UX designs.",
       company: "Example Company",
-      logo: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+      logo: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EEC%3C%2Ftext%3E%3C%2Fsvg%3E",
     },
     {
       period: "Jan 2021 - Feb 2023",
@@ -63,7 +63,7 @@ export const Experience = ({
       description:
         "Developed responsive web applications using modern JavaScript frameworks. Optimized performance and accessibility across multiple projects.",
       company: "Design Team",
-      logo: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+      logo: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EDT%3C%2Ftext%3E%3C%2Fsvg%3E",
     },
     {
       period: "Jun 2019 - Dec 2020",
@@ -71,7 +71,7 @@ export const Experience = ({
       description:
         "Assisted in building web applications and learning modern development practices. Contributed to team projects and code reviews.",
       company: "Product Team",
-      logo: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+      logo: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EPT%3C%2Ftext%3E%3C%2Fsvg%3E",
     },
   ],
   className,

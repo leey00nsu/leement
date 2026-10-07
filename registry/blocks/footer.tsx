@@ -41,8 +41,8 @@ export interface FooterProps {
 
 export const Footer = ({
   logo = {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "blocks for shadcn/ui",
+    src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EES%3C%2Ftext%3E%3C%2Fsvg%3E",
+    alt: "Example Studio demo monogram",
     title: "Example Studio",
     url: "https://example.com",
   },

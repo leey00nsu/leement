@@ -11,6 +11,8 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+// Demo photos: Pixabay CC0 items published before 2019-01-09.
+// Replace stock media and fictional sample content with your own licensed content.
 import { cn } from "@/lib/utils";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -30,52 +32,46 @@ export interface TeamProps {
 }
 
 export const Team = ({
-  heading = "Team",
-  description = "Our diverse team of experts brings together decades of experience in design, engineering, and product development.",
+  heading = "Sample team",
+  description = "Fictional names and roles with stock portraits. These photographs do not depict actual Leement employees.",
   members = [
-    {
-      id: "member-1",
-      name: "Sarah Chen",
-      role: "CEO & Founder",
-      avatar:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-    {
-      id: "member-2",
-      name: "Marcus Rodriguez",
-      role: "CTO",
-      avatar:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-    {
-      id: "member-3",
-      name: "Emily Watson",
-      role: "Head of Design",
-      avatar:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-    {
-      id: "member-4",
-      name: "David Kim",
-      role: "Lead Engineer",
-      avatar:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-    {
-      id: "member-5",
-      name: "Lisa Thompson",
-      role: "Product Manager",
-      avatar:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-    {
-      id: "member-6",
-      name: "Alex Johnson",
-      role: "UX Designer",
-      avatar:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-  ],
+  {
+    id: "member-1",
+    name: "Alex Lee",
+    role: "Founder",
+    avatar: "https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg"
+  },
+  {
+    id: "member-2",
+    name: "Morgan Park",
+    role: "Engineering lead",
+    avatar: "https://cdn.pixabay.com/photo/2016/09/24/03/20/man-1690965_640.jpg"
+  },
+  {
+    id: "member-3",
+    name: "Jordan Gray",
+    role: "Product designer",
+    avatar: "https://cdn.pixabay.com/photo/2015/07/31/15/01/man-869215_640.jpg"
+  },
+  {
+    id: "member-4",
+    name: "Avery Chen",
+    role: "Design engineer",
+    avatar: "https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_640.jpg"
+  },
+  {
+    id: "member-5",
+    name: "Casey Reed",
+    role: "Product manager",
+    avatar: "https://cdn.pixabay.com/photo/2018/01/15/08/34/woman-3083453_640.jpg"
+  },
+  {
+    id: "member-6",
+    name: "Taylor Rivera",
+    role: "UX researcher",
+    avatar: "https://cdn.pixabay.com/photo/2018/08/04/20/48/woman-3584435_640.jpg"
+  }
+],
   className,
 }: TeamProps) => {
   return (
@@ -97,7 +93,7 @@ export const Team = ({
         {members.map((member) => (
           <div key={member.id} className="flex flex-col items-center">
             <Avatar className="mb-4 size-20 shrink-0 border md:mb-5 lg:size-24">
-              <AvatarImage src={member.avatar} />
+              <AvatarImage src={member.avatar} alt={member.name} />
               <AvatarFallback>
                 {member.name
                   .split(" ")

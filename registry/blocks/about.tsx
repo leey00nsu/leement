@@ -13,6 +13,8 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+// Demo photos: Pixabay CC0 items published before 2019-01-09.
+// Replace stock media and fictional sample content with your own licensed content.
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
@@ -178,28 +180,28 @@ export const About = ({ className, ...props }: AboutProps = {}) => {
 
 const defaultCompanies = [
   {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "Partner 1",
+    src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EES%3C%2Ftext%3E%3C%2Fsvg%3E",
+    alt: "Example partner mark 1",
   },
   {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "Partner 2",
+    src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EAC%3C%2Ftext%3E%3C%2Fsvg%3E",
+    alt: "Example partner mark 2",
   },
   {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "Partner 3",
+    src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EDT%3C%2Ftext%3E%3C%2Fsvg%3E",
+    alt: "Example partner mark 3",
   },
   {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "Partner 4",
+    src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EPT%3C%2Ftext%3E%3C%2Fsvg%3E",
+    alt: "Example partner mark 4",
   },
   {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "Partner 5",
+    src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EWS%3C%2Ftext%3E%3C%2Fsvg%3E",
+    alt: "Example partner mark 5",
   },
   {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "Partner 6",
+    src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3ECT%3C%2Ftext%3E%3C%2Fsvg%3E",
+    alt: "Example partner mark 6",
   },
 ];
 
@@ -211,42 +213,40 @@ const defaultAchievements = [
 ];
 
 const defaultProps = {
-  title: "About Us",
+  title: "About Example Studio",
   description:
-    "Example Company is a passionate team dedicated to creating innovative solutions that empower businesses to thrive in the digital age. With years of experience in design and development, we craft beautiful, accessible components that help teams build faster.",
+    "A fictional studio page showing stock workshop and boardroom photographs. The company, partners and statistics are sample content; the people pictured are not claimed as employees or customers.",
   mainImage: {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "about",
+    src: "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg",
+    alt: "People collaborating around laptops at a workshop",
   },
   secondaryImage: {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "about",
+    src: "https://cdn.pixabay.com/photo/2016/07/14/08/25/office-1516329_1280.jpg",
+    alt: "An empty boardroom with a long meeting table",
   },
   breakout: {
-    src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    alt: "logo",
+    src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2064%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2292%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22700%22%20fill%3D%22%23171717%22%3EES%3C%2Ftext%3E%3C%2Fsvg%3E",
+    alt: "Example Studio demo monogram",
     title: "Built around our customers",
     description:
       "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
     buttonText: "Discover more",
     buttonUrl: "https://example.com",
   },
-  companiesTitle: "Valued by clients worldwide",
+  companiesTitle: "Example partner marks",
   companies: defaultCompanies,
-  achievementsTitle: "Our Achievements in Numbers",
+  achievementsTitle: "Sample studio statistics",
   achievementsDescription:
     "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
   achievements: defaultAchievements,
   contentSections: [
     {
-      title: "Our Vision",
-      content:
-        "For years, the process of building custom software has remained challenging. Today, visual builders exist, but tailored solutions still require technical expertise and a lot of time. This is a problem for businesses and individuals alike.\n\nWhat if you could create custom software without writing a single line of code? What if you could build your own tools.\n\nWith our platform, you can! Our tools let you design layouts and create functionality—all without needing to code.\n\nWe believe that everyone should be able to build their own solutions, regardless of their technical background.",
+      title: "A place to collaborate",
+      content: "This fictional studio brings design and engineering together around shared workspaces. Workshop and boardroom photographs illustrate the layout rather than documenting an actual office.",
     },
     {
-      title: "Our Creators",
-      content:
-        "Our company has been building web tools for over a decade, focusing on efficiency and user control in every project. We know that the best solutions are the ones that you can create yourself.\n\nWe initially developed these solutions for our own team, and now everyone can benefit from them too. We are proud to offer a platform that is accessible to all, regardless of technical expertise.\n\nOur team is made up of talented individuals who are passionate about creating tools that empower users to build their own solutions with ease. We are dedicated to helping you achieve your goals.",
+      title: "Built for shared work",
+      content: "Use this section for your own mission, team and company history. Replace the example marks, photographs and sample figures with content your organization can verify.",
     },
   ],
 };

@@ -15,6 +15,8 @@
 
 import { ArrowUpRight } from "lucide-react";
 
+// Demo photos: Pixabay CC0 items published before 2019-01-09.
+// Replace stock media and fictional sample content with your own licensed content.
 import { cn } from "@/lib/utils";
 
 import { Badge } from "@/components/ui/badge";
@@ -43,70 +45,57 @@ export interface ChangelogProps {
 const defaultEntries: ChangelogEntry[] = [
   {
     version: "Version 1.3.0",
-    date: "15 November 2024",
-    title: "Enhanced Analytics Dashboard",
-    description:
-      "We've completely redesigned our analytics dashboard to provide deeper insights and improved visualizations of your data.",
+    date: "5 October 2026",
+    title: "Workshop photo collection",
+    description: "Sample release notes for a fictional stock-photo journal. New workshop photographs illustrate collaboration.",
     items: [
-      "Interactive data visualizations with real-time updates",
-      "Customizable dashboard widgets",
-      "Export analytics in multiple formats (CSV, PDF, Excel)",
-      "New reporting templates for common use cases",
-      "Improved data filtering and segmentation options",
+      "Workshop cover added",
+      "Creator credits included",
+      "Photo layouts available in light and dark themes"
     ],
-    image:
-      "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+    image: "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg",
     button: {
-      url: "https://example.com",
-      text: "Learn more",
-    },
+      url: "https://pixabay.com/photos/meeting-brainstorming-business-594091/",
+      text: "View photograph"
+    }
   },
   {
     version: "Version 1.2.5",
-    date: "7 October 2024",
-    title: "Mobile App Launch",
-    description:
-      "We're excited to announce the launch of our mobile application, available now on iOS and Android platforms.",
+    date: "20 September 2026",
+    title: "Journal navigation improvements",
+    description: "A sample text-only update showing that release notes do not require a cover image.",
     items: [
-      "Native mobile experience for on-the-go productivity",
-      "Offline mode support for working without internet connection",
-      "Push notifications for important updates",
-      "Biometric authentication for enhanced security",
-    ],
+      "Clearer article navigation",
+      "Improved keyboard focus"
+    ]
   },
   {
     version: "Version 1.2.1",
-    date: "23 September 2024",
-    title: "New features and improvements",
-    description:
-      "Here are the latest updates and improvements to our platform. We are always working to improve our platform and your experience.",
+    date: "10 September 2026",
+    title: "Coding desk collection",
+    description: "Sample release notes introducing a notebook and coding desk photograph.",
     items: [
-      "Added new feature to export data",
-      "Improved performance and speed",
-      "Fixed minor bugs and issues",
-      "Added new feature to import data",
+      "Coding desk cover added",
+      "Source information recorded"
     ],
-    image:
-      "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+    image: "https://cdn.pixabay.com/photo/2017/09/26/15/13/computer-2788918_1280.jpg"
   },
   {
     version: "Version 1.0.0",
-    date: "31 August 2024",
-    title: "First version of our platform",
-    description:
-      "Introducing a new platform to help you manage your projects and tasks. We are excited to launch our platform and help you get started. We are always working to improve our platform and your experience.",
-    image:
-      "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
+    date: "1 September 2026",
+    title: "Meeting room collection",
+    description: "The fictional journal opens with a boardroom photograph for workspace articles.",
+    image: "https://cdn.pixabay.com/photo/2016/07/14/08/25/office-1516329_1280.jpg",
     button: {
-      url: "https://example.com",
-      text: "Learn more",
-    },
-  },
+      url: "https://pixabay.com/photos/office-boardroom-meeting-table-1516329/",
+      text: "View photograph"
+    }
+  }
 ];
 
 export const Changelog = ({
   title = "Changelog",
-  description = "Get the latest updates and improvements to our platform.",
+  description = "Sample release notes for a fictional photography journal.",
   entries = defaultEntries,
   className,
 }: ChangelogProps) => {
@@ -159,7 +148,7 @@ export const Changelog = ({
                 {entry.image && (
                   <img
                     src={entry.image}
-                    alt={`${entry.version} visual`}
+                    alt={entry.title}
                     className="mt-8 w-full rounded-lg object-cover"
                   />
                 )}

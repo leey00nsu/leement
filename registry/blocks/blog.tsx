@@ -15,6 +15,8 @@
 
 import { ArrowRight } from "lucide-react";
 
+// Demo photos: Pixabay CC0 items published before 2019-01-09.
+// Replace stock media and fictional sample content with your own licensed content.
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
@@ -49,49 +51,43 @@ export interface BlogProps {
 }
 
 export const Blog = ({
-  tagline = "Latest Updates",
+  tagline = "Sample journal",
   heading = "Blog",
-  description = "Discover the latest trends, tips, and best practices in modern web development. From UI components to design systems, stay updated with our expert insights.",
+  description = "Fictional editorial stories illustrated with stock photographs of collaboration, coding and meeting spaces.",
   buttonText = "View all posts",
   buttonUrl,
   posts = [
-    {
-      id: "post-1",
-      title: "Getting Started with Leement Components",
-      summary:
-        "Learn how to quickly integrate and customize Leement components in your Next.js projects. We'll cover installation, theming, and best practices for building modern interfaces.",
-      label: "Tutorial",
-      author: "Sarah Chen",
-      published: "1 Jan 2024",
-      url: "https://example.com",
-      image:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-    {
-      id: "post-2",
-      title: "Building Accessible Web Applications",
-      summary:
-        "Explore how to create inclusive web experiences using Leement's accessible components. Discover practical tips for implementing ARIA labels, keyboard navigation, and semantic HTML.",
-      label: "Accessibility",
-      author: "Marcus Rodriguez",
-      published: "1 Jan 2024",
-      url: "#",
-      image:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-    {
-      id: "post-3",
-      title: "Modern Design Systems with Tailwind CSS",
-      summary:
-        "Dive into creating scalable design systems using Tailwind CSS and Leement. Learn how to maintain consistency while building flexible and maintainable component libraries.",
-      label: "Design Systems",
-      author: "Emma Thompson",
-      published: "1 Jan 2024",
-      url: "#",
-      image:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-    },
-  ],
+  {
+    id: "post-1",
+    title: "Making space for collaboration",
+    summary: "A sample story about sharing ideas around a workshop table.",
+    label: "Workspaces",
+    author: "Alex Lee",
+    published: "5 Oct 2026",
+    url: "https://example.com/articles/collaboration",
+    image: "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg"
+  },
+  {
+    id: "post-2",
+    title: "A quiet desk for focused work",
+    summary: "A sample story about notebooks, code and a comfortable place to think.",
+    label: "Engineering",
+    author: "Morgan Park",
+    published: "5 Oct 2026",
+    url: "https://example.com/articles/focused-work",
+    image: "https://cdn.pixabay.com/photo/2017/09/26/15/13/computer-2788918_1280.jpg"
+  },
+  {
+    id: "post-3",
+    title: "Preparing a room for shared decisions",
+    summary: "A sample story about meeting spaces that support a clear conversation.",
+    label: "Studio",
+    author: "Avery Chen",
+    published: "5 Oct 2026",
+    url: "https://example.com/articles/meeting-spaces",
+    image: "https://cdn.pixabay.com/photo/2016/07/14/08/25/office-1516329_1280.jpg"
+  }
+],
   className,
 }: BlogProps) => {
   return (

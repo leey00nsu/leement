@@ -46,7 +46,13 @@
         "apps/docs/examples/base-attachment-group.tsx",
         "apps/docs/examples/base-attachment-image.tsx",
         "apps/docs/examples/base-item-header.tsx",
-        "apps/docs/examples/base-message-attachment.tsx"
+        "apps/docs/examples/base-message-attachment.tsx",
+        "apps/docs/examples/case-study.tsx",
+        "apps/docs/examples/feature.tsx",
+        "registry/blocks/about.tsx",
+        "registry/blocks/blog-post.tsx",
+        "registry/blocks/blog.tsx",
+        "registry/blocks/changelog.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/base-attachment-demo.tsx",
@@ -90,7 +96,11 @@
       "usages": [
         "apps/docs/examples/base-attachment-demo.tsx",
         "apps/docs/examples/base-attachment-image.tsx",
-        "apps/docs/examples/base-item-header.tsx"
+        "apps/docs/examples/base-item-header.tsx",
+        "apps/docs/examples/feature.tsx",
+        "registry/blocks/blog-post.tsx",
+        "registry/blocks/blog.tsx",
+        "registry/blocks/changelog.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/base-attachment-demo.tsx",
@@ -132,7 +142,11 @@
         "apps/docs/examples/base-attachment-image.tsx",
         "apps/docs/examples/base-card-image.tsx",
         "apps/docs/examples/base-item-header.tsx",
-        "apps/docs/examples/base-scroll-area-horizontal-demo.tsx"
+        "apps/docs/examples/base-scroll-area-horizontal-demo.tsx",
+        "apps/docs/examples/feature.tsx",
+        "registry/blocks/about.tsx",
+        "registry/blocks/blog.tsx",
+        "registry/blocks/changelog.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/base-attachment-demo.tsx",
@@ -293,7 +307,11 @@
         "apps/docs/examples/base-item-group.tsx",
         "apps/docs/examples/base-message-avatar.tsx",
         "apps/docs/examples/base-message-demo.tsx",
-        "apps/docs/examples/base-sidebar-demo.tsx"
+        "apps/docs/examples/base-sidebar-demo.tsx",
+        "apps/docs/examples/case-studies.tsx",
+        "registry/blocks/blog-post.tsx",
+        "registry/blocks/team.tsx",
+        "registry/blocks/testimonial.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/avatar-images.tsx",
@@ -359,7 +377,8 @@
         "apps/docs/examples/base-item-avatar.tsx",
         "apps/docs/examples/base-item-dropdown.tsx",
         "apps/docs/examples/base-item-group.tsx",
-        "apps/docs/examples/base-message-avatar.tsx"
+        "apps/docs/examples/base-message-avatar.tsx",
+        "registry/blocks/team.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/avatar-stack-animated.tsx",
@@ -401,7 +420,9 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "registry/blocks/team.tsx"
+      ],
       "plannedUsages": [
         "registry/blocks/team.tsx"
       ]
@@ -441,7 +462,8 @@
         "apps/docs/examples/base-item-dropdown.tsx",
         "apps/docs/examples/base-item-group.tsx",
         "apps/docs/examples/base-message-demo.tsx",
-        "apps/docs/examples/base-message-group.tsx"
+        "apps/docs/examples/base-message-group.tsx",
+        "registry/blocks/team.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/avatar-stack-animated.tsx",
@@ -485,7 +507,8 @@
       "usages": [
         "apps/docs/examples/avatar-stack-animated.tsx",
         "apps/docs/examples/base-aspect-ratio-portrait.tsx",
-        "apps/docs/examples/base-avatar-badge-icon.tsx"
+        "apps/docs/examples/base-avatar-badge-icon.tsx",
+        "registry/blocks/team.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/avatar-stack-animated.tsx",
@@ -518,7 +541,9 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "registry/blocks/team.tsx"
+      ],
       "plannedUsages": [
         "registry/blocks/team.tsx"
       ]

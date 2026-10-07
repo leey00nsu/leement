@@ -11,6 +11,8 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+// Demo photos: Pixabay CC0 items published before 2019-01-09.
+// Replace stock media and fictional sample content with your own licensed content.
 import { cn } from "@/lib/utils";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -30,13 +32,13 @@ export interface TestimonialProps {
 
 export const Testimonial = ({
   className,
-  quote = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.",
+  quote = "Sample testimonial: our fictional team keeps shared work clear and easy to follow. Replace this copy with a verified customer quote.",
   author = {
-    name: "Customer Name",
-    role: "Role",
+    name: "Alex Lee",
+    role: "Fictional design engineer · stock portrait",
     avatar: {
-      src: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23ececec%22/%3E%3Ccircle cx=%22400%22 cy=%22250%22 r=%2290%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-      alt: "Customer Name",
+      src: "https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg",
+      alt: "Sample profile: Alex Lee",
     },
   },
 }: TestimonialProps) => {

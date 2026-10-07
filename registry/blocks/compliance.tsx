@@ -45,13 +45,13 @@ export const Compliance = ({
   badges = [
     {
       image:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-      alt: "Example badge",
+        "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Cpath%20d%3D%22M32%2010%2049%2017v14c0%2012-17%2023-17%2023S15%2043%2015%2031V17z%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22m23%2031%206%206%2013-13%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      alt: "Demo shield and check mark",
     },
     {
       image:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-      alt: "Example badge",
+        "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Cpath%20d%3D%22M32%2010%2049%2017v14c0%2012-17%2023-17%2023S15%2043%2015%2031V17z%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22m23%2031%206%206%2013-13%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      alt: "Demo shield and check mark",
     },
   ],
   features = [
@@ -60,24 +60,24 @@ export const Compliance = ({
       description:
         "Every action is logged and timestamped with immutable audit trails for complete regulatory compliance.",
       badgeImage:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-      badgeAlt: "Example badge",
+        "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Cpath%20d%3D%22M32%2010%2049%2017v14c0%2012-17%2023-17%2023S15%2043%2015%2031V17z%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22m23%2031%206%206%2013-13%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      badgeAlt: "Demo shield and check mark",
     },
     {
       title: "Compliance monitoring",
       description:
         "Real-time monitoring ensures continuous compliance with industry standards and regulations.",
       badgeImage:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-      badgeAlt: "Example badge",
+        "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Cpath%20d%3D%22M32%2010%2049%2017v14c0%2012-17%2023-17%2023S15%2043%2015%2031V17z%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22m23%2031%206%206%2013-13%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      badgeAlt: "Demo shield and check mark",
     },
     {
       title: "Regulatory reporting",
       description:
         "Generate compliance reports automatically to meet regulatory requirements and audit demands.",
       badgeImage:
-        "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect x=%2224%22 y=%2224%22 width=%2280%22 height=%2280%22 rx=%2220%22 fill=%22%23d6d6d6%22/%3E%3C/svg%3E",
-      badgeAlt: "Example badge",
+        "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Cpath%20d%3D%22M32%2010%2049%2017v14c0%2012-17%2023-17%2023S15%2043%2015%2031V17z%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22m23%2031%206%206%2013-13%22%20fill%3D%22none%22%20stroke%3D%22%23171717%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      badgeAlt: "Demo shield and check mark",
     },
   ],
   className,

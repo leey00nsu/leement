@@ -5,7 +5,8 @@ import { CaseStudy } from "../../../registry/blocks/case-study";
 export default function CaseStudyExample() {
   return (
     <CaseStudy
-      title="A shared language for a growing product"
+      title="Sample story: a shared language for a growing product"
+      image={{ src: "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg", alt: "Stock workshop photograph illustrating the fictional studio story" }}
       company={{
         name: "Example Studio",
         industry: "Software",
@@ -15,6 +16,7 @@ export default function CaseStudyExample() {
         topics: ["Design systems", "Accessibility"],
       }}
     >
+      <p>This studio, story and outcomes are fictional sample content. The stock photograph does not depict its employees.</p>
       <h2>The challenge</h2>
       <p>
         Three teams needed consistent interfaces while keeping ownership of
