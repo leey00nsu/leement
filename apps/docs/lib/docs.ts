@@ -32,10 +32,21 @@ export const navigation: NavGroup[] = [
   ] }] },
   { title: "Foundations", sections: [{ items: ["Color", "Typography", "Spacing", "Radius", "Shadow", "Motion"].map(label => ({ label, href: `/foundations/${label.toLowerCase()}` })) }] },
   { title: "Components", sections: componentSections.map(({ title, names }) => ({ title, items: names.map(componentItem) })) },
-  { title: "Patterns", sections: [{ items: ["DatePicker", "DataTable", "BrandLogo", "MediaReveal", "BrandAction", "PageHeader", "EmptyState", "FormSection", "SearchField", "StatCard", "StatePanel", "ProductPageIntro", "ResourceRowLink", "PageSkeleton", "FilterToolbar"].map(patternItem) }] },
   { title: "Blocks", sections: [{ items: ["Feature", "Footer", "Hero", "Pricing", "Stats", "Team", "Testimonial", "Compare", "Compliance", "Contact", "CTA", "Download", "Experience", "FAQ", "Form", "About", "Awards", "Blog", "Blog Post", "Careers", "Case Studies", "Case Study", "Changelog", "Code Example", "Community", "Codebase", "Collaborative Canvas", "Roadmap", "Settings Section", "Bento Grid", "Gantt", "Kanban", "Sandbox", "Reel", "Deck", "Dialog Stack"].map(label => ({ label, href: `/blocks/${label.toLowerCase().replaceAll(" ", "-")}` })) }] },
+  { title: "Patterns", sections: [{ items: ["DatePicker", "DataTable", "BrandLogo", "MediaReveal", "BrandAction", "PageHeader", "EmptyState", "FormSection", "SearchField", "StatCard", "StatePanel", "ProductPageIntro", "ResourceRowLink", "PageSkeleton", "FilterToolbar"].map(patternItem) }] },
   { title: "Charts", sections: [{ items: [{ label: "All charts", href: "/charts" }, ...chartCategories.map(category => ({ label: `${category === "tooltip" ? "Tooltips" : category.charAt(0).toUpperCase() + category.slice(1)} (${chartRecipes.filter(recipe => recipe.category === category).length})`, href: `/charts/${category}` }))] }] },
   { title: "Project", sections: [{ items: [{ label: "Changelog", href: "/changelog" }] }] },
-];
+].map((group) => {
+  if (!["Components", "Blocks", "Patterns"].includes(group.title)) return group;
+  return {
+    ...group,
+    sections: group.sections.map((section) => ({
+      ...section,
+      items: [...section.items].sort((a, b) =>
+        a.label.localeCompare(b.label, "en", { sensitivity: "base" }),
+      ),
+    })),
+  };
+});
 
 export const registryCommand = (name: string) => `npx shadcn@latest add @leement/${name}`;
