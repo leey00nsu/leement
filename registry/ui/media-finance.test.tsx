@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ImageCrop } from "./image-crop";
 import { ImageZoom } from "./image-zoom";
@@ -66,14 +66,34 @@ test("stories navigate and expose pause control", async () => {
   expect(document.activeElement).toBe(trigger);
 });
 
-test("reel changes active media with keyboard and toggles mute", async () => {
+test("reel changes active media with keyboard, toggles mute and pauses offscreen", async () => {
+  const originalObserver = globalThis.IntersectionObserver;
+  let notifyOffscreen: (() => void) | undefined;
+  const disconnect = vi.fn();
+  globalThis.IntersectionObserver = class {
+    constructor(callback: IntersectionObserverCallback) {
+      notifyOffscreen = () => callback([{ isIntersecting: false, intersectionRatio: 0 } as IntersectionObserverEntry], this as unknown as IntersectionObserver);
+    }
+    observe() {}
+    disconnect = disconnect;
+  } as unknown as typeof IntersectionObserver;
+  try {
   const user = userEvent.setup();
-  render(<Reel items={[{ id: "a", src: "/a.mp4", title: "First", author: "Alex" }, { id: "b", src: "/b.mp4", title: "Second", author: "Robin" }]} />);
+  const view = render(<Reel items={[{ id: "a", src: "/a.mp4", title: "First", author: "Alex" }, { id: "b", src: "/b.mp4", title: "Second", author: "Robin" }]} />);
   screen.getByLabelText(/Video reel/).focus();
   await user.keyboard("{ArrowDown}");
   expect(screen.getByText("Second")).toBeTruthy();
   await user.click(screen.getByRole("button", { name: "Unmute reel" }));
   expect(screen.getByRole("button", { name: "Mute reel" })).toBeTruthy();
+  const media = view.container.querySelector("video")!;
+  const previousPauseCalls = vi.mocked(media.pause).mock.calls.length;
+  act(() => notifyOffscreen?.());
+  expect(vi.mocked(media.pause).mock.calls.length).toBeGreaterThan(previousPauseCalls);
+  view.unmount();
+  expect(disconnect).toHaveBeenCalledOnce();
+  } finally {
+    globalThis.IntersectionObserver = originalObserver;
+  }
 });
 
 test("video player toggles mute and offers an accessible seek control", async () => {

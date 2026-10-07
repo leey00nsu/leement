@@ -197,7 +197,8 @@
         "apps/docs/examples/glimpse.tsx",
         "apps/docs/examples/image-crop-aspect.tsx",
         "apps/docs/examples/image-crop.tsx",
-        "apps/docs/examples/image-zoom.tsx"
+        "apps/docs/examples/image-zoom.tsx",
+        "apps/docs/examples/stories-viewer.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/audio-player.tsx",
@@ -244,7 +245,9 @@
         "apps/docs/examples/card-media.tsx",
         "apps/docs/examples/comparison.tsx",
         "apps/docs/examples/media-reveal.tsx",
-        "apps/docs/examples/reveal-content-variants.tsx"
+        "apps/docs/examples/reveal-content-variants.tsx",
+        "apps/docs/examples/stories-viewer.tsx",
+        "apps/docs/examples/stories.tsx"
       ],
       "plannedUsages": [
         "apps/docs/examples/aspect-ratio-media.tsx",
@@ -579,7 +582,10 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/hero.tsx",
+        "apps/docs/examples/video-player.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/hero.tsx",
         "apps/docs/examples/video-player.tsx"
@@ -616,7 +622,12 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/hero.tsx",
+        "apps/docs/examples/reel.tsx",
+        "apps/docs/examples/stories.tsx",
+        "apps/docs/examples/video-player.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/reel.tsx",
         "apps/docs/examples/stories.tsx"
@@ -653,7 +664,10 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/reel.tsx",
+        "apps/docs/examples/stories.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/reel.tsx",
         "apps/docs/examples/stories.tsx"
@@ -684,6 +698,7 @@
       "contentId": "not-displayed",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
       "usages": [
+        "apps/docs/examples/audio-player.tsx",
         "apps/docs/examples/base-item-image.tsx"
       ],
       "plannedUsages": [
@@ -716,6 +731,7 @@
       "contentId": "registered",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
       "usages": [
+        "apps/docs/examples/audio-player.tsx",
         "apps/docs/examples/base-item-image.tsx"
       ],
       "plannedUsages": [

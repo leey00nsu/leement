@@ -7,7 +7,10 @@ import { cn } from "@/lib/utils";
 type ReelItem = { id: string; src: string; title: string; author: string; poster?: string; caption?: string };
 type ReelProps = Omit<React.ComponentProps<"div">, "children"> & { items: ReelItem[] };
 
-function Reel({ items, className, ...props }: ReelProps) {
+function Reel({ items, className, ref: forwardedRef, ...props }: ReelProps) {
+  const root = React.useRef<HTMLDivElement>(null);
+  React.useImperativeHandle(forwardedRef, () => root.current!);
+  const [visible, setVisible] = React.useState(true);
   const [index, setIndex] = React.useState(0);
   const [muted, setMuted] = React.useState(true);
   const [paused, setPaused] = React.useState(false);
@@ -20,12 +23,20 @@ function Reel({ items, className, ...props }: ReelProps) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) setPaused(true);
   }, []);
   React.useEffect(() => {
+    if (!root.current || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry) setVisible(entry.isIntersecting && entry.intersectionRatio > 0);
+    }, { threshold: 0.01 });
+    observer.observe(root.current);
+    return () => observer.disconnect();
+  }, []);
+  React.useEffect(() => {
     const element = video.current;
     if (!element) return;
-    if (paused || (window.matchMedia("(prefers-reduced-motion: reduce)").matches && !manualPlay)) element.pause();
+    if (!visible || paused || (window.matchMedia("(prefers-reduced-motion: reduce)").matches && !manualPlay)) element.pause();
     else void element.play().catch(() => setPaused(true));
     return () => element.pause();
-  }, [index, manualPlay, paused]);
+  }, [index, manualPlay, paused, visible]);
   function move(amount: number) {
     setIndex((current) => Math.max(0, Math.min(items.length - 1, current + amount)));
     setProgress(0);
@@ -37,7 +48,7 @@ function Reel({ items, className, ...props }: ReelProps) {
     setPaused(!paused);
   }
 
-  return <div data-slot="reel" role="region" tabIndex={0} onKeyDown={(event) => { if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); move(event.key === "ArrowDown" ? 1 : -1); } }} aria-label="Video reel. Use up and down arrow keys to change video." className={cn("relative aspect-[9/16] w-full max-w-xs overflow-hidden rounded-xl border border-border bg-card focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40", className)} {...props}>
+  return <div ref={root} data-slot="reel" role="region" tabIndex={0} onKeyDown={(event) => { if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); move(event.key === "ArrowDown" ? 1 : -1); } }} aria-label="Video reel. Use up and down arrow keys to change video." className={cn("relative aspect-[9/16] w-full max-w-xs overflow-hidden rounded-xl border border-border bg-card focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40", className)} {...props}>
     {item ? <>
       <video key={item.id} ref={video} src={item.src} poster={item.poster} aria-label={item.title} muted={muted} playsInline preload="metadata" onTimeUpdate={(event) => { const element = event.currentTarget; if (Number.isFinite(element.duration) && element.duration > 0) setProgress(element.currentTime / element.duration * 100); }} onEnded={() => { if (index < items.length - 1) move(1); else setPaused(true); }} className="absolute inset-0 size-full object-cover" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to top, var(--lm-color-media-scrim), transparent 75%)" }} />
