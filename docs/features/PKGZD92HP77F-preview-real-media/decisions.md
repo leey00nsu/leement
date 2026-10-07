@@ -172,3 +172,9 @@
 - **Verification Contract**: 표시 순서만 바꾸는 가역적인 변경으로 영구 테스트는 NONE. 실제 세 범주의 desktop/mobile 메뉴에서 분류별 label 순서·현재 항목과 href를 확인하고 docs type/lint를 실행한다. 공용 PRD·디자인에 유지할 정렬 규칙만 설명한다.
 
 - **Result**: Components 95·Blocks 36·Patterns 15항목의 desktop 1440px/mobile 390px 실제 메뉴 6건에서 모든 분류의 표시 이름 순서와 현재 항목·href를 확인했다. 여섯 화면을 직접 검수했고 docs typecheck·scoped eslint PASS. [검증 기록](./artifacts/media-verification.json), [메뉴 화면](./artifacts/navigation-alphabetical.png). 기존 미디어 검사 결과는 보존하며 이번 변경은 탐색 순서에만 해당한다.
+
+## D012: AudioPlayer 로딩 전체 Skeleton (2026-10-07)
+
+- **Context**: 실제 로딩에서 파형 Skeleton 아래 native controls가 노출되는 것을 사용자와 확인했다. 사용자가 전체 Skeleton, 실패/no-JS native fallback 방식으로 수정을 명시했다. 진행 중 Feature에 T07을 추가한다.
+- **Decision**: native media element와 SSR controls를 보존하되 scripting-enabled loading에서 숨기고 파형·컨트롤 모양 Skeleton을 제공한다. ready는 기존 custom controls, decode/media error와 timeout은 native fallback. Retry·source 교체는 loading UI를 재사용하고 장식 Skeleton은 보조기술에서 제외한다. no-JS는 CSS scripting 조건으로 native controls만 표시한다.
+- **Verification Contract**: 기존 player integration 테스트 UPDATE, 새 영구 파일 NONE. 지연 request의 실제 computed visibility·상태 전환·키보드 재생·source cleanup·Retry·timeout과 no-JS native controls가 독립 oracle다. docs type/lint·관련 player tests·전체 configured feature checks와 registry 소비자 빌드를 검증한다. 디자인 공용 문서만 수정하고 README는 변경하지 않는다.

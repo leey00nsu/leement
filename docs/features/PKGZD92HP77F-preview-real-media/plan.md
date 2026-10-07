@@ -56,6 +56,9 @@
 
 ## 실행 순서
 
+추가 사용자 요청 T07은 AudioPlayer의 파형·컨트롤 자리 전체에 Skeleton을 사용하며 native audio element는 유지하되 scripting-enabled 로딩에서 숨긴다. SSR/no-JS는 CSS scripting 조건으로 native controls를 보존하고 Skeleton을 숨긴다. decode/media 실패·timeout에서는 native fallback을 보이며 Retry와 src 변경은 loading으로 돌아간다. 기존 `registry/ui/player.test.tsx`를 UPDATE해 상태 전환·재시도·늦은 callback과 cleanup을 보호한다. 영구 테스트 파일 추가는 NONE. 실제 390/1440px light/dark·지연 fetch·실패·timeout·no-JS 및 source 교체·keyboard 재생을 확인하며 scoped type/lint/test와 전체 configured feature checks·registry build를 수행한다. 디자인의 지속 로딩 규칙을 T07 Docs에 연결한다.
+
+
 추가 사용자 요청 T06은 `apps/docs/lib/docs.ts`의 공유 navigation 데이터에서 표시 label 기준 정렬을 적용한다. 기존 Components 기능 분류를 보존하고 desktop/mobile의 같은 소비 화면을 확인한다. 단순 표시 순서 변경이므로 영구 테스트 추가는 NONE이며 실제 세 범주의 각 분류 순서·현재 항목·링크와 docs type/lint를 검증한다. 공용 PRD·디자인 규칙의 정렬 설명은 T06 Docs에 연결한다.
 
 T01 전수 자리 판정·실제 자산 선정/제공 검증 → T02 Components/Patterns·대표/추가 예제 → T03 Blocks 기본값·예제·콘텐츠 → T04 영상·음악·포스터/자막·소스 변경 → T05 전수 UI/독립 consumer·출처/공용 문서·전체 검사. 하나의 active task만 유지하고 각 완료 checkpoint를 커밋한 뒤 다음 task로 이동한다. 발견한 재생 결함은 T04에서, 최종 검수 결함은 T05에서 수정하며 결과를 해당 검수표에 남긴다.

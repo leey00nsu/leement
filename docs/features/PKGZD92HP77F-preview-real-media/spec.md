@@ -74,6 +74,14 @@
 
 - [x] 세 범주 각 분류의 실제 desktop/mobile 메뉴 항목이 표시 이름 기준 알파벳순이고 현재 항목·링크가 유지된다.
 
+### US-5: AudioPlayer 전체 로딩 표현
+
+추가 사용자 요청에 따라 JavaScript 활성 상태에서는 파형·컨트롤 전체를 Skeleton으로 표시하고 로딩 중 native player 노출을 없앤다. 성공 후 기존 Leement player로 전환하며 실패·15초 timeout·SSR/no-JS는 native controls를 제공한다. 재시도와 source 교체는 동일한 로딩 표현을 사용한다.
+
+**Acceptance Criteria:**
+
+- [ ] 초기·재시도·source 교체 로딩의 전체 Skeleton, 성공 전환, 실패/timeout native fallback, SSR/no-JS 재생 조작과 상태 안내를 검증한다.
+
 ## 기능 요구사항
 
 ### FR-1: 용도에 맞는 전체 미디어 선정
