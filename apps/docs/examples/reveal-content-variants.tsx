@@ -18,8 +18,8 @@ export default function Example() {
             <div data-reveal-line className="h-px origin-left bg-border" />
             <img
               data-reveal-media
-              src="/demo-scene.svg"
-              alt=""
+              src="https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg"
+              alt="Hintersee lake reflecting mountains and trees"
               className="aspect-video w-full rounded-md object-cover"
             />
             <p data-reveal-item className="text-sm text-muted-foreground">

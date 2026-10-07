@@ -24,14 +24,16 @@ type Item = {
   meta: string;
   icon?: LucideIcon;
   src?: string;
+  alt?: string;
 };
 
 const items: Item[] = [
   { name: "briefing-notes.pdf", meta: "PDF · 1.4 MB", icon: FileTextIcon },
   {
-    name: "workspace.png",
-    meta: "PNG · 820 KB",
-    src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80",
+    name: "workshop.jpg",
+    meta: "JPG · 177 KB",
+    alt: "People collaborating around laptops at a workshop",
+    src: "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg",
   },
   { name: "customers.csv", meta: "CSV · 18 KB", icon: TableIcon },
   { name: "renderer.tsx", meta: "TSX · 12 KB", icon: FileCodeIcon },
@@ -48,7 +50,7 @@ function AttachmentGroupDemo() {
             <Attachment key={item.name} className="w-64">
               {item.src ? (
                 <AttachmentMedia variant="image">
-                  <img src={item.src} alt={item.name} />
+                  <img src={item.src} alt={item.alt ?? item.name} />
                 </AttachmentMedia>
               ) : Icon ? (
                 <AttachmentMedia>

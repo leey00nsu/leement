@@ -1,4 +1,5 @@
 "use client";
+// Profiles are fictional; photographs do not depict actual Leement users.
 // Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 import { PlusIcon } from "lucide-react";
 
@@ -20,19 +21,19 @@ import {
 
 const people = [
   {
-    username: "shadcn",
-    avatar: "https://github.com/shadcn.png",
-    email: "shadcn@vercel.com",
+    username: "Alex Lee",
+    avatar: "https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg",
+    email: "alex@example.com",
   },
   {
-    username: "maxleiter",
-    avatar: "https://github.com/maxleiter.png",
-    email: "maxleiter@vercel.com",
+    username: "Morgan Park",
+    avatar: "https://cdn.pixabay.com/photo/2016/09/24/03/20/man-1690965_640.jpg",
+    email: "morgan@example.com",
   },
   {
-    username: "evilrabbit",
-    avatar: "https://github.com/evilrabbit.png",
-    email: "evilrabbit@vercel.com",
+    username: "Avery Chen",
+    avatar: "https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_640.jpg",
+    email: "avery@example.com",
   },
 ];
 
@@ -43,8 +44,8 @@ function ItemGroupExample() {
         <Item key={person.username} variant="outline">
           <ItemMedia>
             <Avatar>
-              <AvatarImage src={person.avatar} className="grayscale" />
-              <AvatarFallback>{person.username.charAt(0)}</AvatarFallback>
+              <AvatarImage src={person.avatar} alt={`Sample profile: ${person.username}`} />
+              <AvatarFallback>{person.username.split(" ").map((part) => part[0]).join("")}</AvatarFallback>
             </Avatar>
           </ItemMedia>
           <ItemContent className="gap-1">

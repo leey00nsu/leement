@@ -16,22 +16,22 @@ import {
 
 const images = [
   {
-    name: "workspace.png",
-    meta: "PNG · 820 KB",
-    src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80",
-    alt: "Workspace",
+    name: "workshop.jpg",
+    meta: "JPG · 177 KB",
+    src: "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg",
+    alt: "People collaborating around laptops at a workshop",
   },
   {
     name: "desk-reference.jpg",
-    meta: "JPG · 1.1 MB",
-    src: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&auto=format&fit=crop&q=80",
-    alt: "Desk",
+    meta: "JPG · 164 KB",
+    src: "https://cdn.pixabay.com/photo/2017/09/26/15/13/computer-2788918_1280.jpg",
+    alt: "A notebook computer with code on its screen",
   },
   {
     name: "office-reference.jpg",
-    meta: "JPG · 940 KB",
-    src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&auto=format&fit=crop&q=80",
-    alt: "Office",
+    meta: "JPG · 280 KB",
+    src: "https://cdn.pixabay.com/photo/2016/07/14/08/25/office-1516329_1280.jpg",
+    alt: "An empty boardroom with a long meeting table",
   },
 ];
 

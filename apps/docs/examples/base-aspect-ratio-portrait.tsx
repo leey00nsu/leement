@@ -10,9 +10,9 @@ function AspectRatioPortrait() {
       className="w-full max-w-[10rem] rounded-lg bg-muted"
     >
       <img
-        src="https://avatar.vercel.sh/shadcn1"
-        alt="Photo"
-        className="rounded-lg object-cover grayscale dark:brightness-20"
+        src="https://cdn.pixabay.com/photo/2018/01/15/08/34/woman-3083453_640.jpg"
+        alt="Stock portrait of a woman in a white blouse"
+        className="size-full rounded-lg object-cover"
       />
     </AspectRatio>
   );

@@ -1,4 +1,5 @@
 "use client";
+// Profiles are fictional; photographs are stock portraits.
 // Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 import {
   Avatar,
@@ -23,10 +24,10 @@ function MessageAvatarDemo() {
         <MessageAvatar>
           <Avatar>
             <AvatarImage
-              src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27128%27 height=%27128%27%3E%3Crect width=%27128%27 height=%27128%27 fill=%27%23e6e6e6%27/%3E%3Ctext x=%2764%27 y=%2774%27 text-anchor=%27middle%27 font-size=%2732%27 fill=%27%23555%27%3E03%3C/text%3E%3C/svg%3E"
-              alt="@avatar"
+              src="https://cdn.pixabay.com/photo/2016/09/24/03/20/man-1690965_640.jpg"
+              alt="Sample profile: Morgan Park"
             />
-            <AvatarFallback>R</AvatarFallback>
+            <AvatarFallback>MP</AvatarFallback>
           </Avatar>
         </MessageAvatar>
         <MessageContent>
@@ -41,10 +42,10 @@ function MessageAvatarDemo() {
         <MessageAvatar>
           <Avatar>
             <AvatarImage
-              src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27128%27 height=%27128%27%3E%3Crect width=%27128%27 height=%27128%27 fill=%27%23e6e6e6%27/%3E%3Ctext x=%2764%27 y=%2774%27 text-anchor=%27middle%27 font-size=%2732%27 fill=%27%23555%27%3E10%3C/text%3E%3C/svg%3E"
-              alt="@avatar"
+              src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg"
+              alt="Sample profile: Alex Lee"
             />
-            <AvatarFallback>R</AvatarFallback>
+            <AvatarFallback>AL</AvatarFallback>
           </Avatar>
         </MessageAvatar>
         <MessageContent>
@@ -57,10 +58,10 @@ function MessageAvatarDemo() {
         <MessageAvatar>
           <Avatar>
             <AvatarImage
-              src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27128%27 height=%27128%27%3E%3Crect width=%27128%27 height=%27128%27 fill=%27%23e6e6e6%27/%3E%3Ctext x=%2764%27 y=%2774%27 text-anchor=%27middle%27 font-size=%2732%27 fill=%27%23555%27%3E03%3C/text%3E%3C/svg%3E"
-              alt="@avatar"
+              src="https://cdn.pixabay.com/photo/2016/09/24/03/20/man-1690965_640.jpg"
+              alt="Sample profile: Morgan Park"
             />
-            <AvatarFallback>R</AvatarFallback>
+            <AvatarFallback>MP</AvatarFallback>
           </Avatar>
         </MessageAvatar>
         <MessageContent>

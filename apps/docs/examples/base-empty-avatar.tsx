@@ -1,4 +1,5 @@
 "use client";
+// Profiles are fictional; photographs do not depict actual Leement users.
 // Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 import {
   Empty,
@@ -22,10 +23,10 @@ function EmptyAvatar() {
         <EmptyMedia variant="default">
           <Avatar className="size-12">
             <AvatarImage
-              src="https://github.com/shadcn.png"
+              src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg"
               className="grayscale"
             />
-            <AvatarFallback>LR</AvatarFallback>
+            <AvatarFallback>AL</AvatarFallback>
           </Avatar>
         </EmptyMedia>
         <EmptyTitle>User Offline</EmptyTitle>

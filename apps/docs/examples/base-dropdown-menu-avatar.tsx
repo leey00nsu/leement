@@ -1,4 +1,5 @@
 "use client";
+// Profiles are fictional; photographs do not depict actual Leement users.
 // Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 
 import {
@@ -30,8 +31,8 @@ function DropdownMenuAvatar() {
         render={<Button variant="ghost" size="icon" className="rounded-full" />}
       >
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
-          <AvatarFallback>LR</AvatarFallback>
+          <AvatarImage src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg" alt="Sample profile: Alex Lee" />
+          <AvatarFallback>AL</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

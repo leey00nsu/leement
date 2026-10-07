@@ -10,48 +10,45 @@ import {
   ItemTitle,
 } from "../../../registry/ui/item";
 
-const models = [
+const photos = [
   {
-    name: "v0-1.5-sm",
-    description: "Everyday tasks and UI generation.",
-    image:
-      "https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?q=80&w=640&auto=format&fit=crop",
-    credit: "Valeria Reverdo on Unsplash",
+    name: "Workshop",
+    description: "People collaborating around laptops.",
+    image: "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg",
+    credit: "StartupStockPhotos"
   },
   {
-    name: "v0-1.5-lg",
-    description: "Advanced thinking or reasoning.",
-    image:
-      "https://images.unsplash.com/photo-1610280777472-54133d004c8c?q=80&w=640&auto=format&fit=crop",
-    credit: "Michael Oeser on Unsplash",
+    name: "Coding desk",
+    description: "A notebook computer displaying code.",
+    image: "https://cdn.pixabay.com/photo/2017/09/26/15/13/computer-2788918_1280.jpg",
+    credit: "AlfredMuller"
   },
   {
-    name: "v0-2.0-mini",
-    description: "Open Source model for everyone.",
-    image:
-      "https://images.unsplash.com/photo-1602146057681-08560aee8cde?q=80&w=640&auto=format&fit=crop",
-    credit: "Cherry Laithang on Unsplash",
-  },
+    name: "Boardroom",
+    description: "An empty room ready for a meeting.",
+    image: "https://cdn.pixabay.com/photo/2016/07/14/08/25/office-1516329_1280.jpg",
+    credit: "Jo_Johnston"
+  }
 ];
 
 function ItemHeaderDemo() {
   return (
     <div className="flex w-full max-w-xl flex-col gap-6">
-      <ItemGroup className="grid grid-cols-3 gap-4">
-        {models.map((model) => (
-          <Item key={model.name} variant="outline">
+      <ItemGroup className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {photos.map((photo) => (
+          <Item key={photo.name} variant="outline">
             <ItemHeader>
               <img
-                src={model.image}
-                alt={model.name}
+                src={photo.image}
+                alt={photo.description}
                 width={128}
                 height={128}
                 className="aspect-square w-full rounded-sm object-cover"
               />
             </ItemHeader>
             <ItemContent>
-              <ItemTitle>{model.name}</ItemTitle>
-              <ItemDescription>{model.description}</ItemDescription>
+              <ItemTitle>{photo.name}</ItemTitle>
+              <ItemDescription>{photo.description} Photo by {photo.credit} on Pixabay.</ItemDescription>
             </ItemContent>
           </Item>
         ))}

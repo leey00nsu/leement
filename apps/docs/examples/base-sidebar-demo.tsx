@@ -1,4 +1,5 @@
 "use client";
+// Profiles are fictional; photographs are stock portraits.
 // Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 import * as React from "react";
 
@@ -71,10 +72,10 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Alex Lee",
+    email: "alex@example.com",
     avatar:
-      "data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27128%27 height=%27128%27%3E%3Crect width=%27128%27 height=%27128%27 rx=%2764%27 fill=%27%23e6e6e6%27/%3E%3C/svg%3E",
+      "https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg",
   },
   teams: [
     {
@@ -412,8 +413,8 @@ function NavUser({
             }
           >
             <Avatar className="h-8 w-8 rounded-lg">
-              <AvatarImage src={user.avatar} alt={user.name} />
-              <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+              <AvatarImage src={user.avatar} alt={`Sample profile: ${user.name}`} />
+              <AvatarFallback className="rounded-lg">AL</AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">
               <span className="truncate font-medium">{user.name}</span>
@@ -431,8 +432,8 @@ function NavUser({
               <DropdownMenuLabel className="p-0 font-normal">
                 <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                   <Avatar className="h-8 w-8 rounded-lg">
-                    <AvatarImage src={user.avatar} alt={user.name} />
-                    <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                    <AvatarImage src={user.avatar} alt={`Sample profile: ${user.name}`} />
+                    <AvatarFallback className="rounded-lg">AL</AvatarFallback>
                   </Avatar>
                   <div className="grid flex-1 text-left text-sm leading-tight">
                     <span className="truncate font-medium">{user.name}</span>

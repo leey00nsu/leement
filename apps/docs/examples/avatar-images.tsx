@@ -1,3 +1,4 @@
+// Alex Lee is a fictional sample profile; Blair demonstrates an unavailable image.
 import {
   Avatar,
   AvatarImage,
@@ -10,8 +11,8 @@ export default function Example() {
         <div key={size} className="flex flex-col items-center gap-2 text-center">
           <Avatar className={size}>
             <AvatarImage
-              src="/demo-scene.svg"
-              alt="Alex’s illustrated profile"
+              src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg"
+              alt="Sample profile: Alex Lee"
             />
             <AvatarFallback>AL</AvatarFallback>
           </Avatar>

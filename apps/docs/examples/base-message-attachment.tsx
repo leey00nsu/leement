@@ -23,8 +23,8 @@ function MessageAttachmentDemo() {
           <Attachment orientation="vertical">
             <AttachmentMedia variant="image">
               <img
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80"
-                alt="Workspace"
+                src="https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg"
+                alt="People collaborating around laptops at a workshop"
               />
             </AttachmentMedia>
           </Attachment>

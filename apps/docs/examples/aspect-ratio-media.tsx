@@ -6,8 +6,8 @@ export default function Example() {
         <figure key={ratio} className="space-y-2">
           <AspectRatio ratio={ratio} className="overflow-hidden rounded-lg">
             <img
-              src="/demo-scene.svg"
-              alt="Illustrated landscape"
+              src="https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg"
+              alt="Hintersee lake reflecting mountains and trees"
               className="size-full object-cover"
             />
           </AspectRatio>

@@ -28,8 +28,8 @@ export default function Example() {
       <ImageCrop
         key={aspect}
         aspect={aspect}
-        src="/demo-scene.svg"
-        alt="Illustrated landscape for cropping"
+        src="https://cdn.pixabay.com/photo/2018/10/08/22/34/lake-3733649_1280.jpg"
+        alt="Lake Ulmener Maar with autumn trees and reflections"
         onApply={(crop) =>
           setResult(
             `x:${crop.x.toFixed(1)}%, y:${crop.y.toFixed(1)}%, width:${crop.width.toFixed(1)}%, height:${crop.height.toFixed(1)}%`,

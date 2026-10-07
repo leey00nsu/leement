@@ -1,4 +1,5 @@
 "use client";
+// Profiles are fictional; photographs do not depict actual Leement users.
 // Adapted from shadcn/ui commit 295a1f114a138f23b5dfee0e0c6812394dfeb90c (MIT).
 import { Plus } from "lucide-react";
 
@@ -23,12 +24,12 @@ function ItemAvatar() {
       <Item variant="outline">
         <ItemMedia>
           <Avatar className="size-10">
-            <AvatarImage src="https://github.com/evilrabbit.png" />
-            <AvatarFallback>ER</AvatarFallback>
+            <AvatarImage alt="Sample profile: Avery Chen" src="https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_640.jpg" />
+            <AvatarFallback>AC</AvatarFallback>
           </Avatar>
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Evil Rabbit</ItemTitle>
+          <ItemTitle>Avery Chen</ItemTitle>
           <ItemDescription>Last seen 5 months ago</ItemDescription>
         </ItemContent>
         <ItemActions>
@@ -46,27 +47,27 @@ function ItemAvatar() {
         <ItemMedia>
           <div className="flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale">
             <Avatar className="hidden sm:flex">
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarImage src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg" alt="Sample profile: Alex Lee" />
+              <AvatarFallback>AL</AvatarFallback>
             </Avatar>
             <Avatar className="hidden sm:flex">
               <AvatarImage
-                src="https://github.com/maxleiter.png"
-                alt="@maxleiter"
+                src="https://cdn.pixabay.com/photo/2016/09/24/03/20/man-1690965_640.jpg"
+                alt="Sample profile: Morgan Park"
               />
-              <AvatarFallback>LR</AvatarFallback>
+              <AvatarFallback>MP</AvatarFallback>
             </Avatar>
             <Avatar>
               <AvatarImage
-                src="https://github.com/evilrabbit.png"
-                alt="@evilrabbit"
+                src="https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_640.jpg"
+                alt="Sample profile: Avery Chen"
               />
-              <AvatarFallback>ER</AvatarFallback>
+              <AvatarFallback>AC</AvatarFallback>
             </Avatar>
           </div>
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>No Team Members</ItemTitle>
+          <ItemTitle>Sample team</ItemTitle>
           <ItemDescription>
             Invite your team to collaborate on this project.
           </ItemDescription>

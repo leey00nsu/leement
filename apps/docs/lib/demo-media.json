@@ -41,7 +41,13 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/base-attachment-demo.tsx",
+        "apps/docs/examples/base-attachment-group.tsx",
+        "apps/docs/examples/base-attachment-image.tsx",
+        "apps/docs/examples/base-item-header.tsx",
+        "apps/docs/examples/base-message-attachment.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/base-attachment-demo.tsx",
         "apps/docs/examples/base-attachment-group.tsx",
@@ -81,7 +87,11 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/base-attachment-demo.tsx",
+        "apps/docs/examples/base-attachment-image.tsx",
+        "apps/docs/examples/base-item-header.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/base-attachment-demo.tsx",
         "apps/docs/examples/base-attachment-group.tsx",
@@ -117,7 +127,13 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/base-attachment-demo.tsx",
+        "apps/docs/examples/base-attachment-image.tsx",
+        "apps/docs/examples/base-card-image.tsx",
+        "apps/docs/examples/base-item-header.tsx",
+        "apps/docs/examples/base-scroll-area-horizontal-demo.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/base-attachment-demo.tsx",
         "apps/docs/examples/base-attachment-group.tsx",
@@ -161,7 +177,14 @@
       },
       "contentId": "not-applicable",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/base-item-image.tsx",
+        "apps/docs/examples/base-scroll-area-horizontal-demo.tsx",
+        "apps/docs/examples/glimpse.tsx",
+        "apps/docs/examples/image-crop-aspect.tsx",
+        "apps/docs/examples/image-crop.tsx",
+        "apps/docs/examples/image-zoom.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/audio-player.tsx",
         "apps/docs/examples/base-item-image.tsx",
@@ -197,7 +220,18 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/aspect-ratio-media.tsx",
+        "apps/docs/examples/base-aspect-ratio-demo.tsx",
+        "apps/docs/examples/base-aspect-ratio-rtl.tsx",
+        "apps/docs/examples/base-aspect-ratio-square.tsx",
+        "apps/docs/examples/base-item-image.tsx",
+        "apps/docs/examples/base-scroll-area-horizontal-demo.tsx",
+        "apps/docs/examples/card-media.tsx",
+        "apps/docs/examples/comparison.tsx",
+        "apps/docs/examples/media-reveal.tsx",
+        "apps/docs/examples/reveal-content-variants.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/aspect-ratio-media.tsx",
         "apps/docs/examples/audio-player.tsx",
@@ -239,7 +273,28 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/avatar-images.tsx",
+        "apps/docs/examples/avatar-stack-animated.tsx",
+        "apps/docs/examples/base-avatar-badge.tsx",
+        "apps/docs/examples/base-avatar-basic.tsx",
+        "apps/docs/examples/base-avatar-demo.tsx",
+        "apps/docs/examples/base-avatar-dropdown.tsx",
+        "apps/docs/examples/base-avatar-group-count-icon.tsx",
+        "apps/docs/examples/base-avatar-group-count.tsx",
+        "apps/docs/examples/base-avatar-group.tsx",
+        "apps/docs/examples/base-avatar-rtl.tsx",
+        "apps/docs/examples/base-avatar-size.tsx",
+        "apps/docs/examples/base-dropdown-menu-avatar.tsx",
+        "apps/docs/examples/base-empty-avatar-group.tsx",
+        "apps/docs/examples/base-empty-avatar.tsx",
+        "apps/docs/examples/base-item-avatar.tsx",
+        "apps/docs/examples/base-item-dropdown.tsx",
+        "apps/docs/examples/base-item-group.tsx",
+        "apps/docs/examples/base-message-avatar.tsx",
+        "apps/docs/examples/base-message-demo.tsx",
+        "apps/docs/examples/base-sidebar-demo.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/avatar-images.tsx",
         "apps/docs/examples/avatar-stack-animated.tsx",
@@ -293,7 +348,19 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/avatar-stack-animated.tsx",
+        "apps/docs/examples/base-avatar-demo.tsx",
+        "apps/docs/examples/base-avatar-group-count-icon.tsx",
+        "apps/docs/examples/base-avatar-group-count.tsx",
+        "apps/docs/examples/base-avatar-group.tsx",
+        "apps/docs/examples/base-avatar-rtl.tsx",
+        "apps/docs/examples/base-empty-avatar-group.tsx",
+        "apps/docs/examples/base-item-avatar.tsx",
+        "apps/docs/examples/base-item-dropdown.tsx",
+        "apps/docs/examples/base-item-group.tsx",
+        "apps/docs/examples/base-message-avatar.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/avatar-stack-animated.tsx",
         "apps/docs/examples/base-avatar-demo.tsx",
@@ -363,7 +430,19 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/base-avatar-demo.tsx",
+        "apps/docs/examples/base-avatar-group-count-icon.tsx",
+        "apps/docs/examples/base-avatar-group-count.tsx",
+        "apps/docs/examples/base-avatar-group.tsx",
+        "apps/docs/examples/base-avatar-rtl.tsx",
+        "apps/docs/examples/base-empty-avatar-group.tsx",
+        "apps/docs/examples/base-item-avatar.tsx",
+        "apps/docs/examples/base-item-dropdown.tsx",
+        "apps/docs/examples/base-item-group.tsx",
+        "apps/docs/examples/base-message-demo.tsx",
+        "apps/docs/examples/base-message-group.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/avatar-stack-animated.tsx",
         "apps/docs/examples/base-avatar-demo.tsx",
@@ -403,7 +482,11 @@
       "thumbnail": null,
       "contentId": "not-applicable",
       "sampleContext": "Stock media in fictional sample content; no claimed employment, endorsement or model release",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/avatar-stack-animated.tsx",
+        "apps/docs/examples/base-aspect-ratio-portrait.tsx",
+        "apps/docs/examples/base-avatar-badge-icon.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/avatar-stack-animated.tsx",
         "apps/docs/examples/base-aspect-ratio-portrait.tsx",
@@ -575,7 +658,9 @@
       "thumbnail": null,
       "contentId": "not-displayed",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/base-item-image.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/audio-player.tsx",
         "apps/docs/examples/base-item-image.tsx"
@@ -605,7 +690,9 @@
       "thumbnail": null,
       "contentId": "registered",
       "sampleContext": "Real media used in UI examples; no claimed Leement authorship",
-      "usages": [],
+      "usages": [
+        "apps/docs/examples/base-item-image.tsx"
+      ],
       "plannedUsages": [
         "apps/docs/examples/audio-player.tsx",
         "apps/docs/examples/base-item-image.tsx"

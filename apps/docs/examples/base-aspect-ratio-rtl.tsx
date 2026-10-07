@@ -32,9 +32,9 @@ function AspectRatioRtl() {
     <figure className="w-full max-w-sm" dir={dir}>
       <AspectRatio ratio={16 / 9} className="rounded-lg bg-muted">
         <img
-          src="https://avatar.vercel.sh/shadcn1"
-          alt="Photo"
-          className="rounded-lg object-cover grayscale dark:brightness-20"
+          src="https://cdn.pixabay.com/photo/2018/08/12/15/29/hintersee-3601004_1280.jpg"
+          alt="Hintersee lake reflecting mountains and trees"
+          className="size-full rounded-lg object-cover"
         />
       </AspectRatio>
       <figcaption className="mt-2 text-center text-sm text-muted-foreground">

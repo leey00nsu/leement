@@ -16,13 +16,13 @@ function CardImage() {
     <Card className="relative mx-auto w-full max-w-sm pt-0">
       <div className="absolute inset-0 z-30 aspect-video bg-[var(--lm-color-media-scrim)]" />
       <img
-        src="https://avatar.vercel.sh/shadcn1"
-        alt="Event cover"
-        className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+        src="https://cdn.pixabay.com/photo/2016/07/14/08/25/office-1516329_1280.jpg"
+        alt="An empty boardroom with a long meeting table"
+        className="relative z-20 aspect-video w-full object-cover "
       />
       <CardHeader>
         <CardAction>
-          <Badge variant="secondary">Featured</Badge>
+          <Badge variant="secondary">Sample event</Badge>
         </CardAction>
         <CardTitle>Design systems meetup</CardTitle>
         <CardDescription>
