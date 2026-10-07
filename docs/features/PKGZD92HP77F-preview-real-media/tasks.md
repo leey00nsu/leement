@@ -75,21 +75,23 @@
 
 ---
 
-- [TODO][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-01 미디어 자리 전수 판정과 Pixabay 최종 자산·제공 방식 확정
+- [DONE][PRD-FR-008] T-PKGZD92HP77F-preview-real-media-01 미디어 자리 전수 판정과 Pixabay 최종 자산·제공 방식 확정
   - Date: 2026-10-07
   - Acceptance:
     - 초기 73개 후보와 추가 발견 자리마다 역할·판정·이유·Preview 경로를 기록하고 미검수 자리를 남기지 않는다.
     - 실제 사진·서로 다른 클립·음악 두 곡을 선정하고 source URL·조건·메타데이터·해시·로그인 없는 로드/재생·CORS를 확인한다.
   - Checklist:
-    - [ ] 직접/간접 source, CSS, 기본 props와 누락된 사진 조합을 확인하여 조사 목록 보강
-    - [ ] 공식 무료 후보 시청/청취와 비율·권리·Content ID·전송 크기 검토
-    - [ ] 실제 자산 source 목록과 역할별 사용 계획을 작성하고 만료/추측 URL·원본 파일 재배포 제외
-    - [ ] 최종 선정 근거·제한·다운로드 증빙을 Feature Decisions와 artifacts에 동기화
+    - [x] 직접/간접 source, CSS, 기본 props와 누락된 사진 조합을 확인하여 조사 목록 보강
+    - [x] 공식 무료 후보 시청/청취와 비율·권리·Content ID·전송 크기 검토
+    - [x] 실제 자산 source 목록과 역할별 사용 계획을 작성하고 만료/추측 URL·원본 파일 재배포 제외
+    - [x] 최종 선정 근거·제한·다운로드 증빙을 Feature Decisions와 artifacts에 동기화
   - Review Evidence: -
   - Review Decision: -
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: source 83개 역할/실제 route 검토; 공식 16개 자산 선정; fresh browser image/video/audio decode 16/16 및 모든 video play/time advance/seek 통과. [D006](./decisions.md#d006-t01-최종-자산과-제공-검증-완료-2026-10-07), [전송/해시 증거](./artifacts/asset-source-preflight.json). 실제 수정 Preview는 T02~T05에서 검증.
 
 - [TODO][PRD-FR-007] T-PKGZD92HP77F-preview-real-media-02 Components·Patterns의 사진과 대표·추가 예제 교체
   - Date: 2026-10-07
@@ -185,3 +187,5 @@
 | `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+<!-- lee-spec-kit:workflow-sync sha256:58b47210b0b887e205ef73d8fd91d711a3cd880c0973b1fc159ba6edc9dabed3 -->

@@ -1,0 +1,99 @@
+{
+  "checkedDate": "2026-10-07",
+  "sourceMethod": "Official item pages, live browser view/playback and ordinary download controls; actual URLs observed, no URL guessing or protective bypass.",
+  "uniqueItemCount": 16,
+  "selectedIds": [
+    "594091",
+    "2788918",
+    "1516329",
+    "3733649",
+    "3601004",
+    "1283231",
+    "1690965",
+    "869215",
+    "2359121",
+    "3083453",
+    "3584435",
+    "67201",
+    "189692",
+    "115053",
+    "108412",
+    "524039"
+  ],
+  "photoPublicationEvidence": {
+    "594091": {
+      "publishedDate": "2015-01-09",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". JSON-LD datePublished=2015-01-09T01:25:58Z."
+    },
+    "2788918": {
+      "publishedDate": "2017-09-26",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". JSON-LD datePublished=2017-09-26T05:22:44Z."
+    },
+    "1516329": {
+      "publishedDate": "2016-07-14",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". JSON-LD datePublished=2016-07-14T06:08:21Z."
+    },
+    "3733649": {
+      "publishedDate": "2018-10-10",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". Page Published date 2018-10-10 (local); JSON-LD datePublished=2018-10-09T19:37:20Z; both pre-2019."
+    },
+    "3601004": {
+      "publishedDate": "2018-08-12",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". JSON-LD datePublished=2018-08-12T17:32:59Z."
+    },
+    "1283231": {
+      "publishedDate": "2016-03-27",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". JSON-LD datePublished=2016-03-27T06:40:55Z."
+    },
+    "1690965": {
+      "publishedDate": "2016-09-27",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". JSON-LD datePublished=2016-09-27T07:07:39Z."
+    },
+    "869215": {
+      "publishedDate": "2015-08-03",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". JSON-LD datePublished=2015-08-03T00:09:46Z."
+    },
+    "2359121": {
+      "publishedDate": "2017-06-03",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". Page date 2017-06-03 (local); JSON-LD datePublished=2017-06-02T18:00:57Z."
+    },
+    "3083453": {
+      "publishedDate": "2018-01-17",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". JSON-LD datePublished=2018-01-17T00:19:10Z."
+    },
+    "3584435": {
+      "publishedDate": "2018-08-07",
+      "evidence": "Pixabay Terms of Service s.4 (https://pixabay.com/service/terms/): CC0 applies to content whose listed \"Published date\" is prior to January 9, 2019. Page still displays label \"Free for use under the Pixabay Content License\". Page date 2018-08-07 (local); JSON-LD datePublished=2018-08-06T15:39:26Z."
+    }
+  },
+  "inspectionEvidence": {
+    "594091": "Read on official page: img src + og:image + JSON-LD contentUrl all point to the _1280 rendition; expanded details show Media type JPG, Resolution 5472x3648, Published 2015-01-09; rendered screenshot verified (team brainstorming at table); _640 rendition also observed in page HTML.",
+    "2788918": "Official page img src + og:image + JSON-LD contentUrl = _1280 rendition; details: JPG, 6144x4069, Published 2017-09-26; rendered screenshot verified (laptop with code, desk). Author page URL read from JSON-LD author.url.",
+    "1516329": "Official page img src + og:image + JSON-LD contentUrl = _1280 rendition; details: JPG, 2000x1325, Published 2016-07-14; rendered screenshot verified (empty boardroom/conference room). Author page URL read from JSON-LD author.url.",
+    "3733649": "Official page img src + og:image + JSON-LD contentUrl = _1280 rendition; details: JPG, 7360x4912, Published 2018-10-10; rendered screenshot verified (still lake with village/church reflection). Author page URL read from JSON-LD author.url.",
+    "3601004": "Official page img src + og:image + JSON-LD contentUrl = _1280 rendition; details: JPG, 6000x3375, Published 2018-08-12; rendered screenshot verified (alpine lake Hintersee, mountains, clouds).",
+    "1283231": "og:image = the _640 rendition (observed); JSON-LD contentUrl = _1280; details JPG 2851x1981, Published 2016-03-27; rendition dimensions measured 640x445 in browser; visual check: distinctive adult male, monochrome stylised portrait.",
+    "1690965": "Official page img src/_640 rendition observed in page HTML; details JPG 2580x2848, Published 2016-09-27; measured 580x640; visual check: adult male, bald, smiling, blazer.",
+    "869215": "Official page img src/_640 observed; details JPG 5760x3840, Published 2015-08-03; measured 640x427; visual check: adult male with glasses, black-and-white portrait.",
+    "2359121": "Official page img src/_640 observed; details JPG 1875x2154, Published 2017-06-03; measured 557x640; visual check: adult woman, red hair, grey background.",
+    "3083453": "Official page img src/_640 observed; details JPG 3840x5760, Published 2018-01-17; measured 427x640; visual check: adult woman, blonde, studio.",
+    "3584435": "Official page img src/_640 observed; details JPG 2203x3113, Published 2018-08-07; measured 453x640; visual check: adult woman, long auburn hair, grey knit.",
+    "67201": "Player <video> src = _large.mp4 (3840x2160) observed and played; opened split-button download menu and clicked each resolution, capturing real download URLs via download event: HD 1280x720 -> _tiny.mp4, Full HD 1920x1080 -> _small.mp4, Quad HD 2560x1440 -> _medium.mp4. Verified _small.mp4 loads and reports 1920x1080, duration 11.378s, plays. Poster observed as the player poster attribute and via JSON-LD thumbnailUrl; verified 1280x720. RE-SELECTED for the 5MB demo budget: on the official page opened the download split-button and chose the actual \"HD 1280x720\" option; captured the real download URL via the browser download event (= _tiny.mp4, not a URL guess). Verified _tiny.mp4 loads and reports 1280x720, duration 11.378s, and plays; bytes 3,489,029 (<5MB). All menu resolutions were observed (HD 1280x720 / Full HD 1920x1080 / Quad HD 2560x1440 / Original 3840x2160). Poster retained.",
+    "189692": "Native vertical 2160x3840; download menu options observed HD 720x1280 / Full HD 1080x1920 / Quad HD 1440x2560 / Original 2160x3840; clicked Full HD and captured real download URL _small.mp4; verified _small.mp4 loads and reports 1080x1920, duration 12.033s, plays. Poster (player poster attr) verified 720x1280. Author page URL read from JSON-LD author.url. RE-SELECTED for the 5MB demo budget: on the official page chose the actual \"HD 720x1280\" option; captured real download URL _tiny.mp4 via download event. Verified _tiny.mp4 loads and reports 720x1280, duration 12.033s, plays; bytes 4,440,186 (<5MB). Poster retained.",
+    "115053": "Native vertical 1440x2560; menu observed HD 540x960 / Full HD 720x1280 / Quad HD 1080x1920 / Original 1440x2560; clicked the 1080x1920 option and captured real download URL _medium.mp4; verified _medium.mp4 loads and reports 1080x1920, duration 10.175s, plays. Poster verified 540x960. Author page URL not present in JSON-LD (unknown). RE-SELECTED for the 5MB demo budget: page labels the 720x1280 option \"Full HD\" (actual width 720); chose it and captured the real download URL _small.mp4 via download event. Verified _small.mp4 loads and reports 720x1280, duration 10.175s, plays; bytes 3,473,029 (<5MB). Poster retained.",
+    "108412": "Audio element src observed = https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3 (unsigned); JSON-LD contentUrl (download form) = .../download/audio/2022/03/26/audio_b6d1946a6b.mp3?filename=gavinnellist-...-108412.mp3; played and currentTime advanced 30.5s->32.0s, then paused. Author page URL read from JSON-LD author.url.",
+    "524039": "Page shows a visible \"Content ID Registered\" shield badge. Audio element src observed = https://cdn.pixabay.com/audio/2026/05/07/audio_98b252e81c.mp3 (unsigned); clicked play and currentTime advanced to 3.88s, paused after; duration 125.86s. Page HTML also shows the download URL .../download/audio/2026/05/07/audio_98b252e81c.mp3?filename=..."
+  },
+  "deliveryDecision": "Fixed URLs integrated into complete component demos; original Content License files not distributed in Git/registry. CC0 photos are separately classified by publication-date policy.",
+  "residualContext": {
+    "contentIdRegistered": [
+      "524039"
+    ],
+    "contentIdNotDisplayed": [
+      "108412"
+    ],
+    "modelRelease": "No model/property release is asserted. Profiles and business relationships must be visibly fictional sample data, with no real employment/endorsement claim. Commercial downstream reuse must assess its own context.",
+    "cityContributor": "Official metadata uses contributor identifier 21698102 and no author profile URL; preserve that identifier without inventing a name.",
+    "photoBudget": "Detailed lake photo is 491008 bytes, within the 800KB image-editing budget; use verified 136058-byte 640px rendition for small previews."
+  }
+}

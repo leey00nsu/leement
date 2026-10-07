@@ -1,0 +1,52 @@
+{
+  "checkedDate": "2026-10-07",
+  "pageUrl": "https://pixabay.com/music/ambient-atmospheric-ambient-music-with-piano-108412/",
+  "directUrl": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+  "sourcePagePlayback": {
+    "readyState": 4,
+    "duration": 120.672,
+    "currentTimeAtPause": 30.494987
+  },
+  "separateOrigin": "http://127.0.0.1:41237/",
+  "fetchCredentials": "omit",
+  "decode": {
+    "ok": true,
+    "bytes": 3861504,
+    "sha256": "40d601bb9a55c1f9a499456f4ccccc8d4c2770ab475e36a391b7658008869b73",
+    "duration": 120.67199546485261,
+    "channels": 2,
+    "sampleRate": 44100
+  },
+  "native": {
+    "readyState": 4,
+    "duration": 120.672,
+    "error": null
+  },
+  "nonBrowserTransfer": {
+    "method": "Python urllib GET",
+    "status": 403,
+    "bypassAttempted": false
+  },
+  "limitations": [
+    "Actual AudioPlayer component waveform/seek/source cleanup remains pending",
+    "No Content ID registration label displayed; this is not proof of no registration"
+  ],
+  "freshBrowser": {
+    "engine": "Playwright Chromium 1.62.1, new context without stored cookies",
+    "result": {
+      "decode": {
+        "ok": true,
+        "bytes": 3861504,
+        "sha256": "40d601bb9a55c1f9a499456f4ccccc8d4c2770ab475e36a391b7658008869b73",
+        "duration": 120.67199546485261,
+        "channels": 2,
+        "sampleRate": 44100
+      },
+      "native": {
+        "src": "https://cdn.pixabay.com/audio/2022/03/26/audio_b6d1946a6b.mp3",
+        "duration": 120.672,
+        "readyState": 4
+      }
+    }
+  }
+}

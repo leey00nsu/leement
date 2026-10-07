@@ -68,3 +68,47 @@
   - [Plan](./plan.md), [순차 Tasks와 문서 대상](./tasks.md).
   - [Pixabay Terms](https://pixabay.com/service/terms/), [FAQ의 완성된 앱/창작물 맥락 설명](https://pixabay.com/service/faq/).
 - **Consequences**: asset-selection 단계가 실패하면 해당 task는 완료되지 않는다. 정상 미디어 재생을 오류 UI나 메타데이터 조사로 대신하지 않는다. 프로젝트·컴포넌트 API와 레이아웃/테마 계약은 유지한다.
+
+
+## D005: T01 역할 판정과 외부 음악의 실제 decode 확인 (2026-10-07)
+
+- **Context**: T-PKGZD92HP77F-preview-real-media-01을 owner session으로 TODO→DOING 전환하고 초기 조사와 자산 선정을 시작했다.
+- **Constraints**: source 판정과 실제 화면 검수를 구분한다. 공식 CDN의 음악을 실제 docs origin에서도 fetch/decode할 수 있어야 한다.
+- **Options**: 원본 사이트 재생만 확인; 별도 localhost origin에서 익명 fetch와 Web Audio decode까지 확인.
+- **Decision**: 두 단계 모두 확인하고 모든 자리의 최종 자산 매핑·출처·크기/해시를 확정한 뒤 T01을 완료한다. 현재 다른 사진·영상·음원은 연구 세션에서 선정 중이다.
+- **Rationale**: source metadata나 원본 플레이어의 재생만으로 로컬 컴포넌트의 정상 작동을 보장할 수 없다.
+- **Trace**:
+  - 더 넓은 CSS/icon/source 및 props 소비자 조사로 초기 73개 파일을 83개로 확장했다. 모든 example을 실제 catalog에 대조해 독립 Preview route를 연결했다. 역할/교체 제안은 기록했지만 실제 화면 검수는 아직 수행하지 않았다.
+  - EventForm은 사진 URL prop이나 표지 미리보기가 없고 Image 아이콘은 파일 업로드의 제목을 나타낸다. 역할상 유지하며 사진을 위한 새로운 API를 추가하지 않는다. About의 main/secondary는 사진, partner/breakout은 마크로 구분한다.
+  - 공식 페이지에서 관찰한 GavinNellist 곡은 별도 `http://127.0.0.1:41237/` origin의 `fetch(..., { credentials: "omit" })`와 실제 `AudioContext.decodeAudioData`가 성공했다. native audio readyState=4, duration=120.672, error=null도 확인했다.
+  - 음악 전송 크기 3,861,504 bytes, SHA-256 `40d601bb9a55c1f9a499456f4ccccc8d4c2770ab475e36a391b7658008869b73`, decode duration 120.671995초, stereo/44100Hz. 이는 실제 컴포넌트의 waveform/seek/cleanup 확인을 대신하지 않는다.
+  - 일반 Python urllib 요청은 CDN 403으로 거절됐으므로 우회하지 않고 정상 브라우저로 확인했다. 브라우저의 익명 CORS decode 성공과 비브라우저 접근의 제한을 구분한다.
+  - browser research session `yjVAPS3nDwtAET0d`의 CLI replay buffer 오류는 출력 연결 오류였다. `aside.sessions.get`은 running을 확인했고 실행을 중단/교체하지 않았다.
+- **Evidence**:
+  - [소스 역할 제안과 실제 Preview 연결](./artifacts/media-audit-scope.json).
+  - [음원 preflight](./artifacts/music-source-preflight.json).
+  - [공식 음악 항목](https://pixabay.com/music/ambient-atmospheric-ambient-music-with-piano-108412/).
+- **Consequences**: T01의 최종 선정·검증 결과는 D006에 기록했다. 실제 컴포넌트 적용·화면 검증은 후속 태스크에서 수행한다.
+
+
+## D006: T01 최종 자산과 제공 검증 완료 (2026-10-07)
+
+- **Context**: 83개 source 후보의 미디어 역할과 실제 Preview 경로를 검토하고 공식 브라우저 조사에서 사진 11장·영상 3개·음악 2곡을 선정했다.
+- **Constraints**: 원본 Content License 파일 단독 재배포를 하지 않는다. 실제 표시/재생, 속성·해시·크기와 조건을 확인한 자산만 source 목록에 등록한다.
+- **Options**: 1080p 클립 유지; 공식 download controls에서 확인한 더 작은 720p rendition 사용.
+- **Decision**: 사진은 용도별 CC0 11장, 영상은 가로 1280×720 한 개와 세로 720×1280 두 개, 음악은 실제 피아노 두 곡의 검증된 고정 URL을 사용한다. 후보·검증 증거는 Feature에, 최종 자산 source 목록은 apps/docs/lib/demo-media.json에 두고 원본 미디어 바이너리는 Git/registry에 포함하지 않는다.
+- **Rationale**: copied source와 독립 소비자에서 hidden docs public dependency 없이 콘텐츠를 재사용하며 실제 표시·decode·playback과 전송 예산을 충족한다. source 목록의 plannedUsages는 T02~T04에서 실제 usages로 동기화한다.
+- **Trace**:
+  - 브라우저 조사 세션은 완료(terminal final message, idle)했고 720p 후속 선정도 완료했다. 공식 페이지/재생/다운로드 이벤트에서 실제 URL을 관찰했으며 원본 계정 변경·메시지 전송·보호 우회는 하지 않았다.
+  - 독립 fresh Chromium context의 localhost origin에서 credentials=omit fetch, 실제 image decode, video metadata/play/time advance/3초 seek, music AudioContext decode 및 포스터 decode가 16개 모두 성공했다. URL·MIME·바이트·SHA-256·실측 비율/길이를 보존했다.
+  - 첫 1080p 클립은 8,109,855 / 8,763,835 / 5,667,625 bytes였다. 공식 메뉴에서 다시 선정한 720p는 3,489,029 / 4,440,186 / 3,473,029 bytes로 모두 5MB 이하다. 두 음악은 3,861,504 / 4,027,454 bytes로 8MB 이하다.
+  - 사진 11장은 게시 날짜가 2019-01-09 이전임을 공식 항목에 확인해 CC0로 분류했다. 인물 6장은 서로 다른 모델의 640px 이하 사진으로 모든 파일이 150KB 미만이다. 실제 직원/고객/추천 관계를 주장하지 않는 가상 샘플에 사용한다. 확인되지 않은 model/property release를 확보했다고 주장하지 않는다.
+  - 상세 편집용 호수 사진은 491,008 bytes로 800KB 예산 안에 있다. 작은 슬롯에는 실제 관찰·검증한 640px/136,058-byte rendition을 사용한다. 다른 일반 사진·포스터는 400KB 안이다.
+  - 음악 524039는 공식 Content ID Registered badge가 확인됐다. 출처 안내에 등록 사실을 명시한다. 108412는 badge 미표시이며 미등록으로 단정하지 않는다. 현재 docs 플레이어 시연이고 외부 플랫폼 업로드/재배포는 수행하지 않는다.
+  - city clip은 공식 metadata의 제작자 식별자 21698102를 그대로 유지하며 실제 이름/프로필을 만들어내지 않는다. 해당 540×960 포스터는 Reel 실제 표시 크기에 충분하고 해당 clip의 공식 장면이다.
+  - node_modules가 없는 관리 worktree에 frozen-lockfile install을 수행했다. pnpm v10.34.5 설치가 성공했고 tracked lockfile 변경 없이 docs dev server가 3117에서 시작됐다. 대표 Preview 경로가 실제로 렌더됨을 확인했다. 전체 Feature 검사 통과로 기록하지 않는다.
+- **Evidence**:
+  - [공식 항목·선정/조건 증거](./artifacts/pixabay-selected-sources.json), [독립 source preflight 16/16](./artifacts/asset-source-preflight.json), [사진 시각 확인](./artifacts/selected-photos.jpg).
+  - [source 역할·실제 Preview 연결·선정 자산 매핑](./artifacts/media-audit-scope.json).
+  - [Pixabay Terms](https://pixabay.com/service/terms/), [FAQ](https://pixabay.com/service/faq/).
+- **Consequences**: T01의 조사/선정/전송 검증은 완료했다. 컴포넌트의 실제 파형·조작/lifecycle와 전수 수정 화면 검증은 T02~T05에서 남아 있으며 Spec의 Feature 인수 항목은 아직 체크하지 않는다. 네트워크 의존성과 Content ID·다운스트림 사용 맥락은 최종 출처 안내에서도 유지한다.

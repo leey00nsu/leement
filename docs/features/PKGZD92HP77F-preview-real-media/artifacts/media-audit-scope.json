@@ -881,7 +881,7 @@
     {
       "path": "apps/docs/examples/aspect-ratio-media.tsx",
       "sha256": "5c7f44d7b9e7865dbc38df0d7cb41e3a47e77400b864eb0c5e41b1548077024e",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -893,12 +893,25 @@
           "line": 8,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/aspect-ratio/detail/aspect-ratio-media"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/audio-player.tsx",
       "sha256": "b6eac7fbd079405b2de540657da00dda1904c5c7d850f5a28a5e67180b233e77",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -918,14 +931,33 @@
         {
           "kind": "intentionalFailure",
           "line": 14,
-          "value": "/demo-missing-audio.wav"
+          "value": "/demo-missing-audio.wav",
+          "plannedAction": "retain-intentional-failure",
+          "reason": "Explicit error/fallback coverage, excluded from normal media replacement."
         }
-      ]
+      ],
+      "role": "real-audio-video-or-poster",
+      "plannedAction": "replace",
+      "decisionReason": "Replace generated/illustrated sample and matching metadata with real content, retain source/error/lifecycle controls.",
+      "previewRoutes": [
+        "/preview/audio-player/detail",
+        "/preview/audio-player/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "108412",
+        "524039",
+        "3601004",
+        "3733649"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/avatar-images.tsx",
       "sha256": "3502eb076516a765341e20c312e25be4b744421f081a77802e81d117395f3454",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -935,7 +967,9 @@
         {
           "kind": "intentionalFailure",
           "line": 23,
-          "value": "data:image/png;base64,broken"
+          "value": "data:image/png;base64,broken",
+          "plannedAction": "retain-intentional-failure",
+          "reason": "Explicit error/fallback coverage, excluded from normal media replacement."
         },
         {
           "kind": "renderedMediaSlot",
@@ -947,12 +981,25 @@
           "line": 23,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/avatar-images"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/avatar-stack-animated.tsx",
       "sha256": "8caa89162ebe312e2f8df1d9322011ec6585fbd3ad0ffff720025e22ad0952b1",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -964,12 +1011,28 @@
           "line": 15,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar-stack/detail/avatar-stack-animated"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121",
+        "3083453"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-demo.tsx",
       "sha256": "0f999a39de1409e009667f0f240069b3d1b7d410b96ff480ac7a50c1bb0de018",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -981,12 +1044,25 @@
           "line": 9,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/aspect-ratio/detail/base-aspect-ratio-demo"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-portrait.tsx",
       "sha256": "15fb01a4040b1715fdbe981578d15cbdf2081295e093dc76b923e698a3c81d4e",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -998,12 +1074,25 @@
           "line": 12,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/aspect-ratio/detail/base-aspect-ratio-portrait"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3083453"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-rtl.tsx",
       "sha256": "e3854f500ee23adda75624b180d49f6a4040bfa8a9843c488d194f095a2c6778",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1015,12 +1104,25 @@
           "line": 34,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/aspect-ratio/detail/base-aspect-ratio-rtl"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-aspect-ratio-square.tsx",
       "sha256": "8feaa9dace4968fa6f6620bde2c4a6f046562edc6d48de4e210aae84b88ef63a",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1032,12 +1134,25 @@
           "line": 12,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/aspect-ratio/detail/base-aspect-ratio-square"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-attachment-demo.tsx",
       "sha256": "5ca7e462ccb07b438adb311a51ddef01a7ed885d7b65f1bbca6335609291fb5a",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1059,12 +1174,27 @@
           "line": 45,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/attachment/detail/base-attachment-demo"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-attachment-group.tsx",
       "sha256": "698cf7ff7bd21a47913af5ec6b61eba45017434cd88ff8110cc569b7f84d268f",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1076,12 +1206,27 @@
           "line": 51,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/attachment/detail/base-attachment-group"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-attachment-image.tsx",
       "sha256": "6aeb9e45219e2fb17042f645dc73ad32e1dbd936e7591303a77f18965a895b00",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1103,12 +1248,27 @@
           "line": 45,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/attachment/detail/base-attachment-image"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-badge-icon.tsx",
       "sha256": "5138d85196ec18475468ca7b386fab3c6dac3750259bbab6befa93b041e9ffe8",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1120,12 +1280,25 @@
           "line": 15,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-badge-icon"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3083453"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-badge.tsx",
       "sha256": "e0379b48ea132f7ff989f01fcbc305f8ad1e8136e7fd979d4ad42c909c31a54b",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1137,12 +1310,25 @@
           "line": 13,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-badge"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-basic.tsx",
       "sha256": "065c41fa6ac66320c1e5ca7be0f5c55343b2fec75a294ee7b45ca7c39337936f",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1154,12 +1340,25 @@
           "line": 12,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-basic"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-demo.tsx",
       "sha256": "1387ffdf9f10e0994e912ed91ec6202f5868f1388837313040a13675e54aa2a4",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1211,12 +1410,27 @@
           "line": 44,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-demo"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-dropdown.tsx",
       "sha256": "e09a6e754be4aa06351cbaefc04d55d16d855bc0b45f867129ef66f694303da1",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1228,12 +1442,25 @@
           "line": 26,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-dropdown"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-group-count-icon.tsx",
       "sha256": "5dceae9a7b8233f42f6a2aaa028d60fa91759270909dfa1d5febe48b822ecf7e",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1265,12 +1492,27 @@
           "line": 25,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-group-count-icon"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-group-count.tsx",
       "sha256": "d66ff853adc5fd64b6f13deb946cf0406d2a42e3280df58b3a05b7e40c81716d",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1302,12 +1544,27 @@
           "line": 23,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-group-count"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-group.tsx",
       "sha256": "030b65ffc2e91473a77b7edaf471eb9fa8a14ecdc0f77a7d03d94ad13256a6ce",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1339,12 +1596,27 @@
           "line": 22,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-group"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-rtl.tsx",
       "sha256": "d2ad9f565efa937002ceeba7aa3ca0d65753017c3882db9adcd2e836ca76a27d",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1396,12 +1668,27 @@
           "line": 72,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-rtl"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-avatar-size.tsx",
       "sha256": "c770ae43cc17b87ffdf5fefd267b11cb954ecc2ed1735eea9da71168550bcd5c",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1433,12 +1720,25 @@
           "line": 21,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/avatar/detail/base-avatar-size"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-card-image.tsx",
       "sha256": "3abb3f0477eee2d68c946663ca008aff44b485e4c9f428272777377536834c55",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1450,12 +1750,25 @@
           "line": 18,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/card/detail/base-card-image"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-dropdown-menu-avatar.tsx",
       "sha256": "f48e10c4405c2fbd0e46410fad7be8a1591ca69df809c65647c4054d1b4bbcb6",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1467,12 +1780,25 @@
           "line": 33,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/dropdown-menu/detail/base-dropdown-menu-avatar"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-empty-avatar-group.tsx",
       "sha256": "b56df392ac83eef93bf170d541da2d582b1bacc682ff13e589b6ca0d9226d03f",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1504,12 +1830,27 @@
           "line": 38,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/empty-state/detail/base-empty-avatar-group"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-empty-avatar.tsx",
       "sha256": "38135be88b8b952995597b6609307a83484a69566b99a1723ce78f530079aa15",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1521,12 +1862,25 @@
           "line": 24,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/empty-state/detail/base-empty-avatar"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-item-avatar.tsx",
       "sha256": "99a4c73eee99ca7bfca995548368129f1b3dd5c9f477ed6af0226edbf1ab30df",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1568,12 +1922,27 @@
           "line": 60,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/item/detail/base-item-avatar"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-item-dropdown.tsx",
       "sha256": "34658611c3f1bf773d49c61109d1ff4844d3cb50651f2e60649ec99424ca2a88",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1595,12 +1964,27 @@
           "line": 58,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/item/detail/base-item-dropdown"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-item-group.tsx",
       "sha256": "1dc8647bd7f1106265f08ad3347599c55c3ff5193f23a8539fac32804878ff27",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1622,12 +2006,27 @@
           "line": 46,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/item/detail/base-item-group"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-item-header.tsx",
       "sha256": "6bc8194fe7f592d8290fe697a40bfa6a0da57b87eec92b95cd6379b68c38652e",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1649,12 +2048,27 @@
           "line": 44,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/item/detail/base-item-header"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-item-image.tsx",
       "sha256": "928a2a55c309d7496175e7df76783bedf4189c2a44ec1f99b8c50d9c5fc19b9e",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1666,12 +2080,28 @@
           "line": 46,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/item/detail/base-item-image"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "108412",
+        "524039",
+        "3601004",
+        "3733649"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-message-attachment.tsx",
       "sha256": "04e08c4ae8d2b03752d49d88f9ba8ca32f0b706ba459e6ccd938c4a14dabbcd6",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1683,12 +2113,25 @@
           "line": 25,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/message/detail/base-message-attachment"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-message-avatar.tsx",
       "sha256": "179436093b0681862349a4cccd598c50661694d25ea3e602bc3a35a36b6d81d4",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -1720,12 +2163,26 @@
           "line": 59,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/message/detail/base-message-avatar"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-message-demo.tsx",
       "sha256": "b972eb669c163b9a2159708e881e2b7a7328c21f93444f73d14cc7ddaa78a549",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -1767,12 +2224,26 @@
           "line": 77,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/message/detail/base-message-demo"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "2359121"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-message-group.tsx",
       "sha256": "025d2a67d6fe0e08d6b470ce7c303bc28fec6870e1e1451ef58a2fccefdc8a76",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -1784,12 +2255,26 @@
           "line": 31,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/message/detail/base-message-group"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231",
+        "1690965"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-scroll-area-horizontal-demo.tsx",
       "sha256": "73b45033330f09ef1119f6caeadf9231d1870b9112de1bb12e1574e834e58efd",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "externalImage",
@@ -1811,12 +2296,27 @@
           "line": 33,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/scroll-area/detail/base-scroll-area-horizontal-demo"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004",
+        "3733649",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/base-sidebar-demo.tsx",
       "sha256": "07b624e9559628a7923e018b7cb5397aa5e530ca4c921d58cdf14135d2c276ec",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -1833,12 +2333,25 @@
           "line": 434,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/sidebar/detail/base-sidebar-demo"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/brand-logo.tsx",
       "sha256": "19b2f3511f3b9ad33fe3350630a8f76bed8d26ae96c08069725f5e5ed9d91835",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -1850,12 +2363,24 @@
           "line": 16,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "brand-mark",
+      "plannedAction": "retain",
+      "decisionReason": "Leement mark and editable example vector are intentional brand assets, not stock-photo slots.",
+      "previewRoutes": [
+        "/preview/brand-logo/detail",
+        "/preview/brand-logo/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "apps/docs/examples/card-media.tsx",
       "sha256": "e3d35ab6f85fd7f81565065c0b005e564dd3ef7efb4870a96a361dc40e0e4415",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -1867,12 +2392,25 @@
           "line": 15,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/card/detail/card-media"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/comparison.tsx",
       "sha256": "046654c7f61f92d54e5a11804f52da735cc038bf2342aa3eb14d519411e701be",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -1884,12 +2422,26 @@
           "line": 3,
           "value": "/demo-scene-night.svg"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/comparison/detail",
+        "/preview/comparison/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/feature.tsx",
       "sha256": "0b6197abbd0c508a3c66d211def864a3492d99966ab5adb750b925d41d085670",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -1906,36 +2458,80 @@
           "line": 28,
           "value": "data:image/svg+xml"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/feature/detail",
+        "/preview/feature/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/glimpse.tsx",
       "sha256": "82087be3c29ae0e9be83b9395c226e3c43b7d39e8603630b68d75fea87a24257",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
           "line": 3,
           "value": "/demo-scene.svg"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/glimpse/detail",
+        "/preview/glimpse/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3733649"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/hero.tsx",
       "sha256": "d87081cfcd103ced315a73f5e6789ed5b218cbe6eded746ba894e9b9722167f8",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
           "line": 18,
           "value": "/demo-player.mp4"
         }
-      ]
+      ],
+      "role": "real-audio-video-or-poster",
+      "plannedAction": "replace",
+      "decisionReason": "Replace generated/illustrated sample and matching metadata with real content, retain source/error/lifecycle controls.",
+      "previewRoutes": [
+        "/preview/hero/detail",
+        "/preview/hero/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "67201"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/image-crop-aspect.tsx",
       "sha256": "4ce60833ecbecb705d1e8623a913c4fa1ba3230b243c5dbbe0c6de0280e56b45",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -1947,12 +2543,25 @@
           "line": 28,
           "value": "<ImageCrop"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/image-crop/detail/image-crop-aspect"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3733649"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/image-crop.tsx",
       "sha256": "3b2d3c07bfc945474c5f1c38ce61c193feaf83e805d4ac9e4b29b15be71f58e2",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -1964,12 +2573,26 @@
           "line": 4,
           "value": "<ImageCrop"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/image-crop/detail",
+        "/preview/image-crop/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3733649"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/image-zoom.tsx",
       "sha256": "1013eda17a1d37307b49e163fd4a3ec2b3b37482bc9b094635cc79e878fff81c",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -1981,12 +2604,26 @@
           "line": 3,
           "value": "<ImageZoom"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/image-zoom/detail",
+        "/preview/image-zoom/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3733649"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/media-reveal.tsx",
       "sha256": "6c926681c55da3e86dc9f755ade351c3a39ef39302a2211aa4e4ae18b45de0fd",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -1998,12 +2635,26 @@
           "line": 7,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/media-reveal/detail",
+        "/preview/media-reveal/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/reel.tsx",
       "sha256": "84e3767a28090de4da53ea7d777a2edf8eac3f38779c9b57f8c8edcd76ca9830",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2025,12 +2676,28 @@
           "line": 3,
           "value": "/demo-reel-dark.png"
         }
-      ]
+      ],
+      "role": "real-audio-video-or-poster",
+      "plannedAction": "replace",
+      "decisionReason": "Replace generated/illustrated sample and matching metadata with real content, retain source/error/lifecycle controls.",
+      "previewRoutes": [
+        "/preview/reel/detail",
+        "/preview/reel/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "189692",
+        "115053",
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/reveal-content-variants.tsx",
       "sha256": "ee0ddecbc718af6710426d8c7a58b06ccb7e9c97fd36f94c97f048cd59619c5a",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2042,12 +2709,25 @@
           "line": 19,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/reveal-content/detail/reveal-content-variants"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/stories-viewer.tsx",
       "sha256": "a90b189b7abd76316edfd2f091fe33f471ff3378d5c21d86231cc83a92262756",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2059,12 +2739,26 @@
           "line": 17,
           "value": "/demo-scene-night.svg"
         }
-      ]
+      ],
+      "role": "real-audio-video-or-poster",
+      "plannedAction": "replace",
+      "decisionReason": "Replace generated/illustrated sample and matching metadata with real content, retain source/error/lifecycle controls.",
+      "previewRoutes": [
+        "/preview/stories/detail/stories-viewer"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "3601004",
+        "3733649"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/stories.tsx",
       "sha256": "95121dd0c72eacaaf198a057fdf5b80926c2461715006cb85cf3b183f53ac7ae",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2091,12 +2785,28 @@
           "line": 3,
           "value": "/demo-reel-dark.png"
         }
-      ]
+      ],
+      "role": "real-audio-video-or-poster",
+      "plannedAction": "replace",
+      "decisionReason": "Replace generated/illustrated sample and matching metadata with real content, retain source/error/lifecycle controls.",
+      "previewRoutes": [
+        "/preview/stories/detail",
+        "/preview/stories/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "189692",
+        "115053",
+        "3601004"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "apps/docs/examples/video-player.tsx",
       "sha256": "1df8d9d3de7e86961359f995547276120a5438ee707bf98497ffd93f16071570",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "drawnDemoReference",
@@ -2121,14 +2831,30 @@
         {
           "kind": "intentionalFailure",
           "line": 11,
-          "value": "/demo-missing-video.mp4"
+          "value": "/demo-missing-video.mp4",
+          "plannedAction": "retain-intentional-failure",
+          "reason": "Explicit error/fallback coverage, excluded from normal media replacement."
         }
-      ]
+      ],
+      "role": "real-audio-video-or-poster",
+      "plannedAction": "replace",
+      "decisionReason": "Replace generated/illustrated sample and matching metadata with real content, retain source/error/lifecycle controls.",
+      "previewRoutes": [
+        "/preview/video-player/detail",
+        "/preview/video-player/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "67201"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/blocks/about.tsx",
       "sha256": "140664e0740a442e5a1a3ee5c42d88f6a507a10d6eab4758ce3707bc28ee56f4",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2195,12 +2921,27 @@
           "line": 127,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "photo-and-demo-brand",
+      "plannedAction": "replace-by-slot",
+      "decisionReason": "Main/secondary are real photo slots; breakout/partner slots require intentional demo brand marks, never photos.",
+      "previewRoutes": [
+        "/preview/about/detail",
+        "/preview/about/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/blocks/blog-post.tsx",
       "sha256": "e64e8d0dd4becaa8049247594aae980c1519299b18fe5733cbd11fc80317c474",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2232,12 +2973,28 @@
           "line": 162,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/blog-post/detail",
+        "/preview/blog-post/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "1283231",
+        "2788918"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/blocks/blog.tsx",
       "sha256": "a9433320819c6f1184243d0caa17e3ecfe7515061ecb5431ea00f36f223b2705",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2259,12 +3016,28 @@
           "line": 130,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/blog/detail",
+        "/preview/blog/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/blocks/case-studies.tsx",
       "sha256": "5f08f5d3cf4dc52610f295912731452bc418a388f808d0342bd72f0edb852f22",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -2276,12 +3049,26 @@
           "line": 77,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "optional-case-photo-and-brand",
+      "plannedAction": "complete-example",
+      "decisionReason": "Renderer correctly accepts caller media; example must demonstrate actual photo props and explicitly fictional story; logo remains a mark.",
+      "previewRoutes": [
+        "/preview/case-studies/detail",
+        "/preview/case-studies/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/blocks/case-study.tsx",
       "sha256": "d2e28e33dc6e7e6b5f21ab3d1c15a77021785ebfcf53a4785fdbccad8a9d5e3b",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -2293,12 +3080,26 @@
           "line": 83,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "optional-case-photo-and-brand",
+      "plannedAction": "complete-example",
+      "decisionReason": "Renderer correctly accepts caller media; example must demonstrate actual photo props and explicitly fictional story; logo remains a mark.",
+      "previewRoutes": [
+        "/preview/case-study/detail",
+        "/preview/case-study/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/blocks/changelog.tsx",
       "sha256": "3a18a847f9c2ee1b86e9f66f1ef8866cbb15130e9df98669ae1aec98f745613b",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2320,24 +3121,52 @@
           "line": 160,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/changelog/detail",
+        "/preview/changelog/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091",
+        "2788918",
+        "1516329"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/blocks/collaborative-canvas.tsx",
       "sha256": "24e31da80263188ce8a82d4b0e27c93457495f7cbeec5834776e7889876b0dfe",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
           "line": 161,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "optional-participant-avatar-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Caller-provided optional avatar; current examples use intentional initials fallback. No owned illustration to replace.",
+      "previewRoutes": [
+        "/preview/collaborative-canvas/detail",
+        "/preview/collaborative-canvas/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/blocks/compliance.tsx",
       "sha256": "cb7ae49ceb86ec7657ee7acbc7b325e70a21fcb350c2cabbea43891e9e59ad7e",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2374,12 +3203,24 @@
           "line": 129,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "demo-brand-or-badge-mark",
+      "plannedAction": "replace-demo-mark",
+      "decisionReason": "Gray SVG is a meaningless mark placeholder. Replace with explicit demo monogram/badge, not a stock photo or claimed real certification.",
+      "previewRoutes": [
+        "/preview/compliance/detail",
+        "/preview/compliance/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/blocks/experience.tsx",
       "sha256": "aafb961b8ba35f223475408fb1f9501ae10bb11d9d2b31566be5fda21eb18698",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2406,12 +3247,24 @@
           "line": 114,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "demo-brand-or-badge-mark",
+      "plannedAction": "replace-demo-mark",
+      "decisionReason": "Gray SVG is a meaningless mark placeholder. Replace with explicit demo monogram/badge, not a stock photo or claimed real certification.",
+      "previewRoutes": [
+        "/preview/experience/detail",
+        "/preview/experience/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/blocks/feature.tsx",
       "sha256": "0c43705a1b559863fdbfe4b9d223c934a81210d198cbabbdb841be7cec85b145",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -2423,12 +3276,24 @@
           "line": 129,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "app-supplied-media-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Public renderer consumes app-provided props and owns no sample URL; change consuming example and verify lifecycle/alt; only fix a demonstrated renderer defect.",
+      "previewRoutes": [
+        "/preview/feature/detail",
+        "/preview/feature/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/blocks/footer.tsx",
       "sha256": "c2e2fc4b445f5a4183536d3ff4a772bc510605f6b58a9e7c1e5de6f50805fb33",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2440,36 +3305,72 @@
           "line": 109,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "demo-brand-or-badge-mark",
+      "plannedAction": "replace-demo-mark",
+      "decisionReason": "Gray SVG is a meaningless mark placeholder. Replace with explicit demo monogram/badge, not a stock photo or claimed real certification.",
+      "previewRoutes": [
+        "/preview/footer/detail",
+        "/preview/footer/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/blocks/reel.tsx",
       "sha256": "1f3ca981b64a955b0d843559aa161032dc120ac6e9b1767539d84dadbe538e77",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
           "line": 42,
           "value": "<video"
         }
-      ]
+      ],
+      "role": "app-supplied-media-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Public renderer consumes app-provided props and owns no sample URL; change consuming example and verify lifecycle/alt; only fix a demonstrated renderer defect.",
+      "previewRoutes": [
+        "/preview/reel/detail",
+        "/preview/reel/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/blocks/roadmap.tsx",
       "sha256": "298c9151020870c021397eca17d5e745c3621fc9c22f2e87459429cd1e730174",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
           "line": 223,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "optional-participant-avatar-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Caller-provided optional avatar; current examples use intentional initials fallback. No owned illustration to replace.",
+      "previewRoutes": [
+        "/preview/roadmap/detail",
+        "/preview/roadmap/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/blocks/team.tsx",
       "sha256": "a06a2f779b66b910bdaf337014e6c02ec184ce26ad7b62b3bef2ca05a90f6a9a",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2506,12 +3407,31 @@
           "line": 100,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/team/detail",
+        "/preview/team/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "2359121",
+        "1690965",
+        "3083453",
+        "1283231",
+        "869215",
+        "3584435"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/blocks/testimonial.tsx",
       "sha256": "b895f75aa8695312bd1669361a1d81f7680a85696f0d068cad191dfd1a6259b2",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "inlinePlaceholder",
@@ -2523,24 +3443,50 @@
           "line": 52,
           "value": "<AvatarImage"
         }
-      ]
+      ],
+      "role": "real-photo-or-avatar",
+      "plannedAction": "replace",
+      "decisionReason": "Normal image/avatar/editorial slot; use role-matched Pixabay photos and truthful alt/metadata. Preserve explicit broken-image fixture.",
+      "previewRoutes": [
+        "/preview/testimonial/detail",
+        "/preview/testimonial/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
     },
     {
       "path": "registry/ui/audio-player.tsx",
       "sha256": "fdbe03e23e5afd69d8b38d0451b92331f9466e4cb8d45ce5c05078a80b3e37f7",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
           "line": 90,
           "value": "<audio"
         }
-      ]
+      ],
+      "role": "app-supplied-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Renders caller media and contains no owned placeholder sample; verify consuming examples and relevant controls.",
+      "previewRoutes": [
+        "/preview/audio-player/detail",
+        "/preview/audio-player/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/ui/comparison.tsx",
       "sha256": "c0cc4a739e78809eab61da1c5a2555bc32636755669751e1e165c7dc5cd745d9",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -2552,24 +3498,48 @@
           "line": 21,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "app-supplied-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Renders caller media and contains no owned placeholder sample; verify consuming examples and relevant controls.",
+      "previewRoutes": [
+        "/preview/comparison/detail",
+        "/preview/comparison/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/ui/glimpse.tsx",
       "sha256": "100ff74d7601edd041011cc39f4cc68baf4349e1d2132469e71ebc05b4605295",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
           "line": 10,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "app-supplied-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Renders caller media and contains no owned placeholder sample; verify consuming examples and relevant controls.",
+      "previewRoutes": [
+        "/preview/glimpse/detail",
+        "/preview/glimpse/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/ui/image-crop.tsx",
       "sha256": "1cac094e4ec505c5f2314f36455da27e35d15cd1eee3d27998d51aea30fdaeb3",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -2581,12 +3551,24 @@
           "line": 99,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "app-supplied-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Renders caller media and contains no owned placeholder sample; verify consuming examples and relevant controls.",
+      "previewRoutes": [
+        "/preview/image-crop/detail",
+        "/preview/image-crop/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/ui/image-zoom.tsx",
       "sha256": "ce6869033604801f06bb696fce625f359800e37644d34b3a68704f0b0b150172",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -2598,12 +3580,24 @@
           "line": 16,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "app-supplied-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Renders caller media and contains no owned placeholder sample; verify consuming examples and relevant controls.",
+      "previewRoutes": [
+        "/preview/image-zoom/detail",
+        "/preview/image-zoom/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/ui/stories.tsx",
       "sha256": "4a8827dd4d797a6154e4a340009fec2abdda94e82bf8874f5355d4c37c0d0b1a",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
@@ -2620,19 +3614,237 @@
           "line": 68,
           "value": "<img"
         }
-      ]
+      ],
+      "role": "app-supplied-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Renders caller media and contains no owned placeholder sample; verify consuming examples and relevant controls.",
+      "previewRoutes": [
+        "/preview/stories/detail",
+        "/preview/stories/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     },
     {
       "path": "registry/ui/video-player.tsx",
       "sha256": "098d60f10d7f056190c71636d0cc191a66f84976199fc1841ab5cb4aee677e38",
-      "reviewStatus": "pending-role-review",
+      "reviewStatus": "source-role-reviewed",
       "signals": [
         {
           "kind": "renderedMediaSlot",
           "line": 64,
           "value": "<video"
         }
-      ]
+      ],
+      "role": "app-supplied-renderer",
+      "plannedAction": "retain",
+      "decisionReason": "Renders caller media and contains no owned placeholder sample; verify consuming examples and relevant controls.",
+      "previewRoutes": [
+        "/preview/video-player/detail",
+        "/preview/video-player/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
+    },
+    {
+      "path": "registry/blocks/form.tsx",
+      "sha256": "934719c322b7d1a22ca3980592f6f05572620c74f7789fa39612c8a4895f6a4e",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "upload-icon-and-file-input",
+      "plannedAction": "retain",
+      "decisionReason": "This is an Image icon naming a file upload control, not a drawn photo preview. API accepts user files; no URL/cover prop exists. Do not add an unrelated API.",
+      "previewRoutes": [
+        "/preview/form/detail",
+        "/preview/form/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
+    },
+    {
+      "path": "registry/ui/attachment.tsx",
+      "sha256": "52954d3bfe37c864561d31ba27928add8e48a7872e123aef74be496c865aa7b5",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "css-media-layout-mask",
+      "plannedAction": "retain",
+      "decisionReason": "AttachmentMedia defines slots/styles; mask-image is CSS edge fading, not a content photograph.",
+      "previewRoutes": [
+        "/preview/attachment/detail",
+        "/preview/attachment/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
+    },
+    {
+      "path": "registry/ui/avatar-stack.tsx",
+      "sha256": "2cb680befda2f1491c47b21a4cc164515590e7e193bc554c3c72fa4cc6cd6349",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "css-avatar-overlap-mask",
+      "plannedAction": "retain",
+      "decisionReason": "Intentional CSS compositing mask, not a content image.",
+      "previewRoutes": [
+        "/preview/avatar-stack/detail",
+        "/preview/avatar-stack/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
+    },
+    {
+      "path": "registry/ui/avatar.tsx",
+      "sha256": "8a7f3752e2b1abe20a27dcca532f3b908e70e114788bcac4660981bf73b64a83",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "avatar-fallback-and-size-style",
+      "plannedAction": "retain",
+      "decisionReason": "Intentional initials/status icon sizing and loading fallback; caller owns media src.",
+      "previewRoutes": [
+        "/preview/avatar/detail",
+        "/preview/avatar/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
+    },
+    {
+      "path": "registry/ui/item.tsx",
+      "sha256": "9cd8638d69512cd06a174a62c14b02bd0e5d87d2d8ed6995624c7278fe9cf3c3",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "css-media-slot-sizing",
+      "plannedAction": "retain",
+      "decisionReason": "Image variant sizes the app-supplied child; no own content asset.",
+      "previewRoutes": [
+        "/preview/item/detail",
+        "/preview/item/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
+    },
+    {
+      "path": "registry/ui/marquee.tsx",
+      "sha256": "1a8eeee96beb059aa3b88bf7164aeb0c96a34dbce67ee05aab9c4e5bc6e5a3ff",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "css-edge-mask",
+      "plannedAction": "retain",
+      "decisionReason": "Intentional animation edge mask, not a photo source.",
+      "previewRoutes": [
+        "/preview/marquee/detail",
+        "/preview/marquee/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
+    },
+    {
+      "path": "registry/ui/message-scroller.tsx",
+      "sha256": "84019dd43d1e96ce03588d9c81cb0b558e887b5e2e860105fcb2516835dd360f",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "css-scroll-edge-mask",
+      "plannedAction": "retain",
+      "decisionReason": "Intentional overflow edge fade, not content media.",
+      "previewRoutes": [
+        "/preview/message-scroller/detail",
+        "/preview/message-scroller/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
+    },
+    {
+      "path": "apps/docs/examples/case-study.tsx",
+      "sha256": "54fb4316ec6d093f692f81b0b36cbf3804dbc9d6a5a460a226c5ce27f6f30895",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "case-header-photo",
+      "plannedAction": "complete-example",
+      "decisionReason": "image prop is omitted although supported; supply actual photo and clearly fictional case content.",
+      "previewRoutes": [
+        "/preview/case-study/detail",
+        "/preview/case-study/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "594091"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
+    },
+    {
+      "path": "apps/docs/examples/case-studies.tsx",
+      "sha256": "42bafe921b5d78937c937b5a17c1019e948c39fcf18cf0f86190513d7f15943d",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "sample-person-photo",
+      "plannedAction": "complete-example",
+      "decisionReason": "image prop is omitted although supported; demonstrate sample portrait without claiming a real customer recommendation.",
+      "previewRoutes": [
+        "/preview/case-studies/detail",
+        "/preview/case-studies/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [
+        "1283231"
+      ],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "selected-for-implementation"
+    },
+    {
+      "path": "apps/docs/examples/form.tsx",
+      "sha256": "9b560a3b97fe85a5eded6340ece1a9163aef21d4b9566398b7c762eb0231a0ad",
+      "signals": [],
+      "reviewStatus": "source-role-reviewed",
+      "role": "upload-ui-composition",
+      "plannedAction": "retain",
+      "decisionReason": "Actual file upload UI and icon; does not claim to display a cover photo. No supported cover URL prop exists.",
+      "previewRoutes": [
+        "/preview/form/detail",
+        "/preview/form/gallery"
+      ],
+      "visualVerification": "not-performed",
+      "discovery": "Broader CSS/icon/source scan and supported-prop consumer review",
+      "sourceVerification": "Role and actual source/props/Preview path reviewed; final UI verification deferred to implementation tasks.",
+      "proposedAssetIds": [],
+      "sourceRoleStatus": "reviewed",
+      "assetMappingStatus": "no-stock-media-required"
     }
   ],
   "localDemoAssets": [
@@ -2698,5 +3910,22 @@
     "inlinePlaceholderFiles": 14,
     "drawnDemoConsumerFiles": 17
   },
-  "sourceBaseline": "31642301cb61a9432094c7af95863fea489d676f"
+  "sourceBaseline": "31642301cb61a9432094c7af95863fea489d676f",
+  "expandedCandidateFileCount": 83,
+  "classificationNote": "83 source candidates reviewed by role, with final source assets selected. This is not yet visual verification of updated Preview screens.",
+  "cssSourceFindings": [
+    {
+      "path": "apps/docs/app/globals.css",
+      "role": "intentional-grid-background",
+      "action": "retain",
+      "reason": "Linear gradients form the preview/layout grid; no content photograph or movie is substituted."
+    },
+    {
+      "path": "apps/docs/examples/base-chart-tooltip.tsx",
+      "role": "chart-clipping-path",
+      "action": "retain",
+      "reason": "SVG clipPath references chart geometry and is outside stock media replacement."
+    }
+  ],
+  "repositoryReferenceScan": "Source references in apps/registry matched known candidates; api-reference and usage-guides contain no legacy demo media URLs. Photo/card/list metadata must still be synchronized during implementation."
 }
