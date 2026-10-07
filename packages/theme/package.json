@@ -1,6 +1,6 @@
 {
   "name": "@leement/theme",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "description": "CSS variables and Tailwind compatibility for Leement",
   "license": "MIT",

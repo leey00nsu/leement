@@ -1,6 +1,6 @@
 {
   "name": "@leement/docs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "dev": "pnpm --dir ../.. build:tokens && pnpm --dir ../.. build:theme && pnpm --dir ../.. registry:build && next dev",
