@@ -56,6 +56,8 @@
 
 ## 실행 순서
 
+추가 사용자 요청 T06은 `apps/docs/lib/docs.ts`의 공유 navigation 데이터에서 표시 label 기준 정렬을 적용한다. 기존 Components 기능 분류를 보존하고 desktop/mobile의 같은 소비 화면을 확인한다. 단순 표시 순서 변경이므로 영구 테스트 추가는 NONE이며 실제 세 범주의 각 분류 순서·현재 항목·링크와 docs type/lint를 검증한다. 공용 PRD·디자인 규칙의 정렬 설명은 T06 Docs에 연결한다.
+
 T01 전수 자리 판정·실제 자산 선정/제공 검증 → T02 Components/Patterns·대표/추가 예제 → T03 Blocks 기본값·예제·콘텐츠 → T04 영상·음악·포스터/자막·소스 변경 → T05 전수 UI/독립 consumer·출처/공용 문서·전체 검사. 하나의 active task만 유지하고 각 완료 checkpoint를 커밋한 뒤 다음 task로 이동한다. 발견한 재생 결함은 T04에서, 최종 검수 결함은 T05에서 수정하며 결과를 해당 검수표에 남긴다.
 
 ## Curated Documentation Impact

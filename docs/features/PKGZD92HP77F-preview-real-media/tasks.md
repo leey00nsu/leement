@@ -169,6 +169,23 @@
 
   - Verification: 최종 모든 자리 83/83 판정과 실제 소비 화면 확인. Preview 332건+유지 역할 80건, Stories 후속 12건, 독립 registry CLI 45-item graph/49 targets·production tsc/build·24조합/96건 PASS. Photo/real playback/control·240px·Foundation/Replay/lazy·SSR/native fallback 확인. 실제 Stories Portal 결함을 기존 테스트 UPDATE와 native 재생으로 수정 확인. [D010](./decisions.md#d010-t05-출처-안내와-최종-소비자-검증-2026-10-07), [최종 증거](./artifacts/media-verification.json).
 
+- [TODO][PRD-FR-005] T-PKGZD92HP77F-preview-real-media-06 왼쪽 Components·Blocks·Patterns 항목 알파벳순 정렬
+  - Date: 2026-10-07
+  - Acceptance:
+    - 왼쪽 데스크톱 메뉴와 모바일 메뉴에서 Components·Blocks·Patterns의 각 기존 분류 안 항목이 표시 이름 기준 A–Z 순으로 나오며 현재 항목 선택과 링크를 유지한다.
+  - Checklist:
+    - [ ] navigation의 기존 분류를 보존하며 표시 label 기준 정렬 적용
+    - [ ] 세 범주 데스크톱·모바일 실제 메뉴 순서와 현재 항목 표시·링크 확인
+    - [ ] 필요한 PRD·디자인 설명과 Feature 문서·검증·커밋 동기화
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -181,7 +198,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 

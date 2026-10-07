@@ -163,3 +163,10 @@
 - **Final UI scope**: 변경 독립 Preview 83경로/332건과 유지 역할 추가 20경로/80건, Stories 수정 후 12건, production consumer 24조합/96건의 정상 콘텐츠/프레이밍 화면을 직접 확인했다. 중요한 조작·240px·theme/Foundation sync·Replay cleanup·lazy activation·SSR/no-JS native controls도 PASS. 이전 source fingerprint는 기존 media-finance 테스트의 T05 수정 외에 그대로다. 가상 샘플·원본 16항목·음악 Content ID 상태는 상세 credits/공용 notices에 연결했다.
 - **Checks**: 최종 `pnpm run typecheck`, `pnpm run lint`, `pnpm run test` (32 files/706), `pnpm run build` 모두 PASS; `feature-audit --enforce --json` PASS. 변경 후 다시 실행한 최종 결과다. [검증 증거](./artifacts/media-verification.json), [전체 자리 판정](./artifacts/media-audit-scope.json), [실제 음악 파형과 출처 안내](./artifacts/audio-real-waveform-credits.png).
 - **Limits / remaining workflow**: 실제 OS 설정은 바꾸지 않았고 reduced motion은 브라우저 emulation으로 구분한다. 외부 URL 가용성과 다운스트림 Content ID/초상권 사용 맥락은 보장하지 않으며 검증 수준을 안내했다. 구현 승인과 local merge 승인은 별개이며 아직 요청/실행하지 않았다. 원격 게시도 수행하지 않는다.
+
+
+## D011: 실제 왼쪽 탐색 메뉴 정렬 추가 요청 (2026-10-07)
+
+- **Context**: 사용자는 채팅의 링크 목록이 아니라 실제 왼쪽 Components·Blocks·Patterns 메뉴를 알파벳순으로 정렬하라고 화면과 함께 명시했다. 구현 승인 대기 중인 기존 Feature에 T06을 추가해 요청을 반영한다. 기존 미디어 완료 task는 수정하지 않는다.
+- **Decision**: 공용 navigation의 표시 label 기준 A–Z 정렬을 사용한다. Components의 기능 분류는 보존하며 각 분류 내부 항목을 정렬한다. Blocks·Patterns 전체 목록을 정렬하고 navigation의 범주 순서를 Components→Blocks→Patterns로 맞춘다. desktop/mobile이 같은 데이터를 사용한다.
+- **Verification Contract**: 표시 순서만 바꾸는 가역적인 변경으로 영구 테스트는 NONE. 실제 세 범주의 desktop/mobile 메뉴에서 분류별 label 순서·현재 항목과 href를 확인하고 docs type/lint를 실행한다. 공용 PRD·디자인에 유지할 정렬 규칙만 설명한다.
