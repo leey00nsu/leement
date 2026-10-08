@@ -61,14 +61,14 @@ export function DocsSearch() {
     >
       <Dialog.Trigger
         ref={styleMotionRef1}
-        className="inline-flex h-9 min-w-9 items-center gap-2 rounded-lg border border-border bg-muted/50 px-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:min-w-40 sm:justify-between"
+        className="inline-flex h-9 min-w-9 items-center gap-2 rounded-lg border border-border bg-muted/50 px-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:min-w-40 lg:justify-between"
         aria-label="Search documentation"
       >
         <span className="inline-flex items-center gap-2">
           <Search aria-hidden="true" size={15} />
-          <span className="hidden sm:inline">Search...</span>
+          <span className="hidden lg:inline">Search...</span>
         </span>
-        <kbd className="hidden rounded border border-border px-1 text-[11px] sm:inline">
+        <kbd className="hidden rounded border border-border px-1 text-[11px] lg:inline">
           ⌘ K
         </kbd>
       </Dialog.Trigger>

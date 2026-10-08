@@ -94,15 +94,15 @@
 
   - Verification: 개발 서버에서 이전 15개 주소의 308/목적지와 unknown slug 404 확인. Components105/Blocks41의 중복·타입·기능 구역별 A–Z 및 Charts70 보존 확인. 기존 registry-source/reference-coverage 9 tests 통과, 변경 파일 ESLint 통과. registry·packages diff 없음. production/browser 통합 확인은 T03에서 실행한다.
 
-- [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-02 shadcn 홈의 간결한 흐름을 참고한 Leement 랜딩 정리
+- [DONE][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-02 shadcn 홈의 간결한 흐름을 참고한 Leement 랜딩 정리
   - Date: 2026-10-08
   - Acceptance:
     - 홈이 짧은 헤드라인·설명·Get started/View components와 실제 UI 예제 그리드로 구성되고 반복 소개·설치 섹션과 glow 장식이 제거된다.
   - Checklist:
-    - [ ] 기존 registry source를 사용해 대표 예제를 구성하고 상호작용은 로컬 상태로 동작하게 한다.
-    - [ ] Leement 로고·서체·토큰·공용 컴포넌트와 검색·테마 전환·상단 탐색을 유지한다.
-    - [ ] light/dark와 375px·768px·1440px에서 CTA·대표 예제·focus·페이지 overflow를 확인한다.
-    - [ ] 랜딩 외 화면·token/theme·공용 API 영향 여부를 확인하고 의도하지 않은 변경을 제거한다.
+    - [x] 기존 registry source를 사용해 대표 예제를 구성하고 상호작용은 로컬 상태로 동작하게 한다.
+    - [x] Leement 로고·서체·토큰·공용 컴포넌트와 검색·테마 전환·상단 탐색을 유지한다.
+    - [x] light/dark와 375px·768px·1440px에서 CTA·대표 예제·focus·페이지 overflow를 확인한다.
+    - [x] 랜딩 외 화면·token/theme·공용 API 영향 여부를 확인하고 의도하지 않은 변경을 제거한다.
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -111,6 +111,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 개발 서버 375/768/1440px × light/dark 6조합에서 CTA URL, 가로 overflow 없음, 프로젝트 폼·날짜·설정 상태, Tab/focus-visible, reduced-motion을 확인했다. 태블릿 header 겹침을 발견해 검색 텍스트를 lg 이상에서만 표시하고 menu/search 경계도 확인했다. 변경 파일 ESLint 및 전체 typecheck 통과. registry·token/theme API 변경 없음. production 화면 확인은 T03에서 반복한다.
 
 - [TODO][PRD-FR-015] T-DQ5P7AW5RVAQ-consolidate-patterns-03 주소·설치·UI 통합 검증과 미게시 변경 기록
   - Date: 2026-10-08

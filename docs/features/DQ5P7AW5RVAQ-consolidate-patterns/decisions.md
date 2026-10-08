@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:80c00639b51d3725ff986f4f7c0d35abceaec01fcef1d10be9f00028506131b4 -->
+<!-- lee-spec-kit:workflow-sync sha256:778d27e9dc5c5ab17a027c68a89b5dafd449c263da951fe42d84cded9676374c -->
 
 ## D001: 역할에 따른 공개 분류 통합 (2026-10-08)
 
@@ -68,3 +68,10 @@
 - Source target·dependency·API와 theme/token은 기준 revision 대비 동일하다. registry-source/reference-coverage 9 tests와 변경 파일 ESLint가 통과했다. production/browser 검증은 T03에 남겨 둔다.
 - 공용 문서 경고에 나오는 이전 Feature들의 변경은 현재 main 기준에 이미 포함되어 있음을 확인했다. PRD·design의 기존 요구를 보존하고 현재 분류 설명만 갱신했다. README 보류는 D003을 따른다.
 - Plan/task/Feature agent review는 저장소 설정에서 disabled이며 Plan 승인은 workflow nextAction의 자동 승격으로 처리했다.
+
+## D006: 랜딩 예제와 태블릿 header (2026-10-08)
+
+- 홈을 하나의 헤드라인·소개·Get started/View components와 실제 Card/Input/Textarea/Button/Calendar/Switch/Progress/Badge/StatusNotice 그리드로 바꿨다. 폼·날짜·설정은 로컬 상태로 반응한다. 반복 소개·설치 섹션·gradient headline/glow를 제거했다.
+- 기존 home sidebar 제외를 유지한다. 모바일에서 기존 header 메뉴가 숨겨지므로 홈 내부의 접이식 범주 탐색으로 Docs/Components/Blocks/Charts 접근을 보존했다.
+- 768px 시각 확인에서 기존 header의 메뉴와 검색 텍스트 겹침을 발견했다. 검색 text/kbd/확장 폭만 lg 이상에 적용하여 태블릿에는 같은 버튼의 아이콘을 표시한다. 레이아웃과 registry API/token은 동일하며 새 분기나 공용 컴포넌트는 추가하지 않았다. Plan에 해당 파일을 연결했다.
+- Aside로 실제 DOM과 홈을 확인했다. Aside REPL에 viewport 변경 API가 없어 일시적 Playwright harness로 375/768/1440 × light/dark·reduced-motion·local interactions·Tab focus·header 경계·overflow를 확인했고 6조합 모두 통과했다. 변경 파일 ESLint와 전체 typecheck도 통과했다.

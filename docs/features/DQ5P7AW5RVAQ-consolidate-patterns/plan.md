@@ -50,6 +50,7 @@
 - apps/docs/components/docs-navigation.tsx, docs-top-navigation.tsx, showcase-gallery.tsx: 탐색·카탈로그
 - apps/docs/lib/usage-guides.ts, example-catalog.ts 및 관련 현재 설명: 새 내부 문서 링크·분류 용어
 - apps/docs/app/foundations/[slug]/page.tsx, getting-started/page.tsx, adoption/page.tsx, layout.tsx: 현재 소개와 metadata
+- apps/docs/components/docs-search.tsx: 태블릿 header의 검색 버튼 폭을 줄여 탐색 겹침 방지
 - apps/docs/app/page.tsx 및 필요할 때 apps/docs/components/home-examples.tsx: 홈 구조·로컬 대표 예제
 - apps/docs/app/globals.css: 미사용 home-preview-glow 제거
 - apps/docs/lib/releases.ts: 미게시 변경 2개
