@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Spec Review — Patterns 통합 및 추가 랜딩 범위
 - **레포**: Leement
 - **브랜치**: `feat/DQ5P7AW5RVAQ-consolidate-patterns`
 - **대기 중 변경 요청**: -
@@ -74,6 +74,59 @@
 > 수동 편집이 필요하면 현재 태스크 근처가 아니라 `태스크 목록`의 마지막 기존 태스크 block 아래에만 append 하세요.
 
 ---
+
+- [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-01 공개 카탈로그 분류와 문서 주소 이전
+  - Date: 2026-10-08
+  - Acceptance:
+    - 기존 Patterns 15개가 승인된 Components 10개·Blocks 5개로 중복 없이 이전되고 기존 15개 주소가 새 주소로 영구 리다이렉트된다.
+  - Checklist:
+    - [ ] 상세 route·navigation·상단/모바일 탐색·items metadata·Showcase·검색을 새 분류에 맞춘다.
+    - [ ] registry source·설치 이름·dependencies·target·소비자 import 경로를 유지한다.
+    - [ ] 105 Components·41 Blocks·70 Charts와 기능 구역별 A–Z 순서 및 알 수 없는 slug의 404를 확인한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-02 shadcn 홈의 간결한 흐름을 참고한 Leement 랜딩 정리
+  - Date: 2026-10-08
+  - Acceptance:
+    - 홈이 짧은 헤드라인·설명·Get started/View components와 실제 UI 예제 그리드로 구성되고 반복 소개·설치 섹션과 glow 장식이 제거된다.
+  - Checklist:
+    - [ ] 기존 registry source를 사용해 대표 예제를 구성하고 상호작용은 로컬 상태로 동작하게 한다.
+    - [ ] Leement 로고·서체·토큰·공용 컴포넌트와 검색·테마 전환·상단 탐색을 유지한다.
+    - [ ] light/dark와 375px·768px·1440px에서 CTA·대표 예제·focus·페이지 overflow를 확인한다.
+    - [ ] 랜딩 외 화면·token/theme·공용 API 영향 여부를 확인하고 의도하지 않은 변경을 제거한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
+- [TODO][PRD-FR-015] T-DQ5P7AW5RVAQ-consolidate-patterns-03 주소·설치·UI 통합 검증과 미게시 변경 기록
+  - Date: 2026-10-08
+  - Acceptance:
+    - 이전 주소 15개와 새 상세 페이지·Preview·설치 경로가 검증되고 랜딩 및 탐색 검증과 설정된 전체 검사가 통과한다.
+  - Checklist:
+    - [ ] 15개 새 주소와 이전 주소의 목적지 및 대표 anchor를 확인하고 잘못된 slug의 404를 검증한다.
+    - [ ] desktop/mobile의 탐색·검색·Showcase에서 새 분류 및 선택 상태를 확인한다.
+    - [ ] registry의 설치 이름·source·target·dependencies가 기준 revision과 일치하는지 확인한다.
+    - [ ] 기존 releases와 공개 0.2.1을 보존하면서 unreleasedChanges에 두 변경을 기록한다.
+    - [ ] 설정된 typecheck·lint·test·build를 실행하고 Spec Acceptance·Tasks·Decisions를 실제 근거와 동기화한다.
+  - Docs:
+    - project:apps/docs/lib/releases.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
 
 ## Repository Knowledge (완료 비차단)
 

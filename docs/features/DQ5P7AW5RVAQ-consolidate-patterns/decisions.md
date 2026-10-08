@@ -37,8 +37,25 @@
 - **Decision**: 구현에서 PRD와 디자인 시스템의 현재 설명을 갱신하고 미게시 변경 이력을 기록한다. README와 기존 releases는 수정하지 않는다.
 - **Trace**:
   - 확인 대상: docs/prd/leement-prd.md의 PRD-FR-005/012/015 및 현재 카탈로그 수, docs/designs/design-system.md의 공개 탐색·BrandLogo·Table/DatePicker 설명.
-  - README 영향 여부와 정확한 경로·근거는 Plan 작성 시 확인한다. 불일치가 있으면 README 수정 요청이 없어 보류한다는 근거를 여기에 기록한다.
+  - README.md의 기존 Patterns 카탈로그 표(113행), Design Language → Tokens → Theme → UI → Patterns → Blocks → Application 설명(121행), 소스 트리의 patterns 설명(147행)은 공개 분류 변경 후 설명 불일치가 된다. README 수정 요청이 없어 이번에 보류한다. 93행의 components/patterns import 경로는 설치 target을 유지하므로 여전히 유효하다.
   - 현재: Spec Review. Curated Documentation Impact와 task Docs 연결은 승인 후 작성한다.
 - **Evidence**:
   - **Commit**: [검토한 0.2.1 기준 revision](https://github.com/leey00nsu/leement/commit/4e40d20d167e717b8f86d32d86e7e252ef6648c7)
   - **Documents**: [PRD](../../prd/leement-prd.md), [디자인 시스템](../../designs/design-system.md)
+
+## D004: 같은 Feature에 간결한 랜딩 페이지 추가 (2026-10-08)
+
+- **Context**: 사용자가 Patterns 통합 Spec에 A로 승인한 뒤, 구현 계획 작성 전에 shadcn/ui 홈처럼 간단한 랜딩 페이지 수정도 함께 요청했다.
+- **Constraints**: Feature ID와 승인된 15개 항목 분류·설치 호환성 범위를 유지한다. 기존 Leement 디자인 시스템과 공용 컴포넌트를 사용한다. 구현 허용 전 코드 수정은 하지 않는다.
+- **Options**: 별도 Feature 분리, 현재 Feature의 랜딩·공개 탐색 범위를 함께 갱신.
+- **Decision**: 같은 Feature에 US-3와 FR-7을 추가한다. 헤드라인·짧은 설명·두 진입 링크·실제 UI 예제 그리드로 랜딩을 정리하고 반복 소개/설치 섹션과 glow 장식을 제거한다.
+- **Rationale**: 랜딩은 기존 분류를 소개하는 공개 진입점이다. 분류 통합과 랜딩 정리를 함께 수행하면 새 탐색 구조를 일관되게 보여 줄 수 있다. shadcn의 정보 순서를 참고하되 Leement의 시각 규칙을 유지한다.
+- **Trace**:
+  - 2026-10-08: 공식 홈을 웹과 브라우저로 읽고 현재 화면을 확인했다. 헤드라인·설명·Get Started/View Components·실제 예제 영역의 순서를 확인했다.
+  - apps/docs/app/page.tsx에서 대형 헤드라인·workspace preview·분류 소개 3개·추가 설치 섹션을, globals.css에서 홈 전용 glow와 사이드바 제외 규칙을 확인했다.
+  - 기존 A는 Patterns 통합 범위의 승인으로 기록했다. 추가 랜딩 범위를 구체화한 Spec은 Review로 갱신하며 기존 승인을 임의로 새 시각 요구사항의 승인으로 확대하지 않는다.
+  - Spec에는 구조·실제 링크·반응형 기준과 제한을 기록했다. Plan·구현·검증은 아직 시작하지 않았다.
+- **Evidence**:
+  - **Commit**: 기존 분류 Spec 기록 `3a8226a`.
+  - **Reference**: [shadcn/ui 홈](https://ui.shadcn.com/), [확인한 참고 화면](./artifacts/shadcn-home-reference.png).
+  - **Source**: [현재 랜딩](../../../apps/docs/app/page.tsx), [홈 CSS](../../../apps/docs/app/globals.css), [디자인 시스템](../../designs/design-system.md).

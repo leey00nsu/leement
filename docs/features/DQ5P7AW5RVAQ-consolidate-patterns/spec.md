@@ -7,10 +7,13 @@
 - **대상 레포**: Leement
 - **작성일**: 2026-10-08
 - **상태**: Review
+- **승인 이력**: Patterns 통합 범위는 사용자 A로 승인됨. 이후 같은 Feature에 랜딩 페이지 간소화 요청이 추가되어 확장된 범위를 Review로 갱신함.
 
 ## 목적
 
 Components에는 Sidebar·AudioPlayer처럼 복합 기능이 있고, Patterns 15개는 모두 registry:component로 배포된다. 내부적으로 조합되었다는 이유만으로 독립 메뉴에 넣는 기준은 일관되지 않다. 공개 탐색을 Components와 Blocks로 정리하고, 기존 기능과 사용자의 설치 소스를 보존한다. Charts는 별도 탐색을 유지한다.
+
+랜딩 페이지도 shadcn/ui 홈의 간결한 정보 순서를 참고해 짧은 제품 소개, 두 가지 주요 진입 링크, 실제 Leement UI 예제로 정리한다. Leement의 로고·서체·토큰·공용 컴포넌트는 유지한다.
 
 ## 사용자 스토리
 
@@ -39,6 +42,21 @@ Components에는 Sidebar·AudioPlayer처럼 복합 기능이 있고, Patterns 15
 - [ ] 새 상세 페이지에서 제목·설치·Usage·Examples·API Reference·미디어 출처·Preview를 보존한다.
 - [ ] 알 수 없는 slug는 404이며 기존 Components·Blocks·Charts·Preview·registry 주소의 동작을 유지한다.
 - [ ] `@leement/<slug>` 설치 이름, registry dependencies, 기존 소비자 import 경로와 공개 props/export를 유지한다.
+
+### US-3: 간결한 랜딩 페이지
+
+**As a** Leement를 처음 방문하는 개발자
+**I want** 짧은 소개와 실제 UI 예제를 보고 설치 또는 컴포넌트 문서로 진입하기
+**So that** 반복되는 제품 설명을 읽지 않고 제공되는 UI와 시작 방법을 이해할 수 있다.
+
+**Acceptance Criteria:**
+
+- [ ] 첫 화면은 하나의 헤드라인, 짧은 설명, Get started·View components 두 가지 주요 진입 링크로 구성한다.
+- [ ] 그 아래에는 실제 registry 컴포넌트를 사용하는 대표 UI 예제 그리드를 배치한다.
+- [ ] 기존의 큰 glow 배경, 반복적인 기능 소개 카드 3개와 별도 설치 안내 섹션을 제거한다. 설치 안내는 Getting started에서 제공한다.
+- [ ] Patterns 소개는 제거하고 새 Components·Blocks 분류와 링크를 사용한다.
+- [ ] Leement 로고·서체·semantic 색상·컨트롤 규칙과 상단 검색·테마 전환·문서 탐색을 유지한다.
+- [ ] light/dark 및 375px·768px·1440px 화면에서 제목·버튼·예제가 잘리지 않고, 페이지 가로 스크롤 없이 읽고 조작할 수 있다.
 
 ## 기능 요구사항
 
@@ -84,6 +102,29 @@ Components는 다른 화면에서 독립적으로 재사용할 수 있는 하나
 
 PRD와 디자인 시스템의 현재 분류·항목 수·설명을 실제 결과와 맞춘다. 이번 변경은 `unreleasedChanges`에 기록하며 공개 버전 0.2.1과 기존 릴리스 기록은 유지한다. README는 명시적 수정 요청이 없어 수정하지 않고 발견한 불일치를 decisions.md에 기록한다.
 
+### FR-7: 랜딩 페이지 정보 구조와 시각 방향
+
+참고 원본은 [shadcn/ui 홈](https://ui.shadcn.com/)이며 2026-10-08에 직접 열어 정보 구조와 화면을 확인했다. 참고하는 요소는 짧은 중앙 정렬 소개, 두 가지 주요 진입 링크, 그 아래의 실제 UI 예제다. 문구·금융 샘플 데이터·로고·폰트·색상·강한 둥근 모서리는 Leement에 그대로 복제하지 않는다.
+
+```text
+Leement 상단 탐색 · 검색 · 테마 전환
+
+              짧은 제품 헤드라인
+                 간결한 설명
+          [Get started] [View components]
+
+        실제 Leement UI 예제 그리드
+       컨트롤 · 폼 · 데이터/상태 조합
+```
+
+Get started는 `/getting-started`, View components는 `/components/button`으로 연결한다. 기존 상단 탐색에서 Blocks·Charts·GitHub와 다른 문서에 접근할 수 있다. 랜딩에 별도 문서 사이드바는 표시하지 않는다.
+
+예제는 기존 Leement source를 활용한 소수의 대표 조합으로 구성한다. 모든 항목을 동시에 mount하는 Showcase 전체 복제나 무거운 편집기·미디어 자동 재생은 추가하지 않는다. 소개를 위한 독립적인 가짜 컨트롤을 새로 만들지 않는다. 사용자에게 조작 가능한 예제는 로컬 예제 상태로 반응하고, 실서비스 기능을 약속하지 않는다.
+
+본문 폭·제목 크기·여백·그리드 열 수는 모바일부터 반응형으로 조절한다. 장식 gradient/glow와 과도한 상하 여백을 줄이고 기존 border·surface·타이포그래피 역할을 사용한다. 자동 반복 장식은 추가하지 않으며 기존 reduced-motion 정책을 유지한다.
+
+고정 시각 근거: [참고 홈 화면](./artifacts/shadcn-home-reference.png). 구체적인 예제 구성·파일 변경·검증은 승인 후 Plan에서 정한다.
+
 ## 비기능 요구사항
 
 - **접근성**: 모바일·데스크톱 탐색의 키보드 조작과 선택 상태, 검색의 접근 가능한 이름을 유지한다.
@@ -93,7 +134,7 @@ PRD와 디자인 시스템의 현재 분류·항목 수·설명을 실제 결과
 
 ## 제외 범위
 
-- 신규 UI 기능, 기존 기능 합치기·삭제, 시각 재설계.
+- 신규 UI 기능, 기존 registry 기능 합치기·삭제, 랜딩 외 화면의 시각 재설계.
 - 소비자 설치 폴더 물리적 재배치와 애플리케이션 소스 자동 마이그레이션.
 - 버전업·npm 게시·원격 push·사이트 배포. 필요하면 별도 릴리스 요청으로 진행한다.
 - README와 과거 릴리스·완료 Feature 기록 변경.
@@ -104,4 +145,5 @@ PRD와 디자인 시스템의 현재 분류·항목 수·설명을 실제 결과
 - PRD Refs: PRD-FR-005, PRD-FR-012, PRD-FR-015
 - Design Refs: docs/designs/design-system.md
 - Design System: docs/designs/design-system.md
+- Visual Reference: https://ui.shadcn.com/ 및 [고정 참고 화면](./artifacts/shadcn-home-reference.png)
 - Decisions: [decisions.md](./decisions.md)
