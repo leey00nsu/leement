@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:398c0f64784464453bf51418b0633b12f45e06bd1c5f71d6e2710e5a711075ea -->
+<!-- lee-spec-kit:workflow-sync sha256:6fc25f8d01d893fad7990423a475e53c01d962cb61f12cda1f65b2a9f7bee414 -->
 
 ## D001: 역할에 따른 공개 분류 통합 (2026-10-08)
 
@@ -91,3 +91,6 @@
 - 기존 Feature와 완료 T01~T03을 유지하고 task add로 T04를 추가했다. 요청 자체가 구체적인 시각 수정 권한이므로 같은 범위의 Spec/Plan을 동기화하고 새 Spec 승인 질문을 추가하지 않는다. 검증된 두 CTA·실제 예제·설치 호환성은 보존한다.
 - [확인한 폭·페이드 참고 화면](./artifacts/shadcn-width-fade-reference.png)을 보존했다. max-width를 제거하되 responsive inset과 중앙 headline 폭을 유지한다. 배경색에 맞는 하단 장식은 실제 interactive 콘텐츠를 숨기거나 입력을 막지 않도록 배치한다.
 - 영구 테스트 변경 없이 수정된 화면의 브라우저 검증·ESLint/typecheck·production build로 검증한다. 이전 카탈로그/설치 706개 회귀 검사와 production URL 검증은 그대로 유효하다.
+
+- **T04 결과**: 예제 max-width를 제거해 실제 좌우 inset만 남겼다(16/24/32px). xl 이상은 4열, Calendar는 384px 이하로 읽기 폭을 제한했다. 하단192px을 현재 theme 배경색으로 페이드하고 실제 CardContent·메시지·아이콘은 장식 위에 유지한다. pointer-events:none/aria-hidden이며 콘텐츠를 잘라내지 않는다.
+- **T04 검증**: production 375/768/1440/1920 × light/dark 8조합에서 전체 폭/페이드·CTA·폼/달력/스위치·Tab focus·overflow·header 경계·console error·reduced-motion을 확인했다. 모두 통과했다. 변경 파일 ESLint·전체 typecheck·production build 통과. 단순 배치/CSS 변경에 새 영구 테스트를 추가하지 않았고 T03의706 tests는 유효하다. [업데이트한 화면 근거](./tasks.md#보존한-화면-근거)를 보존했다.

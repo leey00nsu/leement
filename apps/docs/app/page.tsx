@@ -6,7 +6,7 @@ import { DocsMobileNavigation } from "../components/docs-top-navigation";
 
 export default function Home() {
   return (
-    <div id="leement-home" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div id="leement-home" className="w-full px-4 sm:px-6 lg:px-8">
       <div className="pt-4 md:hidden">
         <details className="rounded-lg border border-border px-3 py-2 text-sm">
           <summary className="cursor-pointer rounded-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Browse documentation</summary>
@@ -21,9 +21,10 @@ export default function Home() {
           <Button asChild variant="outline"><Link href="/components/button">View components</Link></Button>
         </div>
       </section>
-      <section aria-labelledby="home-examples-title">
+      <section aria-labelledby="home-examples-title" className="home-examples relative pb-12">
         <h2 id="home-examples-title" className="sr-only">Explore the components</h2>
         <HomeExamples />
+        <div aria-hidden="true" className="home-examples-fade pointer-events-none absolute inset-x-0 bottom-0 h-48" />
       </section>
     </div>
   );

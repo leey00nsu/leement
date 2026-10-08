@@ -52,7 +52,7 @@ Components에는 Sidebar·AudioPlayer처럼 복합 기능이 있고, Patterns 15
 **Acceptance Criteria:**
 
 - [x] 첫 화면은 하나의 헤드라인, 짧은 설명, Get started·View components 두 가지 주요 진입 링크로 구성한다.
-- [ ] 그 아래에는 실제 registry 컴포넌트를 사용하는 대표 UI 예제 그리드를 화면 좌우에 넓게 배치하고 하단에 현재 테마 배경색으로 은은한 페이드를 적용한다.
+- [x] 그 아래에는 실제 registry 컴포넌트를 사용하는 대표 UI 예제 그리드를 화면 좌우에 넓게 배치하고 하단에 현재 테마 배경색으로 은은한 페이드를 적용한다.
 - [x] 기존의 큰 glow 배경, 반복적인 기능 소개 카드 3개와 별도 설치 안내 섹션을 제거한다. 설치 안내는 Getting started에서 제공한다.
 - [x] Patterns 소개는 제거하고 새 Components·Blocks 분류와 링크를 사용한다.
 - [x] Leement 로고·서체·semantic 색상·컨트롤 규칙과 상단 검색·테마 전환·문서 탐색을 유지한다.

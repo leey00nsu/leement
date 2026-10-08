@@ -25,7 +25,7 @@ export function HomeExamples() {
   const [digest, setDigest] = useState(false);
 
   return (
-    <div className="grid min-w-0 items-start gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid min-w-0 items-start gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       <Card className="min-w-0">
         <CardHeader>
           <CardTitle>A place to start</CardTitle>
@@ -52,11 +52,11 @@ export function HomeExamples() {
           <CardDescription>A date for your next milestone.</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col items-center gap-3">
-          <Calendar mode="single" selected={date} onSelect={setDate} defaultMonth={initialDate} className="w-full" />
+          <Calendar mode="single" selected={date} onSelect={setDate} defaultMonth={initialDate} className="w-full max-w-sm" />
           <p role="status" className="min-h-5 text-center text-xs text-muted-foreground">{date ? formatDate(date) : "Choose a date."}</p>
         </CardContent>
       </Card>
-      <div className="grid min-w-0 gap-4 md:col-span-2 md:grid-cols-2 lg:col-span-1 lg:grid-cols-1">
+      <div className="grid min-w-0 gap-4 md:col-span-2 md:grid-cols-2 lg:col-span-1 lg:grid-cols-1 xl:col-span-2 xl:grid-cols-2">
         <Card className="min-w-0">
           <CardHeader>
             <CardTitle>A little less noise</CardTitle>
@@ -85,7 +85,7 @@ export function HomeExamples() {
           <CardContent><Progress value={75} aria-label="Example project progress" /></CardContent>
         </Card>
       </div>
-      <div className="min-w-0 md:col-span-2 lg:col-span-3">
+      <div className="min-w-0 md:col-span-2 lg:col-span-3 xl:col-span-4">
         <StatusNotice tone="success" title="One design language, many possibilities." description="Explore the components and combine them into your own product." />
       </div>
     </div>

@@ -48,6 +48,16 @@ body:has(#leement-home) .docs-shell { display: block; }
 body:has(#leement-home) .docs-sidebar { display: none; }
 body:has(#leement-home) .docs-shell > main { padding: 0; }
 body:has(#leement-home) .docs-shell > main > div { max-width: none; }
+.home-examples-fade {
+  background: linear-gradient(to bottom, transparent, var(--lm-color-background-default));
+}
+/* Fade the lower surfaces; keep example content and focus above decoration. */
+.home-examples [data-slot="card-content"],
+.home-examples [data-slot="status-notice-icon"],
+.home-examples [data-slot="status-notice-content"] {
+  position: relative;
+  z-index: 1;
+}
 .prose-leement code { border-radius: var(--lm-radius-sm); background: var(--lm-color-background-subtle); padding: .15rem .35rem; font-size: .9em; }
 .prose-leement pre { overflow: auto; border: 1px solid var(--lm-color-border-default); border-radius: var(--lm-radius-lg); background: var(--lm-color-background-subtle); padding: 1rem; }
 .prose-leement pre code { background: transparent; padding: 0; }
