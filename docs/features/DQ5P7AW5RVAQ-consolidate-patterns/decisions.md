@@ -112,3 +112,7 @@
 - 카드 영역의 배경 자체에 상단160px gradient를 적용해 기본 배경에서 중립 표면으로 이어지게 한다. 별도 overlay나 카드 위치 변경 없이 light/dark에 같은 semantic 변수를 적용한다. 하단 콘텐츠 fade와 focus reveal은 그대로 유지한다.
 
 - **T06 결과/검증**: section 배경의 상단160px을 기본 배경에서 transparent로 전환해 bg-muted와 섞이게 했다. 라이트/다크 실제1440 캡처에서 가로 색상 경계가 사라진 것을 확인했다. production8개 viewport/theme 조합에서 gradient·overflow·기존 하단 fade/focus 및 로컬 예제 모두 통과했고 내부10개 목적지는200이었다. lint/typecheck/build 통과. [업데이트된 실제 화면](./tasks.md#보존한-화면-근거)을 보존했다.
+
+## D011: 구현 결과 승인 (2026-10-08)
+
+- 사용자 `A`로 최종 구현 결과를 승인했다. tasks.md에 승인과 검토 head `f3351f1`을 기록했다. 설정된 local verify를 진행하고 main 통합 승인은 별도 local_merge 경계를 따른다.
