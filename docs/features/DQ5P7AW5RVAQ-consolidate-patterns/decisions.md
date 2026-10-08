@@ -84,3 +84,10 @@
 - 홈은 375/768/1440 × light/dark에서 실제 입력/submit·날짜·switch를 조작하고 CTA/Tab focus-visible/reduced-motion/header 경계/overflow/console error를 확인했다. 6조합 모두 통과했다. [화면 근거](./tasks.md#보존한-화면-근거)를 보존했다.
 - 공개 0.2.1과 기존 releases는 그대로이며 unreleasedChanges만 두 항목을 추가했다. source/registry target/dependencies/props/export를 기준 revision과 비교해 일치함을 확인했다.
 - 구현 결과 승인을 요청하는 시점까지 진행한다. main 통합·원격 push·npm·배포는 아직 실행하지 않았다. 설정상 구현 승인과 local-ff 통합 승인은 별도 경계다.
+
+## D008: 구현 승인 전 요청된 전체 폭과 페이드 (2026-10-08)
+
+- 사용자가 완성된 랜딩에 대해 shadcn 홈처럼 좌우를 꽉 채우고 하단을 약간 페이드하도록 직접 수정 요청했다. 이는 구현 결과의 변경 요청이며 구현 승인이나 main 통합 승인을 뜻하지 않는다.
+- 기존 Feature와 완료 T01~T03을 유지하고 task add로 T04를 추가했다. 요청 자체가 구체적인 시각 수정 권한이므로 같은 범위의 Spec/Plan을 동기화하고 새 Spec 승인 질문을 추가하지 않는다. 검증된 두 CTA·실제 예제·설치 호환성은 보존한다.
+- [확인한 폭·페이드 참고 화면](./artifacts/shadcn-width-fade-reference.png)을 보존했다. max-width를 제거하되 responsive inset과 중앙 headline 폭을 유지한다. 배경색에 맞는 하단 장식은 실제 interactive 콘텐츠를 숨기거나 입력을 막지 않도록 배치한다.
+- 영구 테스트 변경 없이 수정된 화면의 브라우저 검증·ESLint/typecheck·production build로 검증한다. 이전 카탈로그/설치 706개 회귀 검사와 production URL 검증은 그대로 유효하다.

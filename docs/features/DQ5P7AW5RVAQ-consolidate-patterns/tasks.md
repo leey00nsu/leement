@@ -134,6 +134,23 @@
 
   - Verification: production HTTP 15개 old/new 상세·Preview·registry 확인(308/Location/200/동일 target/JSON) 및 unknown 3경로 404. 15개 상세에서 실제 Preview render·현재 항목·Code와 clipboard import 확인. Date Picker/Page Header의 이전 #api-reference anchor, 검색 15개 새 링크, Showcase105/41/146·15개 분류/링크·empty state, 모바일 선택과 네 범주 확인. 홈 6조합 CTA·폼/날짜/설정·focus·header·overflow·console error 없음 확인. 전체 typecheck/lint/test/build 통과.
 
+- [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-04 랜딩 예제 전체 폭과 하단 페이드 조정
+  - Date: 2026-10-08
+  - Acceptance:
+    - 랜딩 예제가 화면 좌우를 넓게 채우고 하단은 현재 테마의 배경색으로 은은하게 페이드된다.
+  - Checklist:
+    - [ ] 홈 예제 영역의 최대 폭 제한을 제거하고 화면별 여백과 열 배치를 조정한다.
+    - [ ] light/dark 하단 페이드가 장식으로만 작동하고 컨트롤 클릭·focus·텍스트 읽기를 막지 않는지 확인한다.
+    - [ ] 375/768/1440px 및 넓은 화면에서 overflow·CTA·예제 상호작용을 검증하고 변경 파일 검사와 production build를 완료한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -146,7 +163,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 

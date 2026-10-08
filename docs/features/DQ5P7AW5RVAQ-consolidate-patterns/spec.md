@@ -7,7 +7,7 @@
 - **대상 레포**: Leement
 - **작성일**: 2026-10-08
 - **상태**: Approved
-- **승인 이력**: Patterns 통합 범위 승인 후 랜딩 간소화를 추가했고, 2026-10-08 사용자 A로 확장된 Spec 전체를 승인받음.
+- **승인 이력**: Patterns 통합 범위 승인 후 랜딩 간소화를 추가했고, 2026-10-08 사용자 A로 확장된 Spec 전체를 승인받음. 이어서 사용자가 화면 좌우 전체 폭과 은은한 하단 페이드를 구체적으로 요청했으며 해당 시각 조정을 T04에 반영한다.
 
 ## 목적
 
@@ -52,7 +52,7 @@ Components에는 Sidebar·AudioPlayer처럼 복합 기능이 있고, Patterns 15
 **Acceptance Criteria:**
 
 - [x] 첫 화면은 하나의 헤드라인, 짧은 설명, Get started·View components 두 가지 주요 진입 링크로 구성한다.
-- [x] 그 아래에는 실제 registry 컴포넌트를 사용하는 대표 UI 예제 그리드를 배치한다.
+- [ ] 그 아래에는 실제 registry 컴포넌트를 사용하는 대표 UI 예제 그리드를 화면 좌우에 넓게 배치하고 하단에 현재 테마 배경색으로 은은한 페이드를 적용한다.
 - [x] 기존의 큰 glow 배경, 반복적인 기능 소개 카드 3개와 별도 설치 안내 섹션을 제거한다. 설치 안내는 Getting started에서 제공한다.
 - [x] Patterns 소개는 제거하고 새 Components·Blocks 분류와 링크를 사용한다.
 - [x] Leement 로고·서체·semantic 색상·컨트롤 규칙과 상단 검색·테마 전환·문서 탐색을 유지한다.
@@ -121,7 +121,7 @@ Get started는 `/getting-started`, View components는 `/components/button`으로
 
 예제는 기존 Leement source를 활용한 소수의 대표 조합으로 구성한다. 모든 항목을 동시에 mount하는 Showcase 전체 복제나 무거운 편집기·미디어 자동 재생은 추가하지 않는다. 소개를 위한 독립적인 가짜 컨트롤을 새로 만들지 않는다. 사용자에게 조작 가능한 예제는 로컬 예제 상태로 반응하고, 실서비스 기능을 약속하지 않는다.
 
-본문 폭·제목 크기·여백·그리드 열 수는 모바일부터 반응형으로 조절한다. 장식 gradient/glow와 과도한 상하 여백을 줄이고 기존 border·surface·타이포그래피 역할을 사용한다. 자동 반복 장식은 추가하지 않으며 기존 reduced-motion 정책을 유지한다.
+제목과 소개는 중앙의 읽기 폭을 유지하고 예제 영역은 max-width 제한 없이 화면 폭을 사용한다. 좌우 최소 여백과 열 수는 모바일부터 반응형으로 조절한다. 하단의 은은한 배경색 페이드는 장식이며 포인터·키보드 조작과 텍스트 읽기를 막지 않는다. 페이드 아래 interactive 콘텐츠를 잘라내지 않는다. 장식 gradient/glow와 과도한 상하 여백을 줄이고 기존 border·surface·타이포그래피 역할을 사용한다. 자동 반복 장식은 추가하지 않으며 기존 reduced-motion 정책을 유지한다.
 
 고정 시각 근거: [참고 홈 화면](./artifacts/shadcn-home-reference.png). 구체적인 예제 구성·파일 변경·검증은 승인 후 Plan에서 정한다.
 

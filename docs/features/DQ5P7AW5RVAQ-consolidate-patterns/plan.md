@@ -43,6 +43,15 @@
 
 전체 검증 후 unreleasedChanges에 분류 이전과 간결한 랜딩 두 항목을 기록한다. 공개 버전 0.2.1과 releases 배열은 유지한다. Spec Acceptance·Tasks의 Checklist와 Decisions를 실제 결과에 맞춘다. 필요한 스크린샷과 요약 근거는 활성 Feature artifacts에 보관하고 일시적 대량 로그·브라우저 스크립트는 임시 디렉터리를 사용한다.
 
+### T04: 전체 폭과 하단 페이드 후속 조정
+
+사용자가 구현 결과에 요청한 구체적 시각 조정을 같은 Feature의 새 task로 수행한다. 앞선 완료 task는 다시 열지 않는다.
+
+1. 홈의 max-w-6xl을 제거한다. 헤드라인은 중앙 읽기 폭을 유지하고 예제는 화면 전체 폭을 사용하되 16/24/32px의 responsive inset을 유지한다. 예제 카드가 넓은 화면에서도 읽기 어려울 정도로 늘어나지 않도록 필요한 열 배치를 조정한다.
+2. 예제 그리드 하단을 테마 배경색으로 은은하게 연결한다. 장식은 aria-hidden 및 pointer-events:none으로 처리하고 폼·달력·설정과 focus를 가리지 않는다. clipping이나 fixed height로 실제 조작 영역을 숨기지 않는다.
+3. 375/768/1440px와 1920px에서 light/dark의 폭·페이드·overflow와 기존 CTA/상호작용/키보드 focus를 확인한다. 변경 파일 ESLint/typecheck와 production build를 실행한다. 신규 영구 테스트는 추가하지 않는다. 카탈로그·registry·API에는 변경이 없어 이미 통과한 706개 회귀 검사를 반복할 이유가 없다.
+4. PRD/디자인 시스템의 현재 랜딩 설명과 기존 미게시 랜딩 항목만 동기화하고 화면 근거를 보존한다. Spec의 추가 시각 기준은 이 사용자의 직접 수정 요청으로 승인된 범위로 기록한다.
+
 ## 파일 구조와 변경 범위
 
 - apps/docs/lib/docs.ts, items.ts: 분류·표시 이름·링크
@@ -52,7 +61,7 @@
 - apps/docs/app/foundations/[slug]/page.tsx, getting-started/page.tsx, adoption/page.tsx, layout.tsx: 현재 소개와 metadata
 - apps/docs/components/docs-search.tsx: 태블릿 header의 검색 버튼 폭을 줄여 탐색 겹침 방지
 - apps/docs/app/page.tsx 및 필요할 때 apps/docs/components/home-examples.tsx: 홈 구조·로컬 대표 예제
-- apps/docs/app/globals.css: 미사용 home-preview-glow 제거
+- apps/docs/app/globals.css: 미사용 home-preview-glow 제거 및 홈 전용 하단 배경 페이드
 - apps/docs/lib/releases.ts: 미게시 변경 2개
 - docs/prd/leement-prd.md, docs/designs/design-system.md: 현재 요구·디자인 설명
 - registry/patterns, registry/ui, registry/blocks, registry.json, packages/tokens, packages/theme: 변경 없음
