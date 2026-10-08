@@ -155,7 +155,7 @@ export const additionalExamples: Partial<
       id: "native",
       title: "Native composition and empty results",
       description:
-        "Table parts preserve HTML semantics. Use the Data Table pattern when sorting, filtering and selection must work together.",
+        "Table parts preserve HTML semantics. Use the Data Table component when sorting, filtering and selection must work together.",
       file: "table-native",
     },
   ],

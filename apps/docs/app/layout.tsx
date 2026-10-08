@@ -13,7 +13,7 @@ import { ThemeToggle } from "../components/theme-toggle";
 
 export const metadata: Metadata = {
   title: { default: "Leement", template: "%s · Leement" },
-  description: "Design rules, tokens, components, patterns, and blocks for products.",
+  description: "Design rules, tokens, components, and blocks for products.",
   icons: { icon: { url: "/leement-mark.svg", type: "image/svg+xml" } },
 };
 

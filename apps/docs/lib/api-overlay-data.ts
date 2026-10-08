@@ -14052,7 +14052,7 @@ export const overlayDataApiReferences: Record<string, ApiReference> = {
       }
     ],
     "notes": [
-      "This convenience pattern retains the single/range controlled APIs and disabled/bounded date behavior. For multiple/time/custom-calendar use cases compose Calendar with Popover as shown in the Base examples.",
+      "This component retains the single/range controlled APIs and disabled/bounded date behavior. For multiple/time/custom-calendar use cases compose Calendar with Popover as shown in the Base examples.",
       "The popover closes after one date or a completed range and restores focus. The consumer owns date formatting and timezone choices for custom compositions."
     ]
   },
@@ -14192,7 +14192,7 @@ export const overlayDataApiReferences: Record<string, ApiReference> = {
     ],
     "notes": [
       "AdvancedDataTable provides TanStack v8 sorting/filtering/pagination/selection/column visibility with native Table semantics. Use stable getRowId and caption.",
-      "The Base reference is a recipe, not an npm component API. Its independent ColumnDef/useReactTable compositions remain available in Examples/Usage; the generic pattern is optional. Server data, virtualization and mutations remain application code.",
+      "The Base reference is a recipe, not an npm component API. Its independent ColumnDef/useReactTable compositions remain available in Examples/Usage; the generic component is optional. Server data, virtualization and mutations remain application code.",
       "The full baseline examples and step-by-step guide use direct TanStack Table v8 + Table composition. AdvancedDataTable is optional. Column header/pagination/view options are provided as source in this registry item."
     ]
   }

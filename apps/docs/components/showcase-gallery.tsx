@@ -11,14 +11,13 @@ import { registryCommand } from "../lib/docs";
 import { items } from "../lib/items";
 
 type ItemName = keyof typeof items;
-type Category = "All" | "Component" | "Pattern" | "Block";
+type Category = "All" | "Component" | "Block";
 const names = Object.keys(items) as ItemName[];
-const categories: Category[] = ["All", "Component", "Pattern", "Block"];
+const categories: Category[] = ["All", "Component", "Block"];
 
 const sections = [
-  { type: "Component", title: "Components", id: "components", description: "The small, dependable pieces of an interface." },
-  { type: "Pattern", title: "Patterns", id: "patterns", description: "Product structures assembled from those pieces." },
-  { type: "Block", title: "Blocks", id: "blocks", description: "Larger compositions ready to shape a screen." },
+  { type: "Component", title: "Components", id: "components", description: "Reusable UI functions, from simple controls to composed interactions." },
+  { type: "Block", title: "Blocks", id: "blocks", description: "Page sections and layouts assembled from components." },
 ] as const;
 
 function displayName(name: string) {
@@ -42,7 +41,7 @@ export function ShowcaseGallery({ replayableNames }: { replayableNames: string[]
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="w-full lg:max-w-sm">
           <label htmlFor="item-search" className="mb-2 block text-sm font-medium">Find an item</label>
-          <SearchField id="item-search" aria-label="Search components, patterns, and blocks" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search components and patterns..." />
+          <SearchField id="item-search" aria-label="Search components and blocks" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search components and blocks..." />
         </div>
         <div role="group" aria-label="Filter by type" className="flex flex-wrap gap-1.5">
           {categories.map((option) => <button ref={styleMotionRef1} key={option} type="button" aria-pressed={category === option} onClick={() => setCategory(option)} className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-pressed:bg-primary aria-pressed:text-primary-foreground">

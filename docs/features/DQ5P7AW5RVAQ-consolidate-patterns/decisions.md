@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:5bb66dc80ae302b2da663e9192bb83ff6e1ff6e9749c97b44b41cab1a8fe0f2a -->
+<!-- lee-spec-kit:workflow-sync sha256:80c00639b51d3725ff986f4f7c0d35abceaec01fcef1d10be9f00028506131b4 -->
 
 ## D001: 역할에 따른 공개 분류 통합 (2026-10-08)
 
@@ -59,3 +59,12 @@
   - **Commit**: 기존 분류 Spec 기록 `3a8226a`.
   - **Reference**: [shadcn/ui 홈](https://ui.shadcn.com/), [확인한 참고 화면](./artifacts/shadcn-home-reference.png).
   - **Source**: [현재 랜딩](../../../apps/docs/app/page.tsx), [홈 CSS](../../../apps/docs/app/globals.css), [디자인 시스템](../../designs/design-system.md).
+
+- **D004 승인 후 진행**: 2026-10-08 사용자 A로 랜딩을 포함한 확장 Spec을 승인받았다. 이 승인에 따라 Plan과 Verification Contract를 작성한다.
+
+## D005: 분류 이전 구현과 검증 (2026-10-08)
+
+- T01에서 navigation·items·static detail 목록·검색/Showcase·현재 문서 링크를 새 분류로 일치시켰다. 이전 route는 기존 15개 whitelist와 permanentRedirect를 사용한다. 개발 서버에서 전부 308 및 올바른 Location을 확인했고 알 수 없는 이전/새 slug는 404였다.
+- Source target·dependency·API와 theme/token은 기준 revision 대비 동일하다. registry-source/reference-coverage 9 tests와 변경 파일 ESLint가 통과했다. production/browser 검증은 T03에 남겨 둔다.
+- 공용 문서 경고에 나오는 이전 Feature들의 변경은 현재 main 기준에 이미 포함되어 있음을 확인했다. PRD·design의 기존 요구를 보존하고 현재 분류 설명만 갱신했다. README 보류는 D003을 따른다.
+- Plan/task/Feature agent review는 저장소 설정에서 disabled이며 Plan 승인은 workflow nextAction의 자동 승격으로 처리했다.

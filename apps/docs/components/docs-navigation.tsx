@@ -13,9 +13,7 @@ export function DocsNavigation({ label }: { label: string }) {
   const navRef = useRef<HTMLElement>(null);
   const activeGroup = pathname.startsWith("/components/")
     ? "Components"
-    : pathname.startsWith("/patterns/")
-      ? "Patterns"
-      : pathname.startsWith("/blocks/")
+    : pathname.startsWith("/blocks/")
         ? "Blocks"
         : pathname.startsWith("/charts")
           ? "Charts"

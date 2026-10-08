@@ -38,7 +38,7 @@ CopySinger의 gradient text·음성 파형·오디오 로딩은 violet/blue/pink
 
 ### 브랜드 로고 조합
 
-BrandLogo pattern은 앱이 제공한 mark와 name을 아이콘+워드마크로 조합한다. full은 장식 mark와 visible name, icon은 제품 이름을 가진 image 역할이다. 라우팅은 외부 anchor/Link가 담당하고 focus-visible을 유지한다. sm/md/lg는 32/40/48px mark와 18/20/24px 글자, 8/10/12px 간격을 사용한다. 워드마크는 font-brand와 700 굵기, -0.03em tracking을 기본으로 하고 본문 family와 독립적이다. 두 앱에서 반복된 조합이므로 초기 maturity는 candidate다. Leement 자체 SVG의 보라·파랑은 브랜드 자산이며 소비자 로고나 범용 UI의 필수 색이 아니다. docs 헤더와 예제는 registry pattern을 그대로 사용하고 favicon은 같은 SVG 자산을 읽는다.
+BrandLogo 컴포넌트은 앱이 제공한 mark와 name을 아이콘+워드마크로 조합한다. full은 장식 mark와 visible name, icon은 제품 이름을 가진 image 역할이다. 라우팅은 외부 anchor/Link가 담당하고 focus-visible을 유지한다. sm/md/lg는 32/40/48px mark와 18/20/24px 글자, 8/10/12px 간격을 사용한다. 워드마크는 font-brand와 700 굵기, -0.03em tracking을 기본으로 하고 본문 family와 독립적이다. 두 앱에서 반복된 조합이므로 초기 maturity는 candidate다. Leement 자체 SVG의 보라·파랑은 브랜드 자산이며 소비자 로고나 범용 UI의 필수 색이 아니다. docs 헤더와 예제는 registry 컴포넌트를 그대로 사용하고 favicon은 같은 SVG 자산을 읽는다.
 
 ## 컴포넌트와 상태
 
@@ -66,7 +66,7 @@ Announcement는 짧은 제품 소식과 링크, Banner는 설명과 주요 actio
 
 Pill은 짧은 상태 신호와 사용자가 제거할 수 있는 값에 쓴다. neutral/success/warning/danger는 의미 텍스트와 함께 쓰고, 선택적인 앞·뒤 cue는 라벨을 대체하지 않는다. 지속적인 객체 상태는 Status, 잠시 진행 중인 일은 Spinner로 표현한다. 각각 Badge, StatusNotice, Progress와 쓰임을 섞지 않는다. QRCode는 실제 SVG 행렬과 같은 값을 복사할 수 있는 제어를 제공하며 짧은 비밀값을 노출하지 않는다. Rating은 radio 의미와 방향키 선택을 유지한다. RelativeTime은 상대 문구와 절대 시각을 함께 제공하고 필요할 때 분 단위로 갱신한다. ThemeSwitcher는 `data-lm-theme`의 light/dark 두 모드만 전환하며 앱이 이미 모드를 관리하면 controlled prop으로 연결한다. Tree는 계층·확장·선택 상태를 보조기술에 전달하고 방향키/Home/End로 이동한다.
 
-EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담고, 실제 클릭 결과는 앱이 연결한다. PageHeader는 페이지 제목, 설명, 한두 개의 action을 결합하며 작은 화면에서 action을 감싼다. FormSection과 SettingsSection은 서로 관련된 여러 필드와 각 필드 라벨을 보여야 한다. SearchField는 인접한 결과 목록·결과 수와 연결하고, FilterToolbar는 검색·선택 필터·정렬과 결과 수를 함께 보여 준다. ProductPageIntro의 eyebrow는 일반 표면에서 `brand.text`를 사용한다. BentoGrid는 실제 제품 정보를 담는 article을 배치하고 제목을 읽을 수 있는 크기로 유지한다. Pattern은 반복되는 제품 문제일 때만 승격한다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
+EmptyState는 제목, 이유, 실행 가능한 다음 단계를 담고, 실제 클릭 결과는 앱이 연결한다. PageHeader는 페이지 제목, 설명, 한두 개의 action을 결합하며 작은 화면에서 action을 감싼다. FormSection과 SettingsSection은 서로 관련된 여러 필드와 각 필드 라벨을 보여야 한다. SearchField는 인접한 결과 목록·결과 수와 연결하고, FilterToolbar는 검색·선택 필터·정렬과 결과 수를 함께 보여 준다. ProductPageIntro의 eyebrow는 일반 표면에서 `brand.text`를 사용한다. BentoGrid는 실제 제품 정보를 담는 article을 배치하고 제목을 읽을 수 있는 크기로 유지한다. Components는 하나의 재사용 가능한 UI 기능, Blocks는 화면 구역과 페이지 배치로 구분한다. 내부 조합이나 의존성 수는 별도 분류의 근거가 아니다. Block은 registry dependency를 통해 구성품을 함께 설치한다.
 
 ## 접근성과 반응형
 
@@ -78,7 +78,7 @@ Color 편집기의 스와치는 클릭하거나 키보드로 열 수 있는 Leem
 
 Foundations의 Color, Typography, Spacing, Radius, Shadow, Motion에는 실제 registry 컴포넌트와 같은 CSS 변수를 읽는 실시간 편집기를 둔다. 편집값은 방문자 브라우저의 임시 미리보기이며 사이트 전체에 적용되고 페이지 이동·새로고침 후에도 유지된다. `packages/tokens/src/tokens.json`은 기본값의 정본으로 남고 primitive/semantic 참조 표는 항상 그 기본값임을 표시한다. Typography는 Body font, Brand font, Mono font를 별도로 선택하거나 안전한 CSS family 목록으로 입력하며 실제 BrandLogo, 본문, 한국어/영문 코드 예제와 사이트 코드에 각각 반영한다. 기본 Pretendard/Paperlogy/D2Coding 파일은 theme이 로드하고 커스텀 파일은 앱이 로드한다. 이름 입력만으로 파일을 다운로드하지 않는다. Color는 light/dark를 별도로, 나머지 값은 공통으로 편집한다. 문서의 모드 스위치와 편집기는 같은 모드를 보여 준다. 전체 초기화는 브라우저 override를 지우고 기본값으로 돌아간다. CSS 복사는 기본값과 다른 `--lm-*`만 내보내며 필요한 Tailwind/shadcn 호환 변수는 Leement 변수에서 파생한다. 앱에서는 `@leement/theme` import 뒤에 복사한 CSS를 둔다. 저대비 색상 조합은 경고하고 `prefers-reduced-motion`은 편집한 모션 시간보다 우선한다. 문서의 편집값은 npm 패키지나 registry source를 바꾸지 않는다.
 
-홈은 큰 제목, 짧은 설명, 주요 탐색 동작과 실제 registry 컴포넌트로 만든 화면 예제를 먼저 보여 준다. 상단은 Docs, Components, Blocks, Charts, Patterns의 큰 범주를 보여 준다. 좌측은 현재 범주의 항목을 작은 사용 분야별로 묶고 현재 항목이 보이도록 스크롤한다. Components·Blocks·Patterns는 각 기존 분류 안에서 표시 이름 기준 A–Z 순서를 사용하며 같은 navigation을 사용하는 모바일 메뉴에도 적용한다. Components의 Animations는 시각 효과 자체가 목적인 Brand Gradient Text, Text Reveal, Rotating Content, Reveal Content, Marquee를 포함한다. Spinner/Skeleton/Status는 Feedback, Media Reveal/Brand Action은 기존 product pattern 분류를 유지한다. Motion 사용 여부만으로 기능 UI를 Animations에 넣지 않는다. 이 분류는 문서 탐색 규칙이며 registry 레이어·URL·설치 명령은 유지한다. 검색 결과도 같은 section 이름을 사용한다. 상세 문서는 제목과 소개 다음에 조작 가능한 Preview·Code·Source를 먼저 제시하고, Installation, Usage, Examples, API Reference를 이어서 표시한다. When to use/When not to use/Anatomy/Variants/Sizes/States/Accessibility/Motion의 반복 문단은 제거하며 고유 제약은 Usage·예제·API note에 남긴다. 넓은 화면에서는 우측 목차가 본문 위치로 이동하고, 모바일에서는 같은 범주에 접근 가능한 접이식 메뉴를 쓴다. 검색은 키보드로 열고 닫을 수 있어야 한다. Kibo 비교 기록은 Feature artifact에 보존하며 사용자 탐색에 중복 coverage 메뉴를 추가하지 않는다. 화면은 Leement 이름·토큰·실제 registry source를 사용한다.
+홈은 큰 제목, 짧은 설명, 주요 탐색 동작과 실제 registry 컴포넌트로 만든 화면 예제를 먼저 보여 준다. 상단은 Docs, Components, Blocks, Charts의 큰 범주를 보여 준다. 좌측은 현재 범주의 항목을 작은 사용 분야별로 묶고 현재 항목이 보이도록 스크롤한다. Components·Blocks는 각 기존 분류 안에서 표시 이름 기준 A–Z 순서를 사용하며 같은 navigation을 사용하는 모바일 메뉴에도 적용한다. Components의 Animations는 시각 효과 자체가 목적인 Brand Gradient Text, Text Reveal, Rotating Content, Reveal Content, Marquee를 포함한다. Spinner/Skeleton/Status/Empty State/State Panel은 Feedback, Media Reveal/Brand Action은 Animations에 둔다. Motion 사용 여부만으로 기능 UI를 Animations에 넣지 않는다. 이 분류는 문서 탐색 규칙이며 registry 레이어·설치 명령·target은 유지하고 기존 Patterns 상세 URL은 대응하는 새 문서로 영구 이전한다. 검색 결과도 같은 section 이름을 사용한다. 상세 문서는 제목과 소개 다음에 조작 가능한 Preview·Code·Source를 먼저 제시하고, Installation, Usage, Examples, API Reference를 이어서 표시한다. When to use/When not to use/Anatomy/Variants/Sizes/States/Accessibility/Motion의 반복 문단은 제거하며 고유 제약은 Usage·예제·API note에 남긴다. 넓은 화면에서는 우측 목차가 본문 위치로 이동하고, 모바일에서는 같은 범주에 접근 가능한 접이식 메뉴를 쓴다. 검색은 키보드로 열고 닫을 수 있어야 한다. Kibo 비교 기록은 Feature artifact에 보존하며 사용자 탐색에 중복 coverage 메뉴를 추가하지 않는다. 화면은 Leement 이름·토큰·실제 registry source를 사용한다.
 
 문서 카탈로그 항목은 `bg-muted`의 낮은 강조 표면과 20/24px 여백으로 구분하고 바깥 border·shadow·footer 구분선을 중첩하지 않는다. 실제 예제는 `bg-background` 프리뷰 표면에 표시하며 컴포넌트 자체 border는 유지한다. PreviewFrame의 기본 inset은 상세 20/40px, gallery 16/24px이다. 가로·세로 점선과 콘텐츠 padding은 동일한 inset을 읽으며 콘텐츠가 커지면 아래 선과 프레임 높이도 함께 늘어난다. 장식선은 pointer-events를 받지 않는다. 넓은 표·타임라인·편집기는 자기 영역에서 스크롤하고 포털·focus ring을 표시 장식 때문에 자르지 않는다. 문서 바깥 inset은 RootLayout이 소유하고 페이지는 중복 main/padding을 추가하지 않는다. 본문 최대 폭·우측 목차·홈의 넓은 배치는 의도에 맞게 유지한다.
 
@@ -115,7 +115,7 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 ### 표의 조합과 데이터 상태
 
 - UI Table은 native table/caption/thead/tbody/tfoot/tr/th/td parts를 제공한다. caption과 header scope를 유지한다. 기존 DataTable(data/columns/rowId/caption)의 작은 정렬 API는 유지한다.
-- AdvancedDataTable pattern은 TanStack Table v8의 ColumnDef/getRowId와 client-side row model을 사용한다. 정렬·지정 열 필터·페이지·페이지 단위 선택·열 표시를 조합하고 필터 변경 시 첫 페이지로 돌아간다. 안정적인 row ID를 필수로 제공한다.
+- AdvancedDataTable 컴포넌트은 TanStack Table v8의 ColumnDef/getRowId와 client-side row model을 사용한다. 정렬·지정 열 필터·페이지·페이지 단위 선택·열 표시를 조합하고 필터 변경 시 첫 페이지로 돌아간다. 안정적인 row ID를 필수로 제공한다.
 - rowSelection/onRowSelectionChange는 controlled 사용을 지원한다. 필터에 포함되지 않는 선택 행도 유지하며 상태 문구는 필터된 행의 선택 수를 표시한다. 숨기기 메뉴는 마지막 열까지 숨겨 의미 없는 표가 되지 않도록 제한한다.
 - toolbar와 footer는 좁은 폭에서 줄바꿈하고 표만 가로 스크롤한다. 서버 조회·virtualization·전체 spreadsheet 동작은 포함하지 않으며 설치된 source에서 확장한다.
 
@@ -132,7 +132,7 @@ Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/L
 
 - StatusNotice는 짧은 Alert, EmptyState는 Empty 문제에 대응한다. 이름만 다른 source alias를 추가하지 않는다.
 - Field는 입력 하나의 label/help/error를 연결하고 FormSection은 여러 필드의 제품 섹션을 구성한다. Sheet는 측면 Dialog이며 swipe/snap-point Drawer 전체 동작을 보장하지 않는다.
-- 공개 탐색은 Components95/Patterns15/Blocks36과 Charts70이다. 고정 shadcn Base 64개 중 NativeSelect를 제외한 63개 문서의 Preview456건/고유453 source 및 필요한 inline 설정·조합 안내를 제공한다. Alert→StatusNotice, Empty→EmptyState 등 이름이 다른 대응은 실제 composition으로 검증한다. Kibo 공개 Applications3/Websites25를 기존8개 Blocks에 추가하며 Chart recipe는 registry:block이지만 Charts에서 별도로 탐색한다. 기준은 고정 shadcn/Kibo upstream revision과 그 공개 문서·예제이며 제외 없는 upstream 전체 100% 호환으로 표시하지 않는다.
+- 공개 탐색은 Components105/Blocks41과 Charts70이다. 고정 shadcn Base 64개 중 NativeSelect를 제외한 63개 문서의 Preview456건/고유453 source 및 필요한 inline 설정·조합 안내를 제공한다. Alert→StatusNotice, Empty→EmptyState 등 이름이 다른 대응은 실제 composition으로 검증한다. Kibo 공개 Applications3/Websites25를 기존8개 Blocks에 추가하며 Chart recipe는 registry:block이지만 Charts에서 별도로 탐색한다. 기준은 고정 shadcn/Kibo upstream revision과 그 공개 문서·예제이며 제외 없는 upstream 전체 100% 호환으로 표시하지 않는다.
 
 ## 문서 예제 규칙
 

@@ -48,7 +48,7 @@ export default function Example() {
         emptyMessage="No members match this search"
       />
       <a
-        href="/patterns/data-table"
+        href="/components/data-table"
         className="text-sm underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-ring"
       >
         Advanced Data Table examples

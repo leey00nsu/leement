@@ -25,12 +25,6 @@ const tabs = [
     count: count("Blocks"),
   },
   { label: "Charts", href: "/charts", prefix: "/charts", count: chartRecipes.length },
-  {
-    label: "Patterns",
-    href: "/patterns/page-header",
-    prefix: "/patterns/",
-    count: count("Patterns"),
-  },
 ];
 
 export function DocsTopNavigation() {
@@ -42,7 +36,7 @@ export function DocsTopNavigation() {
       {tabs.map((tab) => {
         const active =
           tab.prefix === "docs"
-            ? !["/components/", "/blocks/", "/patterns/", "/charts"].some(
+            ? !["/components/", "/blocks/", "/charts"].some(
                 (prefix) => pathname.startsWith(prefix),
               )
             : pathname.startsWith(tab.prefix);
@@ -72,7 +66,7 @@ export function DocsMobileNavigation() {
   const pathname = usePathname();
   return <nav aria-label="Mobile sections" className="mb-5 grid grid-cols-2 gap-2 text-sm">
     {tabs.map(tab => {
-      const active = tab.prefix === "docs" ? !["/components/", "/blocks/", "/patterns/", "/charts"].some(prefix => pathname.startsWith(prefix)) : pathname.startsWith(tab.prefix);
+      const active = tab.prefix === "docs" ? !["/components/", "/blocks/", "/charts"].some(prefix => pathname.startsWith(prefix)) : pathname.startsWith(tab.prefix);
       return <Link key={tab.label} href={tab.href} aria-current={active ? "page" : undefined} className="rounded-lg border border-border p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-brand-accent/10 aria-[current=page]:text-[var(--lm-color-brand-text)]">{tab.label}</Link>;
     })}
   </nav>;

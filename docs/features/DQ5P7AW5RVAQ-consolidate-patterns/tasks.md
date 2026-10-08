@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: Spec Review — Patterns 통합 및 추가 랜딩 범위
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/DQ5P7AW5RVAQ-consolidate-patterns`
 - **대기 중 변경 요청**: -
@@ -75,14 +75,14 @@
 
 ---
 
-- [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-01 공개 카탈로그 분류와 문서 주소 이전
+- [DONE][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-01 공개 카탈로그 분류와 문서 주소 이전
   - Date: 2026-10-08
   - Acceptance:
     - 기존 Patterns 15개가 승인된 Components 10개·Blocks 5개로 중복 없이 이전되고 기존 15개 주소가 새 주소로 영구 리다이렉트된다.
   - Checklist:
-    - [ ] 상세 route·navigation·상단/모바일 탐색·items metadata·Showcase·검색을 새 분류에 맞춘다.
-    - [ ] registry source·설치 이름·dependencies·target·소비자 import 경로를 유지한다.
-    - [ ] 105 Components·41 Blocks·70 Charts와 기능 구역별 A–Z 순서 및 알 수 없는 slug의 404를 확인한다.
+    - [x] 상세 route·navigation·상단/모바일 탐색·items metadata·Showcase·검색을 새 분류에 맞춘다.
+    - [x] registry source·설치 이름·dependencies·target·소비자 import 경로를 유지한다.
+    - [x] 105 Components·41 Blocks·70 Charts와 기능 구역별 A–Z 순서 및 알 수 없는 slug의 404를 확인한다.
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -91,6 +91,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: 개발 서버에서 이전 15개 주소의 308/목적지와 unknown slug 404 확인. Components105/Blocks41의 중복·타입·기능 구역별 A–Z 및 Charts70 보존 확인. 기존 registry-source/reference-coverage 9 tests 통과, 변경 파일 ESLint 통과. registry·packages diff 없음. production/browser 통합 확인은 T03에서 실행한다.
 
 - [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-02 shadcn 홈의 간결한 흐름을 참고한 Leement 랜딩 정리
   - Date: 2026-10-08

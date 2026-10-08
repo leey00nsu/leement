@@ -172,7 +172,7 @@ export const usageGuides: Record<string, UsageSection[]> = {
         {
           kind: "text",
           value:
-            "This guide adapts the pinned upstream v9 recipe to the v8 version used by Leement. The runtime example is the full Table composition. AdvancedDataTable is an optional convenience pattern. DataTableColumnHeader, DataTablePagination and DataTableViewOptions are editable parts of @leement/data-table."
+            "This guide adapts the pinned upstream v9 recipe to the v8 version used by Leement. The runtime example is the full Table composition. AdvancedDataTable is an optional convenience component. DataTableColumnHeader, DataTablePagination and DataTableViewOptions are editable parts of @leement/data-table."
         }
       ]
     },
@@ -731,7 +731,7 @@ export const usageGuides: Record<string, UsageSection[]> = {
         {
           kind: "text",
           value:
-            "For sorting, filtering, selection and pagination, compose Table with TanStack Table. See the [Data Table recipe](/patterns/data-table); the app owns fetching and mutations."
+            "For sorting, filtering, selection and pagination, compose Table with TanStack Table. See the [Data Table recipe](/components/data-table); the app owns fetching and mutations."
         }
       ]
     }
