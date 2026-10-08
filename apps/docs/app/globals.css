@@ -48,6 +48,9 @@ body:has(#leement-home) .docs-shell { display: block; }
 body:has(#leement-home) .docs-sidebar { display: none; }
 body:has(#leement-home) .docs-shell > main { padding: 0; }
 body:has(#leement-home) .docs-shell > main > div { max-width: none; }
+.home-examples {
+  background-image: linear-gradient(to bottom, var(--lm-color-background-default), transparent 160px);
+}
 .home-examples-fade {
   background: linear-gradient(to bottom, transparent, var(--lm-color-background-default) 95%);
 }

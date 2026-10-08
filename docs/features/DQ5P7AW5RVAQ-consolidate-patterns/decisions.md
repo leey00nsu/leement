@@ -104,9 +104,11 @@
 - **T05 결과**: 실제 registry UI를 사용하는18 cards를5열(넓은 화면)/2열(태블릿)/1열(모바일)로 배치했다. controls·작은 탐색·목표·활동 chart·현황·프로젝트/계정 폼·slider/설정·QR·chat·resource rows·empty state·analytics·notifications·사용량으로 높이를 달리해 쌓았다. 큰 제목을 줄여1440px 이상 한 줄로 표시하고 하단 상태 배너를 제거했다.
 - **T05 검증**: production8개 조합 모두18 cards/열 수/overflow/360px 전체 콘텐츠 fade와 focus reveal, local state 및 console 검사 통과. 내부10개 링크200. typecheck/lint/build 통과. 화면을 첨부와 직접 비교하고 [화면 근거](./tasks.md#보존한-화면-근거)를 교체했다. 기본 상태 캡처에 페이드가 보이며 keyboard focus로 접근하면 장식이 제거된다. 실제registry/API와 catalog는 변경하지 않아706회귀 검사는 T03의 결과를 유지한다.
 
-<!-- lee-spec-kit:workflow-sync sha256:e2afe67a7d82ed0777546af8d6f9656fca52b0c92c045057ce72a96335ab118e -->
+<!-- lee-spec-kit:workflow-sync sha256:ac3a93f841f82fb1fd86df14d552af7de21c04ddfe793bf96cb365c46f185534 -->
 
 ## D010: 소개와 카드 배경 사이의 경계 수정 (2026-10-08)
 
 - 사용자 화면의 가로 경계는 소개의 기본 배경과 카드 영역 bg-muted가 즉시 바뀌어 생긴다. 원인을 설명한 뒤 사용자가 직접 수정을 요청했다. 구현 승인으로 해석하지 않고 새 T06으로 수정한다.
 - 카드 영역의 배경 자체에 상단160px gradient를 적용해 기본 배경에서 중립 표면으로 이어지게 한다. 별도 overlay나 카드 위치 변경 없이 light/dark에 같은 semantic 변수를 적용한다. 하단 콘텐츠 fade와 focus reveal은 그대로 유지한다.
+
+- **T06 결과/검증**: section 배경의 상단160px을 기본 배경에서 transparent로 전환해 bg-muted와 섞이게 했다. 라이트/다크 실제1440 캡처에서 가로 색상 경계가 사라진 것을 확인했다. production8개 viewport/theme 조합에서 gradient·overflow·기존 하단 fade/focus 및 로컬 예제 모두 통과했고 내부10개 목적지는200이었다. lint/typecheck/build 통과. [업데이트된 실제 화면](./tasks.md#보존한-화면-근거)을 보존했다.
