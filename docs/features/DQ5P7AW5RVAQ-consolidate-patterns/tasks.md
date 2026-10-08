@@ -114,16 +114,16 @@
 
   - Verification: 개발 서버 375/768/1440px × light/dark 6조합에서 CTA URL, 가로 overflow 없음, 프로젝트 폼·날짜·설정 상태, Tab/focus-visible, reduced-motion을 확인했다. 태블릿 header 겹침을 발견해 검색 텍스트를 lg 이상에서만 표시하고 menu/search 경계도 확인했다. 변경 파일 ESLint 및 전체 typecheck 통과. registry·token/theme API 변경 없음. production 화면 확인은 T03에서 반복한다.
 
-- [TODO][PRD-FR-015] T-DQ5P7AW5RVAQ-consolidate-patterns-03 주소·설치·UI 통합 검증과 미게시 변경 기록
+- [DONE][PRD-FR-015] T-DQ5P7AW5RVAQ-consolidate-patterns-03 주소·설치·UI 통합 검증과 미게시 변경 기록
   - Date: 2026-10-08
   - Acceptance:
     - 이전 주소 15개와 새 상세 페이지·Preview·설치 경로가 검증되고 랜딩 및 탐색 검증과 설정된 전체 검사가 통과한다.
   - Checklist:
-    - [ ] 15개 새 주소와 이전 주소의 목적지 및 대표 anchor를 확인하고 잘못된 slug의 404를 검증한다.
-    - [ ] desktop/mobile의 탐색·검색·Showcase에서 새 분류 및 선택 상태를 확인한다.
-    - [ ] registry의 설치 이름·source·target·dependencies가 기준 revision과 일치하는지 확인한다.
-    - [ ] 기존 releases와 공개 0.2.1을 보존하면서 unreleasedChanges에 두 변경을 기록한다.
-    - [ ] 설정된 typecheck·lint·test·build를 실행하고 Spec Acceptance·Tasks·Decisions를 실제 근거와 동기화한다.
+    - [x] 15개 새 주소와 이전 주소의 목적지 및 대표 anchor를 확인하고 잘못된 slug의 404를 검증한다.
+    - [x] desktop/mobile의 탐색·검색·Showcase에서 새 분류 및 선택 상태를 확인한다.
+    - [x] registry의 설치 이름·source·target·dependencies가 기준 revision과 일치하는지 확인한다.
+    - [x] 기존 releases와 공개 0.2.1을 보존하면서 unreleasedChanges에 두 변경을 기록한다.
+    - [x] 설정된 typecheck·lint·test·build를 실행하고 Spec Acceptance·Tasks·Decisions를 실제 근거와 동기화한다.
   - Docs:
     - project:apps/docs/lib/releases.ts
   - Review Evidence: -
@@ -131,6 +131,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: production HTTP 15개 old/new 상세·Preview·registry 확인(308/Location/200/동일 target/JSON) 및 unknown 3경로 404. 15개 상세에서 실제 Preview render·현재 항목·Code와 clipboard import 확인. Date Picker/Page Header의 이전 #api-reference anchor, 검색 15개 새 링크, Showcase105/41/146·15개 분류/링크·empty state, 모바일 선택과 네 범주 확인. 홈 6조합 CTA·폼/날짜/설정·focus·header·overflow·console error 없음 확인. 전체 typecheck/lint/test/build 통과.
 
 ## Repository Knowledge (완료 비차단)
 
@@ -144,8 +146,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -155,6 +157,19 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm run typecheck` | 2026-10-08 | PASS (5 tasks) |
+| `pnpm run lint` | 2026-10-08 | PASS (workspace + registry) |
+| `pnpm run test` | 2026-10-08 | PASS (32 files, 706 tests) |
+| `pnpm run build` | 2026-10-08 | PASS (production SSG/registry 포함) |
+| production HTTP 검증 | 2026-10-08 | PASS: old/new15, Preview15, registry15, unknown404×3 |
+| production 브라우저 검증 | 2026-10-08 | PASS: 15개 상세/Code/clipboard, anchor2, search15, Showcase, desktop/mobile |
+| 홈 responsive/접근성 검증 | 2026-10-08 | PASS: 375/768/1440 × light/dark, local state, focus, overflow, reduced motion |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+### 보존한 화면 근거
+
+- [1440 light](./artifacts/home-1440-light.png), [1440 dark](./artifacts/home-1440-dark.png)
+- [768 light](./artifacts/home-768-light.png), [768 dark](./artifacts/home-768-dark.png)
+- [375 light](./artifacts/home-375-light.png), [375 dark](./artifacts/home-375-dark.png)
+- 모든 화면은 production 서버에서 실제 예제를 조작한 후 캡처했다. 모바일 범주 탐색은 열린 상태, View components에는 키보드 focus가 보인다.

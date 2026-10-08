@@ -20,7 +20,10 @@ const patchChanges: ReleaseChange[] = [
   { title: "Package license files", details: "The theme and tokens npm packages include the MIT license text. The theme also retains the bundled font license and attribution files." },
 ];
 
-export const unreleasedChanges: ReleaseChange[] = [];
+export const unreleasedChanges: ReleaseChange[] = [
+  { title: "Components and blocks, by role", details: "Patterns is no longer a separate documentation category. Its 15 items now appear as 10 Components and 5 Blocks, bringing the catalog to 105 Components and 41 Blocks alongside 70 Charts. Existing /patterns detail links permanently redirect to their new pages. Registry names, installed source paths, dependencies and public APIs remain unchanged." },
+  { title: "A simpler landing page", details: "The home page introduces Leement with a short headline, Get started and View components links, and interactive examples made from the actual registry components. Project inputs, a calendar and update preferences respond locally. Repeated introductions, the extra installation section and glow decoration have been removed; mobile navigation and light/dark layouts remain available." },
+];
 
 const changes = [
   { title: "Motion standardization", details: "All Leement visual transitions use Motion: controls, popups, disclosure height, repeated decoration and docs previews. Theme CSS remains static and framework independent. Spin, pulse and marquee cycles are editable tokens. Tokens/theme and the source registry are published for 0.2.0." },

@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:778d27e9dc5c5ab17a027c68a89b5dafd449c263da951fe42d84cded9676374c -->
+<!-- lee-spec-kit:workflow-sync sha256:398c0f64784464453bf51418b0633b12f45e06bd1c5f71d6e2710e5a711075ea -->
 
 ## D001: 역할에 따른 공개 분류 통합 (2026-10-08)
 
@@ -11,7 +11,7 @@
 - **Rationale**: 소비자가 찾는 기능과 화면 구역을 기준으로 탐색한다. PageSkeleton은 헤더와 목록의 페이지 배치라 Blocks로, StatePanel은 상태 표시 기능이라 Components로 분류한다.
 - **Trace**:
   - 계획 시작: navigation·Showcase·상세 route·15개 source 및 registry 등록을 확인했다. 모든 Patterns의 registry 타입은 registry:component다.
-  - 현재: Spec Review. 구현·검증은 아직 실행하지 않았다.
+  - 현재: Components105/Blocks41로 이전 완료. Charts70과 기존146 항목을 보존했고 T03 production 검증이 통과했다.
 - **Evidence**:
   - **Commit**: [검토한 0.2.1 기준 revision](https://github.com/leey00nsu/leement/commit/4e40d20d167e717b8f86d32d86e7e252ef6648c7)
   - **Source**: [navigation](../../../apps/docs/lib/docs.ts), [registry](../../../registry.json), [PageSkeleton](../../../registry/patterns/page-skeleton.tsx), [StatePanel](../../../registry/patterns/state-panel.tsx)
@@ -25,7 +25,7 @@
 - **Rationale**: 이번 목적은 탐색과 분류 정리다. 폴더 이동과 wrapper 추가는 현재 요구에 필요하지 않고 사용자 source 관리 부담을 늘린다. import에 남는 patterns 경로는 독립 메뉴를 의미하지 않는다.
 - **Trace**:
   - 계획 시작: registry target과 설치·복사 import를 확인했다. 기존 target을 유지하면 기존 consumer와 신규 설치에서 동일 source를 사용할 수 있다.
-  - 현재: Spec Review. 주소와 설치 검증은 승인 후 Plan에서 구체화한다.
+  - 현재: 이전 15개 route의 308·새 상세·Preview·설치 JSON/target·clipboard import 및 대표 anchor를 production에서 확인했다.
 - **Evidence**:
   - **Commit**: [검토한 0.2.1 기준 revision](https://github.com/leey00nsu/leement/commit/4e40d20d167e717b8f86d32d86e7e252ef6648c7)
   - **Source**: [registry](../../../registry.json), [설치 문서](../../../apps/docs/app/getting-started/page.tsx)
@@ -38,7 +38,7 @@
 - **Trace**:
   - 확인 대상: docs/prd/leement-prd.md의 PRD-FR-005/012/015 및 현재 카탈로그 수, docs/designs/design-system.md의 공개 탐색·BrandLogo·Table/DatePicker 설명.
   - README.md의 기존 Patterns 카탈로그 표(113행), Design Language → Tokens → Theme → UI → Patterns → Blocks → Application 설명(121행), 소스 트리의 patterns 설명(147행)은 공개 분류 변경 후 설명 불일치가 된다. README 수정 요청이 없어 이번에 보류한다. 93행의 components/patterns import 경로는 설치 target을 유지하므로 여전히 유효하다.
-  - 현재: Spec Review. Curated Documentation Impact와 task Docs 연결은 승인 후 작성한다.
+  - 현재: 승인 Plan의 UPDATE 대상과 task Docs를 연결했고 PRD/design·미게시 변경 이력을 동기화했다. README와 과거 releases는 기준과 동일하다.
 - **Evidence**:
   - **Commit**: [검토한 0.2.1 기준 revision](https://github.com/leey00nsu/leement/commit/4e40d20d167e717b8f86d32d86e7e252ef6648c7)
   - **Documents**: [PRD](../../prd/leement-prd.md), [디자인 시스템](../../designs/design-system.md)
@@ -54,7 +54,7 @@
   - 2026-10-08: 공식 홈을 웹과 브라우저로 읽고 현재 화면을 확인했다. 헤드라인·설명·Get Started/View Components·실제 예제 영역의 순서를 확인했다.
   - apps/docs/app/page.tsx에서 대형 헤드라인·workspace preview·분류 소개 3개·추가 설치 섹션을, globals.css에서 홈 전용 glow와 사이드바 제외 규칙을 확인했다.
   - 기존 A는 Patterns 통합 범위의 승인으로 기록했다. 추가 랜딩 범위를 구체화한 Spec은 Review로 갱신하며 기존 승인을 임의로 새 시각 요구사항의 승인으로 확대하지 않는다.
-  - Spec에는 구조·실제 링크·반응형 기준과 제한을 기록했다. Plan·구현·검증은 아직 시작하지 않았다.
+  - Spec 확장 시점에는 구조·실제 링크·반응형 기준과 제한만 기록했다. 이후 확장 승인과 구현 결과는 아래 기록을 따른다.
 - **Evidence**:
   - **Commit**: 기존 분류 Spec 기록 `3a8226a`.
   - **Reference**: [shadcn/ui 홈](https://ui.shadcn.com/), [확인한 참고 화면](./artifacts/shadcn-home-reference.png).
@@ -75,3 +75,12 @@
 - 기존 home sidebar 제외를 유지한다. 모바일에서 기존 header 메뉴가 숨겨지므로 홈 내부의 접이식 범주 탐색으로 Docs/Components/Blocks/Charts 접근을 보존했다.
 - 768px 시각 확인에서 기존 header의 메뉴와 검색 텍스트 겹침을 발견했다. 검색 text/kbd/확장 폭만 lg 이상에 적용하여 태블릿에는 같은 버튼의 아이콘을 표시한다. 레이아웃과 registry API/token은 동일하며 새 분기나 공용 컴포넌트는 추가하지 않았다. Plan에 해당 파일을 연결했다.
 - Aside로 실제 DOM과 홈을 확인했다. Aside REPL에 viewport 변경 API가 없어 일시적 Playwright harness로 375/768/1440 × light/dark·reduced-motion·local interactions·Tab focus·header 경계·overflow를 확인했고 6조합 모두 통과했다. 변경 파일 ESLint와 전체 typecheck도 통과했다.
+
+## D007: 최종 통합 검증과 구현 승인 대기 (2026-10-08)
+
+- 설정된 전체 검사 typecheck/lint/test/build가 통과했다. Vitest는 32 files/706 tests다. 테스트 파일·lockfile·manifest·registry source·token/theme은 변경하지 않았다.
+- production HTTP: 이전15 route가 각각 308 + 정확한 Location, 새15 상세가 200 및 Preview/Installation/Usage/API section과 설치 명령을 유지한다. standalone Preview15와 registry JSON15도 200이며 생성 JSON 전체가 main 기준과 같다. old/components/blocks unknown slug는 404다.
+- production 브라우저: 15개 Preview의 실제 render, sidebar 현재 선택, Code와 clipboard의 실제 components/patterns import를 확인했다. Date Picker/Page Header의 기존 #api-reference가 새 route에서 같은 섹션으로 이동한다. 검색15와 Showcase105/41/146 및 해당15 상세 링크, filtered empty state, 모바일 메뉴의 선택/네 범주가 일치한다.
+- 홈은 375/768/1440 × light/dark에서 실제 입력/submit·날짜·switch를 조작하고 CTA/Tab focus-visible/reduced-motion/header 경계/overflow/console error를 확인했다. 6조합 모두 통과했다. [화면 근거](./tasks.md#보존한-화면-근거)를 보존했다.
+- 공개 0.2.1과 기존 releases는 그대로이며 unreleasedChanges만 두 항목을 추가했다. source/registry target/dependencies/props/export를 기준 revision과 비교해 일치함을 확인했다.
+- 구현 결과 승인을 요청하는 시점까지 진행한다. main 통합·원격 push·npm·배포는 아직 실행하지 않았다. 설정상 구현 승인과 local-ff 통합 승인은 별도 경계다.

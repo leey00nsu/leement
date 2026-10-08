@@ -25,10 +25,10 @@ Components에는 Sidebar·AudioPlayer처럼 복합 기능이 있고, Patterns 15
 
 **Acceptance Criteria:**
 
-- [ ] 상단 탐색·데스크톱 및 모바일 메뉴·홈 소개·Showcase에서 Patterns 독립 분류가 제거된다.
-- [ ] 기존 15개 항목은 아래 지정된 새 분류에 각각 한 번씩 포함된다.
-- [ ] 기존 Components 95개와 Blocks 36개를 유지하며 최종 수는 Components 105개, Blocks 41개다. Charts 70개를 유지한다.
-- [ ] 표시 이름은 기존 Components처럼 단어 사이 공백을 사용하고 기능별 메뉴 안에서 A–Z 정렬을 유지한다.
+- [x] 상단 탐색·데스크톱 및 모바일 메뉴·홈 소개·Showcase에서 Patterns 독립 분류가 제거된다.
+- [x] 기존 15개 항목은 아래 지정된 새 분류에 각각 한 번씩 포함된다.
+- [x] 기존 Components 95개와 Blocks 36개를 유지하며 최종 수는 Components 105개, Blocks 41개다. Charts 70개를 유지한다.
+- [x] 표시 이름은 기존 Components처럼 단어 사이 공백을 사용하고 기능별 메뉴 안에서 A–Z 정렬을 유지한다.
 
 ### US-2: 기존 링크와 설치 코드의 호환성
 
@@ -38,10 +38,10 @@ Components에는 Sidebar·AudioPlayer처럼 복합 기능이 있고, Patterns 15
 
 **Acceptance Criteria:**
 
-- [ ] 기존 `/patterns/<slug>` 15개 주소는 대응하는 새 상세 주소로 영구 리다이렉트된다.
-- [ ] 새 상세 페이지에서 제목·설치·Usage·Examples·API Reference·미디어 출처·Preview를 보존한다.
-- [ ] 알 수 없는 slug는 404이며 기존 Components·Blocks·Charts·Preview·registry 주소의 동작을 유지한다.
-- [ ] `@leement/<slug>` 설치 이름, registry dependencies, 기존 소비자 import 경로와 공개 props/export를 유지한다.
+- [x] 기존 `/patterns/<slug>` 15개 주소는 대응하는 새 상세 주소로 영구 리다이렉트된다.
+- [x] 새 상세 페이지에서 제목·설치·Usage·Examples·API Reference·미디어 출처·Preview를 보존한다.
+- [x] 알 수 없는 slug는 404이며 기존 Components·Blocks·Charts·Preview·registry 주소의 동작을 유지한다.
+- [x] `@leement/<slug>` 설치 이름, registry dependencies, 기존 소비자 import 경로와 공개 props/export를 유지한다.
 
 ### US-3: 간결한 랜딩 페이지
 
@@ -51,12 +51,12 @@ Components에는 Sidebar·AudioPlayer처럼 복합 기능이 있고, Patterns 15
 
 **Acceptance Criteria:**
 
-- [ ] 첫 화면은 하나의 헤드라인, 짧은 설명, Get started·View components 두 가지 주요 진입 링크로 구성한다.
-- [ ] 그 아래에는 실제 registry 컴포넌트를 사용하는 대표 UI 예제 그리드를 배치한다.
-- [ ] 기존의 큰 glow 배경, 반복적인 기능 소개 카드 3개와 별도 설치 안내 섹션을 제거한다. 설치 안내는 Getting started에서 제공한다.
-- [ ] Patterns 소개는 제거하고 새 Components·Blocks 분류와 링크를 사용한다.
-- [ ] Leement 로고·서체·semantic 색상·컨트롤 규칙과 상단 검색·테마 전환·문서 탐색을 유지한다.
-- [ ] light/dark 및 375px·768px·1440px 화면에서 제목·버튼·예제가 잘리지 않고, 페이지 가로 스크롤 없이 읽고 조작할 수 있다.
+- [x] 첫 화면은 하나의 헤드라인, 짧은 설명, Get started·View components 두 가지 주요 진입 링크로 구성한다.
+- [x] 그 아래에는 실제 registry 컴포넌트를 사용하는 대표 UI 예제 그리드를 배치한다.
+- [x] 기존의 큰 glow 배경, 반복적인 기능 소개 카드 3개와 별도 설치 안내 섹션을 제거한다. 설치 안내는 Getting started에서 제공한다.
+- [x] Patterns 소개는 제거하고 새 Components·Blocks 분류와 링크를 사용한다.
+- [x] Leement 로고·서체·semantic 색상·컨트롤 규칙과 상단 검색·테마 전환·문서 탐색을 유지한다.
+- [x] light/dark 및 375px·768px·1440px 화면에서 제목·버튼·예제가 잘리지 않고, 페이지 가로 스크롤 없이 읽고 조작할 수 있다.
 
 ## 기능 요구사항
 
