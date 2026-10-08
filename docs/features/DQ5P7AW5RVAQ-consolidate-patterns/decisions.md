@@ -105,3 +105,8 @@
 - **T05 검증**: production8개 조합 모두18 cards/열 수/overflow/360px 전체 콘텐츠 fade와 focus reveal, local state 및 console 검사 통과. 내부10개 링크200. typecheck/lint/build 통과. 화면을 첨부와 직접 비교하고 [화면 근거](./tasks.md#보존한-화면-근거)를 교체했다. 기본 상태 캡처에 페이드가 보이며 keyboard focus로 접근하면 장식이 제거된다. 실제registry/API와 catalog는 변경하지 않아706회귀 검사는 T03의 결과를 유지한다.
 
 <!-- lee-spec-kit:workflow-sync sha256:e2afe67a7d82ed0777546af8d6f9656fca52b0c92c045057ce72a96335ab118e -->
+
+## D010: 소개와 카드 배경 사이의 경계 수정 (2026-10-08)
+
+- 사용자 화면의 가로 경계는 소개의 기본 배경과 카드 영역 bg-muted가 즉시 바뀌어 생긴다. 원인을 설명한 뒤 사용자가 직접 수정을 요청했다. 구현 승인으로 해석하지 않고 새 T06으로 수정한다.
+- 카드 영역의 배경 자체에 상단160px gradient를 적용해 기본 배경에서 중립 표면으로 이어지게 한다. 별도 overlay나 카드 위치 변경 없이 light/dark에 같은 semantic 변수를 적용한다. 하단 콘텐츠 fade와 focus reveal은 그대로 유지한다.

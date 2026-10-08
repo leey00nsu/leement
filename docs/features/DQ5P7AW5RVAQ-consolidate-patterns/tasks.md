@@ -174,6 +174,21 @@
 
   - Verification: production 375/768/1440/1920 × light/dark 8조합에서 실제18 cards·1/2/5 columns·wide hero 한 줄·서로 다른 column 높이·전체 폭·360px 전체 콘텐츠 페이드(z20, CardContent auto)·키보드 focus 시 reveal·가로 overflow 없음 확인. 프로젝트/계정 폼·대화·slider·switch·checkbox/알림 저장·CTA·모바일 탐색·header 경계·console error 없음 검증. 홈의10개 내부 목적지 모두200. 전체 typecheck/lint/production build 통과. 카탈로그/API 미변경으로 기존706 tests는 반복하지 않음. 첨부와 실제1440 light/dark 및375 화면을 직접 비교해5열·밀도·하단 콘텐츠 소실 확인.
 
+- [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-06 랜딩 소개와 카드 영역 배경 연결
+  - Date: 2026-10-08
+  - Acceptance:
+    - 소개 배경과 카드 영역 사이에 색상이 갑자기 바뀌는 가로 경계가 없고 light/dark에서 자연스럽게 이어진다.
+  - Checklist:
+    - [ ] 카드 영역 상단에 현재 테마의 기본 배경에서 중립 배경으로 이어지는 gradient를 적용한다.
+    - [ ] 375/768/1440/1920 light/dark에서 상단 연결·하단 페이드·focus·overflow와 기존 예제 동작을 확인하고 lint/typecheck/build를 검증한다.
+  - Docs:
+    - docs:designs/design-system.md
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -186,7 +201,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 

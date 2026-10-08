@@ -60,6 +60,12 @@
 4. 375/768/1440/1920 × light/dark에서 screenshot을 첨부와 직접 비교한다. 카드 수·5열 배치·빈 공간·콘텐츠 페이드뿐 아니라 overflow·CTA·로컬 상호작용·focus·console를 확인한다. typecheck/lint/production build를 실행한다. UI 구성만 변경하므로 이전 카탈로그 테스트는 유지하며 영구 테스트는 추가하지 않는다.
 5. PRD/디자인/기존 unreleased 랜딩 설명을 현재 구성에 맞춘다. 사용자 직접 수정 요청으로 승인된 작업이며 새 Spec 승인 질문은 추가하지 않는다. 완료 task를 다시 열지 않는다.
 
+### T06: 소개와 카드 배경 연결
+
+1. 카드 영역 상단의 background image를 기본 배경에서 투명색까지160px gradient로 적용한다. 기존 bg-muted 위에서 섞여 상단은 소개와 같은 색, 아래는 중립 배경으로 이어진다. 카드·컨트롤 위의 overlay가 아닌 section 자체 배경이므로 입력과 상하 페이드/focus 규칙에 영향이 없다.
+2. 사용자 직접 요청으로 허용된 시각 수정을 같은 Feature에 추가한다. 완료 task는 유지한다. 디자인 시스템의 현재 연결 규칙을 동기화한다.
+3. 375/768/1440/1920 × light/dark에서 background gradient·overflow·하단 fade/focus reveal 및 기존 로컬 예제를 production 브라우저로 확인하고 실제 화면을 직접 비교한다. lint/typecheck/build를 실행한다. CSS 전용 변경이며 새 영구 테스트를 추가하지 않는다.
+
 ## 파일 구조와 변경 범위
 
 - apps/docs/lib/docs.ts, items.ts: 분류·표시 이름·링크
