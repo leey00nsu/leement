@@ -154,6 +154,24 @@
 
   - Verification: production 375/768/1440/1920px × light/dark 8조합에서 좌우 inset16/24/32px·전체 폭, 배경색 gradient/aria-hidden/pointer-events:none, 메시지 및 CardContent 상위 표시, overflow 없음·CTA·폼/날짜/설정·Tab focus·reduced-motion·console error 없음 확인. 변경 파일 ESLint와 전체 typecheck·production build 통과. CSS/배치만 변경하여 이미 통과한 전체706 tests는 반복하지 않았다.
 
+- [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-05 첨부 기준의 다열 카드 쇼케이스와 콘텐츠 페이드 재구성
+  - Date: 2026-10-08
+  - Acceptance:
+    - 랜딩이 첨부 화면처럼 짧은 중앙 hero 아래 전체 폭의 5열 masonry 카드 쇼케이스를 제공하고 하단 카드 콘텐츠 전체가 배경으로 점진적으로 사라진다.
+  - Checklist:
+    - [ ] 기존 registry UI로 컨트롤·탐색·데이터·폼·QR·대화·상태 등 다양한 카드 15개 이상을 만들고 열마다 서로 다른 높이로 촘촘하게 쌓는다.
+    - [ ] 큰 두 줄 제목·빈 공간·하단 상태 배너를 제거하고 첨부 화면의 hero 비율·열 수·간격·중립 배경·하단 콘텐츠 페이드를 맞춘다.
+    - [ ] local interaction과 키보드 focus를 보존하고 375/768/1440/1920 light/dark 시각 비교·overflow·typecheck·lint·production build를 검증한다.
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:apps/docs/lib/releases.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -166,7 +184,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 

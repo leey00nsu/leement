@@ -52,6 +52,14 @@
 3. 375/768/1440px와 1920px에서 light/dark의 폭·페이드·overflow와 기존 CTA/상호작용/키보드 focus를 확인한다. 변경 파일 ESLint/typecheck와 production build를 실행한다. 신규 영구 테스트는 추가하지 않는다. 카탈로그·registry·API에는 변경이 없어 이미 통과한 706개 회귀 검사를 반복할 이유가 없다.
 4. PRD/디자인 시스템의 현재 랜딩 설명과 기존 미게시 랜딩 항목만 동기화하고 화면 근거를 보존한다. 하단 192px 페이드는 예제 표면과 아래 여백에 겹치며 CardContent 및 StatusNotice의 메시지·아이콘은 장식 위에 유지한다. xl 이상은 4열로 배치하고 Calendar의 콘텐츠 폭은 384px 이내로 유지한다. Spec의 추가 시각 기준은 이 사용자의 직접 수정 요청으로 승인된 범위로 기록한다.
 
+### T05: 첨부 화면을 기준으로 카드 구성 재구성
+
+1. 사용자 첨부 [참고 화면](./artifacts/shadcn-user-reference.png)을 시각 기준으로 삼는다. T04의 네 카드와 배경만의 페이드는 기준을 충족하지 못하므로 5열 masonry와 15개 이상 실제 UI 카드로 교체한다.
+2. 컨트롤, 작은 탐색 카드, 저장 목표, 활동 차트, 잔액/현황, 프로젝트 폼, 슬라이더, 계정 폼, QR, 대화, 링크 행, 빈 상태, 분석, 알림 설정, 사용량 차트를 기존 registry source와 Recharts로 구성한다. 클릭·입력·submit·checkbox·slider·chat은 로컬 상태로 반응한다. 실제 링크는 문서로 연결한다.
+3. hero는 작은 중앙 제목·짧은 소개·두 CTA만 남긴다. 예제는 중립 배경과 좁은 간격, 서로 다른 카드 높이를 사용하고 별도 상태 배너를 제거한다. 하단 300px 이상의 overlay를 모든 콘텐츠 위에 배치한다. pointer-events:none, aria-hidden 및 :focus-visible 시 페이드 제거로 키보드 접근을 보존한다.
+4. 375/768/1440/1920 × light/dark에서 screenshot을 첨부와 직접 비교한다. 카드 수·5열 배치·빈 공간·콘텐츠 페이드뿐 아니라 overflow·CTA·로컬 상호작용·focus·console를 확인한다. typecheck/lint/production build를 실행한다. UI 구성만 변경하므로 이전 카탈로그 테스트는 유지하며 영구 테스트는 추가하지 않는다.
+5. PRD/디자인/기존 unreleased 랜딩 설명을 현재 구성에 맞춘다. 사용자 직접 수정 요청으로 승인된 작업이며 새 Spec 승인 질문은 추가하지 않는다. 완료 task를 다시 열지 않는다.
+
 ## 파일 구조와 변경 범위
 
 - apps/docs/lib/docs.ts, items.ts: 분류·표시 이름·링크

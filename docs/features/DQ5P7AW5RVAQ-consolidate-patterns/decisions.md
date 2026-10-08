@@ -94,3 +94,9 @@
 
 - **T04 결과**: 예제 max-width를 제거해 실제 좌우 inset만 남겼다(16/24/32px). xl 이상은 4열, Calendar는 384px 이하로 읽기 폭을 제한했다. 하단192px을 현재 theme 배경색으로 페이드하고 실제 CardContent·메시지·아이콘은 장식 위에 유지한다. pointer-events:none/aria-hidden이며 콘텐츠를 잘라내지 않는다.
 - **T04 검증**: production 375/768/1440/1920 × light/dark 8조합에서 전체 폭/페이드·CTA·폼/달력/스위치·Tab focus·overflow·header 경계·console error·reduced-motion을 확인했다. 모두 통과했다. 변경 파일 ESLint·전체 typecheck·production build 통과. 단순 배치/CSS 변경에 새 영구 테스트를 추가하지 않았고 T03의706 tests는 유효하다. [업데이트한 화면 근거](./tasks.md#보존한-화면-근거)를 보존했다.
+
+## D009: 첨부 화면과의 불일치 수정 (2026-10-08)
+
+- 사용자 첨부 화면은 5열의 다양한 카드가 높이를 달리해 촘촘히 쌓이고, 하단 카드 내용 전체가 사라지는 구성이다. T04는 네 개의 큰 예제와 배경 페이드만 제공하고 CardContent를 overlay 위에 유지해 이 시각 목표를 충족하지 못했다. 기능 검증 통과를 시각 일치의 근거로 삼지 않는다.
+- 완료 T04의 검증 기록은 당시 결과로 보존한다. T05를 추가해 15개 이상의 실제 UI 카드·작은 hero·중립 gallery 배경·전체 콘텐츠 페이드를 구현한다. [사용자 첨부 원본](./artifacts/shadcn-user-reference.png)을 보존했다.
+- 하단 장식은 포인터를 차단하지 않으며 keyboard focus 시 제거하여 입력과 텍스트를 확인할 수 있게 한다. 무거운 전체 Showcase mount와 신규 API/token 변경은 추가하지 않는다.
