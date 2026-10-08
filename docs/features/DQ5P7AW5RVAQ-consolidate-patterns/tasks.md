@@ -154,14 +154,14 @@
 
   - Verification: production 375/768/1440/1920px × light/dark 8조합에서 좌우 inset16/24/32px·전체 폭, 배경색 gradient/aria-hidden/pointer-events:none, 메시지 및 CardContent 상위 표시, overflow 없음·CTA·폼/날짜/설정·Tab focus·reduced-motion·console error 없음 확인. 변경 파일 ESLint와 전체 typecheck·production build 통과. CSS/배치만 변경하여 이미 통과한 전체706 tests는 반복하지 않았다.
 
-- [TODO][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-05 첨부 기준의 다열 카드 쇼케이스와 콘텐츠 페이드 재구성
+- [DONE][PRD-FR-005] T-DQ5P7AW5RVAQ-consolidate-patterns-05 첨부 기준의 다열 카드 쇼케이스와 콘텐츠 페이드 재구성
   - Date: 2026-10-08
   - Acceptance:
     - 랜딩이 첨부 화면처럼 짧은 중앙 hero 아래 전체 폭의 5열 masonry 카드 쇼케이스를 제공하고 하단 카드 콘텐츠 전체가 배경으로 점진적으로 사라진다.
   - Checklist:
-    - [ ] 기존 registry UI로 컨트롤·탐색·데이터·폼·QR·대화·상태 등 다양한 카드 15개 이상을 만들고 열마다 서로 다른 높이로 촘촘하게 쌓는다.
-    - [ ] 큰 두 줄 제목·빈 공간·하단 상태 배너를 제거하고 첨부 화면의 hero 비율·열 수·간격·중립 배경·하단 콘텐츠 페이드를 맞춘다.
-    - [ ] local interaction과 키보드 focus를 보존하고 375/768/1440/1920 light/dark 시각 비교·overflow·typecheck·lint·production build를 검증한다.
+    - [x] 기존 registry UI로 컨트롤·탐색·데이터·폼·QR·대화·상태 등 다양한 카드 15개 이상을 만들고 열마다 서로 다른 높이로 촘촘하게 쌓는다.
+    - [x] 큰 두 줄 제목·빈 공간·하단 상태 배너를 제거하고 첨부 화면의 hero 비율·열 수·간격·중립 배경·하단 콘텐츠 페이드를 맞춘다.
+    - [x] local interaction과 키보드 focus를 보존하고 375/768/1440/1920 light/dark 시각 비교·overflow·typecheck·lint·production build를 검증한다.
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -171,6 +171,8 @@
   - Review Round: -
   - Reviewed Head: -
   - Reviewed Tree: -
+
+  - Verification: production 375/768/1440/1920 × light/dark 8조합에서 실제18 cards·1/2/5 columns·wide hero 한 줄·서로 다른 column 높이·전체 폭·360px 전체 콘텐츠 페이드(z20, CardContent auto)·키보드 focus 시 reveal·가로 overflow 없음 확인. 프로젝트/계정 폼·대화·slider·switch·checkbox/알림 저장·CTA·모바일 탐색·header 경계·console error 없음 검증. 홈의10개 내부 목적지 모두200. 전체 typecheck/lint/production build 통과. 카탈로그/API 미변경으로 기존706 tests는 반복하지 않음. 첨부와 실제1440 light/dark 및375 화면을 직접 비교해5열·밀도·하단 콘텐츠 소실 확인.
 
 ## Repository Knowledge (완료 비차단)
 
@@ -184,7 +186,7 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
@@ -201,7 +203,7 @@
 | `pnpm run build` | 2026-10-08 | PASS (production SSG/registry 포함) |
 | production HTTP 검증 | 2026-10-08 | PASS: old/new15, Preview15, registry15, unknown404×3 |
 | production 브라우저 검증 | 2026-10-08 | PASS: 15개 상세/Code/clipboard, anchor2, search15, Showcase, desktop/mobile |
-| 홈 responsive/접근성 검증 | 2026-10-08 | PASS: 375/768/1440/1920 × light/dark 8조합, 전체 폭/페이드, local state, focus, overflow, reduced motion |
+| 홈 responsive/접근성 검증 | 2026-10-08 | PASS: 375/768/1440/1920 × light/dark 8조합, 18 cards·5열·콘텐츠 전체 fade/focus reveal, forms/chat/slider/checkbox/switch, links10, overflow, console |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
 
@@ -211,4 +213,4 @@
 - [768 light](./artifacts/home-768-light.png), [768 dark](./artifacts/home-768-dark.png)
 - [1920 light](./artifacts/home-1920-light.png), [1920 dark](./artifacts/home-1920-dark.png)
 - [375 light](./artifacts/home-375-light.png), [375 dark](./artifacts/home-375-dark.png)
-- 모든 화면은 production 서버에서 실제 예제를 조작한 후 캡처했다. 모바일 범주 탐색은 열린 상태, View components에는 키보드 focus가 보인다.
+- T05 화면은 production 서버에서 상호작용 전의 기본 상태로 캡처해 하단 페이드를 보존했다. 이후 각각 폼·대화·설정·키보드 focus를 조작해 동작과 페이드 reveal을 확인했다. 시각 기준은 [사용자 첨부 원본](./artifacts/shadcn-user-reference.png)이다.

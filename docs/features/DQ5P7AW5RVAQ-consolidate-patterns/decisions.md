@@ -1,6 +1,6 @@
 # Decisions Log
 
-<!-- lee-spec-kit:workflow-sync sha256:6fc25f8d01d893fad7990423a475e53c01d962cb61f12cda1f65b2a9f7bee414 -->
+
 
 ## D001: 역할에 따른 공개 분류 통합 (2026-10-08)
 
@@ -100,3 +100,8 @@
 - 사용자 첨부 화면은 5열의 다양한 카드가 높이를 달리해 촘촘히 쌓이고, 하단 카드 내용 전체가 사라지는 구성이다. T04는 네 개의 큰 예제와 배경 페이드만 제공하고 CardContent를 overlay 위에 유지해 이 시각 목표를 충족하지 못했다. 기능 검증 통과를 시각 일치의 근거로 삼지 않는다.
 - 완료 T04의 검증 기록은 당시 결과로 보존한다. T05를 추가해 15개 이상의 실제 UI 카드·작은 hero·중립 gallery 배경·전체 콘텐츠 페이드를 구현한다. [사용자 첨부 원본](./artifacts/shadcn-user-reference.png)을 보존했다.
 - 하단 장식은 포인터를 차단하지 않으며 keyboard focus 시 제거하여 입력과 텍스트를 확인할 수 있게 한다. 무거운 전체 Showcase mount와 신규 API/token 변경은 추가하지 않는다.
+
+- **T05 결과**: 실제 registry UI를 사용하는18 cards를5열(넓은 화면)/2열(태블릿)/1열(모바일)로 배치했다. controls·작은 탐색·목표·활동 chart·현황·프로젝트/계정 폼·slider/설정·QR·chat·resource rows·empty state·analytics·notifications·사용량으로 높이를 달리해 쌓았다. 큰 제목을 줄여1440px 이상 한 줄로 표시하고 하단 상태 배너를 제거했다.
+- **T05 검증**: production8개 조합 모두18 cards/열 수/overflow/360px 전체 콘텐츠 fade와 focus reveal, local state 및 console 검사 통과. 내부10개 링크200. typecheck/lint/build 통과. 화면을 첨부와 직접 비교하고 [화면 근거](./tasks.md#보존한-화면-근거)를 교체했다. 기본 상태 캡처에 페이드가 보이며 keyboard focus로 접근하면 장식이 제거된다. 실제registry/API와 catalog는 변경하지 않아706회귀 검사는 T03의 결과를 유지한다.
+
+<!-- lee-spec-kit:workflow-sync sha256:e2afe67a7d82ed0777546af8d6f9656fca52b0c92c045057ce72a96335ab118e -->
