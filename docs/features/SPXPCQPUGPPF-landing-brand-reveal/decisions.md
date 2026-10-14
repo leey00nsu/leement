@@ -66,7 +66,7 @@
 - **Evidence**: [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png), [tablet light](./artifacts/landing-768-light.png), [tablet dark](./artifacts/landing-768-dark.png), [wide light](./artifacts/landing-1920-light.png), [wide dark](./artifacts/landing-1920-dark.png), [reduced motion](./artifacts/landing-reduced.png), [no-JS](./artifacts/landing-no-js.png). 시간별 관찰과 검사 결과는 이 기록이 정본이며 임시 harness/log는 커밋하지 않는다.
 - **보조 캡처 처리**: full-page 캡처는 스크롤 키 검사 전에 촬영했다. 스크롤 키 직후 촬영에서는 sticky header의 compositor 위치가 반영되어 이전 캡처를 대체했다. 제품 코드 결함으로 기록하지 않는다.
 
-<!-- lee-spec-kit:workflow-sync sha256:5f9bdcd00956dd57a3ab7c5dabd3d9c6acac0f242f87454a46f52bdc3d217d7a -->
+<!-- lee-spec-kit:workflow-sync sha256:a27375d53e66e9780a6db4d480a1f36df54fa1f43ebb99558c7051a37e6d44d3 -->
 
 ## D005: 사용자 요청으로 brand 색 중복을 제거한다 (2026-10-15)
 
@@ -142,3 +142,11 @@
 - **패키지 검증**: npm pack --dry-run --json 두 패키지 모두 PASS이며 name/version은 @leement/theme@0.3.0 및 @leement/tokens@0.3.0이다. theme은 11개 파일·4개 woff2·각 OFL/NOTICE·MIT LICENSE·생성 CSS, tokens는 7개 파일·dist JS/types/JSON·원본 JSON·MIT LICENSE를 포함한다. theme CSS에는 #706BC5 primary가 있고 제거한 brand 색은 없다. pack 정보·임시 로그는 /tmp에 두고 게시하지 않았다.
 - **필수 검사**: pnpm run build/typecheck/lint/test 모두 exit 0. Next 252 pages, Vitest 32 files/707 tests PASS. 버전 metadata에 별도 영구 테스트는 추가하지 않았다.
 - **남은 릴리스 단계**: 완성된 Feature의 구현 승인 → 별도 main 통합 승인/검증/정리 → npm 게시·origin main push/Coolify 배포 → 실제 게시/registry 상태 확인 후 0.3.0 공개 이력 갱신. 현재 task는 버전업과 릴리스 준비까지 완료했으며 원격 게시나 배포 완료를 뜻하지 않는다.
+
+### D009 공개 릴리스 기록 (2026-10-15)
+
+- **승인/통합**: 사용자의 별도 `A`로 local-ff main 통합·post-merge 검사·cleanup을 승인받았다. main 93607d8에서 build/typecheck/lint/test 모두 통과했고 Feature workflow가 done을 반환했다. 이어 사용자가 npm 게시·main push·실제 배포 확인·공개 이력 갱신을 모두 진행하라고 명시적으로 요청했다.
+- **게시**: 로그인 복구 후 @leement/tokens@0.3.0과 @leement/theme@0.3.0을 public/latest로 게시했다. 두 버전을 public npm에서 별도 임시 프로젝트에 실제 설치했으며 배포 token JSON·생성 CSS가 로컬 빌드와 정확히 일치하고 theme의 woff2 4개가 포함됨을 확인했다.
+- **첫 배포**: origin main을 8581a28→93607d8로 push했다. npm 처리 및 Coolify 교체 중 이전 랜딩이 잠시 관찰됐으나 이후 실제 랜딩의 워드마크와 inert gallery 및 보라 mark를 확인했다. public registry의 button/select/progress/slider/switch/brand-gradient-text 6개 source는 커밋된 source와 정확히 일치했다.
+- **공개 metadata**: 게시·registry 배포 확인 후 Unreleased 4개 항목을 0.3.0 release로 옮기고 primary breaking 이전·Select 기본 위치·Patterns 문서 이동 안내를 추가했다. 이것은 완료 구현의 공개 상태 기록이며 추가 기능 개발이나 별도 버전업이 아니다. 과거 릴리스 이력과 보호된 README는 보존했다.
+- **검증**: 실제 사이트에서 primary=#706bc5·전경=#fff가 light/dark 모두 같고, inert=true인 18개 갤러리 카드와 전체 tilt를 확인했다. 공개 metadata의 build/typecheck와 해당 파일 lint가 통과했고 생성된 Changelog는 정식 0.3.0·이전 0.2.1 이력을 표시하며 Unreleased 영역은 없다. 설치 문서는 공개 0.3.0으로 표시하고 개발 버전 불일치 안내를 제거했다. 이 metadata 커밋을 main에 push하고 최종 공개 페이지를 확인한다.

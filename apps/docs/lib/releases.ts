@@ -20,12 +20,14 @@ const patchChanges: ReleaseChange[] = [
   { title: "Package license files", details: "The theme and tokens npm packages include the MIT license text. The theme also retains the bundled font license and attribution files." },
 ];
 
-export const unreleasedChanges: ReleaseChange[] = [
-  { title: "Breaking: one primary brand color contract", details: "Primary now owns the product brand color globally, including installed components and documentation previews. Both themes use #706BC5 with white foreground and a darker purple hover. Text, focus, data accents, gradients and the Leement mark keep the purple family; dark control tracks preserve indicator contrast. The separate color.brand tokens and brand-accent utility are removed without compatibility aliases. Replace --lm-color-brand-accent/accent-foreground/text with --lm-color-action-primary/primary-foreground/primary-text; move brand gradient start/middle/end to action-primary-gradient-start/middle/end. Set primary-hover with the new filled color and foreground, use text-primary-text for links on ordinary surfaces, and override --lm-color-focus-ring directly when needed. Focus and the first chart series follow primary-text; data accent follows primary. For the 0.3.0 release, update @leement/tokens and @leement/theme together, then review and reinstall affected registry source. Existing locally installed files are not replaced by a package upgrade. Foundations exports the new roles and ignores removed brand color overrides. BrandLogo, BrandAction, BrandGradientText, brand variants, fonts and motion APIs keep their names." },
+const minorChanges: ReleaseChange[] = [
+  { title: "Breaking: one primary brand color contract", details: "Primary now owns the product brand color globally, including installed components and documentation previews. Both themes use #706BC5 with white foreground and a darker purple hover. Text, focus, data accents, gradients and the Leement mark keep the purple family; dark control tracks preserve indicator contrast. The separate color.brand tokens and brand-accent utility are removed without compatibility aliases. Replace --lm-color-brand-accent/accent-foreground/text with --lm-color-action-primary/primary-foreground/primary-text; move brand gradient start/middle/end to action-primary-gradient-start/middle/end. Set primary-hover with the new filled color and foreground, use text-primary-text for links on ordinary surfaces, and override --lm-color-focus-ring directly when needed. Focus and the first chart series follow primary-text; data accent follows primary. Update @leement/tokens and @leement/theme together to 0.3.0, then review and reinstall affected registry source. Existing locally installed files are not replaced by a package upgrade. Foundations exports the new roles and ignores removed brand color overrides. BrandLogo, BrandAction, BrandGradientText, brand variants, fonts and motion APIs keep their names." },
   { title: "Select opens below the trigger", details: "SelectContent now defaults to alignItemWithTrigger=false, opening below the trigger with a 4px gap when space allows. Viewport collision handling and selection, keyboard and form behavior remain available. Set alignItemWithTrigger=true to request the previous selected-item overlap alignment. Update or reinstall the Select registry source to adopt this default; existing application-owned files are not changed automatically." },
   { title: "Components and blocks, by role", details: "Patterns is no longer a separate documentation category. Its 15 items now appear as 10 Components and 5 Blocks, bringing the catalog to 105 Components and 41 Blocks alongside 70 Charts. Existing /patterns detail links permanently redirect to their new pages. Registry names, installed source paths, dependencies and public APIs remain unchanged." },
   { title: "A branded landing page with motion", details: "The home page adds the Leement mark and wordmark with a shared slow fade, followed by a text reveal for the headline, description and navigation buttons. Eighteen real registry UI cards form a tilted gallery, revealing from top to bottom. The gallery is decorative and inert; fixed sample controls cannot be clicked or focused. Primary actions and selected controls use the shared primary brand roles, while charts use semantic data colors and surfaces remain neutral. Full-width cropping, connected backgrounds and the bottom fade adapt to light/dark and small screens. Reduced motion and no-JavaScript retain readable content and usable navigation." },
 ];
+
+export const unreleasedChanges: ReleaseChange[] = [];
 
 const changes = [
   { title: "Motion standardization", details: "All Leement visual transitions use Motion: controls, popups, disclosure height, repeated decoration and docs previews. Theme CSS remains static and framework independent. Spin, pulse and marquee cycles are editable tokens. Tokens/theme and the source registry are published for 0.2.0." },
@@ -91,6 +93,30 @@ const migrations = [
 ];
 
 export const releases: [Release, ...Release[]] = [
+  {
+    version: "0.3.0",
+    summary: "One purple primary color system, a branded animated landing page, and a simpler components-and-blocks catalog.",
+    changes: minorChanges,
+    migrations: [
+      "Update @leement/theme and @leement/tokens together to 0.3.0. Review local modifications before reinstalling affected registry items; package upgrades do not overwrite application-owned component source.",
+      "Breaking: color.brand and brand-accent color aliases are removed. Replace brand accent, foreground, text and gradient overrides with the corresponding action.primary roles. Filled primary uses #706BC5 with white text in both modes; use primaryText for emphasis on ordinary page surfaces.",
+      "Select opens below its trigger by default. Set alignItemWithTrigger=true to retain the previous selected-item overlap alignment.",
+      "Patterns documentation moved into Components and Blocks. Existing detail URLs redirect; registry item names, installed source paths and component APIs stay the same.",
+    ],
+    migrationExample: `pnpm add @leement/theme@0.3.0 @leement/tokens@0.3.0
+
+/* Replace old --lm-color-brand-* overrides. */
+:root {
+  --lm-color-action-primary: #706BC5;
+  --lm-color-action-primary-foreground: #FFFFFF;
+  --lm-color-action-primary-hover: #625DAF;
+  --lm-color-action-primary-text: #625DAF;
+}
+
+[data-lm-theme="dark"] {
+  --lm-color-action-primary-text: #B8B3EF;
+}`,
+  },
   {
     version: "0.2.1",
     summary: "Consistent Leement UI, realistic media previews and complete AudioPlayer loading states.",
