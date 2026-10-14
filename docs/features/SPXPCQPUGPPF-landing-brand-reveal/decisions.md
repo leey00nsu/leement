@@ -1,41 +1,69 @@
 # Decisions Log
 
-기술 결정과 그 이유를 기록합니다.
-canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 실제로 채택한 대안과 선택 이유는 이 파일에 다시 남겨 Feature의 결정 이력을 유지합니다.
+## D001: primary의 역할을 보존하면서 랜딩에 브랜드를 표현한다 (2026-10-15)
 
-> ADR(Architecture Decision Record)은 구현 중 내린 중요한 기술/구조 결정을 남기는 기록입니다.
-> 나중에 "왜 이렇게 만들었는지"를 추적하고, 팀 합의를 재확인하기 위해 작성합니다.
-
-> 형식: `DNNN: landing-brand-reveal 결정 (2026-10-15)`
-> 결정 ID는 Feature별로 독립된 번호를 사용하며 Feature ID와 관계없이 `D001`부터 시작합니다.
-
-기록 원칙:
-
-- 새 ADR 생성에는 `npx lee-spec-kit decision add <feature-ref> --title "..." --context "..." --decision "..." --rationale "..." --evidence "..."` 사용을 우선하세요.
-- 수동 작성도 마지막 ADR 뒤에 추가해 D001 → D002 순서를 유지하세요. 문서 안내문 앞에 삽입하거나 기존 ID를 재번호화하지 마세요. 같은 결정의 재실행·검증 결과는 해당 ADR의 Trace/Evidence를 갱신하고, 새 선택이나 범위 변경일 때만 새 ADR을 만드세요.
-- 모든 ADR은 **Decision(무엇을 선택했는가)** + **Trace(어떻게 고민했고 무엇을 확인했는가)** 를 함께 남깁니다.
-- 작성 타이밍을 고정합니다.
-  - 태스크 시작(`[TODO] -> [DOING]`): `Context/Constraints`와 `Trace(초기 가설)`를 1~3줄로 먼저 기록
-  - 태스크 완료 직전(`[DOING] -> [DONE]`): `Options/Decision/Rationale`를 최종화하고 `Trace`를 보강
-  - PR 머지 후: 실제 결과/영향을 `Trace(머지 후 확인)`에 1~2줄 추가
-- 모든 ADR에는 최소 1개 이상의 **Evidence 링크**(커밋/PR/테스트 로그 중 하나 이상)를 남깁니다.
-- 디자인 시스템 변경이나 예외를 기록할 때는 영향 받는 규칙과 범위, 예외 이유, 제거 조건, 실행 가능한 정본의 동기화 영향을 함께 남깁니다.
-
----
-
-## D001: landing-brand-reveal 결정 (2026-10-15)
-
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: 현재 랜딩 버튼·선택 UI는 중립 primary, 차트도 foreground 색이라 브랜드 토큰이 존재해도 Leement의 색이 거의 보이지 않는다. 사용자는 랜딩 UI에 primary 대신 brand accent를 모두 적용할지 분석을 요청했다.
+- **Constraints**: primary는 동작 우선순위이고 brand accent는 색 역할이다. 공유 디자인 시스템은 소비자 앱의 브랜드를 전역 primary에 고정하지 않는다. 랜딩 변경으로 설치한 컴포넌트·다른 문서 Preview의 기본색을 바꾸지 않는다.
+- **Options**:
+  - 모든 표면·문자·컨트롤을 brand accent로 덮기: 상태와 우선순위를 구분하기 어렵고 본문 가독성을 해친다.
+  - 전역 primary를 브랜드색으로 변경하기: 요청 범위를 넘어 모든 예제와 소비자 앱의 기본 동작을 바꾼다.
+  - 각 버튼에 임의 색 class 추가하기: Checkbox/Switch/Progress 등 선택 상태와 hover·전경 대응이 누락될 수 있다.
+  - **랜딩 범위의 primary/전경을 브랜드 역할로 연결하고 데이터·본문·표면은 각자 역할을 사용하기**: 주요 동작과 선택 상태를 함께 표현하면서 구조·대비를 유지한다.
+- **Decision**: 네 번째 방식을 Spec 승인안으로 제안한다. 전역 토큰 변경이나 별도 공개 variant를 추가하지 않는다. 채워진 브랜드 면은 brand.accentForeground와 짝을 이루며 일반 배경 텍스트는 brand.text다. 차트도 중립 foreground 대신 기존 data 역할을 사용한다.
+- **Rationale**: 기존 디자인 언어와 설치 API를 보존하면서 랜딩의 브랜드 인상을 강하게 만들 수 있다. BrandAction은 얇은 gradient tint 조합이므로 그것만 추가하면 현재 중립 primary 문제를 해결하지 못한다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+  - 분석: packages/tokens/src/tokens.json에서 light accent=violet.400, dark accent=blue.500, 두 모드 accentForeground=neutral.950 및 data 참조를 확인했다. packages/theme/build.mjs의 primary alias는 action.primary이고 registry/ui/button.tsx의 hover는 별도 action.primaryHover를 읽는다. 랜딩 범위의 hover도 함께 맞출 필요가 있다.
+  - 승인 전: 제안이며 구현·실측 대비 검증은 아직 수행하지 않았다.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - **Commit**: 조사 기준 main e821bc7ce5881bda726eb0d875e5e9f09db3182f.
+  - **Source**: [tokens.json](../../../../packages/tokens/src/tokens.json), [theme build](../../../../packages/theme/build.mjs), [Button](../../../../registry/ui/button.tsx), [home-examples.tsx](../../../../apps/docs/components/home-examples.tsx).
+- **Consequences**: 공용 디자인 문서에 랜딩의 제한된 presentation 적용을 설명하고 공개 source/API와 글로벌 theme는 유지한다. 대비 검증에서 문제가 있으면 먼저 랜딩 전용 전경·hover 대응을 조정하고 글로벌 palette 변경으로 범위를 확장하지 않는다.
+
+## D002: 갤러리를 조작 없는 기울어진 장식으로 전환한다 (2026-10-15)
+
+- **Context**: 사용자는 첨부 이미지의 tilted 배치, 위→아래 fade in, 실제 버튼 조작 차단을 함께 요청했다.
+- **Constraints**: 기울기와 진입 이동이 충돌하면 안 된다. 마우스만 차단하면 keyboard와 submit 동작이 남는다. 공유 registry와 문서 Preview는 실제로 조작할 수 있어야 한다.
+- **Options**: 개별 카드 랜덤 회전, 단순 평면 grid 회전, 전체 평면의 일관된 대각선 tilt. 비조작 방법은 disabled 일괄 지정, pointer-events만 지정, inert와 장식 접근성 처리 및 실제 handler 제거.
+- **Decision**: 전체 갤러리의 일관된 tilt와 카드별 일회성 reveal을 분리한다. 내부는 inert·장식 접근성 처리하고 고정 상태로 바꾼다. 순서는 실제 배치의 위→아래를 기준으로 정의한다. 로고와 타이틀에는 기존 브랜드 자산·Motion 역할을 사용한다.
+- **Rationale**: 참조 이미지는 같은 평면 위의 촘촘한 열 배치다. disabled의 흐린 모습 없이 실제 UI 외관을 보존하고 숨겨진 조작도 제거한다.
+- **Trace**:
+  - 분석: 현재 18개 카드가 5개 열에 배치되어 있고 form 저장·채팅·login·switch·checkbox·slider·link 동작이 존재한다. DOM 순서를 그대로 stagger하면 열 단위로 나타나므로 별도 시각 순서가 필요하다.
+  - 승인 전: 구현 각도·밀도와 등장 순서는 브라우저 결과를 참조 이미지와 비교하며 조정한다. SSR 가독성, reduced motion, no-JS를 유지한다.
+- **Evidence**:
+  - **Commit**: 조사 기준 main e821bc7ce5881bda726eb0d875e5e9f09db3182f.
+  - **Reference**: [사용자 제공 tilted 갤러리](./artifacts/tilted-gallery-reference.png). 이미지 내용은 배치 참고 자료이며 별도 지시로 취급하지 않는다.
+  - **Source**: [현재 Home](../../../../apps/docs/app/page.tsx), [현재 갤러리](../../../../apps/docs/components/home-examples.tsx), [디자인 시스템](../../designs/design-system.md).
+- **Consequences**: PRD-FR-005의 홈 로컬 상호작용·focus 시 fade 제거 규칙을 장식 갤러리 동작으로 갱신해야 한다. 상세 문서·Showcase의 상호작용은 유지한다.
+
+## D003: 보호된 README 캡처 영향은 보류한다 (2026-10-15)
+
+- **Context**: root README 29·32행의 홈 캡처가 기존 랜딩 외관을 보여 준다. 이번 변경 후 실제 홈과 시각적으로 달라질 수 있다.
+- **Constraints**: AGENTS.md는 사용자가 README 수정을 명시적으로 요청한 경우에만 기존 README 수정을 허용한다. 이번 요청은 랜딩 변경이다.
+- **Options**: README와 README 전용 캡처까지 갱신하거나 랜딩 변경을 구현하면서 README 설명·캡처는 보존한다.
+- **Decision**: README 편집과 README 전용 캡처 갱신은 이번 범위에서 보류한다. PRD·디자인 시스템의 현재 홈 동작은 독립적으로 동기화한다.
+- **Rationale**: README 보호 정책과 요청 범위를 준수한다. 이 보류는 기능 완료를 막지 않는다.
+- **Trace**: 승인 전 README 링크·alt와 전용 캡처 경로를 확인했다. 신규 검증 이미지는 이 Feature의 artifacts에 저장한다.
+- **Evidence**:
+  - **Commit**: 조사 기준 main e821bc7ce5881bda726eb0d875e5e9f09db3182f.
+  - **Source**: [README](../../../../README.md), apps/docs/public/readme-captures/home-light.png, apps/docs/public/readme-captures/home-dark.png.
+
+## D004: 구현 착수와 모션 범위 (2026-10-15)
+
+- **Context/Constraints**: 사용자 A로 Spec 승인. 기존 공유 source는 변경하지 않고 홈 전용 wrapper에서 SSR 가독성과 모션 순서를 유지한다.
+- **Decision**: 제목·설명·버튼 블록의 text reveal을 홈 전용 Motion timeline으로 조정한다. 갤러리의 부모에만 정적 tilt, 카드에만 진입 이동을 적용한다.
+- **Trace**: DOING 시작 시점 — native inert와 aria-hidden, handler 제거를 함께 적용하고 최초 시각 좌표 순서로 reveal한다. Unreleased의 실제 정본은 apps/docs/lib/releases.ts임을 확인하여 Plan/Tasks target을 정정했다.
+- **Evidence**: 조사 기준 commit e821bc7ce5881bda726eb0d875e5e9f09db3182f; 완료 시 실제 캡처·검사 결과를 보강한다.
+
+
+### D004 검증 확정
+
+- **Decision**: 홈 전용 HomeReveal과 역할 기반 home-brand를 사용했다. 전체 tilt는 desktop -8°, mobile -5°이고 카드마다 실제 transformed rect의 top/left를 측정해 순서를 결정했다. fixed 5열의 overscan은 장식 viewport에서 crop하며 페이지 가로 overflow는 없다. 로고는 1.2초, 텍스트 reveal은 기존 700ms 역할, 카드 stagger는 기존 70ms 역할을 사용한다.
+- **Trace / 수정**: 완료된 control을 play하면 재진입 시 재생될 수 있으므로 finished 상태는 play/pause 대상에서 제외했다. dark hover를 accent 90%+전경으로 혼합하면 4.20:1이라 96% 혼합으로 조정했다. 이제 normal/hover 대비는 light 6.55/6.14:1, dark 4.93/4.63:1이다. CTA focus는 진입 중에도 전체 소개를 즉시 표시한다.
+- **시간별 관찰**: hydration 뒤 106ms에는 로고만 hero에서 보이고 title/description/actions opacity=0이었다. 523ms에는 title≈0.75, description/actions=0; 723ms에는 description≈0.75, actions=0; 956ms에는 actions≈0.82였다. 1.64초에는 hero 전체 opacity=1, 카드도 위 순서부터 완료되며 전체 18개는 약 1.9초에 완료한다. 재스크롤 후 22개 hero/card opacity가 모두 그대로 1이었다. 8개 viewport/theme 조합에서 카드 순서를 top 좌표와 대조해 위→아래임을 확인했다.
+- **조작 검증**: gallery inert=true/aria-hidden=true, programmatic focus 차단, 좌표 클릭·Enter·Space 후 URL 불변. Tab은 Get started→View components→footer로 이동하며 갤러리를 건너뛴다. Get started와 View components의 실제 목적지 이동, 진입 중 focus·Enter 이동을 확인했다. theme toggle light→dark→light는 브랜드색을 보라→파랑→보라로 바꾸고 완료한 모션을 재시작하지 않는다.
+- **Fallback/오류**: reduced motion과 JavaScript 비활성에서 h1 및 18개 카드 opacity=1, 실제 CTA 이동 성공. 375/768/1440/1920 light/dark 모두 가로 overflow=false 및 pageerror=0. 현재 mark·registry·theme는 동일 source로 확인했고 public registry/token/theme/Storybook 변경은 없다.
+- **검사**: pnpm run build/typecheck/lint/test 모두 exit 0. Vitest 32개 파일/706개 통과. 기존 jsdom native media pause 경고는 테스트 실패가 아니다. 변경 파일에는 새 영구 테스트를 추가하지 않았다.
+- **Evidence**: [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png), [tablet light](./artifacts/landing-768-light.png), [tablet dark](./artifacts/landing-768-dark.png), [wide light](./artifacts/landing-1920-light.png), [wide dark](./artifacts/landing-1920-dark.png), [reduced motion](./artifacts/landing-reduced.png), [no-JS](./artifacts/landing-no-js.png). 시간별 관찰과 검사 결과는 이 기록이 정본이며 임시 harness/log는 커밋하지 않는다.
+- **보조 캡처 처리**: full-page 캡처는 스크롤 키 검사 전에 촬영했다. 스크롤 키 직후 촬영에서는 sticky header의 compositor 위치가 반영되어 이전 캡처를 대체했다. 제품 코드 결함으로 기록하지 않는다.
+
+<!-- lee-spec-kit:workflow-sync sha256:30d4fe4de4bd1edb80baf9325c959a0fbdbd80a6e8e129fe6ad51b5a08b1b511 -->

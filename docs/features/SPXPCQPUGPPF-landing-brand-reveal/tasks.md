@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/SPXPCQPUGPPF-landing-brand-reveal`
 - **대기 중 변경 요청**: -
@@ -75,6 +75,26 @@
 
 ---
 
+- [DONE][PRD-FR-005] T-SPXPCQPUGPPF-landing-brand-reveal-01 랜딩 브랜드 진입·tilted 비조작 갤러리 구현 및 검수
+  - Date: 2026-10-15
+  - Acceptance:
+    - Spec FR-1~6: 로고와 순차 reveal, 참조 방향의 tilt, 위→아래 카드 등장, 조작 차단, 역할 기반 브랜드색 및 배경/fallback 검수
+  - Checklist:
+    - [x] 기존 mark·실제 registry 카드 재사용 및 홈 전용 Motion 순서 구현
+    - [x] inert 및 고정 상태로 클릭/키보드 조작 차단, 실제 CTA 동작 확인
+    - [x] 모바일/태블릿/데스크톱 light/dark·reduced motion·no-JS와 브랜드 대비 검수
+    - [x] PRD/디자인/Unreleased 동기화; global token/theme·공개 source·Storybook 영향 없음 확인
+    - [x] typecheck/lint/test/build 통과 및 시각·조작 검증 증거 보존
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:apps/docs/lib/releases.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -87,8 +107,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -98,6 +118,10 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| pnpm run build | 2026-10-15 | PASS — tokens/theme/registry/Next 252 pages |
+| pnpm run typecheck | 2026-10-15 | PASS |
+| pnpm run lint | 2026-10-15 | PASS |
+| pnpm run test | 2026-10-15 | PASS — 32 files / 706 tests |
+| 브라우저 시각·조작 검수 | 2026-10-15 | PASS — 375/768/1440/1920 light/dark; inert·CTA·모션·reduce·no-JS, Decisions D004 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.

@@ -1,137 +1,102 @@
 # Implementation Plan: landing-brand-reveal
 
-> 스펙이 승인된 후 작성합니다.
-> canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 아키텍처/파일/테스트 내용은 이 파일로 흡수하고 최종 SSOT는 여기로 유지합니다.
-
----
-
 ## 개요
 
 - **기능 ID**: SPXPCQPUGPPF
 - **대상 레포**: Leement
 - **작성일**: 2026-10-15
-- **상태**: -
-  - 값: Draft | Review | Approved
+- **상태**: Approved
 - **Plan 검수**: Pending
-  - 값: Pending | Running | Done
 - **Plan 검수 Evidence**: -
-  - 예: `docs/features/F001-foo/decisions.md` 또는 docs 루트 아래의 실제 리뷰 산출물
 - **Plan 검수 Decision**: -
-  - 형식: `결정: approve|changes_requested|blocked ...` 또는 `decision: ...`
 - **Plan 검수 Round**: -
-  - `workflow-stage --json`이 반환한 양의 정수이며 첫 리뷰는 `1`
 - **Plan 검수 Spec Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `specHash`
 - **Plan 검수 Plan Hash**: -
-  - `workflow-stage --json`이 반환한 정확한 `planHash`
-
----
 
 ## 기술 스택
 
 | 구분 | 선택 | 이유 |
 | ---- | ---- | ---- |
-
----
+| 화면 | 기존 Next/React 및 registry UI | 실제 Leement source 재사용 |
+| 진입 | 기존 Motion animate + useMotionActivity | semantic duration/easing, visibility·reduced motion 처리 |
+| 배치 | docs 전용 정적 CSS transform·clip | 전체 tilt와 개별 reveal 분리 |
+| 색 | 랜딩 한정 primary alias·brand/data token | 공유 theme·공개 API 보존 |
 
 ## 아키텍처
 
-(컴포넌트 구조, 데이터 흐름)
+Home은 서버 페이지로 유지하고 홈 전용 client motion wrapper를 합성한다. 로고·제목·설명·CTA 각각의 일회성 reveal을 하나의 순서로 조정하며 h1/p/Link 의미를 보존한다. CSS는 기본 SSR를 보이게 두고 hydration 후 Motion으로 장식 진입만 적용한다. reduced motion 또는 focus 진입은 실제 CTA 사용을 지연하지 않는다.
 
----
+HomeExamples에서 로컬 작업 상태와 submit handler를 제거하고 현실적인 고정 값을 사용한다. 전체를 inert 및 aria-hidden으로 장식 처리한다. 별도 tilt wrapper 안에 실제 카드 source를 유지하고 viewport clip·overscan으로 가장자리를 채운다. 5열을 기본으로 좁은 화면에서 보이는 열 범위와 기울기를 조정한다. 모션은 .home-example만 선택하고 최초 측정의 시각 y/x 순서에 따라 stagger한다. static tilt는 부모에만 적용하므로 개별 모션 transform과 충돌하지 않는다. 완료한 진입을 theme/scroll로 재시작하지 않으며 visibility pause 및 unmount cleanup을 처리한다.
+
+랜드 소개와 갤러리에만 .home-brand를 부여하여 --primary 및 --primary-foreground를 brand accent/전경에 연결하고 hover도 브랜드 면에서 파생한다. 기존 브랜드/data 토큰을 그대로 사용한다. 전역 token/theme나 registry source를 변경하지 않는다.
 
 ## 파일 구조
 
-```
-src/
-├── ...
-```
-
----
+- apps/docs/app/page.tsx: logo, motion wrapper, semantic sections
+- apps/docs/components/home-reveal.tsx: 일회성 hero/gallery 진입 조합
+- apps/docs/components/home-examples.tsx: 고정 상태의 비조작 카드·data 색
+- apps/docs/app/globals.css: 랜딩 전용 브랜드 alias·tilt·clip·배경·대체 표시
+- docs/prd/leement-prd.md: 홈 요구사항
+- docs/designs/design-system.md: 홈 장식/브랜드/모션 규칙
+- apps/docs/lib/releases.ts: 기존 Unreleased 항목에 docs 변화 (실제 경로 확인 후 적용)
 
 ## Curated Documentation Impact
 
-README 보호와 보조 산출물 위치는 `agents` 문서의 해당 규칙을 우선합니다. README 불일치는 수정 요청이 없으면 `decisions.md`의 경로·근거·보류 사유를 참조하는 `NONE`으로 기록할 수 있으며, 이 예외에 별도 후속 항목이나 수정 승인을 요구하지 않습니다. 보존할 Feature 보조 산출물은 활성 Feature의 `artifacts/`에 저장하고 상대경로로 연결합니다.
-
-발견한 문서 불일치는 `decisions.md`에만 남기고 종료하지 않습니다. 현재 사실의 명백한 오류가 승인 범위 안에 있으면 `UPDATE`/`ADD`와 task `Docs`로 연결합니다. 제품 의도 확인이나 범위 확장이 필요하면 충돌한 문서 경로·근거, 확인할 질문, 보류 이유와 실제 후속 task/Feature/issue 참조를 기록합니다. 없는 번호나 승인을 만들지 않습니다. 추적 항목 생성에 승인이 필요하면 사용자 확인 전 해결된 것으로 기록하지 않습니다. `NONE`의 근거에는 알려진 불일치가 없거나, 남은 불일치가 해당 후속 항목으로 추적되고 있음을 설명합니다. 코드나 OpenWiki에 맞추기 위해 미구현 PRD 요구를 삭제하지 않습니다.
-
-> 모든 결정이 `NONE`이어도 영향 판정을 완료합니다. `NONE`은 사람이 관리하는 상위 문서를 검토했지만 변경할 필요가 없다는 뜻입니다. 생성형 OpenWiki 동기화는 별도로 판정합니다.
-
 - **Schema**: 2
-- **Assessment**: Pending
-  - 값: Pending | Complete
-- **Product requirements**: -
-  - 값: NONE | UPDATE | ADD
-- **System architecture**: -
-  - 값: NONE | UPDATE | ADD
-- **Onboarding entrypoint**: -
-  - 값: NONE | UPDATE | ADD
-- **Operational/runtime contract**: -
-  - 값: NONE | UPDATE | ADD
-- **Reason**: -
-- **Targets**: -
-  - UPDATE 또는 ADD가 하나라도 있으면 쉼표로 구분한 `docs:<path>`와 `project:<path>` 대상을 기록합니다.
-  - `docs:<path>`는 설정된 docs 디렉터리 기준이고 `project:<path>`는 프로젝트 저장소 루트 기준입니다. 루트 이름을 반복하지 마세요(예: `docs:docs/agents/constitution.md`가 아니라 `docs:agents/constitution.md`).
-  - 모든 대상은 task `Docs` 목록에 연결하고 Feature 리뷰 전에 활성 Feature scope로 커밋합니다.
-
----
+- **Assessment**: Complete
+- **Product requirements**: UPDATE
+- **System architecture**: NONE
+- **Onboarding entrypoint**: NONE
+- **Operational/runtime contract**: NONE
+- **Reason**: PRD-FR-005의 홈 상호작용/focus fade를 장식 갤러리로 갱신한다. 공유 구성·설치·배포 계약은 동일하다. README 캡처 영향은 README 보호 정책에 따라 decisions.md D003에 보류하며 편집하지 않는다.
+- **Targets**: docs:prd/leement-prd.md
 
 ## Additional Curated Impacts
 
-> constitution/custom, 디자인 시스템, API·데이터, 보안, 배포, 관측성처럼 조건부로 존재하는 상위 문서를 판정합니다. 해당 영향이 없으면 `Decision: NONE`을 명시하고 표는 비워 둡니다.
-
-- **Assessment**: Pending
-- **Decision**: -
-  - 값: NONE | DECLARED
+- **Assessment**: Complete
+- **Decision**: DECLARED
 
 | Kind | Decision | Target | Reason |
 | ---- | -------- | ------ | ------ |
-| -    | -        | -      | -      |
-
-허용 Kind: `engineering-agent-policy`, `design-system-ux`, `api-data-contract`, `security-privacy`, `release-deployment`, `observability`, `other-curated`
-
-`DECLARED` 행의 Decision은 `UPDATE` 또는 `ADD`이고, Target은 `docs:<path>` 또는 `project:<path>`여야 합니다. 모든 Target은 task `Docs` 목록에 연결합니다.
-`docs:<path>`는 설정된 docs 디렉터리에서, `project:<path>`는 프로젝트 저장소 루트에서 해석합니다.
-
----
+| design-system-ux | UPDATE | docs:designs/design-system.md | 홈에 한정된 브랜드 alias, 장식 tilt와 진입·비조작 규칙 |
+| release-deployment | UPDATE | project:apps/docs/lib/releases.ts | Unreleased 문서 홈 변경 기록; 버전·배포는 범위 외 |
 
 ## Verification Contract
 
-Feature 완료 전 검사는 실제 `workflow.featureChecks`(컴포넌트 override 포함)를 기준으로 작성합니다. 추가 자동 검사는 실행 설정에도 등록하세요. build 포함 여부와 중복 생략 근거, 수동 검증 증거를 명시하세요.
-
-
 ### 변경 분류
 
-- **유형**: COPY | REFACTOR | BUG_FIX | NEW_BEHAVIOR | HIGH_RISK
-- **위험도**: LOW | MEDIUM | HIGH
+- **유형**: NEW_BEHAVIOR
+- **위험도**: MEDIUM
 
 ### 관찰 가능한 계약
 
-- **지원해야 하는 동작**:
-- **전제조건**:
-- **성공 후 보장**:
-- **중요한 실패 후 보장**:
-- **의도적으로 지원하지 않는 사례**:
+- **지원해야 하는 동작**: Spec FR-1~6. 참조 방향의 전체 tilt, 위→아래 card 등장, inert gallery, 역할 기반 색, 실제 CTA와 header 탐색, light/dark 및 좁은 화면.
+- **전제조건**: 기존 registry·Motion 및 theme build 사용.
+- **성공 후 보장**: 문서 홈만 변경되고 다른 Preview와 소비자 설치 source는 보존.
+- **중요한 실패 후 보장**: JS/animation 미지원·reduced motion에서 콘텐츠와 링크를 즉시 읽을 수 있다.
+- **의도적으로 지원하지 않는 사례**: 장식 갤러리 폼 저장·로그인·채팅·상호작용, 지속적인 자동 이동, 새 공개 브랜드 variant.
 
 ### 테스트 결정
 
-| 계약 / 요구사항 | 결정                  | 테스트 수준                     | 보호할 현실적인 회귀 | 독립적인 Oracle            |
-| --------------- | --------------------- | ------------------------------- | -------------------- | -------------------------- |
-| (AC/FR 참조)    | NONE \| UPDATE \| ADD | 단위 \| 통합 \| E2E \| 비테스트 | (방지할 실패)        | (스펙/출시 동작/외부 기준) |
+| 계약 / 요구사항 | 결정 | 테스트 수준 | 보호할 현실적인 회귀 | 독립적인 Oracle |
+| ---- | ---- | ---- | ---- | ---- |
+| FR-1/3 | NONE | 비테스트 브라우저 검수 | 순서 누락·tilt 덮임·진입 반복 | Spec 순서와 실제 시간대별 opacity/위치 |
+| FR-2/6 | NONE | 비테스트 시각 검수 | 빈 모서리·가로 overflow·배경 단절 | 사용자 참조 및 375/768/1440/1920 light/dark 캡처 |
+| FR-4 | NONE | 비테스트 브라우저 조작 | 클릭·Tab·Enter로 숨은 갤러리 동작 | native inert 상태·focus 순서·URL/고정값 보존 |
+| FR-5 | NONE | 비테스트 실측 | primary/hover가 neutral로 복귀·전경 대비 저하 | computed style·대비율 및 theme 별 토큰 |
+| fallback | NONE | 비테스트 브라우저 검수 | reduced motion/no-JS에서 내용 숨음 | motion reduce 및 JS 비활성 실제 페이지 |
 
 ### 의도적으로 제외하는 테스트
 
-- (중복, 구현 세부사항, 비지원 합성 입력, 프레임워크 자체 동작 등)
+- CSS class 문자열이나 구현 배열을 복제하는 영구 단위 테스트, 프레임워크 inert 구현 자체의 단위 테스트를 추가하지 않는다. 기존 전체 검사는 실행한다.
 
 ### 검증 실행
 
-- **구현 중**:
-- **태스크 완료 전**:
-- **Feature 완료 전**:
-- **수동/UI 검증**:
-- **전체 테스트 필요 여부**: Yes | No — (이유)
-
----
+- **구현 중**: pnpm install --frozen-lockfile, scoped lint/type 검토, 로컬 브라우저에서 geometry/motion/interaction 확인.
+- **태스크 완료 전**: 실제 typecheck/lint/test/build 및 수동/UI 증거를 Tasks/Decisions에 기록한다.
+- **Feature 완료 전**: workflow.featureChecks의 pnpm run typecheck, pnpm run lint, pnpm run test, pnpm run build. local verify는 toolkit 검증 receipt를 따른다.
+- **수동/UI 검증**: 375/768/1440/1920 light/dark; 초반·중간·완료 등장; 클릭 및 Tab·Enter·Space 차단; CTA URL/focus; theme toggle; reduced motion; no-JS; viewport overflow; 콘솔 hydration 오류. 필요한 캡처만 artifacts에 보존.
+- **전체 테스트 필요 여부**: Yes — 프로젝트 featureChecks에 포함. build 포함하며 검사 생략 없음.
 
 ## 관련 문서
 

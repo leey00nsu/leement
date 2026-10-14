@@ -49,16 +49,50 @@ body:has(#leement-home) .docs-sidebar { display: none; }
 body:has(#leement-home) .docs-shell > main { padding: 0; }
 body:has(#leement-home) .docs-shell > main > div { max-width: none; }
 .home-examples {
-  background-image: linear-gradient(to bottom, var(--lm-color-background-default), transparent 160px);
+  background: linear-gradient(to bottom, var(--lm-color-background-default), var(--lm-color-background-subtle) 220px);
+  overflow: clip;
+}
+.home-brand {
+  --primary: var(--lm-color-brand-accent);
+  --primary-foreground: var(--lm-color-brand-accent-foreground);
+  --lm-color-action-primary-hover: color-mix(in srgb, var(--lm-color-brand-accent) 96%, var(--lm-color-brand-accent-foreground));
+}
+.home-gallery-viewport {
+  height: clamp(780px, 82vw, 1320px);
+  padding-top: 72px;
+  overflow: clip;
+}
+.home-gallery-tilt {
+  width: 118%;
+  min-width: 1100px;
+  margin-left: -9%;
+  transform: rotate(-8deg);
+  transform-origin: 50% 25%;
+}
+.home-showcase {
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 767px) {
+  .home-gallery-viewport { height: 840px; padding-top: 32px; }
+  .home-gallery-tilt {
+    width: 1100px;
+    margin-left: calc((100% - 1100px) / 2);
+    transform: rotate(-5deg);
+  }
+}
+@media (prefers-reduced-motion: reduce), (scripting: none) {
+  [data-home-reveal], .home-example {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }
 .home-examples-fade {
   background: linear-gradient(to bottom, transparent, var(--lm-color-background-default) 95%);
 }
-/* Keep decorative fading above every card, and reveal content during keyboard navigation. */
-.home-examples:has(:focus-visible) .home-examples-fade {
-  opacity: 0;
-}
-.home-showcase > div > .home-example {
+/* The inert gallery is decorative; its complete content fades into the page. */
+.home-showcase .home-example {
   box-shadow: 0 1px 2px color-mix(in srgb, var(--lm-color-foreground-default) 5%, transparent);
 }
 .prose-leement code { border-radius: var(--lm-radius-sm); background: var(--lm-color-background-subtle); padding: .15rem .35rem; font-size: .9em; }
