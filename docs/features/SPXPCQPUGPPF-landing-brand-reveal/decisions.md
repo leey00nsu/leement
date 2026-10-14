@@ -67,3 +67,11 @@
 - **보조 캡처 처리**: full-page 캡처는 스크롤 키 검사 전에 촬영했다. 스크롤 키 직후 촬영에서는 sticky header의 compositor 위치가 반영되어 이전 캡처를 대체했다. 제품 코드 결함으로 기록하지 않는다.
 
 <!-- lee-spec-kit:workflow-sync sha256:30d4fe4de4bd1edb80baf9325c959a0fbdbd80a6e8e129fe6ad51b5a08b1b511 -->
+
+## D005: 사용자 요청으로 brand 색 중복을 제거한다 (2026-10-15)
+
+- **Context / 승인**: 사용자는 brand==primary인 상황에 두 색 계약을 유지할 이유를 질문했고, 외부 소비자가 없으므로 breaking change로 수정하라고 명시했다. 이 요청은 D001의 랜딩 한정 색 연결 결정을 대체한다. 기존 완료 task의 후속 작업은 task 02로 기록한다.
+- **Decision**: 전역 action.primary를 브랜드 filled 색 정본으로 두고 primaryForeground/primaryHover/primaryText 및 gradient 역할만 둔다. 별도 color.brand와 색 alias는 완전히 제거한다. focus/data는 용도가 다른 역할이므로 primary 참조를 기본으로 유지한다. BrandLogo/BrandAction/BrandGradientText 및 brand 폰트/모션 이름은 유지한다. 일반 배경 강조 글자는 primaryText를 사용하며 hover도 같은 계열과 충분한 대비를 유지한다.
+- **Compatibility**: 구 brand 색 CSS 변수·Tailwind utility·Foundation override는 지원하지 않는다. Unreleased에 변경과 교체 경로를 기록한다. 버전 변경·npm 배포·원격 push는 이번 요청 범위에 없다.
+- **README 보호**: 기존 README의 캡처 영향은 D003과 같으며 README 편집 요청이 없으므로 보류한다. 현재 실행 계약은 token/theme와 Foundations·디자인 시스템에 반영한다.
+- **Verification**: 기존 theme/Foundation 계약 테스트를 갱신하고 모든 build/typecheck/lint/test, 양쪽 테마 primary/hover/text 대비, Foundation 편집·export·기존 brand 색 거부, 대표 UI와 랜딩 회귀를 확인한다.

@@ -7,7 +7,7 @@
 - **대상 레포**: Leement
 - **작성일**: 2026-10-15
 - **상태**: Approved
-- **승인 기록**: 2026-10-15 사용자 A — 명세와 역할 기반 랜딩 브랜드 적용 승인.
+- **승인 기록**: 2026-10-15 사용자 A — 랜딩 명세 승인. 같은 날 “아직 외부에서 사용하는 곳이 없다. 브레이킹체인지로 수정하고자 한다.” 요청으로 전역 primary 통합 및 기존 brand 색 제거 범위를 승인.
 
 ## 목적
 
@@ -51,9 +51,9 @@
 
 갤러리를 장식으로 처리하고 내부를 포커스 순서와 접근성 트리에서 제외한다. 클릭을 막는 투명 덮개나 pointer-events만으로 처리하지 않는다. 실제 버튼을 모두 disabled 처리하여 UI 색과 강조가 흐려지는 방식도 사용하지 않는다. 기존 저장·전송·로그인 상태 변경과 폼 submit 동작은 제거하고 브랜드색이 보이는 현실적인 고정 입력·선택 상태를 사용한다. 상단 링크와 사이트 탐색은 계속 작동한다. 실제 조작 가능한 문서 Preview에는 영향을 주지 않는다.
 
-### FR-5: 역할 기반 랜딩 브랜드 표현
+### FR-5: 브랜드색을 전역 primary로 통합
 
-이 Feature의 제안은 랜딩 소개·갤러리 범위에서 주요 동작과 선택 상태의 primary를 brand.accent, 그 위 전경을 brand.accentForeground로 연결하는 것이다. 차트는 data.accent/data.series1 등 기존 데이터 역할, 일반 배경의 브랜드 문구는 brand.text를 사용한다. light는 기존 보라, dark는 기존 파랑 역할을 따른다. 카드·입력의 표면, 본문·설명, secondary/outline/ghost와 상태 의미색은 각자의 역할을 유지한다. 라이브러리의 전역 primary 기본값이나 공개 Button API를 바꾸지 않는다. hover에서도 중립 primary로 갑자기 돌아가지 않도록 같은 브랜드 계열을 유지하고 글자 대비를 확인한다.
+primary는 제품의 주요 동작과 선택 상태를 표현하는 브랜드색의 정본이다. 별도의 color.brand 그룹과 brand-accent utility/색 변수는 제거하며 deprecated alias를 남기지 않는다. action.primary, primaryForeground, primaryHover, primaryText와 primaryGradientStart/Middle/End를 사용한다. 일반 배경의 강조 글자는 primaryText, 채워진 면 위의 글자는 primaryForeground로 구분해 대비를 확보한다. focus.ring과 data.accent/series는 기본적으로 primary 계열을 참조하되 역할별 재정의는 허용한다. light의 보라·dark의 파랑 계열을 기본으로 하며 두 모드의 주요 UI·hover·focus 가시성을 검증한다. 랜딩 한정 primary override는 제거하고 문서 Preview와 설치 source에도 같은 전역 규칙을 적용한다. 중립 표면·본문·보조 동작·상태 의미색은 각자의 역할을 유지한다. BrandLogo/BrandAction/BrandGradientText와 brand variant·폰트·모션 이름은 색 중복이 아니므로 보존한다. Foundation 편집·export와 현재 문서·기존 계약 테스트를 새 역할에 맞춘다.
 
 ### FR-6: 배경과 대체 표시
 
@@ -63,7 +63,7 @@
 
 - **접근성**: 하나의 h1과 본문·실제 링크의 읽기 순서를 유지한다. 장식 컨트롤에 Tab이 들어가지 않고 실제 CTA의 이름·focus-visible·색 대비를 확인한다.
 - **성능**: 지속적인 자동 이동이나 반복 모션을 추가하지 않는다. 추가 이미지·동영상·외부 자산 다운로드 없이 기존 mark와 카드 source를 사용한다.
-- **호환성**: 공유 token/theme와 registry 설치 계약을 보존한다. 문서 홈에서만 색·배치·진입 정책을 적용한다.
+- **호환성**: 외부 소비자가 없다는 사용자 결정에 따라 색 token 계약을 breaking change로 갱신한다. 구 색 alias는 보존하지 않는다. 배치·진입 정책은 홈에 한정한다. 설치 경로와 컴포넌트 이름은 유지한다.
 - **검증**: 브라우저에서 참조 방향, 초반·중간·완료 시점의 순차 등장, 조작 차단, 모션 대체 표시와 화면 크기별 light/dark를 확인한다. 프로젝트 설정의 typecheck/lint/test/build 검사를 따른다.
 
 ## 관련 문서
@@ -74,3 +74,10 @@
   - Design System: docs/designs/design-system.md
   - Visual Brief: - (기존 디자인 시스템과 이 Spec에서 범위를 정의)
 - 참조 이미지와 색상 대안: [decisions.md](./decisions.md)
+
+### 추가 인수 조건 (primary 통합)
+
+- [ ] 구 brand 색 token/utility가 배포 theme와 registry 및 현재 문서에서 제거된다.
+- [ ] 두 테마의 filled primary/hover 전경과 일반 강조 텍스트는 필요한 대비를 확보한다.
+- [ ] Foundation primary 편집·export가 public UI와 data/focus에 반영되고 구 brand 색 override는 거부된다.
+- [ ] Unreleased에 breaking migration을 설명하고 랜딩의 모션·비조작·대체 표시는 유지된다.
