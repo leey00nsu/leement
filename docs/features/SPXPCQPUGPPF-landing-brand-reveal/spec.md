@@ -91,5 +91,5 @@ primary는 제품의 주요 동작과 선택 상태를 표현하는 브랜드색
 
 공용 version:bump 명령으로 루트와 모든 workspace manifest를 0.3.0으로 맞추고 version:check·lockfile 호환·기존 필수 검사와 npm pack 내용을 확인한다. breaking migration과 홈 변경은 Unreleased에 준비하며 실제 npm 게시·registry 배포가 확인되기 전 공개 버전/과거 Changelog를 변경하지 않는다. 원격 게시·배포는 구체적인 결과를 공유한 후 문서화된 승인 경계를 따른다.
 
-- [ ] 모든 workspace와 두 npm 패키지 pack 버전은 0.3.0이고 현재 공개 이력은 게시 확인 전까지 유지된다.
-- [ ] version:check·lockfile 호환·build/typecheck/lint/test·pack 검사가 통과한다.
+- [x] 모든 workspace와 두 npm 패키지 pack 버전은 0.3.0이고 현재 공개 이력은 게시 확인 전까지 유지된다.
+- [x] version:check·lockfile 호환·build/typecheck/lint/test·pack 검사가 통과한다.

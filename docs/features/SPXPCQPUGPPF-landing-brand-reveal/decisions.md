@@ -66,7 +66,7 @@
 - **Evidence**: [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png), [tablet light](./artifacts/landing-768-light.png), [tablet dark](./artifacts/landing-768-dark.png), [wide light](./artifacts/landing-1920-light.png), [wide dark](./artifacts/landing-1920-dark.png), [reduced motion](./artifacts/landing-reduced.png), [no-JS](./artifacts/landing-no-js.png). 시간별 관찰과 검사 결과는 이 기록이 정본이며 임시 harness/log는 커밋하지 않는다.
 - **보조 캡처 처리**: full-page 캡처는 스크롤 키 검사 전에 촬영했다. 스크롤 키 직후 촬영에서는 sticky header의 compositor 위치가 반영되어 이전 캡처를 대체했다. 제품 코드 결함으로 기록하지 않는다.
 
-<!-- lee-spec-kit:workflow-sync sha256:6d0b713d7b31b395d8fe99542d6469a08df13f3425909739659f3cedd4b568b2 -->
+<!-- lee-spec-kit:workflow-sync sha256:5f9bdcd00956dd57a3ab7c5dabd3d9c6acac0f242f87454a46f52bdc3d217d7a -->
 
 ## D005: 사용자 요청으로 brand 색 중복을 제거한다 (2026-10-15)
 
@@ -134,3 +134,11 @@
 - **Decision**: 기존 공용 pnpm version:bump 0.3.0으로 루트·docs·tokens·theme·eslint·typescript 6개 manifest를 함께 갱신한다. lockfile dependency 요구사항은 변경하지 않는다. Unreleased의 breaking 안내를 준비하고 version:check·frozen install·필수 검사와 npm pack dry-run으로 실제 배포 예정 내용을 확인한다.
 - **공개 상태**: 실제 npm 게시 및 registry 배포가 확인되기 전 releases/publishedVersion은 기존 0.2.1로 유지한다. 준비 결과와 게시 상태를 혼동하지 않는다. main 통합은 기존 구현 승인 및 별도 local merge 승인 경계를 따른다.
 - **README 보류**: root README 95행은 아직 공개 0.1.0/개발 0.2.0이라고 설명한다. 이 변경에도 사용자의 README 수정 요청이 없으므로 AGENTS.md 보호 정책에 따라 갱신하지 않는다. 실제 공개/개발 상태는 manifests와 apps/docs/lib/releases.ts 및 관련 페이지에서 확인한다. 이 보류는 릴리스 준비를 막지 않는다.
+
+### D009 구현 및 검증
+
+- **버전업**: pnpm version:bump 0.3.0으로 6개 manifest를 함께 갱신했다. pnpm version:check PASS. pnpm install --frozen-lockfile PASS이며 lockfile/dependency 요구사항에는 diff가 없다.
+- **문서**: Unreleased breaking 항목에 0.3.0 theme/tokens를 함께 갱신하고 영향 source를 검토·재설치하는 안내를 보강했다. packages 업데이트가 앱 소유 source를 덮어쓰지 않는 점을 명시한다. 기존 releases/publishedVersion 및 보호된 README는 보존했다. 실제 production SSR의 Changelog는 Unreleased · 0.3.0·기존 공개 0.2.1, Getting started는 repository target 0.3.0·공개 0.2.1로 표시한다.
+- **패키지 검증**: npm pack --dry-run --json 두 패키지 모두 PASS이며 name/version은 @leement/theme@0.3.0 및 @leement/tokens@0.3.0이다. theme은 11개 파일·4개 woff2·각 OFL/NOTICE·MIT LICENSE·생성 CSS, tokens는 7개 파일·dist JS/types/JSON·원본 JSON·MIT LICENSE를 포함한다. theme CSS에는 #706BC5 primary가 있고 제거한 brand 색은 없다. pack 정보·임시 로그는 /tmp에 두고 게시하지 않았다.
+- **필수 검사**: pnpm run build/typecheck/lint/test 모두 exit 0. Next 252 pages, Vitest 32 files/707 tests PASS. 버전 metadata에 별도 영구 테스트는 추가하지 않았다.
+- **남은 릴리스 단계**: 완성된 Feature의 구현 승인 → 별도 main 통합 승인/검증/정리 → npm 게시·origin main push/Coolify 배포 → 실제 게시/registry 상태 확인 후 0.3.0 공개 이력 갱신. 현재 task는 버전업과 릴리스 준비까지 완료했으며 원격 게시나 배포 완료를 뜻하지 않는다.

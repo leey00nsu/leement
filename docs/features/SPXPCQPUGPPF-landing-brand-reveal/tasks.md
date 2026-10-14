@@ -153,14 +153,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][NON-PRD] T-SPXPCQPUGPPF-landing-brand-reveal-05 0.3.0 workspace 버전업과 릴리스 준비 검증
+- [DONE][NON-PRD] T-SPXPCQPUGPPF-landing-brand-reveal-05 0.3.0 workspace 버전업과 릴리스 준비 검증
   - Date: 2026-10-15
   - Acceptance:
     - 모든 workspace manifest와 배포 예정 npm 패키지가 0.3.0이며 공개 이력은 게시 확인 전까지 기존 버전을 유지한다
   - Checklist:
-    - [ ] 공용 version:bump 명령으로 전체 manifest를 0.3.0으로 맞추고 lockfile 호환을 확인한다
-    - [ ] Unreleased의 0.3.0 breaking migration 안내를 준비하고 기존 공개 이력을 보존한다
-    - [ ] version:check·build/typecheck/lint/test와 두 npm 패키지 pack 내용을 검증한다
+    - [x] 공용 version:bump 명령으로 전체 manifest를 0.3.0으로 맞추고 lockfile 호환을 확인한다
+    - [x] Unreleased의 0.3.0 breaking migration 안내를 준비하고 기존 공개 이력을 보존한다
+    - [x] version:check·build/typecheck/lint/test와 두 npm 패키지 pack 내용을 검증한다
   - Docs:
     - project:apps/docs/lib/releases.ts
   - Review Evidence: -
@@ -181,8 +181,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -196,6 +196,10 @@
 | pnpm run typecheck | 2026-10-15 | PASS |
 | pnpm run lint | 2026-10-15 | PASS |
 | pnpm run test | 2026-10-15 | PASS — 32 files / 707 tests |
+| pnpm version:check | 2026-10-15 | PASS — 6 manifests / 0.3.0 |
+| pnpm install --frozen-lockfile | 2026-10-15 | PASS — lockfile unchanged |
+| npm pack --dry-run --json (theme/tokens) | 2026-10-15 | PASS — 0.3.0 metadata·exports·CSS/tokens·font/licenses |
+| 릴리스 상태 SSR 확인 | 2026-10-15 | PASS — Changelog/Getting started draft 0.3.0 / public 0.2.1 |
 | 브라우저 시각·조작 검수 | 2026-10-15 | PASS — 전역 primary 대비·Foundation export/persist/reset·대표 UI 및 8개 랜딩 테마/크기 조합·아이콘/워드마크·모션/fallback, Decisions D005/D007/D008 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
