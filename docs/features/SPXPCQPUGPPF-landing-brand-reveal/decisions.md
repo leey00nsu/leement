@@ -85,3 +85,10 @@
 - **계약 검사**: pnpm run build/typecheck/lint/test 모두 exit 0, 32개 파일/706개 테스트 통과. theme/Foundation 기존 테스트를 새 역할과 제거된 필드 거부에 맞춰 갱신했다. 생성 theme/token/registry 출력 검색에서 구 brand 색 변수·utility의 실행 참조가 없다. 기존 릴리스 설명과 완료 Feature의 이력은 당시 계약을 설명하므로 그대로 두었다.
 
 - **대표 public UI**: 두 모드의 Button 기본/hover, Checkbox·Switch 클릭 전환, Slider·Progress, FilterToolbar 선택, DayPicker range endpoint hover를 확인했다. selected day는 hover에서도 primaryForeground를 유지하고 public Preview의 실제 조작은 정상이다. 첫 harness에서 FilterToolbar의 초기 상태를 selected로 가정한 조회는 실제 초기 false와 달라 타임아웃이 났으며, 정상 초기 상태에서 클릭·선택 전환을 확인하는 방식으로 검수를 정정했다.
+
+## D006: primary 위 흰색·검은색 글자 비교 자료 (2026-10-15)
+
+- **요청/범위**: 현재 primary 위의 흰색·검은색 텍스트를 비교할 자료를 요청했다. 분석용 artifact이며 제품 색 변경이나 추가 구현 task를 뜻하지 않는다.
+- **자료**: [비교 화면](./artifacts/primary-foreground-comparison.png), [인터랙티브 비교 HTML](./artifacts/primary-foreground-comparison.html). 실제 light/dark primary·hover·전경 값을 tokens.json에서 가져왔고 동일 크기·굵기의 버튼·배지·문구를 나란히 배치했다. 검정은 실제 #111113, 흰색은 #ffffff다. 보라 밝기 조절·현재 값 복구와 테마 선택을 제공한다.
+- **관찰/제안**: light 기본/hover에서 실제 검정은 약 5.62/5.19:1, 흰색은 3.35/3.63:1이다. dark 기본/hover는 검정 4.93/4.64:1, 흰색 3.83/4.07:1이다. 현재 배경을 유지한다면 검정을 권한다. 흰색을 원하면 light의 같은 보라 계열 L=0.55 예시에서 기본 5.04:1·hover L=0.53에서 5.50:1이 되며 전경과 배경을 함께 변경해야 한다. 제안 색은 제품에 적용하지 않았다.
+- **기준/검증**: W3C WCAG 2.2 Contrast Minimum의 일반 텍스트 AA 4.5:1 기준을 사용한다. https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html . 수치는 브라우저 sRGB 변환 기반 근삿값이다. 테마 전환·슬라이더·reset·모바일 375px overflow 없음·pageerror 없음 및 실제 PNG 렌더를 확인했다.
