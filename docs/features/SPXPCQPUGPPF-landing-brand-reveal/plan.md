@@ -28,11 +28,13 @@ Home은 서버 페이지로 유지하고 홈 전용 client motion wrapper를 합
 
 HomeExamples에서 로컬 작업 상태와 submit handler를 제거하고 현실적인 고정 값을 사용한다. 전체를 inert 및 aria-hidden으로 장식 처리한다. 별도 tilt wrapper 안에 실제 카드 source를 유지하고 viewport clip·overscan으로 가장자리를 채운다. 5열을 기본으로 좁은 화면에서 보이는 열 범위와 기울기를 조정한다. 모션은 .home-example만 선택하고 최초 측정의 시각 y/x 순서에 따라 stagger한다. static tilt는 부모에만 적용하므로 개별 모션 transform과 충돌하지 않는다. 완료한 진입을 theme/scroll로 재시작하지 않으며 visibility pause 및 unmount cleanup을 처리한다.
 
-후속 요청에 따라 .home-brand override를 제거한다. tokens의 color.brand를 삭제하고 action.primary 및 primaryForeground/primaryHover/primaryText/primaryGradientStart/Middle/End로 통합한다. theme compatibility와 모든 소비처를 갱신하며 일반 배경의 text-primary는 대비가 확보된 primaryText로 옮긴다. focus/data는 의미 참조를 유지하고 Foundation은 새 action 필드를 편집·export한다. 기존 theme/Foundation 계약 테스트를 새 정본·구 역할 제거·override 동작에 맞춰 갱신한다. 이전 별도 brand 색 계약의 호환 alias는 제공하지 않는다.
+후속 요청에 따라 .home-brand override를 제거한다. tokens의 color.brand를 삭제하고 action.primary 및 primaryForeground/primaryHover/primaryText/primaryGradientStart/Middle/End로 통합한다. theme compatibility와 모든 소비처를 갱신하며 일반 배경의 text-primary는 대비가 확보된 primaryText로 옮긴다. focus/data는 의미 참조를 유지하고 Foundation은 새 action 필드를 편집·export한다. 기존 theme/Foundation 계약 테스트를 새 정본·구 역할 제거·override 동작에 맞춰 갱신한다. 이전 별도 brand 색 계약의 호환 alias는 제공하지 않는다. 사용자 보완 요청에 따라 두 모드 primary=#706BC5·전경=#FFFFFF로 통일하고 hover는 더 어두운 보라, 일반 강조 글자/focus/data 및 gradient는 같은 보라 계열에서 테마 표면 대비에 맞춘다. Leement mark의 레이어도 보라로 통일한다. 독립 데이터 시리즈와 syntax palette는 유지한다. 기존 muted track과의 dark 대비가 3:1 미만이면 Progress/Slider/Switch 기본 track에 dark secondary 표면을 사용한다. theme 계약 검사를 같은 hue·흰색 전경·track/text 대비로 갱신하고 Foundation 예제와 현재 디자인 설명을 맞춘다.
 
 ## 파일 구조
 
 - apps/docs/app/page.tsx: logo, motion wrapper, semantic sections
+- apps/docs/public/leement-mark.svg: primary 보라 레이어
+- registry/ui/progress.tsx, slider.tsx, switch.tsx: dark track 대비
 - apps/docs/components/home-reveal.tsx: 일회성 hero/gallery 진입 조합
 - apps/docs/components/home-examples.tsx: 고정 상태의 비조작 카드·data 색
 - apps/docs/app/globals.css: 전역 primary 사용·tilt·clip·배경·대체 표시
@@ -89,7 +91,7 @@ HomeExamples에서 로컬 작업 상태와 submit handler를 제거하고 현실
 | FR-1/3 | NONE | 비테스트 브라우저 검수 | 순서 누락·tilt 덮임·진입 반복 | Spec 순서와 실제 시간대별 opacity/위치 |
 | FR-2/6 | NONE | 비테스트 시각 검수 | 빈 모서리·가로 overflow·배경 단절 | 사용자 참조 및 375/768/1440/1920 light/dark 캡처 |
 | FR-4 | NONE | 비테스트 브라우저 조작 | 클릭·Tab·Enter로 숨은 갤러리 동작 | native inert 상태·focus 순서·URL/고정값 보존 |
-| FR-5 | UPDATE | 기존 theme/Foundation 계약 테스트 + 브라우저 | 구 색 계약 잔존·전경 alias 오류·override 미반영·텍스트 대비 저하 | 생성 CSS의 정본 참조·거부되는 구 필드·실제 두 테마 대비 및 편집 반영 |
+| FR-5 | UPDATE | 기존 theme/Foundation 계약 테스트 + 브라우저 | 구 색 계약 잔존·두 모드 primary 불일치·흰색 전경/track/text 대비 저하·override 미반영 | 생성 CSS의 정본 참조·거부되는 구 필드·실제 두 테마 대비 및 편집 반영 |
 | fallback | NONE | 비테스트 브라우저 검수 | reduced motion/no-JS에서 내용 숨음 | motion reduce 및 JS 비활성 실제 페이지 |
 
 ### 의도적으로 제외하는 테스트

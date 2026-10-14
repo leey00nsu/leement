@@ -133,6 +133,26 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-011] T-SPXPCQPUGPPF-landing-brand-reveal-04 primary를 보라색과 흰색 전경으로 통일하고 파란 강조 제거
+  - Date: 2026-10-15
+  - Acceptance:
+    - 두 모드의 primary는 #706BC5·전경은 흰색이며 hover·일반 강조 글자·focus·gradient·로고는 보라 계열로 일관된다
+  - Checklist:
+    - [ ] primary·전경·hover·text·gradient 토큰과 로고 자산의 파란 강조를 정리한다
+    - [ ] 채워진 UI·링크·focus·track 대비를 검수하고 필요한 공용 source 및 기존 계약 테스트를 조정한다
+    - [ ] PRD·디자인 시스템·Foundation 예제·Unreleased와 Feature를 동기화한다
+    - [ ] 두 모드 대표 UI·Foundation 편집·랜딩 회귀 및 build/typecheck/lint/test를 확인한다
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:apps/docs/app/foundations/[slug]/page.tsx
+    - project:apps/docs/lib/releases.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -145,8 +165,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록

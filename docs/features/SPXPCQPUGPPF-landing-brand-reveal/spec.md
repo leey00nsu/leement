@@ -7,7 +7,7 @@
 - **대상 레포**: Leement
 - **작성일**: 2026-10-15
 - **상태**: Approved
-- **승인 기록**: 2026-10-15 사용자 A — 랜딩 명세 승인. 같은 날 “아직 외부에서 사용하는 곳이 없다. 브레이킹체인지로 수정하고자 한다.” 요청으로 전역 primary 통합 및 기존 brand 색 제거 범위를 승인. 같은 날 “랜딩에서 로고는 텍스트도 있도록 수정해줘” 요청으로 아이콘과 Leement 워드마크 표시를 승인.
+- **승인 기록**: 2026-10-15 사용자 A — 랜딩 명세 승인. 같은 날 “아직 외부에서 사용하는 곳이 없다. 브레이킹체인지로 수정하고자 한다.” 요청으로 전역 primary 통합 및 기존 brand 색 제거 범위를 승인. 같은 날 “랜딩에서 로고는 텍스트도 있도록 수정해줘” 요청으로 아이콘과 Leement 워드마크 표시를 승인. 이후 사용자가 앞선 흰색 텍스트와 파란 primary 제거 요청의 누락을 지적하여 #706BC5·흰색 전경 통일을 확정.
 
 ## 목적
 
@@ -53,7 +53,7 @@
 
 ### FR-5: 브랜드색을 전역 primary로 통합
 
-primary는 제품의 주요 동작과 선택 상태를 표현하는 브랜드색의 정본이다. 별도의 color.brand 그룹과 brand-accent utility/색 변수는 제거하며 deprecated alias를 남기지 않는다. action.primary, primaryForeground, primaryHover, primaryText와 primaryGradientStart/Middle/End를 사용한다. 일반 배경의 강조 글자는 primaryText, 채워진 면 위의 글자는 primaryForeground로 구분해 대비를 확보한다. focus.ring과 data.accent/series는 기본적으로 primary 계열을 참조하되 역할별 재정의는 허용한다. light의 보라·dark의 파랑 계열을 기본으로 하며 두 모드의 주요 UI·hover·focus 가시성을 검증한다. 랜딩 한정 primary override는 제거하고 문서 Preview와 설치 source에도 같은 전역 규칙을 적용한다. 중립 표면·본문·보조 동작·상태 의미색은 각자의 역할을 유지한다. BrandLogo/BrandAction/BrandGradientText와 brand variant·폰트·모션 이름은 색 중복이 아니므로 보존한다. Foundation 편집·export와 현재 문서·기존 계약 테스트를 새 역할에 맞춘다.
+primary는 제품의 주요 동작과 선택 상태를 표현하는 브랜드색의 정본이다. 별도의 color.brand 그룹과 brand-accent utility/색 변수는 제거하며 deprecated alias를 남기지 않는다. action.primary, primaryForeground, primaryHover, primaryText와 primaryGradientStart/Middle/End를 사용한다. 일반 배경의 강조 글자는 primaryText, 채워진 면 위의 글자는 primaryForeground로 구분해 대비를 확보한다. focus.ring과 data.accent/series는 기본적으로 primary 계열을 참조하되 역할별 재정의는 허용한다. 두 모드의 기본 filled primary는 #706BC5, primaryForeground는 #FFFFFF로 통일한다. hover는 같은 보라 계열에서 어둡게 하고 일반 배경의 primaryText·focus·data 강조와 gradient는 모드별 대비를 갖춘 보라 계열이다. Leement mark의 파란 레이어도 같은 보라로 바꾼다. 독립된 palette·다중 데이터 시리즈·syntax의 파랑은 브랜드 역할이 아니므로 보존한다. Progress/Slider/Switch의 track은 primary와 3:1 이상 구분되도록 필요한 dark 표면만 조정하며 두 모드의 주요 UI·hover·focus 가시성을 검증한다. 랜딩 한정 primary override는 제거하고 문서 Preview와 설치 source에도 같은 전역 규칙을 적용한다. 중립 표면·본문·보조 동작·상태 의미색은 각자의 역할을 유지한다. BrandLogo/BrandAction/BrandGradientText와 brand variant·폰트·모션 이름은 색 중복이 아니므로 보존한다. Foundation 편집·export와 현재 문서·기존 계약 테스트를 새 역할에 맞춘다.
 
 ### FR-6: 배경과 대체 표시
 
@@ -78,6 +78,11 @@ primary는 제품의 주요 동작과 선택 상태를 표현하는 브랜드색
 ### 추가 인수 조건 (primary 통합)
 
 - [x] 구 brand 색 token/utility가 배포 theme와 registry 및 현재 문서에서 제거된다.
-- [x] 두 테마의 filled primary/hover 전경과 일반 강조 텍스트는 필요한 대비를 확보한다.
+- [ ] 두 테마의 filled primary/hover 전경과 일반 강조 텍스트는 필요한 대비를 확보한다.
 - [x] Foundation primary 편집·export가 public UI와 data/focus에 반영되고 구 brand 색 override는 거부된다.
 - [x] Unreleased에 breaking migration을 설명하고 랜딩의 모션·비조작·대체 표시는 유지된다.
+
+### 추가 인수 조건 (보라색 통일)
+
+- [ ] 두 모드 primary=#706BC5·전경=#FFFFFF이고 hover·강조 글자·focus·gradient 및 Leement mark에서 브랜드 파랑이 제거된다.
+- [ ] 기본/hover 전경과 일반 강조 글자는 4.5:1, 표시 track과 primary는 3:1 이상이며 Foundation 재정의·랜딩 모션·실제 UI 조작은 유지된다.

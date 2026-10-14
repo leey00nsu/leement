@@ -107,3 +107,10 @@
 - **모션**: hydration 뒤 111ms에는 logo opacity≈0.34·나머지 hero=0, 543ms title≈0.78, 760ms description≈0.82, 977ms actions≈0.84였다. 1.61초에는 hero가 모두 1이며 스크롤 왕복 후 재실행되지 않았다.
 - **검사**: pnpm run build/typecheck/lint/test 모두 exit 0; 32 files/706 tests PASS. 새 영구 테스트 없이 기존 검사와 브라우저 검수를 수행했다.
 - **Evidence**: 기존 [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png) 및 나머지 viewport·fallback 캡처를 현재 워드마크 적용 화면으로 갱신했다.
+
+## D008: 누락된 보라 primary·흰색 전경 결정을 적용한다 (2026-10-15)
+
+- **요청/승인**: 사용자는 흰색 전경 선호·dark 파란 primary 제거와 #706BC5를 앞서 제시했고, 이번에 왜 적용되지 않았는지 지적했다. 로고만 구현하면서 색 변경을 누락한 판단을 정정한다. D007의 색 제안 범위 기록은 당시 처리의 이력이며 현재 결정은 이 항목이 대체한다. 새 task 04에 기록한다.
+- **Decision**: 양쪽 모드 filled primary=#706BC5·전경=#FFFFFF, hover는 어두운 보라로 통일한다. 링크/focus/data 및 gradient는 같은 보라 계열이며 일반 배경 읽기 대비 때문에 dark의 글자/gradient는 밝게 한다. Leement mark의 파란 레이어도 보라로 통일한다. 독립 palette·syntax·다중 차트 시리즈의 파랑은 별도 의미 역할로 보존한다.
+- **대비/범위**: 흰색과 #706BC5는 약 4.57:1이다. dark muted track과의 대비는 별도 확인하며 3:1 미만일 경우 공용 Progress/Slider/Switch의 dark 기본 track만 secondary 표면으로 조정한다. 일반 강조 글자·gradient는 최소 4.5:1을 검증한다. primary override나 공용 API 이름은 유지한다.
+- **Docs/검증**: PRD·디자인 시스템·Foundation 예제·Unreleased, 기존 theme 계약 테스트를 함께 갱신하고 build/typecheck/lint/test 및 양쪽 테마 대표 UI·Foundation·랜딩 회귀를 확인한다. README 보호와 보류는 D003과 같다.
