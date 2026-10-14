@@ -111,7 +111,7 @@
 
 - [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
 - [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
-- [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
+- [x] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
 
@@ -133,3 +133,8 @@
 - [기본 light](./artifacts/select-default-light.png), [기본 dark](./artifacts/select-default-dark.png)
 - [명시적 true의 기존 정렬](./artifacts/select-overlap-opt-in.png)
 - 실제 production Preview를 대상으로 일회성 Playwright harness를 실행했다. standalone Preview의 theme은 부모 iframe이 전달하는 것과 같은 data-lm-theme/class를 사용해 설정했다. 실제 bounding box로 기본/placeholder4px 간격과 true 정렬을 확인했다. 화면 경계 검증은 임시 페이지의 기존 trigger만 아래로 이동해 popup top 배치를 확인했다. 검증 harness는 /tmp에 보관하며 영구 테스트를 추가하지 않았다.
+
+### 구현 결과 승인
+
+- 2026-10-14 사용자 A: 기본 비겹침 위치, 명시적 true 옵션, 문서/예제와 검증 결과를 승인했다. 구현 검토 head는 43f72d4다.
+- 이 승인은 구현 결과 수락이며 local-ff main 통합은 별도 local_merge 승인을 따른다. 원격 push, npm 게시와 배포는 범위 밖이다.
