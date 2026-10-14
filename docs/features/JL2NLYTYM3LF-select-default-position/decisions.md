@@ -1,41 +1,23 @@
 # Decisions Log
 
-기술 결정과 그 이유를 기록합니다.
-canonical docs surface 밖의 unmanaged docs 산출물(예: `docs/plans/*`, `docs/superpowers/*`)이 있더라도, 실제로 채택한 대안과 선택 이유는 이 파일에 다시 남겨 Feature의 결정 이력을 유지합니다.
+## D001: 공용 Select의 기본 위치 변경 (2026-10-14)
 
-> ADR(Architecture Decision Record)은 구현 중 내린 중요한 기술/구조 결정을 남기는 기록입니다.
-> 나중에 "왜 이렇게 만들었는지"를 추적하고, 팀 합의를 재확인하기 위해 작성합니다.
-
-> 형식: `DNNN: select-default-position 결정 (2026-10-14)`
-> 결정 ID는 Feature별로 독립된 번호를 사용하며 Feature ID와 관계없이 `D001`부터 시작합니다.
-
-기록 원칙:
-
-- 새 ADR 생성에는 `npx lee-spec-kit decision add <feature-ref> --title "..." --context "..." --decision "..." --rationale "..." --evidence "..."` 사용을 우선하세요.
-- 수동 작성도 마지막 ADR 뒤에 추가해 D001 → D002 순서를 유지하세요. 문서 안내문 앞에 삽입하거나 기존 ID를 재번호화하지 마세요. 같은 결정의 재실행·검증 결과는 해당 ADR의 Trace/Evidence를 갱신하고, 새 선택이나 범위 변경일 때만 새 ADR을 만드세요.
-- 모든 ADR은 **Decision(무엇을 선택했는가)** + **Trace(어떻게 고민했고 무엇을 확인했는가)** 를 함께 남깁니다.
-- 작성 타이밍을 고정합니다.
-  - 태스크 시작(`[TODO] -> [DOING]`): `Context/Constraints`와 `Trace(초기 가설)`를 1~3줄로 먼저 기록
-  - 태스크 완료 직전(`[DOING] -> [DONE]`): `Options/Decision/Rationale`를 최종화하고 `Trace`를 보강
-  - PR 머지 후: 실제 결과/영향을 `Trace(머지 후 확인)`에 1~2줄 추가
-- 모든 ADR에는 최소 1개 이상의 **Evidence 링크**(커밋/PR/테스트 로그 중 하나 이상)를 남깁니다.
-- 디자인 시스템 변경이나 예외를 기록할 때는 영향 받는 규칙과 범위, 예외 이유, 제거 조건, 실행 가능한 정본의 동기화 영향을 함께 남깁니다.
-
----
-
-## D001: select-default-position 결정 (2026-10-14)
-
-- **Context**: 문제 상황 또는 배경
-- **Constraints**: 제약 조건 (시간/기술/운영/호환성)
-- **Options**: 고려한 대안들
-- **Decision**: 최종 선택
-- **Rationale**: 선택 이유
+- **Context**: 사용자가 Leement Select를 기본적으로 겹치지 않게 열도록 요청하고 2026-10-14 A로 Spec을 승인했다.
+- **Constraints**: 공용 source 기본값을 바꾸고 명시적 true 및 primitive viewport/focus/선택 계약을 유지한다. token/theme과 다른 메뉴는 변경하지 않는다.
+- **Options**: 개별 예제에 false 반복 지정, 공용 SelectContent 기본값 변경.
+- **Decision**: 공용 기본값 false, side=bottom과4px 간격 유지. 토글 예제도 초기 false로 맞추고 true 전환을 보존한다.
+- **Rationale**: 새로운 설치와 모든 옵션 없는 사용처에서 요청한 동작을 일관되게 제공한다.
 - **Trace**:
-  - **DOING 시작 시점**: 초기 판단/가설
-  - **DONE 전 확정 시점**: 선택 근거 최종화
-  - **머지 후 확인**: 실제 결과/영향
+  - source 기본 true, API 기본 true, catalog의 true(default) 설명과 토글 초기 true를 확인했다. 명시적 false 사용처는 이미 별도 아래 위치를 요청하며 수정할 필요가 없다.
+  - 기존 controls/core-form 검사가 입력/폼/키보드 계약을 다룬다. 실제 layout 확인이 필요하므로 기본값을 복제하는 영구 테스트를 추가하지 않는다.
+  - README에는 Select 위치 기본값 설명이 없어 변경하지 않는다. source/API/PRD/design/unreleased만 task로 동기화한다.
+  - 결과: 공용 기본값 false, API/default 설명, 위치 전환 초기 false 및 기본 상태 예제 생략, PRD/design와 unreleased를 동기화했다. token/theme/manifests/lockfile/dependencies는 변경하지 않았다.
+  - production4조합에서 default/placeholder4px, 명시적 true의 selected item 정렬, 하단 경계 top flip, 마우스·키보드·Escape focus·disabled·console0 및 생성 registry source false를 확인했다. Aside에서 실 DOM 팝업과 trigger 좌표도4px 간격이었다.
+  - typecheck/lint/build와32 files/706 tests가 통과했다. 초기 실행은 worktree dependencies 미설치로 시작되지 않아 frozen-lockfile로 설치한 뒤 검사를 통과했다. 기본값을 복제하는 영구 테스트는 추가하지 않았다.
+  - sharedDocumentationWarnings의 이전 Feature 변경은 main 기준에 이미 포함되어 있다. 현재 diff는 Select 규칙 문장과 미게시 항목을 추가하며 기존 요구를 유지한다.
 - **Evidence**:
-  - **Commit**: 커밋 해시 또는 링크
-  - **PR**: PR 링크
-  - **Test/Log**: 테스트 결과/로그/스크린샷 경로
-- **Consequences**: 결과 및 영향 (선택사항)
+  - [기준 source](../../../registry/ui/select.tsx), [API](../../../apps/docs/lib/api-core.ts), [검증 계약](./plan.md#verification-contract).
+
+- **Test/Log**: [완료 전 검증 기록과 화면](./tasks.md#테스트-실행-기록).
+
+<!-- lee-spec-kit:workflow-sync sha256:cbb9ba1a950f8c103d2fa3d4f56d7990be44d70ca2b1ba7dfcb446b09533f332 -->

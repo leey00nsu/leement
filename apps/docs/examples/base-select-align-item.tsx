@@ -29,7 +29,7 @@ const items = [
 ];
 
 function SelectAlignItem() {
-  const [alignItemWithTrigger, setAlignItemWithTrigger] = React.useState(true);
+  const [alignItemWithTrigger, setAlignItemWithTrigger] = React.useState(false);
 
   return (
     <FieldGroup className="w-full max-w-xs">

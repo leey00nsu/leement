@@ -21,7 +21,7 @@ export default function Example() {
             <SelectTrigger id={`${id}-${size}`} size={size} className="w-full">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent alignItemWithTrigger={false}>
+            <SelectContent>
               {Object.entries(options).map(([value, label]) => (
                 <SelectItem key={value} value={value}>
                   {label}

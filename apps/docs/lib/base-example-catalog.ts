@@ -2451,7 +2451,7 @@ export const baseExamples: Record<string, AdditionalExample[]> = {
       id: "base-align-item",
       title: "Align Item With Trigger",
       description:
-        "Use `alignItemWithTrigger` on `SelectContent` to control whether the selected item aligns with the trigger. When `true` (default), the popup positions so the selected item appears over the trigger. When `false`, the popup aligns to the trigger edge.",
+        "Select opens below the trigger by default (`alignItemWithTrigger={false}`), with automatic positioning near viewport edges. Turn on `alignItemWithTrigger` to align the selected item over the trigger instead.",
       file: "base-select-align-item",
     },
     {

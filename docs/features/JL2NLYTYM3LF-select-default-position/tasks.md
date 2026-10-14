@@ -21,7 +21,7 @@
 ---
 
 ## 로컬 추적 정보
-- **문서 상태**: -
+- **문서 상태**: Approved
 - **레포**: Leement
 - **브랜치**: `feat/JL2NLYTYM3LF-select-default-position`
 - **대기 중 변경 요청**: -
@@ -75,6 +75,28 @@
 
 ---
 
+- [DONE][PRD-FR-014] T-JL2NLYTYM3LF-select-default-position-01 Select 기본 비겹침 위치와 문서·예제 동기화 및 검증
+  - Date: 2026-10-14
+  - Acceptance:
+    - 옵션 생략 시 trigger 아래4px에 열리고 명시적 true 겹침 정렬 및 화면 경계 위치 조정을 유지한다.
+    - 선택·폼·disabled·키보드·Escape와 API/registry source/예제 기본값이 일치한다.
+  - Checklist:
+    - [x] 공용 기본값 false와 초기 예제 상태 변경
+    - [x] API·예제 설명·PRD·디자인·unreleased 동기화
+    - [x] 실제 브라우저 위치·입력·focus·경계 검증 및 생성 registry 확인
+    - [x] 설정된 typecheck/lint/test/build 통과와 Feature 문서 증거 기록
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:apps/docs/lib/api-core.ts
+    - project:apps/docs/lib/base-example-catalog.ts
+    - project:apps/docs/lib/releases.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -87,8 +109,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -98,6 +120,16 @@
 
 | 명령어                   | 마지막 실행(로컬, YYYY-MM-DD) | 결과               |
 | ------------------------ | ----------------------------- | ------------------ |
-| `{실행한 테스트 명령어}` | `-`                           | `{PASS/FAIL 요약}` |
+| `pnpm run typecheck` | 2026-10-14 | PASS (5 tasks) |
+| `pnpm run lint` | 2026-10-14 | PASS (workspace + registry) |
+| `pnpm run test` | 2026-10-14 | PASS (32 files, 706 tests) |
+| `pnpm run build` | 2026-10-14 | PASS (production docs + registry) |
+| production browser/registry verification | 2026-10-14 | PASS (375/1440 × light/dark; default/placeholder gap4; true overlap; bottom edge flip; mouse/keyboard/Escape/focus/disabled; console0; generated source false) |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.
+
+### 보존한 화면 근거
+
+- [기본 light](./artifacts/select-default-light.png), [기본 dark](./artifacts/select-default-dark.png)
+- [명시적 true의 기존 정렬](./artifacts/select-overlap-opt-in.png)
+- 실제 production Preview를 대상으로 일회성 Playwright harness를 실행했다. standalone Preview의 theme은 부모 iframe이 전달하는 것과 같은 data-lm-theme/class를 사용해 설정했다. 실제 bounding box로 기본/placeholder4px 간격과 true 정렬을 확인했다. 화면 경계 검증은 임시 페이지의 기존 trigger만 아래로 이동해 popup top 배치를 확인했다. 검증 harness는 /tmp에 보관하며 영구 테스트를 추가하지 않았다.

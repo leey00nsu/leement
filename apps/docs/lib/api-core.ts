@@ -3832,8 +3832,8 @@ export const coreApiReferences: Record<string, ApiReference> = {
           {
             "name": "alignItemWithTrigger",
             "type": "boolean | undefined",
-            "description": "Whether the positioner overlaps the trigger so the selected item's text is aligned with the trigger's value text. This only applies to mouse input and is automatically disabled if there is not enough space.",
-            "default": "true"
+            "description": "Defaults to false: the popup opens below the trigger and may change side to avoid viewport collisions. Set true to align the selected item's text over the trigger's value text. Overlap alignment only applies to mouse input and is automatically disabled if there is not enough space.",
+            "default": "false"
           }
         ]
       },

@@ -56,4 +56,4 @@ PRD-FR-013의 Motion 편집은 duration, easing, stagger, 반복 cycle을 역할
 
 ## 선택과 공개 설치
 
-기본 선택 입력은 Select로 통일하고 검색 가능한 목록은 Combobox를 사용한다. NativeSelect와 보이는 browser select 예제는 제공하지 않는다. group label, form name/value, Field 접근성과 disabled를 유지한다. 공개 설치는 npm @leement/theme 및 https://leement.leey00nsu.com/r/{name}.json namespace를 기본으로 한다. 설치된 source의 애니메이션은 Motion을 registry dependency로 설치해 실행한다.
+기본 선택 입력은 Select로 통일하고 검색 가능한 목록은 Combobox를 사용한다. Select 목록은 기본적으로 trigger와 겹치지 않고 충분한 공간이 있으면 아래에 4px 간격으로 열린다. 화면 경계에 따른 자동 위치 조정을 유지하며 alignItemWithTrigger=true로 기존 선택 항목 겹침 정렬을 요청할 수 있다. NativeSelect와 보이는 browser select 예제는 제공하지 않는다. group label, form name/value, Field 접근성과 disabled를 유지한다. 공개 설치는 npm @leement/theme 및 https://leement.leey00nsu.com/r/{name}.json namespace를 기본으로 한다. 설치된 source의 애니메이션은 Motion을 registry dependency로 설치해 실행한다.

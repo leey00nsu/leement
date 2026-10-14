@@ -102,7 +102,7 @@ Native HTML media event가 playback state의 정본이다. src 변경은 이전 
 
 Checkbox는 함께 제출할 독립 옵션이며 mixed 상태는 일부 선택을 뜻한다. RadioGroup은 한 값을 고르고 Choicebox는 설명을 비교하는 카드형 선택이다. Switch는 즉시 적용할 설정, Toggle/ToggleGroup은 눌린 도구 모드, FilterToggle은 결과 필터에 쓴다. 체크/라디오 표식은16px이고 label row는 최소40px로 조작 영역을 확보한다.
 
-Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/Legend는 관련 입력의 의미를 묶는다. FormSection은 여러 필드의 배치이며 Field를 대체하지 않는다. Base UI input은 Field와 자동 연결되며 Leement의 native Input/Textarea는 FieldControl render로 연결하거나 id/aria-describedby/aria-invalid를 명시한다. 이름 없는 아이콘 action과 placeholder만의 라벨을 피한다. InputGroup은 앞/뒤 adornment와 입력의 focus/invalid 표면을 묶되 별도 버튼의 disabled는 앱이 전달한다. 기본 선택 UI는 Select로 통일하고 검색은 Combobox를 사용한다. Select의 name/defaultValue 또는 controlled value와 Field context 연결을 사용한다. ToggleGroup은 Base UI의 배열 값 계약을 유지하며 단일 선택에서는 multiple=false다.
+Field는 한 입력의 label/description/error 연결을 소유하고 FieldSet/Legend는 관련 입력의 의미를 묶는다. FormSection은 여러 필드의 배치이며 Field를 대체하지 않는다. Base UI input은 Field와 자동 연결되며 Leement의 native Input/Textarea는 FieldControl render로 연결하거나 id/aria-describedby/aria-invalid를 명시한다. 이름 없는 아이콘 action과 placeholder만의 라벨을 피한다. InputGroup은 앞/뒤 adornment와 입력의 focus/invalid 표면을 묶되 별도 버튼의 disabled는 앱이 전달한다. 기본 선택 UI는 Select로 통일하고 검색은 Combobox를 사용한다. Select 목록은 기본적으로 trigger 아래에 4px 간격으로 열며 화면 경계에서는 Base UI가 위치를 조정한다. 선택 항목을 trigger 위에 정렬하려면 alignItemWithTrigger=true를 명시한다. Select는 입력값 선택에, Dropdown Menu는 동작과 여러 메뉴 기능을 제공하는 데 사용하며 popup 위치로 구분하지 않는다. Select의 name/defaultValue 또는 controlled value와 Field context 연결을 사용한다. ToggleGroup은 Base UI의 배열 값 계약을 유지하며 단일 선택에서는 multiple=false다.
 
 ### 기본 탐색과 보조 표시
 
