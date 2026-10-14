@@ -19,7 +19,15 @@ export default function Home() {
       <section aria-labelledby="home-title" className="relative z-10 mx-auto max-w-5xl px-4 py-12 text-center sm:py-16 lg:py-20">
         <HomeReveal>
         <div data-home-reveal="logo" className="mb-5 flex justify-center">
-          <BrandLogo name="Leement" variant="icon" size="lg" markClassName="size-20" mark={<Image src="/leement-mark.svg" alt="" width={80} height={80} priority />} />
+          <BrandLogo
+            name="Leement"
+            variant="full"
+            size="lg"
+            className="gap-3 sm:gap-4"
+            markClassName="size-16 sm:size-20"
+            textClassName="text-3xl sm:text-4xl"
+            mark={<Image src="/leement-mark.svg" alt="" width={80} height={80} priority />}
+          />
         </div>
         <h1 data-home-reveal="title" id="home-title" className="text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-[40px]">Build with a shared design language.</h1>
         <p data-home-reveal="description" className="mx-auto mt-4 max-w-xl text-pretty text-base leading-7 text-muted-foreground sm:text-base">Components and blocks with consistent tokens, accessible interactions, and source you can make your own.</p>

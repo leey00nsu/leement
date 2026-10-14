@@ -115,14 +115,14 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-005] T-SPXPCQPUGPPF-landing-brand-reveal-03 랜딩 로고에 Leement 워드마크 표시
+- [DONE][PRD-FR-005] T-SPXPCQPUGPPF-landing-brand-reveal-03 랜딩 로고에 Leement 워드마크 표시
   - Date: 2026-10-15
   - Acceptance:
     - 랜딩 타이틀 위에 mark와 Leement 텍스트가 함께 보이고 기존 fade in·접근성·반응형 배치를 유지한다
   - Checklist:
-    - [ ] 기존 BrandLogo full variant와 brand typography로 홈 로고를 구성한다
-    - [ ] PRD·디자인 시스템·Unreleased에 아이콘과 워드마크 구성을 반영하고 공용 API 영향 없음 확인한다
-    - [ ] light/dark·모바일·reduced motion·no-JS 및 프로젝트 필수 검사를 확인한다
+    - [x] 기존 BrandLogo full variant와 brand typography로 홈 로고를 구성한다
+    - [x] PRD·디자인 시스템·Unreleased에 아이콘과 워드마크 구성을 반영하고 공용 API 영향 없음 확인한다
+    - [x] light/dark·모바일·reduced motion·no-JS 및 프로젝트 필수 검사를 확인한다
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -145,8 +145,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -160,6 +160,6 @@
 | pnpm run typecheck | 2026-10-15 | PASS |
 | pnpm run lint | 2026-10-15 | PASS |
 | pnpm run test | 2026-10-15 | PASS — 32 files / 706 tests |
-| 브라우저 시각·조작 검수 | 2026-10-15 | PASS — 전역 primary 대비·Foundation export/persist/reset·대표 UI 및 8개 랜딩 테마/크기 조합, Decisions D005 |
+| 브라우저 시각·조작 검수 | 2026-10-15 | PASS — 전역 primary 대비·Foundation export/persist/reset·대표 UI 및 8개 랜딩 테마/크기 조합·아이콘/워드마크·모션/fallback, Decisions D005/D007 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.

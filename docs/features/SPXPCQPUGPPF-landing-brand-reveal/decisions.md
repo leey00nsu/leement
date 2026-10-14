@@ -66,7 +66,7 @@
 - **Evidence**: [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png), [tablet light](./artifacts/landing-768-light.png), [tablet dark](./artifacts/landing-768-dark.png), [wide light](./artifacts/landing-1920-light.png), [wide dark](./artifacts/landing-1920-dark.png), [reduced motion](./artifacts/landing-reduced.png), [no-JS](./artifacts/landing-no-js.png). 시간별 관찰과 검사 결과는 이 기록이 정본이며 임시 harness/log는 커밋하지 않는다.
 - **보조 캡처 처리**: full-page 캡처는 스크롤 키 검사 전에 촬영했다. 스크롤 키 직후 촬영에서는 sticky header의 compositor 위치가 반영되어 이전 캡처를 대체했다. 제품 코드 결함으로 기록하지 않는다.
 
-<!-- lee-spec-kit:workflow-sync sha256:221684c7d00fc5b9db132f6212c4516a8e3608fbf63050cf84d6e1d50e09367d -->
+<!-- lee-spec-kit:workflow-sync sha256:55ccaca5ffd65a7907b045abb4b0b51131830d31b9e2bca71e9105ecd60257ea -->
 
 ## D005: 사용자 요청으로 brand 색 중복을 제거한다 (2026-10-15)
 
@@ -99,3 +99,11 @@
 - **Decision**: 기존 BrandLogo의 full variant와 brand typography를 재사용한다. mark와 Leement 텍스트를 중앙에 나란히 배치하고 하나의 1.2초 fade in을 유지한다. 모바일에서는 로고 크기를 줄인다. 장식 mark는 읽기에서 제외하고 visible name을 읽는다. h1과 CTA 읽기 순서는 유지한다.
 - **영향**: 홈·PRD·디자인 시스템·Unreleased만 갱신하며 공용 BrandLogo API, token/theme, Storybook에는 영향이 없다. 앞선 #706BC5 및 흰색 전경 논의는 색 제안이며 이 로고 수정에 색 변경을 포함하지 않는다.
 - **검증 계획**: light/dark의 반응형 배치·실제 워드마크 표시·기존 fade in·reduced motion·no-JS 및 프로젝트 필수 검사를 확인한다.
+
+### D007 구현 및 검증
+
+- **구현**: 홈은 BrandLogo full을 사용하며 Paperlogy 700 워드마크는 모바일 30px·넓은 화면 36px, mark는 64/80px이다. 기존 logo reveal wrapper 안에 두 요소를 두어 함께 fade in 한다. PRD·디자인 시스템·Unreleased를 동기화했다. 공용 registry/token/theme/API는 변경하지 않았다.
+- **브라우저**: 375/768/1440/1920px light/dark의 8개 조합에서 Leement 표시·중앙 정렬·텍스트 잘림 없음·가로 overflow 없음·pageerror 없음·h1 1개를 확인했다. mark는 aria-hidden이고 이름만 읽히며 장식 갤러리 inert·조작 차단과 실제 CTA 이동이 유지된다. reduced motion/no-JS에서 로고 opacity=1이고 실제 CTA 이동이 정상이다. Aside 접근성 snapshot에서도 hero에 Leement 텍스트가 표시되고 장식 컨트롤이 탐색에 나오지 않는다.
+- **모션**: hydration 뒤 111ms에는 logo opacity≈0.34·나머지 hero=0, 543ms title≈0.78, 760ms description≈0.82, 977ms actions≈0.84였다. 1.61초에는 hero가 모두 1이며 스크롤 왕복 후 재실행되지 않았다.
+- **검사**: pnpm run build/typecheck/lint/test 모두 exit 0; 32 files/706 tests PASS. 새 영구 테스트 없이 기존 검사와 브라우저 검수를 수행했다.
+- **Evidence**: 기존 [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png) 및 나머지 viewport·fallback 캡처를 현재 워드마크 적용 화면으로 갱신했다.

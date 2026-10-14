@@ -23,7 +23,7 @@
 
 **Acceptance Criteria:**
 
-- [ ] 기존 Leement mark와 Leement 워드마크가 타이틀 위 중앙에 함께 표시되고 천천히 fade in 한다.
+- [x] 기존 Leement mark와 Leement 워드마크가 타이틀 위 중앙에 함께 표시되고 천천히 fade in 한다.
 - [x] 타이틀 → 설명 → 버튼 순서로 text reveal이 시작된다.
 - [x] 기존 다양한 UI 카드가 첨부 이미지처럼 함께 기울어진 밀도 높은 갤러리로 표시된다.
 - [x] 갤러리 진입 시 화면에서 위에 있는 카드부터 아래 카드로 하나씩 fade in 한다.
