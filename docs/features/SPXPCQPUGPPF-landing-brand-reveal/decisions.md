@@ -127,3 +127,10 @@
 - **계약 검사**: pnpm run build/typecheck/lint/test 모두 exit 0; 32 files/707 tests PASS. 기존 theme 테스트에 두 모드 primary 정본·흰색 전경·글자/track 대비 및 dark selector 계약을 추가했다. 현재 token/theme·Foundation 예제·mark의 브랜드 역할에 파란 기본값이 남아 있지 않으며 독립 primitive·syntax·차트 palette는 보존한다.
 
 - **테마 전환 추가 확인**: 홈 버튼으로 light→dark→light 전환해도 primary는 같은 RGB(112,107,197)이며 완료한 22개 hero/card의 opacity=1을 유지한다. View components 이동과 초기 Get started의 Enter 이동이 정상이다. 초기 DOM 단계 focus 직후 opacity 조회는 hydration 전후 타이밍에 따라 0일 수 있으므로 이 검수로 모든 hydration 시점의 즉시 표시를 보장한다고 주장하지 않는다.
+
+## D009: 0.3.0 버전업과 릴리스 준비 (2026-10-15)
+
+- **요청/승인**: 사용자가 0.3.0으로 올리는 방향으로 진행하라고 요청했다. 현재 승인 대기 Feature에 새 task 05로 릴리스 준비를 추가한다. 버전업은 내부 릴리스 metadata 변경이므로 NON-PRD로 추적한다.
+- **Decision**: 기존 공용 pnpm version:bump 0.3.0으로 루트·docs·tokens·theme·eslint·typescript 6개 manifest를 함께 갱신한다. lockfile dependency 요구사항은 변경하지 않는다. Unreleased의 breaking 안내를 준비하고 version:check·frozen install·필수 검사와 npm pack dry-run으로 실제 배포 예정 내용을 확인한다.
+- **공개 상태**: 실제 npm 게시 및 registry 배포가 확인되기 전 releases/publishedVersion은 기존 0.2.1로 유지한다. 준비 결과와 게시 상태를 혼동하지 않는다. main 통합은 기존 구현 승인 및 별도 local merge 승인 경계를 따른다.
+- **README 보류**: root README 95행은 아직 공개 0.1.0/개발 0.2.0이라고 설명한다. 이 변경에도 사용자의 README 수정 요청이 없으므로 AGENTS.md 보호 정책에 따라 갱신하지 않는다. 실제 공개/개발 상태는 manifests와 apps/docs/lib/releases.ts 및 관련 페이지에서 확인한다. 이 보류는 릴리스 준비를 막지 않는다.

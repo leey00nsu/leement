@@ -30,6 +30,8 @@ HomeExamples에서 로컬 작업 상태와 submit handler를 제거하고 현실
 
 후속 요청에 따라 .home-brand override를 제거한다. tokens의 color.brand를 삭제하고 action.primary 및 primaryForeground/primaryHover/primaryText/primaryGradientStart/Middle/End로 통합한다. theme compatibility와 모든 소비처를 갱신하며 일반 배경의 text-primary는 대비가 확보된 primaryText로 옮긴다. focus/data는 의미 참조를 유지하고 Foundation은 새 action 필드를 편집·export한다. 기존 theme/Foundation 계약 테스트를 새 정본·구 역할 제거·override 동작에 맞춰 갱신한다. 이전 별도 brand 색 계약의 호환 alias는 제공하지 않는다. 사용자 보완 요청에 따라 두 모드 primary=#706BC5·전경=#FFFFFF로 통일하고 hover는 더 어두운 보라, 일반 강조 글자/focus/data 및 gradient는 같은 보라 계열에서 테마 표면 대비에 맞춘다. Leement mark의 레이어도 보라로 통일한다. 독립 데이터 시리즈와 syntax palette는 유지한다. theme dark variant는 semantic theme과 같은 .dark/data-lm-theme selector를 읽어 수동 모드 선택과 일치시킨다. 기존 muted track과의 dark 대비가 3:1 미만이면 Progress/Slider/Switch 기본 track에 dark secondary 표면을 사용한다. theme 계약 검사를 같은 hue·흰색 전경·track/text 대비로 갱신하고 Foundation 예제와 현재 디자인 설명을 맞춘다.
 
+0.3.0 릴리스 준비는 기존 tooling/release/version.mjs로 전체 6개 manifest를 갱신한다. dependency 요구사항은 바꾸지 않고 frozen lockfile 검사를 한다. Unreleased에 release 준비·breaking 교체 안내를 보강하며 npm 게시와 registry 배포가 확인되기 전 publishedVersion 및 공개 릴리스 이력은 유지한다. npm pack dry-run에서 두 패키지 버전·exports·정본 색·라이선스·폰트 파일 포함을 확인한다. 새 영구 테스트는 추가하지 않고 기존 필수 검사와 일회성 릴리스 검증을 실행한다.
+
 ## 파일 구조
 
 - apps/docs/app/page.tsx: logo, motion wrapper, semantic sections
@@ -40,7 +42,8 @@ HomeExamples에서 로컬 작업 상태와 submit handler를 제거하고 현실
 - apps/docs/app/globals.css: 전역 primary 사용·tilt·clip·배경·대체 표시
 - docs/prd/leement-prd.md: 홈 요구사항
 - docs/designs/design-system.md: 홈 장식/브랜드/모션 규칙
-- apps/docs/lib/releases.ts: 기존 Unreleased 항목에 docs 변화 (실제 경로 확인 후 적용)
+- apps/docs/lib/releases.ts: Unreleased 0.3.0 릴리스/교체 안내
+- package.json, apps/docs/package.json, packages/{tokens,theme}/package.json, tooling/{eslint,typescript}/package.json: 동일한 0.3.0 버전
 
 - packages/tokens/src/tokens.json: primary 정본과 관련 역할
 - packages/theme/build.mjs 및 theme.test.mjs: compatibility·gradient·구 색 제거 계약
@@ -67,7 +70,7 @@ HomeExamples에서 로컬 작업 상태와 submit handler를 제거하고 현실
 | Kind | Decision | Target | Reason |
 | ---- | -------- | ------ | ------ |
 | design-system-ux | UPDATE | docs:designs/design-system.md | 전역 primary 브랜드 역할·대비·재정의와 장식 tilt/진입 |
-| release-deployment | UPDATE | project:apps/docs/lib/releases.ts | Unreleased breaking token migration과 문서 홈 변경 기록; 버전·배포는 범위 외 |
+| release-deployment | UPDATE | project:apps/docs/lib/releases.ts | Unreleased breaking token migration과 문서 홈 변경 기록; 0.3.0 버전업·릴리스 준비를 포함하며 실제 게시 상태는 성공 확인 후 기록 |
 
 ## Verification Contract
 
