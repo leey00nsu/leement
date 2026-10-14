@@ -33,7 +33,7 @@ export function ChartsIndex({ category }: { category?: ChartCategory }) {
               key={value}
               href={value === "all" ? "/charts" : `/charts/${value}`}
               aria-current={(category ?? "all") === value ? "page" : undefined}
-              className="rounded-lg bg-muted px-3 py-2 text-sm capitalize aria-[current=page]:bg-brand-accent/10 aria-[current=page]:text-[var(--lm-color-brand-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="rounded-lg bg-muted px-3 py-2 text-sm capitalize aria-[current=page]:bg-primary/10 aria-[current=page]:text-[var(--lm-color-action-primary-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {value === "tooltip" ? "Tooltips" : value}
             </Link>

@@ -48,7 +48,7 @@ export function CaseStudy({
       label: "Website",
       content: company.website && (
         <a
-          className="break-all text-primary underline underline-offset-4"
+          className="break-all text-primary-text underline underline-offset-4"
           href={company.website}
         >
           {company.website}
@@ -71,7 +71,7 @@ export function CaseStudy({
           <h1 className="mb-6 text-3xl font-semibold tracking-tight sm:text-4xl">
             {title}
           </h1>
-          <div className="space-y-4 text-foreground [&_p]:leading-7 [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h3]:mt-6 [&_h3]:text-xl [&_blockquote]:border-s-2 [&_blockquote]:border-border [&_blockquote]:ps-4 [&_blockquote]:text-muted-foreground [&_ul]:list-disc [&_ul]:ps-5 [&_a]:text-primary [&_a]:underline [&_table]:w-full [&_table]:text-sm [&_td]:p-2 [&_th]:p-2 [&_tr]:border-b [&_tr]:border-border [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-muted [&_pre]:p-4 [&_code]:font-mono">
+          <div className="space-y-4 text-foreground [&_p]:leading-7 [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h3]:mt-6 [&_h3]:text-xl [&_blockquote]:border-s-2 [&_blockquote]:border-border [&_blockquote]:ps-4 [&_blockquote]:text-muted-foreground [&_ul]:list-disc [&_ul]:ps-5 [&_a]:text-primary-text [&_a]:underline [&_table]:w-full [&_table]:text-sm [&_td]:p-2 [&_th]:p-2 [&_tr]:border-b [&_tr]:border-border [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-muted [&_pre]:p-4 [&_code]:font-mono">
             {children}
           </div>
         </article>

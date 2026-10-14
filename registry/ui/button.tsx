@@ -12,7 +12,7 @@ const buttonVariants = cva(
   { variants: {
     variant: {
       default: "border-transparent bg-primary text-primary-foreground hover:bg-(--lm-color-action-primary-hover)",
-      link: "border-transparent bg-transparent text-primary underline-offset-4 hover:underline",
+      link: "border-transparent bg-transparent text-primary-text underline-offset-4 hover:underline",
       primary: "border-transparent bg-primary text-primary-foreground hover:bg-(--lm-color-action-primary-hover)",
       secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-(--lm-color-action-secondary-hover) aria-expanded:bg-(--lm-color-action-secondary-hover)",
       outline: "border-border bg-background text-foreground hover:bg-muted aria-expanded:bg-muted",

@@ -49,7 +49,7 @@ function AudioPlayerInstance({ src, title, peaks, duration, brand = false, class
         probe.remove();
         return value;
       };
-      return { waveColor: color("--lm-color-foreground-muted"), progressColor: brand ? [color("--lm-color-brand-gradient-start"), color("--lm-color-brand-gradient-middle"), color("--lm-color-brand-gradient-end")] : color("--lm-color-data-accent-foreground"), cursorColor: color("--lm-color-data-accent-foreground") };
+      return { waveColor: color("--lm-color-foreground-muted"), progressColor: brand ? [color("--lm-color-action-primary-gradient-start"), color("--lm-color-action-primary-gradient-middle"), color("--lm-color-action-primary-gradient-end")] : color("--lm-color-data-accent-foreground"), cursorColor: color("--lm-color-data-accent-foreground") };
     }
     const refresh = () => { if (!disposed && engine) engine.setOptions(colors()); };
     window.addEventListener("leement:theme-change", refresh);

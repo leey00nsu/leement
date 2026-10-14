@@ -99,7 +99,7 @@ export const BlogPost = ({
         </div>
       </div>
       <div className="w-full min-w-0 max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mx-auto w-full min-w-0 space-y-4 text-foreground [&_h1]:text-4xl [&_h1]:font-semibold [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h3]:mt-6 [&_h3]:text-xl [&_h3]:font-medium [&_p]:leading-7 [&_blockquote]:border-s-2 [&_blockquote]:border-border [&_blockquote]:ps-4 [&_blockquote]:text-muted-foreground [&_ul]:list-disc [&_ul]:ps-5 [&_ol]:list-decimal [&_ol]:ps-5 [&_a]:text-primary [&_a]:underline [&_table]:w-full [&_th]:p-2 [&_td]:p-2 [&_tr]:border-b [&_tr]:border-border [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-muted [&_pre]:p-4 [&_code]:font-mono max-w-3xl ">
+        <div className="mx-auto w-full min-w-0 space-y-4 text-foreground [&_h1]:text-4xl [&_h1]:font-semibold [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h3]:mt-6 [&_h3]:text-xl [&_h3]:font-medium [&_p]:leading-7 [&_blockquote]:border-s-2 [&_blockquote]:border-border [&_blockquote]:ps-4 [&_blockquote]:text-muted-foreground [&_ul]:list-disc [&_ul]:ps-5 [&_ol]:list-decimal [&_ol]:ps-5 [&_a]:text-primary-text [&_a]:underline [&_table]:w-full [&_th]:p-2 [&_td]:p-2 [&_tr]:border-b [&_tr]:border-border [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-muted [&_pre]:p-4 [&_code]:font-mono max-w-3xl ">
           {children ?? (
             <>
               <h2 className="text-3xl font-extrabold">Working around a shared table</h2>

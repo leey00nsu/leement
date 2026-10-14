@@ -3,7 +3,7 @@ import { tokens } from "@leement/tokens";
 import { FoundationEditor } from "../../../components/foundation-editor";
 
 const content = {
-  color: { rule: "Use semantic roles for background, surface, foreground, border, action, brand, focus, status and data accent. Palette names stay in primitive tokens.", detail: "Surface.muted is the visible control and loading placeholder surface in both modes; background.subtle is a quieter page background. CopySinger light and Leesfield dark provide example brand defaults. Your product sets its own brand values without editing component source." },
+  color: { rule: "Use semantic roles for background, surface, foreground, border, action, focus, status and data accent. Palette names stay in primitive tokens.", detail: "Surface.muted is the visible control and loading placeholder surface in both modes; background.subtle is a quieter page background. CopySinger light and Leesfield dark provide example brand defaults. Primary is your product brand color for main actions and selections. Set its foreground, hover, text and gradient roles without editing component source." },
   typography: { rule: "Use Pretendard for readable body text, Paperlogy Bold for brand wordmarks, D2Coding for code, and a small type scale for hierarchy.", detail: "The theme includes and loads Pretendard Variable, Paperlogy 700 and D2Coding 400/700 locally. Body, brand and mono families can be changed independently; custom fonts are loaded by your app." },
   spacing: { rule: "Use a 4px base rhythm and keep control heights consistent at 36, 40 and 44px.", detail: "Choose spacing based on content relationship. Tighter within one control, wider between independent sections." },
   radius: { rule: "Use 8px for controls, 12px for cards and fully rounded shapes for badges and pills.", detail: "Radius expresses containment. Keep surface hierarchy consistent across light and dark." },
@@ -54,27 +54,27 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     </section>}
     {slug === "color" && <section id="brand-colors" className="mt-10 scroll-mt-24 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground" aria-labelledby="brand-colors-heading">
       <h2 id="brand-colors-heading" className="text-xl font-semibold">Set your brand colors</h2>
-      <p className="mt-3 text-sm leading-7 text-muted-foreground">CopySinger uses violet, blue and pink for animated highlights; Leesfield uses blue for its gradient and branded loading surface. Both keep ordinary Skeletons neutral. Override these roles after importing the theme in your app CSS. Set brand text separately from the foreground used on a filled accent surface: small eyebrows and selected filters need contrast against the page. Focus and data accent follow the brand roles automatically. Check both themes with your own palette.</p>
+      <p className="mt-3 text-sm leading-7 text-muted-foreground">Primary is the single brand color contract for actions and selections across the library. Override its roles after importing the theme. Pair filled primary and hover surfaces with primary-foreground; use primary-text for links, small eyebrows and selected filters on ordinary surfaces. Focus and the first chart series follow primary-text; data accent follows primary. Gradients remain a separate visual effect, and ordinary Skeletons stay neutral. Set all primary roles for both themes and check contrast. There is no separate brand color group.</p>
       <pre className="mt-5 overflow-x-auto rounded-xl bg-background p-4 text-xs leading-6"><code>{`@import "@leement/theme";
 
 :root {
-  --lm-color-brand-accent: #7c3aed;
-  --lm-color-brand-accent-foreground: #ffffff;
-  --lm-color-brand-text: #6d28d9;
-  --lm-color-brand-focus: #6d28d9;
-  --lm-color-brand-gradient-start: var(--lm-color-brand-accent);
-  --lm-color-brand-gradient-middle: #3b82f6;
-  --lm-color-brand-gradient-end: #ec4899;
+  --lm-color-action-primary: #7c3aed;
+  --lm-color-action-primary-foreground: #ffffff;
+  --lm-color-action-primary-text: #6d28d9;
+  --lm-color-action-primary-hover: #6d28d9;
+  --lm-color-action-primary-gradient-start: var(--lm-color-action-primary);
+  --lm-color-action-primary-gradient-middle: #3b82f6;
+  --lm-color-action-primary-gradient-end: #ec4899;
 }
 
 .dark, [data-lm-theme="dark"] {
-  --lm-color-brand-accent: #9f7aea;
-  --lm-color-brand-accent-foreground: #111113;
-  --lm-color-brand-text: #b794f4;
-  --lm-color-brand-focus: #b794f4;
-  --lm-color-brand-gradient-start: var(--lm-color-brand-accent);
-  --lm-color-brand-gradient-middle: #a4d8ff;
-  --lm-color-brand-gradient-end: var(--lm-color-brand-accent);
+  --lm-color-action-primary: #9f7aea;
+  --lm-color-action-primary-foreground: #111113;
+  --lm-color-action-primary-text: #b794f4;
+  --lm-color-action-primary-hover: #b794f4;
+  --lm-color-action-primary-gradient-start: var(--lm-color-action-primary);
+  --lm-color-action-primary-gradient-middle: #a4d8ff;
+  --lm-color-action-primary-gradient-end: var(--lm-color-action-primary);
 }`}</code></pre>
       <p className="mt-4 text-sm text-muted-foreground">Use <code>Skeleton variant="brand"</code> only when brand emphasis helps; use <code>BrandGradientText</code> for short display copy. Both stop repeating motion when reduced motion is requested.</p>
     </section>}
@@ -82,5 +82,5 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <section id="primitive-tokens" className="mt-10 scroll-mt-24 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground"><h2 className="mb-2 text-xl font-semibold">Primitive tokens</h2><p className="mb-4 text-sm text-muted-foreground">Canonical Leement defaults. Editing the preview does not change these source values.</p><div className="overflow-x-auto rounded-xl bg-background"><table className="w-full text-left text-sm"><caption className="sr-only">{slug} primitive token values</caption><thead className="bg-background"><tr><th scope="col" className="px-4 py-3">Token</th><th scope="col" className="px-4 py-3">Value</th></tr></thead><tbody>{primitive.map(([name, value]) => <tr key={name} className="border-t border-border"><th scope="row" className="px-4 py-3 font-mono text-xs font-normal">{slug}.{name}</th><td className="px-4 py-3 font-mono text-xs">{value}</td></tr>)}</tbody></table></div></section>
     {slug === "motion" && <section className="mt-8 space-y-3 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground"><h2 className="text-xl font-semibold">Choose motion by purpose</h2><p className="text-sm leading-7 text-muted-foreground">Fast/normal/slow (120/180/260ms) are control responses. Reveal (700ms) and its easing come from the two product titles and existing RevealContent. Expand (400ms) comes from Leesfield result disclosure; media (400ms) reconciles CopySinger waveform fade/scale with image readiness. Stagger is 70ms. Reveal and text time props use milliseconds; Marquee duration uses seconds. Explicit props override theme defaults. Use the installed leement-motion helper with animate from motion or motion/AnimatePresence from motion/react when extending source.</p><p className="text-sm leading-7 text-muted-foreground">Brand text/surface cycles are 1500/3500ms; decorative rotation is 1800ms, spin is 1000ms, pulse is 2000ms and marquee is 24000ms. Cycles are separate from response durations. New extracted APIs are experimental. Keep product generation, audio analysis and fetch logic in your app; Orb and Shader are outside this feature.</p><p className="text-sm leading-7 text-muted-foreground">Original content is visible before hydration and with JavaScript disabled. Repeating decoration pauses offscreen, in a hidden document, under reduced motion, or on request. Copy CSS after editing and apply it after the theme import. One-shot examples expose Replay so you can compare the current values.</p></section>}
     {slug === "motion" && <p className="mt-4 text-sm text-muted-foreground">Under <code>prefers-reduced-motion: reduce</code>, duration and stagger variables resolve to <code>0ms</code>. Repeating effects stop; cycle variables remain valid positive times.</p>}
-  </article><aside aria-label="On this page" className="hidden xl:block"><div className="sticky top-24 border-l border-border pl-4"><h2 className="text-sm font-medium">On this page</h2><nav aria-label="Page sections" className="mt-4 space-y-2 text-sm text-muted-foreground"><a className="block hover:text-[var(--lm-color-brand-text)]" href="#live-editor">Live editor</a>{slug === "color" && <><a className="block hover:text-[var(--lm-color-brand-text)]" href="#brand-colors">Brand colors</a><a className="block hover:text-[var(--lm-color-brand-text)]" href="#light-roles">Light roles</a><a className="block hover:text-[var(--lm-color-brand-text)]" href="#dark-roles">Dark roles</a></>}{slug === "typography" && <a className="block hover:text-[var(--lm-color-brand-text)]" href="#font-roles">Font roles</a>}<a className="block hover:text-[var(--lm-color-brand-text)]" href="#primitive-tokens">Primitive tokens</a></nav></div></aside></div>;
+  </article><aside aria-label="On this page" className="hidden xl:block"><div className="sticky top-24 border-l border-border pl-4"><h2 className="text-sm font-medium">On this page</h2><nav aria-label="Page sections" className="mt-4 space-y-2 text-sm text-muted-foreground"><a className="block hover:text-[var(--lm-color-action-primary-text)]" href="#live-editor">Live editor</a>{slug === "color" && <><a className="block hover:text-[var(--lm-color-action-primary-text)]" href="#brand-colors">Brand colors</a><a className="block hover:text-[var(--lm-color-action-primary-text)]" href="#light-roles">Light roles</a><a className="block hover:text-[var(--lm-color-action-primary-text)]" href="#dark-roles">Dark roles</a></>}{slug === "typography" && <a className="block hover:text-[var(--lm-color-action-primary-text)]" href="#font-roles">Font roles</a>}<a className="block hover:text-[var(--lm-color-action-primary-text)]" href="#primitive-tokens">Primitive tokens</a></nav></div></aside></div>;
 }

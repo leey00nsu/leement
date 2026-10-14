@@ -71,7 +71,7 @@ function InputOTPForm() {
             Having trouble signing in?{" "}
             <a
               href="#"
-              className="underline underline-offset-4  hover:text-primary"
+              className="underline underline-offset-4  hover:text-primary-text"
             >
               Contact support
             </a>

@@ -116,7 +116,7 @@ function ImageCrop({
         <button
           type="button"
           onClick={() => onApply(crop)}
-          className="rounded-md bg-primary px-3 py-2 text-sm text-primary-foreground hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+          className="rounded-md bg-primary px-3 py-2 text-sm text-primary-foreground hover:bg-(--lm-color-action-primary-hover) focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
         >
           Apply crop
         </button>

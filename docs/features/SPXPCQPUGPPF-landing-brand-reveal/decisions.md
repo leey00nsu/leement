@@ -66,7 +66,7 @@
 - **Evidence**: [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png), [tablet light](./artifacts/landing-768-light.png), [tablet dark](./artifacts/landing-768-dark.png), [wide light](./artifacts/landing-1920-light.png), [wide dark](./artifacts/landing-1920-dark.png), [reduced motion](./artifacts/landing-reduced.png), [no-JS](./artifacts/landing-no-js.png). 시간별 관찰과 검사 결과는 이 기록이 정본이며 임시 harness/log는 커밋하지 않는다.
 - **보조 캡처 처리**: full-page 캡처는 스크롤 키 검사 전에 촬영했다. 스크롤 키 직후 촬영에서는 sticky header의 compositor 위치가 반영되어 이전 캡처를 대체했다. 제품 코드 결함으로 기록하지 않는다.
 
-<!-- lee-spec-kit:workflow-sync sha256:30d4fe4de4bd1edb80baf9325c959a0fbdbd80a6e8e129fe6ad51b5a08b1b511 -->
+<!-- lee-spec-kit:workflow-sync sha256:221684c7d00fc5b9db132f6212c4516a8e3608fbf63050cf84d6e1d50e09367d -->
 
 ## D005: 사용자 요청으로 brand 색 중복을 제거한다 (2026-10-15)
 
@@ -75,3 +75,13 @@
 - **Compatibility**: 구 brand 색 CSS 변수·Tailwind utility·Foundation override는 지원하지 않는다. Unreleased에 변경과 교체 경로를 기록한다. 버전 변경·npm 배포·원격 push는 이번 요청 범위에 없다.
 - **README 보호**: 기존 README의 캡처 영향은 D003과 같으며 README 편집 요청이 없으므로 보류한다. 현재 실행 계약은 token/theme와 Foundations·디자인 시스템에 반영한다.
 - **Verification**: 기존 theme/Foundation 계약 테스트를 갱신하고 모든 build/typecheck/lint/test, 양쪽 테마 primary/hover/text 대비, Foundation 편집·export·기존 brand 색 거부, 대표 UI와 랜딩 회귀를 확인한다.
+
+### D005 구현 및 검증
+
+- **구현**: color.brand 그룹과 brand-accent utility를 삭제했다. 전역 primary/전경 및 sidebar 전경은 action.primary 계열에서 파생된다. primaryText는 일반 표면의 링크·선택 강조·아이콘, primaryGradientStart/Middle/End는 선택적 효과를 담당한다. focus.ring/data.series1은 primaryText, data.accent/전경은 primary/primaryForeground를 참조한다. home-brand override를 제거해 랜딩·문서 Preview·설치 source가 같은 규칙을 사용한다.
+- **대비 조정**: light filled primary를 기존 보라 계열의 OKLCH L=0.65로 조정하고 hover는 L=0.63으로 정했다. 기본/hover 전경 대비는 light 5.62/5.19:1, dark 4.93/4.64:1이다. 일반 강조 글자는 기본 surface에서 light 5.44/dark 9.14:1, muted surface에서 4.99/6.93:1이다. Progress/Switch 등에 쓰는 primary와 muted track의 대비는 light 3.08/dark 3.44:1이다. Calendar의 dark hover 전경 덮어쓰기를 제거하고 Bubble/ImageCrop hover를 명시적 primaryHover로 바꿨다.
+- **Foundation**: 두 모드에서 primary/전경/hover/text 편집 후 실제 Button과 focus/data 참조 반영, Copy CSS의 변경값만 포함, 새로고침 유지, Reset 복구를 확인했다. 저장된 구 brand 색은 무시하고 브랜드 서체 설정은 보존한다. 검수 harness의 첫 export 단언은 dark에서 기본값과 같은 전경도 export해야 한다고 잘못 가정하여 수정했다. 제품 동작은 변경값만 export하는 기존 계약대로 정상이다.
+- **랜딩 회귀**: 375/768/1440/1920 light/dark 전부 18개 카드·inert·가로 overflow 없음·pageerror 없음. Gallery 클릭/Enter/Space로 이동하지 않으며 Tab은 갤러리를 건너뛴다. 실제 CTA·진입 중 focus/Enter·theme 전환 정상, 완료한 모션 재시작 없음. reduced motion/no-JS도 즉시 표시하고 실제 CTA가 동작한다. 기존 artifacts 캡처를 전역 primary 적용 화면으로 갱신했다.
+- **계약 검사**: pnpm run build/typecheck/lint/test 모두 exit 0, 32개 파일/706개 테스트 통과. theme/Foundation 기존 테스트를 새 역할과 제거된 필드 거부에 맞춰 갱신했다. 생성 theme/token/registry 출력 검색에서 구 brand 색 변수·utility의 실행 참조가 없다. 기존 릴리스 설명과 완료 Feature의 이력은 당시 계약을 설명하므로 그대로 두었다.
+
+- **대표 public UI**: 두 모드의 Button 기본/hover, Checkbox·Switch 클릭 전환, Slider·Progress, FilterToolbar 선택, DayPicker range endpoint hover를 확인했다. selected day는 hover에서도 primaryForeground를 유지하고 public Preview의 실제 조작은 정상이다. 첫 harness에서 FilterToolbar의 초기 상태를 selected로 가정한 조회는 실제 초기 false와 달라 타임아웃이 났으며, 정상 초기 상태에서 클릭·선택 전환을 확인하는 방식으로 검수를 정정했다.

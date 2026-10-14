@@ -46,7 +46,7 @@ export function DocsTopNavigation() {
             key={tab.label}
             href={tab.href}
             aria-current={active ? "page" : undefined}
-            className="inline-flex h-9 items-center gap-2 rounded-lg px-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-brand-accent/10 aria-[current=page]:text-[var(--lm-color-brand-text)]"
+            className="inline-flex h-9 items-center gap-2 rounded-lg px-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-primary/10 aria-[current=page]:text-[var(--lm-color-action-primary-text)]"
           >
             {tab.label}
             {tab.count && (
@@ -67,7 +67,7 @@ export function DocsMobileNavigation() {
   return <nav aria-label="Mobile sections" className="mb-5 grid grid-cols-2 gap-2 text-sm">
     {tabs.map(tab => {
       const active = tab.prefix === "docs" ? !["/components/", "/blocks/", "/charts"].some(prefix => pathname.startsWith(prefix)) : pathname.startsWith(tab.prefix);
-      return <Link key={tab.label} href={tab.href} aria-current={active ? "page" : undefined} className="rounded-lg border border-border p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-brand-accent/10 aria-[current=page]:text-[var(--lm-color-brand-text)]">{tab.label}</Link>;
+      return <Link key={tab.label} href={tab.href} aria-current={active ? "page" : undefined} className="rounded-lg border border-border p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=page]:bg-primary/10 aria-[current=page]:text-[var(--lm-color-action-primary-text)]">{tab.label}</Link>;
     })}
   </nav>;
 }

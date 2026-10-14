@@ -65,7 +65,7 @@ function ParticipantCursor({
   return (
     <div
       ref={ref}
-      className="pointer-events-none absolute z-20 text-primary"
+      className="pointer-events-none absolute z-20 text-primary-text"
       style={{
         left: `${clamp(participant.position.x)}%`,
         top: `${clamp(participant.position.y)}%`,

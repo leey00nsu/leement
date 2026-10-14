@@ -23,7 +23,7 @@ const compatibility = `  /* shadcn compatibility: aliases only */
   --popover: var(--lm-color-surface-raised);
   --popover-foreground: var(--lm-color-foreground-default);
   --primary: var(--lm-color-action-primary);
-  --primary-foreground: var(--lm-color-foreground-inverse);
+  --primary-foreground: var(--lm-color-action-primary-foreground);
   --secondary: var(--lm-color-action-secondary);
   --secondary-foreground: var(--lm-color-foreground-default);
   --muted: var(--lm-color-surface-muted);
@@ -46,7 +46,7 @@ const compatibility = `  /* shadcn compatibility: aliases only */
   --sidebar: var(--lm-color-surface-default);
   --sidebar-foreground: var(--lm-color-foreground-default);
   --sidebar-primary: var(--lm-color-action-primary);
-  --sidebar-primary-foreground: var(--lm-color-foreground-inverse);
+  --sidebar-primary-foreground: var(--lm-color-action-primary-foreground);
   --sidebar-accent: var(--lm-color-surface-muted);
   --sidebar-accent-foreground: var(--lm-color-foreground-default);
   --sidebar-border: var(--lm-color-border-default);
@@ -119,7 +119,7 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
   --color-success: var(--success); --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning); --color-warning-foreground: var(--warning-foreground);
   --color-data-accent: var(--data-accent); --color-data-accent-foreground: var(--data-accent-foreground);
-  --color-brand-accent: var(--lm-color-brand-accent);
+  --color-primary-text: var(--lm-color-action-primary-text);
   --color-input: var(--input); --color-ring: var(--ring);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -144,17 +144,17 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
 }
 @layer components {
   .lm-brand-skeleton {
-    background-image: linear-gradient(90deg, color-mix(in srgb, var(--lm-color-brand-gradient-start) 16%, var(--lm-color-background-subtle)), color-mix(in srgb, var(--lm-color-brand-gradient-middle) 32%, var(--lm-color-background-subtle)), color-mix(in srgb, var(--lm-color-brand-gradient-end) 16%, var(--lm-color-background-subtle)));
+    background-image: linear-gradient(90deg, color-mix(in srgb, var(--lm-color-action-primary-gradient-start) 16%, var(--lm-color-background-subtle)), color-mix(in srgb, var(--lm-color-action-primary-gradient-middle) 32%, var(--lm-color-background-subtle)), color-mix(in srgb, var(--lm-color-action-primary-gradient-end) 16%, var(--lm-color-background-subtle)));
     background-size: 220% 100%;
   }
   .lm-brand-gradient-text {
-    background-image: linear-gradient(90deg, var(--lm-color-brand-gradient-start), var(--lm-color-brand-gradient-middle), var(--lm-color-brand-gradient-end));
+    background-image: linear-gradient(90deg, var(--lm-color-action-primary-gradient-start), var(--lm-color-action-primary-gradient-middle), var(--lm-color-action-primary-gradient-end));
     background-size: 200% 100%;
     background-clip: text;
     color: transparent;
   }
   .lm-brand-action {
-    background-image: linear-gradient(90deg, color-mix(in srgb, var(--lm-color-brand-gradient-start) 12%, transparent), color-mix(in srgb, var(--lm-color-brand-gradient-middle) 18%, transparent), color-mix(in srgb, var(--lm-color-brand-gradient-end) 12%, transparent));
+    background-image: linear-gradient(90deg, color-mix(in srgb, var(--lm-color-action-primary-gradient-start) 12%, transparent), color-mix(in srgb, var(--lm-color-action-primary-gradient-middle) 18%, transparent), color-mix(in srgb, var(--lm-color-action-primary-gradient-end) 12%, transparent));
     background-size: 220% 100%;
   }
   @media (forced-colors: active) {

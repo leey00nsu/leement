@@ -119,7 +119,7 @@ export const Footer = ({
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
-                      className="font-medium hover:text-primary"
+                      className="font-medium hover:text-primary-text"
                     >
                       <a href={link.url}>{link.text}</a>
                     </li>
@@ -132,7 +132,7 @@ export const Footer = ({
             <p>{copyright}</p>
             <ul className="flex flex-wrap gap-4">
               {bottomLinks.map((link, linkIdx) => (
-                <li key={linkIdx} className="underline hover:text-primary">
+                <li key={linkIdx} className="underline hover:text-primary-text">
                   <a href={link.url}>{link.text}</a>
                 </li>
               ))}

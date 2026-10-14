@@ -167,7 +167,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
           </div>
           <Link
             href="/getting-started"
-            className="mt-3 inline-block text-sm text-[var(--lm-color-brand-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="mt-3 inline-block text-sm text-[var(--lm-color-action-primary-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             Theme setup and installation guide
           </Link>
@@ -256,7 +256,7 @@ export async function ItemPage({ name }: { name: keyof typeof items }) {
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className="block text-sm text-muted-foreground hover:text-[var(--lm-color-brand-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="block text-sm text-muted-foreground hover:text-[var(--lm-color-action-primary-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {section.title}
               </a>

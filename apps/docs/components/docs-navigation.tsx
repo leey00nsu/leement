@@ -70,7 +70,7 @@ export function DocsNavigation({ label }: { label: string }) {
                             ? "location"
                             : undefined
                       }
-                      className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted/70 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=location]:bg-brand-accent/10 aria-[current=location]:text-[var(--lm-color-brand-text)] aria-[current=page]:bg-brand-accent/10 aria-[current=page]:font-medium aria-[current=page]:text-[var(--lm-color-brand-text)]"
+                      className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted/70 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring aria-[current=location]:bg-primary/10 aria-[current=location]:text-[var(--lm-color-action-primary-text)] aria-[current=page]:bg-primary/10 aria-[current=page]:font-medium aria-[current=page]:text-[var(--lm-color-action-primary-text)]"
                     >
                       {item.label}
                     </Link>

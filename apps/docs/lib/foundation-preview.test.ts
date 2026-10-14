@@ -27,13 +27,13 @@ describe("Foundations preview overrides", () => {
     expect(validPreviewValue("shared", "--lm-motion-easing-reveal", "linear; } body { display:none")).toBe(false);
     expect(parsePreview(JSON.stringify({ shared: { "--lm-motion-duration-normal": "300ms" } })).shared).toEqual({ "--lm-motion-duration-normal": "300ms" });
   });
-  const brand = colorFields.find((field) => field.key === "--lm-color-brand-accent");
-  if (!brand) throw new Error("Missing brand accent token");
+  const primary = colorFields.find((field) => field.key === "--lm-color-action-primary");
+  if (!primary) throw new Error("Missing primary token");
 
   it("keeps light and dark edits independent and exports changed values only", () => {
-    const light = withPreviewValue(emptyPreview(), "light", brand.key, "#123456");
+    const light = withPreviewValue(emptyPreview(), "light", primary.key, "#123456");
     expect(light).not.toBeNull();
-    const dark = withPreviewValue(light!, "dark", brand.key, "#abcdef")!;
+    const dark = withPreviewValue(light!, "dark", primary.key, "#abcdef")!;
     expect(previewChangeCount(dark)).toBe(2);
     const css = previewCss(dark);
     expect(css).toContain(':root:not(.dark):not([data-lm-theme="dark"])');
@@ -41,20 +41,21 @@ describe("Foundations preview overrides", () => {
     expect(css).toContain('.dark, [data-lm-theme="dark"]');
     expect(css).toContain('#abcdef');
     expect(css).not.toContain("--lm-color-background-default");
-    expect(withPreviewValue(dark, "light", brand.key, defaultValue("light", brand.key)!)?.light).toEqual({});
-    expect(withPreviewValue(dark, "light", brand.key, defaultValue("light", brand.key)!)?.dark[brand.key]).toBe("#abcdef");
+    expect(withPreviewValue(dark, "light", primary.key, defaultValue("light", primary.key)!)?.light).toEqual({});
+    expect(withPreviewValue(dark, "light", primary.key, defaultValue("light", primary.key)!)?.dark[primary.key]).toBe("#abcdef");
   });
 
   it("rejects unknown keys, CSS injection and corrupted stored data", () => {
-    expect(validPreviewValue("light", brand.key, "red; } body { display:none")).toBe(false);
+    expect(validPreviewValue("light", primary.key, "red; } body { display:none")).toBe(false);
     expect(validPreviewValue("shared", "--unknown", "12px")).toBe(false);
+    expect(validPreviewValue("light", "--lm-color-brand-accent", "#ff0000")).toBe(false);
     expect(parsePreview("not json")).toEqual(emptyPreview());
     const parsed = parsePreview(JSON.stringify({
-      light: { [brand.key]: "#123456", "--unknown": "#123456" },
-      dark: { [brand.key]: "#123456; color:red" },
+      light: { [primary.key]: "#123456", "--unknown": "#123456", "--lm-color-brand-accent": "#ff0000" },
+      dark: { [primary.key]: "#123456; color:red" },
       shared: { "--lm-spacing-1": "100rem" },
     }));
-    expect(parsed.light).toEqual({ [brand.key]: "#123456" });
+    expect(parsed.light).toEqual({ [primary.key]: "#123456" });
     expect(parsed.dark).toEqual({});
     expect(parsed.shared).toEqual({});
   });

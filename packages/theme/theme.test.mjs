@@ -23,7 +23,7 @@ describe("Leement web theme contract", () => {
   it("provides the same semantic roles in light and dark", () => {
     const light = css.split(':root, [data-lm-theme="light"] {')[1].split('color-scheme: light;')[0];
     const dark = css.split('.dark, [data-lm-theme="dark"] {')[1].split('color-scheme: dark;')[0];
-    for (const role of ["surface-default", "surface-raised", "surface-muted", "status-success", "status-warning", "brand-text", "data-accent", "focus-ring", "media-foreground", "media-scrim", "syntax-keyword", "syntax-string", "syntax-number", "syntax-comment"]) {
+    for (const role of ["surface-default", "surface-raised", "surface-muted", "status-success", "status-warning", "action-primary", "action-primary-foreground", "action-primary-hover", "action-primary-text", "action-primary-gradient-start", "action-primary-gradient-middle", "action-primary-gradient-end", "data-accent", "focus-ring", "media-foreground", "media-scrim", "syntax-keyword", "syntax-string", "syntax-number", "syntax-comment"]) {
       expect(light).toContain(`--lm-color-${role}:`);
       expect(dark).toContain(`--lm-color-${role}:`);
     }
@@ -45,7 +45,7 @@ describe("Leement web theme contract", () => {
     expect(css).toContain("--radius-xl: var(--lm-radius-xl)");
     const sidebarRoles = {
       "sidebar": "surface-default", "sidebar-foreground": "foreground-default",
-      "sidebar-primary": "action-primary", "sidebar-primary-foreground": "foreground-inverse",
+      "sidebar-primary": "action-primary", "sidebar-primary-foreground": "action-primary-foreground",
       "sidebar-accent": "surface-muted", "sidebar-accent-foreground": "foreground-default",
       "sidebar-border": "border-default", "sidebar-ring": "focus-ring",
     };
@@ -58,15 +58,19 @@ describe("Leement web theme contract", () => {
     expect(css).toContain("border-color: var(--lm-color-border-default)");
   });
 
-  it("keeps brand overrides connected to focus, data and reduced-motion examples", () => {
+  it("keeps primary overrides connected to focus, data and reduced-motion examples", () => {
     const light = css.split(':root, [data-lm-theme="light"] {')[1].split('color-scheme: light;')[0];
     const dark = css.split('.dark, [data-lm-theme="dark"] {')[1].split('color-scheme: dark;')[0];
     for (const mode of [light, dark]) {
-      expect(mode).toContain("--lm-color-focus-ring: var(--lm-color-brand-focus)");
-      expect(mode).toContain("--lm-color-data-accent: var(--lm-color-brand-accent)");
-      expect(mode).toContain("--lm-color-data-accent-foreground: var(--lm-color-brand-accent-foreground)");
-      expect(mode).toContain("--lm-color-brand-gradient-middle:");
+      expect(mode).toContain("--lm-color-focus-ring: var(--lm-color-action-primary-text)");
+      expect(mode).toContain("--lm-color-data-accent: var(--lm-color-action-primary)");
+      expect(mode).toContain("--lm-color-data-accent-foreground: var(--lm-color-action-primary-foreground)");
+      expect(mode).toContain("--lm-color-action-primary-gradient-middle:");
     }
+    expect(css).toContain("--primary-foreground: var(--lm-color-action-primary-foreground)");
+    expect(css).toContain("--color-primary-text: var(--lm-color-action-primary-text)");
+    expect(css).not.toContain("--lm-color-brand-");
+    expect(css).not.toContain("--color-brand-accent");
     expect(css).toContain(".lm-brand-skeleton");
     expect(css).toContain(".lm-brand-gradient-text");
     expect(css).toContain("@media (prefers-reduced-motion: reduce)");

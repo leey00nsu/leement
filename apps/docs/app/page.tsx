@@ -16,7 +16,7 @@ export default function Home() {
           <div className="pt-3"><DocsMobileNavigation /></div>
         </details>
       </div>
-      <section aria-labelledby="home-title" className="home-brand relative z-10 mx-auto max-w-5xl px-4 py-12 text-center sm:py-16 lg:py-20">
+      <section aria-labelledby="home-title" className="relative z-10 mx-auto max-w-5xl px-4 py-12 text-center sm:py-16 lg:py-20">
         <HomeReveal>
         <div data-home-reveal="logo" className="mb-5 flex justify-center">
           <BrandLogo name="Leement" variant="icon" size="lg" markClassName="size-20" mark={<Image src="/leement-mark.svg" alt="" width={80} height={80} priority />} />
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         </HomeReveal>
       </section>
-      <section aria-labelledby="home-examples-title" className="home-examples home-brand relative isolate">
+      <section aria-labelledby="home-examples-title" className="home-examples relative isolate">
         <h2 id="home-examples-title" className="sr-only">Explore the components</h2>
         <div className="home-gallery-viewport">
           <HomeReveal gallery className="home-gallery-tilt">

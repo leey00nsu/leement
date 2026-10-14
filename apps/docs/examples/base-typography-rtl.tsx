@@ -178,7 +178,7 @@ function TypographyRtl() {
         {t.kingThought}{" "}
         <a
           href="#"
-          className="font-medium text-primary underline underline-offset-4"
+          className="font-medium text-primary-text underline underline-offset-4"
         >
           {t.brilliantPlan}
         </a>

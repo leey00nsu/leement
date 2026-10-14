@@ -147,7 +147,7 @@ function Spinner({
       role="status"
       aria-label={label}
       className={cn(
-        "inline-flex shrink-0 items-center text-primary",
+        "inline-flex shrink-0 items-center text-primary-text",
         sizeClass[size],
         className,
       )}

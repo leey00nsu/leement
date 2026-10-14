@@ -12,7 +12,7 @@ function BadgeCustomColors() {
         Success
       </Badge>
       <Badge className="bg-muted text-muted-foreground">Neutral</Badge>
-      <Badge className="bg-primary/10 text-primary  ">Primary</Badge>
+      <Badge className="bg-primary/10 text-primary-text  ">Primary</Badge>
       <Badge className="bg-destructive/10 text-[var(--lm-color-action-danger)]  ">
         Danger
       </Badge>

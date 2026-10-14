@@ -176,7 +176,7 @@ function SharedControl({ field }: { field: SharedField }) {
   return <div className="rounded-lg bg-background p-3">
     <div className="flex items-baseline justify-between gap-3"><label htmlFor={id} className="text-sm font-medium capitalize">{field.label}</label><output htmlFor={id} className="font-mono text-sm tabular-nums text-muted-foreground">{Number.isFinite(number) ? number : min}{unit}</output></div>
     <input id={id} type="range" min={min} max={max} step={step} value={Number.isFinite(number) ? number : min} aria-valuetext={`${Number.isFinite(number) ? number : min}${unit}`} onChange={(event) => setValue("shared", field.key, `${event.target.value}${unit}`)}
-      className="mt-3 w-full accent-[var(--lm-color-brand-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring" />
+      className="mt-3 w-full accent-[var(--lm-color-action-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring" />
     <div className="mt-1 flex justify-between text-xs text-muted-foreground"><span>{min}{unit}</span><span>{max}{unit}</span></div>
   </div>;
 }
@@ -227,7 +227,7 @@ function ContrastWarning({ mode, values }: { mode: FoundationMode; values: Recor
 function ActualPreview({ category }: { category: FoundationCategory }) {
   if (category === "color") return <div className="space-y-4" data-testid="foundation-actual-preview">
     <Card><CardHeader><CardTitle>Semantic color roles</CardTitle><CardDescription>Surface, text, border, and actions respond together.</CardDescription></CardHeader><CardContent className="flex flex-wrap gap-2"><Button size="sm">Primary action</Button><Button size="sm" variant="secondary">Secondary</Button><Button size="sm" variant="outline">Outline</Button></CardContent></Card>
-    <div className="rounded-lg border border-border bg-muted p-4"><p className="text-sm font-medium text-foreground">Muted surface</p><p className="mt-1 text-xs text-muted-foreground">Brand accents remain a separate role.</p><p className="mt-4"><BrandGradientText className="text-lg font-semibold">A flexible brand voice.</BrandGradientText></p><Skeleton variant="brand" className="mt-3 h-3 w-3/4" /></div>
+    <div className="rounded-lg border border-border bg-muted p-4"><p className="text-sm font-medium text-foreground">Muted surface</p><p className="mt-1 text-xs text-muted-foreground">Primary is your brand color. Use its text role on ordinary surfaces.</p><p className="mt-4"><BrandGradientText className="text-lg font-semibold">A flexible brand voice.</BrandGradientText></p><Skeleton variant="brand" className="mt-3 h-3 w-3/4" /></div>
   </div>;
   if (category === "typography") return <div className="space-y-4" data-testid="foundation-actual-preview">
     <div className="space-y-2 border-b border-border pb-4"><BrandLogo name="Leement" mark={<img src="/leement-mark.svg" alt="" width={128} height={128} />} /><p className="text-xs text-muted-foreground">Brand font · Paperlogy 700 by default. Body font edits leave the wordmark independent.</p></div>
@@ -254,7 +254,7 @@ export function FoundationEditor({ category }: { category: FoundationCategory })
   const { preview, loaded, reset } = useFoundationPreview();
   const mode = useCurrentMode();
   const [copyStatus, setCopyStatus] = useState("");
-  const [openGroups, setOpenGroups] = useState(() => new Set(["background", "surface", "foreground", "brand"]));
+  const [openGroups, setOpenGroups] = useState(() => new Set(["background", "surface", "foreground", "action"]));
   const count = previewChangeCount(preview);
   const fields = sharedFields.filter((field) => field.category === category);
 
@@ -271,7 +271,7 @@ export function FoundationEditor({ category }: { category: FoundationCategory })
   if (!loaded) return <section id="live-editor" aria-label="Live editor" className="mt-10 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground text-sm text-muted-foreground" role="status">Loading saved preview…</section>;
 
   return <section id="live-editor" aria-labelledby="live-editor-heading" className="@container mt-10 scroll-mt-24">
-    <div className="mb-5 flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-widest text-[var(--lm-color-brand-text)]">Live editor</p><h2 id="live-editor-heading" className="mt-1 text-2xl font-semibold">Try the {category} rules</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">Changes apply across this documentation site. They stay in this browser until you reset them. The token reference below shows Leement defaults.</p></div><span className="rounded-full border border-border bg-muted px-3 py-1 text-xs text-foreground" role="status">{count} {count === 1 ? "change" : "changes"}</span></div>
+    <div className="mb-5 flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-widest text-[var(--lm-color-action-primary-text)]">Live editor</p><h2 id="live-editor-heading" className="mt-1 text-2xl font-semibold">Try the {category} rules</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">Changes apply across this documentation site. They stay in this browser until you reset them. The token reference below shows Leement defaults.</p></div><span className="rounded-full border border-border bg-muted px-3 py-1 text-xs text-foreground" role="status">{count} {count === 1 ? "change" : "changes"}</span></div>
     <div className="grid items-start gap-5 @min-[52rem]:grid-cols-[minmax(0,1fr)_minmax(300px,.9fr)]">
       <div className="min-w-0 space-y-4 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground">
         {category === "color" ? <>

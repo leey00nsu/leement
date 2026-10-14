@@ -52,11 +52,6 @@ body:has(#leement-home) .docs-shell > main > div { max-width: none; }
   background: linear-gradient(to bottom, var(--lm-color-background-default), var(--lm-color-background-subtle) 220px);
   overflow: clip;
 }
-.home-brand {
-  --primary: var(--lm-color-brand-accent);
-  --primary-foreground: var(--lm-color-brand-accent-foreground);
-  --lm-color-action-primary-hover: color-mix(in srgb, var(--lm-color-brand-accent) 96%, var(--lm-color-brand-accent-foreground));
-}
 .home-gallery-viewport {
   height: clamp(780px, 82vw, 1320px);
   padding-top: 72px;
