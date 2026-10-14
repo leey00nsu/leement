@@ -54,27 +54,27 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     </section>}
     {slug === "color" && <section id="brand-colors" className="mt-10 scroll-mt-24 rounded-2xl bg-muted p-5 sm:p-6 [&>p]:text-foreground [&>ol]:text-foreground [&>ul]:text-foreground" aria-labelledby="brand-colors-heading">
       <h2 id="brand-colors-heading" className="text-xl font-semibold">Set your brand colors</h2>
-      <p className="mt-3 text-sm leading-7 text-muted-foreground">Primary is the single brand color contract for actions and selections across the library. Override its roles after importing the theme. Pair filled primary and hover surfaces with primary-foreground; use primary-text for links, small eyebrows and selected filters on ordinary surfaces. Focus and the first chart series follow primary-text; data accent follows primary. Gradients remain a separate visual effect, and ordinary Skeletons stay neutral. Set all primary roles for both themes and check contrast. There is no separate brand color group.</p>
+      <p className="mt-3 text-sm leading-7 text-muted-foreground">Primary is the single brand color contract for actions and selections across the library. Override its roles after importing the theme. Pair filled primary and hover surfaces with primary-foreground; use primary-text for links, small eyebrows and selected filters on ordinary surfaces. Focus and the first chart series follow primary-text; data accent follows primary. Gradients remain a separate visual effect, and ordinary Skeletons stay neutral. Set all primary roles for both themes and check contrast. Leement defaults to #706BC5 and white filled foreground in both modes, with purple text and effects adjusted for the surface contrast. There is no separate brand color group.</p>
       <pre className="mt-5 overflow-x-auto rounded-xl bg-background p-4 text-xs leading-6"><code>{`@import "@leement/theme";
 
 :root {
-  --lm-color-action-primary: #7c3aed;
+  --lm-color-action-primary: #706BC5;
   --lm-color-action-primary-foreground: #ffffff;
-  --lm-color-action-primary-text: #6d28d9;
-  --lm-color-action-primary-hover: #6d28d9;
-  --lm-color-action-primary-gradient-start: var(--lm-color-action-primary);
-  --lm-color-action-primary-gradient-middle: #3b82f6;
-  --lm-color-action-primary-gradient-end: #ec4899;
+  --lm-color-action-primary-text: #625DAF;
+  --lm-color-action-primary-hover: #625DAF;
+  --lm-color-action-primary-gradient-start: var(--lm-color-action-primary-text);
+  --lm-color-action-primary-gradient-middle: #6A64BA;
+  --lm-color-action-primary-gradient-end: var(--lm-color-action-primary-text);
 }
 
 .dark, [data-lm-theme="dark"] {
-  --lm-color-action-primary: #9f7aea;
-  --lm-color-action-primary-foreground: #111113;
-  --lm-color-action-primary-text: #b794f4;
-  --lm-color-action-primary-hover: #b794f4;
-  --lm-color-action-primary-gradient-start: var(--lm-color-action-primary);
-  --lm-color-action-primary-gradient-middle: #a4d8ff;
-  --lm-color-action-primary-gradient-end: var(--lm-color-action-primary);
+  --lm-color-action-primary: #706BC5;
+  --lm-color-action-primary-foreground: #ffffff;
+  --lm-color-action-primary-text: #B8B3EF;
+  --lm-color-action-primary-hover: #625DAF;
+  --lm-color-action-primary-gradient-start: var(--lm-color-action-primary-text);
+  --lm-color-action-primary-gradient-middle: #CBC6F5;
+  --lm-color-action-primary-gradient-end: var(--lm-color-action-primary-text);
 }`}</code></pre>
       <p className="mt-4 text-sm text-muted-foreground">Use <code>Skeleton variant="brand"</code> only when brand emphasis helps; use <code>BrandGradientText</code> for short display copy. Both stop repeating motion when reduced motion is requested.</p>
     </section>}

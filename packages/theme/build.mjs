@@ -89,6 +89,7 @@ const sheet = `/* Generated from @leement/tokens. Edit packages/tokens/src/token
 :root, [data-lm-theme="light"] {\n${lines([...common, ...colors("light")], "lm")}\n${compatibility}\n  color-scheme: light;\n}
 .dark, [data-lm-theme="dark"] {\n${lines(colors("dark"), "lm")}\n${compatibility}\n  color-scheme: dark;\n}
 @media (prefers-reduced-motion: reduce) {\n  :root, [data-lm-theme], .dark { --lm-motion-duration-fast: 0ms; --lm-motion-duration-normal: 0ms; --lm-motion-duration-slow: 0ms; --lm-motion-duration-reveal: 0ms; --lm-motion-duration-expand: 0ms; --lm-motion-duration-media: 0ms; --lm-motion-delay-stagger: 0ms; }\n}
+@custom-variant dark (&:where(.dark, .dark *, [data-lm-theme="dark"], [data-lm-theme="dark"] *));
 @theme inline {
   --spacing: var(--lm-spacing-1);
   --text-xs: var(--lm-typography-size-xs); --text-sm: var(--lm-typography-size-sm);

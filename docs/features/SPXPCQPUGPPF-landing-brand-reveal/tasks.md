@@ -133,15 +133,15 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
-- [TODO][PRD-FR-011] T-SPXPCQPUGPPF-landing-brand-reveal-04 primary를 보라색과 흰색 전경으로 통일하고 파란 강조 제거
+- [DONE][PRD-FR-011] T-SPXPCQPUGPPF-landing-brand-reveal-04 primary를 보라색과 흰색 전경으로 통일하고 파란 강조 제거
   - Date: 2026-10-15
   - Acceptance:
     - 두 모드의 primary는 #706BC5·전경은 흰색이며 hover·일반 강조 글자·focus·gradient·로고는 보라 계열로 일관된다
   - Checklist:
-    - [ ] primary·전경·hover·text·gradient 토큰과 로고 자산의 파란 강조를 정리한다
-    - [ ] 채워진 UI·링크·focus·track 대비를 검수하고 필요한 공용 source 및 기존 계약 테스트를 조정한다
-    - [ ] PRD·디자인 시스템·Foundation 예제·Unreleased와 Feature를 동기화한다
-    - [ ] 두 모드 대표 UI·Foundation 편집·랜딩 회귀 및 build/typecheck/lint/test를 확인한다
+    - [x] primary·전경·hover·text·gradient 토큰과 로고 자산의 파란 강조를 정리한다
+    - [x] 채워진 UI·링크·focus·track 대비를 검수하고 필요한 공용 source 및 기존 계약 테스트를 조정한다
+    - [x] PRD·디자인 시스템·Foundation 예제·Unreleased와 Feature를 동기화한다
+    - [x] 두 모드 대표 UI·Foundation 편집·랜딩 회귀 및 build/typecheck/lint/test를 확인한다
   - Docs:
     - docs:prd/leement-prd.md
     - docs:designs/design-system.md
@@ -165,8 +165,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록
@@ -179,7 +179,7 @@
 | pnpm run build | 2026-10-15 | PASS — tokens/theme/registry/Next 252 pages |
 | pnpm run typecheck | 2026-10-15 | PASS |
 | pnpm run lint | 2026-10-15 | PASS |
-| pnpm run test | 2026-10-15 | PASS — 32 files / 706 tests |
-| 브라우저 시각·조작 검수 | 2026-10-15 | PASS — 전역 primary 대비·Foundation export/persist/reset·대표 UI 및 8개 랜딩 테마/크기 조합·아이콘/워드마크·모션/fallback, Decisions D005/D007 |
+| pnpm run test | 2026-10-15 | PASS — 32 files / 707 tests |
+| 브라우저 시각·조작 검수 | 2026-10-15 | PASS — 전역 primary 대비·Foundation export/persist/reset·대표 UI 및 8개 랜딩 테마/크기 조합·아이콘/워드마크·모션/fallback, Decisions D005/D007/D008 |
 
 완료 기록에는 테스트뿐 아니라 build·typecheck·lint 등 Plan에서 정한 검증과 수동 검증 증거를 포함합니다. 자동 검사의 기준은 실제 `workflow.featureChecks`이며, 검사 생략은 통과로 기록하지 않고 명시적인 사유를 남깁니다.

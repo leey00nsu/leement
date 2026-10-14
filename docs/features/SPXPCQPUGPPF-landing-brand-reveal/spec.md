@@ -78,11 +78,11 @@ primary는 제품의 주요 동작과 선택 상태를 표현하는 브랜드색
 ### 추가 인수 조건 (primary 통합)
 
 - [x] 구 brand 색 token/utility가 배포 theme와 registry 및 현재 문서에서 제거된다.
-- [ ] 두 테마의 filled primary/hover 전경과 일반 강조 텍스트는 필요한 대비를 확보한다.
+- [x] 두 테마의 filled primary/hover 전경과 일반 강조 텍스트는 필요한 대비를 확보한다.
 - [x] Foundation primary 편집·export가 public UI와 data/focus에 반영되고 구 brand 색 override는 거부된다.
 - [x] Unreleased에 breaking migration을 설명하고 랜딩의 모션·비조작·대체 표시는 유지된다.
 
 ### 추가 인수 조건 (보라색 통일)
 
-- [ ] 두 모드 primary=#706BC5·전경=#FFFFFF이고 hover·강조 글자·focus·gradient 및 Leement mark에서 브랜드 파랑이 제거된다.
-- [ ] 기본/hover 전경과 일반 강조 글자는 4.5:1, 표시 track과 primary는 3:1 이상이며 Foundation 재정의·랜딩 모션·실제 UI 조작은 유지된다.
+- [x] 두 모드 primary=#706BC5·전경=#FFFFFF이고 hover·강조 글자·focus·gradient 및 Leement mark에서 브랜드 파랑이 제거된다.
+- [x] 기본/hover 전경과 일반 강조 글자는 4.5:1, 표시 track과 primary는 3:1 이상이며 Foundation 재정의·랜딩 모션·실제 UI 조작은 유지된다.

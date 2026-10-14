@@ -66,7 +66,7 @@
 - **Evidence**: [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png), [tablet light](./artifacts/landing-768-light.png), [tablet dark](./artifacts/landing-768-dark.png), [wide light](./artifacts/landing-1920-light.png), [wide dark](./artifacts/landing-1920-dark.png), [reduced motion](./artifacts/landing-reduced.png), [no-JS](./artifacts/landing-no-js.png). 시간별 관찰과 검사 결과는 이 기록이 정본이며 임시 harness/log는 커밋하지 않는다.
 - **보조 캡처 처리**: full-page 캡처는 스크롤 키 검사 전에 촬영했다. 스크롤 키 직후 촬영에서는 sticky header의 compositor 위치가 반영되어 이전 캡처를 대체했다. 제품 코드 결함으로 기록하지 않는다.
 
-<!-- lee-spec-kit:workflow-sync sha256:55ccaca5ffd65a7907b045abb4b0b51131830d31b9e2bca71e9105ecd60257ea -->
+<!-- lee-spec-kit:workflow-sync sha256:6d0b713d7b31b395d8fe99542d6469a08df13f3425909739659f3cedd4b568b2 -->
 
 ## D005: 사용자 요청으로 brand 색 중복을 제거한다 (2026-10-15)
 
@@ -114,3 +114,16 @@
 - **Decision**: 양쪽 모드 filled primary=#706BC5·전경=#FFFFFF, hover는 어두운 보라로 통일한다. 링크/focus/data 및 gradient는 같은 보라 계열이며 일반 배경 읽기 대비 때문에 dark의 글자/gradient는 밝게 한다. Leement mark의 파란 레이어도 보라로 통일한다. 독립 palette·syntax·다중 차트 시리즈의 파랑은 별도 의미 역할로 보존한다.
 - **대비/범위**: 흰색과 #706BC5는 약 4.57:1이다. dark muted track과의 대비는 별도 확인하며 3:1 미만일 경우 공용 Progress/Slider/Switch의 dark 기본 track만 secondary 표면으로 조정한다. 일반 강조 글자·gradient는 최소 4.5:1을 검증한다. primary override나 공용 API 이름은 유지한다.
 - **Docs/검증**: PRD·디자인 시스템·Foundation 예제·Unreleased, 기존 theme 계약 테스트를 함께 갱신하고 build/typecheck/lint/test 및 양쪽 테마 대표 UI·Foundation·랜딩 회귀를 확인한다. README 보호와 보류는 D003과 같다.
+
+- **검수 중 발견/조정**: #706BC5와 dark muted(#303033)의 대비는 약 2.88:1, dark secondary(#242427)와는 3.39:1이라 Progress/Slider/Switch 기본 track의 dark 표면을 secondary로 바꿨다. 기존 theme은 semantic data-lm-theme/.dark를 제공하지만 Tailwind dark variant는 OS media를 따르고 있어 수동 선택과 다른 상태가 생긴다. theme에서 동일한 .dark/data-lm-theme custom variant를 제공하여 track과 기존 dark source가 현재 선택한 모드를 따르게 한다. OS와 수동 선택이 반대인 조합도 브라우저로 확인한다. W3C non-text 대비 기준 및 Tailwind 공식 수동 dark variant를 참조했다: https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html , https://tailwindcss.com/docs/dark-mode .
+
+### D008 구현 및 검증
+
+- **구현**: 두 모드 primary=#706BC5·전경=#FFFFFF·hover=#625DAF다. light primaryText는 hover 참조, dark는 #B8B3EF다. gradient는 primaryText로 시작/끝을 연결하고 중간에 light #6A64BA·dark #CBC6F5를 사용한다. Leement SVG 두 레이어는 #706BC5로 통일하고 opacity·형태는 유지했다. 기존 color.brand 제거 계약 및 public API는 유지했다. Progress/Slider/Switch dark track은 secondary이며 @leement/theme의 dark variant는 .dark/data-lm-theme selector로 semantic 모드와 일치한다. PRD·디자인 시스템·Foundation 예제·Unreleased를 동기화했다.
+- **대비**: 실제 CTA normal/hover 흰색 전경은 4.5669/5.6694:1이다. 일반/muted 표면의 primaryText 최소 대비는 light 5.20/dark 6.72:1, gradient stop 최소는 light 4.65/dark 6.72:1이다. Progress/Slider/Switch의 실제 track과 표시 색은 light 4.19/dark 3.39:1이다. 일반 텍스트 4.5:1 및 표시 track 3:1 기준을 적용했다.
+- **실제 모드/컨트롤**: OS light/dark × 수동 light/dark 4개 조합에서 같은 primary RGB(112,107,197)·흰색 전경, dark track RGB(36,36,39)·light track RGB(245,245,245)를 확인했다. data-lm-theme만 설정하고 .dark 없이도 각 track이 올바르다. Checkbox check·Switch 체크 thumb 흰색 및 실제 조작, Button hover·Calendar range endpoint 전경·Slider/Progress·FilterToolbar 선택을 검수했다.
+- **Foundation**: 두 모드 primary/전경/hover/text 재정의가 data/focus/series와 실제 UI에 반영되고 Copy CSS·새로고침 유지·Reset이 동작한다. 제거된 brand 색 저장값은 무시하고 brand 서체 override는 유지한다. 초기 harness는 minifier의 동일한 흰색 표기 #fff를 #ffffff와 문자열 비교해 실패했으며 동등한 색을 허용하도록 검수 단언을 정정했다. 제품 결함은 없었다.
+- **랜딩/캡처**: 375/768/1440/1920px light/dark 8개 조합에 보라 primary·흰색 전경·아이콘/Leement 워드마크가 표시되며 overflow/pageerror는 없다. 장식 inert·클릭/Enter/Space 차단·Tab 건너뛰기·실제 CTA 및 reduced motion/no-JS를 확인했다. 기존 [desktop light](./artifacts/landing-1440-light.png), [desktop dark](./artifacts/landing-1440-dark.png), [mobile light](./artifacts/landing-375-light.png), [mobile dark](./artifacts/landing-375-dark.png)와 나머지 viewport/fallback 캡처를 갱신했다. D006의 비교 HTML/PNG는 변경 전 색 선택을 설명하는 이력 자료로 보존한다.
+- **계약 검사**: pnpm run build/typecheck/lint/test 모두 exit 0; 32 files/707 tests PASS. 기존 theme 테스트에 두 모드 primary 정본·흰색 전경·글자/track 대비 및 dark selector 계약을 추가했다. 현재 token/theme·Foundation 예제·mark의 브랜드 역할에 파란 기본값이 남아 있지 않으며 독립 primitive·syntax·차트 palette는 보존한다.
+
+- **테마 전환 추가 확인**: 홈 버튼으로 light→dark→light 전환해도 primary는 같은 RGB(112,107,197)이며 완료한 22개 hero/card의 opacity=1을 유지한다. View components 이동과 초기 Get started의 Enter 이동이 정상이다. 초기 DOM 단계 focus 직후 opacity 조회는 hydration 전후 타이밍에 따라 0일 수 있으므로 이 검수로 모든 hydration 시점의 즉시 표시를 보장한다고 주장하지 않는다.

@@ -42,6 +42,7 @@ describe("Leement web theme contract", () => {
     expect(css).toContain("--muted: var(--lm-color-surface-muted)");
     expect(css).toContain("--data-accent: var(--lm-color-data-accent)");
     expect(css).toContain('.dark, [data-lm-theme="dark"]');
+    expect(css).toContain('@custom-variant dark (&:where(.dark, .dark *, [data-lm-theme="dark"], [data-lm-theme="dark"] *));');
     expect(css).toContain("--radius-xl: var(--lm-radius-xl)");
     const sidebarRoles = {
       "sidebar": "surface-default", "sidebar-foreground": "foreground-default",
@@ -56,6 +57,40 @@ describe("Leement web theme contract", () => {
       expect(css).toContain(`--color-${alias}: var(--${alias})`);
     }
     expect(css).toContain("border-color: var(--lm-color-border-default)");
+  });
+
+  it("keeps the purple filled brand and white foreground in both themes with readable text and tracks", () => {
+    const tokens = JSON.parse(readFileSync(resolve("packages/tokens/src/tokens.json"), "utf8"));
+    const at = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
+    const color = (mode, path) => {
+      const value = at(tokens.semantic[mode], path) ?? at(tokens.primitive, path);
+      const reference = /^\{(.+)\}$/.exec(value);
+      return reference ? color(mode, reference[1]) : value;
+    };
+    const luminance = (hex) => {
+      const rgb = [1, 3, 5].map((offset) => parseInt(hex.slice(offset, offset + 2), 16) / 255);
+      return rgb.map((channel) => channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4)
+        .reduce((sum, channel, index) => sum + channel * [0.2126, 0.7152, 0.0722][index], 0);
+    };
+    const contrast = (first, second) => {
+      const [low, high] = [luminance(first), luminance(second)].sort((a, b) => a - b);
+      return (high + 0.05) / (low + 0.05);
+    };
+    for (const mode of ["light", "dark"]) {
+      const c = (path) => color(mode, `color.${path}`);
+      const section = css.split(mode === "light" ? ':root, [data-lm-theme="light"] {' : '.dark, [data-lm-theme="dark"] {')[1].split("color-scheme:")[0];
+      expect(section).toContain("--lm-color-action-primary: #706BC5;");
+      expect(c("action.primaryForeground")).toBe("#ffffff");
+      for (const fill of ["action.primary", "action.primaryHover"]) {
+        expect(contrast(c(fill), c("action.primaryForeground"))).toBeGreaterThanOrEqual(4.5);
+      }
+      for (const surface of ["background.default", "surface.default", "surface.muted"]) {
+        for (const text of ["action.primaryText", "action.primaryGradientStart", "action.primaryGradientMiddle", "action.primaryGradientEnd"]) {
+          expect(contrast(c(text), c(surface))).toBeGreaterThanOrEqual(4.5);
+        }
+      }
+      expect(contrast(c("action.primary"), c(mode === "dark" ? "action.secondary" : "surface.muted"))).toBeGreaterThanOrEqual(3);
+    }
   });
 
   it("keeps primary overrides connected to focus, data and reduced-motion examples", () => {

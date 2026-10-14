@@ -18,15 +18,15 @@ CopySinger를 먼저 만들고 이를 바탕으로 Leesfield를 CopySinger의 �
 
 ## 토큰 규칙
 
-- Color: background, surface, foreground, border, action, focus, status(success/warning), data accent 역할로 사용한다. `neutral`, `blue` 등 palette 이름은 primitive에서만 사용한다. 기본 light의 보라 계열과 dark의 파랑 계열은 CopySinger/Leesfield의 브랜드 참고값이며 Leement의 필수 정체성이 아니다. 앱의 브랜드색은 전역 action.primary가 소유하며 별도 brand 색 그룹을 두지 않는다. 상태에는 색상과 텍스트를 함께 사용한다.
+- Color: background, surface, foreground, border, action, focus, status(success/warning), data accent 역할로 사용한다. `neutral`, `blue` 등 palette 이름은 primitive에서만 사용한다. 기본 primary는 light/dark 모두 #706BC5이며 그 위 전경은 #FFFFFF다. 브랜드 강조는 보라 계열을 유지하고 두 모드의 표면·일반 강조 글자·효과 밝기는 대비에 맞춰 조정한다. 독립 데이터 시리즈와 syntax palette의 의미색은 유지한다. 앱의 브랜드색은 전역 action.primary가 소유하며 별도 brand 색 그룹을 두지 않는다. 상태에는 색상과 텍스트를 함께 사용한다.
 
 `background.subtle`은 페이지 배경의 낮은 단계이고 `surface.muted`는 컨트롤 hover, Tabs list, Skeleton, Progress track처럼 표면과 분리되어 보여야 하는 영역이다. CopySinger의 밝은 `--muted`와 Leesfield의 어두운 `--muted`를 참고해 light는 `#f5f5f5`, dark는 `#303033`으로 둔다. shadcn 호환 `--muted`는 `surface.muted`에서만 파생하며, 이 값을 page background로 대신 사용하지 않는다.
 
 ### Primary 브랜드 역할
 
-`--lm-color-action-primary`는 주요 동작·선택 표면의 브랜드색 정본이고 `--lm-color-action-primary-foreground`는 그 위의 전경, `--lm-color-action-primary-hover`는 hover 표면이다. 일반 배경 위의 링크·작은 강조 문구·선택 필터는 `--lm-color-action-primary-text`와 `text-primary-text`를 사용한다. 채워진 면의 전경이나 primary 배경색을 일반 배경 글자에 재사용하지 않는다. 기본 light primary는 보라 계열의 밝기를 조정하여 muted track과도 3:1 이상 구분하며 primary/hover 전경은 4.5:1 이상이다. dark는 파랑 계열이다.
+`--lm-color-action-primary`는 주요 동작·선택 표면의 브랜드색 정본이고 `--lm-color-action-primary-foreground`는 그 위의 전경, `--lm-color-action-primary-hover`는 hover 표면이다. 일반 배경 위의 링크·작은 강조 문구·선택 필터는 `--lm-color-action-primary-text`와 `text-primary-text`를 사용한다. 채워진 면의 전경이나 primary 배경색을 일반 배경 글자에 재사용하지 않는다. 기본 primary=#706BC5·전경=#FFFFFF는 두 모드에서 같으며 약 4.57:1이다. hover=#625DAF는 같은 보라 계열에서 어둡게 하고 흰색 전경 대비는 약 5.67:1이다. 일반 강조 글자는 light primaryHover·dark #B8B3EF로 일반/muted 표면에서 4.5:1 이상이다. Progress/Slider/Switch의 기본 track은 light muted·dark secondary 표면을 사용하여 primary와 3:1 이상 구분한다. theme의 Tailwind dark variant는 .dark 또는 data-lm-theme="dark"를 따르며 운영체제 모드와 수동 선택이 달라도 semantic 색과 component 상태가 일치한다.
 
-`--lm-color-action-primary-gradient-start/middle/end`는 강조 텍스트와 선택적 브랜드 Skeleton·AudioPlayer가 공유하는 효과 역할이다. `--lm-color-data-accent`/전경은 primary/primaryForeground를, focus.ring과 data.series1은 primaryText를 기본 참조한다. focus와 데이터 시리즈는 목적이 다르므로 별도 재정의할 수 있다. 앱은 `@leement/theme` import 뒤에 두 모드의 primary·전경·hover·text·gradient를 설정하고 대비를 확인한다. Foundations → Color에서 편집과 CSS export를 제공한다. 별도 color.brand와 brand-accent utility는 제공하지 않는다. BrandLogo·BrandGradientText·BrandAction 및 brand variant·서체·모션 이름은 제품 표현의 용도이므로 유지한다.
+`--lm-color-action-primary-gradient-start/middle/end`는 강조 텍스트와 선택적 브랜드 Skeleton·AudioPlayer가 공유하는 보라 효과 역할이다. 시작·끝은 primaryText, 중간은 light #6A64BA·dark #CBC6F5이며 일반/muted 표면에서 글자 대비를 확보한다. `--lm-color-data-accent`/전경은 primary/primaryForeground를, focus.ring과 data.series1은 primaryText를 기본 참조한다. focus와 데이터 시리즈는 목적이 다르므로 별도 재정의할 수 있다. 앱은 `@leement/theme` import 뒤에 두 모드의 primary·전경·hover·text·gradient를 설정하고 대비를 확인한다. Foundations → Color에서 편집과 CSS export를 제공한다. 별도 color.brand와 brand-accent utility는 제공하지 않는다. BrandLogo·BrandGradientText·BrandAction 및 brand variant·서체·모션 이름은 제품 표현의 용도이므로 유지한다.
 
 CopySinger의 gradient text·음성 파형·오디오 로딩은 violet/blue/pink 조합을 사용한다. Leesfield는 blue/highlight 조합을 gradient text·앱 Skeleton·선택 상태에 사용한다. 양쪽 기본 Skeleton은 중립 `bg-muted`이므로 Leement도 기본 `Skeleton`은 중립이고 `variant="brand"`는 제품 정체성이 도움이 되는 로딩 구간에만 쓴다. `BrandGradientText`는 짧은 제품 문구에만 사용한다. 반복 움직임은 `prefers-reduced-motion: reduce`에서 멈춘다.
 - Typography: 본문·컨트롤은 Pretendard Variable, 브랜드 워드마크는 Paperlogy Bold(700), 코드·설치 명령·단축키는 D2Coding Regular(400)/Bold(700)를 기본으로 한다. 한글 폭은 영문 두 칸이며 일반 UI 본문은 Pretendard 역할을 유지한다. 읽기 쉬운 14–16px 본문, 18–24px 제목을 사용한다. `@leement/theme` import에 기본 WOFF2 자산의 font-face가 포함되고 외부 CDN에 의존하지 않는다. `--lm-typography-family-sans`, `--lm-typography-family-brand`, `--lm-typography-family-mono`를 별도로 재정의할 수 있으며 `font-sans`, `font-brand`, `font-mono`는 해당 Leement 변수에서 파생된다. D2Coding은 공식 v1.4.0 standard TTF의 lossless WOFF2와 라이선스/고정 revision/해시를 함께 포함한다. 커스텀 파일은 앱이 font-face 또는 자체 로더로 제공한다. 기본 폰트는 `font-display: swap`과 readable fallback을 쓰고 OFL 라이선스를 코드 MIT와 구분해 배포한다.
@@ -40,7 +40,7 @@ CopySinger의 gradient text·음성 파형·오디오 로딩은 violet/blue/pink
 
 ### 브랜드 로고 조합
 
-BrandLogo 컴포넌트은 앱이 제공한 mark와 name을 아이콘+워드마크로 조합한다. full은 장식 mark와 visible name, icon은 제품 이름을 가진 image 역할이다. 라우팅은 외부 anchor/Link가 담당하고 focus-visible을 유지한다. sm/md/lg는 32/40/48px mark와 18/20/24px 글자, 8/10/12px 간격을 사용한다. 워드마크는 font-brand와 700 굵기, -0.03em tracking을 기본으로 하고 본문 family와 독립적이다. 두 앱에서 반복된 조합이므로 초기 maturity는 candidate다. Leement 자체 SVG의 보라·파랑은 브랜드 자산이며 소비자 로고나 범용 UI의 필수 색이 아니다. docs 헤더와 예제는 registry 컴포넌트를 그대로 사용하고 favicon은 같은 SVG 자산을 읽는다.
+BrandLogo 컴포넌트은 앱이 제공한 mark와 name을 아이콘+워드마크로 조합한다. full은 장식 mark와 visible name, icon은 제품 이름을 가진 image 역할이다. 라우팅은 외부 anchor/Link가 담당하고 focus-visible을 유지한다. sm/md/lg는 32/40/48px mark와 18/20/24px 글자, 8/10/12px 간격을 사용한다. 워드마크는 font-brand와 700 굵기, -0.03em tracking을 기본으로 하고 본문 family와 독립적이다. 두 앱에서 반복된 조합이므로 초기 maturity는 candidate다. Leement 자체 SVG는 #706BC5 보라 레이어를 겹친 브랜드 자산이며 소비자 로고나 범용 UI의 필수 색이 아니다. docs 헤더와 예제는 registry 컴포넌트를 그대로 사용하고 favicon은 같은 SVG 자산을 읽는다.
 
 ## 컴포넌트와 상태
 
