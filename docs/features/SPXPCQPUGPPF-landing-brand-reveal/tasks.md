@@ -115,6 +115,24 @@
   - Reviewed Head: -
   - Reviewed Tree: -
 
+- [TODO][PRD-FR-005] T-SPXPCQPUGPPF-landing-brand-reveal-03 랜딩 로고에 Leement 워드마크 표시
+  - Date: 2026-10-15
+  - Acceptance:
+    - 랜딩 타이틀 위에 mark와 Leement 텍스트가 함께 보이고 기존 fade in·접근성·반응형 배치를 유지한다
+  - Checklist:
+    - [ ] 기존 BrandLogo full variant와 brand typography로 홈 로고를 구성한다
+    - [ ] PRD·디자인 시스템·Unreleased에 아이콘과 워드마크 구성을 반영하고 공용 API 영향 없음 확인한다
+    - [ ] light/dark·모바일·reduced motion·no-JS 및 프로젝트 필수 검사를 확인한다
+  - Docs:
+    - docs:prd/leement-prd.md
+    - docs:designs/design-system.md
+    - project:apps/docs/lib/releases.ts
+  - Review Evidence: -
+  - Review Decision: -
+  - Review Round: -
+  - Reviewed Head: -
+  - Reviewed Tree: -
+
 ## Repository Knowledge (완료 비차단)
 
 - **Policy**: `.lee-spec-kit.json`의 `experimental.openwiki`에서 파생
@@ -127,8 +145,8 @@
 
 > ⚠️ 아래 항목은 **최종 확인 체크리스트**입니다. 실제로 확인/실행한 뒤에만 체크하세요.
 
-- [x] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
-- [x] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
+- [ ] 모든 태스크가 `[DONE]`이며, 각 태스크의 `Acceptance` 검증 및 `Checklist` 체크 완료 <!-- lee-spec-kit:completion:all-tasks -->
+- [ ] 테스트 실행 및 통과 (아래에 명령어/결과 기록) <!-- lee-spec-kit:completion:tests -->
 - [ ] 최종 결과를 공유했고, 필요한 사용자 확인을 문서화된 workflow checkpoint 기준으로 기록함 <!-- lee-spec-kit:completion:final-outcome -->
 
 ### 테스트 실행 기록

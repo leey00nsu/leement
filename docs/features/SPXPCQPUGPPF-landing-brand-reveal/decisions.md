@@ -92,3 +92,10 @@
 - **자료**: [비교 화면](./artifacts/primary-foreground-comparison.png), [인터랙티브 비교 HTML](./artifacts/primary-foreground-comparison.html). 실제 light/dark primary·hover·전경 값을 tokens.json에서 가져왔고 동일 크기·굵기의 버튼·배지·문구를 나란히 배치했다. 검정은 실제 #111113, 흰색은 #ffffff다. 보라 밝기 조절·현재 값 복구와 테마 선택을 제공한다.
 - **관찰/제안**: light 기본/hover에서 실제 검정은 약 5.62/5.19:1, 흰색은 3.35/3.63:1이다. dark 기본/hover는 검정 4.93/4.64:1, 흰색 3.83/4.07:1이다. 현재 배경을 유지한다면 검정을 권한다. 흰색을 원하면 light의 같은 보라 계열 L=0.55 예시에서 기본 5.04:1·hover L=0.53에서 5.50:1이 되며 전경과 배경을 함께 변경해야 한다. 제안 색은 제품에 적용하지 않았다.
 - **기준/검증**: W3C WCAG 2.2 Contrast Minimum의 일반 텍스트 AA 4.5:1 기준을 사용한다. https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html . 수치는 브라우저 sRGB 변환 기반 근삿값이다. 테마 전환·슬라이더·reset·모바일 375px overflow 없음·pageerror 없음 및 실제 PNG 렌더를 확인했다.
+
+## D007: 랜딩 로고를 아이콘과 워드마크로 표시한다 (2026-10-15)
+
+- **요청/승인**: 사용자가 랜딩 로고에 텍스트도 표시하도록 명시적으로 요청했다. task 03에서 기존 icon 표현을 full 표현으로 수정한다.
+- **Decision**: 기존 BrandLogo의 full variant와 brand typography를 재사용한다. mark와 Leement 텍스트를 중앙에 나란히 배치하고 하나의 1.2초 fade in을 유지한다. 모바일에서는 로고 크기를 줄인다. 장식 mark는 읽기에서 제외하고 visible name을 읽는다. h1과 CTA 읽기 순서는 유지한다.
+- **영향**: 홈·PRD·디자인 시스템·Unreleased만 갱신하며 공용 BrandLogo API, token/theme, Storybook에는 영향이 없다. 앞선 #706BC5 및 흰색 전경 논의는 색 제안이며 이 로고 수정에 색 변경을 포함하지 않는다.
+- **검증 계획**: light/dark의 반응형 배치·실제 워드마크 표시·기존 fade in·reduced motion·no-JS 및 프로젝트 필수 검사를 확인한다.
